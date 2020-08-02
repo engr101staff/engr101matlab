@@ -1,0 +1,73 @@
+127.0.0.1 - - [01/Aug/2020 20:34:09] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:09] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:09] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:10] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:10] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:10] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:34:10] "GET /_static/language_data.js HTTP/1.1" 200 -
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:35:09] "GET /_static/language_data.js HTTP/1.1" 200 -
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 20:36:42] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:42] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:42] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:43] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:43] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:43] "GET /_static/language_data.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:36:43] "GET /_images/grumpy_cat.png HTTP/1.1" 200 -
+
+Aborted!
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 20:37:58] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:37:58] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:37:59] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:37:59] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:37:59] "GET /_static/language_data.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:37:59] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 20:44:12] "GET /_static/language_data.js HTTP/1.1" 200 -
+
+Aborted!
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/theme-overrides.css?v=2DAFE138 HTTP/1.1" 304 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:48:42] "GET /_static/language_data.js HTTP/1.1" 200 -
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:53:03] "GET /_static/language_data.js HTTP/1.1" 200 -
+
+Aborted!
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /functions_and_data/main.html HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /_static/basic.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /_static/pygments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /_static/bootstrap-sphinx.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /_static/documentation_options.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:55:17] "GET /_static/language_data.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Aug/2020 22:57:08] code 404, message File not found
+127.0.0.1 - - [01/Aug/2020 22:57:08] "GET /runestone/static/favicon.ico HTTP/1.1" 404 -
+
+Aborted!

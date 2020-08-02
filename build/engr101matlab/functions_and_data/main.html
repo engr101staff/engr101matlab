@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3. Functions and Data &#8212; Runestone Interactive Overview</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.8" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=3EAD674C"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. Vectors and Matrices" href="../vectors_and_matrices/main.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'engr101matlab';
+    eBookConfig.basecourse = 'engr101matlab';
+    eBookConfig.isLoggedIn = false;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = false;
+  eBookConfig.acDefaultLanguage = 'c++' ? 'c++' : 'python'
+  eBookConfig.runestone_version = '5.0.8';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+          engr101matlab
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=engr101matlab&page=main'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2. </span>Vectors and Matrices" data-toggle="tooltip">
+    <a href="../vectors_and_matrices/main.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="functions-and-data">
+<h1><span class="section-number">3. </span>Functions and Data<a class="headerlink" href="#functions-and-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="warm-up">
+<h2><span class="section-number">3.1. </span>Warm Up<a class="headerlink" href="#warm-up" title="Permalink to this headline">¶</a></h2>
+<p>Recall the Exchangeable Sodium Percentage (ESP), which affects the suitability of soil for farming. It is determined as a ratio of several chemical elements present in the soil according to the formula:</p>
+<div class="math notranslate nohighlight">
+\[ESP = \frac{Na}{K + Ca + Mg + Ca}\]</div>
+<p>Let’s say you have many different soil samples taken by the Proxima b probe, and you need to perform the ESP calculation for each. Below is a table of the samples and an approach to writing a <em>script</em> that performs the ESP computations.</p>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample</p></th>
+<th class="head"><p>Na</p></th>
+<th class="head"><p>K</p></th>
+<th class="head"><p>Ca</p></th>
+<th class="head"><p>Mg</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>10.9</p></td>
+<td><p>68.2</p></td>
+<td><p>25.4</p></td>
+<td><p>13.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>13.7</p></td>
+<td><p>66.3</p></td>
+<td><p>26.4</p></td>
+<td><p>13.2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>14.3</p></td>
+<td><p>67</p></td>
+<td><p>26.7</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>14.1</p></td>
+<td><p>72.2</p></td>
+<td><p>25.5</p></td>
+<td><p>17.3</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>12.3</p></td>
+<td><p>72.3</p></td>
+<td><p>26.8</p></td>
+<td><p>13.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>12.6</p></td>
+<td><p>67.9</p></td>
+<td><p>26.5</p></td>
+<td><p>17.7</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Na</span> <span class="p">=</span> <span class="mf">10.9</span><span class="p">;</span> <span class="n">K</span> <span class="p">=</span> <span class="mf">68.2</span><span class="p">;</span>
+<span class="n">Ca</span> <span class="p">=</span> <span class="mf">25.4</span><span class="p">;</span> <span class="n">Mg</span> <span class="p">=</span> <span class="mf">13.8</span><span class="p">;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Na</span> <span class="o">./</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="n">Ca</span> <span class="o">+</span> <span class="n">Mg</span> <span class="o">+</span> <span class="n">Ca</span><span class="p">));</span>
+
+<span class="n">Na</span> <span class="p">=</span> <span class="mf">13.8</span><span class="p">;</span> <span class="n">K</span> <span class="p">=</span> <span class="mf">66.3</span><span class="p">;</span>
+<span class="n">Ca</span> <span class="p">=</span> <span class="mf">26.4</span><span class="p">;</span> <span class="n">Mg</span> <span class="p">=</span> <span class="mf">13.2</span><span class="p">;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Na</span> <span class="o">./</span> <span class="n">K</span> <span class="o">+</span> <span class="n">Ca</span> <span class="o">+</span> <span class="n">Mg</span> <span class="o">+</span> <span class="n">Ca</span><span class="p">);</span>
+
+<span class="n">Na</span> <span class="p">=</span> <span class="mf">14.3</span><span class="p">;</span> <span class="n">k</span> <span class="p">=</span> <span class="mf">67.0</span><span class="p">;</span>
+<span class="n">Ca</span> <span class="p">=</span> <span class="mf">26.7</span><span class="p">;</span> <span class="n">Mg</span> <span class="p">=</span> <span class="mf">13.0</span><span class="p">;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Na</span> <span class="o">./</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="n">Ca</span> <span class="o">+</span> <span class="n">Mg</span> <span class="o">+</span> <span class="n">Ca</span><span class="p">))</span>
+
+<span class="n">Na</span> <span class="p">=</span> <span class="mf">14.1</span><span class="p">;</span> <span class="n">K</span> <span class="p">=</span> <span class="mf">72.2</span><span class="p">;</span>
+<span class="n">Ca</span> <span class="p">=</span> <span class="mf">25.5</span><span class="p">;</span> <span class="n">Mg</span> <span class="p">=</span> <span class="mf">17.3</span><span class="p">;</span>
+<span class="c">...</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Is this a good approach? Consider a few questions…</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you’re working on a laptop, you can open this page in two windows side-by-side so that you can view the content above and the questions below at the same time!</p>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=functions_and_data_01_01  >
+<p>Q1: Unfortunately, there are some mistakes in the script above. Find and at least one of them and briefly describe it here.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=functions_and_data_01_02  >
+<p>Q2: The code above contains a lot of <em>code duplication</em>, where we have multiple lines of code that do the same thing (although with different data). Give one reason why code duplication can make mistakes like the one you identified more likely.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=functions_and_data_01_03  >
+<p>Q3: There’s another subtle error above. Take a close look at the data for site #2 in the table and in the code. What’s wrong? Can you think of a way we could avoid this kind of error?</p>
+
+</div>
+</div> <!-- end of runestone div -->
+<div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="walkthrough_1"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="yt2" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="yt2" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (yt2)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+<div class="section" id="defining-custom-functions">
+<h2><span class="section-number">3.2. </span>Defining Custom Functions<a class="headerlink" href="#defining-custom-functions" title="Permalink to this headline">¶</a></h2>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="yt3" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="0l2W4gd9gMU" data-video-divid="yt3" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (yt3)</span> </p>
+    </div>
+    <div class="section" id="exercise-function-basics">
+<h3>Exercise: Function Basics<a class="headerlink" href="#exercise-function-basics" title="Permalink to this headline">¶</a></h3>
+<p>Which of these are correct implementations of a function <code class="code docutils literal notranslate"><span class="pre">square()</span></code> that returns the square of a number (e.g. <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">x</span></code>)?</p>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_01" >
+            <p>Q4:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[ s ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> x <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">s</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="functions_and_data_02_01_opt_a">Correct</li><li data-component="feedback">Yep, this one is correct! The variable s is computed by multiplying the input x by itself, and the result is returned since s is designated as the return variable.</li>
+            
+            <li data-component="answer"  id="functions_and_data_02_01_opt_b">Incorrect</li><li data-component="feedback">This one is actually ok. The variable s is computed by multiplying the input x by itself, and the result is returned since s is designated as the return variable.</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_02" >
+            <p>Q5:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[ x ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> s <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">s</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="functions_and_data_02_02_opt_a">Correct</li><li data-component="feedback">This one has an error. Check the input parameter and return variable...something's not quite right there.</li>
+            
+            <li data-component="answer" data-correct id="functions_and_data_02_02_opt_b">Incorrect</li><li data-component="feedback">You're right, this one has an error. In particular, the input and return variables are switched around in the function header. s should be the return variable (output) and x should be the input parameter.</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+<tr class="row-even"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_03" >
+            <p>Q6:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[  ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> x <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="functions_and_data_02_03_opt_a">Correct</li><li data-component="feedback">This one has an error. It has to do with the way MATLAB specifies what gets returned from a function.</li>
+            
+            <li data-component="answer" data-correct id="functions_and_data_02_03_opt_b">Incorrect</li><li data-component="feedback">You're right, this one has an error. Some programming languages use an explicit return statement, but in MATLAB you never have to type "return". Instead, the function should specify what variables to return inside of the square brackets [ ].</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_04" >
+            <p>Q7:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[  ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> x <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="functions_and_data_02_04_opt_a">Correct</li><li data-component="feedback">This one has an error. It has to do with the syntax in the function header.</li>
+            
+            <li data-component="answer" data-correct id="functions_and_data_02_04_opt_b">Incorrect</li><li data-component="feedback">You're right, this one has an error. The return variable must be specified with square brackets [ ] rather than parentheses ( ). MATLAB and other programming languages are pretty strict about syntax, but the good news is MATLAB will generally underline syntax errors as you're writing the code so that you can fix it.</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+<tr class="row-odd"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_05" >
+            <p>Q8:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[ x ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> x <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer" data-correct id="functions_and_data_02_05_opt_a">Correct</li><li data-component="feedback">Yep, this one is correct! It is fine to use the same variable for input and to return (for output). x starts with the input value, and is then updated inside the function before its new value is returned.</li>
+            
+            <li data-component="answer"  id="functions_and_data_02_05_opt_b">Incorrect</li><li data-component="feedback">This one is actually ok. It is fine to use the same variable for input and to return (for output). x starts with the input value, and is then updated inside the function before its new value is returned.</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="functions_and_data_02_06" >
+            <p>Q9:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[  ] <span class="p">=</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span> x <span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span> <span class="p">=</span> <span class="n">x</span> <span class="o">.*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+            <li data-component="answer"  id="functions_and_data_02_06_opt_a">Correct</li><li data-component="feedback">This one has a sneaky mistake. It actually computes and returns the right value, but it does not follow best design practices for functions... See if you can identify what's wrong on your own, or select "incorrect" and check the answer to see an explanation.</li>
+            
+            <li data-component="answer" data-correct id="functions_and_data_02_06_opt_b">Incorrect</li><li data-component="feedback">Although this implementation computes the right answer, it doesn't suppress output for individual computations. We don't want noisy functions, so each of the assignments in the implementation should end with a semicolon ; to suppress the output.</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="walkthrough_2"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="Tu4ZUHTl65w123abcwaaasdfadsfas" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="Tu4ZUHTl65w123abcwaaasdfadsfas" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (Tu4ZUHTl65w123abcwaaasdfadsfas)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+</div>
+<div class="section" id="vectorization-and-data-files">
+<h2><span class="section-number">3.3. </span>Vectorization and Data Files<a class="headerlink" href="#vectorization-and-data-files" title="Permalink to this headline">¶</a></h2>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="K1VyBJ4wkgg" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="K1VyBJ4wkgg" data-video-divid="K1VyBJ4wkgg" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (K1VyBJ4wkgg)</span> </p>
+    </div>
+    <div class="section" id="exercise-reading-soil-sample-data">
+<h3>Exercise: Reading Soil Sample Data<a class="headerlink" href="#exercise-reading-soil-sample-data" title="Permalink to this headline">¶</a></h3>
+<p>The nutrient cycle of Proxima B is not yet fully understood, so our scientists want to check whether the ESP changes over time. To do this, we’ll use a dataset with soil samples taken at the same location every day throughout a year.</p>
+<p>For simplicitly, we will assume all months have 30 days, such that there are 360 samples total. The data are stored in a file called <code class="file docutils literal notranslate"><span class="pre">daily_samples.csv</span></code>.</p>
+<p>In this exercise, you’ll read in that data using the <code class="code docutils literal notranslate"><span class="pre">csvread()</span></code> function and compute the ESP for all daily samples.</p>
+<div class="admonition-exercise-files admonition">
+<p class="admonition-title">Exercise Files</p>
+<p>Download these files for the exercise.</p>
+<table class="colwidths-auto docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference download internal" download="" href="../_downloads/5cb3f1ee6cca7079a9a8d5745f563a2d/daily_samples.csv"><code class="xref download docutils literal notranslate"><span class="pre">daily_samples.csv</span></code></a></p></td>
+<td>
+    <div data-component="reveal" id="daily_samples_csv_preview" data-modal data-title="<code>daily_samples.csv</code>" data-showtitle="Preview" data-hidetitle="Hide" >
+    <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sample</span><span class="p">,</span><span class="n">Na</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">Ca</span><span class="p">,</span><span class="n">Mg</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">10.773</span><span class="p">,</span><span class="mf">70.205</span><span class="p">,</span><span class="mf">26.067</span><span class="p">,</span><span class="mf">12.069</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">11.835</span><span class="p">,</span><span class="mf">72.607</span><span class="p">,</span><span class="mf">25.037</span><span class="p">,</span><span class="mf">11.484</span>
+<span class="mi">3</span><span class="p">,</span><span class="mf">12.978</span><span class="p">,</span><span class="mf">72.036</span><span class="p">,</span><span class="mf">25.008</span><span class="p">,</span><span class="mf">8.5593</span>
+<span class="mi">4</span><span class="p">,</span><span class="mf">13.21</span><span class="p">,</span><span class="mf">70.334</span><span class="p">,</span><span class="mf">25.123</span><span class="p">,</span><span class="mf">7.8401</span>
+<span class="mi">5</span><span class="p">,</span><span class="mf">12.753</span><span class="p">,</span><span class="mf">69.076</span><span class="p">,</span><span class="mf">25.437</span><span class="p">,</span><span class="mf">10.445</span>
+<span class="mi">6</span><span class="p">,</span><span class="mf">11.406</span><span class="p">,</span><span class="mf">70.645</span><span class="p">,</span><span class="mf">26.29</span><span class="p">,</span><span class="mf">7.9371</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+
+    </div>
+    </td>
+<td><p>Data file containing 360 daily soil samples.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference download internal" download="" href="../_downloads/4ee6ad471e488d984cbb42da4ff48797/ESP.m"><code class="xref download docutils literal notranslate"><span class="pre">ESP.m</span></code></a></p></td>
+<td>
+    <div data-component="reveal" id="ESP_m_preview" data-modal data-title="ESP.m" data-showtitle="Preview" data-hidetitle="Hide" >
+    <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[e] <span class="p">=</span><span class="w"> </span><span class="nf">ESP</span><span class="p">(</span>Na, K, Ca, Mg<span class="p">)</span><span class="w"></span>
+<span class="c">%ESP Returns the exchangeable sodium percentage</span>
+    <span class="n">e</span> <span class="p">=</span> <span class="n">Na</span> <span class="o">./</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="n">Ca</span> <span class="o">+</span> <span class="n">Mg</span> <span class="o">+</span> <span class="n">Na</span><span class="p">);</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+
+    </div>
+    </td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">ESP()</span></code> function from earlier.</p></td>
+</tr>
+</tbody>
+</table>
+
+    <div data-component="reveal" id="monthly_average_download_instructions" data-modal data-title="File Download Instructions for MATLAB" data-showtitle="Download Instructions" data-hidetitle="Hide" >
+    <div id='matlab_download_instructions_tabs' data-component="tabbedStuff"  class='alert alert-warning'><div data-component="tab" data-tabname="Windows" >
+<p>TODO: these instructions need to be improved</p>
+<ol class="arabic simple">
+<li><p>Click the file link to to download the file.</p></li>
+<li><p>Move the file to your current folder in MATLAB</p></li>
+</ol>
+</div><div data-component="tab" data-tabname="macOS" >
+<p>TODO: these instructions need to be improved</p>
+<ol class="arabic simple">
+<li><p>Click the file link to to download the file.</p></li>
+<li><p>Move the file to your current folder in MATLAB</p></li>
+</ol>
+</div>
+    </div>
+
+
+    </div>
+    </div>
+<p>Create a new script called <code class="file docutils literal notranslate"><span class="pre">AnalyzeESP.m</span></code> and write code to:</p>
+<blockquote>
+<div><p><strong>Step 1</strong></p>
+<p>Read the data from <code class="file docutils literal notranslate"><span class="pre">daily_samples.csv</span></code> into a variable called <code class="code docutils literal notranslate"><span class="pre">dailySamples</span></code> using the <code class="code docutils literal notranslate"><span class="pre">csvread()</span></code> function. Make sure to skip the first row, which contains the column headings.</p>
+<p><strong>Step 2</strong></p>
+<p>Set <code class="code docutils literal notranslate"><span class="pre">Na</span></code>, <code class="code docutils literal notranslate"><span class="pre">K</span></code>, <code class="code docutils literal notranslate"><span class="pre">Ca</span></code>, and <code class="code docutils literal notranslate"><span class="pre">Mg</span></code> variables to hold the data from each corresponding column in the <code class="code docutils literal notranslate"><span class="pre">dailySamples</span></code> matrix.</p>
+
+    <div data-component="reveal" id="monthly_average_2_hint"   data-showtitle="Hint" data-hidetitle="Hide Hint" >
+    <div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use row/column indexing to select each column from <code class="code docutils literal notranslate"><span class="pre">dailySamples</span></code>. For example, to find the sodium values, you would use <code class="code docutils literal notranslate"><span class="pre">Na</span> <span class="pre">=</span> <span class="pre">dailySamples(:,2)</span></code> to assign the first column data into <code class="code docutils literal notranslate"><span class="pre">Na</span></code>. (If you skipped the first column using <code class="code docutils literal notranslate"><span class="pre">csvread()</span></code> above, it would be <code class="code docutils literal notranslate"><span class="pre">Na</span> <span class="pre">=</span> <span class="pre">dailySamples(:,2)</span></code> instead.)</p>
+</div>
+
+    </div>
+    <p><strong>Step 3</strong></p>
+<p>Use the <code class="code docutils literal notranslate"><span class="pre">ESP()</span></code> function to compute a vector of ESP values for each of the samples (you should pass in the variables from the previous step). Store the result in a variable called <code class="code docutils literal notranslate"><span class="pre">esp</span></code>.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This kind of script in general is called a “driver” (sometimes “driver script” or “driver program”. Why? It’s basically the script that controls and brings together functionality from other parts of the program (e.g. reading in data files or calling functions) to accomplish some task, just like the driver of a car controls the steering wheel, pedals, etc. to get where they’re going.</p>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=monthly_average_driver  >
+<p>Q10: Paste in a copy of your <code class="file docutils literal notranslate"><span class="pre">AnalyzeESP.m</span></code> script.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+<div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="walkthrough_3"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="Tu4ZUHTl65w123abcwaahhhh" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="Tu4ZUHTl65w123abcwaahhhh" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (Tu4ZUHTl65w123abcwaahhhh)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+</div>
+<div class="section" id="built-in-aggregator-functions">
+<h2><span class="section-number">3.4. </span>Built-in Aggregator Functions<a class="headerlink" href="#built-in-aggregator-functions" title="Permalink to this headline">¶</a></h2>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="asldfjasfhk" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="K1VyBJ4wkgg" data-video-divid="asldfjasfhk" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (asldfjasfhk)</span> </p>
+    </div>
+    <div class="section" id="exercise-monthly-average-of-esp">
+<h3>Exercise: Monthly Average of ESP<a class="headerlink" href="#exercise-monthly-average-of-esp" title="Permalink to this headline">¶</a></h3>
+<p>In this exercise, you’ll work with the ESP data from your write a function to compute the average ESP value for a given month.</p>
+<div class="admonition-exercise-files admonition">
+<p class="admonition-title">Exercise Files</p>
+<p>This exercise uses the same <code class="file docutils literal notranslate"><span class="pre">daily_samples.csv</span></code> and <code class="file docutils literal notranslate"><span class="pre">ESP.m</span></code> files as the previous one. See above for the download links.</p>
+</div>
+<p>Create a new function file called <code class="file docutils literal notranslate"><span class="pre">monthlyAverage.m</span></code>.</p>
+<blockquote>
+<div><p>In that file, define the function <code class="code docutils literal notranslate"><span class="pre">monthlyAverage()</span></code>. It takes in a vector of 360 ESP values and a month number (e.g. 1 is January, 12 is December) and returns the average of ESP values for samples during the given month. For example, given the <code class="code docutils literal notranslate"><span class="pre">esp</span></code> vector, you could call <code class="code docutils literal notranslate"><span class="pre">monthlyAverage(esp,</span> <span class="pre">3)</span></code> to compute the average ESP during March (the 3rd month).</p>
+<p><strong>Step 1</strong></p>
+<p>To find the range of days to average based on the month, use these formulas:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">startDay</span> <span class="pre">=</span> <span class="pre">30*(month-1)</span> <span class="pre">+</span> <span class="pre">1;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">endDay</span> <span class="pre">=</span> <span class="pre">startDay</span> <span class="pre">+</span> <span class="pre">29;</span></code></p></li>
+</ul>
+<p><strong>Step 2</strong></p>
+<p>To compute the average, use MATLAB’s built-in <code class="code docutils literal notranslate"><span class="pre">mean()</span></code> function on a subvector of the ESP values selected according to the range of days you just computed.</p>
+
+    <div data-component="reveal" id="monthly_average_4_hint"   data-showtitle="Hint" data-hidetitle="Hide Hint" >
+    <div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>Use indexing and range notation to select the subvector of values to average. For example, to select values for January, you could write <code class="code docutils literal notranslate"><span class="pre">data(1:30)</span></code>. Of course, you don’t want to hardcode <code class="code docutils literal notranslate"><span class="pre">1:30</span></code> - instead use your variables containing the appropriate <code class="code docutils literal notranslate"><span class="pre">startDay</span></code> and <code class="code docutils literal notranslate"><span class="pre">endDay</span></code>.</p></li>
+</ul>
+</div>
+
+    </div>
+    </div></blockquote>
+
+<div class="runestone">
+<div data-component="shortanswer" class="journal alert alert-warning" id=monthly_average_function  >
+<p>Q11: Paste in a copy of your <code class="file docutils literal notranslate"><span class="pre">monthlyAverage.m</span></code> function file.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+<p>Finally, call your <code class="code docutils literal notranslate"><span class="pre">monthlyAverage()</span></code> function at the end of your <code class="file docutils literal notranslate"><span class="pre">AnalyzeESP.m</span></code> script to compute and print the average ESP in months 1 and 7.</p>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="monthly_average_final" >
+            <p>Q12: What is the average ESP in month 7?</p>
+
+            <li data-component="answer"  id="monthly_average_final_opt_a">TODO Incorrect Number</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="monthly_average_final_opt_b">TODO Correct Number</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="monthly_average_final_opt_c">TODO Incorrect Number</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="monthly_average_final_opt_d">TODO Incorrect Number</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            <div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="walkthrough_4"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="Tu4ZUHTl65w123abcwaahhhh222" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="Tu4ZUHTl65w123abcwaahhhh222" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (Tu4ZUHTl65w123abcwaahhhh222)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+</div>
+<div class="section" id="scope-and-parameters">
+<h2><span class="section-number">3.5. </span>Scope and Parameters<a class="headerlink" href="#scope-and-parameters" title="Permalink to this headline">¶</a></h2>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="lsadfhlak" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="K1VyBJ4wkgg" data-video-divid="lsadfhlak" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (lsadfhlak)</span> </p>
+    </div>
+    <div class="section" id="exercise-scope-and-parameters">
+<h3>Exercise: Scope and Parameters<a class="headerlink" href="#exercise-scope-and-parameters" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="scope_and_parameters_02_01" >
+            <p>Q13: TODO</p>
+
+            <li data-component="answer" data-correct id="scope_and_parameters_02_01_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_01_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_01_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_01_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="scope_and_parameters_02_02" >
+            <p>Q14: TODO</p>
+
+            <li data-component="answer" data-correct id="scope_and_parameters_02_02_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_02_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_02_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_02_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+<tr class="row-even"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="scope_and_parameters_02_03" >
+            <p>Q15: TODO</p>
+
+            <li data-component="answer" data-correct id="scope_and_parameters_02_03_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_03_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_03_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_03_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="scope_and_parameters_02_04" >
+            <p>Q16: TODO</p>
+
+            <li data-component="answer" data-correct id="scope_and_parameters_02_04_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_04_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_04_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="scope_and_parameters_02_04_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="scope_and_parameters_wt"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="afdasfdsagasdgfasdf" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="afdasfdsagasdgfasdf" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (afdasfdsagasdgfasdf)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+</div>
+<div class="section" id="unit-testing">
+<h2><span class="section-number">3.6. </span>Unit Testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
+
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="lsadffasfsdfhlak" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="K1VyBJ4wkgg" data-video-divid="lsadffasfsdfhlak" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (lsadffasfsdfhlak)</span> </p>
+    </div>
+    <div class="section" id="exercise-unit-testing">
+<h3>Exercise: Unit Testing<a class="headerlink" href="#exercise-unit-testing" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="unit_testing_02_01" >
+            <p>Q17: TODO</p>
+
+            <li data-component="answer" data-correct id="unit_testing_02_01_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_01_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_01_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_01_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+<td>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="unit_testing_02_02" >
+            <p>Q18: TODO</p>
+
+            <li data-component="answer" data-correct id="unit_testing_02_02_opt_a">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_02_opt_b">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_02_opt_c">TODO</li><li data-component="feedback">TODO</li>
+            
+            <li data-component="answer"  id="unit_testing_02_02_opt_d">TODO</li><li data-component="feedback">TODO</li>
+            
+
+            </ul>
+            </div>
+            </td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-walkthrough admonition">
+<p class="admonition-title">Walkthrough</p>
+
+    <div data-component="reveal" id="unit_testing_wt"   data-showtitle="Show" data-hidetitle="Hide" >
+    
+    <div class="runestone" style="margin-left: auto; margin-right:auto">
+        <div id="sdfasfadasdf" data-component="youtube" class="align-center youtube-video" data-video-height="315" data-video-width="560" data-video-videoid="Tu4ZUHTl65w" data-video-divid="sdfasfadasdf" data-video-start="0" data-video-end="-1" ></div>
+        <p class="runestone_caption"><span class="runestone_caption_text">Video: (sdfasfadasdf)</span> </p>
+    </div>
+    
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 2. Vectors and Matrices' data-toggle="tooltip">
+    <a href="../vectors_and_matrices/main.html" aria-label="2. Vectors and Matrices">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017 jjuett.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.8.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
