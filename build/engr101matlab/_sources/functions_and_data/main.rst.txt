@@ -327,7 +327,7 @@ Create a new function file called :file:`monthlyAverage.m`.
 
   Paste in a copy of your :file:`monthlyAverage.m` function file.
 
-Finally, call your :code:`monthlyAverage()` function at the end of your :file:`AnalyzeESP.m` script to compute and print the average ESP in months 1 and 7.
+Finally, call your :code:`monthlyAverage()` function at the end of your :file:`AnalyzeESP.m` script to compute and print the average ESP in months 1 and 7. Run the script to find the answer to the question below.
 
 .. mchoice:: monthly_average_final
   :answer_a: TODO Incorrect Number

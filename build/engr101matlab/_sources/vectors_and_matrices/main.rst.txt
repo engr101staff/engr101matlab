@@ -1,12 +1,59 @@
 
+.. raw:: html
+
+  <link rel="stylesheet" href="../_static/common/css/matlab.css">
+  <script src="../_static/common/js/exercises.bundle.js"></script>
+
+
 .. qnum::
    :prefix: Q
    :start: 1
 
-========================
+=====================
  Vectors and Matrices
-========================
+=====================
 
+
+.. admonition:: TODO
+
+  This isn't a real lecture, I was just playing around with some features.
+
+.. raw:: html
+
+  <div class="container-fluid alert alert-warning">
+    <div style="text-align: center; font-weight: bold; border-bottom: solid 1px #cccccc; padding-bottom: 5px; margin-bottom: 5px">
+      <image src="../_static/common/img/crabster.jpg" style="height: 2em">
+      MatCrab Exercise
+    </div>
+    <div style="margin-left: auto; margin-right: auto" id="exercise-group" class="matcrab-variable-exercise-group"></div>
+    <div style="margin-top: 10px">
+      <div class="col-xs-4" style="background-color:lavender;">
+          <div style="text-align: center;">Workspace Variables</div>
+          <ul class="list-group matlab-vars" id = "vars" ></ul>
+      </div>
+      <div class="col-xs-8">
+          <textarea id="expression_in" class="form-control matlab-entry" rows="2"></textarea>
+          <div class="matcrab-visualization" style="max-height: 300px" id = "visualization">
+
+          </div>
+          <div class="matcrab-visualization" style="max-height: 300px" id = "ansVisualization">
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+.. fillintheblank:: vectors_and_matrices_01
+  :casei:
+
+  Complete the MatCrab exercise to reveal the *secret word*. Enter it here.
+  
+  |blank|
+
+  - :banana: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
+
+  
 .. mchoice:: intro_to_matlab_01
   :practice: T
   :answer_a: It's great!
@@ -55,5 +102,4 @@
    :match_6: MATLAB Error|||x = [5:-1:1]
 
    The question goes here.
-
 
