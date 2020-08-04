@@ -70,8 +70,7 @@ Is this a good approach? Consider a few questions...
 Defining Custom Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: 0l2W4gd9gMU
-  :divid: yt3
+.. youtube:: btFcE-fCoGk
   :height: 315
   :width: 560
   :align: center
@@ -321,7 +320,7 @@ Create a new function file called :file:`monthlyAverage.m`.
 
     .. hint::
       
-      * Use indexing and range notation to select the subvector of values to average. For example, to select values for January, you could write :code:`data(1:30)`. Of course, you don't want to hardcode :code:`1:30` - instead use your variables containing the appropriate :code:`startDay` and :code:`endDay`.
+      Use indexing and range notation to select the subvector of values to average. For example, to select values for January, you could write :code:`data(1:30)`. Of course, you don't want to hardcode :code:`1:30` - instead use your variables containing the appropriate :code:`startDay` and :code:`endDay`.
 
 .. shortanswer:: monthly_average_function
 
