@@ -81,7 +81,6 @@ Exercise: Function Basics
 
 Which of these are correct implementations of a function :code:`square()` that returns the square of a number (e.g. :code:`x * x`)?
 
-
 .. list-table:: 
   :align: left
 
@@ -133,9 +132,10 @@ Which of these are correct implementations of a function :code:`square()` that r
 
         .. code-block:: matlab
 
-          function [  ] = square( x )
-            return = x .* x;
+          function ( s ) = square( x )
+            s = x .* x;
           end
+
 
   * - .. mchoice:: functions_and_data_02_05
         :answer_a: Correct
@@ -159,9 +159,11 @@ Which of these are correct implementations of a function :code:`square()` that r
 
         .. code-block:: matlab
 
-          function [  ] = square( x )
-            return = x .* x;
+          function [ res ] = square( x )
+            s = x .* x
+            res = s
           end
+
 
 .. admonition:: Walkthrough
 
