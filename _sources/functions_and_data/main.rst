@@ -364,60 +364,118 @@ Scope and Parameters
 Exercise: Scope and Parameters
 ------------------------------
 
+Consider each of the following programs, which attempt to define and call a function for the *dot-product* of two vectors (multiply the two vectors, element-by-element, and then add it all up). If the program is correct, simply write "correct". However, if the program contains a mistake, write a brief explanation of the mistake in terms of scopes, parameters, and/or return values in the Matlab program.
+
 .. list-table:: 
   :align: left
 
-  * - .. mchoice:: scope_and_parameters_02_01
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
+  * - .. shortanswer:: ex_scope_and_parameters_01
 
-        TODO
+        Program 1
 
-    - .. mchoice:: scope_and_parameters_02_02
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
+        :file:`dot_product.m`
 
-        TODO
+        .. code-block:: matlab
 
-  * - .. mchoice:: scope_and_parameters_02_03
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
+          function [result] = dot_product(x, y)
+            result = sum(x .* y);
+          end
 
-        TODO
+        :file:`script.m`
+        
+        .. code-block:: matlab
 
-    - .. mchoice:: scope_and_parameters_02_04
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
+          x = [1, 2, 3];
+          y = [1, 2, 3];
+          dot_product(x, y);
+          disp(result);
 
-        TODO
+    - .. shortanswer:: ex_scope_and_parameters_02
+
+        Program 2
+
+        :file:`dot_product.m`
+
+        .. code-block:: matlab
+
+          function [result] = dot_product(a, b)
+            result = sum(a .* b);
+          end
+
+        :file:`script.m`
+        
+        .. code-block:: matlab
+
+          x = [1, 2, 3];
+          y = [1, 2, 3];
+          disp(dot_product(x, y));
+
+  * - .. shortanswer:: ex_scope_and_parameters_03
+
+        Program 3
+
+        :file:`dot_product.m`
+
+        .. code-block:: matlab
+
+          function [result] = dot_product()
+            result = sum(a .* b);
+          end
+
+        :file:`script.m`
+        
+        .. code-block:: matlab
+
+          a = [1, 2, 3];
+          b = [1, 2, 3];
+          result = dot_product();
+          disp(result);
+
+    - .. shortanswer:: ex_scope_and_parameters_04
+
+        Program 4
+
+        :file:`dot_product.m`
+
+        .. code-block:: matlab
+
+          function [result] = dot_product(x, y)
+            result = sum(x .* y);
+          end
+
+        :file:`script.m`
+        
+        .. code-block:: matlab
+
+          a = [1, 2, 3];
+          b = [1, 2, 3];
+          result = dot_product(x, y);
+          disp(result);
+
+TODO: Would it be better to move the question below to a lab?
+
+.. shortanswer:: ex_scope_and_parameters_05'
+
+  Consider this program:
+
+  :file:`triple.m`
+
+  .. code-block:: matlab
+
+    function [x] = triple(x)
+      x = x * 3;
+    end
+
+  :file:`script.m`
+  
+  .. code-block:: matlab
+
+    x = 10;
+    triple(x);
+    disp(x);
+
+  The program prints 10. Why doesn't it print 30? Is there any way to make it print 30 by changing the *function definition* for :code:`triple` (without changing the *script* at all)? If so, what would you need to change? If not, why not, and what change to the *script* would make the program print 30?
+
 
 .. admonition:: Walkthrough
 
