@@ -47,7 +47,7 @@ options(
             'enable_chatcodes': 'false',
             'allow_pairs': 'false',
             'dynamic_pages': False,
-            'use_services': 'false',
+            'use_services': 'true',
             'basecourse': project_name,
             'course_id': project_name,
             # These are used for non-dynamic books.
