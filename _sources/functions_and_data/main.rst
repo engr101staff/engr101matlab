@@ -180,8 +180,3 @@ Exercise: Unit Testing
       :height: 315
       :width: 560
       :align: center
-
-.. Use the file :download:`daily_samples.csv <../_static/functions_and_data/daily_samples.csv>` for this exercise. (:doc:`Download Instructions<../common/matlab_download_instructions>`)
-
-.. TODO:
-.. should we be suggesting they add clear all; 
