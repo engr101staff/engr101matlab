@@ -43,7 +43,7 @@ options(
                        'login_required':'false',
                        'course_title': project_name,
                        'appname':master_app,
-                       'dynamic_pages': True,
+                       'dynamic_pages': False,
                        'loglevel': 10,
                        'course_url':master_url,
                        'use_services': 'true',
