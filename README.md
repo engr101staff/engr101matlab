@@ -63,4 +63,38 @@ runestone serve
 
 Remember that you will need to be in a terminal with your python virtual environment activated for those to work.
 
+## Git Workflow for Contributing
+
+Assuming you've already cloned the repository as above, open a terminal in the `engr101matlab` directory.
+
+First, make sure you're starting from the `master` branch and up-to-date with the version on github.
+
+```console
+git checkout master
+git pull origin master
+```
+
+However, you should not change files directly on `master` - instead, all new work should be done in a separate git branch. For example, let's say you want to start working on a new chapter. Create a new branch for the chapter:
+
+```console
+git checkout -b chapter3
+```
+
+That command creates a new branch, `chapter3` based on whatever branch you were on previously (`master`) and switches you to that branch.
+
+Now, go ahead and create new files, make changes, etc. (See the Content Creation section in this readme for details on where you should make changes to add content.) As you're working, you can always run `git status` to see a summary of the files you've added or edited.
+
+Once you've made some changes and you want to "save" them, you should push them to your branch on github (make sure you've saved your files locally, first, of course). The first time you push for a new branch, you should run:
+
+```
+git add -A
+git commit -m "Some message describing the work you did"
+git push -u origin chapter3
+```
+
+Of course, adjust the branch name (e.g. `chapter3`) and the message in quotes accordingly.
+
+For subsequent pushes on the same branch, you should omit the `-u` in the `git push` command.
+
+
 
