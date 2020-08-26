@@ -46,8 +46,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Runestone Interactive Overview'
-copyright = '2017 bradleymiller'
+project = 'ENGR 101 Matlab'
+copyright = '2020 jamesjuett'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -121,7 +121,7 @@ html_theme = 'sphinx_bootstrap'
 #html_theme_options = {'nosidebar': 'true'}
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Foundations of Python Programming",
+    'navbar_title': "ENGR 101 Matlab",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Chapters",
@@ -166,10 +166,10 @@ html_theme_options = {
 html_theme_path = [pkg_resources.resource_filename('runestone', 'common/project_template/_templates/plugin_layouts')]
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "Foundations of Python Programming"
+html_title = "ENGR 101 Matlab"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = "Foundations of Python Programming"
+html_short_title = "ENGR 101 Matlab"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -186,7 +186,7 @@ html_short_title = "Foundations of Python Programming"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 
-html_static_path = ['_static', '_sources/_static']  + runestone_static_dirs()
+html_static_path = runestone_static_dirs() + ['./_static', './_sources/_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
