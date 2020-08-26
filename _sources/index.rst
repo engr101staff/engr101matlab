@@ -12,9 +12,9 @@ Table of Contents
   :numbered: 2
   :maxdepth: 1
 
-  VariablesAndExpressions/main.rst
-  vectors_and_matrices/main.rst
-  functions_and_data/main.rst
+  intro_to_matlab/toctree.rst
+  vectors_and_matrices/toctree.rst
+  functions_and_data/toctree.rst
 
 
 ^^^^^^^^^^
@@ -24,4 +24,4 @@ References
 .. toctree::
   :maxdepth: 1
 
-  reference/matlab_download_instructions.rst
+  reference/toctree.rst
