@@ -92,19 +92,99 @@ In MATLAB, a **script** is sequence of commands written out, saved into a file, 
 
 Let's take a look at an example, and along the way we'll write up our first "useful" MATLAB program.
 
-.. youtube:: iFrEd4x8g_k
+-----------------
+A Fuel Calculator
+-----------------
+
+.. youtube:: A1Beuyvju08
   :divid: ch01_03_vid_scripts_01
   :height: 315
   :width: 560
   :align: center
 
+-----------------------------------
+Exercise: Fuel Calculator Algorithm
+-----------------------------------
 
-.. youtube:: iFrEd4x8g_k
+For reference, here's the problem discussed in the video above:
+
+.. image:: img/fuel_calculator.png
+  :width: 560
+  :align: center
+  :alt: A screenshot of the fuel calculator problem.
+
+|
+
+.. shortanswer:: ch01_03_ex_fuel_calculator_algorithm
+
+  Briefly decsribe an algorithm you could use to compute the total amount of fuel needed for the probe, and also give a few examples of *variables* and *expressions* that could be used in a program implementing that algorithm.
+
+  .. tip::
+    An **algorithm** is just a formal set of steps for solving a problem that contains enough details to be clear and unambiguous. A good way to check is to think "would someone else understand my solution by reading this?".
+
+
+------------------------------------------
+Implementing the Fuel Calculator in MATLAB
+------------------------------------------
+
+.. youtube:: Nmg8blikrjY
   :divid: ch01_03_vid_scripts_02
   :height: 315
   :width: 560
   :align: center
 
+|
+
+-------------------
+Exercise: Debugging
+-------------------
+
+.. admonition:: Did you know?
+
+  The terms "bug" and "buggy" are used to decribe defects in programs - small mistakes that can cause a whole system to malfunction. While the terms have been around since the late 1800s, one notable example occurred in 1947 when a moth (a real bug!) managed to infiltrate a Mark II computer and interferred with the operation of one of its relays.
+
+This exercise involves three slightly different versions of the fuel calculator script, each containing a bug. Download each file, put them in your current MATLAB folder, and run them (by typing the name of the script, e.g. :code:`FuelCalculatorBuggy1`, in the command window). Use your knowledge of the way the script should work to help deciper error messages or incorrect results and track down the bug.
+
+.. fillintheblank:: ch01_03_ex_buggy_01
+
+  Find the bug in :download:`FuelCalculatorBuggy1.m <../_static/intro_to_matlab/FuelCalculatorBuggy1.m>` (click to download).
+
+  .. literalinclude:: ../_static/intro_to_matlab/FuelCalculatorBuggy1.m
+    :language: matlab
+    :linenos:
+
+  Which line contains the bug?
+
+  - :15: Correct! Variable names in MATLAB are case sensitive.
+    :x: Nope, try again!
+
+
+.. fillintheblank:: ch01_03_ex_buggy_02
+
+  Find the bug in :download:`FuelCalculatorBuggy2.m <../_static/intro_to_matlab/FuelCalculatorBuggy2.m>` (click to download).
+
+  .. literalinclude:: ../_static/intro_to_matlab/FuelCalculatorBuggy2.m
+    :language: matlab
+    :linenos:
+
+  Which line contains the bug?
+
+  - :11: Correct! :code:`totalHours` should be used instead of :code:`hours`.
+    :x: Nope, try again!
+
+
+.. fillintheblank:: ch01_03_ex_buggy_03
+
+  Find the bug in :download:`FuelCalculatorBuggy3.m <../_static/intro_to_matlab/FuelCalculatorBuggy3.m>` (click to download).
+
+  .. literalinclude:: ../_static/intro_to_matlab/FuelCalculatorBuggy3.m
+    :language: matlab
+    :linenos:
+
+  Which line contains the bug?
+
+  - :12: Correct! There should only be one :code:`60 *` on this line.
+    :x: Nope, try again!
 
 ----------
 Style Tips
@@ -126,7 +206,7 @@ You get to choose the variable names used in your program, but some variable nam
 Spacing is also important in writing expressions. The best style is to pad your binary operators with spaces, like this:
 
 .. image:: img/operator_spacing.png
-  :width: 400
+  :width: 500
   :align: center
   :alt: Use spaces between operators and their operands.
 
@@ -137,6 +217,7 @@ There's a general tradeoff between *intermediate variables* and the use of *comp
 
 .. code-block:: matlab
 
+  % Algorithm #1 from earlier
   secondsFromDays = 24 * 60 * 60 * days;
   secondsFromHours = 60 * 60 * hours;
   secondsFromMinutes = 60 * minutes;
@@ -146,6 +227,7 @@ Or we could use one compound expression, like this:
 
 .. code-block:: matlab
 
+  % Algorithm #3 from earlier
   seconds = 24 * 60 * 60 * days + 60 * 60 * hours + 60 * minutes;
 
 Both approaches work equally well in this case, and both are "correct" since they each perform the correct calculations. In your programs, judge which approach best fits the needs of your code and is the easiest to understand. You should also consider whether you need to use any of the intermediate values in other calculations.
@@ -155,14 +237,46 @@ Both approaches work equally well in this case, and both are "correct" since the
 We say a value is *hardcoded* into a program when it appears in an expression as a literal (i.e. without using a variable). Hardcoding is generally okay if the value won't reasonably change. Hardcoding is NOT okay if the value is an input, or if it might change.
 
 .. image:: img/hardcoding.png
-  :width: 400
+  :width: 500
   :align: center
   :alt: Use a separate variable for any values that might reasonably change, rather than hardcoding them.
 
 |
 
------------------------------------
-Exercise: Variables and Expressions
------------------------------------
+^^^^^^^^^^^^^^^^^^
+Update Assignments
+^^^^^^^^^^^^^^^^^^
 
+In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. When we want to write a program that does something non-trivial and that we might run multiple times, a script is one of our go-to tools.
 
+Let's take a look at an example, and along the way we'll write up our first "useful" MATLAB program.
+
+.. youtube:: A1Beuyvju08
+  :divid: ch01_04_vid_update_assignments
+  :height: 315
+  :width: 560
+  :align: center
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+So what else can MATLAB do?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+MATLAB is way more than just a really fancy calculator. We will cover a lot more of what MATLAB can do as we go through the course, but let’s take a quick look to see how powerful MATLAB can be!
+
+**Vectors and Matrices**
+
+A key strength of MATLAB is support for working with vectors and matrices just as easily as scalar values. A scalar is just a plain old number, like 12 or 97.4. 
+
+A vector is a one-dimensional sequence of numbers:
+
+A matrix is a two-dimensional grid of numbers: 
+
+Vectors and matrices can hold lots of different types of values, not just the integers shown in these examples. We will use vectors and matrices to hold large amounts of data and quickly analyze that data to help make decisions about things. 
+
+**Saving and Loading Data**
+
+.. youtube:: A1Beuyvju08
+  :divid: ch01_06_vid_what_else
+  :height: 315
+  :width: 560
+  :align: center
