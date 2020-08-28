@@ -34,13 +34,13 @@ MATLAB is a programming language and environment often used in engineering appli
 
 Some fundamental tools in programming are *literals*, *variables*, and *expressions*:
 
+* **Literals** are simply data written directly into our code. They might be numbers like :code:`3` or :code:`-2.85`, but we'll also see other kinds of data. For example, text literals can be written with single quotes like :code:`'hello world!'`.
+
 * **Variables** are used to store data in the computer's memory, for example :code:`x`, :code:`ans`, or :code:`fuel_rate`.
 
   - **Assignment** is used to give a variable a value. In MATLAB (and many other programming languages), the :code:`=` operator is used for assignment.
 
-  - Variables may be assigned a new value several times, overwriting the old value. Just because we run :code:`x = 5` doesn't mean we won't come back later and run :code:`x = 10` to update it. 
-
-* **Literals** are simply data written directly into our code. They might be numbers like :code:`3` or :code:`-2.85`, but we'll also see other kinds of data. For example, text literals can be written with single quotes like :code:`hello world!`.
+  - Variables may be assigned a new value several times, overwriting the old value. Just because we run :code:`x = 5` doesn't mean we won't come back later and run :code:`x = 10` to update it.
 
 * **Expressions** are used to manipulate and compute new data, often by combining variables and literals, or even other sub-expressions. They generally use **operators** like :code:`+`, :code:`*`, etc.
 
@@ -143,6 +143,11 @@ Exercise: Debugging
 
   The terms "bug" and "buggy" are used to decribe defects in programs - small mistakes that can cause a whole system to malfunction. While the terms have been around since the late 1800s, one notable example occurred in 1947 when a moth (a real bug!) managed to infiltrate a Mark II computer and interferred with the operation of one of its relays.
 
+  .. image:: img/bug.jpg
+    :width: 560
+    :align: center
+    :alt: A moth taped to a page from a logbook.
+
 This exercise involves three slightly different versions of the fuel calculator script, each containing a bug. Download each file, put them in your current MATLAB folder, and run them (by typing the name of the script, e.g. :code:`FuelCalculatorBuggy1`, in the command window). Use your knowledge of the way the script should work to help deciper error messages or incorrect results and track down the bug.
 
 .. fillintheblank:: ch01_03_ex_buggy_01
@@ -156,7 +161,7 @@ This exercise involves three slightly different versions of the fuel calculator 
   Which line contains the bug?
 
   - :15: Correct! Variable names in MATLAB are case sensitive.
-    :x: Nope, try again!
+    :x: Nope, try again! TODO matlab run it 
 
 
 .. fillintheblank:: ch01_03_ex_buggy_02
@@ -247,12 +252,61 @@ We say a value is *hardcoded* into a program when it appears in an expression as
 Update Assignments
 ^^^^^^^^^^^^^^^^^^
 
-In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. When we want to write a program that does something non-trivial and that we might run multiple times, a script is one of our go-to tools.
+Variables in programming are different than variables in math. In math, when you say *x = 1*, you mean it. *x* is equal to 1 and always will be (at least until the next problem!). But in programming, :code:`x = 1` just means "put the value 1 in :code:`x` for now", and its value may be updated later.
 
-Let's take a look at an example, and along the way we'll write up our first "useful" MATLAB program.
+We can even update the value of a variable based on its previous value! This is called an **update assignment** (or **update expression**). Let's take a look...
 
-.. youtube:: A1Beuyvju08
+.. youtube:: c_O66AfWbK4
   :divid: ch01_04_vid_update_assignments
+  :height: 315
+  :width: 560
+  :align: center
+
+----------------------------
+Exercise: Update Assignments
+----------------------------
+
+.. fillintheblank:: ch01_04_ex_buggy_01
+
+  Consider the following code:
+
+  .. code-block:: matlab
+
+    x = 2;
+    x = x * x + 1;
+    y = x * (x + 1);
+    x = y * x;
+    disp(x);
+    disp(y);
+
+  What values are displayed when this code is run?
+
+  - :150: Correct! The sequence of values for :code:`x` is 2, 5, 150.
+    :x: The sequence of values for :code:`x` is 2, 5, 150. Double check which line you have that doesn't match. (Note that line 3 doesn't directly change the value of :code:`x`, although it does change :code:`y`, which will matter for line 4.)
+
+  - :30: Correct! :code:`y` is updated once, based on the value of :code:`x` at line 3, which is 5.
+    :x: Try again. Hint: :code:`y` is updated once, based on the value of :code:`x` at line 3, which is 5.
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch01_04_revealwt_update_assignments
+
+    .. youtube:: -6EfvOQhUHc
+      :divid: ch01_04_wt_update_assignments
+      :height: 315
+      :width: 560
+      :align: center
+
+
+
+^^^^^^^^^
+Functions
+^^^^^^^^^
+
+Expressions in MATLAB can also use **functions** to compute results or perform operations. MATLAB has *many* built-in functions for math, data analysis, and engineering applications. You can even write your own!
+
+.. youtube:: 1eu-RFIusOg
+  :divid: ch01_05_vid_intro_to_functions
   :height: 315
   :width: 560
   :align: center
@@ -269,14 +323,53 @@ A key strength of MATLAB is support for working with vectors and matrices just a
 
 A vector is a one-dimensional sequence of numbers:
 
-A matrix is a two-dimensional grid of numbers: 
+.. image:: img/vector.png
+  :width: 200
+  :align: center
+  :alt: A row vector containing [1, 3, 6, 7, 9].
 
-Vectors and matrices can hold lots of different types of values, not just the integers shown in these examples. We will use vectors and matrices to hold large amounts of data and quickly analyze that data to help make decisions about things. 
+|
 
-**Saving and Loading Data**
+A matrix is a two-dimensional grid of numbers:
 
-.. youtube:: A1Beuyvju08
+.. image:: img/matrix.png
+  :width: 150
+  :align: center
+  :alt: A 2-by-3 matrix containing [7, 3, 9 ; 5, 7, 2].
+
+|
+
+Vectors and matrices can hold lots of different types of values, not just the integers shown in these examples. We will use vectors and matrices to represent real-world data (which is often more than just a single number!) and quickly analyze that data to help make decisions about things.
+
+**Saving and Loading Workspaces**
+
+You can save all the variables in your MATLAB workspace to a file using the :code:`save` command. Typing this line into the command window will save all the variables in the workspace to a file called :file:`weatherData.mat`:
+
+.. code-block:: matlab
+
+  save('weatherData.mat');
+
+You can restore a saved workspace using the :code:`load` command. Typing this line into the command window will bring all the variables (and their values!) into the workspace from the file :code:`AnnArborTemps.mat`:
+
+.. code-block:: matlab
+
+  load('AnnArborTemps.mat');
+
+The load and save commands are also available from the MATLAB menu. All workspace files use the :file:`.mat` file extension.
+
+**Analyzing Data**
+
+Vectors and matrices can hold a lot of data, which is very helpful. But we really need to analyze that data, not just store it. We need to know things like the biggest value, or the smallest value, or the most common value. MATLAB has a lot of built-in functions that can help us analyze data. 
+
+**Plotting Data**
+
+In addition to numerical analysis of data, like "what is the biggest value?", we often want to visualize how one set of data relates to another. MATLAB has a staggeringly large number of ways to plot data. We will cover some of the most commonly-used plotting styles in this class, as well as ways to make your plots clear and professional.
+
+Watch the demo below to see examples of how we can use MATLAB to manipulate data. (The workspace file used in the demo is :download:`AnnArborTempsAug2019.mat <../_static/intro_to_matlab/AnnArborTempsAug2019.mat>`.) Much more detail to come in later chapters!
+
+.. youtube:: mO9a57T8NJg
   :divid: ch01_06_vid_what_else
   :height: 315
   :width: 560
   :align: center
+
