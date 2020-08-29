@@ -6,21 +6,21 @@
 Introduction to MATLAB
 ======================
 
-^^^^^^^^
-Welcome!
-^^^^^^^^
+.. ^^^^^^^^
+.. Welcome!
+.. ^^^^^^^^
 
-Welcome to ENGR 101! Please start with the video below.
+.. Welcome to ENGR 101! Please start with the video below.
 
-.. youtube:: btFcE-fCoGk
-  :divid: ch01_01_vid_welcome
-  :height: 315
-  :width: 560
-  :align: center
+.. .. youtube:: btFcE-fCoGk
+..   :divid: ch01_01_vid_welcome
+..   :height: 315
+..   :width: 560
+..   :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^
-Introduction to MATLAB
-^^^^^^^^^^^^^^^^^^^^^^
+.. ^^^^^^^^^^^^^^^^^^^^^^
+.. Introduction to MATLAB
+.. ^^^^^^^^^^^^^^^^^^^^^^
 
 MATLAB is a programming language and environment often used in engineering applications. Let's take a quick tour of how it works.
 
@@ -74,15 +74,15 @@ Consider the following MATLAB code, which might be used to calculate the net inc
 
   Give an example of an *expression* from the code above.
 
-.. admonition:: Walkthrough
+.. .. admonition:: Walkthrough
 
-  .. reveal:: ch01_02_revealwt_programming_constructs_01
+..   .. reveal:: ch01_02_revealwt_programming_constructs_01
 
-    .. youtube:: Tu4ZUHTl65w
-      :divid: ch01_02_wt_programming_constructs_01
-      :height: 315
-      :width: 560
-      :align: center
+..     .. youtube:: Tu4ZUHTl65w
+..       :divid: ch01_02_wt_programming_constructs_01
+..       :height: 315
+..       :width: 560
+..       :align: center
 
 ^^^^^^^
 Scripts
