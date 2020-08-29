@@ -13,15 +13,3 @@ Table of Contents
   :maxdepth: 1
 
   intro_to_matlab/toctree.rst
-  vectors_and_matrices/toctree.rst
-  functions_and_data/toctree.rst
-
-
-^^^^^^^^^^
-References
-^^^^^^^^^^
-
-.. toctree::
-  :maxdepth: 1
-
-  reference/toctree.rst
