@@ -161,7 +161,7 @@ This exercise involves three slightly different versions of the fuel calculator 
   Which line contains the bug?
 
   - :15: Correct! Variable names in MATLAB are case sensitive.
-    :x: Nope, try again! TODO matlab run it 
+    :x: Nope, try again!
 
 
 .. fillintheblank:: ch01_03_ex_buggy_02
