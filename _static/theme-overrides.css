@@ -74,3 +74,46 @@ blockquote {
 .admonition-walkthrough .reveal_button {
   margin-bottom: 0 !important;
 }
+
+
+/* MATCRAB */
+.matcrab-vis-exp {
+  margin: 1em;
+}
+
+.matcrab-example {
+  display: inline-block;
+}
+
+.matcrab-example table td {
+  padding: 0.25em;
+  vertical-align: top;
+}
+
+.matcrab-example table .matcrab-entry {
+  width: 175px;
+  height: 150px;
+
+  /* https://stackoverflow.com/questions/2032652/forcing-html-textarea-to-use-a-monospace-font-using-css */
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.matcrab-example table .matcrab-vis {
+  margin-left: 1em;
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+}
+
+.matcrab-reset.btn {
+  font-size:1em;
+  padding: 3px 6px;
+}
+
+.matcrab-run.btn {
+  font-size:1em;
+  padding: 3px 6px;
+}
