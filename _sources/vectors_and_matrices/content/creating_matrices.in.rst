@@ -1,3 +1,7 @@
+Here's some MatCrab examples that showcase what we saw in the video.
+
+Creating a basic matrix:
+
 .. raw:: html
 
   <div class="container-fluid">
@@ -82,7 +86,7 @@ And the next time you're at a (socially distanced) party, you can show off this 
             </textarea>
           </td>
           <td>
-            <div class="matcrab-vis" style="height: atuo">
+            <div class="matcrab-vis" style="height: auto">
             </div>
           </td>
         </tr>

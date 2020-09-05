@@ -23,7 +23,7 @@ Here are two vectors, :code:`a` and :code:`b`:
     <br />
   </div>
 
-Create the vectors :code:`x`, :code:`y`, :code:`z` (try to use vectors :code:`a` and :code:`b` to create :code:`x`, :code:`y`, :code:`z`!)
+Create the vectors :code:`x`, :code:`y`, :code:`z`, using :code:`a` and :code:`b` as components wherever possible.
 
 .. raw:: html
 
@@ -67,7 +67,7 @@ Create the vectors :code:`x`, :code:`y`, :code:`z` (try to use vectors :code:`a`
 .. fillintheblank:: ch02_02_ex_creating_vectors
   :casei:
 
-  Complete the MatCrab exercise to reveal the *secret word*. Enter it here.
+  Complete the MatCrab exercise above to reveal the *secret word*. Enter it here.
   
   |blank|
 
