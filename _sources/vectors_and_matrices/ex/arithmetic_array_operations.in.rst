@@ -66,7 +66,7 @@ For each of the expressions below, determine the result of the operation (or if 
 
         What is the result of :code:`a .* b`?
 
-MatCrab can help you check any of your work above, if you would like.
+MatCrab can help you check any of your work above, if you would like. (To get it to show the result, make sure to store your result in a variable, e.g. :code:`result = a .* b`.)
 
 .. raw:: html
 

@@ -69,7 +69,7 @@ Create a new script called :file:`AnalyzeESP.m` and write code to:
 
 .. Note::
 
-  This kind of script in general is called a "driver" (sometimes "driver script" or "driver program". Why? It's basically the script that controls and brings together functionality from other parts of the program (e.g. reading in data files or calling functions) to accomplish some task, just like the driver of a car controls the steering wheel, pedals, etc. to get where they're going.
+  This kind of script in general is called a "driver" (sometimes "driver script" or "driver program"). Why? It's basically the script that controls and brings together functionality from other parts of the program (e.g. reading in data files or calling functions) to accomplish some task, just like the driver of a car controls the steering wheel, pedals, etc. to get where they're going.
 
       
 .. shortanswer:: ch03_03_ex_data_files

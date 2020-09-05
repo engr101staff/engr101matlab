@@ -1,6 +1,6 @@
-MATLAB has a ton of built-in functions for working with vectors and matrices. Here are some common ones that you might find useful:
+MATLAB has a ton of built-in functions for working with vectors and matrices. Below are some common ones that you might find useful:
 
-The :code:`'` operator implements a **transpose** operation, which basically gives you back a copy of a matrix with the rows turned into columns and columsn turned into rows:
+The :code:`'` operator implements a **transpose** operation, which basically gives you back a copy of a matrix with the rows turned into columns and columns turned into rows:
 
 .. raw:: html
 
@@ -15,6 +15,9 @@ The :code:`'` operator implements a **transpose** operation, which basically giv
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
           </td>
           <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
@@ -49,6 +52,9 @@ Functions for **flipping** and **rotating** a matrix:
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
               y = flipud(x)
             </textarea>
@@ -79,6 +85,9 @@ Functions for **flipping** and **rotating** a matrix:
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
               y = fliplr(x)
             </textarea>
@@ -107,6 +116,9 @@ Functions for **flipping** and **rotating** a matrix:
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
           </td>
           <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
@@ -285,6 +297,9 @@ And functions for getting the dimensions of a vector or matrix:
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
               n = numel(x)
             </textarea>
@@ -315,6 +330,9 @@ And functions for getting the dimensions of a vector or matrix:
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
               n = length(x)
             </textarea>
@@ -343,6 +361,9 @@ And functions for getting the dimensions of a vector or matrix:
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
           </td>
           <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
