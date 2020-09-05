@@ -11,7 +11,7 @@ Create a new function file called :file:`monthlyAverage.m`.
 
   **Step 1**
 
-  To find the range of days to average based on the month, use these formulas:
+  To find the range of days to average based on the month (reminder: we're assuming all months have 30 days), use these formulas:
 
   * :code:`startDay = 30*(month-1) + 1;`
   * :code:`endDay = startDay + 29;`
@@ -35,10 +35,15 @@ Create a new function file called :file:`monthlyAverage.m`.
 Finally, call your :code:`monthlyAverage()` function at the end of your :file:`AnalyzeESP.m` script to compute and print the average ESP in months 1 and 7. Run the script to find the answer to the question below.
 
 .. mchoice:: ch03_04_ex_ESP_result
-  :answer_a: TODO Incorrect Number
-  :answer_b: TODO Correct Number
-  :answer_c: TODO Incorrect Number
-  :answer_d: TODO Incorrect Number
+  :answer_a: 0.0828
+  :answer_b: 0.0998
+  :answer_c: 0.0713
+  :answer_d: 0.1321
   :correct: b
+  :feedback_a: Incorrect.
+  :feedback_b: Correct!
+  :feedback_c: Incorrect.
+  :feedback_d: Incorrect.
+
 
   What is the average ESP in month 7?
