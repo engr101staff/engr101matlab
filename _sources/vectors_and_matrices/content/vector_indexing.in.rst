@@ -12,7 +12,7 @@ Use a **single** number in the parentheses to select **one element**:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -42,7 +42,7 @@ Use a **vector of indices** in the parentheses to select **multiple elements**:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -72,7 +72,7 @@ Use **range notation** in the parentheses to conveniently select **a range of el
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -102,7 +102,7 @@ Use the **colon operator** in the parentheses to select **all elements**. You ge
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

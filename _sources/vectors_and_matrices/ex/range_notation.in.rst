@@ -17,7 +17,7 @@ Create the vectors :code:`x`, :code:`y`, :code:`z` using **range notation**:
     </div>
     <div style="text-align: center; font-weight: bold; border-bottom: solid 1px #cccccc; padding-bottom: 5px; margin-bottom: 5px">
       
-      <image src="/_static/common/img/crabster.jpg" style="height: 2em">
+      <image src="../_static/common/img/crabster.jpg" style="height: 2em">
       MatCrab Exercise
     </div>
     <div style="margin-left: auto; margin-right: auto" class="matcrab-exercise-status matcrab-variable-exercise-group"></div>

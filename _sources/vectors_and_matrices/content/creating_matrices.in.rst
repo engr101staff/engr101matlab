@@ -9,7 +9,7 @@ Creating a basic matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
@@ -40,7 +40,7 @@ You can also use smaller matrices as components:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
@@ -72,7 +72,7 @@ And the next time you're at a (socially distanced) party, you can show off this 
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />

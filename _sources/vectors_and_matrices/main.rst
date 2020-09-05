@@ -4,8 +4,8 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../../_static/common/css/matlab.css">
-   <script src="../../_static/common/js/exercises.bundle.js"></script>
+   <link rel="stylesheet" href="../_static/common/css/matlab.css">
+   <script src="../_static/common/js/exercises.bundle.js"></script>
 
 ====================
 Vectors and Matrices
@@ -76,7 +76,7 @@ MatCrab
    <table><tbody>
       <tr>
          <td style="width:125px; text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="width: 100px" />
+            <img src="../_static/common/img/crabster.jpg" style="width: 100px" />
          </td>
          <td>
             This is MatCrab. MatCrab knows all about MATLAB, and can help you try out MATLAB code right here in Runestone! When you see MatCrab next to an example, feel free to change the code in the example if you have a "what-if" question and want to try something out. To run the code, hit &lt;enter&gt;. (If you need to type a newline, use shift+&lt;enter&gt;.) You can also click the "Reset" button to go back to the original example.
@@ -89,7 +89,7 @@ MatCrab
    
 
 .. .. list-table:: test
-..    * - .. image:: /_static/common/img/crabster.jpg
+..    * - .. image:: ../_static/common/img/crabster.jpg
 ..          :height: 60px
 ..          :alt: The MatCrab mascot, a cartoon crab
 ..      - This is MatCrab. They can help you with stuff.

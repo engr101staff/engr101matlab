@@ -4,8 +4,8 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../../_static/common/css/matlab.css">
-   <script src="../../_static/common/js/exercises.bundle.js"></script>
+   <link rel="stylesheet" href="../_static/common/css/matlab.css">
+   <script src="../_static/common/js/exercises.bundle.js"></script>
 
 ==================
 Functions and Data
@@ -104,7 +104,7 @@ Here's an example of the :code:`sum()` function:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -135,7 +135,7 @@ Here's an example of the :code:`sum()` function:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

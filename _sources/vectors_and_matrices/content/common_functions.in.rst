@@ -12,7 +12,7 @@ The :code:`'` operator implements a **transpose** operation, which basically giv
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -44,7 +44,7 @@ Functions for **flipping** and **rotating** a matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -74,7 +74,7 @@ Functions for **flipping** and **rotating** a matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -104,7 +104,7 @@ Functions for **flipping** and **rotating** a matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -133,7 +133,7 @@ Functions for **creating default matrices** out of zeroes or ones:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -160,7 +160,7 @@ Functions for **creating default matrices** out of zeroes or ones:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -187,7 +187,7 @@ Functions for **creating default matrices** out of zeroes or ones:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -214,7 +214,7 @@ Functions for **creating default matrices** out of zeroes or ones:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -243,7 +243,7 @@ A function for **creating magic matrices** where all the rows and columns add up
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -280,7 +280,7 @@ And functions for getting the dimensions of a vector or matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -310,7 +310,7 @@ And functions for getting the dimensions of a vector or matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -340,7 +340,7 @@ And functions for getting the dimensions of a vector or matrix:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

@@ -81,7 +81,7 @@ MatCrab can help you check any of your work above, if you would like.
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

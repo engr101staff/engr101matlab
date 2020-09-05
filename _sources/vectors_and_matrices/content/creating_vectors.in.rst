@@ -7,7 +7,7 @@ Let's recap the video above with a few MatCrab examples. Here is an example that
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
@@ -36,7 +36,7 @@ And here is an example that uses spaces to separate the elements:
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
@@ -65,7 +65,7 @@ An "element" might even be another vector! In this case, the existing vector is 
       <table><tbody>
         <tr>
           <td style="text-align: center">
-            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
             <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
