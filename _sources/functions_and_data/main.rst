@@ -2,6 +2,11 @@
    :prefix: Q
    :start: 1
 
+.. raw:: html
+
+   <link rel="stylesheet" href="../../_static/common/css/matlab.css">
+   <script src="../../_static/common/js/exercises.bundle.js"></script>
+
 ==================
 Functions and Data
 ==================
@@ -16,7 +21,7 @@ Warm Up
 
   .. reveal:: ch03_01_revealwt_warm_up
 
-    .. youtube:: Tu4ZUHTl65w
+    .. youtube:: 10Bjqm82Rs8
       :divid: ch03_01_wt_warm_up
       :height: 315
       :width: 560
@@ -42,7 +47,7 @@ Exercise: Function Basics
 
   .. reveal:: ch03_02_revealwt_function_basics
 
-    .. youtube:: Tu4ZUHTl65w
+    .. youtube:: Nl_eGFiq5UM
       :divid: ch03_02_wt_function_basics
       :height: 315
       :width: 560
@@ -53,7 +58,7 @@ Exercise: Function Basics
 Vectorization and Data Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: K1VyBJ4wkgg
+.. youtube:: TiyXzP96r1U
     :divid: ch03_03_vid_data_files
     :height: 315
     :width: 560
@@ -69,7 +74,7 @@ Exercise: Reading Soil Sample Data
 
   .. reveal:: ch03_03_revealwt_data_files
 
-    .. youtube:: Tu4ZUHTl65w
+    .. youtube:: 4pR_k4Nq1GU
       :divid: ch03_03_wt_data_files
       :height: 315
       :width: 560
@@ -79,11 +84,75 @@ Exercise: Reading Soil Sample Data
 Built-in Aggregator Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: K1VyBJ4wkgg
+.. youtube:: hulFvFgqX7s
     :divid: ch03_04_vid_aggregator_functions
     :height: 315
     :width: 560
     :align: center
+
+|
+
+Here's an example of the :code:`sum()` function:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        a = [7,2,8,4;2,4,6,2;2,4,7,9];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none; width: 400px; height: 50px; margin-bottom: 10px;">
+              result = sum(a);
+            </textarea>
+            <div class="matcrab-vis" style="width: 400px; height: 200px">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+|
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        a = [7,2,8,4;2,4,6,2;2,4,7,9];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="/_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none; width: 400px; height: 50px; margin-bottom: 10px;">
+              result = sum(sum(a));
+            </textarea>
+            <div class="matcrab-vis" style="width: 400px; height: 200px">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
 
 --------------------------------
 Exercise: Monthly Average of ESP
@@ -95,26 +164,26 @@ Exercise: Monthly Average of ESP
 
   .. reveal:: ch03_04_revealwt_monthly_average
 
-    .. youtube:: Tu4ZUHTl65w
+    .. youtube:: 3Whq8_IetxM
       :divid: ch03_04_wt_monthly_average
       :height: 315
       :width: 560
       :align: center
 
 
-^^^^^^^^^^^^^^^^^^^^
-Scope and Parameters
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parameter Passing and Scope
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: K1VyBJ4wkgg
+.. youtube:: KTNmk3TX01M
     :divid: ch03_05_vid_scope_and_parameters
     :height: 315
     :width: 560
     :align: center
 
-------------------------------
-Exercise: Scope and Parameters
-------------------------------
+-------------------------------------
+Exercise: Parameter Passing and Scope
+-------------------------------------
 
 .. include:: ex/scope_and_parameters.in.rst
 
@@ -122,7 +191,7 @@ Exercise: Scope and Parameters
 
   .. reveal:: ch03_05_revealwt_scope_and_parameters
 
-    .. youtube:: Tu4ZUHTl65w
+    .. youtube:: bkn8jwEyMgY
       :divid: ch03_05_wt_scope_and_parameters
       :height: 315
       :width: 560
@@ -132,51 +201,8 @@ Exercise: Scope and Parameters
 Unit Testing
 ^^^^^^^^^^^^
 
-.. youtube:: K1VyBJ4wkgg
+.. youtube:: tSY8LcIVEI4
     :divid: ch03_06_vid_unit_testing
     :height: 315
     :width: 560
     :align: center
-
-----------------------
-Exercise: Unit Testing
-----------------------
-
-.. list-table:: 
-  :align: left
-
-  * - .. mchoice:: ch03_06_ex_unit_testing_01
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
-
-        TODO
-
-    - .. mchoice:: ch03_06_ex_unit_testing_02
-        :answer_a: TODO
-        :answer_b: TODO
-        :answer_c: TODO
-        :answer_d: TODO
-        :correct: a
-        :feedback_a: TODO
-        :feedback_b: TODO
-        :feedback_c: TODO
-        :feedback_d: TODO
-
-        TODO
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch03_06_revealwt_unit_testing
-
-    .. youtube:: Tu4ZUHTl65w
-      :divid: ch03_06_wt_unit_testing
-      :height: 315
-      :width: 560
-      :align: center
