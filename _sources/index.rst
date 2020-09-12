@@ -15,6 +15,7 @@ Table of Contents
   intro_to_matlab/toctree.rst
   vectors_and_matrices/toctree.rst
   functions_and_data/toctree.rst
+  logical_indexing/toctree.rst
 
 
 ^^^^^^^^^^
