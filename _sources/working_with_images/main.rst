@@ -197,7 +197,7 @@ Example: Contrast Stretching
 
   .. reveal:: ch05_04_revealwt_contrast_stretching
 
-    We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+    Please check the Piazza Q&A thread for links to the walkthrough videos.
 
 
 ^^^^^^^^^^^^^^^^
@@ -233,7 +233,7 @@ Exercise: Row/Column/Layer Indexing
 
   .. reveal:: ch05_05_revealwt_row_column_layer_indexing
 
-    We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+    Please check the Piazza Q&A thread for links to the walkthrough videos.
 
 
 |

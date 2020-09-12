@@ -79,7 +79,7 @@ Exercise: Practice with Relational Operators
 
   .. reveal:: ch04_01_revealwt_relational_operations
 
-   We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+   Please check the Piazza Q&A thread for links to the walkthrough videos.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using Logical Values and Logical Indexing
@@ -114,7 +114,7 @@ Exercise: Analyzing Some Rocks
 
   .. reveal:: ch04_02_revealwt_relational_operations
 
-   We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+   Please check the Piazza Q&A thread for links to the walkthrough videos.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Logical Operators (and/or)
@@ -149,7 +149,7 @@ Exercise: More Rock Analysis
 
   .. reveal:: ch04_03_revealwt_logical_operators
 
-   We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+   Please check the Piazza Q&A thread for links to the walkthrough videos.
 
 ^^^^^^^^^^^^^^^^^^^
 Operator Precedence
@@ -192,4 +192,4 @@ Exercise: Indexing and Assignment
 
   .. reveal:: ch04_03_revealwt_indexing_and_assignment
 
-   We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+   Please check the Piazza Q&A thread for links to the walkthrough videos.
