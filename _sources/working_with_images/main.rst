@@ -14,18 +14,11 @@ Working with Images
 ===================
 
 .. figure:: img/boat_color.png
-   :width: 560
+   :width: 400
    :align: center
    :alt: boat_color.png
 
    *"Speed & Foam", Michel Brousseau*
-
-^^^^^^^
-Warm Up
-^^^^^^^
-
-TODO
-
 
 ^^^^^^^^^^^^
 Introduction
@@ -69,18 +62,17 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images.
 
       - Color image of a boat
 
-    * - :download:`minecraft_face.png <../_static/working_with_images/minecraft_face.png>`
+    * - :download:`adjust_contrast.m <../_static/working_with_images/adjust_contrast.m>`
 
-      - .. reveal:: minecraft_face_png_preview
+      - .. reveal:: adjust_contrast_m_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: <code>minecraft_face.png</code>
+          :modaltitle: <code>adjust_contrast.m</code>
 
-          .. image:: img/minecraft_face.png
-            :align: center
-            :alt: minecraft_face.png (PNG format)
+          .. literalinclude:: ../_static/working_with_images/adjust_contrast.m
+            :language: matlab
 
-      - An 8x8 RGB image of "Alex" from Minecraft
+      - Starter file for exercise
     
   .. reveal:: working_with_images_download_instructions
     :showtitle: Download Instructions
@@ -93,50 +85,6 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images.
 .. admonition:: Heads Up!
 
   For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`).
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Grayscale Images as Matrices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. figure:: img/ansel_adams.jpg
-   :width: 400
-   :align: center
-   :alt: ansel_adams.jpg
-
-   *The Tetons and Snake River, Grand Teton National Park, Wyoming. Ansel Adams*
-
-We can use matlab to make, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we can represent this as matrix of numbers!
-
-.. youtube:: J6PU1e6K0T8
-  :divid: ch05_02_vid_grayscale_images
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-Each cell in the matrix represents a pixel of the picture. The intensity value determines the shade of gray based on a gradient. The higher the intensity value, the closer to white. The value can be represented 2 ways:
-
-- An integer between 0 and 255, inclusive
-- A real number (a double) between 0 and 1, inclusive
-
---------------------------
-Exercise: Grayscale Images
---------------------------
-
-TODO
-
-.. include:: ex/grayscale_images.in.rst
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch05_02_revealwt_grayscale_images
-
-    .. youtube:: m2VFdVWN28s
-      :divid: ch05_02_wt_grayscale_images
-      :height: 315
-      :width: 560
-      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Loading and Saving Images
@@ -168,7 +116,15 @@ Here's the recap:
 
     % Assume img is a matrix containing a representation of image data
     % This line will save that into a new image file named newFile.png
-    img = imread('newFile.png');
+    imwrite(img, 'newFile.png');
+
+- To **display** a matrix as an image in a **figure window**, use the :code:`imshow()` function:
+
+  .. code-block:: matlab
+
+    imshow(img);
+
+  By the way, sometimes the figure window will open "underneath" the other matlab window. You might need to go to your taskbar to find it.
 
 MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
 
@@ -178,10 +134,38 @@ MATLAB can handle most common image file formats including :file:`.jpg`, :file:`
 
   Finally, you'll usually want to remember to **add the semicolon** :code:`;` **to suppress output when working with images**, since otherwise the result will print out at the command window - for an image, the result may be *huge*, which makes this behavior annoying.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Grayscale Images as Matrices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: img/ansel_adams.jpg
+   :width: 400
+   :align: center
+   :alt: ansel_adams.jpg
+
+   *The Tetons and Snake River, Grand Teton National Park, Wyoming. Ansel Adams*
+
+We can use matlab to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
+
+.. youtube:: J6PU1e6K0T8
+  :divid: ch05_02_vid_grayscale_images
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+Each cell in the matrix represents a pixel of the picture. The intensity value determines the shade of gray based on a gradient. The higher the intensity value, the closer to white. The value can be represented 2 ways:
+
+- An integer between 0 and 255, inclusive
+- A real number (a double) between 0 and 1, inclusive
+
+By default, images you load through :code:`imread()` are generally going to be in the 0 to 255 format, so we'll work with that for now.
+
 ^^^^^^^^^^^^^^^^
 Image Operations
 ^^^^^^^^^^^^^^^^
-.. section 3
+.. section 4
 
 Let's work through a few examples to give you some practice loading and working with images, as well as highlight a couple common image operations.
 
@@ -189,7 +173,7 @@ Let's work through a few examples to give you some practice loading and working 
 Example: Thresholding
 ---------------------
 
-Matlab has built-in functions for saving and loading images. Let's look at an example:
+Sometimes you might be interested in identifying particular pixels in an image which are above or below a particular threshold. Logical indexing works well for this...
 
 .. youtube:: npx7BmWdaDI
   :divid: ch05_04_vid_thresholding
@@ -203,9 +187,9 @@ Matlab has built-in functions for saving and loading images. Let's look at an ex
 
   You can also use imshow to display a logical matrix directly, e.g. :code:`imshow(img > 200)`, and the figure window will show a black-and-white image white corresponds to true values in the image and black to false.
 
------------------------------
-Exercise: Contrast Stretching
------------------------------
+----------------------------
+Example: Contrast Stretching
+----------------------------
 
 .. include:: ex/contrast_stretching.in.rst
 
@@ -213,11 +197,8 @@ Exercise: Contrast Stretching
 
   .. reveal:: ch05_04_revealwt_contrast_stretching
 
-    .. youtube:: m2VFdVWN28s
-      :divid: ch05_04_wt_contrast_stretching
-      :height: 315
-      :width: 560
-      :align: center
+    We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+
 
 ^^^^^^^^^^^^^^^^
 RGB Color Images
@@ -226,9 +207,9 @@ RGB Color Images
 
 We can use a matrix of numbers to represent a grayscale image, with values between 0 and 255 for different shades of gray. If we want a color image, how could we describe the color of each pixel?
 
-We could try to have a number for each color, e.g. 0 = red, 1 = orange, 2 = blue, ..., 58 = etc. Although a box of 256 crayons would be pretty awesome, we really need a strategy that can represent every possible color, and there are a lot more than 256! A fixed set of colors also doesn't allow us to account for things like brightness or saturation of the color, which are important to our human understanding of color.
+We could try to have a number for each color, e.g. 0 = red, 1 = orange, 2 = blue, ..., 58 = etc. Although a box of 256 crayons would be pretty awesome, we really need a strategy that can represent every possible color, and there are a lot more than 256! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense, etc.) in a way that mataches our human understanding of color.
 
-You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll look at something similar, but using the primary colors of light which are red, green, and blue (RGB). If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations! This representation is inspired by the way our eyes perceive color and also aligned with the way computer displays produce color.
+You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll do something similar, but using the primary colors of light which are red, green, and blue (RGB). This representation is inspired by the way our eyes perceive color and also aligned with the way computer displays produce color. If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations!
 
 In MATLAB RGB images, we need to find a way to describe where each pixel is and also describe the amount of red, green, and blue in each pixel. We do this with a matrix for each *color channel* in the image. If we wanted to, we could store these channels as individual matrices, but that could get confusing fast. Instead, we'll take advantage of MATLAB's capability to make 3D matrices and store each RGB color channel as one layer.
 
@@ -252,11 +233,8 @@ Exercise: Row/Column/Layer Indexing
 
   .. reveal:: ch05_05_revealwt_row_column_layer_indexing
 
-    .. youtube:: m2VFdVWN28s
-      :divid: ch05_05_wt_row_column_layer_indexing
-      :height: 315
-      :width: 560
-      :align: center
+    We are still working on getting exercise walkthroughs finalized for this chapter. In the meantime, please feel free to ask us questions on Piazza or make an appointment to see us in office hours.
+
 
 |
 
@@ -329,9 +307,9 @@ We also want to introduce another representation for color images that uses chan
 
 |
 
-This is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify or manipulate the blue colors in the background by just looking at the blue channel, In the next section we'll show you how to use an HSV image representation to approach this problem. 
+This is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify the blue colors in the background by just looking at the blue channel, because making the color "blue" actually depends on the ratio of all three R, G, and B channels.
 
-HSV is another three-channel representation, where the three channels: hue, saturation, and value. Here's the basic idea of each:
+Instead, let's turn to HSV, which is another three-channel representation also having three channels: hue, saturation, and value. Here's the basic idea of each:
 
 - Hue: "which basic color is it?"
 - Saturation: "how strong is the color?"
@@ -344,12 +322,20 @@ HSV is another three-channel representation, where the three channels: hue, satu
 
    The HSV color space
 
+Here's the boat picture again and a representation of what the data in each channel looks like:
 
 .. list-table:: 
   :align: center
   :widths: auto
 
-  * - .. figure:: img/boat_hue.jpg
+  * - .. figure:: img/boat_color.png
+        :width: 180
+        :align: center
+        :alt: boat_color.png
+
+        Original
+
+    - .. figure:: img/boat_hue.jpg
         :width: 180
         :align: center
         :alt: boat_hue.jpg
@@ -368,20 +354,37 @@ HSV is another three-channel representation, where the three channels: hue, satu
 
         Value
 
------------------------------------
-Exercise: Row/Column/Layer Indexing
------------------------------------
+Take a moment to think about why the hue, saturation, and value channels look the way they do for the boat image.
 
-.. include:: ex/row_column_layer_indexing.in.rst
+- **Hue** All the blue colors in this hue channel we expect to see, but note that the sails (which look white in the original picture.) have varying hues throughout. Why?...
+- **Saturation** In the picture above, we can see some areas have lower (darker) saturation, while others have high (lighter) saturation. The reason the sails look white in the original picture, and not blue, orange, or pink, is that the corresponding saturation levels are low -- there might be a color, but there is very little of that color. You can see this in the color space diagram - as you dial down saturation and go the center of the cylinder, you approach gray regardless of the hue.
+- **Value** Finally, the value channel determines the brightness of a pixel. For example, the waves have a lower (darker) value than the sky, since they are a darker shade of blue.
 
-.. admonition:: Walkthrough
+Now, we can start to see how all three channels work together to represent the original picture. The dark blue water has a blue hue, medium saturation, and low value. The white sails have varying hues throughout, but the low saturation and high value combine to give the sails their more-or-less white color. 
 
-  .. reveal:: ch05_05_revealwt_row_column_layer_indexing
+------------------------------
+Converting Between RGB and HSV
+------------------------------
 
-    .. youtube:: m2VFdVWN28s
-      :divid: ch05_05_wt_row_column_layer_indexing
-      :height: 315
-      :width: 560
-      :align: center
+MATLAB provides two functions for converting between RGB and HSV image represenations. Let's say you have a 3D matrix called :code:`img` representing an image in RGB and want to convert it to a 3D matrix with HSV represenation:
 
-|
+.. code-block:: matlab
+
+  hsv = rgb2hsv(img);
+
+In the other direction, you can convert back using:
+
+.. code-block:: matlab
+
+  img = hsv2rgb(hsv);
+
+Something to keep in mind is that you should *only* use :code:`imshow()` with RGB matrices. If you want to look at an HSV image, just convert it before using :code:`imshow()`. Otherwise the result you see looks really weird.
+
+Finally, the HSV represenation in MATLAB uses values that range between 0 and 1, rather than integers between 0 and 255. So a "full" saturation pixel would have a value of 1 in the saturation channel, for example.
+
+--------------------------------------
+Exercise: Image Desaturation using HSV
+--------------------------------------
+.. section 8
+
+.. include:: ex/image_desaturation.in.rst

@@ -1,6 +1,6 @@
 Let's get some practice with selecting certain elements inside of an RGB image file. For the following exercises, assume we have RBG image data stored in a 3D matrix called img.
 
-.. mchoice:: ch02_05_ex_row_column_layer_indexing_01
+.. mchoice:: ch05_05_ex_row_column_layer_indexing_01
   :answer_a: img(1, 1, :)
   :answer_b: img(:, :, 1)
   :answer_c: img(1, :, :)
@@ -11,7 +11,7 @@ Let's get some practice with selecting certain elements inside of an RGB image f
 
   What MATLAB indexing expression selects just the red channel from the image?
 
-.. mchoice:: ch02_05_ex_row_column_layer_indexing_02
+.. mchoice:: ch05_05_ex_row_column_layer_indexing_02
   :answer_a: img(:, :, 3)
   :answer_b: img(:, :, B)
   :answer_c: img(3, 3, :)
@@ -22,7 +22,7 @@ Let's get some practice with selecting certain elements inside of an RGB image f
 
   What MATLAB indexing expression selects just the blue channel from the image?
 
-.. mchoice:: ch02_05_ex_row_column_layer_indexing_03
+.. mchoice:: ch05_05_ex_row_column_layer_indexing_03
   :answer_a: img(4, :, 2)
   :answer_b: img(:, 4, 2)
   :answer_c: img(2, 4, :)
@@ -33,7 +33,7 @@ Let's get some practice with selecting certain elements inside of an RGB image f
 
   What MATLAB indexing expression will select the 4th row in the green layer?
 
-.. mchoice:: ch02_05_ex_row_column_layer_indexing_04
+.. mchoice:: ch05_05_ex_row_column_layer_indexing_04
   :answer_a: img(2,4,3)
   :answer_b: img(:,[2,4],3)
   :answer_c: img(:,[2:4],3)
@@ -44,7 +44,7 @@ Let's get some practice with selecting certain elements inside of an RGB image f
 
   What MATLAB indexing expression will select columns 2 through 4 of the blue channel? 
 
-.. mchoice:: ch02_05_ex_row_column_layer_indexing_05
+.. mchoice:: ch05_05_ex_row_column_layer_indexing_05
   :answer_a: img(:,3,end)
   :answer_b: img(3,end,:)
   :answer_c: img(3,end,1)

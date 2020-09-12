@@ -85,4 +85,4 @@ To test your :code:`adjust_contrast` function, you can just call it from the com
 
 .. shortanswer:: ch05_04_ex_contrast_stretching_function
 
-  Paste in a copy of your completed :file:`adjust_contrast.m` function.
+  Paste in a copy of your completed :file:`adjust_contrast.m` file.
