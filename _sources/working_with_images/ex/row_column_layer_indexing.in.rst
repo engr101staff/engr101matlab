@@ -48,7 +48,7 @@ Let's get some practice with selecting certain elements inside of an RGB image f
   :answer_a: img(:,3,end)
   :answer_b: img(3,end,:)
   :answer_c: img(3,end,1)
-  :correct: c
+  :correct: b
   :feedback_a: Oops! Remember, the ordering of indices is row, column, layer!
   :feedback_b: Correct! Using the : to select each layer will give you a selection for the R, G, and B values.
   :feedback_c: Oops! Using 1 for the layer index only selects the red channel. How can you select all of the channels?
