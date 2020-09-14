@@ -133,7 +133,7 @@ For each step, we'll ask you to identify the correct code from a set of choices,
 
     *The range of possible hue values between 0 and 1*
 
-  Select the code below that finds all pixels with a hue between 0.5 and 0.56, and sets their saturation to 0 (i.e. meaning color "strength" of 0). Hint: Use logical indexing.
+  Select the code below that finds all pixels with a hue between 0.5 and 0.65, and sets their saturation to 0 (i.e. meaning color "strength" of 0). Hint: Use logical indexing.
 
   .. list-table:: 
     :align: left
