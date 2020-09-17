@@ -230,64 +230,163 @@ As the Exploring Histograms website shows, histograms are very sensitive to the 
   :width: 560
   :align: center
 
-----------------------------
-Exercise: More Rock Analysis
-----------------------------
+----------------------------------
+Exercise: City Longitude Histogram
+----------------------------------
 
-.. figure:: img/rocks.png
-   :width: 300
-   :align: center
-   :alt: rocks.png
-
-   *hi it's me again*
-
-.. include:: ex/logical_operators.in.rst
+.. include:: ex/city_longitude_histogram.in.rst
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch07_03_revealwt_logical_operators
-
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
-
-^^^^^^^^^^^^^^^^^^^
-Operator Precedence
-^^^^^^^^^^^^^^^^^^^
-.. section 4
-
-Now that we have quite a few operators to work with, it makes sense to discuss how MATLAB determines order of operations according to the **precedence** of each operator.
-
-.. youtube:: U8hXZPxLIsg
-  :divid: ch07_04_vid_indexing_and_assignment
-  :height: 315
-  :width: 560
-  :align: center
-
-|
+  .. reveal:: ch07_04_revealwt_city_longitude_histogram
+  
+    .. youtube:: ZEN5PjRXrgE
+      :divid: ch07_04_wt_city_longitude_histogram
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Logical Indexing and Assignment
+Variance and Standard Deviation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators.
+The mean, median, and mode of a dataset are useful starting points for understanding the characteristics of a dataset, but they are single numbers that describe the average, middle, and most common values (the central tendencies) of the dataset. In engineering, we also need to accommodate the more unlikely values, which can often be much smaller or much larger relative to the mean, median, or mode.
 
+Variance and standard deviation are measures in descriptive statistics that tell us how 'spread out' a dataset is. The standard deviation is just the square root of the variance. Here is a histogram (or *distribution*) of data that is more *narrow* - more of the data points are grouped around a central value (0 in this case):
 
-.. youtube:: XGycZcWcU2I
-  :divid: ch07_05_vid_indexing_and_assignment
+.. figure:: img/VarStdDev_1.png
+  :width: 450
+  :align: center
+  :alt: A histogram of a narrow distribution centered around 0 with a variance of 0.5537 and standard deviation of 0.7440.
+
+  ..
+
+Here is a histogram of data that is more *wide* - more of the data points are farther away from a central value (0 in this case): 
+
+.. figure:: img/VarStdDev_2.png
+  :width: 450
+  :align: center
+  :alt: A histogram of a wide distribution centered around 0 with a variance of 2.1975 and standard deviation of 1.4824.
+
+  ..
+
+The more narrow distribution's variance is smaller than the wider distribution's variance. Similarly, the more narrow distribution's standard deviation is smaller than the wider distribution's standard deviation. Therefore, the smaller the variance (or standard deviation), the more narrow the distribution will be. 
+
+Important things to note when we compare these two figures:
+
+- The x-axes have the same limits, and the y-axes have the same limits. This allows us to directly compare the data visually.
+- These figures also have the same underlying "type" of data (normally-distributed random numbers), allowing us to directly compare the variance and standard deviation when we state, "This variance is smaller than that variance." (Comparing the variance of the height of a blade of grass to the variance of the top speed of cheetahs makes no sense.)
+- Variance and standard deviation only offer an aggregate measure of the spread of a dataset. It's often important to consider the shape of the distribution as well (e.g. is it a bell curve or a uniform distribution?).
+
+MATLAB has built-in functions to calculate the variance and standard deviation:
+
+- :code:`var()` - variance
+- :code:`std()` - standard deviation
+
+.. admonition:: Danger!
+
+  If you want to take the variance (or standard deviation) of all elements in a matrix :code:`M`, don't use :code:`var(var(M))` - that's not correct because the variance of the column variances is not mathematically equivalent to the variance of the whole dataset. Instead, use either of the other approaches, :code:`var(M(:))` or :code:`var(M, 0, 'all')`.
+
+---------------------------------------
+Exercise: More City Latitude Statistics
+---------------------------------------
+
+.. include:: ex/more_city_latitude_statistics.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_05_revealwt_more_city_longitude_histogram
+  
+    .. youtube:: 1yqS1kCiQGc
+      :divid: ch07_05_wt_more_city_longitude_histogram
+      :height: 315
+      :width: 560
+      :align: center
+
+^^^^^^^^^^^^^^^^^^^^^
+Plots with Error Bars
+^^^^^^^^^^^^^^^^^^^^^
+.. section 6
+
+Engineering data is often plotted with error bars included. Error bars can be used to convey a range of values for each point on the plot, or uncertainty about a measured value. MATLAB's errorbar function will create a plot with "error bars" at each data point, like this:
+
+.. figure:: img/SampleErrorPlot.png
+  :width: 450
+  :align: center
+  :alt: A plot including error bars indicates uncertainty.
+
+  You can download the script that generates this plot: :download:`SampleErrorbarPlot.m <../_static/statistics_and_simulation/SampleErrorbarPlot.m>`
+
+Let's investigate error bar plots more with a hypothetical example: 
+
+We work for a company that produces smartphones. Our company wants to analyze battery lifetime throughout several years of use to see if we can make the following claims:
+
+1. Our phones have 3 hours battery life when new.
+2. After 2 years, our phones will still have 2 hours of battery life.
+
+A battery's lifetime is defined as the length of time the battery can go before needing to be charged. A sample set of our batteries have been put through several years of simulated smartphone use. Twice per "simulated year", the lifetimes of each battery were tested and the mean and standard deviation of the for the set were recorded.
+
+We would like to visualize the degradation of battery lifetime throughout the years as well as the amount of variability in the dataset to confirm that the company can make the two claims stated above.
+
+The videos below show how an error bar plot is an effective tool for this analysis. If you would like to follow along with the videos, make sure to download these files first (see the chapter files box at the start of the chapter):
+
+- :file:`batteryLife.mat`
+- :file:`AnalyzeBatteries.m`
+
+First, let's just make the plot.
+
+.. youtube:: EKTDMx8IdCE
+  :divid: ch07_06_vid_batteryLife_01
   :height: 315
   :width: 560
   :align: center
 
 |
 
----------------------------------
-Exercise: Indexing and Assignment
----------------------------------
+Now, how can we interpret these results?
 
-.. include:: ex/indexing_and_assignment.in.rst
+.. youtube:: l1boh2CJdPE
+  :divid: ch07_06_vid_batteryLife_02
+  :height: 315
+  :width: 560
+  :align: center
+
+.. admonition:: Did you know?
+
+  Putting products through simulated use to test reliability is serious business, and analyses like this example are often used in industry to drive marketing. For example, some of the first phones with foldable screens were put through tens of thousands of flips to help alleviate customer fears about the durability of the screen. Check it out:
+
+  .. youtube:: NvUi_-1wHFA
+    :divid: ch07_06_vid_flip_phones
+    :height: 315
+    :width: 560
+    :align: center
+
+-------------------------
+Exercise: Error Bar Plots
+-------------------------
+
+.. include:: ex/error_bar_plots.in.rst
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch07_03_revealwt_indexing_and_assignment
+  .. reveal:: ch07_06_revealwt_error_bar_plots
+  
+    .. youtube:: g296QQ3RdlY
+      :divid: ch07_06_wt_error_bar_plots
+      :height: 315
+      :width: 560
+      :align: center
 
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Analyzing Data vs. Simulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 7
+
+.. include:: content/linspace_intro.in.rst
+
+-------------------------------------
+Exercise: :code:`linspace()` Practice
+-------------------------------------
+
+.. include:: ex/linspace_intro.in.rst
