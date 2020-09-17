@@ -1,0 +1,293 @@
+.. qnum::
+   :prefix: Q
+   :start: 1
+
+.. raw:: html
+
+   <link rel="stylesheet" href="../_static/common/css/matlab.css">
+   <script src="../_static/common/js/exercises.bundle.js"></script>
+
+=========================
+Statistics and Simulation
+=========================
+
+.. admonition:: Chapter Files
+
+  We'll be using several files throughout this chapter's exercises. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table:: 
+    :align: left
+    :widths: auto
+
+    * - :download:`GreatLakesMaxIceCoverage.xlsx <../_static/statistics_and_simulation/GreatLakesMaxIceCoverage.xlsx>`
+
+      - .. reveal:: GreatLakesMaxIceCoverage_xlsx_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>GreatLakesMaxIceCoverage.xlsx</code>
+
+          .. image:: img/great_lakes_xlsx_preview.png
+            :width: 400
+            :align: center
+            :alt: GreatLakesMaxIceCoverage.xlsx contains an Excel sheet
+
+      - Dataset containing maximum ice coverage percentages on the Great Lakes by year (`source <https://www.glerl.noaa.gov/data/ice/dates_AMIC.txt>`_)
+    
+  .. reveal:: statistics_and_simulation_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for MATLAB
+    
+    .. include:: ../common/matlab_download_instructions.in.rst
+      
+
+
+^^^^^^^^^^^^
+Introduction
+^^^^^^^^^^^^
+.. section 1
+
+^^^^^^^
+Warm Up
+^^^^^^^
+.. section 2
+
+.. include:: content/warm_up.in.rst
+
+-----------------------------------------------------
+Exercise: Min and Max Ice Coverage of the Great Lakes
+-----------------------------------------------------
+
+.. include:: ex/warm_up.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_02_revealwt_warm_up
+
+    .. youtube:: 10Bjqm82Rs8
+      :divid: ch07_02_wt_warm_up
+      :height: 315
+      :width: 560
+      :align: center
+
+^^^^^^^^^^^^^^^^^^^^^^
+Mean, Median, and Mode
+^^^^^^^^^^^^^^^^^^^^^^
+.. section 3
+
+Three other common statistical measures of data are:
+
+- **mean** - the average of the dataset
+- **median** - the number that would appear in the middle if the numbers in the dataset were sorted in order
+- **mode** - the most common number in the dataset
+
+MATLAB has built-in functions to calculate each of these statistical measures:
+
+- :code:`mean()` 
+- :code:`median()` 
+- :code:`mode()`
+
+--------------
+:code:`mean()`
+--------------
+
+The mean function returns the column-by-column mean of a matrix, similar to the sum function from Chapter 3. For example, if we had this matrix :code:`A`:
+
+.. figure:: img/Mean_1.png
+  :width: 250
+  :align: center
+  :alt: A is initialized with A = [2,3,4,3;4,2,3,3];
+
+  ..
+
+And we called :code:`mean(A)`, we would get a row vector that contains the mean values of each column of :code:`A`:
+
+.. figure:: img/Mean_2.png
+  :width: 250
+  :align: center
+  :alt: The result of calling mean(A) is [3, 2.5, 4, 3]
+
+  ..
+
+If you would instead like to work row-by-row and find the means of each row in your matrix, you may specify an additional argument of :code:`2` to specify the 2nd dimension (by rows). For example:
+
+.. figure:: img/Mean_3.png
+  :width: 400
+  :align: center
+  :alt: The result of calling mean(A, 2) is [3.25; 3]
+
+  ..
+
+.. admonition:: Heads Up!
+
+  For a row vector, the mean function returns the mean of that row (rather than the mean of each column, which would be just the vector itself and wouldn't be very useful). This means that if you start with a vector, functions like :code:`mean()` will *always* return a single result.
+
+Finally, if you want to get the mean of all the elements in a matrix, you have a few choices:
+
+.. figure:: img/Mean_4.png
+  :width: 400
+  :align: center
+  :alt: Three ways to compute the mean of all elements
+
+  ..
+
+- :code:`mean(mean(A))` - call the mean function twice in succession (means of columns, then the mean of those means)
+- :code:`mean(A(:))` - select all the elements in A which creates a column vector; then compute the mean value of the column vector, giving you the mean value of the entire matrix
+- :code:`mean(A, 'all')` - the 'all' option tells MATLAB to override the column-by-column default behavior and get all of the elements in A. **Due to circumstances beyond our control, the Engr 101 Autograder cannot handle this option, so please beware and do not use it in your projects!**
+
+
+----------------
+:code:`median()`
+----------------
+
+The :code:`median` function returns the median of a dataset, which is the value that would appear in the middle if the data were put into sorted order. If there is an even number of elements, the :code:`median` function averages the two elements in the middle of the sorted elements. It works with arrays in the same way as the mean function (i.e. column-by-column, selecting dimensions, etc.).
+
+In the following example, the vector :code:`B` has 10 elements (an even number of elements). After the vector :code:`B` is sorted within the :code:`median()` function, the middle element is found. Since :code:`B` has an even number of elements, the function takes the two elements in the middle and finds the mean of those values (in this case, the mean of the values 5 and 6 is 5.5), and returns that mean value as the median value of vector :code:`B`.
+
+.. figure:: img/Median_1.png
+  :width: 450
+  :align: center
+  :alt: The median of the dataset [5,0,8,9,6,7,7,3,5,1] is 5.5.
+
+  ..
+
+.. admonition:: Danger!
+
+  If you want to take the median of all elements in a matrix :code:`M`, don't use :code:`median(median(M))` - that's not correct because the median of the column medians is not mathematically equivalent to the median of the whole dataset. Instead, use either of the other approaches, :code:`median(M(:))` or :code:`median(M, 'all')`.
+
+--------------
+:code:`mode()`
+--------------
+
+The :code:`mode` function returns the value of the dataset that occurs most often. It works with arrays in the same way as the mean function (i.e. column-by-column, selecting dimensions, etc.).
+
+In the following example, the vector :code:`X` has three elements with the value 8. The value 8 occurs the most times, so that is the mode for this vector:
+
+.. figure:: img/Mode_1.png
+  :width: 450
+  :align: center
+  :alt: The mode of the dataset [1,9,0,7,8,8,0,3,7,8] is 8.
+
+  ..
+
+If you use a compound return, you can also get the frequency of the mode value; the frequency is how many times the mode value occurred. Using our vector :code:`X`:
+
+.. figure:: img/Mode_2.png
+  :width: 450
+  :align: center
+  :alt: The mode of the dataset [1,9,0,7,8,8,0,3,7,8] is 8, which occurs 3 times.
+
+  ..
+
+.. admonition:: Danger!
+
+  If you want to take the mode of all elements in a matrix :code:`M`, don't use :code:`mode(mode(M))` - that's not correct because the mode of the column modes is not mathematically equivalent to the mode of the whole dataset. Instead, use either of the other approaches, :code:`mode(M(:))` or :code:`mode(M, 'all')`.
+
+
+----------------------------------
+Exercise: City Latitude Statistics
+----------------------------------
+
+.. include:: ex/city_latitude_statistics.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_03_revealwt_city_latitude_statistics
+  
+    .. youtube:: GR0vdq7DWig
+      :divid: ch07_03_wt_city_latitude_statistics
+      :height: 315
+      :width: 560
+      :align: center
+
+
+^^^^^^^^^^
+Histograms
+^^^^^^^^^^
+.. section 4
+
+A histogram is a visualization of the frequency of occurrence for certain values in a dataset. Below is a histogram of the latitude of the world's most populous cities. This histogram was generated from the data in the :file:`cities.xlsx` file we used earlier.
+
+.. figure:: img/Histogram_1.png
+  :width: 450
+  :align: center
+  :alt: The mode of the dataset [1,9,0,7,8,8,0,3,7,8] is 8, which occurs 3 times.
+
+  ..
+
+This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a spectacular guide to histograms and how they are created. We highly recommend you read this guide before continuing on with the rest of this chapter (it's also a beautiful example of data visualization!).
+
+MATLAB has two very useful functions for working with histograms: 
+
+- :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
+- :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
+
+As the Exploring Histograms website shows, histograms are very sensitive to the size of the bins you use in your histograms. Watch this video to learn more about histograms, specifying bins, and getting "histcounts" in MATLAB. 
+
+.. youtube:: kJhRNOtXtdU
+  :divid: ch07_04_vid_histograms
+  :height: 315
+  :width: 560
+  :align: center
+
+----------------------------
+Exercise: More Rock Analysis
+----------------------------
+
+.. figure:: img/rocks.png
+   :width: 300
+   :align: center
+   :alt: rocks.png
+
+   *hi it's me again*
+
+.. include:: ex/logical_operators.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_03_revealwt_logical_operators
+
+   Please check the Piazza Q&A thread for links to the walkthrough videos.
+
+^^^^^^^^^^^^^^^^^^^
+Operator Precedence
+^^^^^^^^^^^^^^^^^^^
+.. section 4
+
+Now that we have quite a few operators to work with, it makes sense to discuss how MATLAB determines order of operations according to the **precedence** of each operator.
+
+.. youtube:: U8hXZPxLIsg
+  :divid: ch07_04_vid_indexing_and_assignment
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Logical Indexing and Assignment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 5
+
+Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators.
+
+
+.. youtube:: XGycZcWcU2I
+  :divid: ch07_05_vid_indexing_and_assignment
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+---------------------------------
+Exercise: Indexing and Assignment
+---------------------------------
+
+.. include:: ex/indexing_and_assignment.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_03_revealwt_indexing_and_assignment
+
+   Please check the Piazza Q&A thread for links to the walkthrough videos.

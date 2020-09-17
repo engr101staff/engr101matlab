@@ -44,7 +44,7 @@ For each of the expressions below, determine the result of the operation (or if 
         What is the result of :code:`a == b`?
 
     - .. shortanswer:: ch04_01_ex_arithmetic_array_operations_02
-
+    
         What is the result of :code:`d < c`?
 
   * - .. shortanswer:: ch04_01_ex_arithmetic_array_operations_03

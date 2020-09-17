@@ -117,3 +117,13 @@ blockquote {
   font-size:1em;
   padding: 3px 6px;
 }
+
+.admonition-walkthrough {
+  background-color: #fff2e6;
+  border-color: #f0c7a0;
+}
+
+.admonition-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
