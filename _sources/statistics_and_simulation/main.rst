@@ -390,3 +390,51 @@ Exercise: :code:`linspace()` Practice
 -------------------------------------
 
 .. include:: ex/linspace_intro.in.rst
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Simulation: Projectile Motion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 8
+
+.. include:: content/projectile_motion.in.rst
+
+--------------------------
+Exercise: Throwing an Item
+--------------------------
+
+.. include:: ex/projectile_motion.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_08_revealwt_projectile_motion
+  
+    .. youtube:: cteuB7_WmeI
+      :divid: ch07_08_wt_projectile_motion
+      :height: 315
+      :width: 560
+      :align: center
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sampling From Random Distributions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 9
+
+.. include:: content/sampling.in.rst
+
+--------------------------
+Exercise: Throwing an Item
+--------------------------
+
+.. include:: ex/sampling.in.rst
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch07_09_revealwt_sampling
+  
+    .. youtube:: 2b0ULygAisw
+      :divid: ch07_09_wt_sampling
+      :height: 315
+      :width: 560
+      :align: center
+
+MATLAB supports many different random distributions in addition to the distributions we've seen here. There are discrete random distributions for describing random sets of integers; some examples include the Binomial, Multinomial, Geometric, and Poisson distributions. There are continuous random distributions for describing random numbers that can be any value; some examples include the Beta, Gamma, Exponential, Chi-square distributions. As always, check the MATLAB documentation for more information. 

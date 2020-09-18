@@ -6,7 +6,7 @@ Add code to your :file:`CityLatitudes.m` file to calculate the variance and stan
 
 .. fillintheblank:: ch07_05_ex_more_city_latitude_statistics_01
 
-  What is the variance (in degrees:superscript:`2`) of the latitudes? 
+  What is the variance (in degrees\ :sup:`2`) of the latitudes? 
 
   |blank|
   

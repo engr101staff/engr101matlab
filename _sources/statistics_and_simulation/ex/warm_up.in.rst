@@ -9,7 +9,7 @@ Two basic statistical measures of data are the minimum and maximum of the datase
 
 |
 
-Open the GreatLakesMaxIceCoverage.xlsx file and inspect it -- these are the maximum ice coverage percentages for each year. That is, for each year what was the highest percent of ice coverage achieved during the winter. Write a script that implements the following algorithm:
+Open the GreatLakesMaxIceCoverage.xlsx file and inspect it - these are the maximum ice coverage percentages for each year. That is, for each year what was the highest percent of ice coverage achieved during the winter. Write a script that implements the following algorithm:
 
 1. Read in the data from :file:`GreatLakesMaxIceCoverage.xlsx` using the :code:`xlsread` function.
 2. For each of the Great Lakes (Superior, Michigan, Huron, Erie, and Ontario), determine what year had the highest maximum ice coverage.

@@ -28,19 +28,19 @@ into a graphing calculator and get a plot containing a sine wave because the gra
 
   plot(sin)
 
-into MATLAB, we get an error message because MATLAB doesn't know that we mean :code:`sin` to really mean :math:`sin(x)` and :math:`x` to be a variable with all possible values of :math:`x`. So MATLAB says " ¯\_(ツ)_/¯ lol whatever" and gives us an error message.
+into MATLAB, we get an error message because MATLAB doesn't know that we mean :code:`sin` to really mean :math:`sin(x)` and :math:`x` to be a variable with all possible values of :math:`x`. So MATLAB says " ¯\\_(ツ)_/¯ lol whatever" and gives us an error message.
 
-To run a simulation in MATLAB, we first need to create a *starter set of data*. In Chapter 2, we created vectors and matrices, and we saw that range notation (:code:`start:step:last`) was quite convenient for creating a starter set of data. In our earlier attempt to plot :math:`sin(x)`, we noted that the plot function requires a set of ordered pairs, e.g. (x:subscript:`1`,y:subscript:`1`), (x:subscript:`2`,y:subscript:`2`), (x:subscript:`3`,y:subscript:`3`), etc. We can generate these easily using vectorized code!
+To run a simulation in MATLAB, we first need to create a *starter set of data*. In Chapter 2, we created vectors and matrices, and we saw that range notation (:code:`start:step:last`) was quite convenient for creating a starter set of data. In our earlier attempt to plot :math:`sin(x)`, we noted that the plot function requires a set of ordered pairs, e.g. (x\ :sub:`1`,y\ :sub:`1`), (x\ :sub:`2`,y\ :sub:`2`), (x\ :sub:`3`,y\ :sub:`3`), etc. We can generate these easily using vectorized code!
 
 .. raw:: html
 
   <div class="container-fluid">
     <style>
-      .matlab-scalar {
+      .matcrab-wide-cells .matlab-scalar {
         width: 3em;
       }
     </style>
-    <div class="matcrab-example" style="font-size: 8pt">
+    <div class="matcrab-example matcrab-wide-cells" style="font-size: 8pt">
       <table><tbody>
         <tr>
           <td style="text-align: center">
