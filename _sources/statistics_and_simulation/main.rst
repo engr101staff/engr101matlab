@@ -19,19 +19,65 @@ Statistics and Simulation
     :align: left
     :widths: auto
 
-    * - :download:`GreatLakesMaxIceCoverage.xlsx <../_static/statistics_and_simulation/GreatLakesMaxIceCoverage.xlsx>`
+    * - :download:`cities.xlsx <../_static/statistics_and_simulation/cities.xlsx>`
 
-      - .. reveal:: GreatLakesMaxIceCoverage_xlsx_preview
+      - .. reveal:: cities_xlsx_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: <code>GreatLakesMaxIceCoverage.xlsx</code>
+          :modaltitle: <code>cities.xlsx</code>
 
-          .. image:: img/great_lakes_xlsx_preview.png
+          .. image:: img/cities_xlsx_preview.png
             :width: 400
             :align: center
-            :alt: GreatLakesMaxIceCoverage.xlsx contains an Excel sheet
 
-      - Dataset containing maximum ice coverage percentages on the Great Lakes by year (`source <https://www.glerl.noaa.gov/data/ice/dates_AMIC.txt>`_)
+      - Dataset containing information about the world's most populous cities.
+
+    * - :download:`CityLatitudes.m <../_static/statistics_and_simulation/CityLatitudes.m>`
+
+      - .. reveal:: CityLatitudes_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>CityLatitudes.m</code>
+
+          .. literalinclude:: ../_static/statistics_and_simulation/CityLatitudes.m
+            :language: matlab
+
+      - Starter file for analyzing city data
+
+    * - :download:`MakeCityLatitudeHistogram.m <../_static/statistics_and_simulation/MakeCityLatitudeHistogram.m>`
+
+      - .. reveal:: MakeCityLatitudeHistogram_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>MakeCityLatitudeHistogram.m</code>
+
+          .. literalinclude:: ../_static/statistics_and_simulation/MakeCityLatitudeHistogram.m
+            :language: matlab
+
+      - Starter file for plotting city data
+
+    * - :download:`newBatteryLife.mat <../_static/statistics_and_simulation/newBatteryLife.mat>`
+
+      - .. reveal:: newBatteryLife_mat_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>newBatteryLife.mat</code>
+
+          No preview available
+
+      - Matlab saved workspace containing variables with battery experiment data
+
+    * - :download:`AnalyzeBatteries.m <../_static/statistics_and_simulation/AnalyzeBatteries.m>`
+
+      - .. reveal:: AnalyzeBatteries_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>AnalyzeBatteries.m</code>
+
+          .. literalinclude:: ../_static/statistics_and_simulation/AnalyzeBatteries.m
+            :language: matlab
+
+      - Starter file for battery analysis exercise
     
   .. reveal:: statistics_and_simulation_download_instructions
     :showtitle: Download Instructions
@@ -42,33 +88,19 @@ Statistics and Simulation
       
 
 
-^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+Review: Min and Max
+^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-^^^^^^^
-Warm Up
-^^^^^^^
-.. section 2
+We've seen previously two basic statistical measures of data, the minimum and maximum of a dataset. Recall that MATLAB has built-in functions for finding the maximum and minimum values in a dataset: :code:`max()` and :code:`min()`. Recall, also, that if you use a compound return when calling these functions, you can get both the minimum (or maximum) value and its location in the dataset:
 
-.. include:: content/warm_up.in.rst
+.. image:: img/MaxCompoundReturn.png
+  :width: 400
+  :align: center
+  :alt: The max() function returns both the max value and the index at which it occurred.
 
------------------------------------------------------
-Exercise: Min and Max Ice Coverage of the Great Lakes
------------------------------------------------------
-
-.. include:: ex/warm_up.in.rst
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch07_02_revealwt_warm_up
-
-    .. youtube:: 10Bjqm82Rs8
-      :divid: ch07_02_wt_warm_up
-      :height: 315
-      :width: 560
-      :align: center
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Mean, Median, and Mode
@@ -422,7 +454,7 @@ Sampling From Random Distributions
 .. include:: content/sampling.in.rst
 
 --------------------------
-Exercise: Throwing an Item
+Exercise: Rolling Two Dice
 --------------------------
 
 .. include:: ex/sampling.in.rst
