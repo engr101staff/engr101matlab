@@ -1,4 +1,4 @@
-Satistics and Simulation
+Statistics and Simulation
 ::::::::::::::::::::::::
 
 .. toctree::
