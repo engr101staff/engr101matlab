@@ -20,6 +20,8 @@ MATLAB provides functions for sampling from a variety of probability distributio
   :width: 560
   :align: center
 
+|
+
 To recap, the :code:`randi` function picks pseudo random numbers:
 
 .. figure:: img/RandiExplained.png
@@ -29,7 +31,7 @@ To recap, the :code:`randi` function picks pseudo random numbers:
 
   ..
 
-Here are two examples of using randi to simulate rolling a die a 6-sided die on the left and a 20-sided die on the right:
+Here are two examples of using :code:`randi` to simulate rolling a die a 6-sided die on the left and a 20-sided die on the right:
 
 .. figure:: img/RandiExamples.png
   :width: 450

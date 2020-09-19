@@ -3,3 +3,4 @@
 // things like clicking on all the hint buttons, file preview buttons, starting all the YouTube
 // videos, etc. which we don't want to require, so we have separate assignments instead.
 $(() => $("#scprogresscontainer").hide());
+$(() => $("#completionButton").hide());

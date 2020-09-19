@@ -5,6 +5,7 @@
 .. raw:: html
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
+   <script src="../_static/common/js/common.js"></script>
    <script src="../_static/common/js/exercises.bundle.js"></script>
 
 =========================
@@ -383,6 +384,8 @@ Now, how can we interpret these results?
   :height: 315
   :width: 560
   :align: center
+
+|
 
 .. admonition:: Did you know?
 

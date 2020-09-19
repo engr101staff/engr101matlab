@@ -17,7 +17,9 @@ Table of Contents
   functions_and_data/toctree.rst
   logical_indexing/toctree.rst
   working_with_images/toctree.rst
+  plotting_and_figures/toctree.rst
   statistics_and_simulation/toctree.rst
+
 
 
 ^^^^^^^^^^

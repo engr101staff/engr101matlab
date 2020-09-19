@@ -1,8 +1,8 @@
-Figures and Plotting
+Plotting and Figures
 ::::::::::::::::::::
 
 .. toctree::
-  :caption: Figures and Plotting
+  :caption: Plotting and Figures
   :maxdepth: 1
 
   main.rst

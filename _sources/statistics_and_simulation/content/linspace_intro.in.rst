@@ -70,6 +70,8 @@ To run a simulation in MATLAB, we first need to create a *starter set of data*. 
 
 |
 
+Now, if we call :code:`plot(x,y)`, we get a plot of :code:`sin(x)` using these values of :code:`x`.
+
 .. figure:: img/Sine_1.png
   :width: 450
   :align: center

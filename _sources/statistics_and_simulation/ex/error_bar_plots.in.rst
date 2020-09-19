@@ -23,6 +23,7 @@ Customize the plot so that it looks better:
 - Add the x-axis label "Years of Use"
 - Add the y-axis label "Full-Charge Battery Life (hours)"
 - Use gca to improve the plot:
+
   - font size = 20
   - x-axis limits of 0 to 7
   - y-axis limits of 0 to 5

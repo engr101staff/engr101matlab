@@ -7,3 +7,7 @@ Write a new MATLAB script that implements this algorithm:
 3. Use logical indexing to select sums greater than 15 and count them.
 4. Divide by 10000 to get the percentage of sums that were greater than 15.
 5. Display the percentage: this is the probability that the sum will be greater than 15.
+
+.. shortanswer:: ch07_09_ex_sampling
+
+  Paste in a copy of your script.
