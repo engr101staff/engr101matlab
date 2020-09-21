@@ -479,7 +479,7 @@ Good Plotting Habits
   :answer_b: There are no Axis Labels
   :answer_c: The data would be better represented as a pie chart
   :answer_d: There is no Legend
-  :correct: a,b,d
+  :correct: b,c,d
   :feedback_a: correct
   :feedback_b: correct
   :feedback_c: Because there are two sets of data a pie chart is unlikely to be a good representation
