@@ -18,12 +18,12 @@ Advanced Plotting and Data Visualization
     :align: left
     :widths: auto
 
-    * - :download:`bathymetry.dat <../_static/statistics_and_simulation/bathymetry.dat>`
+    * - :download:`bathymetryData.mat <../_static/data_visualization/bathymetryData.mat>`
 
-      - .. reveal:: bathymetry_dat_preview
+      - .. reveal:: bathymetryData_mat_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: <code>bathymetry.dat</code>
+          :modaltitle: <code>bathymetryData.mat</code>
 
           No preview available
 
@@ -94,11 +94,13 @@ For simple plots of 3D data, there are two useful MATLAB functions:
 
 Watch the video below to see how to call :code:`plot3` and :code:`scatter3`.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: YjeF1h6Ravs
   :divid: ch09_02_vid_plotting_3d_vectors
   :height: 315
   :width: 560
   :align: center
+
+|
 
 -----------------------------
 Exercise: Plotting 3D Vectors
@@ -163,6 +165,17 @@ Exercise: Plotting 3D Vectors
 
     *The heights and weights and birth months of 300 ducks less than 1 year old.*
 
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch09_02_revealwt_plot_choice
+  
+    .. youtube:: MSGAU-5sPq8
+      :divid: ch07_02_wt_plot_choice
+      :height: 315
+      :width: 560
+      :align: center
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The :code:`meshgrid` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -184,7 +197,7 @@ we will need to calculate an array for :code:`Z` that contains all the possible 
 
 MATLAB has a built-in function called :code:`meshgrid()` that will convert our vectors :code:`x` and :code:`y` into their corresponding matrices :code:`X` and :code:`Y` so that we can properly visualize our math equation. Watch the video below to see how :code:`meshgrid()` works. 
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: L3ydtLFKiwE
   :divid: ch09_03_vid_meshgrid
   :height: 315
   :width: 560
@@ -278,7 +291,7 @@ Exercise: :code:`meshgrid()` Practice
 
   .. reveal:: ch09_03_revealwt_meshgrid
   
-    .. youtube:: GR0vdq7DWig
+    .. youtube:: vjqqTu_4GXE
       :divid: ch07_03_wt_meshgrid
       :height: 315
       :width: 560
@@ -292,7 +305,7 @@ Exercise: :code:`meshgrid()` Practice
 
 Once you have data in matrix form, you can create 3D surface and mesh plots in MATLAB. Watch the video below to see how to do this.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: wZFqJ5bJoZY
   :divid: ch09_04_vid_surface_and_mesh_plots
   :height: 315
   :width: 560
@@ -311,7 +324,7 @@ Exercise: Surface and Mesh Plots
 
 .. shortanswer:: ch09_04_ex_surface_and_mesh_plots_01
 
-  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. Paste your finished code into the box. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
+  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
 
   .. code-block:: matlab
 
@@ -330,9 +343,11 @@ Exercise: Surface and Mesh Plots
 
     ..
 
+  Paste your finished code into the box.
+
 .. shortanswer:: ch09_04_ex_surface_and_mesh_plots_02
 
-  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. Paste your finished code into the box. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
+  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
 
   .. code-block:: matlab
 
@@ -351,17 +366,7 @@ Exercise: Surface and Mesh Plots
 
     ..
 
-.. admonition:: Walkthrough
-
-  .. reveal:: ch07_04_revealwt_surface_and_mesh_plots
-  
-    .. youtube:: GR0vdq7DWig
-      :divid: ch07_03_wt_surface_and_mesh_plots
-      :height: 315
-      :width: 560
-      :align: center
-
-
+  Paste your finished code into the box. 
 
 ^^^^^^^^^^^^^
 Contour Plots
@@ -370,11 +375,13 @@ Contour Plots
 
 MATLAB also has two helpful plotting functions to create contour maps. Watch the video below to learn about these functions.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: dPSrG2lhsa8
   :divid: ch09_05_vid_contour_maps
   :height: 315
   :width: 560
   :align: center
+
+|
 
 -----------------------
 Exercise: Contour Plots
@@ -432,16 +439,6 @@ Exercise: Contour Plots
 
   Select all of the datasets that would be displayed well in a contour plot.
 
-.. admonition:: Walkthrough
-
-  .. reveal:: ch09_05_revealwt_contour_plots_02
-  
-    .. youtube:: GR0vdq7DWig
-      :divid: ch09_05_wt_contour_plots_02
-      :height: 315
-      :width: 560
-      :align: center
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The :code:`subplot` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -449,11 +446,13 @@ The :code:`subplot` Function
 
 We've seen how to make a plot that has two sets of data on it, but what if you want to plot those two sets of data on separate graphs in the same figure? You can use MATLAB's :code:`subplot` function to do this. Watch the video below to see how to use the :code:`subplot` function.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: MdAAXuvl4Ck
   :divid: ch09_06_vid_subplot
   :height: 315
   :width: 560
   :align: center
+
+|
 
 ----------------------------------
 Exercise: :code:`subplot` Practice
@@ -474,6 +473,19 @@ Exercise: :code:`subplot` Practice
 
 .. fillintheblank:: ch09_06_ex_subplot_02
 
+  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **A3**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
+
+  .. figure:: img/SubA.png
+    :width: 250
+    :align: center
+
+    ..
+
+  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*8[ ]*\)[ ]*: Correct!
+    :x: No, try again.
+
+.. fillintheblank:: ch09_06_ex_subplot_03
+
   Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **B5**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
 
   .. figure:: img/SubB.png
@@ -485,7 +497,7 @@ Exercise: :code:`subplot` Practice
   - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*2[ ]*,[ ]*5[ ]*\)[ ]*: Correct!
     :x: No, try again.
 
-.. fillintheblank:: ch09_06_ex_subplot_03
+.. fillintheblank:: ch09_06_ex_subplot_04
 
   Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **C1**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
 
@@ -502,7 +514,7 @@ Exercise: :code:`subplot` Practice
 
   .. reveal:: ch09_06_revealwt_subplot
   
-    .. youtube:: GR0vdq7DWig
+    .. youtube:: oSOzHEUPfQk
       :divid: ch09_06_wt_subplot
       :height: 315
       :width: 560
@@ -536,7 +548,7 @@ Let's practice creating contour plots and using the subplot function. We will ge
 
   .. reveal:: ch09_07_revealwt_comparing_bathymetry_plots
   
-    .. youtube:: GR0vdq7DWig
+    .. youtube:: JEzq5AsWDH8
       :divid: ch09_07_wt_comparing_bathymetry_plots
       :height: 315
       :width: 560
@@ -596,20 +608,23 @@ Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, a
 
   Copy and paste your finished :file:`UpNorth.m` script here.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: RG_1DvV-Mjo
   :divid: ch09_08_vid_optimizing_a_golf_swing_01
   :height: 315
   :width: 560
   :align: center
 
+|
+
 Solving an optimization problem often gives you a range of "best" answers, not a single "best" answer. Sometimes, you need to apply your engineering expertise, or even just your good common sense, to select which "best answers" you should use. Watch the video below to see how to interpret the output of our "optimizing a golf swing" program. 
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: iNIE7gmetBs
   :divid: ch09_08_vid_optimizing_a_golf_swing_02
   :height: 315
   :width: 560
   :align: center
 
+|
 
 ^^^^^^^^^^^^^^
 End of Chapter
