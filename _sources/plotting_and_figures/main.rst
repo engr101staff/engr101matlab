@@ -455,6 +455,7 @@ Bar charts, with vertical bars:
 
   projects = [0, 1, 2, 3, 4 5, 6];
   scores = [90, 85, 45, 75, 90, 88, 82];
+  bar(projects, scores);
 
 
 .. figure:: img/img12.png

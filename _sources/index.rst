@@ -19,6 +19,8 @@ Table of Contents
   working_with_images/toctree.rst
   plotting_and_figures/toctree.rst
   statistics_and_simulation/toctree.rst
+  strings_cells_and_tables/toctree.rst
+  data_visualization/toctree.rst
 
 
 
