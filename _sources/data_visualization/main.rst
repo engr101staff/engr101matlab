@@ -63,7 +63,7 @@ Advanced Plotting and Data Visualization
           .. literalinclude:: ../_static/data_visualization/dist2green.m
             :language: matlab
 
-      - Starter file for calculating distance from a tee box to the green; helper function for the `UpNorth.m` script
+      - Starter file for calculating distance from a tee box to the green; helper function for the :code:`UpNorth.m` script
     
   .. reveal:: data_visualization_download_instructions
     :showtitle: Download Instructions
