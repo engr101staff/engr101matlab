@@ -276,9 +276,10 @@ Exercise: :code:`meshgrid()` Practice
 
   .. code-block:: matlab
 
-    a = [1 2 3 4];
-    b = [4 3 2 1];
-    [A,B] = meshgrid(a,b);
+    x = [1 2];
+    y = [0 1];
+    [X,Y] = meshgrid(x,y);
+
 
   Which of the following computes the value of Z to be:
 
