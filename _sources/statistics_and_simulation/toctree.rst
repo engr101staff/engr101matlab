@@ -1,5 +1,5 @@
 Statistics and Simulation
-::::::::::::::::::::::::
+:::::::::::::::::::::::::
 
 .. toctree::
   :caption: Statistics and Simulation
