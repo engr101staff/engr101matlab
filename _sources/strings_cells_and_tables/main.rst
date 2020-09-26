@@ -10,4 +10,4 @@
 Strings, Cells, and Tables
 ==========================
 
-Coming soon!
+Coming Soon!
