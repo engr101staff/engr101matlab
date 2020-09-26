@@ -18,131 +18,113 @@ Strings, Cells, and Tables
     :align: left
     :widths: auto
 
-    * - :download:`cities.xlsx <../_static/statistics_and_simulation/cities.xlsx>`
+    * - :download:`rover_data.csv <../_static/strings_cells_and_tables/rover_data.csv>`
 
-      - .. reveal:: cities_xlsx_preview
+      - .. reveal:: rover_data_csv_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: <code>cities.xlsx</code>
+          :modaltitle: <code>rover_data.csv</code>
 
-          .. image:: img/cities_xlsx_preview.png
-            :width: 400
-            :align: center
+          .. literalinclude:: ../_static/strings_cells_and_tables/rover_data.csv
+            :language: csv
 
-      - Dataset containing information about the world's most populous cities.
-
-    * - :download:`CityLatitudes.m <../_static/statistics_and_simulation/CityLatitudes.m>`
-
-      - .. reveal:: CityLatitudes_m_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>CityLatitudes.m</code>
-
-          .. literalinclude:: ../_static/statistics_and_simulation/CityLatitudes.m
-            :language: matlab
-
-      - Starter file for analyzing city data
-
-    * - :download:`MakeCityLatitudeHistogram.m <../_static/statistics_and_simulation/MakeCityLatitudeHistogram.m>`
-
-      - .. reveal:: MakeCityLatitudeHistogram_m_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>MakeCityLatitudeHistogram.m</code>
-
-          .. literalinclude:: ../_static/statistics_and_simulation/MakeCityLatitudeHistogram.m
-            :language: matlab
-
-      - Starter file for plotting city data
-
-    * - :download:`newBatteryLife.mat <../_static/statistics_and_simulation/newBatteryLife.mat>`
-
-      - .. reveal:: newBatteryLife_mat_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>newBatteryLife.mat</code>
-
-          No preview available
-
-      - Matlab saved workspace containing variables with battery experiment data
-
-    * - :download:`AnalyzeBatteries.m <../_static/statistics_and_simulation/AnalyzeBatteries.m>`
-
-      - .. reveal:: AnalyzeBatteries_m_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>AnalyzeBatteries.m</code>
-
-          .. literalinclude:: ../_static/statistics_and_simulation/AnalyzeBatteries.m
-            :language: matlab
-
-      - Starter file for battery analysis exercise
+      - Dataset containing information about a fleet of autonomous rovers.
     
-  .. reveal:: statistics_and_simulation_download_instructions
+  .. reveal:: strings_cells_and_tables_download_instructions
     :showtitle: Download Instructions
     :modal:
     :modaltitle: File Download Instructions for MATLAB
     
     .. include:: ../common/matlab_download_instructions.in.rst
       
+^^^^^^^^^^^
+Cell Arrays
+^^^^^^^^^^^
+.. section 2
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-BLAH
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 1
+CONTENT
 
-.. include:: content/warm_up.in.rst
+.. youtube:: kJhRNOtXtdU
+  :divid: ch07_04_vid_histogramsTODO
+  :height: 315
+  :width: 560
+  :align: center
 
--------------------------------------
-Exercise: :code:`linspace()` Practice
--------------------------------------
 
-.. include:: ex/warm_up.in.rst
+-----------------------------
+Exercise: Cell Array Practice
+-----------------------------
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Simulation: Projectile Motion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 8
+.. shortanswer:: ch08_02_ex_cell_array_practice
 
-.. include:: content/projectile_motion.in.rst
+  Consider this initial code:
+  
+  .. code-block:: matlab
 
---------------------------
-Exercise: Throwing an Item
---------------------------
+    X = {1, 'hello'; [1,2,3], ['a';'b';'c']}
 
-.. include:: ex/projectile_motion.in.rst
+  The initial value of :code:`X` is shown below, as well as a desired new value for :code:`X` and additional variable :code:`Y`.
+
+  .. figure:: img/cell_array_practice.png
+    :width: 560
+    :align: center
+
+    ..
+
+  Write a few lines of code that could be used to obtain the new values of :code:`X` and :code:`Y`.
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch07_08_revealwt_projectile_motion
+  .. reveal:: ch08_02_revealwt_cell_arrays_practice
   
-    .. youtube:: cteuB7_WmeI
-      :divid: ch07_08_wt_projectile_motion
+    .. youtube:: unoldLVMKiA
+      :divid: ch08_02_wt_cell_arrays_practice
       :height: 315
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Sampling From Random Distributions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 9
+^^^^^^
+Tables
+^^^^^^
+.. section 3
 
-.. include:: content/sampling.in.rst
+CONTENT
 
---------------------------
-Exercise: Rolling Two Dice
---------------------------
+.. youtube:: kJhRNOtXtdU
+  :divid: ch07_04_vid_histogramsTODO
+  :height: 315
+  :width: 560
+  :align: center
 
-.. include:: ex/sampling.in.rst
+
+-----------------------------
+Exercise: Cell Array Practice
+-----------------------------
+
+.. shortanswer:: ch08_02_ex_cell_array_practice
+
+  Consider this initial code:
+  
+  .. code-block:: matlab
+
+    X = {1, 'hello'; [1,2,3], ['a';'b';'c']}
+
+  The initial value of :code:`X` is shown below, as well as a desired new value for :code:`X` and additional variable :code:`Y`.
+
+  .. figure:: img/cell_array_practice.png
+    :width: 560
+    :align: center
+
+    ..
+
+  Write a few lines of code that could be used to obtain the new values of :code:`X` and :code:`Y`.
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch07_09_revealwt_sampling
+  .. reveal:: ch08_02_revealwt_cell_arrays_practice
   
-    .. youtube:: 2b0ULygAisw
-      :divid: ch07_09_wt_sampling
+    .. youtube:: unoldLVMKiA
+      :divid: ch08_02_wt_cell_arrays_practice
       :height: 315
       :width: 560
       :align: center
-
-MATLAB supports many different random distributions in addition to the distributions we've seen here. There are discrete random distributions for describing random sets of integers; some examples include the Binomial, Multinomial, Geometric, and Poisson distributions. There are continuous random distributions for describing random numbers that can be any value; some examples include the Beta, Gamma, Exponential, Chi-square distributions. As always, check the MATLAB documentation for more information. 
