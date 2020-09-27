@@ -607,7 +607,7 @@ Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, a
 
 .. shortanswer:: ch09_08_ex_optimizing_a_golf_swing
 
-  Copy and paste your finished :file:`UpNorth.m` script here.
+  Copy and paste your finished :file:`LandOnGreen.m` script here.
 
 .. youtube:: RG_1DvV-Mjo
   :divid: ch09_08_vid_optimizing_a_golf_swing_01
