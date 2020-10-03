@@ -21,6 +21,7 @@ Table of Contents
   statistics_and_simulation/toctree.rst
   data_visualization/toctree.rst
   strings_cells_and_tables/toctree.rst
+  intro_to_control_flow/toctree.rst
 
 
 
