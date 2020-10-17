@@ -174,6 +174,66 @@ We often see two kinds of division in programming:
 
 That's sort of how it works, but in C++, the kind of division depends on the *type of the operands* you give to the :code:`/` operator. Simulate this code and watch to see where you get floating point division and where you get integer division, then answer the questions below.
 
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch12_04_ex</div>
+   </div>
+
+.. shortanswer:: ch12_04_ex_division_01
+
+   Where, and why, do you get floating point division?
+
+.. shortanswer:: ch12_04_ex_division_02
+
+  Where, and why, do you get integer division?
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch12_04_revealwt_division
+  
+    .. youtube:: ruDKJrC8_tQ
+      :divid: ch12_04_wt_division
+      :height: 315
+      :width: 560
+      :align: center
+
+|
+
+.. tip::
+
+   **Common Pattern**
+
+   Remember the problem we had with integer division in the temperature converter problem?
+
+   .. code-block:: cpp
+   
+      // this expression has integer division :( 
+      double f = 9 / 5 * c + 32; 
+
+   To avoid this hard-to-find bug, add :code:`.0` or even just :code:`.` to the numeric literals to ensure we get floating point division instead of integer division:
+
+   .. code-block:: cpp
+
+      // this expression has floating point division -- yay!
+      double f = 9.0 / 5. * c + 32; 
+
+
+.. shortanswer:: ch12_04_ex_division_03
+
+   What is the result of the C++ expression :code:`50 / 6`?
+
+.. shortanswer:: ch12_04_ex_division_04
+
+   What is the result of the C++ expression :code:`50 % 6`?
+  
+.. shortanswer:: ch12_04_ex_division_05
+
+   What is the result of the C++ expression :code:`1 / 2`?
+
+.. shortanswer:: ch12_04_ex_division_06
+
+   What is the result of the C++ expression :code:`1 % 2`?
 
 -----------------------------
 Exercise: EX TITLE
