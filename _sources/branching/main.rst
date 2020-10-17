@@ -47,7 +47,7 @@ Lobster
             <img src="../_static/common/img/happylobster.jpg" style="width: 150px" />
          </td>
          <td>
-            For C++, we'll use a web-based program visualization tool called "Lobster". Lobster allows you to write and run C++ code in your web browser, including for your Runestone exercises in this and future chapters. Once you've written the code, you can click the "Simulate" button, and Lobster will show you line-by-line what is going on so that you can get a better feel for what your code *actually* does. Lobster can also track checkpoints as you work through exercsies and analyze your code to help you spot common bugs.
+            For C++, we'll use a web-based program visualization tool called "Lobster". Lobster allows you to write and run C++ code in your web browser, including for your Runestone exercises in this and future chapters. Once you've written the code, you can click the "Simulate" button, and Lobster will show you line-by-line what is going on so that you can get a better feel for what your code actually does. Lobster can also track checkpoints as you work through exercsies and analyze your code to help you spot common bugs.
          </td>
       </tr>
    </tbody></table>
@@ -57,13 +57,15 @@ Lobster
 
 Let's take a closer look at the interface for Lobster and how you can use it to step through your code line-by-line.
 
-.. youtube:: N3W-hlUBwXk
+.. youtube:: bvKhl8iPc7I
    :divid: ch12_01_vid_lobster
    :height: 315
    :width: 560
    :align: center
 
 |
+
+Here's the Lobster example we just went through in the video. You don't have to do anything with it, but you're welcome to play around with it if you like.
 
 .. raw:: html
 
@@ -147,17 +149,17 @@ Arithmetic Operators
 
 Here's the basic math operators available in C++:
 
-.. figure:: img/cpp1.png
+.. figure:: img/img01.png
    :width: 500
    :align: center
 
    ..
 
-|
-
 .. note::
 
    Since C++ doesn't have built-in vectors or matrices like MATLAB, there's no more "dot operators" to do element-by-element operations. Make sure you use just :code:`*` or :code:`/`. But don't worry, if you accidentally type :code:`.*` out of MATLAB-habit, the compiler will give you an error, and you'll know where to go to fix your error!
+
+|
 
 --------------------------------------------
 Floating Point Division vs. Integer Division
@@ -200,9 +202,7 @@ That's sort of how it works, but in C++, the kind of division depends on the *ty
 
 |
 
-.. tip::
-
-   **Common Pattern**
+.. admonition:: Common Pattern
 
    Remember the problem we had with integer division in the temperature converter problem?
 
@@ -235,30 +235,205 @@ That's sort of how it works, but in C++, the kind of division depends on the *ty
 
    What is the result of the C++ expression :code:`1 % 2`?
 
------------------------------
-Exercise: EX TITLE
------------------------------
+-------------------
+Exercise: Stopwatch
+-------------------
 
-.. shortanswer:: ch09_02_ex_plotting_3d_vectors
+So, if integer division can cause us so much trouble, why would we ever want to do it? Why would we work with the quotient and remainder separately?
 
-  Consider the equation:
+Well, here's an example: you're writing code for a stopwatch app, but the hardware only reports time in seconds. You want to display this in minutes/seconds instead. Therefore, you need to write a program that converts :code:`x` total seconds to :code:`m` minutes and :code:`s` seconds. Let's use this algorithm:
 
-  .. math::
+1. Store the total number of seconds in the variable :code:`x`
+2. Use integer division to divide :code:`x` by :code:`60` (60 seconds in a minute) to get the number of whole minutes elapsed; store the number of whole minutes in the variable :code:`m`.
+3. Use the modulo operator :code:`%` to get the remainder when :code:`x` is divided by :code:`60`. These are the seconds leftover and not accounted for in the number of minutes :code:`m`. Store the remaining seconds in the variable :code:`s`.
 
-    z = x + x * sin(\frac{y}{50})
+Here is the implementation of this algorithm in C++:
 
-  How could we plot this in MATLAB? We know that MATLAB does't plot math functions, only data points. Open MATLAB and create the variables :code:`x` and :code:`y` where:
+.. code-block:: cpp
+
+   int main() {
+      int x = 153; // total seconds
+      int m = x / 60; // minutes
+      int s = x % 60; // leftover seconds
+   }
+
+Now, it's your turn! Continue the stopwatch example, but extend it to hours, minutes, and seconds. For example, if the hardware reported :code:`3753` seconds, your program should convert this to :code:`1` hour, :code:`2` minutes, and :code:`33` seconds.
+
+This is a little tricky, be creative!
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch12_04_ex_stopwatch</div>
+      <div class="lobster-ex-complete-message">
+         Well done! The secret word is "waffle".
+      </div>
+   </div>
+
+.. fillintheblank:: ch12_04_ex_stopwatch
+  :casei:
+
+  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
+  
+  |blank|
+
+  - :waffle: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch07_03_revealwt_city_latitude_statistics
+  .. reveal:: ch12_04_revealwt_stopwatch
   
-    .. youtube:: GR0vdq7DWig
-      :divid: ch07_03_wt_city_latitude_statistics
+    .. youtube:: IKVUdrAGZr4
+      :divid: ch12_04_wt_stopwatch
       :height: 315
       :width: 560
       :align: center
 
+|
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Relational and Logical Operations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 5
+
+Just like in MATLAB, relational operations check for equality or perform comparisons. One big difference is that the true/false data type in C++ is called "boolean" (a term named after logician George Boole) rather than "logical". 
+
+Below is a table of relational operators in C++; those operators with different symbols than in MATLAB are highlighted.
+
+.. figure:: img/img02.png
+   :width: 500
+   :align: center
+
+   ..
+
+Also just like in MATLAB, logical operators combine two truth values in a particular way. Below is a table of logical operators in C++; those operators with different symbols than in MATLAB are highlighted.
+
+.. figure:: img/img03.png
+   :width: 500
+   :align: center
+
+   ..
+
+.. note::
+
+   C++ also includes "bitwise operators", which are :code:`&`, :code:`|`, :code:`~`, and :code:`^`. These manipulate the binary representation of data, and we won't use them for 101, but be careful not to get the bitwise :code:`&` and :code:`|` mixed up with the regular logical :code:`&&` and :code:`||`.
+
+Below are some examples of using relational and logical operators in C++. First, work through each :code:`cout` statement by hand and try to predict the output, recording your answer in the box below. (Note that by default a boolean will print to :code:`cout` as :code:`1` or :code:`0` rather than true/false.) Then, simulate the code to check your answers against the Lobster visualization.
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch12_05_ex</div>
+   </div>
+
+
+.. shortanswer:: ch12_05_ex_logical
+
+   Predict the output of each of the statements in the code above.
+
+
+.. admonition:: Heads Up!
+
+   In most cases, you should not use the :code:`==` or :code:`!=` operators to compare floating point numbers (the :code:`double` type). The basic reason is that computations with these numbers have a limited amount of precision, such that two :code:`double` values might not be exactly equal anymore after accumulating a bit of roundoff error. A better technique is to check whether two numbers are sufficiently close to each other, and we'll come back to this in a future chapter to write a function that compares doubles in this way.
+
+|
+
+------------------------
+Short-Circuit Evaluation
+------------------------
+
+Did you notice anything peculiar about the way some :code:`&&` and :code:`||` expressions are visualized in Lobster in the previous question? Some of the expressions were "short-circuited" and not fully evaluated if their result could be determined early on. How is this possible? Consider the very complicated expression below. Once we find an early :code:`false` value, the right-hand side of the :code:`&&` operation doesn't really matter anymore - the whole thing is going to be :code:`false` now no matter what else happens.
+
+.. figure:: img/img04.png
+   :width: 500
+   :align: center
+
+   ..
+
+|
+
+This is an example of short circuit behavior. The :code:`&&` and :code:`||` operators both have short-circuit behavior. If the result of the expression can be determined just from the left side of the operator, the right side is not evaluated at all. Here are a few more examples:
+
+.. figure:: img/img05.png
+   :width: 500
+   :align: center
+
+   ..
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Branching with :code:`if` Statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 6
+
+We can use the :code:`if` control flow structure to specify parts of our code that we want to run only *if* some condition is true. Let's take a look...
+
+.. youtube:: yqlgptx8Le8
+  :divid: ch12_06_vid_if_statements
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+To recap, here's the general syntax for an :code:`if` statement:
+
+.. code-block:: cpp
+
+   if ( condition ) {
+     statement1;
+     statement2;
+     statement3;
+     ...
+   }
+
+The condition may be any expression that can be interpreted as a boolean. The "body" of the :code:`if` may contain any number of statements, surrounded by curly braces, and these statements will only run if the given condition turns out to be true.
+
+
+-----
+Scope
+-----
+
+Before we get carried away with more complex programs, we need to start thinking about the relationship between variables and *scopes* in our programs. Essentially, we are only allowed to use a variable inside of the scope in which it is declared, and this gets a bit more complicated once we start using control flow structures.
+
+.. youtube:: NE6H6OZKkCo
+  :divid: ch12_06_vid_scope
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+-----------------------------------
+Two-way Branching With :code:`else` 
+-----------------------------------
+
+The natural counterpart to :code:`if` is :code:`else`:
+
+.. youtube:: TqF9xgcjoQ0
+  :divid: ch12_06_vid_else
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+-----------------------------------------------
+Nested :code:`if` Statements and Decision Trees
+-----------------------------------------------
+
+Finally, we can make some pretty complex structures by combining multiple :code:`if`/:code:`else` statements together.
+
+.. youtube:: 7buBYvX9wMM
+  :divid: ch12_06_vid_decision_trees
+  :height: 315
+  :width: 560
+  :align: center
+
+|
 
 
 ^^^^^^^^^^^^^^
