@@ -23,6 +23,7 @@ Table of Contents
   strings_cells_and_tables/toctree.rst
   intro_to_control_flow/toctree.rst
   intro_to_cpp/toctree.rst
+  branching/toctree.rst
   iteration/toctree.rst
 
 
