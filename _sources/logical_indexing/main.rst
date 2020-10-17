@@ -5,7 +5,7 @@
 .. raw:: html
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <script src="../_static/common/js/exercises.bundle.js"></script>
+   <script src="../_static/common/js/matcrab-exercises.bundle.js"></script>
 
 ===============================
 Logical Operations and Indexing
