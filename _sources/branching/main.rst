@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="../_static/common/css/buttons.css">
    <link rel="stylesheet" href="../_static/common/css/exercises.css">
    <script src="../_static/common/js/common.js"></script>
-   <script src="../_static/common/js/lobster-exercises.bundle.js"></script>
+   <script src="../_static/common/js/lobster-exercises1.bundle.js"></script>
 
 .. raw:: html
 
