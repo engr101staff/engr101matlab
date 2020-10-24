@@ -4,13 +4,12 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <link rel="stylesheet" href="../_static/common/css/main.css">
-   <link rel="stylesheet" href="../_static/common/css/code.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises.css">
+   <link rel="stylesheet" href="../_static/common/css/main2.css">
+   <link rel="stylesheet" href="../_static/common/css/code2.css">
+   <link rel="stylesheet" href="../_static/common/css/buttons2.css">
+   <link rel="stylesheet" href="../_static/common/css/exercises2.css">
    <script src="../_static/common/js/common.js"></script>
-   <script src="../_static/common/js/lobster-exercises1.bundle.js"></script>
+   <script src="../_static/common/js/lobster-exercises2.bundle.js"></script>
 
 .. raw:: html
 
