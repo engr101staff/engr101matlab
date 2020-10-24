@@ -25,6 +25,8 @@ Table of Contents
   intro_to_cpp/toctree.rst
   branching/toctree.rst
   iteration/toctree.rst
+  functions_in_cpp/toctree.rst
+  strings_streams_and_io/toctree.rst
 
 
 
