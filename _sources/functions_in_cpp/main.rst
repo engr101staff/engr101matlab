@@ -111,7 +111,7 @@ Exercise
 
    What is wrong with this function?
 
-   .. figure:: img/img4.png
+   .. figure:: img/img5.png
       :width: 500
       :align: center
 
