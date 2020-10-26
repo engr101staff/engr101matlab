@@ -4,12 +4,12 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/main2.css">
-   <link rel="stylesheet" href="../_static/common/css/code2.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons2.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises2.css">
+   <link rel="stylesheet" href="../_static/common/css/main3.css">
+   <link rel="stylesheet" href="../_static/common/css/code3.css">
+   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
+   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
    <script src="../_static/common/js/common.js"></script>
-   <script src="../_static/common/js/lobster-exercises2.bundle.js"></script>
+   <script src="../_static/common/js/lobster-exercises3.bundle.js"></script>
 
 .. raw:: html
 
@@ -253,7 +253,7 @@ Data Types and :code: cin
 When using :code:`cin` to get input from the user, we need to make sure the type of the variable we're reading into is appropriate for the type of input we expect them to enter.
 
 .. youtube:: 5M3-mGRsVss
-   :divid: ch15_05_vid_intro_to_user_io
+   :divid: ch15_05_vid_types_and_cin
    :height: 315
    :width: 560
    :align: center
@@ -328,7 +328,7 @@ We've provided some starter code for you.
       </div>
    </div>
 
-.. fillintheblank:: ch13_02_ex_while_loops
+.. fillintheblank:: ch15_06_ex_echo
   :casei:
 
   Complete the Lobster exercise to reveal the *secret word*. Enter it here.
@@ -374,19 +374,59 @@ Common Pattern: Reading Until The End
 Sometimes, we don't know how much input is in a file ahead of time. The following pattern allows you to detect the end of a file by using the read operation itself in the condition of a loop.
 
 .. youtube:: yTOl6FEAD4k
-   :divid: ch15_07_vid_file_streams
+   :divid: ch15_07_vid_reading_until_the_end
    :height: 315
    :width: 560
    :align: center
 
 |
 
-
-
-
 **Exercise**
 
-Now it's your turn to practice the sentienl pattern by writing a program we like to call "the annoying echo program". It continuously accepts input from a user via cin and then immediately echos that word back to them through cout. (Note that this program reads wo
+Let's practice file input and output. Download the file :download:`dome.txt <../_static/strings_streams_and_io/dome.txt>` and write a program that reads in the file, replaces each occurrence of the word "dome" with "DOME", and saves the result to a new file :file:`dome_new.txt`. (You may assume words separated by spaces, so just print out each word to your new file separated by a space as well.)
 
+If you write your code in a file called :file:`replace_dome.cpp`, you can compile and run it with:
+
+.. code-block:: console
+
+   g++ replace_dome.cpp -o replace_dome
+   ./replace_dome
+
+.. shortanswer:: ch15_07_dome
+
+  Paste in a copy of your completed :file:`replace_dome.cpp`  file.
+
+.. admonition:: Walkthrough
+
+   .. reveal:: ch15_07_revealwt_dome
+
+      Here's a sample solution:
+
+      .. code-block:: cpp
+
+         #include <iostream>
+         #include <fstream>
+         #include <string>
+         using namespace std;
+         int main() {
+           string target = "dome";
+           string replacement = "DOME";
+           
+           ifstream fin("dome.txt");
+           if ( !fin.is_open() ) {
+             cout << "Error opening dome.txt!" << endl;
+             return 1;
+           }
+           
+           ofstream fout("dome_new.txt");
+           string word;
+           while( fin >> word ) {
+             if (word != target) { fout << word << " "; }
+             else { fout << replacement << " "; }
+           }
+
+           fin.close();
+           fout.close();
+         }
 
 
