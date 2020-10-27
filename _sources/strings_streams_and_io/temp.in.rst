@@ -4,12 +4,12 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/main2.css">
-   <link rel="stylesheet" href="../_static/common/css/code2.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons2.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises2.css">
+   <link rel="stylesheet" href="../_static/common/css/main3.css">
+   <link rel="stylesheet" href="../_static/common/css/code3.css">
+   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
+   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
    <script src="../_static/common/js/common.js"></script>
-   <script src="../_static/common/js/lobster-exercises2.bundle.js"></script>
+   <script src="../_static/common/js/lobster-exercises3.bundle.js"></script>
 
 .. raw:: html
 
