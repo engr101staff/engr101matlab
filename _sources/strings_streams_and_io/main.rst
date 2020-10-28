@@ -247,7 +247,7 @@ Let's look at some more details and a few examples:
 
 
 -------------------------
-Data Types and :code: cin
+Data Types and :code:`cin`
 -------------------------
 
 When using :code:`cin` to get input from the user, we need to make sure the type of the variable we're reading into is appropriate for the type of input we expect them to enter.
