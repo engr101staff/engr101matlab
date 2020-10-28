@@ -336,14 +336,16 @@ Erasing elements from a vector
 
 |
 
-.. parsonsprob:: ch16_05_ex_vector_erase
-   :language: cpp
+**Exercise**
 
-   Arrange the lines of code below to write a program that erases all of the elements of a vector that are equal to zero. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+Arrange the lines of code below to write a program that erases all of the elements of a vector that are equal to zero. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
-   .. hint::
+.. hint::
 
    As you erase elements, the size of your vector will change. You want to check each element, but not in the same way as the "traversing a vector" pattern we saw earlier. Think about how to step through each element in the vector and pause to erase a zero if you find one, but go to the next element if the value is not a zero. 
+
+.. parsonsprob:: ch16_05_ex_vector_erase
+   :language: cpp
 
    -----
    #include &lt;iostream&gt;
@@ -692,28 +694,28 @@ The function :code:`all_negative` takes in a vector of ints and returns :code:`t
 .. raw:: html
 
    <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch15_ex_repeat</div>
+      <div class="lobster-ex-project-name">ch16_ex_all_negative</div>
       <div class="lobster-ex-complete-message">
-         Well done! The secret word is "pumpkin".
+         Well done! The secret word is "daffodil".
       </div>
    </div>
 
-.. fillintheblank:: ch15_03_ex_repeat
+.. fillintheblank:: ch16_07_ex_all_negative
   :casei:
 
   Complete the Lobster exercise to reveal the *secret word*. Enter it here.
   
   |blank|
 
-  - :pumpkin: Correct.
+  - :daffodil: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch15_03_revealwt_repeat
+  .. reveal:: ch16_07_revealwt_all_negative
   
     .. youtube:: tY71B08AEnM
-      :divid: ch15_03_wt_repeat
+      :divid: ch16_07_wt_all_negative
       :height: 315
       :width: 560
       :align: center
@@ -723,10 +725,10 @@ The function :code:`all_negative` takes in a vector of ints and returns :code:`t
 
 **Exercise**
 
-.. parsonsprob:: ch16_05_ex_vector_erase
-   :language: cpp
+The function :code:`minVal` takes in a vector of doubles and returns the minimum value contained in the vector of doubles. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
-   The function :code:`minVal` takes in a vector of doubles and returns the minimum value contained in the vector of doubles. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+.. parsonsprob:: ch16_07_ex_minVal
+   :language: cpp
 
    -----
    #include &lt;vector&gt;

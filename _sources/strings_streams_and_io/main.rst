@@ -246,9 +246,9 @@ Let's look at some more details and a few examples:
    Keep in mind that a real program will process any pending :code:`cin` expressions *immediately* once you type some input and press *enter* at the terminal. We only need to click the step button again in Lobster because it works like a debugger and lets you run the program step-by-step instead of continuously.
 
 
--------------------------
+--------------------------
 Data Types and :code:`cin`
--------------------------
+--------------------------
 
 When using :code:`cin` to get input from the user, we need to make sure the type of the variable we're reading into is appropriate for the type of input we expect them to enter.
 
