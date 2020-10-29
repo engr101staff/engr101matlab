@@ -213,7 +213,7 @@ The function :code:`printDoubled` takes in a vector of ints and prints out 2 tim
 
 .. raw:: html
 
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+   <div class="lobster-ex" style="width: 700px; margin-left: auto; margin-right: auto">
       <div class="lobster-ex-project-name">ch16_ex_printDoubled</div>
       <div class="lobster-ex-complete-message">
          Well done! The secret word is "strudel".
@@ -693,7 +693,7 @@ The function :code:`all_negative` takes in a vector of ints and returns :code:`t
 
 .. raw:: html
 
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+   <div class="lobster-ex" style="width: 700px; margin-left: auto; margin-right: auto">
       <div class="lobster-ex-project-name">ch16_ex_all_negative</div>
       <div class="lobster-ex-complete-message">
          Well done! The secret word is "daffodil".
