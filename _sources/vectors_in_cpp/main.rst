@@ -401,8 +401,9 @@ Passing Vectors to Functions
    :width: 560
    :align: center
 
-**Exercise**
+|
 
+**Exercise**
 
 In each of the following questions, a description of a function that takes in a vector as a parameter is given. Choose the mechanism for parameter passing that is appropriate for the function.
 
