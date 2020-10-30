@@ -322,7 +322,7 @@ Adding/Removing Elements From a Vector
 
 
 ------------------------------
-Erasing elements from a vector
+Erasing Elements from a Vector
 ------------------------------
 
 .. youtube:: eKCTrSgRrqk
@@ -481,7 +481,9 @@ If you don't know ahead of time how many elements you need, just add them as you
    // declare a variable to hold a value that is read in
    double value;
    
-   // proceed through the file reading each value in turn; the values are    added to the vector using push_back; the loop ends when no more values    can be read in
+   // proceed through the file reading each value in turn; 
+   // the values are added to the vector using push_back; 
+   // the loop ends when no more values can be read in
    while (fileIn >> value) {
      data.push_back(value);
    }
@@ -525,13 +527,13 @@ Sometimes, you want to find the "best" element according to some criteria. For e
    // the vector must not be an empty vector
    int max_element(const vector<int> &vec) {
    
-     int max_so_far = vec[0]; // assume first is largest (aka "the best")
+     int max_so_far = vec.at(0); // assume first is largest (aka "the best")
    
      // iterate through vector, looking for any larger
      for (int i = 0; i < vec.size(); ++i) {
-       if (vec[i] > max_so_far) // compare the values
+       if (vec.at(i) > max_so_far) // compare the values
        { 
-         	max_so_far = vec.at(i); // keep track of the best element
+        max_so_far = vec.at(i); // keep track of the best element
        }
      }
      return max_so_far;
@@ -559,12 +561,11 @@ As we saw with some of the MATLAB programs, sometimes we want to know the index 
      if (vec.empty()) {
        return -1; 
      }
-   
-   
+  
      int index_of_max = 0; // assume first is largest (aka "the best")
    
      for (int i = 0; i < vec.size(); ++i) {
-       if (vec[i] > vec[index_of_max]) // compare the values {
+       if (vec.at(i) > vec[index_of_max]){ // compare the values 
          index_of_max = i; // keep track of the index of the best element
        }
      }
@@ -583,9 +584,7 @@ To get data that is "parallel", access each vector using the same index number. 
    vector<string> states;
    vector<string> populations;
 
-   ...
-   ...
-   ...
+   // code to "fill up" the states and populations vectors
 
    // Display first state
    cout << "The first state is: " << states.at(0);
@@ -599,12 +598,12 @@ To get data that is "parallel", access each vector using the same index number. 
    cout << "The first state is: " << states.at(states.size() - 1);
    cout << " -- population " << populations.at(states.size() - 1) << endl;
 
-.. admonition:: note
+.. admonition:: Note
 
    As we will see in a later chapter, an alternative often used in C++ is to create a **custom data type** that encapsulates both a state's name and population.
 
 --------------------------------------
-Checking if Any Element Match Criteria
+Checking If Any Element Match Criteria
 --------------------------------------
 
 Sometimes, you want to check if any element(s) match some criteria. For example, you might want to know "are there any zeros?" or "are there any elements greater than 100?". Our strategy here is to always frame this as an "any" question, and then use a loop with **early termination** to check for any such element. Here is an example that you can use as a template for this pattern:
@@ -616,7 +615,7 @@ Sometimes, you want to check if any element(s) match some criteria. For example,
      
      // iterate and check for any zeros
      for(int i = 0; i < vec.size(); ++i) {
-       if ( vec[i] == 0 ) {
+       if ( vec.at(i) == 0 ) {
          return true; // if we find a match, return immediately
        }
      }
@@ -626,10 +625,10 @@ Sometimes, you want to check if any element(s) match some criteria. For example,
 
 
 --------------------------------------
-Checking if All Element Match Criteria
+Checking If All Element Match Criteria
 --------------------------------------
 
-Sometimes, you want to check if all element(s) match some criteria. For example, you might want to know "are all the elements zero?" or "are all the elements positive?". Our strategy here is to frame this as a "checking if any match" match, and then use a loop with **early termination** to check for any **counterexamples**. In other words, we can use negation to turn an "all" question into an "any" question. Here is an example that you can use as a template for this pattern:
+Sometimes, you want to check if all element(s) match some criteria. For example, you might want to know "are all the elements zero?" or "are all the elements positive?". Our strategy here is to frame this as a "checking if any match" pattern, and then use a loop with **early termination** to check for any **counterexamples**. In other words, we can use negation to turn an "all" question into an "any" question. Here is an example that you can use as a template for this pattern:
 
 .. code-block:: cpp
 
@@ -639,7 +638,7 @@ Sometimes, you want to check if all element(s) match some criteria. For example,
      // iterate and check for any non-positives
      for(int i = 0; i < vec.size(); ++i)  
      {
-       if ( !(vec[i] > 0) ) // check for counterexamples
+       if ( !(vec.at(i) > 0) ) // check for counterexamples
        {
          return false; // if we find one, return immediately 
                        // because we found an element that did not match 
@@ -660,12 +659,12 @@ Sometimes, you are looking for the location of a particular element. For example
 .. code-block:: cpp
 
    // Returns the index at which the given value first occurs in
-   // the vector. If it is not present, returns -1.
+   // the vector. If the value is not present, returns -1.
    int find(const vector<int> &vec, int value) {
      
      // iterate and check for the value
      for(int i = 0; i < vec.size(); ++i) {
-       if ( vec[i] == value ) {
+       if ( vec.at(i) == value ) {
          return i; // if we find a match, return the index of the match
        }
      }
@@ -686,7 +685,7 @@ Let's practice with a couple of these common patterns. Read the question, determ
 
 **Exercise**
 
-The function :code:`all_negative` takes in a vector of ints and returns :code:`true` if the elements in the vector are all negative (otherwise, it returns :code:`false`). Complete the implementation of the :code:`all_negative` function. 
+The function :code:`all_negative` takes in a vector of :code:`int` values and returns :code:`true` if the elements in the vector are all negative (otherwise, it returns :code:`false`). Complete the implementation of the :code:`all_negative` function. 
 
 .. raw:: html
 
@@ -722,7 +721,7 @@ The function :code:`all_negative` takes in a vector of ints and returns :code:`t
 
 **Exercise**
 
-The function :code:`minVal` takes in a vector of doubles and returns the minimum value contained in the vector of doubles. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+The function :code:`minVal` takes in a vector of :code:`double` values and returns the minimum value contained in the vector of :code:`double` values. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
 .. parsonsprob:: ch16_07_ex_minVal
    :language: cpp
