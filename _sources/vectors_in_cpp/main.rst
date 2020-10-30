@@ -82,7 +82,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_01
 
-   The variable :code:`y` is a vector of :code:`double`s:
+   The variable :code:`y` is a vector of :code:`double` values:
 
    .. image:: img/Indexing1.png
       :width: 300
@@ -113,7 +113,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_02
 
-   The variable :code:`x` is a vector of :code:`int`s:
+   The variable :code:`x` is a vector of :code:`int` values:
 
    .. image:: img/Indexing2.png
       :width: 300
@@ -210,7 +210,7 @@ Traversing a Vector
 
 **Exercise**
 
-The function :code:`printDoubled` takes in a vector of :code:`int`s and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
+The function :code:`printDoubled` takes in a vector of :code:`int` values and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
 
 .. raw:: html
 
