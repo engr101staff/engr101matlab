@@ -82,7 +82,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_01
 
-   The variable :code:`y` is a vector of :code:`double` s:
+   The variable :code:`y` is a vector of :code:`double`s:
 
    .. image:: img/Indexing1.png
       :width: 300
@@ -113,7 +113,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_02
 
-   The variable :code:`x` is a vector of :code:`int` s:
+   The variable :code:`x` is a vector of :code:`int`s:
 
    .. image:: img/Indexing2.png
       :width: 300
@@ -194,6 +194,7 @@ After you include the vector library using :code:`#include <vector>`, you can ac
 
       - Removes from the vector either a single element or a range of elements.
 
+Let's see some examples of using vector functions. 
 
 -------------------
 Traversing a Vector
@@ -209,7 +210,7 @@ Traversing a Vector
 
 **Exercise**
 
-The function :code:`printDoubled` takes in a vector of ints and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
+The function :code:`printDoubled` takes in a vector of :code:`int`s and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
 
 .. raw:: html
 
@@ -244,7 +245,7 @@ The function :code:`printDoubled` takes in a vector of ints and prints out 2 tim
 
 
 --------------------------------------
-Adding/removing elements from a vector
+Adding/Removing Elements From a Vector
 --------------------------------------
 
 .. youtube:: TVMeF0HUJB4
@@ -263,8 +264,6 @@ Adding/removing elements from a vector
       :width: 560
       :align: center
       :alt: Originally, from left-to-right, vec contains the values 4, 38, 52, 109, and -7. After the statement is run, vec should contain 4, 38, 52, and 109.
-
-   Which code snippet will print the number :code:`18` followed by a newline to the terminal? Select all that apply. 
 
    - :code:`vec.popback();`
 
@@ -285,14 +284,12 @@ Adding/removing elements from a vector
 
 .. mchoice:: ch16_05_ex_adding_removing_02
 
-   Which statement should we use to get from the vector on the left to the vector on the right?
+   Which set of statements should we use to get from the vector on the left to the vector on the right?
 
    .. image:: img/AddingRemovingElements2.png
       :width: 560
       :align: center
       :alt: Originally, from left-to-right, vec contains the values 4, 38, 52, 109, and -7. After the statement is run, vec should contain 4, 38, 52, and 109.
-
-   Which code snippet will print the number :code:`18` followed by a newline to the terminal? Select all that apply. 
 
    - .. code-block:: cpp
 
