@@ -403,6 +403,7 @@ Passing Vectors to Functions
 
 **Exercise**
 
+
 In each of the following questions, a description of a function that takes in a vector as a parameter is given. Choose the mechanism for parameter passing that is appropriate for the function.
 
 .. mchoice:: ch16_06_ex_parameter_passing_01
