@@ -247,7 +247,7 @@ The function :code:`printDoubled` takes in a vector of ints and prints out 2 tim
 Adding/removing elements from a vector
 --------------------------------------
 
-.. youtube:: eKCTrSgRrqk
+.. youtube:: TVMeF0HUJB4
    :divid: ch16_05_vid_adding_removing_vector
    :height: 315
    :width: 560
