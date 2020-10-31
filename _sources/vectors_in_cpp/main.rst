@@ -277,7 +277,7 @@ The function :code:`printDoubled` takes in a vector of :code:`int` values and pr
 
   .. reveal:: ch16_05_revealwt_printDoubled
   
-    .. youtube:: tY71B08AEnM
+    .. youtube:: MxLQB2Zjmv0
       :divid: ch16_05_wt_printDoubled
       :height: 315
       :width: 560
@@ -425,7 +425,7 @@ Arrange the lines of code below to write a program that erases all of the elemen
 
   .. reveal:: ch16_05_revealwt_vector_erase
   
-    .. youtube:: tY71B08AEnM
+    .. youtube:: S3HfBGABzZ0
       :divid: ch16_05_wt_vector_erase
       :height: 315
       :width: 560
@@ -754,7 +754,7 @@ The function :code:`all_negative` takes in a vector of :code:`int` values and re
 
   .. reveal:: ch16_07_revealwt_all_negative
   
-    .. youtube:: tY71B08AEnM
+    .. youtube:: AIxROfTVXbE
       :divid: ch16_07_wt_all_negative
       :height: 315
       :width: 560
@@ -798,6 +798,16 @@ The function :code:`minVal` takes in a vector of :code:`double` values and retur
    =====
    if (vec.at(i) &gt min_so_far) { #distractor
    =====
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch16_07_revealwt_min_val
+  
+    .. youtube:: xXcBpuALqfI
+      :divid: ch16_07_wt_min_val
+      :height: 315
+      :width: 560
+      :align: center
 
 
 ^^^^^^^^^^^^^^
