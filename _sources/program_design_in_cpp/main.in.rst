@@ -22,14 +22,16 @@
       }
    </style>
 
-==============
-Vectors in C++
-==============
+=====================
+Program Design in C++
+=====================
 
 ^^^^^^^^^^^^
 Introduction
 ^^^^^^^^^^^^
 .. section 1
+
+TODO
 
 .. youtube:: VTNy-3dneyI
    :divid: ch16_01_introduction
@@ -39,44 +41,49 @@ Introduction
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Warm-Up Exercise: What's My Value?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Warm-Up Exercise: Shifting a Character
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Here is a vector in C++:
+The function :code:`shift_letter` takes in an original character, shifts it by a given amount, and returns a new character. Here's a few examples of using shift letter:
 
-   .. image:: img/Warmup1.png
-     :width: 400
-     :align: center
-     :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.
+- :code:`shift_letter('b', 3)` should return :code:`'e'`
+- :code:`shift_letter('y', 3)` should return :code:`'b'` (it wraps around after :code:`z`)
+- :code:`shift_letter('e', -1)` should return :code:`'d'`
 
-.. fillintheblank:: ch17_02_ex_warm_up
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 700px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch17_ex_shift_letter</div>
+      <div class="lobster-ex-complete-message">
+         Well done! The secret word is "luigi".
+      </div>
+   </div>
+
+.. fillintheblank:: ch17_02_ex_shift_letter
   :casei:
 
-  Enter the value of the element at each index:
+  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
   
-  Index 3: |blank|
+  |blank|
 
-  Index 0: |blank|
+  - :luigi: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-  Index 2: |blank|
+.. admonition:: Walkthrough
 
-  Index 4: |blank|
-
-  Index 1: |blank|
-
-  - :10: Correct!
-
-  - :27: Correct!
-
-  - :15: Correct!
-
-  - :33: Correct!
-
-  - :49: Correct!
+  .. reveal:: ch17_02_revealwt_shift_letter
+  
+    .. youtube:: tY71B08AEnM
+      :divid: ch17_02_wt_shift_letter
+      :height: 315
+      :width: 560
+      :align: center
 
 |
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Declaring and Initializing Vectors in C++
@@ -91,23 +98,9 @@ Declaring and Initializing Vectors in C++
 
 |
 
-.. dragndrop:: ch17_03_ex_declaring_vectors_01
-  :match_1: vector<int> someInts(5,13);|||[ 13 13 13 13 13 ]
-  :match_2: vector<int> someInts(4);|||[ ? ? ? ? ] ← four elements created, but no values in the elements
-  :match_3: vector<int> someInts{2,9,1,4};|||[ 2 9 1 4 ]
-  :match_4: vector<int> someInts;|||[ ] ← empty vector
+TODO
 
-  Match the code with the vector that is created.
 
-.. dragndrop:: ch17_03_ex_declaring_vectors_02
-  :match_1: vector<int> someDoubles(4);|||[ ? ? ? ?] ← four elements created, but no values in the elements
-  :match_2: vector<int> someDoubles;|||[ ] ← empty vector
-  :match_3: vector<int> someDoubles(2,64.5);|||[ 64.5 64.5 ]
-  :match_4: vector<int> someDoubles{10.35,0.8,-705.689};|||[ 10.35 0.8 -705.689 ]
-
-  Match the code with the vector that is created.
-
-|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Indexing Into Vectors in C++
@@ -126,7 +119,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_01
 
-   The variable :code:`y` is a vector of :code:`double` values:
+   The variable :code:`y` is a vector of :code:`double` s:
 
    .. image:: img/Indexing1.png
       :width: 300
@@ -157,7 +150,7 @@ Indexing Into Vectors in C++
 
 .. mchoice:: ch16_04_ex_indexing_02
 
-   The variable :code:`x` is a vector of :code:`int` values:
+   The variable :code:`x` is a vector of :code:`int` s:
 
    .. image:: img/Indexing2.png
       :width: 300
@@ -238,7 +231,6 @@ After you include the vector library using :code:`#include <vector>`, you can ac
 
       - Removes from the vector either a single element or a range of elements.
 
-Let's see some examples of using vector functions. 
 
 -------------------
 Traversing a Vector
@@ -254,7 +246,7 @@ Traversing a Vector
 
 **Exercise**
 
-The function :code:`printDoubled` takes in a vector of :code:`int` values and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
+The function :code:`printDoubled` takes in a vector of ints and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
 
 .. raw:: html
 
@@ -289,10 +281,10 @@ The function :code:`printDoubled` takes in a vector of :code:`int` values and pr
 
 
 --------------------------------------
-Adding/Removing Elements From a Vector
+Adding/removing elements from a vector
 --------------------------------------
 
-.. youtube:: TVMeF0HUJB4
+.. youtube:: eKCTrSgRrqk
    :divid: ch16_05_vid_adding_removing_vector
    :height: 315
    :width: 560
@@ -308,6 +300,8 @@ Adding/Removing Elements From a Vector
       :width: 560
       :align: center
       :alt: Originally, from left-to-right, vec contains the values 4, 38, 52, 109, and -7. After the statement is run, vec should contain 4, 38, 52, and 109.
+
+   Which code snippet will print the number :code:`18` followed by a newline to the terminal? Select all that apply. 
 
    - :code:`vec.popback();`
 
@@ -328,12 +322,14 @@ Adding/Removing Elements From a Vector
 
 .. mchoice:: ch16_05_ex_adding_removing_02
 
-   Which set of statements should we use to get from the vector on the left to the vector on the right?
+   Which statement should we use to get from the vector on the left to the vector on the right?
 
    .. image:: img/AddingRemovingElements2.png
       :width: 560
       :align: center
       :alt: Originally, from left-to-right, vec contains the values 4, 38, 52, 109, and -7. After the statement is run, vec should contain 4, 38, 52, and 109.
+
+   Which code snippet will print the number :code:`18` followed by a newline to the terminal? Select all that apply. 
 
    - .. code-block:: cpp
 
@@ -366,7 +362,7 @@ Adding/Removing Elements From a Vector
 
 
 ------------------------------
-Erasing Elements from a Vector
+Erasing elements from a vector
 ------------------------------
 
 .. youtube:: eKCTrSgRrqk
@@ -444,8 +440,6 @@ Passing Vectors to Functions
    :height: 315
    :width: 560
    :align: center
-
-|
 
 **Exercise**
 
@@ -527,9 +521,7 @@ If you don't know ahead of time how many elements you need, just add them as you
    // declare a variable to hold a value that is read in
    double value;
    
-   // proceed through the file reading each value in turn; 
-   // the values are added to the vector using push_back; 
-   // the loop ends when no more values can be read in
+   // proceed through the file reading each value in turn; the values are    added to the vector using push_back; the loop ends when no more values    can be read in
    while (fileIn >> value) {
      data.push_back(value);
    }
@@ -573,13 +565,13 @@ Sometimes, you want to find the "best" element according to some criteria. For e
    // the vector must not be an empty vector
    int max_element(const vector<int> &vec) {
    
-     int max_so_far = vec.at(0); // assume first is largest (aka "the best")
+     int max_so_far = vec[0]; // assume first is largest (aka "the best")
    
      // iterate through vector, looking for any larger
      for (int i = 0; i < vec.size(); ++i) {
-       if (vec.at(i) > max_so_far) // compare the values
+       if (vec[i] > max_so_far) // compare the values
        { 
-        max_so_far = vec.at(i); // keep track of the best element
+         	max_so_far = vec.at(i); // keep track of the best element
        }
      }
      return max_so_far;
@@ -607,11 +599,12 @@ As we saw with some of the MATLAB programs, sometimes we want to know the index 
      if (vec.empty()) {
        return -1; 
      }
-  
+   
+   
      int index_of_max = 0; // assume first is largest (aka "the best")
    
      for (int i = 0; i < vec.size(); ++i) {
-       if (vec.at(i) > vec[index_of_max]){ // compare the values 
+       if (vec[i] > vec[index_of_max]) // compare the values {
          index_of_max = i; // keep track of the index of the best element
        }
      }
@@ -630,7 +623,9 @@ To get data that is "parallel", access each vector using the same index number. 
    vector<string> states;
    vector<string> populations;
 
-   // code to "fill up" the states and populations vectors
+   ...
+   ...
+   ...
 
    // Display first state
    cout << "The first state is: " << states.at(0);
@@ -644,12 +639,12 @@ To get data that is "parallel", access each vector using the same index number. 
    cout << "The first state is: " << states.at(states.size() - 1);
    cout << " -- population " << populations.at(states.size() - 1) << endl;
 
-.. admonition:: Note
+.. admonition:: note
 
    As we will see in a later chapter, an alternative often used in C++ is to create a **custom data type** that encapsulates both a state's name and population.
 
 --------------------------------------
-Checking If Any Element Match Criteria
+Checking if Any Element Match Criteria
 --------------------------------------
 
 Sometimes, you want to check if any element(s) match some criteria. For example, you might want to know "are there any zeros?" or "are there any elements greater than 100?". Our strategy here is to always frame this as an "any" question, and then use a loop with **early termination** to check for any such element. Here is an example that you can use as a template for this pattern:
@@ -661,7 +656,7 @@ Sometimes, you want to check if any element(s) match some criteria. For example,
      
      // iterate and check for any zeros
      for(int i = 0; i < vec.size(); ++i) {
-       if ( vec.at(i) == 0 ) {
+       if ( vec[i] == 0 ) {
          return true; // if we find a match, return immediately
        }
      }
@@ -671,10 +666,10 @@ Sometimes, you want to check if any element(s) match some criteria. For example,
 
 
 --------------------------------------
-Checking If All Element Match Criteria
+Checking if All Element Match Criteria
 --------------------------------------
 
-Sometimes, you want to check if all element(s) match some criteria. For example, you might want to know "are all the elements zero?" or "are all the elements positive?". Our strategy here is to frame this as a "checking if any match" pattern, and then use a loop with **early termination** to check for any **counterexamples**. In other words, we can use negation to turn an "all" question into an "any" question. Here is an example that you can use as a template for this pattern:
+Sometimes, you want to check if all element(s) match some criteria. For example, you might want to know "are all the elements zero?" or "are all the elements positive?". Our strategy here is to frame this as a "checking if any match" match, and then use a loop with **early termination** to check for any **counterexamples**. In other words, we can use negation to turn an "all" question into an "any" question. Here is an example that you can use as a template for this pattern:
 
 .. code-block:: cpp
 
@@ -684,7 +679,7 @@ Sometimes, you want to check if all element(s) match some criteria. For example,
      // iterate and check for any non-positives
      for(int i = 0; i < vec.size(); ++i)  
      {
-       if ( !(vec.at(i) > 0) ) // check for counterexamples
+       if ( !(vec[i] > 0) ) // check for counterexamples
        {
          return false; // if we find one, return immediately 
                        // because we found an element that did not match 
@@ -705,12 +700,12 @@ Sometimes, you are looking for the location of a particular element. For example
 .. code-block:: cpp
 
    // Returns the index at which the given value first occurs in
-   // the vector. If the value is not present, returns -1.
+   // the vector. If it is not present, returns -1.
    int find(const vector<int> &vec, int value) {
      
      // iterate and check for the value
      for(int i = 0; i < vec.size(); ++i) {
-       if ( vec.at(i) == value ) {
+       if ( vec[i] == value ) {
          return i; // if we find a match, return the index of the match
        }
      }
@@ -731,7 +726,7 @@ Let's practice with a couple of these common patterns. Read the question, determ
 
 **Exercise**
 
-The function :code:`all_negative` takes in a vector of :code:`int` values and returns :code:`true` if the elements in the vector are all negative (otherwise, it returns :code:`false`). Complete the implementation of the :code:`all_negative` function. 
+The function :code:`all_negative` takes in a vector of ints and returns :code:`true` if the elements in the vector are all negative (otherwise, it returns :code:`false`). Complete the implementation of the :code:`all_negative` function. 
 
 .. raw:: html
 
@@ -767,7 +762,7 @@ The function :code:`all_negative` takes in a vector of :code:`int` values and re
 
 **Exercise**
 
-The function :code:`minVal` takes in a vector of :code:`double` values and returns the minimum value contained in the vector of :code:`double` values. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+The function :code:`minVal` takes in a vector of doubles and returns the minimum value contained in the vector of doubles. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
 .. parsonsprob:: ch16_07_ex_minVal
    :language: cpp
