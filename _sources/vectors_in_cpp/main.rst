@@ -413,7 +413,7 @@ Arrange the lines of code below to write a program that erases all of the elemen
    =====
    }
    =====
-   for (int i = 0; i &lt; vec1.size(); ++i) { #distractor
+   for (int i = 0; i &lt; vec.size(); ++i) { #distractor
    =====
    vec.erase(i); #distractor
    =====
