@@ -311,11 +311,11 @@ Adding/Removing Elements From a Vector
 
    - :code:`vec.popback();`
 
-     + Oops! Don't forget the _ in pop_back()!
+     - Oops! Don't forget the _ in pop_back()!
 
    - :code:`vec.push_back();`
 
-     + Oops! The push_back() function adds an element, and we want to remove an element.
+     - Oops! The push_back() function adds an element, and we want to remove an element.
 
    - :code:`vec.at(4) = [];`
 
