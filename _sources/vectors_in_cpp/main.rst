@@ -776,13 +776,13 @@ The function :code:`minVal` takes in a vector of :code:`double` values and retur
    #include &lt;vector&gt;
    using namespace std;
    =====
-   double minVal(const vector<double> &vec) {
+   double minVal(const vector&ltdouble&gt &amp;vec) {
    =====
      double min_so_far = vec.at(0); 
    =====
-     for (int i = 0; i < vec.size(); ++i) {
+     for (int i = 0; i &lt vec.size(); ++i) {
    =====
-       if (vec.at(i) < min_so_far) {
+       if (vec.at(i) &lt min_so_far) {
    =====
          min_so_far = vec.at(i);
    =====
@@ -796,9 +796,9 @@ The function :code:`minVal` takes in a vector of :code:`double` values and retur
    =====
    double min_so_far = vec.at(1); #distractor
    =====
-   for (int i = 0; i <= vec.size(); ++i) { #distractor
+   for (int i = 0; i &lt= vec.size(); ++i) { #distractor
    =====
-   if (vec.at(i) > min_so_far) { #distractor
+   if (vec.at(i) &gt min_so_far) { #distractor
    =====
 
 
