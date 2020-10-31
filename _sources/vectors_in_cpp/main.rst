@@ -44,17 +44,15 @@ Warm-Up Exercise: What's My Value?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Here is a vector in C++:
+.. fillintheblank:: ch17_02_ex_warm_up
+   :casei:
+
+   Here is a vector in C++:
 
    .. image:: img/Warmup1.png
      :width: 400
      :align: center
      :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.
-
-.. fillintheblank:: ch17_02_ex_warm_up
-  :casei:
-
-  Enter the value of the element at each index:
   
   Index 3: |blank|
 
