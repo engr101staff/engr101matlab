@@ -566,16 +566,18 @@ For the mission, a rover with a high ratio of capacity to "charge needed" is a r
      return rover.capacity / (1 - rover.charge);
    }
 
-where rover.capacity / (1 - rover.charge) may be calculated for each fleet rover.
+where :code:`rover.capacity / (1 - rover.charge)` may be calculated for each fleet rover.
 
 Before accepting this function as the solution to the problem, it is important to perform sanity checks as to the validity of the function over the full realm of capacity and charge possibilities.
 
 QUESTION: What are the extreme case values, that is tests, that exercise the function and will the function perform equally well for all values?
 
-Consider rover.capacity. This ranges from a value of 200 to 400 from our file rover_data.txt. Clearly, the higher the capacity the higher the desirability given the same denominator.
+Consider :code:`rover.capacity`. This ranges from a value of :code:`200` to :code:`400` from our file :code:`rover_data.txt`. Clearly, the higher the capacity the higher the desirability given the same denominator.
 
-Consider rover.charge. This ranges from 0.1 to 0.8 for the set of values given, but may range to the extreme values 0 and 1, with 1 being 100% fully charged. Given the same capacity, the desirability is largest for the smallest denominator, that is, the greatest value for rover.charge.
+Consider :code:`rover.charge`. This ranges from :code:`0.1` to :code:`0.8` for the set of values given, but may range to the extreme values :code:`0` and :code:`1`, with :code:`1` being 100% fully charged. Given the same capacity, the desirability is largest for the smallest denominator, that is, the greatest value for :code:`rover.charge`.
+
 Unfortunately, when the charge is 100%, the test fails due to a divide by zero error. Good catch !!!
+
 Change the function to be
 
 .. code-block:: 
@@ -597,9 +599,9 @@ Change the function to be
 Finding the "Best" Rover
 ------------------------
 
-To find the best rover, one may use the desirability function that loops through the vector of Rovers and returns the index of the most desirable rover.
+To find the best rover, one may use the :code:`desirability` function that loops through the vector of Rovers and returns the index of the most desirable rover.
 
-NOTE1: It is important to consider a potential "end" case in this example: what if there are no rovers left to make a choice !! In such cases, it is useful to return a "nonsense" number, such as index value = -1. A negative value for a vector index will cause an error in the program, if sampled, and may be checked by the caller prior to attempting to read the vector. Think about which vector operation may be used to determine whether a vector is "empty".
+NOTE1: It is important to consider a potential "end" case in this example: what if there are no rovers left to make a choice !! In such cases, it is useful to return a "nonsense" number, such as index value = :code:`-1`. A negative value for a vector index will cause an error in the program, if sampled, and may be checked by the caller prior to attempting to read the vector. Think about which vector operation may be used to determine whether a vector is "empty".
 
 NOTE2: To determine the best Rover, search through the set of rovers.  Think about which vector operation determines the "size" of the vector.
 
