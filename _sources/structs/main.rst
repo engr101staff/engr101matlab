@@ -288,10 +288,10 @@ Tip regarding good coding practice
 
 It is a good idea to keep I/O operations in separate code such as in a function. This helps to compartmentalize programs, provides purpose to code, and assists with debugging the program. Here is the general pattern:
 
-   1. The primary data structure (ie., the :code:`vector`) is declared in :code:`int main()`
-   2.  A file stream to the data input is opened in :code:`int main()`
-   3. The file stream and its data structure are passed into a :code:`void` function by reference
-   4. The function reads the data from the file stream into the data structure
+1. The primary data structure (ie., the :code:`vector`) is declared in :code:`int main()`
+2.  A file stream to the data input is opened in :code:`int main()`
+3. The file stream and its data structure are passed into a :code:`void` function by reference
+4. The function reads the data from the file stream into the data structure
 
 .. image:: img/img7.png
    :width: 500
@@ -424,6 +424,8 @@ Is the :code:`struct` a large type? YES
    :width: 500
    :align: center
 
+|
+
 CONCLUSION: pass by :code:`const` reference
 
 Here is the setup for printing a :code:`struct`. The function, generalized for current and future usage, is designed with data passage via constant reference and can send data to any :code:`ostream` device, including a monitor, via :code:`cout`.
@@ -431,6 +433,8 @@ Here is the setup for printing a :code:`struct`. The function, generalized for c
 .. image:: img/img11.png
    :width: 500
    :align: center
+
+|
 
 **Exercise**
 
@@ -472,6 +476,11 @@ Write an implementation of the :code:`printRover()` function below. The printed 
 Application: Selecting Rovers for a Mission
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The mission: collect soil/rock samples from the dark side of the planet. To support colonization of the planet, a requirement of the mission is to catalogue the nutrients in the soils of the planet. In order to satisfy these requirements, additional variables are required to model the rover mission,
+
+1. an integer describing the cargo capacity of the rover
+2. a boolean to identify if a rover has been selected for the mission
+
 .. youtube:: dB69rQvEblk
    :divid: ch18_02_selecting_a_rover
    :height: 315
@@ -479,11 +488,6 @@ Application: Selecting Rovers for a Mission
    :align: center
 
 |
-
-The mission: collect soil/rock samples from the dark side of the planet. To support colonization of the planet, a requirement of the mission is to catalogue the nutrients in the soils of the planet. In order to satisfy these requirements, additional variables are required to model the rover mission,
-
-1. an integer describing the cargo capacity of the rover
-2. a boolean to identify if a rover has been selected for the mission
 
 Here is the updated :code:`Rover` struct. Now, we need to integrate the struct with our code !!!
 
@@ -503,6 +507,8 @@ The struct interface contains the expanded :code:`Rover` definition. The :code:`
 .. image:: img/img12.png
    :width: 500
    :align: center
+
+|
 
 Here, the :code:`myRover` variable is defined in :code:`int main()` for convenience. It is more practical to place the rover data into a text file that is read by the code.
 
@@ -547,6 +553,8 @@ For example:
 .. image:: img/img14.png
    :width: 500
    :align: center
+
+|
 
 PROBLEM: Find the set of rovers with the "greatest rover capacity" subject to the requirement constraint "maximum of 2.0 units of charge" available for charging the rovers. (This is a common packing problem that you may have faced, and is related to choosing the most useful items to pack for your travels within the capacity of your suitcase.)
 
@@ -622,7 +630,7 @@ Putting these tips together, an appropriate code to find the best rover looks li
 2. rovers.size() is used to set the upper limit to the for loop
 3. a relational operator is used to search for the index value of the best rover
 
-Please also watch this video
+This video shows a walkthrough of writing the :code:`bestRover` function.
 
 .. youtube:: eDAfMxFoehQ
    :divid: ch18_04_vid_bestRover
