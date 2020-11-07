@@ -347,7 +347,7 @@ Below is a structure definition and declaration:
 
 .. mchoice:: ch18_01_ex_opponent_01
 
-   Which command will access the value of the UM member in the MSU data set?
+   Which command will access the value of the :code:`UM` member in the :code:`MSU` data set?
 
    - :code:`Opponent.at[1,3];`
 
@@ -375,7 +375,7 @@ Below is a structure definition and declaration:
 
 .. mchoice:: ch18_01_ex_opponent_02
 
-   Which command will access the value of the UM member in the MSU data set?
+   There is an error in the :code:`conf_div` variable of the :code:`WIS` struct. It must be changed to a :code:`'W'`. Which command will execute the change?
 
    - :code:`WIS(conf_div = 'E') = 'W';`
 
