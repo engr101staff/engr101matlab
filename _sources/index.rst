@@ -29,6 +29,7 @@ Table of Contents
   strings_streams_and_io/toctree.rst
   vectors_in_cpp/toctree.rst
   program_design_in_cpp/toctree.rst
+  structs/toctree.rst
 
 
 
