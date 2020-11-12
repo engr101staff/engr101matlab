@@ -234,7 +234,7 @@ TODO video
 
   What is the value of :code:`v2[0][1]`? |blank|
   
-  - :[^0-9]**2[^0-9]**: Correct!
+  - :[^0-9]*2[^0-9]*: Correct!
     :x: No, try again.
 
 .. fillintheblank:: ch19_04_ex_v2_indexing_04
@@ -671,22 +671,22 @@ Now that we have all of our functions written, let's compile and run the program
 
   Run the :code:`analyzeData` program and fill in the boxes below based on what is printed to the terminal:
 
-  row sums:   
-  { |BLANK| }
+  | row sums:   
+  | { |BLANK| }
   
-  column sums:   
-  { |BLANK| }
+  | column sums:   
+  | { |BLANK| }
   
   The sum of all the elements is: |blank|
   
-  - :[^0-9]*1[^0-9]*2[^0-9]*3[^0-9]*4[^0-9]*: Line 1 Correct!
-    :x: Line 1 Incorrect.
+  - :[^0-9]*28[^0-9]*77[^0-9]*126[^0-9]*175[^0-9]*224[^0-9]*: Box 1 Correct!
+    :x: Box 1 Incorrect.
   
-  - :[^0-9]*1[^0-9]*2[^0-9]*3[^0-9]*: Line 2 Correct!
-    :x: Line 2 Incorrect.
+  - :[^0-9]*75[^0-9]*80[^0-9]*85[^0-9]*90[^0-9]*95[^0-9]*100[^0-9]*105[^0-9]*: Box 2 Correct!
+    :x: Box 2 Incorrect.
   
-  - :[^0-9]*1[^0-9]*2[^0-9]*3[^0-9]*6[^0-9]*7[^0-9]*8[^0-9]*9[^0-9]*: Line 3 Correct!
-    :x: Line 3 Incorrect.
+  - :[^0-9]*630[^0-9]*: Box 3 Correct!
+    :x: Box 3 Incorrect.
 
 |
 
