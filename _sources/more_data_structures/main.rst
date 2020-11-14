@@ -31,9 +31,7 @@ Introduction
 ^^^^^^^^^^^^
 .. section 1
 
-TODO video
-
-.. youtube:: AhGH8kn1E9A
+.. youtube:: xeLYCWvmQHk
    :divid: ch19_01_introduction
    :height: 315
    :width: 560
@@ -67,14 +65,11 @@ Let's get our C++ brains started today by writing a function that prints out the
   - :shrubbery: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-
-TODO Walkthruogh video
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch19_02_revealwt_printVecOfInts
   
-    .. youtube:: EUlRb1_8Ep8
+    .. youtube:: RaNhCTmsrZE
       :divid: ch19_02_wt_printVecOfInts
       :height: 315
       :width: 560
@@ -86,9 +81,7 @@ Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^
 .. section 3
 
-TODO video
-
-.. youtube:: f-LDCdnu9EE
+.. youtube:: jlCBOvx8Cb4
    :divid: ch19_03_vectors_of_vectors
    :height: 315
    :width: 560
@@ -197,9 +190,7 @@ Indexing Into a Vector of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-TODO video
-
-.. youtube:: f-LDCdnu9EE
+.. youtube:: 38YTRH2sahE
    :divid: ch19_04_indexing_into_a_vector_of_vectors
    :height: 315
    :width: 560
@@ -244,9 +235,9 @@ TODO video
   - :[^0-9]*13[^0-9]*: Correct!
     :x: No, try again.
 
-**Exercise: Pritning a Vector of Vectors**
+**Exercise: Printing a Vector of Vectors**
 
-This image of v2 is very helpful for understanding what is in v2:
+This image of :code:`v2` is very helpful for understanding what is in :code:`v2`:
 
 .. figure:: img/VectorOfVectors1.png
    :width: 600
@@ -302,16 +293,23 @@ Download the :download:`printVectorOfVectors.cpp <../_static/more_data_structure
   - :[^0-9]*0[^0-9]*: Line 5 Correct!
     :x: Line 5 Incorrect.
 
+.. admonition:: Walkthrough
+
+  .. reveal:: ch19_04_revealwt_printVectorOfVectors
+  
+    .. youtube:: HfNT6RLoRLM
+      :divid: ch19_04_wt_printVectorOfVectors
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Building and Modifying Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-video TODO
-
-.. youtube:: WpFO5DlsHdM
-   :divid: ch17_05_vid_unit_testing
+.. youtube:: ZIJ2fHP4y9w
+   :divid: ch19_05_vid_building_vectors_of_vectors
    :height: 315
    :width: 560
    :align: center
@@ -360,7 +358,7 @@ video TODO
 
 **Exercise**
 
-For the questions below, consider the vector :code:`v2` shown in an initial state that we'll call "state 1".
+For the questions below, consider the vector :code:`v2` shown in an initial state that we'll call "State 1".
 
 .. figure:: img/v2State1.png
    :width: 500
@@ -368,7 +366,7 @@ For the questions below, consider the vector :code:`v2` shown in an initial stat
 
    State 1
 
-We would like to change the contents of :code:`v2` to match "state 2":
+We would like to change the contents of :code:`v2` to match "State 2":
 
 .. figure:: img/v2State2.png
    :width: 500
@@ -376,7 +374,7 @@ We would like to change the contents of :code:`v2` to match "state 2":
 
    State 2
 
-Arrange the lines of code below such that they would change :code:`v2` from "state 1" to "state 2". Some lines contain mistakes or are unnecessary - these lines should not be used.
+Arrange the lines of code below such that they would change :code:`v2` from "State 1" to "State 2". Some lines contain mistakes or are unnecessary - these lines should not be used.
 
 .. parsonsprob:: ch19_05_ex_building_02
    :language: cpp
@@ -397,7 +395,7 @@ Arrange the lines of code below such that they would change :code:`v2` from "sta
    v2.push_back(temp); #distractor
    =====
 
-Now, let's try to change "state 2" to "state 3":
+Now, let's try to change "State 2" to "State 3":
 
 .. figure:: img/v2State2.png
    :width: 500
@@ -411,7 +409,7 @@ Now, let's try to change "state 2" to "state 3":
 
    State 3
 
-Arrange the lines of code below such that they would change :code:`v2` from "state 2" to "state 3". Some lines contain mistakes or are unnecessary - these lines should not be used.
+Arrange the lines of code below such that they would change :code:`v2` from "State 2" to "State 3". Some lines contain mistakes or are unnecessary - these lines should not be used.
 
 .. parsonsprob:: ch19_05_ex_building_03
    :language: cpp
@@ -423,7 +421,7 @@ Arrange the lines of code below such that they would change :code:`v2` from "sta
    =====
    vector&lt;int&gt; temp(2,0);
    =====
-   v2.push_back(temp); #distractor
+   v2.push_back(temp);
    =====
    v2[0] = v2[2]; #distractor
    =====
@@ -433,15 +431,24 @@ Arrange the lines of code below such that they would change :code:`v2` from "sta
    =====
 
 
+.. admonition:: Walkthrough
+
+  .. reveal:: ch19_05_revealwt_building
+  
+    .. youtube:: RJXsP6Lz8ss
+      :divid: ch19_05_wt_building
+      :height: 315
+      :width: 560
+      :align: center
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Uses for Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-video TODO
-
-.. youtube:: Rfb3LOIH1M8
-   :divid: ch17_06_vid_top_down_design
+.. youtube:: FooSTlapMIQ
+   :divid: ch19_06_vid_uses_for_vectors_of_vectors
    :height: 315
    :width: 560
    :align: center
@@ -479,10 +486,8 @@ This is a small dataset so it's easier for us to work with here in Runestone. Bu
 Designing the Program
 ---------------------
 
-video TODO
-
-.. youtube:: 7PBEf-ioKeo
-   :divid: ch17_07_vid_cracking_the_code
+.. youtube:: RmcLiuJ95Qw
+   :divid: ch19_07_vid_designing_the_program
    :height: 315
    :width: 560
    :align: center
@@ -523,6 +528,16 @@ There are four helper functions that we need to write:
 - :code:`sumOfCols()`
 - :code:`sum()`
 
+Let's write some pseudocode for the helper functions to help us implement these functions.
+
+.. youtube:: kqAX_vhQUU4
+   :divid: ch19_07_vid_helper_function_pseudocode
+   :height: 315
+   :width: 560
+   :align: center
+
+|
+
 **Exercise:** Complete the :code:`loadData` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`loadData` function:
 
 .. code-block:: none
@@ -547,14 +562,11 @@ There are four helper functions that we need to write:
 
    Copy your :code:`loadData` function here:
 
-
-TODO Walkthruogh video
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch19_07_revealwt_loadData
   
-    .. youtube:: EUlRb1_8Ep8
+    .. youtube:: uakxmBHRpcA
       :divid: ch19_07_wt_loadData
       :height: 315
       :width: 560
@@ -580,13 +592,11 @@ TODO Walkthruogh video
    Copy your :code:`sumOfRows` function here:
 
 
-TODO Walkthruogh video
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch19_07_revealwt_sumOfRows
   
-    .. youtube:: EUlRb1_8Ep8
+    .. youtube:: aUqrjYakr7U
       :divid: ch19_07_wt_sumOfRows
       :height: 315
       :width: 560
@@ -612,13 +622,11 @@ TODO Walkthruogh video
    Copy your :code:`sumOfCols` function here:
 
 
-TODO Walkthruogh video
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch19_07_revealwt_sumOfCols
   
-    .. youtube:: EUlRb1_8Ep8
+    .. youtube:: sf2ItguQdSQ
       :divid: ch19_07_wt_sumOfCols
       :height: 315
       :width: 560
@@ -645,13 +653,11 @@ TODO Walkthruogh video
    Copy your :code:`sum` function here:
 
 
-TODO Walkthruogh video
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch19_07_revealwt_sum
   
-    .. youtube:: EUlRb1_8Ep8
+    .. youtube:: oDcirGsul0w
       :divid: ch19_07_wt_sum
       :height: 315
       :width: 560
