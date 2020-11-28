@@ -312,7 +312,7 @@ Let's do one more keyword search -- this one usually gets some very strong react
    Reflection: If you feel comfortable sharing, how does this difference in the use of the word "hot" in reviews of Engineering professors make you feel? (If you prefer not to share your feelings, please enter "I have thought about this difference in ratings" in the box below).
 
 -------------------
-Ratings: Wapping Up
+Ratings: Wrapping Up
 -------------------
 
 So, now we've seen visualizations for the following keywords:
@@ -435,7 +435,8 @@ There are many, many ways to learn about bias in society. Here are a few places 
 
 Bias in ratings, whether of people or things, is a known issue. The challenge is how to mitigate the bias. The Project 5 specs have some resources linked about bias in online reviews and in natural language processing. Here's another example: A famous study of orchestra auditions found that placing candidates behind a screen increased the likelihood of women being hired. This is a simple solution that is easily implemented - not everything has to be hard to do!
 
-**Journal Article:** Goldin, Claudia, and Cecilia Rouse. 2000. "Orchestrating Impartiality: The Impact of "Blind" Auditions on Female Musicians." American Economic Review, 90 (4): 715-741. Access article here.
+**Journal Article:** Goldin, Claudia, and Cecilia Rouse. 2000. "Orchestrating Impartiality: The Impact of "Blind" Auditions on Female Musicians." American Economic Review, 90 (4): 715-741. `Access article here. <https://www.aeaweb.org/articles?id=10.1257%2Faer.90.4.715&source=post_page-----deda93da109b---------------------->`__
+
 
 **Online Training (Google):** Google, one of the most pervasive computing organizations ever, has a program called *re:Work* through which employees can learn about things like implicit (or "unconscious") bias. It's worth looking through their re:Work material -- do you think that it's helping them to "put people first"?
 
