@@ -311,9 +311,9 @@ Let's do one more keyword search -- this one usually gets some very strong react
 
    Reflection: If you feel comfortable sharing, how does this difference in the use of the word "hot" in reviews of Engineering professors make you feel? (If you prefer not to share your feelings, please enter "I have thought about this difference in ratings" in the box below).
 
--------------------
+--------------------
 Ratings: Wrapping Up
--------------------
+--------------------
 
 So, now we've seen visualizations for the following keywords:
 
