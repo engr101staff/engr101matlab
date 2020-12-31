@@ -22,53 +22,14 @@
       }
    </style>
 
-==============================
-Algorithms and Data Structures
-==============================
+=============================
+Applying Computing to Society
+=============================
 
-^^^^^^^
-Warm-Up
-^^^^^^^
-.. section 1
-
-Recall the :file:`keywordWeights.txt` file we used in project 5. Let's say you read the keywords and weights into two vectors:
-
-.. code-block:: cpp
-
-   vector<string> keywords;
-   vector<double> weights;
-
-   // Code to read from the file into those vectors.
-   // Note these vectors are pretty large - there are 2339
-   // keywords in the file (and consequentially 2339 elements
-   // in each of the vectors).
-
-Here are several different tasks we might try:
-
-- Find the first keyword in the :code:`keywords` vector
-- Find the last keyword in the :code:`keywords` vector
-- Find the 100th keyword in the :code:`keywords` vector
-- Determine whether the :code:`keywords` vector contains the word `banana`
-- Count the number of words in the :code:`keywords` vector that are longer than 10 characters
-- Re-sort the vectors so that the weights are in increasing order and the keywords are sorted in a parallel fashion (rather than the original alphabetic ordering in the keywords file).
-
-Are some of these tasks harder than others? For the computer, that is...ignore whether they seem tricky to program for us. Will some of these naturally take longer for a program to find a solution?
-
-.. code-block:: cpp
-
-   // Attempt 1
-   cout << keywords[keywords.size() - 1] << endl;
-
-
-.. code-block:: cpp
-
-   // Attempt 2
-   int i = 0;
-   while (i < keywords.size()
-
-
-
-
+^^^^^^^^^^^^^^^^
+Warm-Up Exercise
+^^^^^^^^^^^^^^^^
+.. section 2
 
 .. mchoice:: ch20_02_ex_warm_up
 
