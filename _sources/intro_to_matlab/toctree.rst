@@ -3,6 +3,6 @@ Introduction To MATLAB
 
 .. toctree::
   :caption: Introduction to MATLAB
-  :maxdepth: 1
+  :maxdepth: 4
 
   main.rst
