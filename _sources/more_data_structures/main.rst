@@ -89,7 +89,7 @@ Vectors of Vectors
 
 |
 
-**Exercise:** Here is a vector of vectors named :code:`v2`:
+**Knowledge Check:** Here is a vector of vectors named :code:`v2`:
 
 .. figure:: img/VectorOfVectors1.png
    :width: 600
@@ -137,7 +137,7 @@ Vectors of Vectors
     :x: No, try again.
 
 
-**Exercise:** Here is a vector of vectors named :code:`c2`:
+**Knowledge Check:** Here is a vector of vectors named :code:`c2`:
 
 .. figure:: img/VectorOfVectors2.png
    :width: 600
@@ -198,7 +198,7 @@ Indexing Into a Vector of Vectors
 
 |
 
-**Exercise:** Here is a vector of vectors named :code:`v2`:
+**Knowledge Check:** Here is a vector of vectors named :code:`v2`:
 
 .. figure:: img/VectorOfVectors1.png
    :width: 600
@@ -235,7 +235,9 @@ Indexing Into a Vector of Vectors
   - :[^0-9]*13[^0-9]*: Correct!
     :x: No, try again.
 
-**Exercise: Printing a Vector of Vectors**
+---------------------------------------------
+Exercise: Printing a Vector of Vectors
+---------------------------------------------
 
 This image of :code:`v2` is very helpful for understanding what is in :code:`v2`:
 
@@ -316,7 +318,7 @@ Building and Modifying Vectors of Vectors
 
 |
 
-**Exercise**
+**Knowledge Check:** Creating a vector of vectors
 
 .. mchoice:: ch19_05_ex_building_01
 
@@ -356,7 +358,9 @@ Building and Modifying Vectors of Vectors
 
 |
 
-**Exercise**
+----------------------------------------------------
+Exercise: Modifying Elements in a Vector of Vectors
+----------------------------------------------------
 
 For the questions below, consider the vector :code:`v2` shown in an initial state that we'll call "State 1".
 
@@ -538,7 +542,11 @@ Let's write some pseudocode for the helper functions to help us implement these 
 
 |
 
-**Exercise:** Complete the :code:`loadData` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`loadData` function:
+-----------------------------------------
+Exercise: A :code:`loadData` Function
+-----------------------------------------
+
+Complete the :code:`loadData` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`loadData` function:
 
 .. code-block:: none
 
@@ -572,8 +580,11 @@ Let's write some pseudocode for the helper functions to help us implement these 
       :width: 560
       :align: center
 
+-----------------------------------------
+Exercise: A :code:`sumOfRows` Function
+-----------------------------------------
 
-**Exercise:** Complete the :code:`sumOfRows` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sumOfRows` function:
+Complete the :code:`sumOfRows` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sumOfRows` function:
 
 .. code-block:: none
 
@@ -602,8 +613,11 @@ Let's write some pseudocode for the helper functions to help us implement these 
       :width: 560
       :align: center
 
+-----------------------------------------
+Exercise: A :code:`sumOfCols` Function
+-----------------------------------------
 
-**Exercise:** Complete the :code:`sumOfCols` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sumOfCols` function:
+Complete the :code:`sumOfCols` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sumOfCols` function:
 
 .. code-block:: none
 
@@ -632,7 +646,11 @@ Let's write some pseudocode for the helper functions to help us implement these 
       :width: 560
       :align: center
 
-**Exercise:** Complete the :code:`sum` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sum` function:
+-----------------------------------------
+Exercise: A :code:`sum` Function
+-----------------------------------------
+
+Complete the :code:`sum` function in the :file:`analyzeData.cpp` file. Here is the pseudocode for the :code:`sum` function:
 
 .. code-block:: none
 
