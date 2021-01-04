@@ -11,13 +11,13 @@
 Vectors and Matrices
 ====================
 
-.. admonition:: Technical Difficulties
+.. .. admonition:: Technical Difficulties
 
-  We had some technical difficulties that cause the sound in some of the videos below to cut out for brief moments. Sorry about that! We're aware of the issue and looking into a fix for future content.
+..   We had some technical difficulties that cause the sound in some of the videos below to cut out for brief moments. Sorry about that! We're aware of the issue and looking into a fix for future content.
 
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As we mentioned at the end of Chapter 1, a key strength of MATLAB is support for working with vectors and matrices just as easily as scalar values. A scalar is just a plain old number, like 12 or 97.4. 
 
@@ -52,9 +52,9 @@ While "array" is the technical term, most often people just call things vectors 
 
 Vectors and matrices consist of **elements** that hold data. Vectors and matrices can hold lots of different types of values, not just the integers shown in these examples. We will use vectors and matrices to hold large amounts of data and quickly analyze that data to help make decisions about things.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating Vectors and Matrices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use the square brackets :code:`[]` to create a vector or a matrix. Elements may be separated by spaces or commas. Let's start by creating some vectors.
 
@@ -66,9 +66,9 @@ We use the square brackets :code:`[]` to create a vector or a matrix. Elements m
 
 |
 
--------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 MatCrab
--------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -94,15 +94,15 @@ MatCrab
 ..          :alt: The MatCrab mascot, a cartoon crab
 ..      - This is MatCrab. They can help you with stuff.
 
-----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating Vectors
-----------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: content/creating_vectors.in.rst
 
---------------------------
+------------------------------------------------------
 Exercise: Creating Vectors
---------------------------
+------------------------------------------------------
 
 .. include:: ex/creating_vectors.in.rst
 
@@ -116,9 +116,9 @@ Exercise: Creating Vectors
       :width: 560
       :align: center
 
---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Range Notation
---------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes, we want to make a vector that has elements that contain evenly-spaced values between a starting value and an ending value. We can use range notation with the colon :code:`:` operator to create evenly-spaced vectors.
 
@@ -132,9 +132,9 @@ Sometimes, we want to make a vector that has elements that contain evenly-spaced
 
 .. include:: content/range_notation.in.rst
 
-------------------------
+------------------------------------------------------
 Exercise: Range Notation
-------------------------
+------------------------------------------------------
 
 .. include:: ex/range_notation.in.rst
 
@@ -148,9 +148,9 @@ Exercise: Range Notation
       :width: 560
       :align: center
 
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating Matrices
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A matrix is also created with the square brackets :code:`[]`. Rows are separated with a semicolon :code:`;` (or a newline) and each element in a row is separated with commas or spaces, just like a vector. For example:
 
@@ -164,9 +164,9 @@ A matrix is also created with the square brackets :code:`[]`. Rows are separated
 
 .. include:: content/creating_matrices.in.rst
 
----------------------------
+------------------------------------------------------
 Exercise: Creating Matrices
----------------------------
+------------------------------------------------------
 
 .. include:: ex/creating_matrices.in.rst
 
@@ -180,9 +180,9 @@ Exercise: Creating Matrices
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Arithmetic Array Operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In MATLAB, almost anything you can do with a scalar, you can do with a vector or matrix (since these are all fundamentally "arrays" underneath). Let's take a look at how some of the common math operations like addition and multiplication work with matrices.
 
@@ -205,9 +205,9 @@ Remember, for the *multiplicative* operators, you need to use a dot in order to 
 
 There is *one exception* - if at least one of the operands is a *scalar*, e.g. :code:`2 * x`, you don't technically need the dot for multiplicative operators. But it also won't hurt to use the dot there.
 
--------------------------------------
+------------------------------------------------------
 Exercise: Arithmetic Array Operations
--------------------------------------
+------------------------------------------------------
 
 .. include:: ex/arithmetic_array_operations.in.rst
 
@@ -221,9 +221,9 @@ Exercise: Arithmetic Array Operations
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Vector Indexing
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To access elements in a vector or matrix, you can use **indexing**. Here's a look at the basic syntax and how indexing works for vectors.
 
@@ -237,17 +237,17 @@ To access elements in a vector or matrix, you can use **indexing**. Here's a loo
 
 .. include:: content/vector_indexing.in.rst
 
--------------------------
+------------------------------------------------------
 Exercise: Vector Indexing
--------------------------
+------------------------------------------------------
 
 .. include:: ex/vector_indexing.in.rst
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Matrices and Row/Column Indexing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To access elements in a matrix, it's generally most useful to use **row/column indexing**. Here's the details:
 
@@ -284,9 +284,9 @@ Let's look at some more examples:
 
 .. include:: content/row_column_indexing_2.in.rst
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Manipulating Arrays with Indexing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We can also use indexing to change the values of certain elements in a matrix. Basically, you use an indexing expression as the target on the left hand side of an assignment. Check it out:
 
@@ -298,9 +298,9 @@ We can also use indexing to change the values of certain elements in a matrix. B
 
 |
 
------------------------------
+------------------------------------------------------
 Exercise: Manipulating Arrays
------------------------------
+------------------------------------------------------
 
 .. include:: ex/manipulating_arrays_1.in.rst
 
@@ -318,15 +318,15 @@ Exercise: Manipulating Arrays
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Common Functions Used with Matrices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: content/common_functions.in.rst
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Linear Indexing - A Heads Up
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Each element also has a sequential index used in linear indexing (as opposed to the row/column indexing we have been using). Linear indexing uses indices 1, 2, 3, … ordered first by columns, then by rows. This is called "column-major" order. Here is an example of linear indexing in MATLAB:
 
@@ -338,3 +338,14 @@ Each element also has a sequential index used in linear indexing (as opposed to 
 |
 
 **Warning! It's easy to get the column-major order backward!** We highly recommend using row/column indexing because it is more useful, generally clearer, and leads to fewer headaches, but some MATLAB help files use linear indexing, so now you know what it is.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
