@@ -461,8 +461,12 @@ And in case you are wondering, Why did they use shapes to illustrate segregation
 **Animated Short** Balablock. Dir. Bretislav Pojar. National Film Board of Canada, 1972. Animated Short. 
 `https://www.youtube.com/watch?v=6fzWJcgVgYY <https://www.youtube.com/watch?v=6fzWJcgVgYY>`__
 
-^^^^^^^^^^^^^^
-End of Chapter
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the end of the chapter! You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

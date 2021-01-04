@@ -714,8 +714,12 @@ B. There is an infinite loop somewhere. In this case, fall back on method #3 abo
 If you've tried all these tricks and your program still won't compile and/or run, please watch the Walkthroughs!
 
 
-^^^^^^^^^^^^^^
-End of Chapter
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the end of the chapter! You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
