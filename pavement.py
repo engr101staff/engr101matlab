@@ -13,7 +13,7 @@ sys.path.append(os.getcwd())
 home_dir = os.getcwd()
 
 ####################
-project_name ='engr101matlab'
+project_name ='engr101umich'
 ####################
 
 master_url = None
@@ -21,7 +21,7 @@ if not master_url:
     master_url = get_master_url()
 
 master_app = 'runestone'
-serving_dir = "./build/engr101matlab"
+serving_dir = "./build/engr101umich"
 dynamic_pages = True
 if dynamic_pages:
     dest = "./published"
@@ -33,13 +33,13 @@ options(
     sphinx = Bunch(docroot=".",),
 
     build = Bunch(
-        builddir="./build/engr101matlab",
+        builddir="./build/engr101umich",
         sourcedir="_sources",
-        outdir="./build/engr101matlab",
+        outdir="./build/engr101umich",
 #        warnerror=True,
         confdir=".",
-        project_name = "engr101matlab",
-        template_args={'course_id': 'engr101matlab',
+        project_name = "engr101umich",
+        template_args={'course_id': 'engr101umich',
                        'login_required':'false',
                        'course_title': project_name,
                        'appname':master_app,
@@ -50,7 +50,7 @@ options(
                        'python3': 'true',
                        'dburl': 'postgresql://user:password@localhost/runestone',
                        'default_ac_lang': 'python',
-                       'basecourse': 'engr101matlab',
+                       'basecourse': 'engr101umich',
                        'jobe_server': 'http://jobe2.cosc.canterbury.ac.nz',
                        'proxy_uri_runs': '/jobe/index.php/restapi/runs/',
                        'proxy_uri_files': '/jobe/index.php/restapi/files/',
