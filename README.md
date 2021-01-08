@@ -61,6 +61,8 @@ runestone build
 runestone serve
 ```
 
+For the local preview to work correctly, you'll also need to ensure `dynamic_pages` is set to `False` in `pavement.py`. However, make sure you set it back to `True` before the code is merged back into the main branch.
+
 Remember that you will need to be in a terminal with your python virtual environment activated for those to work.
 
 ## Git Workflow for Contributing
@@ -82,7 +84,7 @@ git checkout -b chapter3
 
 That command creates a new branch, `chapter3` based on whatever branch you were on previously (`master`) and switches you to that branch.
 
-Now, go ahead and create new files, make changes, etc. (See the Content Creation section in this readme for details on where you should make changes to add content.) As you're working, you can always run `git status` to see a summary of the files you've added or edited.
+Now, go ahead and create new files, make changes, etc. You may also want to set `dynamic_pages` to `False` in `pavement.py`. (See the Content Creation section in this readme for details on where you should make changes to add content.) As you're working, you can always run `git status` to see a summary of the files you've added or edited.
 
 Once you've made some changes and you want to "save" them, you should push them to your branch on github (make sure you've saved your files locally, first, of course). The first time you push for a new branch, you should run:
 
@@ -96,5 +98,11 @@ Of course, adjust the branch name (e.g. `chapter3`) and the message in quotes ac
 
 For subsequent pushes on the same branch, you should omit the `-u` in the `git push` command.
 
+Then, when the work is ready to "publish", make a pull request on github to merge the content into the main branch. (You'll want to ensure that `dynamic_pages` is set back to `True` in `pavement.py`, otherwise the check on the PR will fail.)
 
+## Runestone, reStructuredText, Sphinx, etc.
+
+Runestone content is written in a markup language called reStructuredText (reST). It builds on top of Sphinx and DocUtils, which are tools for turning reST into formatted documentation, in our case, generating the HTML that supports the basic "pages" of our "book".
+
+Don't worry too much about the details of the toolchain, but it's helpful to know their names when searching for documentation online (e.g. "runestone image directive" is probably less helpful to search than "sphinx image directive" - though both are more useful than "sphinx image" :D).
 
