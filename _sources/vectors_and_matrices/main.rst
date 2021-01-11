@@ -58,7 +58,7 @@ Creating Vectors and Matrices
 
 We use the square brackets :code:`[]` to create a vector or a matrix. Elements may be separated by spaces or commas. Let's start by creating some vectors.
 
-.. youtube:: U8-PvLF__RY
+.. youtube:: P1GdagWbNq4
   :divid: ch02_02_vid_creating_vectors
   :height: 315
   :width: 560
@@ -122,7 +122,7 @@ Range Notation
 
 Sometimes, we want to make a vector that has elements that contain evenly-spaced values between a starting value and an ending value. We can use range notation with the colon :code:`:` operator to create evenly-spaced vectors.
 
-.. youtube:: Cqz_GSm7jKc
+.. youtube:: CRCUVzo_MD4
   :divid: ch02_02_vid_range_notation
   :height: 315
   :width: 560
@@ -154,7 +154,7 @@ Creating Matrices
 
 A matrix is also created with the square brackets :code:`[]`. Rows are separated with a semicolon :code:`;` (or a newline) and each element in a row is separated with commas or spaces, just like a vector. For example:
 
-.. youtube:: pg5QlQwnpdw
+.. youtube:: -qmtl_FcNqE
   :divid: ch02_02_vid_creating_matrices
   :height: 315
   :width: 560
@@ -186,7 +186,7 @@ Arithmetic Array Operations
 
 In MATLAB, almost anything you can do with a scalar, you can do with a vector or matrix (since these are all fundamentally "arrays" underneath). Let's take a look at how some of the common math operations like addition and multiplication work with matrices.
 
-.. youtube:: zGhVfJZCmjc
+.. youtube:: LJYHXPK1H5o
   :divid: ch02_03_vid_arithmetic_array_operations
   :height: 315
   :width: 560
@@ -227,7 +227,7 @@ Vector Indexing
 
 To access elements in a vector or matrix, you can use **indexing**. Here's a look at the basic syntax and how indexing works for vectors.
 
-.. youtube:: jbpWJdUXamk
+.. youtube:: GHKUMQ9KHKs
   :divid: ch02_04_vid_vector_indexing
   :height: 315
   :width: 560
@@ -290,7 +290,7 @@ Manipulating Arrays with Indexing
 
 We can also use indexing to change the values of certain elements in a matrix. Basically, you use an indexing expression as the target on the left hand side of an assignment. Check it out:
 
-.. youtube:: oQOlymiHS34
+.. youtube:: aYMgG9HFiug
   :divid: ch02_06_vid_manipulating_arrays
   :height: 315
   :width: 560
@@ -346,6 +346,15 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* Everything in MATLAB is an array! Scalars, vectors, and matrices are all arrays in MATLAB. 
+* Use :code:`[]` to create vectors and matrices. For matrices, create a new row using :code:`;`.
+* You can create vectors and matrices from other vectors and matrices as along as the result is a rectangular array (i.e. each row must have the same number of columns).
+* Range notation using the :code:`:` operator lets you quickly create vectors of evenly spaced values.
+* Use the dot operator (:code:`.`) to make sure you are using array operations for basic math operations.
+* Index into vectors and matrices using :code:`()`.
+* Use row/column indexing for matrices: specify rows first, then columns, separated by a comma.
+* When you manipulate data in an array, the indexing operations can appear on both the left-hand side and the right-hand side of the assignment operator.
+* Work with whole rows or whole columns using :code:`:` in your indexing. 
+* There are many built-in functions that you may find useful when working with arrays, especially matrices. We recommend you start your own set of "quick reference notes" and include these functions and what they do. Describing the functions in your own words will help you to understand them better and remember about them later on.  
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

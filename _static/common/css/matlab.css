@@ -68,8 +68,9 @@
 }
 
 .matlab-column-index {
-    text-align-last: center;
+    text-align: center;
     font-size: 0.8em;
+    border: none;
 }
 
 .matlab-column-index.selected {
@@ -80,6 +81,7 @@
 .matlab-row-index {
     font-size: 0.8em;
     padding-right: 0.3em;
+    border: none;
 }
 
 .matlab-row-index.selected {
@@ -245,6 +247,10 @@ svg.matlab-range-svg {
     font-family: monospace;
 }
 
+.matcrab-hide-indexing-text .matlab-indexing-text {
+    visibility: hidden;
+}
+
 #visualization {
     margin-top: 10px;
 }
@@ -296,12 +302,4 @@ svg.matlab-range-svg {
 .matcrab-variable-target,
 .matcrab-exercise-complete {
     display: none;
-}
-
-.matlab-row-index {
-    border: none;
-}
-
-.matlab-column-index {
-    border: none;
 }

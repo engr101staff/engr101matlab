@@ -45,6 +45,12 @@ Flipping and Rotating a Matrix
 
 Functions for **flipping** and **rotating** a matrix:
 
+* :code:`flipud` - flip a matrix "up/down"
+* :code:`fliplr` - flip a matrix "left/right"
+* :code:`rot90` - rotate a matrix 90 degrees counter-clockwise
+
+|
+
 .. raw:: html
 
   <div class="container-fluid">

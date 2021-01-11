@@ -15,7 +15,7 @@ Here's a few practice exercises so you can get the syntax down:
 
   .. raw:: html
 
-    <div class="matcrab-vis-exp">
+    <div class="matcrab-vis-exp matcrab-hide-indexing-text">
       x = [4,2,6,3;7,2,4,3;4,6,8,1];
       y = x(2,3)
     </div>
@@ -33,7 +33,7 @@ Here's a few practice exercises so you can get the syntax down:
 
   .. raw:: html
 
-    <div class="matcrab-vis-exp">
+    <div class="matcrab-vis-exp matcrab-hide-indexing-text">
       x = [4,2,6,3;7,2,4,3;4,6,8,1];
       y = x(2,[1,4,4])
     </div>
