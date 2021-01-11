@@ -2,7 +2,7 @@ For the exercise below, use this vector :code:`x`:
 
 .. raw:: html
 
-  <div class="matcrab-vis-exp">
+  <div class="matcrab-vis-exp  matcrab-hide-indexing-text">
     x = [3,7,2,8,3];
     x
   </div>

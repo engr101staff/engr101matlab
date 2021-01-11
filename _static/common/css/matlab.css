@@ -248,7 +248,7 @@ svg.matlab-range-svg {
 }
 
 .matcrab-hide-indexing-text .matlab-indexing-text {
-    visibility: hidden;
+    display: none;
 }
 
 #visualization {
