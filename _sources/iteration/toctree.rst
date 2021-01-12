@@ -3,6 +3,6 @@ Iteration
 
 .. toctree::
   :caption: Iteration
-  :maxdepth: 1
+  :maxdepth: 4
 
   main.rst

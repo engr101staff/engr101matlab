@@ -3,6 +3,6 @@ Vectors in C++
 
 .. toctree::
   :caption: Vectors in C++
-  :maxdepth: 1
+  :maxdepth: 4
 
   main.rst

@@ -3,6 +3,6 @@ Structs
 
 .. toctree::
   :caption: Structs
-  :maxdepth: 1
+  :maxdepth: 4
 
   main.rst

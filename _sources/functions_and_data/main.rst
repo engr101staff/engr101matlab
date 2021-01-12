@@ -11,9 +11,9 @@
 Functions and Data
 ==================
 
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Warm Up
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ex/warm_up.in.rst
 
@@ -27,9 +27,9 @@ Warm Up
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Defining Custom Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: btFcE-fCoGk
   :divid: ch03_02_vid_custom_functions
@@ -37,9 +37,9 @@ Defining Custom Functions
   :width: 560
   :align: center
   
--------------------------
+------------------------------------------------------
 Exercise: Function Basics
--------------------------
+------------------------------------------------------
 
 .. include:: ex/function_basics.in.rst
 
@@ -54,9 +54,9 @@ Exercise: Function Basics
       :align: center
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Vectorization and Data Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: TiyXzP96r1U
     :divid: ch03_03_vid_data_files
@@ -64,9 +64,9 @@ Vectorization and Data Files
     :width: 560
     :align: center
 
-----------------------------------
+------------------------------------------------------
 Exercise: Reading Soil Sample Data
-----------------------------------
+------------------------------------------------------
 
 .. include:: ex/data_files.in.rst
 
@@ -80,9 +80,9 @@ Exercise: Reading Soil Sample Data
       :width: 560
       :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Built-in Aggregator Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: hulFvFgqX7s
     :divid: ch03_04_vid_aggregator_functions
@@ -154,9 +154,9 @@ Here's an example of the :code:`sum()` function:
     </div>
   </div>
 
---------------------------------
+------------------------------------------------------
 Exercise: Monthly Average of ESP
---------------------------------
+------------------------------------------------------
 
 .. include:: ex/monthly_average.in.rst
 
@@ -171,9 +171,9 @@ Exercise: Monthly Average of ESP
       :align: center
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Parameter Passing and Scope
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: KTNmk3TX01M
     :divid: ch03_05_vid_scope_and_parameters
@@ -181,9 +181,9 @@ Parameter Passing and Scope
     :width: 560
     :align: center
 
--------------------------------------
+------------------------------------------------------
 Exercise: Parameter Passing and Scope
--------------------------------------
+------------------------------------------------------
 
 .. include:: ex/scope_and_parameters.in.rst
 
@@ -197,12 +197,23 @@ Exercise: Parameter Passing and Scope
       :width: 560
       :align: center
 
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Unit Testing
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: tSY8LcIVEI4
     :divid: ch03_06_vid_unit_testing
     :height: 315
     :width: 560
     :align: center
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

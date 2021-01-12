@@ -31,9 +31,6 @@ The questions below will ask you to write code that works regardless of the size
     </div>
   </div>
 
-.. shortanswer:: ch02_06_ex_manipulating_arrays_03
-
-  Say you have a matrix :code:`m`. Write a line of code to double the value of each element in the first row of :code:`m`. Your code should work regardless of the size of :code:`m`.
 
 .. shortanswer:: ch02_06_ex_manipulating_arrays_04
 
@@ -42,3 +39,7 @@ The questions below will ask you to write code that works regardless of the size
 .. shortanswer:: ch02_06_ex_manipulating_arrays_05
 
   Say you have a matrix :code:`m`. Write a line of code to set the elements in the four corners of :code:`m` to the value 0. Your code should work regardless of the size of :code:`m`.
+
+.. shortanswer:: ch02_06_ex_manipulating_arrays_03
+
+  Say you have a matrix :code:`m`. Write a line of code to double the value of each element in the first row of :code:`m`. Your code should work regardless of the size of :code:`m`.

@@ -44,7 +44,7 @@ For each of the expressions below, determine the result of the operation (or if 
 
   * - .. shortanswer:: ch02_03_ex_arithmetic_array_operations_01
 
-        What is the result of :code:`a*b`?
+        What is the result of :code:`a * b`?
 
     - .. shortanswer:: ch02_03_ex_arithmetic_array_operations_02
 

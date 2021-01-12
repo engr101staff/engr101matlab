@@ -10,17 +10,22 @@ Introduction to MATLAB
 .. Welcome!
 .. ^^^^^^^^
 
-.. Welcome to ENGR 101! Please start with the video below.
+Welcome to Engr 101! In Engr 101, we will be learning basic principles of programming computer code and simple algorithms used to tackle engineering problems. We will learn these concepts by first programming in MATLAB (which is really good at processing data and visualizing it) and then C++ (which is really good at automating decisions and creating a process). We have done our best to use wide-ranging real-world examples for as much of the class as possible. 
 
-.. .. youtube:: btFcE-fCoGk
-..   :divid: ch01_01_vid_welcome
-..   :height: 315
-..   :width: 560
-..   :align: center
+**Why are we using Runestone?**
 
-.. ^^^^^^^^^^^^^^^^^^^^^^
-.. Introduction to MATLAB
-.. ^^^^^^^^^^^^^^^^^^^^^^
+We believe that the best way to learn programming is to practice with each new programming skill and concept as it is introduced. This is hard to do in a traditional lecture but easy to do with the Runestone platform. Each Runestone chapter has sections that each follow the same general pattern: introduce a concept, show some examples, check your understanding, and practice the concepts. 
+
+The Runestone chapter sections use a variety of approaches for these steps, including short videos, text and images, multiple choice and true/false questions, actual coding practice, and "mixed up code" problems (where you're given the lines of code and you need to arrange the code so that program works correctly). Each question and practice exercise has some type of feedback for you. You can check your answers to true/false and multiple choice questions right away, and Runestone will either tell you correct or give you a hint about what to think about to get to the correct answer. The coding practice questions have walkthrough videos that you can watch if you get stuck or want to verify that you've solved the problem correctly. 
+
+**Who Are All These People in the Videos?** 
+
+There are many short, instructional videos woven throughout this Runestone book. These videos have been created especially for Engr 101 by the faculty, GSIs, and IAs. Some of these people are currently teaching Engr 101, and some of them are past members of our Engr 101 teaching team. So, if you see someone you don't recognize, that's okay!  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A Quick Tour of MATLAB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 MATLAB is a programming language and environment often used in engineering applications. Let's take a quick tour of how it works.
 
@@ -44,9 +49,9 @@ Some fundamental tools in programming are *literals*, *variables*, and *expressi
 
 * **Expressions** are used to manipulate and compute new data, often by combining variables and literals, or even other sub-expressions. They generally use **operators** like :code:`+`, :code:`*`, etc.
 
------------------------------------
+------------------------------------------------------
 Exercise: Variables and Expressions
------------------------------------
+------------------------------------------------------
 
 .. tip::
   By the way, we end up using a lot of terms interchangably to refer to the content of programs, like *code*, *lines of code*, *commands*, *instructions*, *statements*, etc. Likewise, when we "make a program go", we might say we *run* it, *execute* it, or *launch* it. They all mean essentially the same thing and can be used interchangeably.
@@ -84,17 +89,17 @@ Consider the following MATLAB code, which might be used to calculate the net inc
 ..       :width: 560
 ..       :align: center
 
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Scripts
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. When we want to write a program that does something non-trivial and that we might run multiple times, a script is one of our go-to tools.
 
 Let's take a look at an example, and along the way we'll write up our first "useful" MATLAB program.
 
------------------
-A Fuel Calculator
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example: A Fuel Calculator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: A1Beuyvju08
   :divid: ch01_03_vid_scripts_01
@@ -102,9 +107,9 @@ A Fuel Calculator
   :width: 560
   :align: center
 
------------------------------------
+------------------------------------------------------
 Exercise: Fuel Calculator Algorithm
------------------------------------
+------------------------------------------------------
 
 For reference, here's the problem discussed in the video above:
 
@@ -123,9 +128,9 @@ For reference, here's the problem discussed in the video above:
     An **algorithm** is just a formal set of steps for solving a problem that contains enough details to be clear and unambiguous. A good way to check is to think "would someone else understand my solution by reading this?".
 
 
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Implementing the Fuel Calculator in MATLAB
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: Nmg8blikrjY
   :divid: ch01_03_vid_scripts_02
@@ -135,9 +140,21 @@ Implementing the Fuel Calculator in MATLAB
 
 |
 
--------------------
-Exercise: Debugging
--------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When we write code, we're trying to implement an algorithm so that our computer can understand the steps of the algorithm and execute the steps correctly. But sometimes we make mistakes in code; these mistakes are called *bugs*. 
+
+A **bug** is anything that causes a program to not implement an algorithm correctly. Some common bugs are: 
+
+* mistyping a variable name
+* typing the wrong number
+* telling the computer to do one thing when you *really* meant that it should do a different thing
+* so many other things that we'll see as we go along in this course...
+
+It turns out that it can sometimes be challenging to translate an algorithm into the correct code for our computer to execute, and we inadvertently have bugs throughout our code, especially in the "first draft" of our code. **Debugging** is the process we use to narrow down where in our program a bug occurs and then correct the bug. 
+
 
 .. admonition:: Did you know?
 
@@ -148,7 +165,11 @@ Exercise: Debugging
     :align: center
     :alt: A moth taped to a page from a logbook.
 
-This exercise involves three slightly different versions of the fuel calculator script, each containing a bug. Download each file, put them in your current MATLAB folder, and run them (by typing the name of the script, e.g. :code:`FuelCalculatorBuggy1`, in the command window). Use your knowledge of the way the script should work to help deciper error messages or incorrect results and track down the bug.
+------------------------------------------------------
+Exercise: Debugging the Fuel Calculator Script
+------------------------------------------------------
+
+This exercise involves three slightly different versions of the fuel calculator script, each containing a bug. Download each file, put them in your current MATLAB folder, and run them (by typing the name of the script, e.g. :code:`FuelCalculatorBuggy1`, in the command window). Use your knowledge of the way the script *should* work to help deciper error messages or incorrect results and track down the bug.
 
 .. fillintheblank:: ch01_03_ex_buggy_01
 
@@ -191,9 +212,11 @@ This exercise involves three slightly different versions of the fuel calculator 
   - :12: Correct! There should only be one :code:`60 *` on this line.
     :x: Nope, try again!
 
-----------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Style Tips
-----------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As you program, you will likely develop your own "style" of coding -- how you like to name variables, how much whitespace you put between chuncks of code, how you tend to arrange your code. Coding is a style of writing, and everyone has their own style. It's precisely *because* of these differences in person style that commenting your code is so very important -- well, that and because if you haven't looked at your own code in a few weeks you'll have forgotten what you wrote it for! As you start to develop your own programming style, here are some style tips to get you started. 
 
 **Variable Names**
 
@@ -248,9 +271,9 @@ We say a value is *hardcoded* into a program when it appears in an expression as
 
 |
 
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Update Assignments
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Variables in programming are different than variables in math. In math, when you say *x = 1*, you mean it. *x* is equal to 1 and always will be (at least until the next problem!). But in programming, :code:`x = 1` just means "put the value 1 in :code:`x` for now", and its value may be updated later.
 
@@ -262,9 +285,9 @@ We can even update the value of a variable based on its previous value! This is 
   :width: 560
   :align: center
 
-----------------------------
+------------------------------------------------------
 Exercise: Update Assignments
-----------------------------
+------------------------------------------------------
 
 .. fillintheblank:: ch01_04_ex_buggy_01
 
@@ -299,9 +322,9 @@ Exercise: Update Assignments
 
 
 
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Functions
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Expressions in MATLAB can also use **functions** to compute results or perform operations. MATLAB has *many* built-in functions for math, data analysis, and engineering applications. You can even write your own!
 
@@ -311,9 +334,9 @@ Expressions in MATLAB can also use **functions** to compute results or perform o
   :width: 560
   :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 So what else can MATLAB do?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 MATLAB is way more than just a really fancy calculator. We will cover a lot more of what MATLAB can do as we go through the course, but let’s take a quick look to see how powerful MATLAB can be!
 
@@ -373,3 +396,21 @@ Watch the demo below to see examples of how we can use MATLAB to manipulate data
   :width: 560
   :align: center
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* We use the term *MATLAB* refers to both the program (that you open on your computer) and the programming language itself.
+* Some fundamental tools in programming are **literals**, **variables**, and **expressions**.
+* The **assignment operator (:=:)** stores a value into a variable.
+* In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. 
+* An **algorithm** is just a formal set of steps for solving a problem that contains enough details to be clear and unambiguous. 
+* A **bug** is anything that causes a program to not implement an algorithm correctly.
+* **Debugging** is the process we use to narrow down where in our program a bug occurs and then correct the bug.
+* You can update the value of a variable based on its previous value using an **update assignment** (or **update expression**). 
+* A **function** is an abstraction over a chunk of computation. There are built-in functions and functions that you write yourself.
+* MATLAB is really good at working with vectors and matrices and processing data. The next chapter will introduce vectors and matrices in MATLAB.
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

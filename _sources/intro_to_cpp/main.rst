@@ -343,8 +343,12 @@ Here's a few quick questions to review:
 
   The calculation :code:`f = 9 / 5 * c + 32` works for all values of :code:`c` (the temperature in Celsius).
 
-^^^^^^^^^^^^^^
-End of Chapter
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the end of the chapter! You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

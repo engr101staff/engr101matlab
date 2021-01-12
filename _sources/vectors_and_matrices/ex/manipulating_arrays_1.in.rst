@@ -11,7 +11,7 @@
 
   .. raw:: html
 
-    <div class="matcrab-vis-exp">
+    <div class="matcrab-vis-exp matcrab-hide-indexing-text">
       x = [4,2,6,3;7,2,4,3;4,6,8,1];
       x(1,:) = 10
     </div>
@@ -29,7 +29,7 @@
 
   .. raw:: html
 
-    <div class="matcrab-vis-exp">
+    <div class="matcrab-vis-exp matcrab-hide-indexing-text">
       x = [4,2,6,3;7,2,4,3;4,6,8,1];
       x(end,end) = x(end,end) + 1
     </div>

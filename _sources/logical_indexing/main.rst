@@ -53,9 +53,9 @@ Logical Operations and Indexing
       
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction and Relational Operators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
 We've seen that MATLAB supports *arithmetic* operations (e.g. :code:`+`, :code:`.*`, etc.), which allow us to write expressions that compute a *numeric* result. MATLAB (and most other programming languages!) also allow us to compare different values/variables to each other using *relational* operators that produce a *logical* (i.e. true or false) result. We'll introduce the basic idea and then give you a chance to practice.
@@ -79,7 +79,11 @@ Exercise: Practice with Relational Operators
 
   .. reveal:: ch04_01_revealwt_relational_operations
 
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: umNofgBK-Kk
+      :divid: ch04_01_wt_relational_operations
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using Logical Values and Logical Indexing
@@ -112,9 +116,13 @@ Exercise: Analyzing Some Rocks
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch04_02_revealwt_relational_operations
+  .. reveal:: ch04_02_revealwt_analyzing_rocks
 
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: 4_rSCo3CN0Q
+      :divid: ch04_02_wt_analyzing_rocks
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Logical Operators (and/or)
@@ -147,9 +155,13 @@ Exercise: More Rock Analysis
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch04_03_revealwt_logical_operators
+  .. reveal:: ch04_03_revealwt_more_rocks
 
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: mJCtyjeiD40
+      :divid: ch04_03_wt_more_rocks
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^
 Operator Precedence
@@ -182,9 +194,9 @@ Let's take a look at some of the practical ways we can use logical results like 
 
 |
 
----------------------------------
-Exercise: Indexing and Assignment
----------------------------------
+-------------------------------------------
+Exercise: Logical Indexing and Assignment
+-------------------------------------------
 
 .. include:: ex/indexing_and_assignment.in.rst
 
@@ -192,4 +204,19 @@ Exercise: Indexing and Assignment
 
   .. reveal:: ch04_03_revealwt_indexing_and_assignment
 
-   Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: MPxRCVp5Clk
+      :divid: ch04_03_wt_indexing_and_assignment
+      :height: 315
+      :width: 560
+      :align: center
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the end of the chapter! Here is a summary of what we covered in this chapter: 
+
+* 
+
+You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

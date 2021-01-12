@@ -3,6 +3,6 @@ Working with Images
 
 .. toctree::
   :caption: Working with Images
-  :maxdepth: 1
+  :maxdepth: 4
 
   main.rst

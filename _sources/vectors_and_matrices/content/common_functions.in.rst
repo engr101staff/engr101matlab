@@ -1,5 +1,9 @@
 MATLAB has a ton of built-in functions for working with vectors and matrices. Below are some common ones that you might find useful:
 
+---------------------------------------------------
+Transpose Operator
+---------------------------------------------------
+
 The :code:`'` operator implements a **transpose** operation, which basically gives you back a copy of a matrix with the rows turned into columns and columns turned into rows:
 
 .. raw:: html
@@ -35,7 +39,17 @@ The :code:`'` operator implements a **transpose** operation, which basically giv
 
 |
 
+---------------------------------------------------
+Flipping and Rotating a Matrix
+---------------------------------------------------
+
 Functions for **flipping** and **rotating** a matrix:
+
+* :code:`flipud` - flip a matrix "up/down"
+* :code:`fliplr` - flip a matrix "left/right"
+* :code:`rot90` - rotate a matrix 90 degrees counter-clockwise
+
+|
 
 .. raw:: html
 
@@ -135,6 +149,10 @@ Functions for **flipping** and **rotating** a matrix:
   </div>
 
 |
+
+---------------------------------------------------
+Making Matrices of All Zeros or Ones
+---------------------------------------------------
 
 Functions for **creating default matrices** out of zeroes or ones:
 
@@ -246,6 +264,10 @@ Functions for **creating default matrices** out of zeroes or ones:
 
 |
 
+---------------------------------------------------
+Making the :code:`magic` Matrix
+---------------------------------------------------
+
 A function for **creating magic matrices** where all the rows and columns add up to the same number. (This isn't terribly useful, just fun. At least a little bit, maybe.)
 
 .. raw:: html
@@ -273,7 +295,12 @@ A function for **creating magic matrices** where all the rows and columns add up
     </div>
   </div>
 
-And functions for getting the dimensions of a vector or matrix:
+
+---------------------------------------------------
+Getting the Dimensions of a Matrix
+---------------------------------------------------
+
+We will be learning how to write *flexible* code; flexible code is code that works correctly for different types and sizes of input data. For example, we might need to analyze a matrix of data but we don't know ahead of time how big that matrix is. Instead, we can design our code to determine some basic characteristics of the matrix that are needed prior to beginning the analysis. Here are some useful functions that give us basic characteristics of vectors of matrices:
 
 - :code:`numel(x)` yields the # of elements in :code:`x`
 - :code:`length(x)` yields the # of elements along the longest dimension of :code:`x`
@@ -381,4 +408,13 @@ And functions for getting the dimensions of a vector or matrix:
 
 |
 
-You should be generally familiar with these functions, but nobody memorizes exactly how all these functions work. If you're ever in doubt, you can always consult the MATLAB documentation by using the help search box in MATLAB or searching online.
+You should be generally familiar with these functions, but nobody memorizes exactly how all these functions work. If you're ever in doubt, you can always consult the MATLAB documentation by using the help search box in MATLAB or searching online. In fact, learning how to efficiently search for programming methods/algorithms online is one of the learning objectives of this course. 
+
+
+.. image:: img/meme_googling.png
+  :width: 350
+  :align: center
+  :alt: Meme - ENGR 101 Student (googles "how to find number of rows in matlab"). Senior Engineer with 10+ years experience and a master’s degree (googles "how to find number of rows in matlab").
+
+
+|
