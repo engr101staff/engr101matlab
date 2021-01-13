@@ -217,6 +217,13 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* **Relational operators** (e.g., greater than, less than) check for equality or perform comparisons, and return a **logical** result (either truth or false). True is often encoded as 1, and false is often encoded as 0. Relational operators work on matrices, as well as scalars.
+* You can use relational operators to count the number of elements that match certain criteria (by using :code:`sum()` with a logical operation).
+* **Logical arrays** can be used to index a source matrix. All the elements from the source matrix that correspond to positions with a 1 in the logical matrix are selected.
+* **Logical operators** combine two truth values using logic. The :code:`&` (and) operator returns true only if both operands are true. Otherwise, it returns false. The :code:`|` (inclusive or) operator returns true if either of the operands, or both, are true. The :code:`xor` (exclusive or) operator returns true if either of the operands, but not both, are true. The :code:`~` (not) operator returns true if the operand if false, and false if the operand is true.
+* If there are multiple operations in a single statement, **operator precedence** determines the order that the operations occur in.
+* You can use a logical matrix to select part of a matrix and then assign into that part of the matrix.
+* You can use a logical matrix derived from one matrix to index into a separate, parallel matrix (the parallel matrix needs to be the same size as the original matrix).
+
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
