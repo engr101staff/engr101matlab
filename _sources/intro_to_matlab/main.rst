@@ -120,9 +120,11 @@ For reference, here's the problem discussed in the video above:
 
 |
 
+Why would we even *want* to write a program here? Couldn't we just solve this problem by hand a lot faster? Maybe we could solve it for one set of numbers by hand faster than writing a program. But, what if we wanted to solve this problem multiple times, for different fuel rates or different burn times? It would take a long time to solve the problem over and over again by hand, and we can automate that process and save time by writing a program.
+
 .. shortanswer:: ch01_03_ex_fuel_calculator_algorithm
 
-  Briefly decsribe an algorithm you could use to compute the total amount of fuel needed for the probe, and also give a few examples of *variables* and *expressions* that could be used in a program implementing that algorithm.
+  Briefly describe an algorithm you could use to compute the total amount of fuel needed for the probe, and also give a few examples of *variables* and *expressions* that could be used in a program implementing that algorithm.
 
   .. tip::
     An **algorithm** is just a formal set of steps for solving a problem that contains enough details to be clear and unambiguous. A good way to check is to think "would someone else understand my solution by reading this?".
@@ -170,6 +172,27 @@ Exercise: Debugging the Fuel Calculator Script
 ------------------------------------------------------
 
 This exercise involves three slightly different versions of the fuel calculator script, each containing a bug. Download each file, put them in your current MATLAB folder, and run them (by typing the name of the script, e.g. :code:`FuelCalculatorBuggy1`, in the command window). Use your knowledge of the way the script *should* work to help deciper error messages or incorrect results and track down the bug.
+
+.. tip::
+  When you download these files, you need to put them in the folder that MATLAB is currently working in. Here's a screenshot of what MATLAB looks like for me. I've circled in red the folder that MATLAB is working in (click to see a larger image):
+  
+  .. image:: img/MatlabFilePath.png
+    :width: 560
+    :align: center
+    :alt: The current folder that MATLAB is working in is circled in red.
+    
+  |
+
+  You can change this folder by clicking on the "open folder" icon to the left of the file path. I've circled it here in red (click to see a larger image):
+  
+  .. image:: img/MatlabChangeFilePath.png
+    :width: 560
+    :align: center
+    :alt: Change the folder that MATLAB is currently working in.
+
+  |
+
+  We're going to be writing a lot of MATLAB code this semester, so it's a good idea to organize your code so you don't lose any of it. For example, you could have a folder of ENGR 101 Matlab code, with sub-folders for each Runestone chapter and each project. For this little exercise, once you download the buggy files, move them to the appropriate folder, and then make sure that MATLAB is set to work in that folder.
 
 .. fillintheblank:: ch01_03_ex_buggy_01
 
@@ -279,7 +302,7 @@ Variables in programming are different than variables in math. In math, when you
 
 We can even update the value of a variable based on its previous value! This is called an **update assignment** (or **update expression**). Let's take a look...
 
-.. youtube:: c_O66AfWbK4
+.. youtube:: 2cpC6Uzp0TA
   :divid: ch01_04_vid_update_assignments
   :height: 315
   :width: 560
@@ -314,7 +337,7 @@ Exercise: Update Assignments
 
   .. reveal:: ch01_04_revealwt_update_assignments
 
-    .. youtube:: -6EfvOQhUHc
+    .. youtube:: vaVU87KQ-y8
       :divid: ch01_04_wt_update_assignments
       :height: 315
       :width: 560
