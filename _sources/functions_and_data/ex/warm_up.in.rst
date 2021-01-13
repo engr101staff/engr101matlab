@@ -41,7 +41,7 @@ Is this a good approach? Consider a few questions...
 
 .. shortanswer:: ch03_02_ex_warm_up_01
 
-  Unfortunately, there are some mistakes in the script above. Find and at least one of them and briefly describe it here.
+  Unfortunately, there are some mistakes in the script above. Find at least one of them and briefly describe it here.
 
 .. shortanswer:: ch03_02_ex_warm_up_02
 

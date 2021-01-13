@@ -214,6 +214,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* **Code duplication** is when multiple lines of code do the same thing, with different data. This can make mistakes more likely. Using functions and vectorization can reduce code duplication.
+* We can write custom functions, specifying the function name, the return variables, the parameters, and the implementation of the function. This is called a **function definition**. The first line of the function is called the **function header**, and it specifies the **function interface** (the function name, return variables, and parameters).
+* We can organize our data by putting it in vectors, where each column corresponds to a different variable, and each row corresponds to a different data sample.
+* A **vectorized** function works on vectors or matrices, not just scalars; function operations are applied **element-by-element**. When vectorizing a function, don't forget to use the dot in your operators, so they work with vectors (e.g., :code:`.*` rather than :code:`*`).
+* MATLAB has many built-in **aggregator functions** which compute aggregate information about a dataset, column-by-column. Some example aggregator functions are :code:`sum()` and :code:`prod()`. To get the sum of all elements in a matrix :code:`x`, :code:`sum()` must be applied twice: :code:`sum(sum(x))`.
+* Variables in a function have a **local scope** (they only apply within that function), while variables outside a function have a **global scope**. This means that the variables inside a function are completely different from the variables outside a function.
+* **Unit testing** is testing one small part of a program to make sure that an individual component works correctly. It's a good idea to write unit tests for the different pieces of a program.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

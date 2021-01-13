@@ -1,4 +1,4 @@
-In this exercise, you'll work with the ESP data from your write a function to compute the average ESP value for a given month.
+In this exercise, you'll work with the ESP data and write a function to compute the average ESP value for a given month.
 
 .. admonition:: Exercise Files
 
