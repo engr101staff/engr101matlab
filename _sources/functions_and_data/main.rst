@@ -21,7 +21,7 @@ Warm Up
 
   .. reveal:: ch03_01_revealwt_warm_up
 
-    .. youtube:: 10Bjqm82Rs8
+    .. youtube:: l8GCG6TnraY
       :divid: ch03_01_wt_warm_up
       :height: 315
       :width: 560

@@ -51,22 +51,102 @@ Once you download the data file, open up the file and look at (you can open it i
     
     **wind** - the wind speed in km/h (ranges from 0.4 to 9.4)
     
-    **rain** - outside rain in mm/m2 (ranges from 0 to 6.4)
+    **rain** - outside rain in mm/:math:`m^2` (ranges from 0 to 6.4)
     
     **area** - the burned area of the forest in ha (ranges from 0 to 1090.84)
 
-First, open MATLAB create a new script called :code:`forestFires.m`. In this script, open the data file using :code:`csvread()`. Don't forget to skip the first line of the file (the header row).
+One interesting thing we can look at with this data is how two columns of data **correlate** with each other. If two columns have a positive correlation, it means that as the values in one column increase, the values in the second column increase also. If two columns have a negative correlation, it means that as the values in one column decrease, the values in the second column decrease also. We can measure correlation using **Pearson's correlation coefficient r**. This value will be between -1 and 1, where negative values mean there's a negative correlation and positive values mean there's a positive correlation. A value of 0 means that there's no correlation.
+
+To get a sense for how correlation works, let's say that you have two columns of data, **x** and **y**. In each column, you have seven rows of data, and the columns correspond to each other (e.g., the first row of **x** goes with the first row of **y**). You can plot these data points on a graph (each point on the graph is a row of data where the x-value of the point is the value in **x** and the y-value of the point is the value in **y**). Here's a few sample graphs of what this might look like (click for larger image):
+
+.. figure:: img/pearson.png
+   :width: 516
+   :align: center
+   :alt: Sample graphs with their corresponding Pearson correlation values.
+   
+   Image from Newcastle University.
+   
+Pearson's correlation (**r**) is shown on each of the graphs above. Notice that the first three graphs have a positive correlation. The larger **r** is, the stronger the correlation. In the middle graph, there is no correlation, and in the last three graphs, there is a negative correlation.
+
+For our data, we are particularly interested in the correlations between environmental factors (e.g., wind, humidity, temperature) and how big the forest fire was (the area column in our dataset). In this exercise, we are going to write a function that implements Pearson correlation.
+
+First, open MATLAB and create a new script called :code:`forestFires.m`. In this script, open the data file using :code:`csvread()`. Don't forget to skip the first line of the file (the header row).
 
 Put each column of information in a separate vector. For instance, the second column contains the **month** information; store this column in a variable called :code:`month`. Do this for all the columns.
 
-One potentially interesting use of this data is to see which pieces of information correspond with a smaller or larger forest fire. The size of the forest fire is captured by the column **area**, which contains the area of forest burned in a particular fire. We are going to write a function to look at how much area is burned for fires that have a high value for a certain piece of data.
+Now, let's write our function. Open up a new function file in MATLAB  called :code:`pearson.m`. This function should take two inputs, :math:`x` and :math:`y`, the two columns that we want to calculate correlation between. The output of this function will be :math:`r`, the correlation value.
 
-Create a new function file :code:`highData.m`. This function should take in two parameters: :code:`data` (this will be one of the columns from our data file), and :code:`area` (the column in our data file that corresponds to the area of the forest fire). The function should return one variable, :code:`avgArea`. Inside the function, you should do a few things:
+Inside the function, we will calculate what :math:`r` is. We can break down this calculation into a number of steps:
 
-    1. Calculate the maximum value of :code:`data`.
-    2. Calculate 90% of the maximum value from step 1 (this should be 0.9 multiplied by the value from step 1).
-    3. We want to look at every forest fire where data is equal to or exceeds the value calculated in step 2.
-    4. For these forest fires, calculate the average area.
-    5. Return the average area from your function.
+    1. Calculate :math:`n`, the number of items in :math:`x`. Store this in a variable.
+    2. Calculate :math:`\sum{xy}`, the sum of the products of :math:`x` and :math:`y`. Store this in a variable.
+    3. Calculate :math:`\sum{x}`, the sum of :math:`x`. Store this in a variable.
+    4. Calculate :math:`\sum{y}`, the sum of :math:`y`. Store this in a variable.
+    5. Calculate :math:`\sum{x^2}`, the sum of the squared :math:`x` values (hint: :math:`x^2` is :math:`x` multiplied by itself). Store this in a variable.
+    6. Calculate :math:`\sum{y^2}`, the sum of the squared :math:`y`. Store this in a variable.
+    7. Now we'll put it all together. Using the intermediate variables that you've calculated in steps 1-6, calculate :math:`r` using this formula:
     
+    .. math::
+        
+        r = \frac{n(\sum{xy}) - (\sum{x})(\sum{y})}{\sqrt{[n\sum{x^2}-(\sum{x})^2][n\sum{y^2}-(\sum{y})^2]}}
+    
+    (hint: you don't need to calculate the whole formula in one line of code. You can break it down further - for instance, you could calculate the numerator and the denominator separately, and then divide the numerator by the denominator. You could also calculate the denominator in several pieces.)
+    
+Now that you have your function :code:`pearson()`, use it to calculate the correlation between different columns of your data:
 
+.. tip:
+    
+    Writing your own function to calculate Pearson gives you a lot of practice in working with functions and matrices, which is why we've presented it here. However, MATLAB also has a built-in function that calculates Pearson correlation, :code:`corrcoef()`. Like our function, it takes two parameters which are vectors of data. So, if you wanted to find out the correlation between :code:`wind` and :code:`area`, you could call the function like this: :code:`corrcoef(wind,area)`. You can also use this function to help you check and debug the function that you are writing!
+    
+.. tip:
+
+    If your function doesn't work properly, and you are getting stuck, try debugging with a small example. Create two vectors with two elements in them, and then manually calculate the Pearson's correlation by hand. Then, go through your function line by line and make sure that the calculations in your function match the calculations that you've done by hand.
+
+.. fillintheblank:: ch05_01_ex_forestFires_01
+
+  What is the correlation between :code:`temp` and :code:`area`?
+
+  - :0.0978: Correct! This is a small positive correlation, which means that as the temperature increases (gets warmer), the area burned by the forest fire increases slightly.
+    :x: Nope, try again!
+
+.. fillintheblank:: ch05_01_ex_forestFires_02
+
+  What is the correlation between :code:`RH` and :code:`area`?
+
+  - :-0.0755: Correct! This is a small negative correlation.
+    :x: Nope, try again!
+
+.. fillintheblank:: ch05_01_ex_forestFires_03
+
+  What is the correlation between :code:`wind` and :code:`area`?
+
+  - :0.0123: Correct! This is a small positive correlation.
+    :x: Nope, try again!
+
+.. fillintheblank:: ch05_01_ex_forestFires_04
+
+  What is the correlation between :code:`rain` and :code:`area`?
+
+  - :-0.0074: Correct! This is a small negative correlation.
+    :x: Nope, try again!
+
+.. fillintheblank:: ch05_01_ex_forestFires_05
+
+  Of the four columns that we looked at (:code:`temp`, :code:`RH`, :code:`wind`, and :code:`rain`), which one has the strongest correlation (either positive or negative) with the area burned by the forest fire
+
+  - :temp: Correct! All of them have fairly small correlations, but temperature has the largest correlation of the four that we looked at.
+    :x: Nope, try again!
+
+(walkthrough video here)
+
+We have only scratched the surface of what you can do with an interesting dataset like this. Feel free to keep playing around with it. For example, here are some questions that you could ask that you will be able to calculate in MATLAB:
+
+    What month are forest fires most likely to happen?
+    
+    What day of the week are forest fires most likely to happen?
+    
+    Is the wind level correlated with the temperature or the humidity?
+    
+    How much total area was burned by forest fires in the fires recorded here?
+    
+... and many, many more questions!
