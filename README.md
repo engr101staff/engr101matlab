@@ -1,4 +1,4 @@
-# ENGR 101 Matlab Runestone
+# ENGR 101 Runestone
 
 This repository contains the runestone "book" with ENGR 101 lectures and exercises.
 

@@ -2,6 +2,10 @@
    :prefix: Q
    :start: 1
 
+.. raw:: html
+
+   <script src="../_static/common/js/common.js"></script>
+
 ======================
 Introduction to MATLAB
 ======================
