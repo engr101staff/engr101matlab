@@ -351,7 +351,7 @@ Functions
 
 Expressions in MATLAB can also use **functions** to compute results or perform operations. MATLAB has *many* built-in functions for math, data analysis, and engineering applications. You can even write your own!
 
-.. youtube:: 1eu-RFIusOg
+.. youtube:: hURLCeTwpGk
   :divid: ch01_05_vid_intro_to_functions
   :height: 315
   :width: 560
