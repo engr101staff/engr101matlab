@@ -215,3 +215,9 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * **Unit testing** is testing one small part of a program to make sure that an individual component works correctly. It's a good idea to write unit tests for the different pieces of a program.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Optional Exercise: Working with Forest Fires Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ex/forest_fires.in.rst
