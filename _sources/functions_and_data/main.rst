@@ -31,11 +31,7 @@ Warm Up
 Defining Custom Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: btFcE-fCoGk
-  :divid: ch03_02_vid_custom_functions
-  :height: 315
-  :width: 560
-  :align: center
+.. include:: ex/custom_functions.in.rst
   
 ------------------------------------------------------
 Exercise: Function Basics
@@ -58,11 +54,7 @@ Exercise: Function Basics
 Vectorization and Data Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: TiyXzP96r1U
-    :divid: ch03_03_vid_data_files
-    :height: 315
-    :width: 560
-    :align: center
+.. include:: ex/vectorization.in.rst
 
 ------------------------------------------------------
 Exercise: Reading Soil Sample Data

@@ -1,8 +1,8 @@
-Recall the Exchangeable Sodium Percentage (ESP), which affects the suitability of soil for farming. It is determined as a ratio of several chemical elements present in the soil according to the formula:
+Recall the Exchangeable Sodium Percentage (ESP) from the Practice Project, which affects the suitability of soil for farming. It is determined as a ratio of several chemical elements present in the soil according to the formula:
 
 .. math::
 
-  ESP = \frac{Na}{K + Ca + Mg + Ca}
+  ESP = \frac{Na}{K + Ca + Mg + Na}
 
 
 Let's say you have many different soil samples taken by the Proxima b probe, and you need to perform the ESP calculation for each. Below is a table of the samples and an approach to writing a *script* that performs the ESP computations.
@@ -20,15 +20,15 @@ Let's say you have many different soil samples taken by the Proxima b probe, and
 
         Na = 10.9; K = 68.2;
         Ca = 25.4; Mg = 13.8;
-        display(Na ./ (K + Ca + Mg + Ca));
+        display(Na ./ (K + Ca + Mg + Na));
 
         Na = 13.8; K = 66.3;
         Ca = 26.4; Mg = 13.2;
-        display(Na ./ K + Ca + Mg + Ca);
+        display(Na ./ K + Ca + Mg + Na);
 
         Na = 14.3; k = 67.0;
         Ca = 26.7; Mg = 13.0;
-        display(Na ./ (K + Ca + Mg + Ca))
+        display(Na ./ (K + Ca + Mg + Na))
 
         Na = 14.1; K = 72.2;
         Ca = 25.5; Mg = 17.3;
