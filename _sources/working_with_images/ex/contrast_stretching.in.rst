@@ -46,7 +46,7 @@ First, let's take a look at how the problem relates to the range of intensity va
 ..    - :250: Correct!
 ..      :x: No, try again.
 
-So that's only a small part of the possible range of intensity values - no wonder this image looks washed out! As you saw in the video, the standard algorithm for contrast stretching is based on a linear interpolation from the original range of intensity values to a new, larger range.
+The washed-out image is only using a small part of the possible range of intensity values - no wonder this image looks washed out! As you saw in the video, the standard algorithm for contrast stretching is based on a linear interpolation from the original range of intensity values to a new, larger range.
 
 .. figure:: img/contrast_stretch_diagram.png
    :width: 500

@@ -159,7 +159,7 @@ Grayscale Images as Matrices
 
 We can use matlab to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
 
-We're going to talk about two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3 etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
+We're going to talk about two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3, etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
 
 .. youtube:: J6PU1e6K0T8
   :divid: ch05_02_vid_grayscale_images
@@ -425,9 +425,12 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
     1. Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
     2. Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
     3. More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel.
-        a. :code:`red = img(:,:,1);`
-        b. :code:`red(:) = 255;`
-        c. :code:`img(:,:,1) = red;`
+    
+    .. code-block:: matlab
+    
+        red = img(:,:,1);
+        red(:) = 255;
+        img(:,:,1) = red;
     
 * In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
 * To convert from RGB to HSV, use :code:`rgb2hsv()`. To convert from HSV to RGB, use :code:`hsv2rgb()`. Remember that to show an image using :code:`imshow()`, it **must be** an RGB image so don't forget to convert before using that command.
