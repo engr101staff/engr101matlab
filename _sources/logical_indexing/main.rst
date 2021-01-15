@@ -69,6 +69,14 @@ We've seen that MATLAB supports *arithmetic* operations (e.g. :code:`+`, :code:`
 
 |
 
+To recap, relational operators check for equality or perform comparisons:
+
+.. figure:: img/relational_operators.png
+   :width: 650
+   :align: center
+   :alt: relational_operators.png
+
+   
 
 --------------------------------------------
 Exercise: Practice with Relational Operators
@@ -101,6 +109,13 @@ Let's take a look at some of the practical ways we can use logical results like 
   :align: center
 
 |
+
+To recap, logical indexing is when you use a logical array to index into an array, instead of regular indexing. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected: 
+
+.. figure:: img/logical_indexing.png
+   :width: 650
+   :align: center
+   :alt: logical_indexing.png
 
 ------------------------------
 Exercise: Analyzing Some Rocks
@@ -141,6 +156,13 @@ Sometimes we want to ask complex questions about our data, for example "Which ro
 
 |
 
+To recap, logical operators combine two truth values in a particular way:
+
+.. figure:: img/logical_operators.png
+   :width: 650
+   :align: center
+   :alt: logical_operators.png
+
 ----------------------------
 Exercise: More Rock Analysis
 ----------------------------
@@ -179,12 +201,20 @@ Now that we have quite a few operators to work with, it makes sense to discuss h
 
 |
 
+Here's that table of the order of precedence again, for future reference:
+
+.. figure:: img/order_of_precedence.png
+   :width: 600
+   :align: center
+   :alt: order_of_precedence.png
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Logical Indexing and Assignment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators.
+Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators and logical operators.
 
 
 .. youtube:: XGycZcWcU2I
