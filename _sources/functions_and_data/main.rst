@@ -84,6 +84,14 @@ Built-in Aggregator Functions
 
 |
 
+To recap, if you call :code:`sum(M)` over a matrix :code:`M`, :code:`sum` will return a vector of values (it will sum up each column individually and return the vector of column sums). If you want to take the sum of all elements in a matrix :code:`M`, there are a couple of ways to do it:
+
+1. :code:`sum(sum(M))` - **Apply the sum function twice**. The first call to :code:`sum` finds the sums of the columns. The second call adds up those sums to get the overall sum of the matrix.
+
+2. :code:`sum(M(:))` - **Use the** :code:`:` **to select all elements in the matrix, then** :code:`sum`.
+
+3. :code:`sum(x, 'all')` - **Use the** :code:`all` **option**. The second parameter to :code:`sum` tells MATLAB to use a different version of :code:`sum` that sums everything. This is available in newer versions of MATLAB, but unfortunately *the autograder doesn't support this option, so don't use this on projects*.
+
 Here's an example of the :code:`sum()` function:
 
 .. raw:: html
