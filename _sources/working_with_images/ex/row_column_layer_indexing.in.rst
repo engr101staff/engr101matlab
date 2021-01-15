@@ -1,4 +1,4 @@
-Let's get some practice with selecting certain elements inside of an RGB image file. For the following exercises, assume we have RBG image data stored in a 3D matrix called img.
+Let's get some practice with selecting certain elements inside of an RGB image file. For the following exercises, assume we have RBG image data stored in a 3D matrix called :code:`img`.
 
 .. mchoice:: ch05_05_ex_row_column_layer_indexing_01
   :answer_a: img(1, 1, :)
