@@ -24,7 +24,7 @@ Working with Images
 Introduction
 ^^^^^^^^^^^^
 
-In this chapter, we'll take a look at how to use MATLAB to manipulate images.
+.. include:: ex/warm_up.in.rst
 
 .. admonition:: Chapter Files
 
