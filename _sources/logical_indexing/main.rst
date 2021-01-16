@@ -270,7 +270,7 @@ The :code:`any` function is especially useful if you need to check whether at le
   <div class="container-fluid">
     <div class="matcrab-example">
       <div class="matcrab-setup">
-        x = [1,2,3;4,5,6];
+        x = [1,2,3];
       </div>
       <table><tbody>
         <tr>
@@ -299,15 +299,17 @@ The :code:`any` function is especially useful if you need to check whether at le
 |
 
 
-**Caution!** The expression :code:`any(A) & any(B)` is not the same as :code:`any(A & B)`. Try it out below to see for yourself:
+
+.. Note::
+
+  The :code:`any` function, like many of the other MATLAB functions we've used so far, operates first on each column.  To check for "any elements" across the rows of a matrix, use use :code:`any(x,2)`. To check for "any elements" across a whole matrix, use :code:`any(any(x))` or :code:`any(x(:))`.
 
 .. raw:: html
 
   <div class="container-fluid">
     <div class="matcrab-example">
       <div class="matcrab-setup">
-        A = magic(3) < 4;
-        B = magic(3) > 9;
+        x = [1,2,3;4,5,6];
       </div>
       <table><tbody>
         <tr>
@@ -321,7 +323,7 @@ The :code:`any` function is especially useful if you need to check whether at le
           </td>
           <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
-              A & B
+              y = any(any( x > 4 ))
             </textarea>
           </td>
           <td>
@@ -337,9 +339,47 @@ The :code:`any` function is especially useful if you need to check whether at le
 
 
 
-.. Note::
 
-  The :code:`any` function, like many of the other MATLAB functions we've used so far, operates first on each column.  To check for "any elements" across the rows of a matrix, use use :code:`any(x,2)`. To check for "any elements" across a whole matrix, use :code:`any(any(x))` or :code:`any(x(:))`.
+**Caution!** The expression :code:`any(A) & any(B)` is not the same as :code:`any(A & B)`. Try out these MATLAB statements in the MatCrab below to see the difference:
+
+.. code-block:: matlab
+  
+  x = any(W > 7) & any(Z < 3);
+  y = any(W > 7 & Z < 3);
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        W = [8,1,6;3,5,7;4,9,2];
+        Z = [1,4,7;2,2,5;1,6,7];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+|
 
 
 
@@ -370,7 +410,44 @@ Finding If All Elements Are True: The :code:`all` Function
 
 The :code:`all` function returns :code:`true` if all of the elements in the function's argument are :code:`true`; otherwise, the function returns :code:`false`. If even one element is :code:`false`, the :code:`all` function will return :code:`false`.
 
-The :code:`all` function is especially useful if you need to check whether all of the elements in an array match some condition, such as "are all of the elements less than 5?". 
+The :code:`all` function is especially useful if you need to check whether all of the elements in an array match some condition, such as "are all of the elements less than or equal to 4?". 
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        x = [1,2,3,4];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              y = all( x <= 4 )
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+|
+
+.. Note::
+
+  The :code:`all` function, like many of the other MATLAB functions we've used so far, operates first on each column. To check for "all elements" across the rows of a matrix, use use :code:`all(x,2)`. To check for "all elements" across a whole matrix, use :code:`all(all(x))` or :code:`all(x(:))`
 
 .. raw:: html
 
@@ -391,7 +468,7 @@ The :code:`all` function is especially useful if you need to check whether all o
           </td>
           <td>
             <textarea class="form-control matcrab-entry" style="resize: none">
-              y = all( x < 5 )
+              y = all(all( x < 5 ))
             </textarea>
           </td>
           <td>
@@ -404,11 +481,6 @@ The :code:`all` function is especially useful if you need to check whether all o
   </div>
 
 |
-
-.. Note::
-
-  The :code:`all` function, like many of the other MATLAB functions we've used so far, operates first on each column. To check for "all elements" across the rows of a matrix, use use :code:`all(x,2)`. To check for "all elements" across a whole matrix, use :code:`all(all(x))` or :code:`all(x(:))`
-
 
 
 .. mchoice:: ch04_06_ex_all_function
