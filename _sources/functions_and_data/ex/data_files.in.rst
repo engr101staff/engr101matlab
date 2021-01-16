@@ -1,6 +1,6 @@
 The nutrient cycle of Proxima B is not yet fully understood, so our scientists want to check whether the ESP changes over time. To do this, we'll use a dataset with soil samples taken at the same location every day throughout a year.
 
-For simplicitly, we will assume all months have 30 days, such that there are 360 samples total. The data are stored in a file called :file:`daily_samples.csv`.
+For simplicity, we will assume all months have 30 days, such that there are 360 samples total. The data are stored in a file called :file:`daily_samples.csv`.
 
 In this exercise, you'll read in that data using the :code:`csvread()` function and compute the ESP for all daily samples.
 
