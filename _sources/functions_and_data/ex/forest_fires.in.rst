@@ -140,7 +140,15 @@ For our data, we are particularly interested in the correlations between environ
   - :temp: Correct! All of them have fairly small correlations, but temperature has the largest correlation of the four that we looked at.
     :x: Nope, try again!
 
-(walkthrough video here)
+.. admonition:: Walkthrough
+
+  .. reveal:: ch05_01_revealwt_forest_fires
+
+    .. youtube:: FQd4w2Ba0ag
+      :divid: ch05_01_wt_forest_fires
+      :height: 315
+      :width: 560
+      :align: center
 
 We have only scratched the surface of what you can do with an interesting dataset like this. Feel free to keep playing around with it. For example, here are some questions that you could ask that you will be able to calculate in MATLAB:
 
