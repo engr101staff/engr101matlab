@@ -225,7 +225,7 @@ For each step, we'll ask you to identify the correct code from a set of choices,
 
 |
 
-Finally, we'll leave you with a question...what hue values do you see here? Vote in the poll on the Piazza Q&A thread!
+Finally, we'll leave you with a question...what hue values do you see here? Vote in the poll on Piazza!
 
 .. figure:: img/dress.png
   :width: 250

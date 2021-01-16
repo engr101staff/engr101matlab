@@ -94,9 +94,9 @@ Introduction
     .. include:: ../common/matlab_download_instructions.in.rst
       
 
-.. admonition:: Heads Up!
+.. Note::
 
-  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`).
+  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`). Sorry... we ran out of time to re-record the videos. :(
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Loading and Saving Images
@@ -140,7 +140,7 @@ Here's the recap:
 
 MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
 
-.. admonition:: Pro Tip
+.. Tip::
 
   Remember, when you specify a file name for MATLAB, you should use the single quotes and make sure to include the file extension (the part after the dot in the file name).
 
@@ -193,7 +193,13 @@ Example: Contrast Stretching
 
   .. reveal:: ch05_04_revealwt_contrast_stretching
 
-    Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: 7sc2wEvwRag
+      :divid: ch05_04_wt_contrast_stretching
+      :height: 315
+      :width: 560
+      :align: center
+
+|
 
 
 ---------------------
@@ -415,22 +421,22 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * In MATLAB, grayscale images are represented by a matrix with intensity values (0-255 or 0-1).
 * Three steps are required to do **contrast stretching** (improving or "stretching" the contrast of an image):
 
-    1. Determine the min/max of the original image.
-    2. Determine a stretch factor (size of final intensity range / size of original intensity range).
-    3. Stretch each pixel using the formula: :code:`new_min + stretch_factor * (orig_pixels - original_min)`.
+  1. Determine the min/max of the original image.
+  2. Determine a stretch factor (size of final intensity range / size of original intensity range).
+  3. Stretch each pixel using the formula: :code:`new_min + stretch_factor * (orig_pixels - original_min)`.
 
 * In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the red, green, and blue portions of each pixel.
 * There are multiple ways to manipulate images as 3D matrices:
 
-    1. Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
-    2. Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
-    3. More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel:
+  - Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
+  - Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
+  - More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel:
 
     .. code-block:: matlab
     
-        red = img(:,:,1);
-        red(:) = 255;
-        img(:,:,1) = red;
+      red = img(:,:,1);
+      red(:) = 255;
+      img(:,:,1) = red;
     
 * In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
 * To convert from RGB to HSV, use :code:`rgb2hsv()`. To convert from HSV to RGB, use :code:`hsv2rgb()`. Remember that to show an image using :code:`imshow()`, it **must be** an RGB image so don't forget to convert before using that command.
