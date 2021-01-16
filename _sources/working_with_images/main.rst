@@ -425,9 +425,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
     1. Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
     2. Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
     3. More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel:
-    
-    |
-    
+
     .. code-block:: matlab
     
         red = img(:,:,1);
