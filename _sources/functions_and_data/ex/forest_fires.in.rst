@@ -135,7 +135,7 @@ For our data, we are particularly interested in the correlations between environ
 
 .. fillintheblank:: ch05_01_ex_forestFires_05
 
-  Of the four columns that we looked at (:code:`temp`, :code:`RH`, :code:`wind`, and :code:`rain`), which one has the strongest correlation (either positive or negative) with the area burned by the forest fire
+  Of the four columns that we looked at (:code:`temp`, :code:`RH`, :code:`wind`, and :code:`rain`), which one has the strongest correlation (either positive or negative) with the area burned by the forest fire?
 
   - :temp: Correct! All of them have fairly small correlations, but temperature has the largest correlation of the four that we looked at.
     :x: Nope, try again!
