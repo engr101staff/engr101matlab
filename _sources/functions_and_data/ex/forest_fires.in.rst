@@ -30,12 +30,6 @@ Before we start, go ahead and download the data that we're going to work with.
 
       - Data file containing information about 517 forest fires.
 
-  .. reveal:: forest_fires_download_instructions
-    :showtitle: Download Instructions
-    :modal:
-    :modaltitle: File Download Instructions for MATLAB
-    
-    .. include:: ../common/matlab_download_instructions.in.rst
 
 Once you download the data file, open up the file and look at (you can open it in Excel, Numbers, or a basic word processor, like Notepad). Each line in the file is data about a single forest fire. There are eight columns of information:
 
@@ -152,12 +146,9 @@ For our data, we are particularly interested in the correlations between environ
 
 We have only scratched the surface of what you can do with an interesting dataset like this. Feel free to keep playing around with it. For example, here are some questions that you could ask that you will be able to calculate in MATLAB:
 
-    What month are forest fires most likely to happen?
-    
-    What day of the week are forest fires most likely to happen?
-    
-    Is the wind level correlated with the temperature or the humidity?
-    
-    How much total area was burned by forest fires in the fires recorded here?
+- What month are forest fires most likely to happen?
+- What day of the week are forest fires most likely to happen?
+- Is the wind level correlated with the temperature or the humidity?
+- How much total area was burned by forest fires in the fires recorded here?
     
 ... and many, many more questions!

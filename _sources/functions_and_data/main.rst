@@ -85,7 +85,7 @@ Built-in Aggregator Functions
 
 |
 
-To recap, if you call :code:`sum(M)` over a matrix :code:`M`, :code:`sum` will return a vector of values (it will sum up each column individually and return the vector of column sums). If you want to take the sum of all elements in a matrix :code:`M`, there are a couple of ways to do it:
+To recap, if you call :code:`sum(M)` over a matrix :code:`M`, :code:`sum` will return a vector of values (it will sum up each column individually and return the vector of column sums). If you want to take the sum across the rows of the matrix, use :code:`sum(M,2)`. If you want to take the sum of all elements in a matrix :code:`M`, there are a couple of ways to do it:
 
 1. :code:`sum(sum(M))` - **Apply the sum function twice**. The first call to :code:`sum` finds the sums of the columns. The second call adds up those sums to get the overall sum of the matrix.
 
@@ -93,7 +93,7 @@ To recap, if you call :code:`sum(M)` over a matrix :code:`M`, :code:`sum` will r
 
 3. :code:`sum(M, 'all')` - **Use the** :code:`all` **option**. The second parameter to :code:`sum` tells MATLAB to use a different version of :code:`sum` that sums everything. This is available in newer versions of MATLAB, but unfortunately *the autograder doesn't support this option, so don't use this on projects*.
 
-Here's an example of the :code:`sum()` function:
+Here's are some examples of the :code:`sum()` function:
 
 .. raw:: html
 
@@ -226,7 +226,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Optional Exercise: Working with Forest Fires Data
+Optional Exercise: Working with Forest Fire Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ex/forest_fires.in.rst
