@@ -90,7 +90,7 @@ To recap, if you call :code:`sum(M)` over a matrix :code:`M`, :code:`sum` will r
 
 2. :code:`sum(M(:))` - **Use the** :code:`:` **to select all elements in the matrix, then** :code:`sum`.
 
-3. :code:`sum(x, 'all')` - **Use the** :code:`all` **option**. The second parameter to :code:`sum` tells MATLAB to use a different version of :code:`sum` that sums everything. This is available in newer versions of MATLAB, but unfortunately *the autograder doesn't support this option, so don't use this on projects*.
+3. :code:`sum(M, 'all')` - **Use the** :code:`all` **option**. The second parameter to :code:`sum` tells MATLAB to use a different version of :code:`sum` that sums everything. This is available in newer versions of MATLAB, but unfortunately *the autograder doesn't support this option, so don't use this on projects*.
 
 Here's an example of the :code:`sum()` function:
 
