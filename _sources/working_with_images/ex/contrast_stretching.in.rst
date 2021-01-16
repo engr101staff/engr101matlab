@@ -14,7 +14,7 @@ The boat image you see has very poor contrast. It fades right into the backgroun
 
 First, let's take a look at how the problem relates to the range of intensity values used by the image, as well as how we can start to address the problem using *contrast stretching*.
 
-.. youtube:: xtYLz_SJbN0
+.. youtube:: s088CRrwJdU
   :divid: ch05_04_vid_contrast_stretching
   :height: 315
   :width: 560
@@ -22,7 +22,7 @@ First, let's take a look at how the problem relates to the range of intensity va
 
 |
 
-.. First, let's take a look at the range of intensity values used by this image. Remember, the possible range of values is 0 to 255...what range does this image use?
+.. First, let's take a look at the range of intensity values used by this image. Remember, the possible range of values is 0 to 255. What range does this image use?
 
 .. .. reveal:: ch05_04_hint_contrast_stretching
 ..   :showtitle: Hint
@@ -46,7 +46,7 @@ First, let's take a look at how the problem relates to the range of intensity va
 ..    - :250: Correct!
 ..      :x: No, try again.
 
-So that's only a small part of the possible range of intensity values - no wonder this image looks washed out! As you saw in the video, the standard algorithm for contrast stretching is based on a linear interpretation from the original range of intensity values to a new, larger range.
+The washed-out image is only using a small part of the possible range of intensity values - no wonder this image looks washed out! As you saw in the video, the standard algorithm for contrast stretching is based on a linear interpolation from the original range of intensity values to a new, larger range.
 
 .. figure:: img/contrast_stretch_diagram.png
    :width: 500
@@ -54,7 +54,7 @@ So that's only a small part of the possible range of intensity values - no wonde
 
    Linear interpolation can be used to stretch a small range of intensity values into a larger range.
 
-Here's the full algorithm for doing contrast stretching via linear interpretation:
+Here's the full algorithm for doing contrast stretching via linear interpolation:
 
 1. **Find the min/max in the original image**. These define the original range of intensities.
 
@@ -82,7 +82,7 @@ To test your :code:`adjust_contrast` function, you can just call it from the com
 
   adjustedImg = adjust_contrast(grayImg, 30, 255);
   imshow(adjustedImg);
-
+  
 .. shortanswer:: ch05_04_ex_contrast_stretching_function
 
   Paste in a copy of your completed :file:`adjust_contrast.m` file.

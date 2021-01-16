@@ -355,7 +355,7 @@ Functions
 
 Expressions in MATLAB can also use **functions** to compute results or perform operations. MATLAB has *many* built-in functions for math, data analysis, and engineering applications. You can even write your own!
 
-.. youtube:: 1eu-RFIusOg
+.. youtube:: hURLCeTwpGk
   :divid: ch01_05_vid_intro_to_functions
   :height: 315
   :width: 560
@@ -431,7 +431,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 
 * We use the term *MATLAB* refers to both the program (that you open on your computer) and the programming language itself.
 * Some fundamental tools in programming are **literals**, **variables**, and **expressions**.
-* The **assignment operator (:=:)** stores a value into a variable.
+* The **assignment operator (:code:`=`)** stores a value into a variable.
 * In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. 
 * An **algorithm** is just a formal set of steps for solving a problem that contains enough details to be clear and unambiguous. 
 * A **bug** is anything that causes a program to not implement an algorithm correctly.

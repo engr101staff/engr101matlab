@@ -6,7 +6,7 @@
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
    <script src="../_static/common/js/common.js"></script>
-   <script src="../_static/common/js/matcrab-exercises.bundle.js"></script>
+   <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 
 ===================
@@ -24,7 +24,7 @@ Working with Images
 Introduction
 ^^^^^^^^^^^^
 
-In this chapter, we'll take a look at how to use MATLAB to manipulate images.
+.. include:: ex/warm_up.in.rst
 
 .. admonition:: Chapter Files
 
@@ -62,6 +62,18 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images.
 
       - Color image of a boat
 
+    * - :download:`ImageScript.m <../_static/working_with_images/ImageScript.m>`
+
+      - .. reveal:: ImageScript_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>ImageScript.m</code>
+
+          .. literalinclude:: ../_static/working_with_images/ImageScript.m
+            :language: matlab
+
+      - Starter script file for videos on contrast and thresholding
+      
     * - :download:`adjust_contrast.m <../_static/working_with_images/adjust_contrast.m>`
 
       - .. reveal:: adjust_contrast_m_preview
@@ -72,7 +84,7 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images.
           .. literalinclude:: ../_static/working_with_images/adjust_contrast.m
             :language: matlab
 
-      - Starter file for exercise
+      - Starter function file for contrast stretching exercise
     
   .. reveal:: working_with_images_download_instructions
     :showtitle: Download Instructions
@@ -82,9 +94,9 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images.
     .. include:: ../common/matlab_download_instructions.in.rst
       
 
-.. admonition:: Heads Up!
+.. Note::
 
-  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`).
+  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`). Sorry... we ran out of time to re-record the videos. :(
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Loading and Saving Images
@@ -128,7 +140,7 @@ Here's the recap:
 
 MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
 
-.. admonition:: Pro Tip
+.. Tip::
 
   Remember, when you specify a file name for MATLAB, you should use the single quotes and make sure to include the file extension (the part after the dot in the file name).
 
@@ -146,6 +158,8 @@ Grayscale Images as Matrices
    *The Tetons and Snake River, Grand Teton National Park, Wyoming. Ansel Adams*
 
 We can use matlab to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
+
+We're going to talk about two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3, etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
 
 .. youtube:: J6PU1e6K0T8
   :divid: ch05_02_vid_grayscale_images
@@ -169,24 +183,6 @@ Image Operations
 
 Let's work through a few examples to give you some practice loading and working with images, as well as highlight a couple common image operations.
 
----------------------
-Example: Thresholding
----------------------
-
-Sometimes you might be interested in identifying particular pixels in an image which are above or below a particular threshold. Logical indexing works well for this...
-
-.. youtube:: npx7BmWdaDI
-  :divid: ch05_04_vid_thresholding
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-.. tip::
-
-  You can also use imshow to display a logical matrix directly, e.g. :code:`imshow(img > 200)`, and the figure window will show a black-and-white image white corresponds to true values in the image and black to false.
-
 ----------------------------
 Example: Contrast Stretching
 ----------------------------
@@ -197,7 +193,32 @@ Example: Contrast Stretching
 
   .. reveal:: ch05_04_revealwt_contrast_stretching
 
-    Please check the Piazza Q&A thread for links to the walkthrough videos.
+    .. youtube:: 7sc2wEvwRag
+      :divid: ch05_04_wt_contrast_stretching
+      :height: 315
+      :width: 560
+      :align: center
+
+|
+
+
+---------------------
+Example: Thresholding
+---------------------
+
+Sometimes you might be interested in identifying particular pixels in an image which are above or below a particular threshold. Logical indexing works well for this.
+
+.. youtube:: uCQ4LK4Zrgs
+  :divid: ch05_04_vid_thresholding
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+.. tip::
+
+  You can also use :code:`imshow` to display a logical matrix directly, e.g. :code:`imshow(img > 200)`, and the figure window will show a black-and-white image (white corresponds to true values in the image, and black to false).
 
 
 ^^^^^^^^^^^^^^^^
@@ -207,7 +228,7 @@ RGB Color Images
 
 We can use a matrix of numbers to represent a grayscale image, with values between 0 and 255 for different shades of gray. If we want a color image, how could we describe the color of each pixel?
 
-We could try to have a number for each color, e.g. 0 = red, 1 = orange, 2 = blue, ..., 58 = etc. Although a box of 256 crayons would be pretty awesome, we really need a strategy that can represent every possible color, and there are a lot more than 256! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense, etc.) in a way that mataches our human understanding of color.
+We could try to have a number for each color, e.g. 0 = red, 1 = orange, 2 = blue, etc. Although a box of 256 crayons would be pretty awesome, we really need a strategy that can represent every possible color, and there are a lot more than 256! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense, etc.) in a way that matches our human understanding of color.
 
 You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll do something similar, but using the primary colors of light which are red, green, and blue (RGB). This representation is inspired by the way our eyes perceive color and also aligned with the way computer displays produce color. If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations!
 
@@ -309,7 +330,7 @@ We also want to introduce another representation for color images that uses chan
 
 This is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify the blue colors in the background by just looking at the blue channel, because making the color "blue" actually depends on the ratio of all three R, G, and B channels.
 
-Instead, let's turn to HSV, which is another three-channel representation also having three channels: hue, saturation, and value. Here's the basic idea of each:
+Instead, let's turn to HSV, which is another three-channel representation: hue, saturation, and value. Here's the basic idea of each:
 
 - Hue: "which basic color is it?"
 - Saturation: "how strong is the color?"
@@ -356,9 +377,9 @@ Here's the boat picture again and a representation of what the data in each chan
 
 Take a moment to think about why the hue, saturation, and value channels look the way they do for the boat image.
 
-- **Hue** All the blue colors in this hue channel we expect to see, but note that the sails (which look white in the original picture.) have varying hues throughout. Why?...
-- **Saturation** In the picture above, we can see some areas have lower (darker) saturation, while others have high (lighter) saturation. The reason the sails look white in the original picture, and not blue, orange, or pink, is that the corresponding saturation levels are low -- there might be a color, but there is very little of that color. You can see this in the color space diagram - as you dial down saturation and go the center of the cylinder, you approach gray regardless of the hue.
-- **Value** Finally, the value channel determines the brightness of a pixel. For example, the waves have a lower (darker) value than the sky, since they are a darker shade of blue.
+- **Hue.** All the blue colors in this hue channel we expect to see, but note that the sails (which look white in the original picture) have varying hues throughout. Why?
+- **Saturation.** In the picture above, we can see some areas have lower (darker) saturation, while others have high (lighter) saturation. The reason the sails look white in the original picture, and not blue, orange, or pink, is that the corresponding saturation levels are low -- there might be a color, but there is very little of that color. You can see this in the color space diagram - as you dial down saturation and go the center of the cylinder, you approach gray regardless of the hue.
+- **Value.** Finally, the value channel determines the brightness of a pixel. For example, the waves have a lower (darker) value than the sky, since they are a darker shade of blue.
 
 Now, we can start to see how all three channels work together to represent the original picture. The dark blue water has a blue hue, medium saturation, and low value. The white sails have varying hues throughout, but the low saturation and high value combine to give the sails their more-or-less white color. 
 
@@ -366,7 +387,7 @@ Now, we can start to see how all three channels work together to represent the o
 Converting Between RGB and HSV
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MATLAB provides two functions for converting between RGB and HSV image represenations. Let's say you have a 3D matrix called :code:`img` representing an image in RGB and want to convert it to a 3D matrix with HSV represenation:
+MATLAB provides two functions for converting between RGB and HSV image represenations. Let's say you have a 3D matrix called :code:`img` representing an image in RGB and want to convert it to a 3D matrix with HSV representation:
 
 .. code-block:: matlab
 
@@ -378,7 +399,7 @@ In the other direction, you can convert back using:
 
   img = hsv2rgb(hsv);
 
-Something to keep in mind is that you should *only* use :code:`imshow()` with RGB matrices. If you want to look at an HSV image, just convert it before using :code:`imshow()`. Otherwise the result you see looks really weird.
+Something to keep in mind is that you should *only* use :code:`imshow()` with RGB matrices. If you want to look at an HSV image, convert it before using :code:`imshow()`. Otherwise the result you see looks really weird.
 
 Finally, the HSV represenation in MATLAB uses values that range between 0 and 1, rather than integers between 0 and 255. So a "full" saturation pixel would have a value of 1 in the saturation channel, for example.
 
@@ -395,6 +416,29 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* To load images into a matrix, use :code:`imread()`. To save an image matrix as a file, use :code:`imwrite()`. To display a matrix as an image, use :code:`imshow()`.
+* **Integers** are whole real numbers (e.g,. 1, 2, 3). **Doubles** are floating point numbers (e.g., decimals like 1.5, 2.7, and 3.0).
+* In MATLAB, grayscale images are represented by a matrix with intensity values (0-255 or 0-1).
+* Three steps are required to do **contrast stretching** (improving or "stretching" the contrast of an image):
+
+  1. Determine the min/max of the original image.
+  2. Determine a stretch factor (size of final intensity range / size of original intensity range).
+  3. Stretch each pixel using the formula: :code:`new_min + stretch_factor * (orig_pixels - original_min)`.
+
+* In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the red, green, and blue portions of each pixel.
+* There are multiple ways to manipulate images as 3D matrices:
+
+  - Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
+  - Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
+  - More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel:
+
+    .. code-block:: matlab
+    
+      red = img(:,:,1);
+      red(:) = 255;
+      img(:,:,1) = red;
+    
+* In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
+* To convert from RGB to HSV, use :code:`rgb2hsv()`. To convert from HSV to RGB, use :code:`hsv2rgb()`. Remember that to show an image using :code:`imshow()`, it **must be** an RGB image so don't forget to convert before using that command.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

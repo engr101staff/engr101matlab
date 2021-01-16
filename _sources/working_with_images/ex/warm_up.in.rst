@@ -1,0 +1,69 @@
+In this chapter, we'll take a look at how to use MATLAB to manipulate images. Matlab is very efficient at storing information as numbers in a matrix, like in matrix :code:`a` below.
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <center>
+    <table><tbody>
+      <tr>
+        <td>
+          <div class="matcrab-vis-exp">
+            a = [1 2 3; 4 5 6; 7 8 9];
+            a;
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+    </center>
+    <br />
+  </div>
+
+These numbers can represent calculations, data, and even colors! Before we jump into talking about images, let's warm up by practicing a few operations we learned in previous chapters to change matrices (these will be used on images later in this chapter!).
+
+For each of the expressions below, determine the result of the operation. There’s also a MatCrab workspace below the questions you can use to check your work, if you like.
+
+.. list-table::
+  :align: left
+
+  * - .. shortanswer:: ch05_03_ex_warm_up_01
+
+        What is the result of multiplying :code:`a` by 2?
+
+    - .. shortanswer:: ch05_03_ex_warm_up_02
+
+        Set all values in :code:`a` greater than 10 equal to zero using logical indexing. What is the result?
+
+MatCrab can help you check any of your work above, if you would like. (To get it to show the result, make sure to store your result in a variable, e.g. :code:`result = a .* 2`.)
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        a = [1 2 3; 4 5 6; 7 8 9]
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+In this chapter, we will be using matrices to represent images, with each cell representing a pixel’s color. We will use matrix tools from previous chapters to manipulate images, using the image of a boat above as a running example.
