@@ -4,7 +4,7 @@
 
 .. raw:: html
 
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
 
 ====================
 Plotting and Figures
