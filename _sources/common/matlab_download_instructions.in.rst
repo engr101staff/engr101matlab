@@ -15,12 +15,12 @@
    | |download1|
    |
 
-2. Move the file to your current folder in MATLAB. As a reminder, when you open MATLAB, you can see which folder it is currently working in (highlighted in red, click for larger image):
+2. Move the file to your current folder in MATLAB. As a reminder, when you open MATLAB, you can see which folder it is currently working in (highlighted in red, right click and open in a new tab to enlarge):
 
    | |matlabDownload1|
    |
 
-You can change this folder by clicking on the "open folder" icon to the left of the file path. I've circled it here in red (click to see a larger image):
+You can change this folder by clicking on the "open folder" icon to the left of the file path. I've circled it here in red (right click and open in a new tab to enlarge):
 
 | |matlabDownload2|
 |
