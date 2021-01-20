@@ -1,0 +1,18 @@
+name: Verify include script has been run
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check Include Script
+    - run: npm run include
+    - run: git diff --name-only --exit-code
