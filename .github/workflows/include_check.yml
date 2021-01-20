@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Check Dynamic Pages
+    - name: Check Include Script
     - run: npm run include
     - run: git diff --name-only --exit-code
