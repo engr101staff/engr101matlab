@@ -4,47 +4,180 @@
 
 .. raw:: html
 
+   <link rel="stylesheet" href="../_static/common/css/matlab.css">
    <script src="../_static/common/js/common2.js"></script>
+   <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 ====================
 Plotting and Figures
 ====================
 
-
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction
-^^^^^^^^^^^^
-.. section 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following lecture material will allow you to use MATLAB to create and manipulate plots. The material covered will be
+Data, data, data! As engineers, all of you will be working with data on a regular basis. Maybe you will have empirical results from stress testing a new product, or measurements from how a bridge holds up under high wind speeds, or records of how many new users visited your phone app in the last month. Whatever data you are working with, it's important to be able to visualize your data using graphs and figures. A good graph can show relationships between data that are difficult, if not impossible, to explain with words. Graphs and figures can help you (and your audience) grasp what equations and data actually *mean*.
 
-- using the scatter command
-- using the plot command with vectors
-- using the plot command to display functions
+MATLAB has a great variety of tools to help you make informative graphs. In this chapter, we'll cover making line plots, scatter plots, pie charts, and bar charts. We'll also talk about how to make graphs that accurately represent your data, and are not accidentally misleading. For example, consider this graph:
 
-  - resolution of functions (choice for x-axis series)
-  - customizing the display (what do you want to highlight)
-  - displaying multiple sets of data on a single set of axes
+.. image:: img/weather_graph.png
+  :width: 560
+  :align: center
+  :alt: A misleading graph plotting responses to a survey question about favorite seasons.
 
-- displaying grids
-- customizing line plots
-- the MATLAB way
-  - input data, then plot the result
-- plotting data from :file:`.csv` files
-- MATLAB :code:`figure()` terminology
-- multiple plots in one figure
-- pie charts, bar charts
-- good plotting habits
-- plotting with scripts and functions
+|
+  
+.. mchoice:: ch06_01_weather_graph
+  :answer_a: The bar for summer should be higher than the bar for spring.
+  :answer_b: The bars for summer and winter should be the same height.
+  :answer_c: The scale of the y-axis is uneven.
+  :answer_d: All of the above
+  :correct: d
+  :feedback_a: Oops! This is a problem, but do you see more problems in this graph?
+  :feedback_b: Oops! This is a problem, but do you see more problems in this graph?
+  :feedback_c: Oops! This is a problem, but do you see more problems in this graph?
+  :feedback_d: Correct! There are a multitude of problems with this graph.
+  
+Even though this graph was meant to be informative and interesting, it ended up being misleading because best practices weren't followed. As you create your graphs, it's important to think about what your graphs are communicating and if they are a fair representation of your data. We'll talk more about best practices for graphs in this chapter.
 
-^^^^^^^^^^^^^^^^^^^^
-Basic Plotting Setup
-^^^^^^^^^^^^^^^^^^^^
-.. section 2
+Before we get started, go ahead and download the files that we will use for this chapter. I would recommend creating a new MATLAB folder to store the scripts and data files that we will be using.
 
-------------------------
-Introduction To Plotting
-------------------------
+.. admonition:: Data File
+
+  .. list-table::
+    :align: left
+    :widths: auto
+
+    * - :download:`InternetUsers.m <../_static/plotting_and_figures/InternetUsers.m>`
+
+      - .. reveal:: InternetUsers_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>InternetUsers.m</code>
+
+          .. literalinclude:: ../_static/plotting_and_figures/InternetUsers.m
+            :lines: 1-24
+            :append: ...
+
+      - Starter script for plotting the number of Internet and Facebook users
+      
+    * - :download:`star_data.xlsx <../_static/plotting_and_figures/star_data.xlsx>`
+
+      - .. reveal:: star_data_xlsx_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>star_data.xlsx</code>
+
+          .. image:: img/star_data_xlsx_preview.png
+            :width: 400
+            :align: center
+
+      - Data on 75 known star systems within 16.3 lightyears
+      
+    * - :download:`AnalyzeStars.m <../_static/plotting_and_figures/AnalyzeStars.m>`
+
+      - .. reveal:: AnalyzeStars_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>AnalyzeStars.m</code>
+
+          .. literalinclude:: ../_static/plotting_and_figures/AnalyzeStars.m
+            :lines: 1-32
+            :append: ...
+
+      - Starter script for analyzing the star data
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Line Plots
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For the following video, make sure that you've downloaded :code:`InternetUsers.m` from the File Download box above. Follow along with the video using this starter script; the exercise after the video will ask you to make some additional changes.
+
+(video going through plotting Internet and Facebook users)
+
+Let's review some of the commands that we used to create line plots. If we have a vector of x-values (say, :code:`internet_years`) and a vector of y-values (say, :code:`internet_users`), we can create a line plot.
+
+.. code-block:: matlab
+
+  plot(internet_years, internet_users);
+  
+We can add a title, x-axis and y-axis labels, and a legend. In this example, we are placing the legend in the "Northwest" (e.g., upper left) corner of the plot.
+
+.. code-block:: matlab
+
+    title('Growth in Internet Users');
+    xlabel('Year');
+    ylabel('Number of Users (millions)');
+    legend("Internet Users", "Location", "Northwest");
+    
+We can also customize the line style, marker type, and color for the plotted line. For example, the following example uses a dashed, blue line with circles at the data points. Refer to the documentation for :code:`plot` for more customization examples.
+
+.. code-block:: matlab
+
+    plot(internet_years, internet_users, 'b--o');
+    
+If we want to plot two lines on the same graph (e.g., Internet users *and* Facebook users), there are two ways to do it. First, we can give additional arguments to the :code:`plot` function.
+
+.. code-block:: matlab
+
+    plot(internet_years, internet_users, facebook_years, facebook_users);
+    
+Second, we can create a :code:`figure` and use :code:`hold on` to call :code:`plot` multiple times. (Use :code:`hold off` to turn off this behavior.)
+
+.. code-block:: matlab
+
+    figure();
+    plot(internet_years, internet_users);
+    hold on;
+    plot(facebook_years, facebook_users);
+
+------------------------------------
+Exercise: Customizing Line Plots
+------------------------------------
+
+For this exercise, use the starter script :code:`InternetUsers.m` (which you can download at the top of this chapter), and build off of the plots that we made in the previous video.
+
+Take the following steps to customize these line plots further:
+
+1. Choose a different line color and line type for the line plotting :code:`facebook_years` vs. :code:`facebook_users`. (hint: MATLAB's documentation for :code:`plot` has additional examples that you can use to help you.)
+2. Move the legend to the lower right-hand corner.
+
+.. shortanswer:: ch06_01_line_plot_customization
+
+  Paste in a copy of your completed :file:`InternetUsers.m` script file.
+  
+  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Scatter Plots
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that we've seen some of the basics of plotting, let's use a larger dataset and make some scatter plots! You may have noticed that in the previous exercise, the data was stored in the MATLAB script in vectors. As we saw in Ch. 3, this can cause problems. For instance, what if I had accidentally mistyped a number when I was typing my data into the script? A better way to handle data is to store it in a separate data file, and then read it into your MATLAB script.
+
+For the next few examples, we're going to work with a dataset of 75 known star systems within 16.3 light-years of Earth. (Of great interest, this dataset includes Proxima Centauri, the closest star to the sun, and the star that our planet Proxima b orbits!)
+
+.. image:: img/proxima_centauri.jpg
+  :width: 560
+  :align: center
+  :alt: An image of Proxima Centauri taken by the Hubble Space Telescope in 2013. The bright lines are diffraction spikes (lines radiating from bright light sources).
+  
+  An image of Proxima Centauri taken by the Hubble Space Telescope in 2013. The bright lines are diffraction spikes (lines radiating from bright light sources).
+
+|
+
+Open up the dataset file (:code:`star_data.xlsx`) in Excel, Numbers, or a similar program. You'll see lots of interesting data about stars contained here! We have the name of each star, and its distance from the Earth in light-years. We also have the mass of each star, which is measured using the Sun as a reference point (e.g., the Sun has a mass of 1, and every other star has a mass relative to this). The apparent magnitude measures how bright each star is as observed from Earth. The lower the number is, the brighter the star appears. That's why the Sun has such a low value (-26.74) - it's clearly the brightest object in the sky! Finally, we have the number of confirmed planets orbiting each Sun (hello, Proxima b) and the stellar class of each star. The stellar class is a classification system based on the temperature of the star (e.g., red dwarfs are much cooler than white dwarfs).
+
+.. image:: img/star_life.jpg
+  :width: 560
+  :align: center
+  :alt: The life and death of a star.
+  
+|
+
+We can make some really neat plots with all of this data. Make sure that you've downloaded :code:`AnalyzeStars.m` from the beginning of this chapter. We will use this as a starter script for making plots.
+
+----------
+Rick
+----------
 
 MATLAB is designed for plotting. Given the following :code:`x` and :code:`y` vectors,
 
