@@ -57,6 +57,18 @@ Statistics and Simulation
 
       - Starter file for plotting city data
 
+
+    * - :download:`batteryLife.mat <../_static/statistics_and_simulation/batteryLife.mat>`
+
+      - .. reveal:: batteryLife_mat_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>batteryLife.mat</code>
+
+          No preview available
+
+      - MATLAB saved workspace containing variables with battery experiment data
+
     * - :download:`newBatteryLife.mat <../_static/statistics_and_simulation/newBatteryLife.mat>`
 
       - .. reveal:: newBatteryLife_mat_preview
@@ -66,7 +78,7 @@ Statistics and Simulation
 
           No preview available
 
-      - Matlab saved workspace containing variables with battery experiment data
+      - MATLAB saved workspace containing variables with NEW battery experiment data
 
     * - :download:`AnalyzeBatteries.m <../_static/statistics_and_simulation/AnalyzeBatteries.m>`
 
@@ -342,7 +354,7 @@ Plots with Error Bars
 ^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Engineering data is often plotted with error bars included. Error bars can be used to convey a range of values for each point on the plot, or uncertainty about a measured value. MATLAB's errorbar function will create a plot with "error bars" at each data point, like this:
+Engineering data is often plotted with error bars included. Error bars can be used to convey a range of values for each point on the plot, or uncertainty about a measured value. MATLAB's :code:`errorbar` function will create a plot with "error bars" at each data point, like this:
 
 .. figure:: img/SampleErrorPlot.png
   :width: 450

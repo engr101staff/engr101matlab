@@ -13,9 +13,9 @@ Given these assumptions, our thrown item's position over time is given by these 
   y & = v_0 \sin(\theta) t - \frac{1}{2} g t^2
   \end{aligned}
 
-where :math:`t` is time, :math:`x` is the horizontal distance at time :math:`t`, :math:`y` is the vertical distance at time :math:`t`, :math:`v_0` is the initial speed of the item at time :math:`t = 0`, :math:`\theta` is the initial angle of the item at time :math:`t = 0`, and :math:`g` is the gravitational acceleration (we will assume :math:`g = 9.8 m/s^2`).
+where :math:`t` is time, :math:`x` is the horizontal distance at time :math:`t`, :math:`y` is the vertical distance at time :math:`t`, :math:`v_0` is the initial speed of the item at time :math:`t = 0`, :math:`\theta` is the initial angle of the item at time :math:`t = 0`, and :math:`g` is the gravitational acceleration (we will assume :math:`g = 9.8` m/s\ :sup:`2`).
 
-These are well-established equations governing this simplified projectile motion, but MATLAB can't understand these equations - these are math equations! Before we can simulate our item's projectile motion, we need to translate these math equations into statements that MATLAB can execute: 
+These are well-established equations governing this simplified projectile motion, but MATLAB can't understand these equations -- these are math equations! Before we can simulate our item's projectile motion, we need to translate these math equations into statements that MATLAB can execute: 
 
 .. code-block:: matlab
 
