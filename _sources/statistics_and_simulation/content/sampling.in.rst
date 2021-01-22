@@ -14,7 +14,7 @@ A normally-distributed set of data is fully defined by its mean and standard dev
 
 MATLAB provides functions for sampling from a variety of probability distributions. This allows us to run simulations of random variables if we know the parameters of their distributions. For example, to simulate a uniform discrete distribution, we use the :code:`randi` function:
 
-.. youtube:: JR8ITVgFtKM
+.. youtube:: efmbjSc5OA8
   :divid: ch07_09_vid_randi
   :height: 315
   :width: 560
@@ -31,7 +31,7 @@ To recap, the :code:`randi` function picks pseudo random numbers:
 
   ..
 
-Here are two examples of using :code:`randi` to simulate rolling a die a 6-sided die on the left and a 20-sided die on the right:
+Here are two examples of using :code:`randi` to simulate rolling a 6-sided die on the left and a 20-sided die on the right:
 
 .. figure:: img/RandiExamples.png
   :width: 450
@@ -78,7 +78,7 @@ Here's a few practice exercises. In each, identify the :code:`randi()` call that
   :answer_c: x = randi(1,2,5);
   :answer_d: x = randi(5,1,2);
   :correct: a
-  :feedback_a: Correct! This vector has pseudo random values between 1 and 2, so imax = 2. There is 1 row and 5 columns.
+  :feedback_a: Correct! This vector has pseudo random values between 1 and 2, so imax must be at least 2. There is 1 row and 5 columns.
   :feedback_b: Try Again! Remember that the order of the arguments to randi is: imax, number of rows, number of columns
   :feedback_c: Try Again! Remember that the order of the arguments to randi is: imax, number of rows, number of columns
   :feedback_d: Try Again! Remember that the order of the arguments to randi is: imax, number of rows, number of columns
@@ -99,7 +99,7 @@ Here's a few practice exercises. In each, identify the :code:`randi()` call that
   :feedback_a: Try Again! Remember that the order of the arguments to randi is: imax, number of rows, number of columns
   :feedback_b: Try Again! Remember that the order of the arguments to randi is: imax, number of rows, number of columns
   :feedback_c: Almost! This statement does create a 3x6 matrix with pseudo random values. Take a look at the value of element x(2,1), though.
-  :feedback_d: Correct! This vector has pseudo random values between 1 and 5, so imax = 5. There is 1 row and 6 columns.
+  :feedback_d: Correct! This matrix has pseudo random values between 1 and 5, so imax must be at least 5. There are 3 rows and 6 columns.
 
   .. raw:: html
 

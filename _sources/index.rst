@@ -1,6 +1,11 @@
-=================
-ENGR 101 - MATLAB
-=================
+=======================================================
+University of Michigan: ENGR 101
+=======================================================
+
+.. image:: _static/common/img/Subtitle.png
+  :width: 665
+  :align: center
+  :alt: Solving Engineering Problems Using Computing
 
 Welcome to ENGR 101! We're glad to have you here.
 
