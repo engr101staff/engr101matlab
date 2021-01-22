@@ -29,9 +29,9 @@ Introduction
 
 .. include:: ex/introduction.in.rst
 
-Before we get started, go ahead and download the files that we will use for this chapter. I would recommend creating a new MATLAB folder to store the scripts and data files that we will be using.
+.. admonition:: Chapter Files
 
-.. admonition:: Data File
+  We’ll be using several files throughout this chapter’s exercises. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It’s also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don’t clutter up whatever else you were working on.)
 
   .. list-table::
     :align: left

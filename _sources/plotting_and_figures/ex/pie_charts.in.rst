@@ -47,7 +47,7 @@ To close the current figure, use :code:`close`. To close all figures, use :code:
   :answer_b: The original Figure 2 was replaced by the new :code:`figure(2)` command.
   :correct: b
   :feedback_a: Oops! Calling :code:`figure(2)` again will overwrite the existing Figure 2.
-  :feedback_b: Correct! The original figure gets replaced by MATLAB when you call :code:`figure(2)` a second time.
+  :feedback_b: Correct! The original figure gets replaced by MATLAB when you call figure(2) a second time.
   
   Consider the following code.
 
