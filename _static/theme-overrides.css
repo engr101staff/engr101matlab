@@ -80,6 +80,10 @@ blockquote {
   margin-bottom: 0 !important;
 }
 
+.engr101-subtitle {
+  font-size: 1em;
+  text-color: #777777;
+}
 
 /* MATCRAB */
 .matcrab-vis-exp {
