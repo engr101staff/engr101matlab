@@ -61,10 +61,10 @@ We can set the range (e.g., the minimum and maximum values) of the x-axis and y-
 We can also display the grid on our plots using :code:`grid on` (similarly, :code:`grid off` turns off the grid).
 
 .. mchoice:: ch06_02_ex_plot
-  :answer_a: :code:`plot(x_ordered, y_ordered)` and :code:`plot(x_unordered, y_unordered)` will give you the same result.
-  :answer_b: When you run :code:`plot(x_unordered, y_unordered)`, the plot automatically switches from a line plot to a scatter plot.
-  :answer_c: :code:`plot(x_unordered, y_unordered)` appears to cross back over itself.
-  :answer_d: When you run :code:`plot(x_unordered, y_unordered)`, the plot switches axes to keep the plot a mathematical function.
+  :answer_a: plot(x_ordered, y_ordered) and plot(x_unordered, y_unordered) will give you the same result.
+  :answer_b: When you run plot(x_unordered, y_unordered), the plot automatically switches from a line plot to a scatter plot.
+  :answer_c: plot(x_unordered, y_unordered) appears to cross back over itself.
+  :answer_d: When you run plot(x_unordered, y_unordered), the plot switches axes to keep the plot a mathematical function.
   :correct: c
   :feedback_a: Oops! Try running this in MATLAB - the plot is not the same.
   :feedback_b: Oops! Unless you tell MATLAB to switch plotting styles, it will not switch.

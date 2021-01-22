@@ -22,4 +22,6 @@ MATLAB has a great variety of tools to help you make informative graphs. In this
   :feedback_c: Oops! This is a problem, but do you see more problems in this graph?
   :feedback_d: Correct! There are a multitude of problems with this graph.
   
+  What is problematic with the above plot?
+  
 Even though this graph was meant to be informative and interesting, it ended up being misleading because best practices weren't followed. As you create your graphs, it's important to think about what your graphs are communicating and if they are a fair representation of your data. We'll talk more about best practices for graphs in this chapter.
