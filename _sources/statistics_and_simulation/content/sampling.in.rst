@@ -14,7 +14,7 @@ A normally-distributed set of data is fully defined by its mean and standard dev
 
 MATLAB provides functions for sampling from a variety of probability distributions. This allows us to run simulations of random variables if we know the parameters of their distributions. For example, to simulate a uniform discrete distribution, we use the :code:`randi` function:
 
-.. youtube:: JR8ITVgFtKM
+.. youtube:: efmbjSc5OA8
   :divid: ch07_09_vid_randi
   :height: 315
   :width: 560

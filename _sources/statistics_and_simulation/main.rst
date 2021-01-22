@@ -262,7 +262,7 @@ A histogram is a visualization of the frequency of occurrence for certain values
 
 This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a spectacular guide to histograms and how they are created. We highly recommend you read this guide before continuing on with the rest of this chapter (it's also a beautiful example of data visualization!). Let's see how we can make histograms in MATLAB.
 
-.. youtube:: kJhRNOtXtdU
+.. youtube:: 4qNXLOMGTTk
   :divid: ch07_04_vid_histograms
   :height: 315
   :width: 560
@@ -383,7 +383,7 @@ The videos below show how an error bar plot is an effective tool for this analys
 
 First, let's just make the plot.
 
-.. youtube:: EKTDMx8IdCE
+.. youtube:: PRHb4vL7tuo
   :divid: ch07_06_vid_batteryLife_01
   :height: 315
   :width: 560
@@ -393,7 +393,7 @@ First, let's just make the plot.
 
 Now, how can we interpret these results?
 
-.. youtube:: l1boh2CJdPE
+.. youtube:: P6YAvL3-gLM
   :divid: ch07_06_vid_batteryLife_02
   :height: 315
   :width: 560
