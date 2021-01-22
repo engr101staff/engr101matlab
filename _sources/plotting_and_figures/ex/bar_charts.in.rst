@@ -15,7 +15,7 @@ Let's review some of the commands for making bar charts. To plot a bar chart wit
     bar(magnitude_averages);
     
 .. tip::
-    The :code:`barh` and :code:`bar3` functions work similarly but produce horizontal and 3D charts, respectively.
+    The :code:`barh` function works similarly but produces a horizontal bar chart.
     
 If you want to have multiple bars for each x-value, create multiple column vectors and combine them into a matrix (each row should correspond to a single group of bars).
 

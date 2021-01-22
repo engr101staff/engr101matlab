@@ -13,9 +13,7 @@ To review what we covered in the video, if we have a vector of counts (e.g., :co
 .. code-block:: matlab
 
     pie(all_counts);
-    
-.. tip::
-    The :code:`pie3` function works similarly but produces a 3D pie chart instead.
+
 
 There are two ways to add labels to our pie chart. We can add the labels directly to the pie chart by passing them as a parameter to :code:`pie`.
 
@@ -41,3 +39,14 @@ In MATLAB, figures are used to display graphics in a separate window. There may 
     figure(n);
     
 To close the current figure, use :code:`close`. To close all figures, use :code:`close all`. To close a particular figure n, use :code:`close n`.
+
+.. tip::
+    Pie charts can sometime be useful, but they can also be deceiving because it can be hard to compare the relative sizes of the different "wedges" in the chart. So, **use pie charts with care**. Also, pie charts are often a really bad way to display data, so consider all your options before you choose a pie chart.
+
+    .. image:: img/bad_pie_chart.png
+        :width: 700
+        :align: center
+        :alt: a terrible looking pie chart
+
+    *Google Slides thought that a pie chart was exactly the right chart type to default to for a column of timestamps. This is definitely not a useful chart.*
+    

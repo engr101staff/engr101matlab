@@ -12,9 +12,7 @@
 Plotting and Figures
 ====================
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|
 
 .. image:: img/img13.png
   :width: 400
@@ -26,6 +24,12 @@ Introduction
     <center><i>No, not that kind of plotting.</i></center>
     
 |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Introduction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 .. include:: ex/introduction.in.rst
 
@@ -252,6 +256,8 @@ You can double check that you have completed everything on the "Assignments" pag
 Optional Exercise: Creating a Pie Chart of Planets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *This section is COMPLETELY optional. We provide it here if you are looking for extra practice with this material on a real-life problem. You can use this to review the material, or come back later and use it for exam prep. We estimate that this exercise will take around 15 minutes to complete.*
+
+We didn't want to let you leave this chapter still thinking about that one awful pie chart. Let's make a better one instead!
 
 .. include:: ex/pie_charts_exercise.in.rst
 
