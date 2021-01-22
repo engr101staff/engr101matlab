@@ -10,7 +10,7 @@ University of Michigan: ENGR 101
 
 .. raw:: html
 
-  <h4 style="color: #777777;"> Solving Engineering Problems Using Computing </h4>
+  <h4 style="color: #777777;"> Using Computing to Solve Engineering Problems</h4>
 
 |
 
