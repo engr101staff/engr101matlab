@@ -17,7 +17,7 @@ stellar_class = num(:,5);
 
 
 
-%% Scatter plot of mass v. luminosity
+%% Scatter plot of mass v. magnitude
 
 
 

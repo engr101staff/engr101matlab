@@ -1,13 +1,6 @@
-.. image:: img/img13.png
-  :width: 400
-  :align: center
-  :alt: Meme: Yes, Yes, Excellent.
-  
-|
+As an engineer, it's very possible that your graphs will out-live you, and that they will go on to have a life of their own. As a responsible engineer, you need to make clear graphs that can "stand on their own" (e.g., it is obvious what they are trying to convey). Here are some good practices to follow.
 
-As an engineer, it's very possible that your graphs will out-live you, and that they will go on to have a life of their own. As a responsible engineer, you need to make clear graphs that can "stand on their own" (e.g., it is obvious what they are trying to convey). Here are some good practices to follow:
-
-1. Don't be misleading in your plots.
+**1. Don't be misleading in your plots.**
 
 .. image:: img/misleading.png
   :width: 560
@@ -16,9 +9,9 @@ As an engineer, it's very possible that your graphs will out-live you, and that 
   
 |
 
-In the top graph above, it looks like there's a big different between all of the groups. But, that graph is really just showing a small segment of the y-axis. If we zoom out and look at the graph in perspective, when the y-axis starts at 0, we see that there's very little difference between the groups. It's important to make sure that your graphs are communicating the truth about your data. For more information, check out this `Wikipedia page <https://en.wikipedia.org/wiki/Misleading_graph>`.
+In the top graph above, it looks like there's a big different between all of the groups. But, that graph is really just showing a small segment of the y-axis. If we zoom out and look at the graph in perspective, when the y-axis starts at 0, we see that there's very little difference between the groups. It's important to make sure that your graphs are communicating the truth about your data. For more information, check out this `Wikipedia page <https://en.wikipedia.org/wiki/Misleading_graph>`_.
 
-2. Do maximize your "Signal-Noise Ratio".
+**2. Do maximize your "Signal-Noise Ratio".**
 
 Consider these two graphs:
 
@@ -39,4 +32,4 @@ Here are a few things we can learn from these graphs:
 * Include horizontal and vertical grid lines (unless you have a REALLY good reason not to).
 * Choose high contrast colors (watch out for color blindness!).
 
-For more inspiration, check out `reddit.com/r/dataisbeautiful <reddit.com/r/dataisbeautiful>`.
+For more inspiration, check out `reddit.com/r/dataisbeautiful <https://reddit.com/r/dataisbeautiful>`_.

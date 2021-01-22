@@ -13,4 +13,3 @@ Create a new pie chart using these steps:
 
   Paste in a copy of your completed :file:`AnalyzeStars.m` script file.
   
-(walkthrough video)

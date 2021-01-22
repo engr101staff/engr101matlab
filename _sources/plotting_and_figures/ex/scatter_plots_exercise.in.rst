@@ -15,4 +15,3 @@ Create a new scatter plot using these steps:
 
   Paste in a copy of your completed :file:`AnalyzeStars.m` script file.
   
-(walkthrough video)
