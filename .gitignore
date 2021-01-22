@@ -1,3 +1,4 @@
 .vscode
 __pycache__/
 build/
+_sources/_static/common/.DS_Store
