@@ -265,10 +265,10 @@ Optional Exercise: Creating a Pie Chart of Planets
       :width: 560
       :align: center
       
-  .. tip::
+    .. tip::
   
-    Alternatively, here's a concise way to calculate :code:`all_counts` using a single line of code:
+      Alternatively, here's a concise way to calculate :code:`all_counts` using a single line of code:
   
-    .. code-block:: matlab
+      .. code-block:: matlab
   
-      all_counts = sum(planets == [0 1 2 3 4 8]);
+        all_counts = sum(planets == [0 1 2 3 4 8]);
