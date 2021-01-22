@@ -123,6 +123,6 @@ Here's a few examples of things you can do:
   :align: center
   :alt: Many kinds of MATLAB plots.
   
-Refer to `this page <https://www.mathworks.com/help/matlab/creating_plots/types-of-matlab-plots.html>`_ for more info (and even more types of plots!).
-
 |
+  
+Refer to `this page <https://www.mathworks.com/help/matlab/creating_plots/types-of-matlab-plots.html>`_ for more info (and even more types of plots!).

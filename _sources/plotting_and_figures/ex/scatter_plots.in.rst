@@ -13,7 +13,14 @@ For the next few examples, we're going to work with a dataset of 75 known star s
 
 |
 
-Open up the dataset file (:code:`star_data.xlsx`) in Excel, Numbers, or a similar program. You'll see lots of interesting data about stars contained here! We have the name of each star, and its distance from the Earth in light-years. We also have the mass of each star, which is measured using the Sun as a reference point (e.g., the Sun has a mass of 1, and every other star has a mass relative to this). The apparent magnitude measures how bright each star is as observed from Earth. The lower the number is, the brighter the star appears. That's why the Sun has such a low value (-26.74) - it's clearly the brightest object in the sky! Finally, we have the number of confirmed planets orbiting each Sun (hello, Proxima b) and the stellar class of each star. The stellar class is a classification system based on the temperature of the star (e.g., red dwarfs are much cooler than white dwarfs).
+Open up the dataset file (:code:`star_data.xlsx`) in Excel, Numbers, or a similar program. You'll see lots of interesting data about stars contained here! Here's what's in the dataset:
+
+* The name of each star.
+* The distance of each star from Earth in light-years.
+* The mass of each star, which is measured using the Sun as a reference point (e.g., the Sun has a mass of 1, and every other star has a mass relative to this).
+* The apparent magnitude measures how bright each star is as observed from Earth. The lower the number is, the brighter the star appears. That's why the Sun has such a low value (-26.74) - it's clearly the brightest object in the sky!
+* The number of confirmed planets orbiting each star (hello, Proxima b).
+* The stellar class of each star. The stellar class is a classification system based on the temperature of the star (e.g., red dwarfs are much cooler than white dwarfs).
 
 |
 
@@ -50,6 +57,14 @@ We specifically created a scatter plot. If we have a vector of x-values (say, :c
 .. code-block:: matlab
 
   scatter(selected_mass, selected_planets);
+  
+.. tip::
+
+  When should you use a scatter plot, and when should you use a line plot?
+  
+  Use a line plot when you want to connect your data points to form a continuous line. This can help you visually interpolate what the data would look like between your data points, where you don't actually have any data to look at. It also gives you a good sense of which way the data is trending.
+  
+  Use a scatter plot when you want to show your data points without connecting them. This can be good when you are showing a lot of data points, and connecting them would make a crazy-looking line. A scatter plot can be effective when you are showing raw data, and you want to look at where there is a high density of data points and where is a low density.
   
 We can set the range (e.g., the minimum and maximum values) of the x-axis and y-axis using the following commands.
 

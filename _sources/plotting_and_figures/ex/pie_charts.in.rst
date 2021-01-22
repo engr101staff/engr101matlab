@@ -41,29 +41,3 @@ In MATLAB, figures are used to display graphics in a separate window. There may 
     figure(n);
     
 To close the current figure, use :code:`close`. To close all figures, use :code:`close all`. To close a particular figure n, use :code:`close n`.
-
-.. mchoice:: ch06_03_ex_figure
-  :answer_a: Figure 2 remains unchanged.
-  :answer_b: The original Figure 2 was replaced by the new :code:`figure(2)` command.
-  :correct: b
-  :feedback_a: Oops! Calling :code:`figure(2)` again will overwrite the existing Figure 2.
-  :feedback_b: Correct! The original figure gets replaced by MATLAB when you call figure(2) a second time.
-  
-  Consider the following code.
-
-  .. code-block:: matlab
-
-    figure();
-    plot(mass, magnitude);
-
-    figure();
-    scatter(magnitude, planets);
-    
-  If you run this script, Figure 2 is a scatter plot of :code:`magnitude` v. :code:`planets`. Now, suppose you type the following into the command window:
-
-  .. code-block:: matlab
-
-    figure(2);
-    plot(mass, planets);
-
-  What happened to Figure 2?

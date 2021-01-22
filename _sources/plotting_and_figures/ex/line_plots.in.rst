@@ -23,19 +23,23 @@ We can add a title, x-axis and y-axis labels, and a legend. In this example, we 
     ylabel('Number of Users (millions)');
     legend("Internet Users", "Location", "Northwest");
     
+.. tip::
+  
+  There is a technical difference between using single quotes and double quotes around words (we'll get to this more in later chapters!), but in many cases they are interchangeable.
+    
 We can also customize the line style, marker type, and color for the plotted line. For example, the following example uses a dashed, blue line with circles at the data points. Refer to the documentation for :code:`plot` for more customization examples.
 
 .. code-block:: matlab
 
     plot(internet_years, internet_users, 'b--o');
     
-If we want to plot two lines on the same graph (e.g., Internet users *and* Facebook users), there are two ways to do it. First, we can give additional arguments to the :code:`plot` function.
+If we want to plot two lines on the same graph (e.g., Internet users *and* Facebook users), there are two ways to do it. The first method is, we can give additional arguments to the :code:`plot` function.
 
 .. code-block:: matlab
 
     plot(internet_years, internet_users, 'b--o', facebook_years, facebook_users);
     
-Second, we can create a :code:`figure` and use :code:`hold on` to call :code:`plot` multiple times.
+The second method is, we can create a :code:`figure` and use :code:`hold on` to call :code:`plot` multiple times.
 
 .. code-block:: matlab
 
