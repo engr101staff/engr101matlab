@@ -10,7 +10,7 @@ Our company has manufactured new batteries that we hope will have better perform
 1. Our phones have 3 hours battery life when new.
 2. After 2 years, our phones will still have 2 hours of battery life.
 
-First, make a copy of the AnalyzeBatteries.m file and name it :file:`AnalyzeNewBatteries.m`. Then, make appropriate changes to the code in :file:`AnalyzeNewBatteries.m` to implement the following algorithm:
+First, make a copy of the :file:`AnalyzeBatteries.m` file and name it :file:`AnalyzeNewBatteries.m`. Then, make appropriate changes to the code in :file:`AnalyzeNewBatteries.m` to implement the following algorithm:
 
 1. Clear old data and close figures
 2. Load the MATLAB workspace variables from the :file:`newBatteryLife.mat` file
@@ -31,9 +31,9 @@ Customize the plot so that it looks better:
 - Turn the grid on
 
 .. hint::
-  You just have to change a few things in the AnalyzeNewBatteries.m file. Most of the code to implement the algorithm is already there because we already wrote the code when we analyzed the original set of batteries. We're doing the same analysis, just on a different set of data, so we shouldn't have to change too much.
+  You just have to change a few things in the :file:`AnalyzeNewBatteries.m` file. Most of the code to implement the algorithm is already there because we already wrote the code when we analyzed the original set of batteries. We're doing the same analysis, just on a different set of data, so we shouldn't have to change too much.
 
-Check to see if your plot matches this one (the shape of the plot might be different, but that's okay):
+Check to see if your plot matches this one:
 
 .. figure:: img/NewBatteryPerformance.png
   :width: 450
