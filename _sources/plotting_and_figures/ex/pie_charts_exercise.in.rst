@@ -8,8 +8,3 @@ Create a new pie chart using these steps:
 4. Create a vector of labels. Include the labels "zero", "one", "two", "three", "four", and "eight".
 5. Create a pie chart of :code:`all_counts`.
 6. Try including the labels on the pie chart by including them as a parameter of :code:`pie`. Try also including the labels as a separate legend (you may need to move the location of the legend). Keep whichever version looks better.
-
-.. shortanswer:: ch06_03_creating_pie_chart
-
-  Paste in a copy of your completed :file:`AnalyzeStars.m` script file.
-  

@@ -1,7 +1,7 @@
 For this exercise, use the starter script :code:`AnalyzeStars.m` and the dataset :code:`star_data.xlsx` (which you can download at the top of this chapter).
 
 .. tip::
-    If you want to create this scatter plot in the same script as we created the previous scatter plot in, you will need to create a new figure for the new plot. To do this, before doing the steps below, call :code:`figure();` in your MATLAB script. This tells MATLAB that you are creating a new plot, and it will put it in a new figure, and the two plots won't overlap.
+    If you want to create this scatter plot in the same script as we created the previous scatter plot in (and still display both plots), you will need to create a new figure for the new plot. To do this, before doing the steps below, call :code:`figure();` in your MATLAB script. This tells MATLAB that you are creating a new plot, and it will put it in a new figure, and the two plots won't overlap.
 
 Create a new scatter plot using these steps:
 
