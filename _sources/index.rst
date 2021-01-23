@@ -1,6 +1,12 @@
-=================
-ENGR 101 - MATLAB
-=================
+=======================================================
+University of Michigan: ENGR 101
+=======================================================
+
+.. raw:: html
+
+  <h4 style="color: #777777;"> Using Computing to Solve Engineering Problems</h4>
+
+|
 
 Welcome to ENGR 101! We're glad to have you here.
 
@@ -17,6 +23,8 @@ Table of Contents
   functions_and_data/toctree.rst
   logical_indexing/toctree.rst
   working_with_images/toctree.rst
+  plotting_and_figures/toctree.rst
+  statistics_and_simulation/toctree.rst
 
 
 

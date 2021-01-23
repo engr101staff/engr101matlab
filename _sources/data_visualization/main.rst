@@ -4,7 +4,7 @@
 
 .. raw:: html
 
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
 
 ========================================
 Advanced Plotting and Data Visualization
@@ -440,87 +440,6 @@ Exercise: Contour Plots
 
   Select all of the datasets that would be displayed well in a contour plot.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The :code:`subplot` Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 6
-
-We've seen how to make a plot that has two sets of data on it, but what if you want to plot those two sets of data on separate graphs in the same figure? You can use MATLAB's :code:`subplot` function to do this. Watch the video below to see how to use the :code:`subplot` function.
-
-.. youtube:: MdAAXuvl4Ck
-  :divid: ch09_06_vid_subplot
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-----------------------------------
-Exercise: :code:`subplot` Practice
-----------------------------------
-
-.. fillintheblank:: ch09_06_ex_subplot_01
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **A6**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*6[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_02
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **A3**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*8[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_03
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **B5**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubB.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*2[ ]*,[ ]*5[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_04
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **C1**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubC.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*1[ ]*,[ ]*4[ ]*,[ ]*1[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch09_06_revealwt_subplot
-  
-    .. youtube:: oSOzHEUPfQk
-      :divid: ch09_06_wt_subplot
-      :height: 315
-      :width: 560
-      :align: center
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Application: Comparing Bathymetry Plots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -532,6 +451,9 @@ This exercise uses the following files.
 - :file:`UpNorth.m`
 
 Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
+
+.. tip::
+    The following exercise uses the :code:`subplot` function. If you need a review on how subplots work, please refer back to Chapter 6.
 
 Let's practice creating contour plots and using the subplot function. We will generate a figure that compares the two contour plots of the bathymetry data we used earlier. Open :file:`UpNorth.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the :file:`bathymetryData.mat` file. Complete the :file:`UpNorth.m` script to plot both contour plots in the same figure, like this:
 
