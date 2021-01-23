@@ -2,12 +2,6 @@
 University of Michigan: ENGR 101
 =======================================================
 
-.. .. image:: _static/common/img/Subtitle.png
-..   :width: 665
-..   :align: center
-..   :alt: Solving Engineering Problems Using Computing
-
-
 .. raw:: html
 
   <h4 style="color: #777777;"> Using Computing to Solve Engineering Problems</h4>
