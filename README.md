@@ -105,11 +105,12 @@ When you have completed your work on your branch, make a pull request on github 
 The live Runestone website is built off of the `master` branch. To update the `master` branch, first create a branch off of the `lobster-preview` branch. If your "live" version will not include all of the chapters in the `lobster-preview` branch, make the following edits to your branch: 
 
 * In `_sources/index.rst` > "Table of Contents", delete any table of contents files (those are the `.../toctree.rst` files) for chapters that you are not including in this build.
-* In `_sources/index.rst` > "Full List of Topics", delete any table of contents files for chapters that you are not including in this build.
 * In `_sources/list_of_topics/toctree.rst`, delete any table of contents files for chapters that you are not including in this build.
 
 
-When you commit these changes, leave a comment that is something like "set to build Chapters 1-## only") where ## is the number of the chapter you built through. Rebuild Runestone and use your local view to make sure that the website contains only the chapters you want and that nothing is broken. 
+When you commit these changes, leave a comment that is something like "set to build Chapters 1-## only" where ## is the number of the chapter you built through. Rebuild Runestone and use your local view to make sure that the website contains only the chapters you want and that nothing is broken. If you have been working with a version of Runestone that has more chapters than you are publishing live, you may need to remove the `build` directory prior to rebuilding, and you may need to clear your cache to check that everything is correct. 
+
+Note: If you are not including all of the available chapters, you will likely get a bunch of warnings saying that "document isn't included in any toctree" -- that's okay since you don't want to include those chapters right now anyways.
 
 When you are ready to push your updates to what will be the live version of Runestone, make sure that `dynamic_pages` is set back to `True` in `pavement.py`. (If you forget to change `dynamic_pages`, don't worry -- there's a check on the pull requests and it will fail if you forget.) Then, make a pull request to merge your branch into the `master` branch (NOT `lobster-preview`!). Assuming the merge is successful, you can safely delete your branch. 
 
