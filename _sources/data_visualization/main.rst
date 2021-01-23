@@ -4,7 +4,7 @@
 
 .. raw:: html
 
-   <script src="../_static/common/js/common2.js"></script>
+   <script src="../_static/common/js/common3.js"></script>
 
 ========================================
 Advanced Plotting and Data Visualization
