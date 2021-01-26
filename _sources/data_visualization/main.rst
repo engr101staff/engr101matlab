@@ -77,7 +77,7 @@ Advanced Plotting and Data Visualization
           .. literalinclude:: ../_static/data_visualization/dist2green.m
             :language: matlab
 
-      - Starter file for calculating distance from a tee box to the green; helper function for the :code:`UpNorth.m` script
+      - Starter file for calculating distance from a tee box to the green; helper function for the :code:`LandOnGreen.m` script
     
   .. reveal:: data_visualization_download_instructions
     :showtitle: Download Instructions
@@ -570,7 +570,7 @@ This is an optimization problem. We want to check all possible combinations of "
 
 2. Use :code:`meshgrid` to create matrices that correspond to the different speed and angle combinations. These should be saved in variables named :code:`V` and :code:`T`, respectively.
 3. Calculate the distance traveled for each speed/angle combination by calling :code:`dist2green` and passing the matrices created by :code:`meshgrid`. This should be saved in a variable named :code:`distance`.
-4. Make two plots to interpret your simulation.
+4. Make two plots to interpret your simulation:
 
    a. A contourf plot of speed, angle, and distance
    b. A contourf plot of the viable combinations of speed and angle 
@@ -591,11 +591,16 @@ Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, a
 
   Copy and paste your finished :file:`LandOnGreen.m` script here.
 
-.. youtube:: RG_1DvV-Mjo
-  :divid: ch09_08_vid_optimizing_a_golf_swing_01
-  :height: 315
-  :width: 560
-  :align: center
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch09_08_revealwt_optimizing_a_golf_swing_01
+  
+    .. youtube:: RG_1DvV-Mjo
+      :divid: ch09_08_wt_optimizing_a_golf_swing_01
+      :height: 315
+      :width: 560
+      :align: center
 
 |
 
@@ -617,7 +622,10 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 
 * Use :code:`plot3` and :code:`scatter3` to make 3D line plots and scatter plots.
 * The :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input.
+* You can use the :code:`meshgrid` function to create a set of (x,y) coordinates that can be used as starter data for problems that have a range of possible values for two different variables. 
 * Use :code:`surf` to create surface plots, and :code:`mesh` to create mesh plots.
 * Use :code:`contour` to create contour plots, and :code:`contourf` to create filled contour plots.
+* You can create visuals that compare different datasets using :code:`subplot`. 
+* You can solve optimization problems by using MATLAB's ability to quickly simulate starter data and generate a range of solutions. You can investigate the range of solutions and pick the one that is the best (or most realistic) solution for your problem.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
