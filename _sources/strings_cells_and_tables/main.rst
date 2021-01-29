@@ -135,7 +135,7 @@ Now that we've seen the basics of cell arrays, let's take a look at how they're 
 
 In the previous video, we saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
 
-Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<` and :code:`+`.
+Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reading Excel Files in MATLAB
@@ -291,7 +291,7 @@ Manipulating Data in Tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Tables provide a number of convient ways to manipulate data. First, let's take a look at some large-scale operations like adding rows/columns and sorting the table.
+Tables provide a number of convenient ways to manipulate data. First, let's take a look at some large-scale operations like adding rows/columns and sorting the table.
 
 .. youtube:: c642ER558aM
   :divid: ch8_06_vid_mainpulating_tables
