@@ -51,6 +51,8 @@ Introduction
 
 |
 
+In the previous video, we introduced a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
+
 ^^^^^^^^^^^
 Cell Arrays
 ^^^^^^^^^^^
@@ -66,12 +68,7 @@ MATLAB includes a matrix-like data structure called a **cell array** that allows
 
 |
 
-Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data. Consequentially, we have two different kinds of indexing:
-
-- **Cell indexing**, using the :code:`( )` operator. This can be used to select particular cells (or groups of cells) within a cell array.
-- **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly.
-
-Let's take a closer look...
+Cell arrays are heterogenous collections of elements and are created using the curly brackets :code:`{` and :code:`}`. Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data. Let's consider indexing into cell arrays:
 
 .. youtube:: lejDhTnuIhM
   :divid: ch08_02_vid_indexing_and_unpacking_in_cell_arrays
@@ -80,6 +77,13 @@ Let's take a closer look...
   :align: center
 
 |
+
+As we saw, there are two ways to index into a cell array:
+
+- **Cell indexing**, using the :code:`( )` operator. This can be used to select particular cells (or groups of cells) within a cell array. The result is a smaller cell array.
+- **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly. This is generally not useful for multi-element selections.
+
+The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
 
 -----------------------------
 Exercise: Cell Array Practice
@@ -119,7 +123,7 @@ Strings, Cell Arrays, and Double Quote Strings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-Now that we've seen the basics of cell arrays, let's take a look at how they're used to store and work with strings in MATLAB. But, before we're done, we'll also see that another MATLAB feature - *double quote strings* - can make our lives more convenient.
+Now that we've seen the basics of cell arrays, let's take a look at how they're used to store and work with strings in MATLAB.
 
 .. youtube:: MEso3jeJ5HU
   :divid: ch08_03_strings_cell_arrays_and_double_quote_strings
@@ -129,12 +133,16 @@ Now that we've seen the basics of cell arrays, let's take a look at how they're 
 
 |
 
+In the previous video, we saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
+
+Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reading Excel Files in MATLAB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-Another case to be made for cell arrays is that sometimes the data we have are naturally in a heterogeneous format - for example, the data in an Excel spreadsheet might well be a mix of text and numbers. The :code:`xlsread` function allows us to read this data in, and cell arrays allow MATLAB to represent it.
+Another case to be made for cell arrays is that sometimes the data we have are naturally in a heterogeneous format - for example, the data in an Excel spreadsheet might well be a mix of text and numbers.
 
 .. youtube:: rgioisRsSAg
   :divid: ch08_04_reading_excel_files_in_matlab
@@ -144,16 +152,14 @@ Another case to be made for cell arrays is that sometimes the data we have are n
 
 |
 
+The :code:`xlsread` function allows us to read data from an Excel spreadsheet into MATLAB, and cell arrays can be used to represent this data.
+
 ^^^^^^
 Tables
 ^^^^^^
 .. section 5
 
-MATLAB also supports a data structure called a **table**. A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
-
-If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the `readtable` function makes it easy to read the data into MATLAB.
-
-Let's walk through the basics of using tables in MATLAB, as well as how we can use the :code:`()` and :code:`{}` operators for indexing, much like we did with cell arrays.
+MATLAB also supports a data structure called a **table**.
 
 .. youtube:: 5mfJc4BuJQA
   :divid: ch08_05_vid_introduction_to_tables
@@ -162,6 +168,12 @@ Let's walk through the basics of using tables in MATLAB, as well as how we can u
   :align: center
 
 |
+
+A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
+
+If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
+
+We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
 
 ----------------------------------
 Exercise: Accessing Data in Tables
@@ -203,6 +215,10 @@ Consider each of the following MATLAB expressions. Select the best description o
   :answer_c: The value 1 (a scalar double)
   :answer_d: An error occurs because rovers is not a cell array
   :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Oops! Think about the difference between indexing with {} and indexing with ().
+  :feedback_c: Oops! Think about the order of rows and columns when you index.
+  :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
   :code:`rovers{2, 3}`
 
@@ -212,6 +228,10 @@ Consider each of the following MATLAB expressions. Select the best description o
   :answer_c: The value 1 (a scalar double)
   :answer_d: An error occurs because values must be unpacked when indexing into a table
   :correct: b
+  :feedback_a: Oops! Think about the difference between indexing with {} and indexing with ().
+  :feedback_b: Correct!
+  :feedback_c: Oops! Think about the difference between indexing with {} and indexing with ().
+  :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
   :code:`rovers(2, 3)`
 
@@ -221,6 +241,10 @@ Consider each of the following MATLAB expressions. Select the best description o
   :answer_c: An error occurs because the string 'ID' cannot be used as a column index
   :answer_d: An error occurs because the index 7 is out of bounds
   :correct: b
+  :feedback_a: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_b: Correct!
+  :feedback_c: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
   :code:`rovers{7, 'ID'}`
 
@@ -230,6 +254,10 @@ Consider each of the following MATLAB expressions. Select the best description o
   :answer_c: An error occurs because the ID and charge columns have different types
   :answer_d: An error occurs because multiple columns cannot be selected at the same time
   :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_c: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
   :code:`rovers(:, [1,4])`
 
@@ -239,6 +267,10 @@ Consider each of the following MATLAB expressions. Select the best description o
   :answer_c: An error occurs because the selection contains columns of different types and the data cannot be unpacked with { } into the same result.
   :answer_d: An error occurs because the : operator cannot be used with tables.
   :correct: c
+  :feedback_a: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_b: Oops! Try this expression in MATLAB and see what you get.
+  :feedback_c: Correct!
+  :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
   :code:`rovers{3, :}`
 
@@ -259,7 +291,7 @@ Manipulating Data in Tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Tables provide a number of convient ways to manipulate data. First, let's take a look at some large-scale operations like adding rows/columns and sorting the table.
+Tables provide a number of convenient ways to manipulate data. First, let's take a look at some large-scale operations like adding rows/columns and sorting the table.
 
 .. youtube:: c642ER558aM
   :divid: ch8_06_vid_mainpulating_tables
@@ -268,6 +300,8 @@ Tables provide a number of convient ways to manipulate data. First, let's take a
   :align: center
 
 |
+
+Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
 
 We can also use indexing and assignment to modify specific selections of elements within a table, combined with powerful tools like logical indexing that allow us to perform complex operations without having to write a lot of code.
 
@@ -317,8 +351,12 @@ Consider each of the following MATLAB expressions. Select the best description o
    :answer_c:
    :answer_d:
    :correct: d
+   :feedback_a: Oops! Think about the difference between indexing with {} and indexing with ().
+   :feedback_b: Oops! Try this expression in MATLAB and see what you get.
+   :feedback_c: Oops! Think about the difference between indexing with {} and indexing with ().
+   :feedback_d: Correct!
 
-   Which of the following expressions will set the charge for all of the rovers to 1.
+   Which of the following expressions will set the charge for all of the rovers to 1?
 
    A. :code:`rovers(:, 4) = 1;`
    B. :code:`rovers(:, 4) = {1};`
@@ -332,6 +370,10 @@ Consider each of the following MATLAB expressions. Select the best description o
    :answer_c:
    :answer_d:
    :correct: c
+   :feedback_a: Oops! Try this expression in MATLAB and see what you get.
+   :feedback_b: Oops! Try this expression in MATLAB and see what you get.
+   :feedback_c: Correct!
+   :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
    Which of the following expressions will set the location for all of the rovers to :code:`'home'`.
   
@@ -347,8 +389,12 @@ Consider each of the following MATLAB expressions. Select the best description o
    :answer_c:
    :answer_d:
    :correct: b
+   :feedback_a: Oops! Try this expression in MATLAB and see what you get.
+   :feedback_b: Correct!
+   :feedback_c: Oops! Think about the difference between indexing with {} and indexing with ().
+   :feedback_d: Oops! Try this expression in MATLAB and see what you get.
 
-   Which of the following expressions will assign a new table containing only rovers with more than 0.5 charge into the variable :code:`charged_rovers`.
+   Which of the following expressions will assign a new table containing only rovers with more than 0.5 charge into the variable :code:`charged_rovers`?
 
    A. :code:`charged_rovers = rovers(:, 'charge') > 0.5;`
    B. :code:`charged_rovers = rovers(rovers.charge > 0.5, :);`
@@ -357,15 +403,15 @@ Consider each of the following MATLAB expressions. Select the best description o
 
 .. shortanswer:: ch08_06_manipulating_data_in_tables_04
 
-  What MATLAB code could be used to assign a table containing only rovers of type 2 into a variable called :code:`rovers2`.
+  What MATLAB code could be used to assign a table containing only rovers of type 2 into a variable called :code:`rovers2`?
 
 .. shortanswer:: ch08_06_manipulating_data_in_tables_05
 
-  What MATLAB code could be used to count the number of rovers currently located in Proxima City.
+  What MATLAB code could be used to count the number of rovers currently located in Proxima City?
 
 .. shortanswer:: ch08_06_manipulating_data_in_tables_06
 
-  What MATLAB code could be used to sort the table in ascending order so that the rovers are ordered from least to most charged.
+  What MATLAB code could be used to sort the table in ascending order so that the rovers are ordered from least to most charged?
 
 .. admonition:: Walkthrough
 
@@ -383,6 +429,17 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* The **string** data type holds a sequence of characters (e.g., a "word"). There are two types of strings in MATLAB: single quote strings and double quote strings. Double quote strings have some convenient features (such as working with the operators :code:`==`, :code:`>`, and :code:`+`). To compare or concatenate single quote strings, use :code:`strcmp` and :code:`strcat`.
+* A **cell array** is like a matrix, but it holds a heterogenous collection of elements. It is created using the curly brackets :code:`{` and :code:`}`.
+* There are two ways to index into a cell array: 
+
+  - **Cell indexing** (using :code:`()` operator) selects groups of cells and results in a smaller cell array. 
+  - **Content indexing** (using :code:`{}` operator) selects and unpacks the actual data from its containing cell.
+  
+* Use :code:`cell2mat` to create a regular array from a cell array containing numbers: Use :code:`num2cell` to create a cell array from a regular array of numbers.
+* The :code:`xlsread` function can be used to read data from an Excel spreadsheet.
+* **Tables** are data structures that may contain several columns of data (each column can have a different data type). Similar to cell arrays, use :code:`()` and :code:`{}` to index into tables. To get the dimensions of a table, use :code:`size`, :code:`height`, or :code:`width`. Use :code:`sortrows` to sort the rows of a table.
+* Read in data in a tabular format using :code:`readtable`.
+* The :code:`repmat` function can be used to replicate a single value and create a matrix.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
