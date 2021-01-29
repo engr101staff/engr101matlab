@@ -2,7 +2,7 @@ Full List of Topics
 ::::::::::::::::::::
 
 .. toctree::
-  :caption: This is the full list of topics covered in this course. 
+  :caption: This is the full list of topics covered in the course so far.
   :maxdepth: 4
 
   ../intro_to_matlab/toctree.rst
@@ -12,5 +12,9 @@ Full List of Topics
   ../working_with_images/toctree.rst
   ../plotting_and_figures/toctree.rst
   ../statistics_and_simulation/toctree.rst
+<<<<<<< HEAD
   ../data_visualization/toctree.rst
   ../strings_cells_and_tables/toctree.rst
+=======
+
+>>>>>>> master

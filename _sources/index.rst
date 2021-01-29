@@ -2,12 +2,6 @@
 University of Michigan: ENGR 101
 =======================================================
 
-.. .. image:: _static/common/img/Subtitle.png
-..   :width: 665
-..   :align: center
-..   :alt: Solving Engineering Problems Using Computing
-
-
 .. raw:: html
 
   <h4 style="color: #777777;"> Using Computing to Solve Engineering Problems</h4>
@@ -31,8 +25,12 @@ Table of Contents
   working_with_images/toctree.rst
   plotting_and_figures/toctree.rst
   statistics_and_simulation/toctree.rst
+<<<<<<< HEAD
   data_visualization/toctree.rst
   strings_cells_and_tables/toctree.rst
+=======
+
+>>>>>>> master
 
 
 
