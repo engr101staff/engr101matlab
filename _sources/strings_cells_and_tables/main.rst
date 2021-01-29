@@ -431,7 +431,11 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 
 * The **string** data type holds a sequence of characters (e.g., a "word"). There are two types of strings in MATLAB: single quote strings and double quote strings. Double quote strings have some convenient features (such as working with the operators :code:`==`, :code:`>`, and :code:`+`). To compare or concatenate single quote strings, use :code:`strcmp` and :code:`strcat`.
 * A **cell array** is like a matrix, but it holds a heterogenous collection of elements. It is created using the curly brackets :code:`{` and :code:`}`.
-* There are two ways to index into a cell array: **cell indexing** (using :code:`()` operator) selects groups of cells and results in a smaller cell array. **Content indexing** (using :code:`{}` operator) selects and unpacks the actual data from its containing cell.
+* There are two ways to index into a cell array: 
+
+  - **Cell indexing** (using :code:`()` operator) selects groups of cells and results in a smaller cell array. 
+  - **Content indexing** (using :code:`{}` operator) selects and unpacks the actual data from its containing cell.
+  
 * Use :code:`cell2mat` to create a regular array from a cell array containing numbers: Use :code:`num2cell` to create a cell array from a regular array of numbers.
 * The :code:`xlsread` function can be used to read data from an Excel spreadsheet.
 * **Tables** are data structures that may contain several columns of data (each column can have a different data type). Similar to cell arrays, use :code:`()` and :code:`{}` to index into tables. To get the dimensions of a table, use :code:`size`, :code:`height`, or :code:`width`. Use :code:`sortrows` to sort the rows of a table.
