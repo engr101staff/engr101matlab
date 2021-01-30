@@ -12,9 +12,5 @@ Full List of Topics
   ../working_with_images/toctree.rst
   ../plotting_and_figures/toctree.rst
   ../statistics_and_simulation/toctree.rst
-<<<<<<< HEAD
   ../data_visualization/toctree.rst
   ../strings_cells_and_tables/toctree.rst
-=======
-
->>>>>>> master

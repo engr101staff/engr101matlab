@@ -4,13 +4,9 @@
 
 .. raw:: html
 
-<<<<<<< HEAD
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
    <script src="../_static/common/js/common2.js"></script>
    <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
-=======
-   <script src="../_static/common/js/common3.js"></script>
->>>>>>> master
 
 ========================================
 Advanced Plotting and Data Visualization
