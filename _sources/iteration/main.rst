@@ -34,9 +34,9 @@ Introduction
 
 When you run a program, the line of code that is currently executing is said to have "control" in the program. Two techniques to manage the **control flow** in our programs are **branching** and **iteration**. 
 
-- **Branching** - creating multiple paths that your code can take based on the results of logical expressions, like :code:`if` and :code:`else` statements
+- **Branching** (e.g., :code:`if` and :code:`else` statements) - creating multiple paths that your code can take based on the results of logical expressions
 
-- **Iteration** - traversing through code systematically based on some defined order or condition, like :code:`for` and :code:`while` **loops**.
+- **Iteration** (e.g., :code:`for` and :code:`while` **loops**) - traversing through code systematically based on some defined order or condition
 
 In this chapter we will introduce the control flow structures used for iteration, practice using them and then combine iteration and branching to solve problems using C++.
 
@@ -67,6 +67,8 @@ To recap, here's the general syntax for a :code:`while` loop:
    }
 
 The condition may be any expression that can be interpreted as a boolean, and often expresses some limit on the value of a variable. The "body" of the :code:`while` loop may contain any number of statements, surrounded by the curly braces.
+
+As we saw in the previous video, it's very common in C++ to count starting with zero. If we start at :code:`x = 0` and count while :code:`x < N`, we iterate :code:`N` times (0, 1, ..., N-1).
 
 -----------------------------
 Exercise: :code:`while` Loops
@@ -118,7 +120,7 @@ Increment and Decrement Operators
 
 C++ provides special operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`--`) for the common tasks of increasing or decreasing a variable. Each operator is shown below with an example of the equivalent update expression that it implements.
 
-.. figure:: img/img1.png
+.. figure:: img/incrementDecrement.png
    :width: 500
    :align: center
 
@@ -156,7 +158,7 @@ Modify the code below to replace the update expressions in each of the loops wit
 ^^^^^^^^^^^^^^^^^
 .. section 4
 
-Initializing a loop variable, incrementing it, and checking a condition are often components of common iteration patterns. A :code:`for` loop is built around these components, with a specific location for each in it syntax.
+Initializing a loop variable, incrementing it, and checking a condition are often components of common iteration patterns. A :code:`for` loop is built around these components, with a specific location for each in its syntax.
 
 .. youtube:: hiQaIcSPJlU
   :divid: ch07_04_vid_for_loops
@@ -228,7 +230,7 @@ Nested Loops
 
 Recall the syntax of an :code:`if` statement:
 
-.. figure:: img/img2.png
+.. figure:: img/ifStatementSyntax.png
    :width: 500
    :align: center
 
@@ -238,7 +240,7 @@ Recall the syntax of an :code:`if` statement:
 
 Many variables have **local scope**, also known as block scope. A **block** is a sequence of statements enclosed by curly braces :code:`{}`. Block scope applies to any block of code, including the bodies of control flow structures like :code:`if`, :code:`for`, and :code:`while`.
 
-.. figure:: img/img3.png
+.. figure:: img/localScope.png
    :width: 500
    :align: center
 
@@ -248,7 +250,7 @@ Many variables have **local scope**, also known as block scope. A **block** is a
 
 For scoping purposes, the top of a :code:`for` loop is treated as if it were inside the loop body.
 
-.. figure:: img/img4.png
+.. figure:: img/localScope2.png
    :width: 500
    :align: center
 
@@ -258,7 +260,7 @@ For scoping purposes, the top of a :code:`for` loop is treated as if it were ins
 
 To use a variable after the loop, move its declaration outside. Take some time to appreciate the difference between the figure below and the previous version.
 
-.. figure:: img/img5.png
+.. figure:: img/localScope3.png
    :width: 500
    :align: center
 
@@ -323,9 +325,22 @@ Remember that you can use the "Simulate" button to run your code. If you're not 
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Application: Finding Prime Numbers
+:code:`break` and :code:`continue`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
+
+You may encounter a situation where you need to end your loop early, or "skip a loop". In those cases, you can use :code:`break` or :code:`continue`.
+
+.. youtube:: jKMyjpCu0LU
+  :divid: ch07_06_vid_break_continue
+  :height: 315
+  :width: 560
+  :align: center
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Application: Finding Prime Numbers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 7
 
 Let's look at an application of nested loops - finding prime numbers. A **prime number** is any integer larger than one that is not divisible by any smaller numbers. For example, :math:`5` and :math:`13` are prime numbers, but :math:`21` is not because it is divisible by :math:`3` and :math:`7`.
 
@@ -418,6 +433,9 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* We've looked at two kinds of iteration in C++: for loops and while loops.
+* Often, increment and decrement operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`--`) are used to update variables in a loop.
+* Counting starting with zero is a common pattern in C++.
+* Loops can be nested. Variables declared inside a loop only have scope within that loop.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
