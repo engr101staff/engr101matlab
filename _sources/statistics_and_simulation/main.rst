@@ -5,7 +5,7 @@
 .. raw:: html
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
    <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 =========================
@@ -57,6 +57,18 @@ Statistics and Simulation
 
       - Starter file for plotting city data
 
+
+    * - :download:`batteryLife.mat <../_static/statistics_and_simulation/batteryLife.mat>`
+
+      - .. reveal:: batteryLife_mat_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>batteryLife.mat</code>
+
+          No preview available
+
+      - MATLAB saved workspace containing variables with battery experiment data
+
     * - :download:`newBatteryLife.mat <../_static/statistics_and_simulation/newBatteryLife.mat>`
 
       - .. reveal:: newBatteryLife_mat_preview
@@ -66,7 +78,7 @@ Statistics and Simulation
 
           No preview available
 
-      - Matlab saved workspace containing variables with battery experiment data
+      - MATLAB saved workspace containing variables with NEW battery experiment data
 
     * - :download:`AnalyzeBatteries.m <../_static/statistics_and_simulation/AnalyzeBatteries.m>`
 
@@ -248,20 +260,22 @@ A histogram is a visualization of the frequency of occurrence for certain values
 
   ..
 
-This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a spectacular guide to histograms and how they are created. We highly recommend you read this guide before continuing on with the rest of this chapter (it's also a beautiful example of data visualization!).
+This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a spectacular guide to histograms and how they are created. We highly recommend you read this guide before continuing on with the rest of this chapter (it's also a beautiful example of data visualization!). Let's see how we can make histograms in MATLAB.
 
-MATLAB has two very useful functions for working with histograms: 
-
-- :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
-- :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
-
-As the Exploring Histograms website shows, histograms are very sensitive to the size of the bins you use in your histograms. Watch this video to learn more about histograms, specifying bins, and getting "histcounts" in MATLAB. 
-
-.. youtube:: kJhRNOtXtdU
+.. youtube:: 4qNXLOMGTTk
   :divid: ch07_04_vid_histograms
   :height: 315
   :width: 560
   :align: center
+
+|
+
+To recap, MATLAB has two very useful functions for working with histograms: 
+
+- :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
+- :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
+
+As the Exploring Histograms website and the above MATLAB video show, histograms are very sensitive to the size of the bins you use in your histograms. You can specify either the number of bins or the bins themselves in MATLAB.
 
 ----------------------------------
 Exercise: City Longitude Histogram
@@ -319,7 +333,7 @@ MATLAB has built-in functions to calculate the variance and standard deviation:
 
 .. admonition:: Danger!
 
-  If you want to take the variance (or standard deviation) of all elements in a matrix :code:`M`, don't use :code:`var(var(M))` - that's not correct because the variance of the column variances is not mathematically equivalent to the variance of the whole dataset. Instead, use either of the other approaches, :code:`var(M(:))` or :code:`var(M, 0, 'all')`.
+  If you want to take the variance (or standard deviation) of all elements in a matrix :code:`M`, don't use :code:`var(var(M))` - that's not correct because the variance of the column variances is not mathematically equivalent to the variance of the whole dataset. Instead, use either of the other approaches, :code:`var(M(:))` or :code:`var(M, 0, 'all')` (the :code:`0` is a weighting value; you can look up the :code:`var` function in the MATLAB documentation to learn more). 
 
 ---------------------------------------
 Exercise: More City Latitude Statistics
@@ -342,7 +356,7 @@ Plots with Error Bars
 ^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Engineering data is often plotted with error bars included. Error bars can be used to convey a range of values for each point on the plot, or uncertainty about a measured value. MATLAB's errorbar function will create a plot with "error bars" at each data point, like this:
+Engineering data is often plotted with error bars included. Error bars can be used to convey a range of values for each point on the plot or uncertainty about a measured value. MATLAB's :code:`errorbar` function will create a plot with "error bars" at each data point, like this:
 
 .. figure:: img/SampleErrorPlot.png
   :width: 450
@@ -369,7 +383,7 @@ The videos below show how an error bar plot is an effective tool for this analys
 
 First, let's just make the plot.
 
-.. youtube:: EKTDMx8IdCE
+.. youtube:: PRHb4vL7tuo
   :divid: ch07_06_vid_batteryLife_01
   :height: 315
   :width: 560
@@ -379,7 +393,7 @@ First, let's just make the plot.
 
 Now, how can we interpret these results?
 
-.. youtube:: l1boh2CJdPE
+.. youtube:: P6YAvL3-gLM
   :divid: ch07_06_vid_batteryLife_02
   :height: 315
   :width: 560
@@ -480,6 +494,31 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* **MATLAB is often used to analyze data.** We tend to follow a similar pattern each time:
+
+  1. Read data in from a file
+  2. Look for some characteristics/process the data
+  3. Plot the data to see trends, patterns, extremes, etc.
+
+* MATLAB has built-in functions for calculating common statistical measures of datasets:
+
+  - :code:`mean` - mean (or average)
+  - :code:`median` - median
+  - :code:`mode` - mode
+  - :code:`var` - variance
+  - :code:`std` - standard deviation 
+
+* The :code:`histogram` function will generate a histogram of a vector of data; if you need the number of occurrences in each bin, use the :code:`histcounts` function.
+* Error bars can be used to convey a range of values for each point on the plot or uncertainty about a measured value. MATLAB’s :code:`errorbar` function will create a plot with “error bars” at each data point.
+* **MATLAB is also used to simulate data.** When we simulate data, we also tend to follow a similar pattern each time:
+
+  1. Convert the math equations into a computer program
+  2. Create a starter set of data and use the computer program from step 1 to generate  predicted data
+  3. Look for some things / process data / plot data to see trends, etc.
+
+* The :code:`linspace` function can be used to generate equally spaced values, similar to the range operator (:code:`:`), to be used as a starter set of data. 
+* MATLAB can also generate random values to be used as a starter set of data. The :code:`randi` function generates pseudorandom integers from a uniform discrete distribution.
+* There are many other MATLAB functions for generating data from random distributions!
+
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

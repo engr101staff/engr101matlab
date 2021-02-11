@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="../_static/common/css/code3.css">
    <link rel="stylesheet" href="../_static/common/css/buttons3.css">
    <link rel="stylesheet" href="../_static/common/css/exercises3.css">
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
    <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
 
 .. raw:: html
@@ -124,7 +124,7 @@ Because a :code:`double` can always hold any integer value, we call this a **wid
 
 :code:`double` to :code:`int`
 
-In this direction, the value is **truncated** and only the integer part of the number is retained (the fractional part can't possibly fit in an :code:`int` variable!). For similar reasons to above, this is called a **narrowing conversion**. Because the truncation involves a loss of information, these conversions can lead to bugs! (Think back to the temperature converter program from the previous chapter, where the input temperature would randomly lose its fractional part if stored in an int variable.) 
+In this direction, the value is **truncated** and only the integer part of the number is retained (the fractional part can't possibly fit in an :code:`int` variable!). For similar reasons to above, this is called a **narrowing conversion**. Because the truncation involves a loss of information, these conversions can lead to bugs! (Think back to the temperature converter program from the previous chapter, where the input temperature would randomly lose its fractional part if stored in an :code:`int` variable.)
 
 |
 
@@ -242,7 +242,7 @@ So, if integer division can cause us so much trouble, why would we ever want to 
 
 Well, here's an example: you're writing code for a stopwatch app, but the hardware only reports time in seconds. You want to display this in minutes/seconds instead. Therefore, you need to write a program that converts :code:`x` total seconds to :code:`m` minutes and :code:`s` seconds. Let's use this algorithm:
 
-1. Store the total number of seconds in the variable :code:`x`
+1. Store the total number of seconds in the variable :code:`x`.
 2. Use integer division to divide :code:`x` by :code:`60` (60 seconds in a minute) to get the number of whole minutes elapsed; store the number of whole minutes in the variable :code:`m`.
 3. Use the modulo operator :code:`%` to get the remainder when :code:`x` is divided by :code:`60`. These are the seconds leftover and not accounted for in the number of minutes :code:`m`. Store the remaining seconds in the variable :code:`s`.
 
@@ -406,6 +406,8 @@ Before we get carried away with more complex programs, we need to start thinking
 
 |
 
+To recap, a variable can only be used after it's been declared, and while it's in scope. Many variables have **local scope** (or **block scope**, where a **block** is a chunk of code enclosed by curly braces :code:`{}`).
+
 -----------------------------------
 Two-way Branching With :code:`else` 
 -----------------------------------
@@ -434,6 +436,8 @@ Finally, we can make some pretty complex structures by combining multiple :code:
 
 |
 
+If we want to split into multiple branches, we can use the :code:`else if` pattern. The structure of an :code:`if/else` statement can be modeled using a **decision tree**.
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -441,6 +445,14 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* An **implicit conversion** happens when a value of one data type is converted by the compiler into a different type. (By contrast, an **explicit conversion** is a type conversion written by the programmer.)
+* Converting :code:`int` to :code:`double` is a **widening conversion** with no information loss. Converting :code:`double` to :code:`int` is a **narrowing conversion** where the value is **truncated**.
+* When converting from :code:`bool` to :code:`int` or :code:`double`, :code:`false` turns into :code:`0` and :code:`true` turns into :code:`1`. When converting the other direction, only :code:`0` converts to :code:`false`; everything else converts to :code:`true`.
+* Basic arithmetic operators in C++ are addition, subtraction, multiplication, division, and modulo.
+* **Floating point division** gives us the exact quotient. **Integer division** gives us the whole number quotient (we can use :code:`%` to get the remainder). Which kind of division is used depends on the data types of the operands.
+* Basic relational operators include equality, inequality, less than, less than or equal, greater than, and greater than or equal. Logical operators include logical and, logical or, and not.
+* :code:`&&` and :code:`||` are evaluated with **short-circuit evaluation**. This means that their result is not fully evaluated if the result can be determined early on.
+* :code:`if`, :code:`else`, and :code:`else if` statements can be used for branching. These statements can be modeled using a **decision tree**.
+* Variables can only be used in the **scope** in which they are declared. Many variables have **local scope** (or **block scope**).
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

@@ -5,7 +5,7 @@
 .. raw:: html
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
    <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 ===================
@@ -105,7 +105,7 @@ C++ Syntax and Types
 ^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-Let's look at some of the basic rules for C++, including syntax, variables, and expressions. We'll also see few key differences from MATLAB, including the way *data types* play a more pronounced role in C++:
+Let's look at some of the basic rules for C++, including syntax, variables, and expressions. We'll also see a few key differences from MATLAB, including the way *data types* play a more pronounced role in C++:
 
 .. youtube:: lLG5wqwLNT0
    :divid: ch11_05_vid_cpp_variables_and_types
@@ -114,6 +114,14 @@ Let's look at some of the basic rules for C++, including syntax, variables, and 
    :align: center
 
 |
+
+In the previous video, we looked at some of the building blocks of C++. Like in MATLAB, our programs are built of **statements** of code, but in C++, all statements must end with a semi-colon.
+
+When you first use a variable in C++, you must **declare** it by telling the compiler its name, its type, and (optionally) an initializer expression. Some common data types are ints, doubles, bools, chars, and strings. When you declare a variable, the variable takes up space in memory - different types of variables take up different amounts of space. If you don't initialize a variable, then the value of the variable is based on whatever memory junk was in that memory location previously.
+
+We also have **expressions** in C++ that perform computations on variables and other data.
+
+Single-line comments use :code:`//` and block comments use :code:`/*` and :code:`*/`.
 
 -------------------------------
 Exercise: Variable Declarations
@@ -125,6 +133,9 @@ Exercise: Variable Declarations
    
    .. code-block:: cpp
 
+      #include <iostream>
+      using namespace std;
+      
       int main() {
   
         // print a greeting
@@ -149,6 +160,9 @@ Exercise: Variable Declarations
 
       .. code-block:: cpp
       
+         #include <iostream>
+         using namespace std;
+         
          int main() {
    
            // print a greeting
@@ -169,7 +183,7 @@ User Input/Output (:code:`cin` and :code:`cout`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-We've seen that the terminal can be used to compile and run programs. It can also be used to interact with a program while it's running. We've already seen how :code:`cout` can be used to print a message to the terminal (e.g. "Hello World!"). On the other hand, :code:`cin` can be used to pause a program and wait for input from the user. To send the input, the user just types something and hits the <enter> key.
+We've seen that the terminal can be used to compile and run programs. It can also be used to interact with a program while it's running.
 
 .. youtube:: BkWAf-G0d_U
    :divid: ch11_06_vid_cin_and_cout
@@ -178,6 +192,8 @@ We've seen that the terminal can be used to compile and run programs. It can als
    :align: center
 
 |
+
+We've seen how :code:`cout` can be used to print a message to the terminal (e.g. "Hello World!"). On the other hand, :code:`cin` can be used to pause a program and wait for input from the user. To send the input, the user just types something and hits the <enter> key.
 
 ------------------------------------
 Exercise: User Input via :code:`cin`
@@ -245,6 +261,8 @@ When the compiler translates your program to machine code, it also acts as a pro
    :align: center
 
 |
+
+Some types of compiler errors include syntax errors, semantic errors, and type errors. C++ is able to catch many type errors at compile-time, because C++ is a **statically typed** language, which means that a variable's type is known at compile-time and doesn't change. This is in contrast to MATLAB, a **dynamically typed** language, where a variable's type can change at runtime.
 
 Even though the compiler is very good at catching certain kinds of errors (e.g. syntax errors, missing variable declarations, type mismatches, etc.), there are some errors that occur at *runtime* and that the compiler generally can't catch! Why not? For example, what if an error only happens when a user enters bad data? The compiler can't be expected to predict the future!
 
@@ -349,6 +367,13 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* MATLAB is a great programming language for analyzing and presenting data, as well as rapid prototyping. C++ is better for writing larger, more complex programs, and it handles control flow very well.
+* To run a C++ program, first we must **compile** our **source code**, turning it into **machine code**. Then, we must **run** the executable file. In contrast, MATLAB uses an **interpreter** to run code. We will use g++ to compile our C++ code.
+* In C++, variables must be **declared** before they are used (specifying their name, type, and optional initializer expression). Some common data types are ints, doubles, bools, chars, and strings. When you declare a variable, the variable takes up space in memory.
+* We can do single-line comments in C++ using :code:`//` and block comments using :code:`/*` and :code:`*/`.
+* :code:`cout` is used to print a message to the terminal. :code:`cin` is used to get input from a user.
+* When you compile C++ code, the compiler is able to catch many errors at compile-time. Some errors that the compiler can catch are syntax errors, semantic errors, and type errors.
+* Not all errors can be caught at compile time. Some are caught at runtime.
+* C++ is **statically typed** because a variable's type is known at compile-time. In contrast, in a **dynamically typed** language, a variable's type can change at runtime.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

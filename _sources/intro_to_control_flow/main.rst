@@ -5,7 +5,7 @@
 .. raw:: html
 
    <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
    <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 ============================
@@ -103,7 +103,7 @@ Introduction
 ^^^^^^^^^^^^
 .. section 1
 
-We will discuss program design including decision making in programs.
+So far, we have written programs whose algorithms are pretty much a list of steps that are executed one at a time. However, there are a lot of scenarios where we want to do more complicated things with  our programs!
 
 .. youtube:: 7w56dFTzEpg
    :divid: ch10_01_vid_control_flow_introduction
@@ -113,40 +113,18 @@ We will discuss program design including decision making in programs.
 
 |
 
-So far in MATLAB, we have discussed functions which are typically a list of things, that is, an algorithm
+Before we begin programming, we engage in **program design**, which is the process of planning out the algorithm that we're going to code.
 
-.. figure:: img/img1.png
-   :width: 500
-   :align: center
+.. tip::
 
-   ..
-
-Now, we will expand on this design and have the program make a decision based on a condition
-
-.. figure:: img/img2.png
-   :width: 500
-   :align: center
-
-   ..
-
-Program Design is the process where one plans or designs the algorithm prior to writing the code.
-
-Program Design Concepts that will be discussed are
-
-- bottom-up design
-- top-down design
-- abstractions (another word for functions)
-- and control flow in terms of
-
-  - iteration (loops)
-  - branching (if/else statements based on a condition)
+    Other than abstraction (functions), the concepts in this chapter will NOT be covered on the MATLAB exam.
 
 ^^^^^^^^^^^^^^^^^^^^
 A Word-Guessing Game
 ^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Our approach involves the programming of a Word-Guessing game using MATLAB. Please view the video below, which shows shows the game in action.
+We will demonstrate program design by programming a word-guessing game. First, let's look at what the game will look like when we're finished:
 
 .. youtube:: UeNQDXXTWzU
    :divid: ch10_02_vid_a_word_guessing_game
@@ -161,7 +139,7 @@ Scrambling Words
 ^^^^^^^^^^^^^^^^
 .. section 3
 
-We now describe the code for the game. Please view the video below for a description of the concepts used in our program.
+Let's start by looking at how to implement one piece of our game, scrambling the words.
 
 .. youtube:: hA-T3iGM73w
    :divid: ch10_03_vid_scrambling_words
@@ -171,85 +149,77 @@ We now describe the code for the game. Please view the video below for a descrip
 
 |
 
-The Word-Guessing Game uses a set of 1000 commonly used words stored in the file :file:`words.txt`. These words are loaded into MATLAB with using the function :file:`loadWords.m`.
+The video above illustrated the difference between bottom-up design and top-down design. **Bottom-up design** starts by identifying specific features that we'll need in our program, and then writing functions that accomplish these specific features. After writing a group of functions, we combine them to achieve our final program.
+
+**Top-down design** starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that. Both program design methods ultimately achieve the same goal - they just achieve this goal in different ways.
+ 
+.. mchoice:: ch10_randperm_01
+  :answer_a: [1 2 6 3 5]
+  :answer_b: [1 2 5 3 0]
+  :answer_c: [5 4 2 3 3]
+  :answer_d: [2 1 5 3 4]
+  :correct: d
+  :feedback_a: Oops! This result contains 6, which is higher than the parameter 5 we passed to randperm.
+  :feedback_b: Oops! This result contains 0, which will not be used in a randperm result.
+  :feedback_c: Oops! This result contains a duplicate number.
+  :feedback_d: Correct!
+
+  Suppose you call :code:`randperm(5)` in MATLAB? Which result could this function call return?
+ 
+.. mchoice:: ch10_program_design_01
+  :answer_a: Begin by modeling the shape and size of the cell phone. This is necessary because the shape and size will affect the aerodynamics as the cell phone falls.
+  :answer_b: Begin by inputting a wide range of positions that the cell phone could possibly fall from.
+  :answer_c: Begin by sketching out all the steps that are necessary to modeling the cell phone. Think about what input your program will take (the various positions the cell phone could fall from) and what output your program will give (whether the phone is damaged from each fall). Write out everything that needs to happen to get from the program input to the program output.
+  :answer_d: Begin by writing a function that simulates the affect of gravity and wind resistance on the phone. The function will take as input the current position of the phone, and return the net force of gravity and wind resistance.
+  :correct: c
+  :feedback_a: Oops! Review the distinctions between bottom-up and top-down program design.
+  :feedback_b: Oops! Review the distinctions between bottom-up and top-down program design.
+  :feedback_c: Correct! Top-down design starts by sketching out the big picture of the program, and then filling in the details.
+  :feedback_d: Oops! Review the distinctions between bottom-up and top-down program design.
+
+  Suppose that you are an engineer working for a firm that manufactures cell phones, and you are asking to produce a computer simulation of what happens when you drop a cell phone from various positions. Which of these would be an example of top-down program design?
 
 -------------------------
 Example: Bottom-Up Design
 -------------------------
 
-A feature that is required for our game is the ability to randomly scramble the letters in a word. These are the steps described in the previous videos:
+If we approach the design of our word-guessing game using bottom-up design, we would begin by writing functions that perform specific features that we know we'll need in the final solution. As we saw in the previous video, one feature that is required for our game is the ability to randomly scramble the letters in a word. We can use :code:`randperm` to help us with this.
 
-**Step A**: A routine to randomly mix a set of N integers, taken from the group 1:N is randperm. To understand how randperm works, type
+.. parsonsprob:: ch10_par_scrambled_word_01
 
-.. code-block:: matlab
-
-   help randperm
-
-in the MATLAB command window. The help file suggests using
-
-.. code-block:: matlab
-
-   P = randperm(N)
-   
-which returns a vector :code:`P`, of length :code:`N`, with values :code:`1:N`
-
-**Step B**: try out randperm with a test word
-
-.. code-block:: matlab
-
-   word = 'hello'                ; % sample word 
-   N = length(word) = 5          ; % length or size of the word
-   P = randperm(N) = [3 1 4 2 5] ; % the integers 1:5 randomly scrambled
-   word(P) = 'lhleo'             ; % the corresponding scrambled version of 'hello'
-
-combining the individual elements of our test example suggests that one may create a function with the line
-
-.. code-block:: matlab
-
-   scrambledWord = word(randperm(length(N)))
+   Arrange these lines of code to correctly scramble the word 'hello'.
+   -----
+   word = 'hello';
+   =====
+   N = length(word);
+   =====
+   P = randperm(N);
+   =====
+   scrambledWord = word(P);
+   disp(scrambledWord);
 
 ------------------------
 Example: Top-Down Design
 ------------------------
 
-This often involves the use of a flowchart or a similar design tool. The intent is to diagram the flow of a program (here, a MATLAB script) that employs a number of functions (such as scrambledWord) to solve the engineering requirements
+If we approach the design of our word-guessing game using a top-down design, we might begin by diagramming the flow of our program (our MATLAB script):
 
 .. figure:: img/img3.png
    :width: 500
    :align: center
 
-   Flowchart of A Simplified Version of the Game
-
-The flow in the chart is from Start to End, following the arrows. The bottom tilted boxes refer to input/output operations, while the rectangular boxes in the top row may be individual MATLAB functions. A MATLAB script file controls the flow of the game. These elements are described in our Flowchart Components table 
-
-.. figure:: img/img4.png
-   :width: 500
-   :align: center
-
-   Flowchart Components
+The flow in the chart is from Start to End, following the arrows. The bottom tilted boxes refer to input/output operations, while the rectangular boxes in the top row may be individual MATLAB functions. A MATLAB script file controls the flow of the game.
 
 ^^^^^^^^^^^^^^^^^^^^
 Coding the Word Game
 ^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-Let's start coding. Open the script file :file:`wordGame.m`. Follow the flowchart below and fill in the blank lines of code in the script file. A set of MATLAB commands is given below to assist in your selections.
-
-.. figure:: img/img5.png
-   :width: 150
-   :align: center
-
-   ..
-
-.. figure:: img/img6.png
-   :width: 500
-   :align: center
-
-   Code: A Simplified Version of the Game - part 1
+Open the script file :file:`wordGame.m`. From the previous sections, we have a function :code:`scramble` that takes a word as input, and returns a scrambled version of the word. We'll use this function to help us write a simplified version of our word guessing game.
 
 .. parsonsprob:: par_ex_group1
 
-   Arrange these lines of code to correctly match the program outlined in the image above.
+   Arrange these lines of code to implement the first part of a simplified word guessing game.
    -----
    words = loadWords('words.txt');
    =====
@@ -260,18 +230,15 @@ Let's start coding. Open the script file :file:`wordGame.m`. Follow the flowchar
    disp('Unscramble this word:');
    disp(scrambledWord);
 
-Finally, let's add two more lines of code, one to request an input guess from the user, and the other to display if the guess and the word are the same. These use two new MATLAB functions:
+Finally, let's add two more lines of code, one to request an input guess from the user, and the other to display if the guess and the word are the same. These use two new MATLAB functions, :code:`input()` and :code:`isequal()`
 
-   :code:`input()` and :code:`isequal()`
+.. shortanswer:: ch10_input_01
 
-Please use the MATLAB help facility to understand how these two functions work. Excluding the solution for the above work, the script now looks like
+   Look up the :code:`input` function in the MATLAB help documentation (remember, we're looking for *string* input). Now, write code prompting the user for a guess. Save the user's input in the variable :code:`guess`.
+   
+.. shortanswer:: ch10_isequal_01
 
-
-.. figure:: img/img8.png
-   :width: 500
-   :align: center
-
-   ..
+   Look up the :code:`isequal` function in the MATLAB help documentation. Now, write code checking if the user's guess and the word are the same. Display the result.
 
 ^^^^^^^^^
 Iteration
@@ -285,28 +252,16 @@ Iteration
    :align: center
 
 |
+    
+As we saw in the previous video, **iteration** allows us to repeat a chunk of code multiple times. One way to do iteration is using a **for loop**.
 
-Let's say that we wish to repeat the code in the box 5 times. This is a perfect scenario for using iteration techniques in MATLAB. Specifically, since we know how many times we wish to repeat the code, we would use the :code:`for` loop.
+.. tip::
 
-.. figure:: img/img9.png
-   :width: 500
-   :align: center
-
-   ..
-
-In this flowchart, the words are loaded once (they do not change because of the iteration), and the steps within the box are repeated a set number of times. In MATLAB programming, repeating code a set number of times is called a :code:`for` loop.
-
-.. figure:: img/img10.png
-   :width: 500
-   :align: center
-
-   ..
-
-The :code:`for` loop requires an index variable to cover the range of the loop. Used in the range :code:`i = 1:5` causes the for loop to perform the loop sequence 5 times, incrementing the value of i after each iteration.
+    It is good programming style to indent the contents of a for loop a few spaces to make code-reading easier. (This also applies for other kinds of loops, as well as for branching, which we'll see later in this chapter.)
 
 .. shortanswer:: ch10_04_ex_for_loops
 
-   Now that we're comfortable with for loops, let's do a little exercise. Consider the vector below:
+   Consider the vector below:
 
    .. raw:: html
 
@@ -345,55 +300,11 @@ The :code:`for` loop requires an index variable to cover the range of the loop. 
 
    |
 
-   Next we want to use that vector to iterate through a for loop. Review how to write for loops from the videos/text above. In the box below, write a MATLAB loop to count down from 10 by increments of 2, displaying the index value each time through.
+   Next, we want to use that vector to iterate through a for loop. Write a loop to count down from 10 by increments of 2, displaying the index value each time through.
 
-We can incorporate iteration in our word-guessing game to allow the game to play multiple rounds.
+In addition to iteration, we saw that **abstraction** can be used to make our program simpler and easier to read.
 
-.. figure:: img/img11.png
-   :width: 500
-   :align: center
-
-   ..
-
-It is good programming form to indent the contents of a for loop a few spaces to make code-reading easier.
-
-The code proceeds through the loop 5 times and then continues with any further code after the end statement. Since the loop is self-contained, it is a candidate for abstraction !!!
-
-.. figure:: img/img12.png
-   :width: 500
-   :align: center
-
-   ..
-
-A function, :code:`playRound()`, a part of our current script, may be pulled and crafted into a separate code.The input to the function will be the list of words read from words.txt and the output will be a logical value, wonRound, TRUE if the guess is correct, FALSE otherwise.
-
-.. figure:: img/img13.png
-   :width: 500
-   :align: center
-
-   ..
-
-This results in a streamlined script illustrated below.
-
-.. figure:: img/img14.png
-   :width: 500
-   :align: center
-
-   ..
-
-The calling script is now
-
-.. figure:: img/img15.png
-   :width: 500
-   :align: center
-
-   ..
-
-Note that the displayed output message in the for loop includes information related to the index variable, providing the player with useful feedback. However, something is lacking in the message!!?
-
-"Did the player pick the right guess for the scrambled word?"
-
-We introduce one final programming tool which allows the coder this freedom of choice, the branching capability in the form of an IF statement.
+Abstraction is a high-level concept that refers to hiding the complexity of something. In MATLAB, abstraction is usually implemented by a function. Remember, if you are using a function that someone else wrote and you know the inputs and outputs of a function, you don't need to understand how the function works - you simply give the function the proper inputs, and it returns the proper outputs. When you do this, the details of the function have been *abstracted away*. The complexity of the function has been hidden from you. This is helpful because it allows you to focus more on other parts of the program, rather than spending time understanding the implementation of this function. Likewise, when you write a function, other programmers can use your function as an abstraction. Even if you don't expect other programmers to use your code, functions are a great way to organize your code. Better organized code is easier to think about and easier to debug!
 
 ^^^^^^^^^
 Branching
@@ -408,79 +319,75 @@ Branching
 
 |
 
-A conditional statement allows MATLAB to make a decision as to which branch of commands to execute, if any. In such a statement, there will be a conditional expression which will either be TRUE or FALSE. If there is more than one branch, each 'branch' will consist of a group of commands that could be executed.
+**Branching** lets us decide which statements in our code will be executed. We implement this using :code:`if` and :code:`elseif/else` statements. If we use a branching statement, only one of the branches is evaluated. After that branch is evaluated, the program jumps to the end of the branching statement *without executing the other branches*.
 
-For example, typing the following in the MATLAB Command Window
+In addition to **for loops**, we can use **while loops** to do iteration in our code. While loops repeat as long as some condition (the **loop condition**) is true.
 
-.. code-block:: matlab
+Branching and iteration are both part of control flow.
+**Control flow** is the order that the statements in our program execute (the line of code that is currently executing has "control"). Flowcharts are useful for mapping out the control flow of our programs!
 
-   >> a=4;b=5;
-   >> if a<b display('a<b')
-   end
+.. mchoice:: ch10_branching_01
+  :answer_a: The first statement ("This is a tundra ecosystem!") would be displayed.
+  :answer_b: The second statement ("This is either a tropical or temperate rainforest ecosystem!") would be displayed.
+  :answer_c: Both the first and the second statement would be displayed.
+  :answer_d: Nothing would be displayed.
+  :correct: d
+  :feedback_a: Oops! Try running this code in MATLAB.
+  :feedback_b: Oops! Try running this code in MATLAB.
+  :feedback_c: Oops! Try running this code in MATLAB.
+  :feedback_d: Correct!
 
-results in the output
+  What would be the output of the following MATLAB code?
+  
+  .. literalinclude:: ../_static/intro_to_control_flow/branching1.m
+    :language: matlab
+      
+.. mchoice:: ch10_branching_02
+  :answer_a:
+  :answer_b:
+  :answer_c:
+  :answer_d:
+  :correct: b
+  :feedback_a: Oops! Try running this code in MATLAB.
+  :feedback_b: Correct!
+  :feedback_c: Oops! Try running this code in MATLAB.
+  :feedback_d: Oops! Try running this code in MATLAB.
 
-.. code-block:: matlab
+  Which branching statement is correctly implemented?
+  
+  A.
+  
+  .. literalinclude:: ../_static/intro_to_control_flow/branching2.m
+    :language: matlab
+    
+  B.
+  
+  .. literalinclude:: ../_static/intro_to_control_flow/branching3.m
+    :language: matlab
+    
+  C.
+  
+  .. literalinclude:: ../_static/intro_to_control_flow/branching4.m
+    :language: matlab
+    
+  D.
+  
+  .. literalinclude:: ../_static/intro_to_control_flow/branching5.m
+    :language: matlab
+    
+.. shortanswer:: ch10_while_loops_01
 
-   a<b
+  Briefly describe the difference between for loops and while loops.
 
-If one were to try
+The use of program control constructs has permitted exciting and thoughtful possibilities to our simple word-guessing game. The complexity of our word-guessing game has evolved to the point that we may imagine adding new features. For example, rather than running through the game 5 times (using the for loop), we want to run through the game until we make 3 incorrect guesses. This may mean running through ONLY 3 times, or it could mean 10's or 100's of correct guesses. Let the program decide!
 
-.. code-block:: matlab
+However, in MATLAB we *rarely* use control flow. MATLAB has powerful vectorization and logical indexing capabilities, which are almost always better and faster!
 
-   >> if a>b display('a>b')
-   end
+As often as possible:
 
-that is, there would be no output !!!
-
-The first attempt generates a logical 1, that is TRUE, and executes the display command. The second attempt is FALSE, that is logical 0, and the display command is not executed.
-
-In a more complex example,
-
-.. figure:: img/img16.png
-   :width: 500
-   :align: center
-
-   ..
-
-one of three possibilities is executed, dependent upon the value of 'temp'. **PLEASE NOTE: If the first conditional expression is TRUE, 'That is very hot!' is displayed and the code jumps immediately to end. If FALSE, then the second conditional expression is executed and another TRUE/FALSE decision is made. If FALSE, then the third statement is displayed.**
-
-That's all there is to it !!
-Our code may now be given some smarts using branching operations -- 
-
-.. figure:: img/img17.png
-   :width: 500
-   :align: center
-
-   ..
-
-In code, this would be
-
-.. figure:: img/img18.png
-   :width: 500
-   :align: center
-
-   ..
-
-The use of program control constructs has permitted exciting and thoughtful possibilities to our simple word-guessing game. The complexity of our word-guessing game has evolved to the point that we may imagine adding new features. For example, rather than running through the game 5 times (using the for loop), we want to run through the game until we make 3 incorrect guesses. This may mean running through ONLY 3 times, or it could mean 10's or 100's of correct guesses. **LET THE PROGRAM DECIDE !!!**
-
-There is one final flow control command which is useful, the conditional while-end loop. It is useful in the situation just described, that is, for-end loop style looping is desired, but the number of runs through the loop is unknown ahead of time. Here is the flowchart:
-
-.. figure:: img/img19.png
-   :width: 500
-   :align: center
-
-   ..
-
-and here is the code
-
-.. figure:: img/img20.png
-   :width: 500
-   :align: center
-
-   ..
-
-The while-end loop has replaced the for-end loop, but functions in a similar fashion. After each iteration in the loop, the value of lives is compared to 0, resulting in a logical TRUE/FALSE value. If TRUE, the while loop is executed one more time and control once again asks the same question. If FALSE, execution of the loop is terminated and program control statements following the while-end loop are executed.
+* Use vectorized array operations rather than loops
+* Use logical indexing rather than loops
+* Use ranges rather than loops
 
 We have now completed the controlling script for :code:`wordGame.m`. You have seen how bottom-up design and top-down design are useful tools for designing and then programming code for a specific task.
 
@@ -496,20 +403,27 @@ Here is the final table of flowchart components which includes branching and ite
 
    ..
 
-In the second half of ENGR 101, you will design your own control flow code with C++ and will use flowcharts to construct your code. However, there are still some unanswered questions regarding "Why did we wait so long to discuss control flow in MATLAB?" If you have not viewed video 5.Branching, the following summarizes the rationale:
-
-a. vectorization is faster than most branching/iteration operations in MATLAB
-b. prefer Vectorized Array Operation to Loops
-c. prefer Logical Indexing to Loops
-d. prefer Ranges to Loops
-e. when to use loops in MATLAB: the topic of this lecture is one such circumstance
+In the second half of ENGR 101, you will design your own control flow code with C++ and will use flowcharts to construct your code.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. tip::
+
+    Other than abstraction (functions), the concepts in this chapter will NOT be covered on the MATLAB exam.
+
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* **Program design** is the process of planning out the algorithm that we're going to code. There are two basic approaches: **bottom-up design** and **top-down design**. Bottom-up design starts by designing smaller features, and combines them to get the final program. Top-down design starts by sketching out the final program, and breaking this down into smaller steps.
+* :code:`randperm` can be used to generate a random permutation of numbers of a specific size.
+* :code:`input` gets user input.
+* :code:`isequal` checks if two strings are equal.
+* **Iteration** allows us to repeat some statements of code multiple times. Both for loops and while loops can be used for iteration.
+* **Abstraction** allows us to hide the complexity of certain operations in functions.
+* **Branching**, implemented with :code:`if` and :code:`elseif/else` statements allows us to decide which statements in our code will be executed.
+* **Control flow** is the order that the statements in our program execute.
+* Flowcharts are a useful tool for mapping out the control flow of your program.
+* In MATLAB, it's better to use vectorized array operations, logical indexing, and ranges rather than iteration and branching.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

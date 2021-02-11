@@ -4,7 +4,9 @@
 
 .. raw:: html
 
-   <script src="../_static/common/js/common.js"></script>
+   <link rel="stylesheet" href="../_static/common/css/matlab.css">
+   <script src="../_static/common/js/common3.js"></script>
+   <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
 
 ========================================
 Advanced Plotting and Data Visualization
@@ -17,6 +19,18 @@ Advanced Plotting and Data Visualization
   .. list-table:: 
     :align: left
     :widths: auto
+    
+    * - :download:`Demo.m <../_static/data_visualization/Demo.m>`
+
+      - .. reveal:: Demo_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>Demo.m</code>
+
+          .. literalinclude:: ../_static/data_visualization/Demo.m
+            :language: matlab
+
+      - Demo script walking through some example 3D plots
 
     * - :download:`bathymetryData.mat <../_static/data_visualization/bathymetryData.mat>`
 
@@ -27,7 +41,7 @@ Advanced Plotting and Data Visualization
 
           No preview available
 
-      - Matlab saved workspace containing variables with bathymetry data (bathymetry is the depth of water in rivers, lakes, oceans)
+      - MATLAB saved workspace containing variables with bathymetry data (bathymetry is the depth of water in rivers, lakes, oceans)
 
     * - :download:`UpNorth.m <../_static/data_visualization/UpNorth.m>`
 
@@ -51,7 +65,7 @@ Advanced Plotting and Data Visualization
           .. literalinclude:: ../_static/data_visualization/LandOnGreen.m
             :language: matlab
 
-      - Starter file for determining how best to hit a golf ball so that it lands on the green. 
+      - Starter file for determining how best to hit a golf ball so that it lands on the green
 
     * - :download:`dist2green.m <../_static/data_visualization/dist2green.m>`
 
@@ -63,7 +77,7 @@ Advanced Plotting and Data Visualization
           .. literalinclude:: ../_static/data_visualization/dist2green.m
             :language: matlab
 
-      - Starter file for calculating distance from a tee box to the green; helper function for the :code:`UpNorth.m` script
+      - Starter file for calculating distance from a tee box to the green; helper function for the :code:`LandOnGreen.m` script
     
   .. reveal:: data_visualization_download_instructions
     :showtitle: Download Instructions
@@ -80,19 +94,14 @@ Introduction
 
 In this chapter, we will dive deeper into data visualization and learn how to use MATLAB to plot in a three-dimensional space.
 
-In Lab 3 we used three dimensional arrays to represent images with rows, columns and layers. We can represent all sorts of datasets in 3D space as a set of (x,y,z) values. When we use 3D arrays to hold data for spatial coordinates, trends, or maps it is useful to visualize the data we are using in order to understand and communicate what we're working with. 
+In Lab 3, we used three dimensional arrays to represent images with rows, columns, and layers. We can represent all sorts of datasets in 3D space as a set of (x,y,z) values. When we use 3D arrays to hold data for spatial coordinates, trends, or maps, it is useful to visualize the data we are using in order to understand and communicate what we're working with.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3D Plotting Using Vectors of Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-For simple plots of 3D data, there are two useful MATLAB functions:
-
-- :code:`plot3` - works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data
-- :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data
-
-Watch the video below to see how to call :code:`plot3` and :code:`scatter3`.
+Let's look at two useful MATLAB functions for simple plots of 3D data. This video goes through :code:`Demo.m`, which you can download from the Chapter Files at the top, in order to follow along and reference.
 
 .. youtube:: YjeF1h6Ravs
   :divid: ch09_02_vid_plotting_3d_vectors
@@ -101,6 +110,11 @@ Watch the video below to see how to call :code:`plot3` and :code:`scatter3`.
   :align: center
 
 |
+
+To recap, :code:`plot3` and :code:`scatter3` can be used to make 3D plots.
+
+- :code:`plot3` - works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data
+- :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data
 
 -----------------------------
 Exercise: Plotting 3D Vectors
@@ -125,8 +139,8 @@ Exercise: Plotting 3D Vectors
   :answer_a: scatter3
   :answer_b: plot3
   :correct: a
-  :feedback_a: Correct! A scatterplot is more appropriate here because the data contains individual discrete measurements.
-  :feedback_b: Incorrect. A scatterplot is more appropriate here because the data contains individual discrete measurements.
+  :feedback_a: Correct! A scatter plot is more appropriate here because the data contains individual discrete measurements.
+  :feedback_b: Incorrect. A scatter plot is more appropriate here because the data contains individual discrete measurements.
 
   Which 3D plotting function would be the most appropriate to display this data:
 
@@ -187,7 +201,7 @@ The previous exercise used vectors to plot a solution to the equation:
 
   z = x + x * sin(\frac{y}{50})
 
-But these vectors gave us only one line (or set of markers if you use :code:`scatter3`). This math equation actually states that :code:`z` is a function of :code:`x` and :code:`y` for all possible combinations of the values for :code:`x` and :code:`y`. This means that :code:`z` is a surface that is defined by this equation… and right now all we have is one "slice" of that surface: the particular combination of :code:`x` and :code:`y` coordinates in our vectors. To fully represent the surface defined by the equation, 
+But these vectors gave us only one line (or set of markers if you used :code:`scatter3`). This math equation actually states that :code:`z` is a function of :code:`x` and :code:`y` for all possible combinations of the values for :code:`x` and :code:`y`. This means that :code:`z` is a surface that is defined by this equation… and right now all we have is one "slice" of that surface: the particular combination of :code:`x` and :code:`y` coordinates in our vectors. To fully represent the surface defined by the equation,
 
 .. math::
 
@@ -205,7 +219,7 @@ MATLAB has a built-in function called :code:`meshgrid()` that will convert our v
 
 |
 
-**Recap:** The :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input. Example usage:
+As shown in the video, the :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input. For example:
 
 .. code-block:: matlab
 
@@ -223,6 +237,10 @@ Exercise: :code:`meshgrid()` Practice
   :answer_c: Z = A .* B
   :answer_d: Z = b .* a
   :correct: c
+  :feedback_a: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_b: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_c: Correct!
+  :feedback_d: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
 
   Assume the following code has been run:
 
@@ -230,16 +248,27 @@ Exercise: :code:`meshgrid()` Practice
 
     a = [1 2 3 4];
     b = [4 3 2 1];
-    [A,B] = meshgrid(a,b);
+    [A, B] = meshgrid(a, b);
 
   Which of the following computes the value of Z to be:
+  
+  .. raw:: html
 
-  .. code-block:: matlab
-
-    4     8    12    16
-    3     6     9    12
-    2     4     6     8
-    1     2     3     4
+      <div class="container-fluid">
+        <center>
+        <table><tbody>
+          <tr>
+            <td>
+              <div class="matcrab-vis-exp">
+                Z = [4 8 12 16; 3 6 9 12; 2 4 6 8; 1 2 3 4];
+                Z;
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        </center>
+        <br />
+      </div>
 
 .. mchoice:: ch09_03_ex_meshgrid_02
   :answer_a: Z = 2 + D .* F
@@ -247,6 +276,10 @@ Exercise: :code:`meshgrid()` Practice
   :answer_c: Z = f .* d
   :answer_d: Z = D .* F
   :correct: b
+  :feedback_a: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_b: Correct!
+  :feedback_c: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_d: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
 
   Assume the following code has been run:
 
@@ -254,16 +287,27 @@ Exercise: :code:`meshgrid()` Practice
 
     f = [9 9 9];
     d = [1 3 6];
-    [F,D] = meshgrid(f,d);
+    [F, D] = meshgrid(f, d);
 
   Which of the following computes the value of Z to be:
+  
+  .. raw:: html
 
-  .. code-block:: matlab
-
-    9     9     9
-    3     3     3
-    1.5  1.5  1.5
-
+      <div class="container-fluid">
+        <center>
+        <table><tbody>
+          <tr>
+            <td>
+              <div class="matcrab-vis-exp">
+                Z = [9 9 9; 3 3 3; 1.5 1.5 1.5];
+                Z;
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        </center>
+        <br />
+      </div>
 
 .. mchoice:: ch09_03_ex_meshgrid_03
   :answer_a: Z = X - 2 .* Y
@@ -271,6 +315,10 @@ Exercise: :code:`meshgrid()` Practice
   :answer_c: Z = x .* y
   :answer_d: Z = x ./ y
   :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_c: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
+  :feedback_d: Oops! Try out this code in MATLAB, or sketch out the matrices on a piece of paper.
 
   Assume the following code has been run:
 
@@ -282,11 +330,24 @@ Exercise: :code:`meshgrid()` Practice
 
 
   Which of the following computes the value of Z to be:
+  
+  .. raw:: html
 
-  .. code-block:: matlab
-
-    1 2
-    -1 0
+      <div class="container-fluid">
+        <center>
+        <table><tbody>
+          <tr>
+            <td>
+              <div class="matcrab-vis-exp">
+                Z = [1 2; -1 0];
+                Z;
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+        </center>
+        <br />
+      </div>
 
 .. admonition:: Walkthrough
 
@@ -314,10 +375,7 @@ Once you have data in matrix form, you can create 3D surface and mesh plots in M
 
 |
 
-**Recap:**
-
-- use the :code:`surf` function with three matrices to create a surface plot
-- use the :code:`mesh` function with three matrices to create a mesh plot
+As we've seen, we can use the :code:`surf` function with three matrices to create a surface plot. We can use the :code:`mesh` function with three matrices to create a mesh plot.
 
 --------------------------------
 Exercise: Surface and Mesh Plots
@@ -325,16 +383,16 @@ Exercise: Surface and Mesh Plots
 
 .. shortanswer:: ch09_04_ex_surface_and_mesh_plots_01
 
-  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
+  Copy the starter code below into MATLAB and complete the missing portions (indicated by the :code:`% TODO` comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.)
 
   .. code-block:: matlab
 
-    a = [1:10]
-    b = [1:50]
+    a = [1:10];
+    b = [1:50];
 
-    %TODO use meshgrid to create the matrices A and B
+    % TODO use meshgrid to create the matrices A and B
 
-    Z = cos(B ./ 2) + 2 .* sin(A)
+    Z = cos(B ./ 2) + 2 .* sin(A);
 
     % TODO plot the surface Z as a function of A and B
 
@@ -348,14 +406,14 @@ Exercise: Surface and Mesh Plots
 
 .. shortanswer:: ch09_04_ex_surface_and_mesh_plots_02
 
-  Copy the starter code below into Matlab and complete the missing portions (indicated by the % TODO comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.
+  Copy the starter code below into MATLAB and complete the missing portions (indicated by the :code:`% TODO` comments) so that the code produces the graph shown below. (Please note that you do not need to figure out the math "equation" that produces the 3D graph - this is already given in the starter code. You just need to do the meshgrid and plotting portions.)
 
   .. code-block:: matlab
 
     q = [0:12];
     w = [1:15];
 
-    %TODO use meshgrid to create the matrices Q and W
+    % TODO use meshgrid to create the matrices Q and W
 
     F = Q .^ 2 + W .^ 0.2 + 5;
 
@@ -383,6 +441,8 @@ MATLAB also has two helpful plotting functions to create contour maps. Watch the
   :align: center
 
 |
+
+As we saw, :code:`contour` is used to create contour plots, and :code:`contourf` is used to create *filled* contour plots.
 
 -----------------------
 Exercise: Contour Plots
@@ -440,87 +500,6 @@ Exercise: Contour Plots
 
   Select all of the datasets that would be displayed well in a contour plot.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The :code:`subplot` Function
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 6
-
-We've seen how to make a plot that has two sets of data on it, but what if you want to plot those two sets of data on separate graphs in the same figure? You can use MATLAB's :code:`subplot` function to do this. Watch the video below to see how to use the :code:`subplot` function.
-
-.. youtube:: MdAAXuvl4Ck
-  :divid: ch09_06_vid_subplot
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-----------------------------------
-Exercise: :code:`subplot` Practice
-----------------------------------
-
-.. fillintheblank:: ch09_06_ex_subplot_01
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **A6**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*6[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_02
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **A3**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*8[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_03
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **B5**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubB.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*2[ ]*,[ ]*5[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch09_06_ex_subplot_04
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the gird *and* select the cell labeled **C1**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubC.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*1[ ]*,[ ]*4[ ]*,[ ]*1[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch09_06_revealwt_subplot
-  
-    .. youtube:: oSOzHEUPfQk
-      :divid: ch09_06_wt_subplot
-      :height: 315
-      :width: 560
-      :align: center
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Application: Comparing Bathymetry Plots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -532,6 +511,9 @@ This exercise uses the following files.
 - :file:`UpNorth.m`
 
 Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
+
+.. tip::
+    The following exercise uses the :code:`subplot` function. If you need a review on how subplots work, please refer back to Chapter 6.
 
 Let's practice creating contour plots and using the subplot function. We will generate a figure that compares the two contour plots of the bathymetry data we used earlier. Open :file:`UpNorth.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the :file:`bathymetryData.mat` file. Complete the :file:`UpNorth.m` script to plot both contour plots in the same figure, like this:
 
@@ -579,16 +561,16 @@ It is 120 meters from the tee box to the hole on the island green.  But if you h
 
 This is an optimization problem. We want to check all possible combinations of "how fast" and "what angle" and find out which combinations put the ball on the green instead of in the water. Here is our algorithm for solving this optimization problem using computing: 
 
-1. Write a function dist2green that calculates the distance a golf ball will travel before it hits the ground. Use these two MATLAB versions of the projectile motion equations:
+1. Write a function :code:`dist2green` that calculates the distance a golf ball will travel before it hits the ground. Use these two MATLAB versions of the projectile motion equations:
 
 .. code-block:: matlab
 
   t = 2 .* speed .* sin(angle) ./ 9.8  % g = 9.8 m/s^2
   distance = speed .* cos(angle) .* t
 
-2. Use :code:`meshgrid` to create matrices that correspond to the different speed and angle combinations.
-3. Calculate the distance traveled for each speed/angle combination by calling :code:`dist2green` and passing the matrices created by :code:`meshgrid`.
-4. Make two plots to interpret your simulation.
+2. Use :code:`meshgrid` to create matrices that correspond to the different speed and angle combinations. These should be saved in variables named :code:`V` and :code:`T`, respectively.
+3. Calculate the distance traveled for each speed/angle combination by calling :code:`dist2green` and passing the matrices created by :code:`meshgrid`. This should be saved in a variable named :code:`distance`.
+4. Make two plots to interpret your simulation:
 
    a. A contourf plot of speed, angle, and distance
    b. A contourf plot of the viable combinations of speed and angle 
@@ -609,15 +591,20 @@ Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, a
 
   Copy and paste your finished :file:`LandOnGreen.m` script here.
 
-.. youtube:: RG_1DvV-Mjo
-  :divid: ch09_08_vid_optimizing_a_golf_swing_01
-  :height: 315
-  :width: 560
-  :align: center
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch09_08_revealwt_optimizing_a_golf_swing_01
+  
+    .. youtube:: RG_1DvV-Mjo
+      :divid: ch09_08_wt_optimizing_a_golf_swing_01
+      :height: 315
+      :width: 560
+      :align: center
 
 |
 
-Solving an optimization problem often gives you a range of "best" answers, not a single "best" answer. Sometimes, you need to apply your engineering expertise, or even just your good common sense, to select which "best answers" you should use. Watch the video below to see how to interpret the output of our "optimizing a golf swing" program. 
+Solving an optimization problem often gives you a range of "best" answers, not a single "best" answer. Sometimes, you need to apply your engineering expertise, or even just your good common sense, to select which "best answers" you should use. Watch the video below to see how to interpret the output of our "optimizing a golf swing" program. (Note: Walkthrough: Optimizing a Golf Swing (Part 1) is in the orange walkthrough box above this paragraph.)
 
 .. youtube:: iNIE7gmetBs
   :divid: ch09_08_vid_optimizing_a_golf_swing_02
@@ -633,6 +620,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* Use :code:`plot3` and :code:`scatter3` to make 3D line plots and scatter plots.
+* The :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input.
+* You can use the :code:`meshgrid` function to create a set of (x,y) coordinates that can be used as starter data for problems that have a range of possible values for two different variables. 
+* Use :code:`surf` to create surface plots, and :code:`mesh` to create mesh plots.
+* Use :code:`contour` to create contour plots, and :code:`contourf` to create filled contour plots.
+* You can create visuals that compare different datasets using :code:`subplot`. 
+* You can solve optimization problems by using MATLAB's ability to quickly simulate starter data and generate a range of solutions. You can investigate the range of solutions and pick the one that is the best (or most realistic) solution for your problem.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
