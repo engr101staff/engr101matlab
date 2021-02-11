@@ -57,7 +57,3 @@ Full List of Topics
   :maxdepth: 1
 
   list_of_topics/toctree.rst
-<<<<<<< HEAD
-=======
-  
->>>>>>> 67e7b0bb88648980a29fe6b73e1576462670cc06
