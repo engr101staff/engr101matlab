@@ -17,3 +17,11 @@ Full List of Topics
   ../intro_to_control_flow/toctree.rst
   ../intro_to_cpp/toctree.rst
   ../branching/toctree.rst
+  ../iteration/toctree.rst
+  ../functions_in_cpp/toctree.rst
+  ../strings_streams_and_io/toctree.rst
+  ../vectors_in_cpp/toctree.rst
+  ../program_design_in_cpp/toctree.rst
+  ../structs/toctree.rst
+  ../more_data_structures/toctree.rst
+  ../applying_computing_to_society/toctree.rst
