@@ -69,20 +69,20 @@ Remember that you will need to be in a terminal with your python virtual environ
 
 Assuming you've already cloned the repository as above, open a terminal in the `engr101matlab` directory.
 
-First, make sure you're starting from the `master` branch and up-to-date with the version on github.
+First, make sure you're starting from the `lobster-preview` branch and up-to-date with the version on github.
 
 ```console
-git checkout master
-git pull origin master
+git checkout lobster-preview
+git pull origin lobster-preview
 ```
 
-However, you should not change files directly on `master` - instead, all new work should be done in a separate git branch. For example, let's say you want to start working on a new chapter. Create a new branch for the chapter:
+However, you should not change files directly on `lobster-preview` - instead, all new work should be done in a separate git branch. For example, let's say you want to start working on a new chapter. Create a new branch for the chapter:
 
 ```console
 git checkout -b chapter3
 ```
 
-That command creates a new branch, `chapter3` based on whatever branch you were on previously (`master`) and switches you to that branch.
+That command creates a new branch, `chapter3` based on whatever branch you were on previously (`lobster-preview`) and switches you to that branch.
 
 Now, go ahead and create new files, make changes, etc. You may also want to set `dynamic_pages` to `False` in `pavement.py`. (See the Content Creation section in this readme for details on where you should make changes to add content.) As you're working, you can always run `git status` to see a summary of the files you've added or edited.
 
@@ -98,7 +98,21 @@ Of course, adjust the branch name (e.g. `chapter3`) and the message in quotes ac
 
 For subsequent pushes on the same branch, you should omit the `-u` in the `git push` command.
 
-Then, when the work is ready to "publish", make a pull request on github to merge the content into the main branch. (You'll want to ensure that `dynamic_pages` is set back to `True` in `pavement.py`, otherwise the check on the PR will fail.)
+When you have completed your work on your branch, make a pull request on github to merge the content into the `lobster-preview` branch. Assuming the merge is successful, you can safely delete your branch, but do NOT delete the `lobster-preview` branch. 
+
+## Git Workflow for Publishing the "Live" Runestone
+
+The live Runestone website is built off of the `master` branch. To update the `master` branch, first create a branch off of the `lobster-preview` branch. If your "live" version will not include all of the chapters in the `lobster-preview` branch, make the following edits to your branch: 
+
+* In `_sources/index.rst` > "Table of Contents", delete any table of contents files (those are the `.../toctree.rst` files) for chapters that you are not including in this build.
+* In `_sources/list_of_topics/toctree.rst`, delete any table of contents files for chapters that you are not including in this build.
+
+
+When you commit these changes, leave a comment that is something like "set to build Chapters 1-## only" where ## is the number of the chapter you built through. Rebuild Runestone and use your local view to make sure that the website contains only the chapters you want and that nothing is broken. If you have been working with a version of Runestone that has more chapters than you are publishing live, you may need to remove the `build` directory prior to rebuilding, and you may need to clear your cache to check that everything is correct. 
+
+Note: If you are not including all of the available chapters, you will likely get a bunch of warnings saying that "document isn't included in any toctree" -- that's okay since you don't want to include those chapters right now anyways.
+
+When you are ready to push your updates to what will be the live version of Runestone, make sure that `dynamic_pages` is set back to `True` in `pavement.py`. (If you forget to change `dynamic_pages`, don't worry -- there's a check on the pull requests and it will fail if you forget.) Then, make a pull request to merge your branch into the `master` branch (NOT `lobster-preview`!). Assuming the merge is successful, you can safely delete your branch. 
 
 ## Runestone, reStructuredText, Sphinx, etc.
 
