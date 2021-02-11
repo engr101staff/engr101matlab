@@ -45,6 +45,10 @@ Function Basics
 
 TODO video (live coding with Lobster): slides 3-5, 7
 
+Here's the code that we wrote in the previous video, if you'd like to play with it more:
+
+TODO include Lobster code (17_01)
+
 As we saw in the previous video, here's the basic structure of a function in C++:
 
 .. code-block:: cpp
