@@ -34,9 +34,9 @@ Introduction
 
 When you run a program, the line of code that is currently executing is said to have "control" in the program. Two techniques to manage the **control flow** in our programs are **branching** and **iteration**. 
 
-- **Branching** - creating multiple paths that your code can take based on the results of logical expressions, like :code:`if` and :code:`else` statements
+- **Branching** (e.g., :code:`if` and :code:`else` statements) - creating multiple paths that your code can take based on the results of logical expressions
 
-- **Iteration** - traversing through code systematically based on some defined order or condition, like :code:`for` and :code:`while` **loops**.
+- **Iteration** (e.g., :code:`for` and :code:`while` **loops**) - traversing through code systematically based on some defined order or condition
 
 In this chapter we will introduce the control flow structures used for iteration, practice using them and then combine iteration and branching to solve problems using C++.
 
@@ -67,6 +67,8 @@ To recap, here's the general syntax for a :code:`while` loop:
    }
 
 The condition may be any expression that can be interpreted as a boolean, and often expresses some limit on the value of a variable. The "body" of the :code:`while` loop may contain any number of statements, surrounded by the curly braces.
+
+As we saw in the previous video, it's very common in C++ to count starting with zero. If we start at :code:`x = 0` and count while :code:`x < N`, we iterate :code:`N` times (0, 1, ..., N-1).
 
 -----------------------------
 Exercise: :code:`while` Loops
@@ -118,7 +120,7 @@ Increment and Decrement Operators
 
 C++ provides special operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`--`) for the common tasks of increasing or decreasing a variable. Each operator is shown below with an example of the equivalent update expression that it implements.
 
-.. figure:: img/img1.png
+.. figure:: img/incrementDecrement.png
    :width: 500
    :align: center
 
@@ -156,7 +158,7 @@ Modify the code below to replace the update expressions in each of the loops wit
 ^^^^^^^^^^^^^^^^^
 .. section 4
 
-Initializing a loop variable, incrementing it, and checking a condition are often components of common iteration patterns. A :code:`for` loop is built around these components, with a specific location for each in it syntax.
+Initializing a loop variable, incrementing it, and checking a condition are often components of common iteration patterns. A :code:`for` loop is built around these components, with a specific location for each in its syntax.
 
 .. youtube:: hiQaIcSPJlU
   :divid: ch07_04_vid_for_loops
@@ -228,7 +230,7 @@ Nested Loops
 
 Recall the syntax of an :code:`if` statement:
 
-.. figure:: img/img2.png
+.. figure:: img/ifStatementSyntax.png
    :width: 500
    :align: center
 
@@ -238,7 +240,7 @@ Recall the syntax of an :code:`if` statement:
 
 Many variables have **local scope**, also known as block scope. A **block** is a sequence of statements enclosed by curly braces :code:`{}`. Block scope applies to any block of code, including the bodies of control flow structures like :code:`if`, :code:`for`, and :code:`while`.
 
-.. figure:: img/img3.png
+.. figure:: img/localScope.png
    :width: 500
    :align: center
 
@@ -248,7 +250,7 @@ Many variables have **local scope**, also known as block scope. A **block** is a
 
 For scoping purposes, the top of a :code:`for` loop is treated as if it were inside the loop body.
 
-.. figure:: img/img4.png
+.. figure:: img/localScope2.png
    :width: 500
    :align: center
 
@@ -258,7 +260,7 @@ For scoping purposes, the top of a :code:`for` loop is treated as if it were ins
 
 To use a variable after the loop, move its declaration outside. Take some time to appreciate the difference between the figure below and the previous version.
 
-.. figure:: img/img5.png
+.. figure:: img/localScope3.png
    :width: 500
    :align: center
 
@@ -323,94 +325,104 @@ Remember that you can use the "Simulate" button to run your code. If you're not 
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Application: Finding Prime Numbers
+:code:`break` and :code:`continue`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Let's look at an application of nested loops - finding prime numbers. A **prime number** is any integer larger than one that is not divisible by any smaller numbers. For example, :math:`5` and :math:`13` are prime numbers, but :math:`21` is not because it is divisible by :math:`3` and :math:`7`.
+You may encounter a situation where you need to end your loop early, or "skip a loop". In those cases, you can use :code:`break` or :code:`continue`.
 
-How can we use nested loops to find these numbers? Basically, our **outer loop** will iterate through different candidate numbers, working our way up. For each of those candidates, the inner loop will iterate through all the smaller numbers to see if any of them divides our candidate. If we find any, the candidate is not prime and is rejected. But if we make it all the way through our inner loop without finding any factors, we've found a prime number!
-
-.. admonition:: Did you know?
-
-  Prime numbers have a variety of uses in real-world applications, including everything from modern cryptography (the ubiquitous RSA cryptosystem involves very large prime numbers) to studying the emergence cycles of periodic cicadas (which reappear reliably every 13 or 17 years - it is thought the prime cycle helps them avoid cyclic predators and/or competition for resources).
-
-|
-
-----------------------
-Exercise: Divisibility
-----------------------
-
-Before moving on to the full application, let's start with a simplified problem to give you some practice. Given two numbers, :code:`a` and :code:`b`, write a program that finds the first :code:`N` numbers that are NOT divisible by either of the two. That is, you should only find numbers that are NOT divisble by :code:`a` *and* NOT divisible by :code:`b`.
-
-.. tip:: 
-
-   You can use the modulo operator :code:`%` to check for divisibility. Since the operator computes the remainder:
-
-   :code:`x` is divisible by :code:`y` if and only if :code:`x % y == 0`.
-
-Fill in the missing pieces of the code below. Note that the correct output should be :code:`1 5 7 11 13 done!`.
-
-.. raw:: html
-
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch13_06_ex</div>
-      <div class="lobster-ex-complete-message">
-         Well done! The secret word is "optimus".
-      </div>
-   </div>
-
-.. fillintheblank:: ch13_06_ex_divisibility
-  :casei:
-
-  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
-  
-  |blank|
-
-  - :optimus: Correct.
-    :x: Incorrect. If you finished the exercise, please double check your spelling.
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch13_06_revealwt_divisibility
-  
-      The walkthrough for this exercise is included at the begining of the video in the next section below.
-
-|
-
-
-
-
----------------------------
-Demo: Finding Prime Numbers
----------------------------
-
-Finally, let's take a look at a program that extends these ideas to find prime numbers using the general algorithm described above.
-
-The previous example of checking divisibility is a first step toward an algorithm for finding prime numbers:
-
-- We checked whether x was NOT divisible by 2 or by 3.
-- For primes, we need to check that x is NOT divisible by any number between 2 and x-1.
-
-In the Lobster code below, we've implemented the following algorithm for finding the first N primes:
-
- - **Outer Loop** Loop through numbers :code:`x`, starting at :code:`0`, until we find :code:`N` that are prime.
- - **Inner Loop** To determine if a number :code:`x` is prime, loop through all numbers :code:`y` from :code:`2` through :code:`x-1` and check that :code:`x` is not divisible by any of them.
-
-You don't need to change any of the code, but we encourage you to read through it, take a look at it using the simulation view, and try to understand how it works.
-
-.. raw:: html
-
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch13_06_ex_2</div>
-   </div>
-
-
-.. youtube:: MjQHDoJ07Ws
-  :divid: ch07_06_vid_prime_numbers
+.. youtube:: jKMyjpCu0LU
+  :divid: ch07_06_vid_break_continue
   :height: 315
   :width: 560
   :align: center
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Application: DNA Pattern Matching
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 7
+
+Let's look at an application of nested loops - DNA pattern matching. DNA sequencing uses technology to look at a DNA molecule and determine the order of the four chemical building blocks that make up DNA (A, T, C, and G). In 2003, the `Human Genome Project <https://www.genome.gov/human-genome-project>`_ determined the DNA sequence of the entire human genome! Since then, sequencing has gotten faster and cheaper. Now, individual genes are sequenced routinely and `an entire genome can be sequenced for a few thousand dollars <https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Fact-Sheet>`_.
+
+Once the DNA has been extracted and sequenced, the computational work comes in. One important analysis is to be able to identify patterns in DNA. Being able to pick out patterns can help scientists learn about the role of inheritance in certain diseases, as well as develop new medical diagnostics and therapies. For example, the `Undiagnosed Diseases Program <https://www.genome.gov/Current-NHGRI-Clinical-Studies/Undiagnosed-Diseases-Program-UDN>`_ uses DNA analysis to search for genetic information about rare diseases.
+
+.. figure:: img/dna.jpg
+   :width: 500
+   :align: center
+
+   ..
+
+|
+
+We are going to write a program that searches for a specific pattern in a DNA sequence. Both the DNA sequence and the pattern that we're looking for are going to be stored as strings. Let's take a look at how to work with strings in C++.
+
+A *string* is a sequence of characters (in our case, the characters A, T, C, and G). In order to use strings in C++, we must include the string library at the top of our program. Here's a simple example of a program that declares a string variable:
+
+.. code-block:: cpp
+
+    #include <iostream>
+    #include <string>                   // Include the string library
+    using namespace std;
+
+    int main() {
+        string dna = "AGACTGGGACT";    // Declare a string variable
+        cout << dna << endl;
+    }
+
+
+To find the length of a string, use the :code:`length()` function:
+
+.. code-block:: cpp
+
+    cout << dna.length() << endl;
+    
+    
+If we want to look at individual characters in our string, we can index into the string using :code:`[]`. However, when we index into a string, C++ starts counting at zero, not one. So, if we wanted to print out the first element of our string, we would use index 0:
+
+.. code-block:: cpp
+
+    cout << dna[0] << endl; // The first character of our string
+    cout << dna[1] << endl; // The second character of our string
+    
+
+If there are three characters in our string, then we can use indices 0, 1, and 2 (but not 3!). We'll look at strings in more detail in the next chapter.
+
+.. tip ::
+    
+    There are a couple of key differences between MATLAB and C++ when we index into strings. First, MATLAB uses :code:`()` for indexing, while C++ uses :code:`[]`. Second, MATLAB starts indexing at 1, while C++ starts indexing at 0.
+    
+For now, let's look at how to write this program.
+    
+.. youtube:: 9r9Y8f-0vo4
+  :divid: ch13_07_vid_dna_pattern_matching
+  :height: 315
+  :width: 560
+  :align: center
+  
+|
+
+What if we wanted to look for *two* patterns in our DNA sequence, instead of only one pattern?
+
+.. code-block :: cpp
+
+    string dna = "AGACTGGGACT";
+    string pattern = "GAC";
+    string pattern2 = "ACT";
+    
+Modify our program so that it searches for two patterns in the DNA sequence. Assume that both patterns are the same number of characters. Each time the program finds a pattern, it should print out either "Pattern 1" or "Pattern 2", along with the index that the pattern begins at. For example, with the variables :code:`dna`, :code:`pattern`, and :code:`pattern2` above, the program should print out:
+
+.. code-block :: none
+
+    Pattern 1: 1
+    Pattern 2: 2
+    Pattern 1: 7
+    Pattern 2: 8
+    
+As you are modifying the program, only iterate through the DNA sequence once. (This means that you don't need to change the outer loop: :code:`for(int i=0; i<dna.length()-pattern.length()+1; ++i)`).
+
+TODO Lobster exercise
+
+TODO walkthrough video
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -418,6 +430,10 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* We've looked at two kinds of iteration in C++: for loops and while loops.
+* Often, increment and decrement operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`--`) are used to update variables in a loop.
+* Counting starting with zero is a common pattern in C++.
+* Loops can be nested. Variables declared inside a loop only have scope within that loop.
+* To use strings in C++, you need to include the string library. The :code:`length()` function tells you how long a string is. You can index into strings using :code:`[]`. Unlike MATLAB, indexing starts at 0.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
