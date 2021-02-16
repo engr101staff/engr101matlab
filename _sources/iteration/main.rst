@@ -338,13 +338,13 @@ You may encounter a situation where you need to end your loop early, or "skip a 
   :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Application: DNA Sequence Alignment
+Application: DNA Pattern Matching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-Let's look at an application of nested loops - DNA sequence alignment. DNA sequencing uses technology to look at a DNA molecule and determine the order of the four chemical building blocks that make up DNA (A, T, C, and G). In 2003, the `Human Genome Project`<https://www.genome.gov/human-genome-project>_ determined the DNA sequence of the entire human genome! Since then, sequencing has gotten faster and cheaper. Now, individual genes are sequenced routinely and `an entire genome can be sequenced for a few thousand dollars`<https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Fact-Sheet>_.
+Let's look at an application of nested loops - DNA pattern matching. DNA sequencing uses technology to look at a DNA molecule and determine the order of the four chemical building blocks that make up DNA (A, T, C, and G). In 2003, the `Human Genome Project <https://www.genome.gov/human-genome-project>`_ determined the DNA sequence of the entire human genome! Since then, sequencing has gotten faster and cheaper. Now, individual genes are sequenced routinely and `an entire genome can be sequenced for a few thousand dollars <https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Fact-Sheet>`_.
 
-Once the DNA has been extracted and sequenced, the computational work comes in. One important analysis is to be able to identify patterns in DNA. Being able to pick out patterns can help scientists learn about the role of inheritance in certain diseases, as well as develop new medical diagnostics and therapies. For example, the `Undiagnosed Diseases Program`<https://www.genome.gov/Current-NHGRI-Clinical-Studies/Undiagnosed-Diseases-Program-UDN>_ uses DNA analysis to search for genetic information about rare diseases.
+Once the DNA has been extracted and sequenced, the computational work comes in. One important analysis is to be able to identify patterns in DNA. Being able to pick out patterns can help scientists learn about the role of inheritance in certain diseases, as well as develop new medical diagnostics and therapies. For example, the `Undiagnosed Diseases Program <https://www.genome.gov/Current-NHGRI-Clinical-Studies/Undiagnosed-Diseases-Program-UDN>`_ uses DNA analysis to search for genetic information about rare diseases.
 
 .. figure:: img/dna.jpg
    :width: 500
@@ -354,7 +354,9 @@ Once the DNA has been extracted and sequenced, the computational work comes in. 
 
 |
 
-We are going to write a program that takes two DNA sequences and compares them. We are going to store the DNA sequences in our program as strings. Before we begin our program, let's learn a few things about working with strings in C++. A *string* is a sequence of characters (in our case, the characters A, T, C, and G). In order to use strings in C++, we must include the string library at the top of our program. Here's a simple example of a program that declares a string variable:
+We are going to write a program that searches for a specific pattern in a DNA sequence. Both the DNA sequence and the pattern that we're looking for are going to be stored as strings. Let's take a look at how to work with strings in C++.
+
+A *string* is a sequence of characters (in our case, the characters A, T, C, and G). In order to use strings in C++, we must include the string library at the top of our program. Here's a simple example of a program that declares a string variable:
 
 .. code-block:: cpp
 
@@ -367,20 +369,60 @@ We are going to write a program that takes two DNA sequences and compares them. 
         cout << dna << endl;
     }
 
+
 To find the length of a string, use the :code:`length()` function:
 
 .. code-block:: cpp
 
     cout << dna.length() << endl;
     
-If we want to look at individual characters in our string, we can index into the string using :code:`[]`. However, when we index into a string, there is a key difference between C++ and MATLAB: C++ starts counting at zero, not one. So, if we wanted to print out the first element of our string, we would use index 0:
+    
+If we want to look at individual characters in our string, we can index into the string using :code:`[]`. However, when we index into a string, C++ starts counting at zero, not one. So, if we wanted to print out the first element of our string, we would use index 0:
 
 .. code-block:: cpp
 
     cout << dna[0] << endl; // The first character of our string
     cout << dna[1] << endl; // The second character of our string
+    
 
-If there are three characters in our string, then we can use indices 0, 1, and 2 (but not 3!).
+If there are three characters in our string, then we can use indices 0, 1, and 2 (but not 3!). We'll look at strings in more detail in the next chapter.
+
+.. tip ::
+    
+    There are a couple of key differences between MATLAB and C++ when we index into strings. First, MATLAB uses :code:`()` for indexing, while C++ uses :code:`[]`. Second, MATLAB starts indexing at 1, while C++ starts indexing at 0.
+    
+For now, let's look at how to write this program.
+    
+.. youtube:: 9r9Y8f-0vo4
+  :divid: ch13_07_vid_dna_pattern_matching
+  :height: 315
+  :width: 560
+  :align: center
+  
+|
+
+What if we wanted to look for *two* patterns in our DNA sequence, instead of only one pattern?
+
+.. code-block :: cpp
+
+    string dna = "AGACTGGGACT";
+    string pattern = "GAC";
+    string pattern2 = "ACT";
+    
+Modify our program so that it searches for two patterns in the DNA sequence. Assume that both patterns are the same number of characters. Each time the program finds a pattern, it should print out either "Pattern 1" or "Pattern 2", along with the index that the pattern begins at. For example, with the variables :code:`dna`, :code:`pattern`, and :code:`pattern2` above, the program should print out:
+
+.. code-block :: none
+
+    Pattern 1: 1
+    Pattern 2: 2
+    Pattern 1: 7
+    Pattern 2: 8
+    
+As you are modifying the program, only iterate through the DNA sequence once. (This means that you don't need to change the outer loop: :code:`for(int i=0; i<dna.length()-pattern.length()+1; ++i)`).
+
+TODO Lobster exercise
+
+TODO walkthrough video
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -392,5 +434,6 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * Often, increment and decrement operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`--`) are used to update variables in a loop.
 * Counting starting with zero is a common pattern in C++.
 * Loops can be nested. Variables declared inside a loop only have scope within that loop.
+* To use strings in C++, you need to include the string library. The :code:`length()` function tells you how long a string is. You can index into strings using :code:`[]`. Unlike MATLAB, indexing starts at 0.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
