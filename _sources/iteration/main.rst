@@ -336,6 +336,8 @@ You may encounter a situation where you need to end your loop early, or "skip a 
   :height: 315
   :width: 560
   :align: center
+  
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Application: DNA Pattern Matching
