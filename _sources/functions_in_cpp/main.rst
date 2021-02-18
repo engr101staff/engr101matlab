@@ -111,6 +111,8 @@ Function Details
 ^^^^^^^^^^^^^^^^
 .. section 3
 
+Now that we've seen the basics, let's dive into some more details.
+
 .. youtube:: GSJNWx6PU3M
    :divid: ch14_03_vid_function_details
    :height: 315
@@ -151,7 +153,7 @@ Generally, :code:`void` functions will have some "side effect", such as printing
 Exercise: Printing Triangles
 -----------------------------
 
-Write a function to print out a triangle of X's:
+To practice, let's write a function to print out a triangle of X's:
 
 .. code-block:: none
 
@@ -194,6 +196,8 @@ Parameters can be used to make flexible functions. In the previous example, the 
 
     void print_triangle_X(int size);
     
+|
+    
 .. shortanswer:: ch14_ex_void_functions_01
     
     Let's suppose that we want to have our function print out a triangle using any character, not just X's. How could we modify our function to accomplish this?
@@ -202,6 +206,8 @@ Parameters can be used to make flexible functions. In the previous example, the 
 Functions and Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
+
+We've previously seen that you can only use a variable when it's in *scope*. Let's look at how this applies to variables in functions.
 
 .. youtube:: Zfq5kxr9v6I
    :divid: ch14_04_vid_function_and_scope
@@ -212,7 +218,7 @@ Functions and Scope
 |
 
 
-Here's one of the Lobster exercises that we looked at; step through the visualization of the code below to see the way variables in different scopes are handled:
+Here's one of the exercises that we looked at in the video; step through the visualization of the code below to see the way the variable :code:`rad` is handled in different scopes:
 
 .. raw:: html
 
@@ -222,12 +228,36 @@ Here's one of the Lobster exercises that we looked at; step through the visualiz
 
 To recap, variables declared outside of a function have **global scope**. Most of the time, it's a poor design choice to use global variables. Global scope is appropriate, however, for **constants**, variables that never change. Use :code:`const` to create a constant. Any variable declared inside a function (and any parameters!) will only have scope within that function.
 
-TODO something interactive
+.. mchoice:: ch14_ex_functions_and_scope_01
+  :answer_a: There's nothing wrong with this code.
+  :answer_b: The variable y is not in scope in the square() function.
+  :answer_c: The name of the parameter (x) needs to match the name of the argument (y).
+  :answer_d: The square function is returning the wrong variable type.
+  :correct: b
+  :feedback_a: Oops! Look a little closer at this function call.
+  :feedback_b: Correct! The variable y is declared in the main() function, and only has scope in the main() function. It is out of scope in the square() function, and we can't use it there.
+  :feedback_c: Oops! Argument and parameter names can be different.
+  :feedback_d: Oops! int is an appropriate type to return for this function (the square of an integer will always be an integer).
 
+  What is wrong with the following code?
+  
+  .. code-block:: cpp
+    
+    int square(int x) {
+        return y*y;
+    }
+    
+    int main() {
+        int y = 3;
+        cout << square(y) << endl;
+    }
+    
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Declaring Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
+
+Just like a variable, you must declare a function before you can use it.
 
 .. youtube:: mohd7eW2rM4
    :divid: ch14_05_vid_declaring_functions
@@ -237,7 +267,7 @@ Declaring Functions
 
 |
 
-To avoid errors, make sure to declare functions *before* they are used. One way to do this is to declare *and* define functions before :code:`main()`. Alternatively, you can use a **function prototype** to declare a function before you define it.
+To avoid errors, make sure to declare functions *before* they are used. One way to do this is to declare *and* define functions before they are used (often before :code:`main()`). Alternatively, you can use a **function prototype** to declare a function before you define it.
 
 -----------------------------------
 Exercise: Swapping Variable Values
@@ -272,6 +302,8 @@ Oops! This code doesn't do what we want it to do. It doesn't swap the values of 
 
     Take a close look at the code above. Why doesn't this code work?
     
+Let's see how we can fix this code.
+    
 .. youtube:: 5A1Ig-gwuZU
    :divid: ch14_06_vid_swap_function
    :height: 315
@@ -288,6 +320,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
-
+* When defining a function, the function **signature** (the first line of the function) must include the name of the function, the types of the **parameters**, and the return type of the function.
+* To call a function, we pass it **arguments**. There are two ways to pass arguments to a function: **pass-by-value** (the default) and **pass-by-reference** (specified with :code:`&`). In pass-by-value, functions are given copies of the argument values. In pass-by-reference, the parameters refer directly to the arguments passed in. Changes to the parameters are visible outside the function.
+* The order of the arguments determines which argument goes with which parameter. After arguments are passed to a function, the function is run. As soon as return statement is encountered, the function ends and transfers the return value back to the calling code. Only one value can be returned from a function.
+* :code:`void` functions don't return anything, but they usually have some side effect, such as printing something out or changing the values of their parameters.
+* Variables declared outside of a function have **global scope**. You usually don't want to use global scope, unless you are declaring a **constant**, a variable that never changes (specified with :code:`const`).
+* A function parameter or a variable declared inside a function only has scope within that function.
+* You must declare a function before it is used. To do this, you can either declare *and* define a function before it's used, or you can use a **function prototype** to declare a function (and define it somewhere later).
+ 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
