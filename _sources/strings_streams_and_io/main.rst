@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="../_static/common/css/code3.css">
    <link rel="stylesheet" href="../_static/common/css/buttons3.css">
    <link rel="stylesheet" href="../_static/common/css/exercises3.css">
-   <script src="../_static/common/js/common2.js"></script>
+   <script src="../_static/common/js/common3.js"></script>
    <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
 
 .. raw:: html
@@ -95,7 +95,9 @@ Introduction to Strings
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-In general, the **string** datatype represents a sequence of text characters - perhaps a single word, a whole sentence, or event a full document of text, since spaces and newlines can be reprsented as special characters.
+We've briefly looked at strings previously. Let's take a closer look at how they work.
+
+In general, the **string** datatype represents a sequence of text characters - perhaps a single word, a whole sentence, or even a full document of text, since spaces and newlines can be represented as special characters.
 
 .. youtube:: bHiUfnxg07U
    :divid: ch15_03_vid_intro_to_strings
@@ -112,7 +114,7 @@ Here's a quick recap of the video. To use strings in a C++ program, first make s
    #include <string>
    using namespace std;
 
-Strings can be initialized with a particular value by using a string literal with double quotes, e.g. :code:`hello`, or can be left alone and they will default-initialize to an empty string :code:`""`.
+Strings can be initialized with a particular value by using a string literal with double quotes, e.g. :code:`"hello"`, or can be left alone and they will default-initialize to an empty string :code:`""`.
 
 .. code-block:: cpp
 
@@ -152,7 +154,7 @@ Strings support several operators and functions. Here's a few of the main ones:
 
 .. admonition:: Heads up!
 
-   The string operators normally work just as you would expect with strings and string literals, but there's one exception... If *both* of the operands you're using are string literals, for example :code:`"hello" + "world"` or :code:`"cat" < "bat"`, it won't work correctly! (This is because interally string literals aren't real :code:`strings` - but as long as you have at least one actual :code:`string` variable, the string literal will be converted to match and it will work.)
+   The string operators normally work just as you would expect with strings and string literals, but there's one exception... If *both* of the operands you're using are string literals, for example :code:`"hello" + "world"` or :code:`"cat" < "bat"`, it won't work correctly! (This is because internally string literals aren't real :code:`strings` - but as long as you have at least one actual :code:`string` variable, the string literal will be converted to match and it will work.)
 
 A :code:`string` can hold basically any character, but there are some characters that you can't type in your source file. For example, if you tried to put a *newline* character into a string, you'd just end up putting part of your code on a new line in the source file.
 
@@ -167,7 +169,9 @@ Instead, you use **escape sequences** to specify those special characters. Gener
 
 |
 
-**Exercise**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exercise: Repeating String
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Write a function called :code:`repeat` that repeats a given string a certain number of times and returns the result. We've provided the function interface and some testing code in :code:`main` for you.
 
@@ -208,10 +212,7 @@ String Indexing
 ^^^^^^^^^^^^^^^
 .. section 4
 
-If you want to access individual characters out of a :code:`string`, you can use **indexing**. There are two big differences in C++ vs. MATLAB. In C++:
-
-- Indexing uses the square brackets :code:`[]` operator rather than parentheses
-- The first index starts at :code:`0` rather than :code:`1`
+If you want to access individual characters out of a :code:`string`, you can use **indexing**.
 
 .. youtube:: PSH7PczA5vk
    :divid: ch15_04_vid_string_indexing
@@ -221,6 +222,12 @@ If you want to access individual characters out of a :code:`string`, you can use
 
 |
 
+There are two big differences in C++ vs. MATLAB. In C++:
+
+- Indexing uses the square brackets :code:`[]` operator rather than parentheses
+- The first index starts at :code:`0` rather than :code:`1`
+
+Instead of using :code:`[]` indexing, you can use :code:`.at()` to index into a string. Using this function warns you if you are about to go out-of-bounds, but is a little bit slower.
 
 ^^^^^^^^^^^^^^^^^^^^^
 User Input and Output
@@ -260,6 +267,12 @@ When using :code:`cin` to get input from the user, we need to make sure the type
 
 |
 
+We can use :code:`cin` to read in both characters and strings. The :code:`getline` function can be used to read an entire line of input into a string variable:
+
+.. code-block :: cpp
+
+    string c;
+    getline(cin,c);
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Common Patterns for User Input
@@ -270,7 +283,7 @@ Common Patterns for User Input
 Common Pattern: Validating Input
 --------------------------------
 
-Sometimes we would like to verify that the user actually entered reasonable input. We can do with iteration - basically, set up a loop that keeps asking them for until repeatedly until they give us something that meets our critera.
+Sometimes we would like to verify that the user actually entered reasonable input. We can do with iteration - basically, set up a loop that keeps asking them until they give us something that meets our critera.
 
 Let's consider the example of requiring the user to enter a positive number. Note this goes beyond the *type* of the input and actually has to do with the *value* they enter:
 
@@ -281,6 +294,15 @@ Let's consider the example of requiring the user to enter a positive number. Not
    :align: center
 
 |
+
+To recap, here's the general pattern for validating input:
+
+.. code-block :: cpp
+
+    double x;
+    while(cin >> x && /* some condition on x is not met */) {
+        cout << "Try again" << endl;
+    }
 
 ------------------------------------
 Common Pattern: Detecting a Sentinel
@@ -296,9 +318,21 @@ Here's another pattern - we want to read input from the user until they tell us 
 
 |
 
-**Exercise**
+To recap, here's the general pattern for detecting a sentinel (here, our sentinel value is "done"):
 
-Now it's your turn to practice the sentienl pattern by writing a program we like to call "the annoying echo program". It continuously accepts input from a user via cin and then immediately echos that word back to them through cout. (Note that this program reads word-by-word, and not line-by-line, so you should *not* use the :code:`getline` function.) However, if you enter "STOP" (in all capital letters), the program will stop.
+.. code-block : cpp::
+
+    string x;
+    while(cin >> x && x != "done") {
+        // do something with x
+    }
+}
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exercise: Annoying Echo Program
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now it's your turn to practice the sentinel pattern by writing a program we like to call "the annoying echo program". It continuously accepts input from a user via :code:`cin` and then immediately echos that word back to them through :code:`cout`. (Note that this program reads word-by-word, and not line-by-line, so you should *not* use the :code:`getline` function.) However, if you enter "STOP" (in all capital letters), the program will stop.
 
 Here's an example (note the $ indicates user input lines).
 
@@ -435,6 +469,6 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* Including libraries allows you to access additional features and functions. Some common libraries that we will use in this class are :code:`<cmath>`, :code:`<cstdlib>`, :code:`<iostream>`, :code:`<fstr3em
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
