@@ -320,12 +320,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* When defining a function the function **signature** (the first line of the function) must include the name of the function, the types of the **parameters** and the return type of the function.
+* When defining a function, the function **signature** (the first line of the function) must include the name of the function, the types of the **parameters**, and the return type of the function.
 * To call a function, we pass it **arguments**. There are two ways to pass arguments to a function: **pass-by-value** (the default) and **pass-by-reference** (specified with :code:`&`). In pass-by-value, functions are given copies of the argument values. In pass-by-reference, the parameters refer directly to the arguments passed in. Changes to the parameters are visible outside the function.
 * The order of the arguments determines which argument goes with which parameter. After arguments are passed to a function, the function is run. As soon as return statement is encountered, the function ends and transfers the return value back to the calling code. Only one value can be returned from a function.
 * :code:`void` functions don't return anything, but they usually have some side effect, such as printing something out or changing the values of their parameters.
 * Variables declared outside of a function have **global scope**. You usually don't want to use global scope, unless you are declaring a **constant**, a variable that never changes (specified with :code:`const`).
-* A function parameter or a variable declared inside a function only have scope within that function.
+* A function parameter or a variable declared inside a function only has scope within that function.
 * You must declare a function before it is used. To do this, you can either declare *and* define a function before it's used, or you can use a **function prototype** to declare a function (and define it somewhere later).
  
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
