@@ -43,7 +43,13 @@ Function Basics
 ^^^^^^^^^^^^^^^^
 .. section 2
 
-TODO video (live coding with Lobster): slides 3-5, 7
+.. youtube:: -Jv2SJXDqcs
+   :divid: ch14_01_vid_function_basics
+   :height: 315
+   :width: 560
+   :align: center
+
+|
 
 Here's the code that we wrote in the previous video, if you'd like to play with it more:
 
@@ -58,6 +64,10 @@ As we saw in the previous video, here's the basic structure of a function in C++
     }
 
 The function :code:`square` takes one :code:`int` **parameter** (a variable you can use in your function code), and returns an :code:`int` value.
+
+.. tip ::
+
+    Unlike MATLAB, C++ requires an explicit :code:`return` statement in each function.
 
 Here's an example of calling this function:
 
@@ -88,14 +98,26 @@ When calling this function, we passed it the **argument** :code:`x`.
     
 The :code:`abs` function that we wrote in the previous video can be improved. Let's look at two ways to improve this function.
 
-TODO video (live coding with Lobster): slides 8-9
+.. youtube:: _gLW94n-ZrY
+   :divid: ch14_02_vid_improving_abs_function
+   :height: 315
+   :width: 560
+   :align: center
+
+|
 
 ^^^^^^^^^^^^^^^^
 Function Details
 ^^^^^^^^^^^^^^^^
 .. section 3
 
-TODO video (slides): slides 10-14
+.. youtube:: GSJNWx6PU3M
+   :divid: ch14_03_vid_function_details
+   :height: 315
+   :width: 560
+   :align: center
+
+|
 
 The previous video walked through how a function works in C++. First, the values of the argument expressions are copied into the parameter variables. The ordering of arguments you pass in is used to determine what goes to which parameter (the parameters are specified in the first line of the function, the **function signature**). Second, the code in the function runs. As soon as a return statement is encountered, the function ends immediately. Finally, the returned value transfers back to the calling code. Unlike in MATLAB, only one value can be returned.
 
@@ -181,9 +203,16 @@ Functions and Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-TODO video (slides): slides 28-33
+.. youtube:: Zfq5kxr9v6I
+   :divid: ch14_04_vid_function_and_scope
+   :height: 315
+   :width: 560
+   :align: center
 
-Here's the final Lobster exercise that we looked at; step through the visualization of the code below to see the way variables in different scopes are handled:
+|
+
+
+Here's one of the Lobster exercises that we looked at; step through the visualization of the code below to see the way variables in different scopes are handled:
 
 .. raw:: html
 
@@ -200,7 +229,13 @@ Declaring Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-TODO video (slides): slides 34-36
+.. youtube:: mohd7eW2rM4
+   :divid: ch14_05_vid_declaring_functions
+   :height: 315
+   :width: 560
+   :align: center
+
+|
 
 To avoid errors, make sure to declare functions *before* they are used. One way to do this is to declare *and* define functions before :code:`main()`. Alternatively, you can use a **function prototype** to declare a function before you define it.
 
@@ -237,7 +272,13 @@ Oops! This code doesn't do what we want it to do. It doesn't swap the values of 
 
     Take a close look at the code above. Why doesn't this code work?
     
-TODO video (live coding in Lobster): slides 38-41, 43
+.. youtube:: 5A1Ig-gwuZU
+   :divid: ch14_06_vid_swap_function
+   :height: 315
+   :width: 560
+   :align: center
+
+|
 
 As we saw in our :code:`swap` function example, there are two mechanisms for parameter passing in C++. The first is **pass-by-value**, which is the default. In this method, the function is given *copies* of the argument values. The second method is **pass-by-reference** (specified with :code:`&`). In this method, there are no copies! The parameters refer to the arguments passed in. Changes to variables in the function are visible outside the function.
 
