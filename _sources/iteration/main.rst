@@ -82,6 +82,8 @@ In the Lobster exercise below, write code that uses a :code:`while` loop to prin
 
 Note that each number is followed by a space. The code to print "done!" at the end is provided for you.
 
+|
+
 .. raw:: html
 
    <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
@@ -403,6 +405,31 @@ For now, let's look at how to write this program.
   
 |
 
+.. tip ::
+
+   In the previous video, we declared the variable :code:`match` inside the first for loop, but outside the second for loop:
+
+   .. code-block :: cpp
+
+      // go through the dna string
+      for(int i=0; i<dna.length() - PATTERN_LENGTH + 1; ++i) {
+         bool match = true;
+
+         // go through the pattern string
+         for(int j=0; j < PATTERN_LENGTH); ++j) { 
+
+            //potentially set match to false in here
+
+         }
+      }
+
+   |
+
+   Why do we do this? Each time we go through the outer loop, we want to compare a section of the DNA string to the pattern that we're looking for. At the top of the outer loop, we are going to set :code:`match = true`. This is basically saying, "Assume that this section of DNA matches the pattern." Then, in the inner loop, we are looking for a counterexample - two characters that don't match. If we find this counterexample, we set :code:`match = false`. 
+   
+   To see why we do this, stop and think about how we would need to write our loops if we started with :code:`match = false` - it leads to a much more complicated program!
+
+
 What if we wanted to look for *two* patterns in our DNA sequence, instead of only one pattern?
 
 .. code-block :: cpp
@@ -425,6 +452,14 @@ As you are modifying the program, only iterate through the DNA sequence once. (T
 TODO Lobster exercise
 
 TODO walkthrough video
+
+.. tip ::
+
+   If you're enjoying this program and want to keep exploring, here are some next steps that you could do with this program:
+
+   * What if we had multiple pattern strings of varying lengths?
+   * What if we had multiple DNA strings that we wanted to look for patterns in?
+   * ... What else can you think of to improve this program??
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
