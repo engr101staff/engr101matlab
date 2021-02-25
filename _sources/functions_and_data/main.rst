@@ -2,11 +2,8 @@
    :prefix: Q
    :start: 1
 
-.. raw:: html
-
-   <link rel="stylesheet" href="../_static/common/css/matlab.css">
-   <script src="../_static/common/js/common2.js"></script>
-   <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
+.. include:: ../include/common.in.rst
+.. include:: ../include/matcrab.in.rst
 
 ==================
 Functions and Data

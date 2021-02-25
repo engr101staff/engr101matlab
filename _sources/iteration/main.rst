@@ -2,14 +2,8 @@
    :prefix: Q
    :start: 1
 
-.. raw:: html
-
-   <link rel="stylesheet" href="../_static/common/css/main4.css">
-   <link rel="stylesheet" href="../_static/common/css/code3.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
-   <script src="../_static/common/js/common2.js"></script>
-   <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
+.. include:: ../include/common.in.rst
+.. include:: ../include/lobster.in.rst
 
 .. raw:: html
 
