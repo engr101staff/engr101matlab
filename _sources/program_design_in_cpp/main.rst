@@ -4,10 +4,6 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/main4.css">
-   <link rel="stylesheet" href="../_static/common/css/code3.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
    <script src="../_static/common/js/common2.js"></script>
 
 .. include:: ../common/include_lobster_exercises.in.rst

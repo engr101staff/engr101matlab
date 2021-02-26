@@ -6,19 +6,6 @@ a {
 	/*border: solid red 3px;*/
 /*}*/
 
-.page-header {
-	font-family: 'Muli', sans-serif;
-}
-
-
-.nav-tabs > li > a {
-	font-family: 'Muli', sans-serif;
-}
-
-.nav-pills > li > a {
-	font-family: 'Muli', sans-serif;
-}
-
 body{
 	/*font-family: Arial;*/
 	/*font-size: 11pt;*/
@@ -304,7 +291,7 @@ div .tabPane {
 }
 
 .CodeMirror {
-	height: 400px;
+	height: 100%;
 }
 
 .CodeMirror .widgetHolder{
@@ -347,6 +334,10 @@ div .tabPane {
 }
 
 .CodeMirror-gutter.errors{
+	width: 10px;
+}
+
+.CodeMirror-gutter.breakpoints{
 	width: 10px;
 }
 
@@ -532,7 +523,7 @@ div .tabPane {
 	width: 300px;
 }
 
-.memory{
+.lobster-memory{
 	word-wrap: break-word;
 }
 
@@ -761,4 +752,29 @@ ul.codeStack li{
 
 .btn > .loader-inline {
 	vertical-align: text-top;
+}
+
+.btn.lobster-log-in-button > svg {
+	display: inline-block;
+	vertical-align: middle;
+	fill: white;
+}
+
+.lobster-project-list .list-group-item {
+	padding: 5px 10px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.lobster-save-button-icon {
+	font-size: 1.5em;
+	line-height: 50%;
+	vertical-align: middle;
+}
+
+.bi-big-icon {
+	font-size: 1.5em;
+	line-height: 50%;
+	vertical-align: middle;
 }
