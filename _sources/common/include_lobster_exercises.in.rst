@@ -1,3 +1,3 @@
 .. raw:: html
 
-    <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
+    <script src="../_static/common/js/lobster-exercises9.bundle.js"></script>

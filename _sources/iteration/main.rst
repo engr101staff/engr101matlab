@@ -431,15 +431,15 @@ For now, let's look at how to write this program.
    To see why we do this, stop and think about how we would need to write our loops if we started with :code:`match = false` - it leads to a much more complicated program!
 
 
-What if we wanted to look for *two* patterns in our DNA sequence, instead of only one pattern?
+What if we wanted to look for *two* patterns in our DNA sequence, instead of only one pattern? Let's modify our program so that it searches for two patterns in the DNA sequence. We'll assume that both patterns are the same number of characters. Each time the program finds a pattern, it should print out either "Pattern 1" or "Pattern 2", along with the index that the pattern begins at. For example, with the following input:
 
 .. code-block :: cpp
 
     string dna = "AGACTGGGACT";
     string pattern = "GAC";
     string pattern2 = "ACT";
-    
-Modify our program so that it searches for two patterns in the DNA sequence. Assume that both patterns are the same number of characters. Each time the program finds a pattern, it should print out either "Pattern 1" or "Pattern 2", along with the index that the pattern begins at. For example, with the variables :code:`dna`, :code:`pattern`, and :code:`pattern2` above, the program should print out:
+
+the program should output:
 
 .. code-block :: none
 
@@ -447,12 +447,43 @@ Modify our program so that it searches for two patterns in the DNA sequence. Ass
     Pattern 2: 2
     Pattern 1: 7
     Pattern 2: 8
-    
-As you are modifying the program, only iterate through the DNA sequence once. (This means that you don't need to change the outer loop: :code:`for(int i=0; i<dna.length()-pattern.length()+1; ++i)`).
 
-TODO Lobster exercise
+To modify our program, we will only iterate through the DNA sequence once (so we will keep our outer loop the same). Because our patterns are the same length, we can keep the inner loop the same as well. However, inside the inner loop, we need to check two things - whether that section of the DNA string matches :code:`pattern1` *and* whether that section of the DNA string matches :code:`pattern2`. (We will also need to remove the :code:`break` statement so that the loop doesn't exit before both patterns are fully checked.)
 
-TODO walkthrough video
+Modify the code below to implement this behavior.
+
+|
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch13_07_ex</div>
+      <div class="lobster-ex-complete-message">
+         Well done! The secret word is "snowflake".
+      </div>
+   </div>
+
+.. fillintheblank:: ch13_07_ex_nested_loops
+  :casei:
+
+  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
+  
+  |blank|
+
+  - :snowflake: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch13_05_revealwt_dna_matching
+
+    .. youtube:: xzx-9movR2o
+      :divid: ch13_05_revealwt_dna_matching
+      :height: 315
+      :width: 560
+      :align: center
+
+|
 
 .. tip ::
 
