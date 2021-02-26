@@ -9,7 +9,8 @@
    <link rel="stylesheet" href="../_static/common/css/buttons3.css">
    <link rel="stylesheet" href="../_static/common/css/exercises3.css">
    <script src="../_static/common/js/common2.js"></script>
-   <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
+
+.. include:: ../common/include_lobster_exercises.in.rst
 
 .. raw:: html
 
