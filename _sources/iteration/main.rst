@@ -475,10 +475,10 @@ Modify the code below to implement this behavior.
 
 .. admonition:: Walkthrough
 
-  .. reveal:: ch13_05_revealwt_dna_matching
+  .. reveal:: ch13_08_revealwt_dna_matching
 
     .. youtube:: xzx-9movR2o
-      :divid: ch13_05_revealwt_dna_matching
+      :divid: ch13_08_revealwt_dna_matching
       :height: 315
       :width: 560
       :align: center
