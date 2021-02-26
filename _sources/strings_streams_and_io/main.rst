@@ -169,9 +169,9 @@ Instead, you use **escape sequences** to specify those special characters. Gener
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 Exercise: Repeating String
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 Write a function called :code:`repeat` that repeats a given string a certain number of times and returns the result. We've provided the function interface and some testing code in :code:`main` for you.
 
@@ -326,11 +326,10 @@ To recap, here's the general pattern for detecting a sentinel (here, our sentine
     while(cin >> x && x != "done") {
         // do something with x
     }
-}
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 Exercise: Annoying Echo Program
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 Now it's your turn to practice the sentinel pattern by writing a program we like to call "the annoying echo program". It continuously accepts input from a user via :code:`cin` and then immediately echos that word back to them through :code:`cout`. (Note that this program reads word-by-word, and not line-by-line, so you should *not* use the :code:`getline` function.) However, if you enter "STOP" (in all capital letters), the program will stop.
 
