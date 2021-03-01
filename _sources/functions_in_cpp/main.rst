@@ -51,7 +51,11 @@ Function Basics
 
 Here's the code that we wrote in the previous video, if you'd like to play with it more:
 
-TODO include Lobster code (17_01)
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch14_01_ex</div>
+   </div>
 
 As we saw in the previous video, here's the basic structure of a function in C++:
 
@@ -121,11 +125,34 @@ Now that we've seen the basics, let's dive into some more details.
 
 The previous video walked through how a function works in C++. First, the values of the argument expressions are copied into the parameter variables. The ordering of arguments you pass in is used to determine what goes to which parameter (the parameters are specified in the first line of the function, the **function signature**). Second, the code in the function runs. As soon as a return statement is encountered, the function ends immediately. Finally, the returned value transfers back to the calling code. Unlike in MATLAB, only one value can be returned.
 
---------------
-Exercise: XXX
---------------
+--------------------------------------------
+Exercise: Function for DNA Pattern Matching
+--------------------------------------------
 
-TODO more involved exercise (substitute for prime numbers exercise)
+Let's get some practice writing functions. In the previous chapter, we wrote code for DNA pattern matching. Because of the way we structured our code, if we wanted to run through our code more than once (say, for different DNA strings), we would need to copy and paste a huge chunk of code multiple times. We can organize our code better using functions.
+
+For this exercise, starting with the code from the previous chapter, write a function :code:`matchPattern`. The function should take in three parameters, the DNA string, the pattern string to look for, and an integer for the length of the pattern. It should return a Boolean value, :code:`true` if the pattern is found, and :code:`false` if the pattern is not found.
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch14_05_ex</div>
+      <div class="lobster-ex-complete-message">
+         Well done! The secret word is "peony".
+      </div>
+   </div>
+
+.. fillintheblank:: ch14_05_ex_dna_function
+  :casei:
+
+  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
+  
+  |blank|
+
+  - :peony: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
+
+TODO walkthrough
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 :code:`void` Functions
