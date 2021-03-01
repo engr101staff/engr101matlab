@@ -4,12 +4,10 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/main4.css">
-   <link rel="stylesheet" href="../_static/common/css/code3.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
-   <script src="../_static/common/js/common2.js"></script>
-   <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
+
+   <script src="../_static/common/js/common3.js"></script>
+
+.. include:: ../common/include_lobster_exercises.in.rst
 
 .. raw:: html
 
@@ -188,7 +186,15 @@ Remember that you can use the "Simulate" button to run your code. If you're not 
 
 |
 
-TODO walkthrough - slide 23
+.. admonition:: Walkthrough
+
+  .. reveal:: ch14_01_revealwt_printing_triangles
+
+    .. youtube:: JnTQ3JT4uNw
+      :divid: ch14_01_wt_printing_triangles
+      :height: 315
+      :width: 560
+      :align: center
 
 Parameters can be used to make flexible functions. In the previous example, the function only printed out a triangle of "size" 3. You could make a more flexible function by giving the function a parameter, :code:`size`, that determined how big a triangle to print (inside your function, you would need to replace the value :code:`3` with the new parameter :code:`size`). Here's what a new function signature might look like:
 
