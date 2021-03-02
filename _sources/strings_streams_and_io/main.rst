@@ -24,6 +24,32 @@
 Strings, Streams, and I/O
 =========================
 
+.. admonition:: Chapter Files
+
+  We'll be using a text file for one of this chapter's exercises. It might be helpful to go ahead and download each of them now and move them to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table:: 
+    :align: left
+    :widths: auto
+    
+    * - :download:`dome.txt <../_static/strings_streams_and_io/dome.txt>`
+
+      - .. reveal:: dome_txt_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>dome.txt/code>
+
+          .. literalinclude:: ../_static/strings_streams_and_io/dome.txt
+
+      - Some text about domes
+    
+  .. reveal:: data_visualization_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for MATLAB
+    
+    .. include:: ../common/matlab_download_instructions.in.rst
+
 
 .. TODO add an introduction
 
@@ -171,7 +197,9 @@ Instead, you use **escape sequences** to specify those special characters. Gener
 Exercise: Repeating String
 ---------------------------
 
-Write a function called :code:`repeat` that repeats a given string a certain number of times and returns the result. We've provided the function interface and some testing code in :code:`main` for you.
+Write a function called :code:`repeat` that repeats a given string a certain number of times and returns the result. For instance, if we repeated the string "mouse" five times, the resulting string would be "mousemousemousemousemouse". (Don't output anything in the function; just return the repeated string.) 
+
+We've provided the function interface and some testing code in :code:`main` for you.
 
 .. raw:: html
 
@@ -318,12 +346,13 @@ Here's another pattern - we want to read input from the user until they tell us 
 
 To recap, here's the general pattern for detecting a sentinel (here, our sentinel value is "done"):
 
-.. code-block : cpp::
+.. code-block :: cpp
 
     string x;
     while(cin >> x && x != "done") {
         // do something with x
     }
+
 
 --------------------------------
 Exercise: Annoying Echo Program
@@ -398,6 +427,25 @@ We can also use streams to read/write data from/to files.
 
 |
 
+To work with files, we need to include the :code:`<fstream>` library. To write to a file, we use an :code:`ofstream` object:
+
+.. code-block :: cpp
+
+  ofstream fout("myFile.txt");
+  fout << "Something to write to the file" << endl;
+  fout.close();
+
+To read in from a file, we use an :code:`ifstream` object:
+
+.. code-block :: cpp
+
+  ifstream fin("myFile.txt");
+  string word;
+  fin >> word;
+  fin.close();
+
+To check that a file opened correctly, use :code:`fin.is_open()`. If the file did not open correctly, you can use :code:`return 1;` in the :code:`main()` function. This exits the program, and acts as an "exit code", telling the person who ran the code that something went wrong.
+
 -------------------------------------
 Common Pattern: Reading Until The End
 -------------------------------------
@@ -412,9 +460,53 @@ Sometimes, we don't know how much input is in a file ahead of time. The followin
 
 |
 
-**Exercise**
+If we don't know the size of a file ahead of time, we can use a loop to keep reading the file in until we reach the end:
 
-Let's practice file input and output. Download the file :download:`dome.txt <../_static/strings_streams_and_io/dome.txt>` and write a program that reads in the file, replaces each occurrence of the word "dome" with "DOME", and saves the result to a new file :file:`dome_new.txt`. (You may assume words separated by spaces, so just print out each word to your new file separated by a space as well.)
+.. code-block :: cpp
+
+  ifstream fin("myFile.txt");
+  string word;
+  while (fin >> word) {
+    // do something with the word
+  }
+  fin.close();
+
+----------------------------------------------------
+Common Pattern: Reading In Multiple Pieces of Data
+----------------------------------------------------
+
+Often, we are working with files that have different types of data in them. Let's suppose we have the following file with information about various world cities. Each line of the file contains three pieces of information: the city name, the average temperature of the city (in Fahrenheit), and the population of the city.
+
+.. code-block :: none
+
+  Algiers 63.3 3915811
+  Baghdad 72.99 8126755
+  Taipei 73.4 2646204
+  ...
+  Wichita 57.0 391352
+
+We want to read this data in our program. We want to put the city name in a :code:`string` variable, the temperature in a :code:`double`, and the population in an :code:`int`. We can follow a similar pattern to the previous example:
+
+.. code-block :: cpp
+
+  ifstream fin("data.txt");
+
+  string cityName;
+  double avgTemp;
+  int pop;
+
+  while (fin >> cityName >> avgTemp >> pop) {
+      // process this line of data
+  }
+
+
+The loop will keep iterating until we reach the end of the file. Each time through the loop, we will read in three variables - :code:`cityName`, :code:`avgTemp`, and :code:`pop`.
+
+-----------------------
+Exercise: Replace Dome
+-----------------------
+
+Let's practice file input and output. Download the file :code:`dome.txt` from the beginning of this chapter, and write a program that reads in the file, replaces each occurrence of the word "dome" with "DOME", and saves the result to a new file :file:`dome_new.txt`. (You may assume words separated by spaces, so just print out each word to your new file separated by a space as well.)
 
 If you write your code in a file called :file:`replace_dome.cpp`, you can compile and run it with:
 
@@ -422,6 +514,8 @@ If you write your code in a file called :file:`replace_dome.cpp`, you can compil
 
    g++ replace_dome.cpp -o replace_dome
    ./replace_dome
+
+|
 
 .. shortanswer:: ch15_07_dome
 
@@ -466,6 +560,19 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* Including libraries allows you to access additional features and functions. Some common libraries that we will use in this class are :code:`<cmath>`, :code:`<cstdlib>`, :code:`<iostream>`, :code:`<fstr3em
+* Including libraries allows you to access additional features and functions. Some common libraries that we will use in this class are :code:`<cmath>`, :code:`<cstdlib>`, :code:`<iostream>`, :code:`<fstream>`, :code:`<iomanip>`, :code:`<string>`, and :code:`<vector>`.
+* *Strings* represent sequences of text characters. The :code:`<string>` library must be included to work with strings. 
+* Operations such as :code:`+`, :code:`+=`, :code:`==`, and :code:`<` work on strings.
+* To get the number of characters in a string, use :code:`str.size()` or :code:`str.length()`.
+* For special characters, you must use *escape sequences*. For instance, :code:`\n` represents a newline, :code:`\t` represents a tab, and :code:`\\` represents a backslash.
+* Use :code:`[]` to index into a string. Indexing starts at :code:`0` rather than :code:`1`. You can also use :code:`.at()` to index into a string, which warns you if you are about to go out-of-bounds.
+* Use :code:`cout` (the standard output stream) to print out messages to the terminal, and :code:`cin` (the standard input stream) to read input from the terminal. When using :code:`cin`, the input must be stored in a variable of the appropriate type.
+* The :code:`getline` function can be used to read an entire line of input into a string variable.
+* We can use a loop to validate that a user has entered the correct type of input, and prompt the user to re-enter the input if it is incorrect.
+* We can use a loop to keep asking for input until a sentinel value is encountered.
+* To output to a file, use an :code:`ofstream` object. To input from a file, use an :code:`ifstream` object. When working with files, include the :code:`<fstream>` library.
+* Close a file using :code:`close()`. Check if a file opened correctly using :code:`is_open()`.
+* We can use a loop to keep reading from a file until we hit the end of the file (even if we don't know how big the file is at the beginning). We can read in multiple pieces of data from our file.
+
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
