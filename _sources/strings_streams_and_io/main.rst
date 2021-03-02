@@ -37,7 +37,7 @@ Strings, Streams, and I/O
       - .. reveal:: dome_txt_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: <code>dome.txt/code>
+          :modaltitle: <code>dome.txt</code>
 
           .. literalinclude:: ../_static/strings_streams_and_io/dome.txt
 
@@ -51,7 +51,8 @@ Strings, Streams, and I/O
     .. include:: ../common/matlab_download_instructions.in.rst
 
 
-.. TODO add an introduction
+Like we saw with MATLAB, there are many built-in functions in C++ that perform a wide variety of tasks. Many of these functions are contained in *libraries*, which we can include in our code.
+We'll specifically look at the :code:`<string>` library and the :code:`<fstream>` library, which allows us to read from files and write to files.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Standard Library and :code:`#include`
