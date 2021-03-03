@@ -26,7 +26,7 @@ Strings, Streams, and I/O
 
 .. admonition:: Chapter Files
 
-  We'll be using a text file for one of this chapter's exercises. It might be helpful to go ahead and download each of them now and move them to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+  We'll be using a text file for one of this chapter's exercises. It might be helpful to go ahead and download it now and move it to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
 
   .. list-table:: 
     :align: left
@@ -43,7 +43,7 @@ Strings, Streams, and I/O
 
       - Some text about domes
     
-  .. reveal:: data_visualization_download_instructions
+  .. reveal:: strings_streams_io_download_instructions
     :showtitle: Download Instructions
     :modal:
     :modaltitle: File Download Instructions for MATLAB
@@ -52,7 +52,7 @@ Strings, Streams, and I/O
 
 
 Like we saw with MATLAB, there are many built-in functions in C++ that perform a wide variety of tasks. Many of these functions are contained in *libraries*, which we can include in our code.
-We'll specifically look at the :code:`<string>` library and the :code:`<fstream>` library, which allows us to read from files and write to files.
+In this chapter, we'll specifically look at the :code:`<string>` library and the :code:`<fstream>` library, which allows us to read from files and write to files.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Standard Library and :code:`#include`
@@ -132,7 +132,7 @@ In general, the **string** datatype represents a sequence of text characters - p
 
 |
 
-Here's a quick recap of the video. To use strings in a C++ program, first make sure to use the line :code:`#include <string>` at the top of your source file, and then create variables with the :code:`string` datatype. As usual, :code:`using namespace std;` makes things more convenient (otherwise the name of the type is :code:`std::string`).
+To recap, in order to use strings in a C++ program, first make sure to use the line :code:`#include <string>` at the top of your source file, and then create variables with the :code:`string` datatype. As usual, :code:`using namespace std;` makes things more convenient (otherwise the name of the type is :code:`std::string`).
 
 .. code-block:: cpp
 
@@ -306,6 +306,8 @@ Common Patterns for User Input
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
+When we are working with user input, there are some useful operations that come up repeatedly. In this section, we'll take a look at some of these common patterns. You can refer back to this section for reference as you write your programs.
+
 --------------------------------
 Common Pattern: Validating Input
 --------------------------------
@@ -353,7 +355,6 @@ To recap, here's the general pattern for detecting a sentinel (here, our sentine
     while(cin >> x && x != "done") {
         // do something with x
     }
-
 
 --------------------------------
 Exercise: Annoying Echo Program
@@ -445,7 +446,7 @@ To read in from a file, we use an :code:`ifstream` object:
   fin >> word;
   fin.close();
 
-To check that a file opened correctly, use :code:`fin.is_open()`. If the file did not open correctly, you can use :code:`return 1;` in the :code:`main()` function. This exits the program, and acts as an "exit code", telling the person who ran the code that something went wrong.
+To check that a file opened correctly, use :code:`fin.is_open()`. If the file did not open correctly, you can :code:`return 1;` in the :code:`main()` function. This exits the program, and acts as an "exit code", telling the person who ran the code that something went wrong.
 
 -------------------------------------
 Common Pattern: Reading Until The End
@@ -490,7 +491,7 @@ We want to read this data in our program. We want to put the city name in a :cod
 
 .. code-block :: cpp
 
-  ifstream fin("data.txt");
+  ifstream fin("cities.dat");
 
   string cityName;
   double avgTemp;
@@ -565,7 +566,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * *Strings* represent sequences of text characters. The :code:`<string>` library must be included to work with strings. 
 * Operations such as :code:`+`, :code:`+=`, :code:`==`, and :code:`<` work on strings.
 * To get the number of characters in a string, use :code:`str.size()` or :code:`str.length()`.
-* For special characters, you must use *escape sequences*. For instance, :code:`\n` represents a newline, :code:`\t` represents a tab, and :code:`\\` represents a backslash.
+* For special characters, you must use **escape sequences**. For instance, :code:`\n` represents a newline, :code:`\t` represents a tab, and :code:`\\` represents a backslash.
 * Use :code:`[]` to index into a string. Indexing starts at :code:`0` rather than :code:`1`. You can also use :code:`.at()` to index into a string, which warns you if you are about to go out-of-bounds.
 * Use :code:`cout` (the standard output stream) to print out messages to the terminal, and :code:`cin` (the standard input stream) to read input from the terminal. When using :code:`cin`, the input must be stored in a variable of the appropriate type.
 * The :code:`getline` function can be used to read an entire line of input into a string variable.
