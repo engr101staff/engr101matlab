@@ -152,7 +152,15 @@ For this exercise, starting with the code from the previous chapter, write a fun
   - :peony: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-TODO walkthrough
+.. admonition:: Walkthrough
+
+  .. reveal:: ch14_05_revealwt_dna_function
+
+    .. youtube:: loxrByCSvBs
+      :divid: ch14_05_wt_dna_function
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 :code:`void` Functions
