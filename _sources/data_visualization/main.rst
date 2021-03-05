@@ -604,7 +604,7 @@ Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, a
 
 |
 
-Solving an optimization problem often gives you a range of "best" answers, not a single "best" answer. Sometimes, you need to apply your engineering expertise, or even just your good common sense, to select which "best answers" you should use. Watch the video below to see how to interpret the output of our "optimizing a golf swing" program. (Note: Walkthrough: Optimizing a Golf Swing (Part 1) is in the orange walkthrough box above this paragraph.)
+Solving an optimization problem often gives you a range of "best" answers, not a single "best" answer. Sometimes, you need to apply your engineering expertise, or even just your good common sense, to select which "best answers" you should use. Watch the video below to see how to interpret the output of our "optimizing a golf swing" program. 
 
 .. youtube:: iNIE7gmetBs
   :divid: ch09_08_vid_optimizing_a_golf_swing_02

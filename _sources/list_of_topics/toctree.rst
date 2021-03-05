@@ -2,7 +2,7 @@ Full List of Topics
 ::::::::::::::::::::
 
 .. toctree::
-  :caption: This is the full list of topics covered in this course. 
+  :caption: This is the full list of topics covered in the course so far.
   :maxdepth: 4
 
   ../intro_to_matlab/toctree.rst
@@ -18,5 +18,8 @@ Full List of Topics
   ../intro_to_cpp/toctree.rst
   ../branching/toctree.rst
   ../iteration/toctree.rst
+<<<<<<< HEAD
   ../functions_in_cpp/toctree.rst
   ../strings_streams_and_io/toctree.rst
+=======
+>>>>>>> master
