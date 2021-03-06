@@ -18,8 +18,6 @@ Full List of Topics
   ../intro_to_cpp/toctree.rst
   ../branching/toctree.rst
   ../iteration/toctree.rst
-<<<<<<< HEAD
   ../functions_in_cpp/toctree.rst
   ../strings_streams_and_io/toctree.rst
-=======
->>>>>>> master
+  
