@@ -37,40 +37,51 @@ Introduction
 
 |
 
+A **vector** is a data structure that allows **random access** to read and write data. Like with strings, vector indices start at zero, not one.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Warm-Up Exercise: What's My Value?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
+For this exercise, consider the following vector in C++:
+
+.. image:: img/Warmup1.png
+  :width: 400
+  :align: center
+  :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.`
+
+|
+
 .. fillintheblank:: ch17_02_ex_warm_up
-   :casei:
+  :casei:
 
-   Here is a vector in C++:
+  What is the value at each index?
 
-   .. image:: img/Warmup1.png
-     :width: 400
-     :align: center
-     :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.
-  
   Index 3: |blank|
-
+  
   Index 0: |blank|
 
   Index 2: |blank|
 
   Index 4: |blank|
 
-  Index 1: |blank|
+  Index 0: |blank|
 
   - :10: Correct!
+    :x: Incorrect.
 
   - :27: Correct!
+    :x: Incorrect.
 
   - :15: Correct!
+    :x: Incorrect.
 
   - :33: Correct!
+    :x: Incorrect.
 
   - :49: Correct!
+    :x: Incorrect.
 
 |
 
@@ -87,19 +98,41 @@ Declaring and Initializing Vectors in C++
 
 |
 
+Consider the following vectors:
+
+.. code :: cpp
+
+  vector<int> someInts1(5,13);
+  vector<int> someInts2(4);
+  vector<int> someInts3{2,9,1,4};
+  vector<int> someInts4;
+
+|
+
 .. dragndrop:: ch17_03_ex_declaring_vectors_01
-  :match_1: vector<int> someInts(5,13);|||[ 13 13 13 13 13 ]
-  :match_2: vector<int> someInts(4);|||[ ? ? ? ? ] ← four elements created, but no values in the elements
-  :match_3: vector<int> someInts{2,9,1,4};|||[ 2 9 1 4 ]
-  :match_4: vector<int> someInts;|||[ ] ← empty vector
+  :match_1: someInts1|||[ 13 13 13 13 13 ]
+  :match_2: someInts2|||[ ? ? ? ? ] ← four elements created, but no values in the elements
+  :match_3: someInts3|||[ 2 9 1 4 ]
+  :match_4: someInts4|||[ ] ← empty vector
 
   Match the code with the vector that is created.
 
+Consider the following vectors:
+
+.. code :: cpp
+
+  vector<double> someDoubles1(4);
+  vector<double> someDoubles2;
+  vector<double> someDoubles3(2,64.5);
+  vector<double> someDoubles4{10.35,0.8,-705.689};
+
+|
+
 .. dragndrop:: ch17_03_ex_declaring_vectors_02
-  :match_1: vector<int> someDoubles(4);|||[ ? ? ? ?] ← four elements created, but no values in the elements
-  :match_2: vector<int> someDoubles;|||[ ] ← empty vector
-  :match_3: vector<int> someDoubles(2,64.5);|||[ 64.5 64.5 ]
-  :match_4: vector<int> someDoubles{10.35,0.8,-705.689};|||[ 10.35 0.8 -705.689 ]
+  :match_1: someDoubles1|||[ ? ? ? ?] ← four elements created, but no values in the elements
+  :match_2: someDoubles2|||[ ] ← empty vector
+  :match_3: someDoubles3|||[ 64.5 64.5 ]
+  :match_4: someDoubles4|||[ 10.35 0.8 -705.689 ]
 
   Match the code with the vector that is created.
 
@@ -248,9 +281,11 @@ Traversing a Vector
 
 |
 
-**Exercise**
+------------------------------
+Exercise: Print Doubled Vector
+------------------------------
 
-The function :code:`printDoubled` takes in a vector of :code:`int` values and prints out 2 times the value of each element (there is no return value). Complete the implementation of the :code:`printDoubled` function.
+The function :code:`printDoubled` takes in a vector of :code:`int` values and prints out 2 times the value of each element (there is no return value). A space is printed after each vector element. Complete the implementation of the :code:`printDoubled` function.
 
 .. raw:: html
 
@@ -343,7 +378,7 @@ Adding/Removing Elements From a Vector
           vec.push_back(i);
         }
 
-     + Correct! This loop runs three times. On each iteration, an element is added to the vector and the values correspond to what is shown in the vectors on the right.
+     + Correct! This loop runs three times. On each iteration, an element is added to the vector and the values correspond to what is shown in the vector on the right.
 
    - .. code-block:: cpp
 
@@ -373,7 +408,9 @@ Erasing Elements from a Vector
 
 |
 
-**Exercise**
+------------------------------
+Exercise: Erasing Zeros
+------------------------------
 
 Arrange the lines of code below to write a program that erases all of the elements of a vector that are equal to zero. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
@@ -443,7 +480,9 @@ Passing Vectors to Functions
 
 |
 
-**Exercise**
+-----------------------------------------
+Exercise: Passing Vectors to Functions
+-----------------------------------------
 
 In each of the following questions, a description of a function that takes in a vector as a parameter is given. Choose the mechanism for parameter passing that is appropriate for the function.
 
@@ -452,6 +491,9 @@ In each of the following questions, a description of a function that takes in a 
   :answer_b: pass by reference
   :answer_c: pass by const reference
   :correct: c
+  :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
+  :feedback_b: Oops! Because we don't need to modify the vector, we don't want to use pass by reference.
+  :feedback_c: Correct! We don't need to modify the vector, but we don't want to make an expensive copy, so pass by const reference is the best choice.
 
   A function that checks to see if there are any zeros in a vector (and returns true or false).
 
@@ -460,6 +502,9 @@ In each of the following questions, a description of a function that takes in a 
   :answer_b: pass by reference
   :answer_c: pass by const reference
   :correct: b
+  :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
+  :feedback_b: Correct! Passing by reference allows us to modify the vector.
+  :feedback_c: Oops! Passing by const reference doesn't allow us to modify the vector.
 
   A function that sets all elements in the vector to be 25 (and returns nothing, but the original vector passed in is modified).
 
@@ -468,6 +513,9 @@ In each of the following questions, a description of a function that takes in a 
   :answer_b: pass by reference
   :answer_c: pass by const reference
   :correct: b
+  :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
+  :feedback_b: Correct! Passing by reference allows us to modify the vector.
+  :feedback_c: Oops! Passing by const reference doesn't allow us to modify the vector. 
 
   A function that sorts the elements to be in ascending order (and returns nothing, but the original vector passed in is modified).
 
@@ -476,6 +524,9 @@ In each of the following questions, a description of a function that takes in a 
   :answer_b: pass by reference
   :answer_c: pass by const reference
   :correct: c
+  :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
+  :feedback_b: Oops! Because we don't need to modify the vector, we don't want to use pass by reference.
+  :feedback_c: Correct! We don't need to modify the vector, but we don't want to make an expensive copy, so pass by const reference is the best choice.
 
   A function that finds the index of the element that matches a given value (and returns the index).
 
@@ -487,7 +538,7 @@ Common Patterns
 
 There are a number of "vector things" that you will find yourself wanting to do in many programs that you write. For example, you need to create vectors. And then you want to do things with those vectors, such as finding the maximum or minimum value in a vector (in Engr 101, we call that *finding the "best" element*). We've put together this reference section with a bunch of these "common patterns" for you to apply in your own programs.
 
-There are examples of the C++ implementation of each pattern, and you can use these as templates for your own programs. You may have different data types (e.g. vectors of strings or doubles instead of ints), and the criteria that you evaluate conditions on will likely be different, but these patterns will give you a starting point. It's often easier to copy and paste some of your existing code and revise it than to write something from scratch. Please refer back to this section often when writing your programs!
+There are examples of the C++ implementation of each pattern, and you can use these as templates for your own programs. You may have different data types (e.g. vectors of strings or doubles instead of ints), and the criteria that you evaluate conditions on will likely be different, but these patterns will give you a starting point. It's often easier to copy and paste some existing code and revise it than to write something from scratch. Please refer back to this section often when writing your programs!
 
 -----------------------------------------
 Creating Vectors: "Make Space, Then Fill"
@@ -499,7 +550,7 @@ If you know ahead of time how many elements you need, first allocate enough elem
 
    // make space...
    int N = 7;
-   vector<int> vec(N); // the vector now has N-1 empty elements
+   vector<int> vec(N); // the vector now has N empty elements
 
    //... then fill!
    for (int i = 0; i < N; ++i) {
@@ -584,6 +635,10 @@ Sometimes, you want to find the "best" element according to some criteria. For e
 .. admonition:: Important!
 
    The approach shown here does not work on empty vectors because "the maximum of nothing" doesn't make any sense; it's not a design flaw of this approach. :)
+
+.. tip::
+
+  In the code above, we originally set :code:`max_so_far` to the first element of the vector, and then we iterated through the vector to see if there were any higher values. Since we've already considered the first element, we can start our loop at :code:`i = 1` if we want. If we did this, we would be skipping the first vector element in our loop, because we already looked at it before the loop.
 
 
 ---------------------------------------
@@ -725,7 +780,9 @@ Let's practice with a couple of these common patterns. Read the question, determ
 
    Open this chapter of Runestone in another window or tab so that you can refer back to the common patterns listed above without having to scroll back and forth in this window.
 
-**Exercise**
+-----------------------------------------
+Exercise: Checking if All Negative
+-----------------------------------------
 
 The function :code:`all_negative` takes in a vector of :code:`int` values and returns :code:`true` if the elements in the vector are all negative (otherwise, it returns :code:`false`). Complete the implementation of the :code:`all_negative` function. 
 
@@ -760,8 +817,9 @@ The function :code:`all_negative` takes in a vector of :code:`int` values and re
 
 |
 
-
-**Exercise**
+-----------------------------------------
+Exercise: Finding Minimum Value
+-----------------------------------------
 
 The function :code:`minVal` takes in a vector of :code:`double` values and returns the minimum value contained in the vector of :code:`double` values. Arrange the lines of code below to write the function :code:`minVal`. Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
@@ -814,6 +872,18 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* Vector indices start at zero, not one.
+* When you declare a vector, you must include what type of data will be in the vector. You can declare an empty vector, a vector of a certain size with no values in the elements, or a vector with intial data.
+* Index into a vector using :code:`[]` or :code:`.at()`. Using :code:`.at()` is slightly slower, but the compiler warns you if you are about to go out-of-bounds.
+* We can use a loop to traverse each element in a vector.
+* :code:`pop_back()` is used to remove an element from the end of a vector. :code:`push_back()` is used to add elements to a vector.
+* :code:`.erase()` can be used to erase elements from a vector.
+* When you pass a vector to a function, you should either pass by reference (if you need to modify the vector) or pass by const reference (if you don't need to modify the vector). Pass by value makes an expensive copy of the vector, and is not the best choice.
+* If you know ahead of time how large your vector needs to be, you can initialize your vector to be the appropriate size ("make space") and then fill it with values. If you don't know how big the vector needs to be ahead of time, you can "fill as you go" using :code:`push_back()`.
+* Sometimes we iterate through a vector to combine the elements of the vector (e.g., into a sum or product). A common way to do this is to start a "running total" with the identify of the operation you're using, then iterate through your vector and update this running total.
+* To find the "best" element of a vector, first assume that the first element is the "best" element. Then, iterate through the vector, checking each element to see if it's better than the current best element. If you find a new best element, replace the old best element. A similar pattern can be used to look for the index of the best element.
+* Sometimes we have parallel vectors, where information at the same indices corresponds to each other.
+* If we want to check if any element match criteria, we can iterate through the vector and use early termination if we find an element that matches our criteria. Similarly, if we want to check if all elements match some criteria, we can iterate through the vector, and use early termination if we find an element that *doesn't* match our criteria.
+* To search for an element in a vector, iterate through the vector and return the matching element as soon as you find it.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
