@@ -44,35 +44,44 @@ Warm-Up Exercise: What's My Value?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
+For this exercise, consider the following vector in C++:
+
+.. image:: img/Warmup1.png
+  :width: 400
+  :align: center
+  :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.`
+
+|
+
 .. fillintheblank:: ch17_02_ex_warm_up
-   :casei:
+  :casei:
 
-   Here is a vector in C++:
+  What is the value at each index?
 
-   .. image:: img/Warmup1.png
-     :width: 400
-     :align: center
-     :alt: From left-to-right, the vector contains the values 27, 49, 15, 10, and 33.
-  
   Index 3: |blank|
-
+  
   Index 0: |blank|
 
   Index 2: |blank|
 
   Index 4: |blank|
 
-  Index 1: |blank|
+  Index 0: |blank|
 
   - :10: Correct!
+    :x: Incorrect.
 
   - :27: Correct!
+    :x: Incorrect.
 
   - :15: Correct!
+    :x: Incorrect.
 
   - :33: Correct!
+    :x: Incorrect.
 
   - :49: Correct!
+    :x: Incorrect.
 
 |
 
@@ -89,19 +98,41 @@ Declaring and Initializing Vectors in C++
 
 |
 
+Consider the following vectors:
+
+.. code :: cpp
+
+  vector<int> someInts1(5,13);
+  vector<int> someInts2(4);
+  vector<int> someInts3{2,9,1,4};
+  vector<int> someInts4;
+
+|
+
 .. dragndrop:: ch17_03_ex_declaring_vectors_01
-  :match_1: vector<int> someInts(5,13);|||[ 13 13 13 13 13 ]
-  :match_2: vector<int> someInts(4);|||[ ? ? ? ? ] ← four elements created, but no values in the elements
-  :match_3: vector<int> someInts{2,9,1,4};|||[ 2 9 1 4 ]
-  :match_4: vector<int> someInts;|||[ ] ← empty vector
+  :match_1: someInts1|||[ 13 13 13 13 13 ]
+  :match_2: someInts2|||[ ? ? ? ? ] ← four elements created, but no values in the elements
+  :match_3: someInts3|||[ 2 9 1 4 ]
+  :match_4: someInts4|||[ ] ← empty vector
 
   Match the code with the vector that is created.
 
+Consider the following vectors:
+
+.. code :: cpp
+
+  vector<double> someDoubles1(4);
+  vector<double> someDoubles2;
+  vector<double> someDoubles3(2,64.5);
+  vector<double> someDoubles4{10.35,0.8,-705.689};
+
+|
+
 .. dragndrop:: ch17_03_ex_declaring_vectors_02
-  :match_1: vector<int> someDoubles(4);|||[ ? ? ? ?] ← four elements created, but no values in the elements
-  :match_2: vector<int> someDoubles;|||[ ] ← empty vector
-  :match_3: vector<int> someDoubles(2,64.5);|||[ 64.5 64.5 ]
-  :match_4: vector<int> someDoubles{10.35,0.8,-705.689};|||[ 10.35 0.8 -705.689 ]
+  :match_1: someDoubles1|||[ ? ? ? ?] ← four elements created, but no values in the elements
+  :match_2: someDoubles2|||[ ] ← empty vector
+  :match_3: someDoubles3|||[ 64.5 64.5 ]
+  :match_4: someDoubles4|||[ 10.35 0.8 -705.689 ]
 
   Match the code with the vector that is created.
 
@@ -605,7 +636,7 @@ Sometimes, you want to find the "best" element according to some criteria. For e
 
    The approach shown here does not work on empty vectors because "the maximum of nothing" doesn't make any sense; it's not a design flaw of this approach. :)
 
-.. tip
+.. tip::
 
   In the code above, we originally set :code:`max_so_far` to the first element of the vector, and then we iterated through the vector to see if there were any higher values. Since we've already considered the first element, we can start our loop at :code:`i = 1` if we want. If we did this, we would be skipping the first vector element in our loop, because we already looked at it before the loop.
 
@@ -849,6 +880,10 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * :code:`.erase()` can be used to erase elements from a vector.
 * When you pass a vector to a function, you should either pass by reference (if you need to modify the vector) or pass by const reference (if you don't need to modify the vector). Pass by value makes an expensive copy of the vector, and is not the best choice.
 * If you know ahead of time how large your vector needs to be, you can initialize your vector to be the appropriate size ("make space") and then fill it with values. If you don't know how big the vector needs to be ahead of time, you can "fill as you go" using :code:`push_back()`.
-* 
+* Sometimes we iterate through a vector to combine the elements of the vector (e.g., into a sum or product). A common way to do this is to start a "running total" with the identify of the operation you're using, then iterate through your vector and update this running total.
+* To find the "best" element of a vector, first assume that the first element is the "best" element. Then, iterate through the vector, checking each element to see if it's better than the current best element. If you find a new best element, replace the old best element. A similar pattern can be used to look for the index of the best element.
+* Sometimes we have parallel vectors, where information at the same indices corresponds to each other.
+* If we want to check if any element match criteria, we can iterate through the vector and use early termination if we find an element that matches our criteria. Similarly, if we want to check if all elements match some criteria, we can iterate through the vector, and use early termination if we find an element that *doesn't* match our criteria.
+* To search for an element in a vector, iterate through the vector and return the matching element as soon as you find it.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
