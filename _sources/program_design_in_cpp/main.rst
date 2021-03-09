@@ -144,9 +144,9 @@ In general:
 
 .. mchoice:: ch17_04_ex_file_structure_01
 
-   **Exercise**
+   **Exercise: Organizing Autograder Program**
 
-   Let's say we're writing a program to help compute grades for ENGR 101. We have a whole bunch of helper functions dedicated to pulling data from the autogrdader, as well as a main function that calls those functions on data pulled from a variety of sources.
+   Let's say we're writing a program to help compute grades for ENGR 101. We have a whole bunch of helper functions dedicated to pulling data from the autograder, as well as a main function that calls those functions on data pulled from a variety of sources.
 
    Which of the following is a reasonable organization for our project?
 
@@ -168,7 +168,7 @@ In general:
 
 |
 
-Let's go ahead apply these rules to our actual code:
+Let's go ahead and apply these rules to our actual code:
 
 .. youtube:: fqbRAraFd0U
    :divid: ch17_04_file_structure_applied
@@ -180,7 +180,7 @@ Let's go ahead apply these rules to our actual code:
 
 .. mchoice:: ch17_04_ex_file_structure_02
 
-   **Exercise**
+   **Exercise: Compiling Autograder Program**
 
    Think back to the example grading program described in the previous exercise, including three files:
 
@@ -217,9 +217,13 @@ One more thing before we move on... we just made some very useful functions, but
 
 |
 
-**Exercise**
+As we saw in the video, **unit testing** is the practice of testing each function individually to make sure it behaves as it should according to its **interface**. We often do this using the :code:`assert` function, which ends the program with an error message if its input is not true. A good way to organize unit tests is to write them in a separate file with its own :code:`main` function.
 
-See if you can expose the bug in the :code:`shift_letter()` function by writing some unit tests with assert.
+--------------------------
+Exercise: Unit Testing
+--------------------------
+
+See if you can expose the bug in the :code:`shift_letter()` function by writing some unit tests with :code:`assert`.
 
 In particular, you should focus on writing tests for **special cases** or **edge cases** - these are sets of inputs that are in some ways trickier than normal or on the boundaries of what is allowed. For example, here's a variety of suggestions for things you might try testing:
 
@@ -295,22 +299,125 @@ If you have a function that returns a :code:`double` as a result, you need to ta
 
 |
 
+As we saw in the video, it's not safe to use :code:`==` or :code:`!=` with floating point numbers. Instead, we can check whether the numbers are very close. Here's a function that does that:
+
+.. code:: cpp
+
+  bool almostEqual(double x, double y) {
+    double diff = x - y;
+    if(diff < 0) {
+      diff = -diff;
+    }
+
+    return diff < 0.0001;
+  }
+
 
 ^^^^^^^^^^^^^^^
 Top-Down Design
 ^^^^^^^^^^^^^^^
 .. section 6
 
-Now, let's clean up our proof-of-concept driver program so that it implements our overall program at a high level. We'll start out with some pseudocode, then convert that to real code. Finally, we'll identify any remaining helper functions that we need to write.
+.. admonition:: Chapter Files
 
-If you'd like a local copy of the code we're going to write in the next couple sections, feel free to download any/all (the videos below cover what's in these files):
+  We’ll be using several files throughout this section. It might be helpful to go ahead and download them now and move them to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
 
-- :download:`notes.txt <../_static/program_design_in_cpp/notes.txt>`
-- :download:`caesar.h <../_static/program_design_in_cpp/caesar.h>`
-- :download:`caesar.cpp <../_static/program_design_in_cpp/caesar.cpp>`
-- :download:`encryptDocument.cpp <../_static/program_design_in_cpp/encryptDocument.cpp>`
-- :download:`document.h <../_static/program_design_in_cpp/document.h>`
-- :download:`document.cpp <../_static/program_design_in_cpp/document.cpp>`
+  .. list-table::
+    :align: left
+    :widths: auto
+
+    * - :download:`notes.txt <../_static/program_design_in_cpp/notes.txt>`
+
+      - .. reveal:: notes_txt_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>notes.txt</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/notes.txt
+            :lines: 1-1
+            :append: ...
+
+      - Dr. Juett's encrypted notes
+      
+    * - :download:`caesar.h <../_static/program_design_in_cpp/caesar.h>`
+
+      - .. reveal:: caesar_h_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>caesar.h</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/caesar.h
+            :lines: 1-7
+
+      - Header file for Casear Cipher module
+      
+    * - :download:`caesar.cpp <../_static/program_design_in_cpp/caesar.cpp>`
+
+      - .. reveal:: caesar_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>caesar.cpp</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/caesar.cpp
+            :lines: 1-20
+            :append: ...
+
+      - Functions for Ceaser Cipher module
+
+    * - :download:`encryptDocument.cpp <../_static/program_design_in_cpp/encryptDocument.cpp>`
+
+      - .. reveal:: encryptDocument_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>encryptDocument.cpp</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/encryptDocument.cpp
+            :lines: 1-20
+            :append: ...
+
+      - Driver file for encrypting a document with the Caesar Cipher
+
+    * - :download:`document.h <../_static/program_design_in_cpp/document.h>`
+
+      - .. reveal:: document_h_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>document.h</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/document.h
+            :lines: 1-9
+
+      - Header file for documents module
+
+    * - :download:`document.cpp <../_static/program_design_in_cpp/document.cpp>`
+
+      - .. reveal:: document_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>document.cpp</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/document.cpp
+            :lines: 1-20
+            :append: ...
+
+      - Functions for documents module
+
+    * - :download:`frequencyAttack.cpp <../_static/program_design_in_cpp/frequencyAttack.cpp>`
+
+      - .. reveal:: frequencyAttack_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>frequencyAttack.cpp</code>
+
+          .. literalinclude:: ../_static/program_design_in_cpp/frequencyAttack.cpp
+            :lines: 1-20
+            :append: ...
+
+      - Functions for frequency attack
+
+Up until this point, we have been using bottom-up design to write our program. As you'll recall from Chapter 10, **bottom-up design** starts by identifying specific features that we'll need in our program, and then writing functions that accomplish these specific features. (e.g., the :code:`shift_letter` and :code:`encrypt_word` functions). What if we wanted to approach this program from top-down design instead? **Top-down design** starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
+
+In the next few videos, we'll use top-down design to clean up our proof-of-concept driver program so that it implements our overall program at a high level. We'll start out with some pseudocode, then convert that to real code. Finally, we'll identify any remaining helper functions that we need to write.
 
 .. youtube:: Rfb3LOIH1M8
    :divid: ch17_06_vid_top_down_design
@@ -320,7 +427,7 @@ If you'd like a local copy of the code we're going to write in the next couple s
 
 |
 
-Then, the last piece is to implement the :code:`loadDocument()` and :code:`writeDocument()` functions...
+The last piece of our program is to implement the :code:`loadDocument()` and :code:`writeDocument()` functions. Let's add these functions in a new file, :code:`document.cpp`.
 
 .. youtube:: mcp8F2Xl2JI
    :divid: ch17_06_vid_finishing_up
@@ -333,7 +440,6 @@ Then, the last piece is to implement the :code:`loadDocument()` and :code:`write
 Before we move on, it's worth mentioning that the parameters for our document functions take in :code:`istream` and :code:`ostream` parameters, which are a more generic type than the file specific input/output streams :code:`ifstream` and :code:`ofstream`. In general, it's a good idea to make custom functions for input and output work with the more generic types, so that those functions are more flexible if we decided we would like to use them somewhere else as well. For example, since :code:`writeDocument` takes in any :code:`ostream` parameter, it could potentially write output to a file through an :code:`ofstream` *OR* to the terminal through :code:`cout`, which is just a different kind of :code:`ostream`.
 
 It's also worth mentioning that stream parameters are always passed by reference (i.e. with the :code:`&` in the parameter declaration), because passing by value would make a copy, and making a copy of a stream doesn't really make sense (and won't compile).
-
 
 ^^^^^^^^^^^^^^^^^
 Cracking the Code
@@ -350,19 +456,15 @@ Finally, let's see if we can't get my notes back...
 
 |
 
-Here's a copy of the file, if you're interested:
-
-- :download:`frequencyAttack.cpp <../_static/program_design_in_cpp/frequencyAttack.cpp>`
-
-|
-
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* **Bottom-down design** starts by identifying specific features that we'll need in our program and then writing functions that accomplish these specific features. **Top-down design** starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
+* One way to organize larger programs is to write our own modules of code. A module might consist of both a :code:`.cpp` and a :code:`.h` (header) file. The :code:`.cpp` file contains the function definitions for our module, while the :code:`.h` file contains the function prototypes.
+* **Unit testing** is the practice of testing each function individually to make sure it behaves according to its interface. We often do this using the :code:`assert` function.
+* It's not safe to use :code:`==` or :code:`!=` with floating point numbers. Instead, we can check whether the numbers are very close.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
