@@ -29,7 +29,7 @@ Introduction
 ^^^^^^^^^^^^
 .. section 1
 
-.. youtube:: VTNy-3dneyI
+.. youtube:: lr2NtJ4LDUs
    :divid: ch16_01_introduction
    :height: 315
    :width: 560
@@ -90,7 +90,7 @@ Declaring and Initializing Vectors in C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-.. youtube:: 9Wb0N3mAmqU
+.. youtube:: mclB-JGILW0
    :divid: ch16_03_vid_declaring_vectors
    :height: 315
    :width: 560
@@ -143,7 +143,7 @@ Indexing Into Vectors in C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-.. youtube:: p_z9FD-aO54
+.. youtube:: HNMtimBx7YY
    :divid: ch16_04_vid_vector_indexing
    :height: 315
    :width: 560
@@ -273,7 +273,7 @@ Let's see some examples of using vector functions.
 Traversing a Vector
 -------------------
 
-.. youtube:: 63RL1y14QL4
+.. youtube:: 7-R5CN2wSW4
    :divid: ch16_05_vid_traversing_a_vector
    :height: 315
    :width: 560
@@ -323,7 +323,7 @@ The function :code:`printDoubled` takes in a vector of :code:`int` values and pr
 Adding/Removing Elements From a Vector
 --------------------------------------
 
-.. youtube:: TVMeF0HUJB4
+.. youtube:: gBmvVMgQpH0
    :divid: ch16_05_vid_adding_removing_vector
    :height: 315
    :width: 560
@@ -400,7 +400,7 @@ Adding/Removing Elements From a Vector
 Erasing Elements from a Vector
 ------------------------------
 
-.. youtube:: eKCTrSgRrqk
+.. youtube:: jhnxsv_LvO0
    :divid: ch16_05_vid_vector_erase
    :height: 315
    :width: 560
@@ -472,7 +472,7 @@ Passing Vectors to Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-.. youtube:: ES2yEo4Q-bQ
+.. youtube:: AG2BLuEOFtQ
    :divid: ch16_06_wt_parameter_passing
    :height: 315
    :width: 560
