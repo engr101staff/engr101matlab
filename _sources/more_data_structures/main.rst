@@ -29,7 +29,7 @@ Introduction
 ^^^^^^^^^^^^
 .. section 1
 
-.. youtube:: xeLYCWvmQHk
+.. youtube:: iTb9OlbTIkA
    :divid: ch19_01_introduction
    :height: 315
    :width: 560
@@ -79,7 +79,7 @@ Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^
 .. section 3
 
-.. youtube:: jlCBOvx8Cb4
+.. youtube:: BJS9ZDUV800
    :divid: ch19_03_vectors_of_vectors
    :height: 315
    :width: 560
@@ -188,7 +188,7 @@ Indexing Into a Vector of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-.. youtube:: 38YTRH2sahE
+.. youtube:: QzSwWSD-Jqo
    :divid: ch19_04_indexing_into_a_vector_of_vectors
    :height: 315
    :width: 560
@@ -308,7 +308,7 @@ Building and Modifying Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-.. youtube:: ZIJ2fHP4y9w
+.. youtube:: yes_uSOXt8I
    :divid: ch19_05_vid_building_vectors_of_vectors
    :height: 315
    :width: 560
@@ -449,7 +449,7 @@ Uses for Vectors of Vectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-.. youtube:: FooSTlapMIQ
+.. youtube:: mUoX6wRvOCA
    :divid: ch19_06_vid_uses_for_vectors_of_vectors
    :height: 315
    :width: 560
@@ -488,7 +488,7 @@ This is a small dataset so it's easier for us to work with here in Runestone. Bu
 Designing the Program
 ---------------------
 
-.. youtube:: RmcLiuJ95Qw
+.. youtube:: Z6NTlQmQyzk
    :divid: ch19_07_vid_designing_the_program
    :height: 315
    :width: 560
@@ -532,7 +532,7 @@ There are four helper functions that we need to write:
 
 Let's write some pseudocode for the helper functions to help us implement these functions.
 
-.. youtube:: kqAX_vhQUU4
+.. youtube:: lv0NKmeWA00
    :divid: ch19_07_vid_helper_function_pseudocode
    :height: 315
    :width: 560
