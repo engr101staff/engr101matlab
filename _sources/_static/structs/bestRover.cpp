@@ -22,18 +22,21 @@ double desirability(const Rover &rover) {
     return rover.capacity / (1 - rover.charge);
 }
 
-// Returns the index of the most desirable Rover in the
-// given vector. If the vector is empty, returns -1.
-int bestRover(const vector<Rover> &rovers) {
+// Returns the index of the most desirable
+// non-selected Rover in the given
+// vector that needs less than the available
+// amount of charge. If no such
+// rover exists, returns -1
+int bestRover(const vector<Rover> &rovers, double availableCharge) {
 
-    //YOUR CODE HERE
-    
+  // YOUR CODE HERE
+
 }
 
 int main() {
     // Test your function
     vector<Rover> emptyRovers;
-    cout << bestRover(emptyRovers) << endl; // Should be -1
+    cout << bestRover(emptyRovers,2) << endl; // Should be -1
   
     Rover rover1 = {1, "a238", 0.6, 200};
     Rover rover2 = {2, "a294", 0.1, 300};
@@ -43,5 +46,5 @@ int main() {
     rovers.push_back(rover2);
     rovers.push_back(rover3);
 
-    cout << bestRover(rovers) << endl; // Should be 2
+    cout << bestRover(rovers,2) << endl; // Should be 2
 }

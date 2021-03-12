@@ -161,6 +161,28 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
 
 |
 
+.. tip ::
+
+  You can have a struct within a struct. For example, let's suppose we had a struct containing information about a moon:
+
+  .. code :: cpp
+
+    struct Moon {
+      string name;
+      int mass;
+    };
+
+  We can include :code:`Moon` variables in our :code:`Planet` struct:
+
+  .. code :: cpp
+
+    struct Planet {
+      string name;
+      int density;
+      vector<Moon> moons; // a vector of Moons
+    };
+
+
 
 --------------------
 Vectors of Structs
@@ -374,9 +396,20 @@ Exercise: Get Best Rover
 
       - Starter code for bestRover function
 
-Using the desirability function that we wrote in the previous video, write another function that loops through a vector of Rovers and **returns the index of** the most desirable one. (Don't update the :code:`isSelected` member variable in this function; we haven't actually selected it for the mission yet.)
+Using the desirability function that we wrote in the previous video, write another function that loops through a vector of Rovers and **returns the index of** the most desirable one.
 
-If there are no rovers to choose from (e.g., the :code:`rovers` vector is empty), return -1. This is a useful value to return because it will never be a real index into a vector, and the user calling the function can check to see if the index is valid before using it.
+Here is the algorithm that the :code:`bestRovers` function should follow:
+
+1. :code:`bestRover` should take in two parameters: a vector of Rovers called :code:`rovers`, and a :code:`double` value called :code:`availableCharge`. The second parameter indicates how much charge we have to get our rovers to full charge. In the previous video, we had a battery with an available charge of 2, but we want to make our function as general as possible, so we will pass this value into the function as a parameter.
+2. If :code:`rovers` is an empty vector, return :code:`-1`. This is a useful value to return because it will never be a real index into a vector, and the user calling the function can check to see if the index is valid before using it.
+3. Declare a variable called :code:`bestIndex` and set it equal to :code:`-1`. We will use this variable to store the index of the best rover, but since we haven't found a good rover yet, we're going to set it equal to :code:`-1` for now.
+4. Loop through all of the rovers, looking for the best rover. For each rover:
+
+  a. First check to see that is has NOT already been selected (e.g., member variable :code:`isSelected` is :code:`false`) and that the charge needed for that rover is less than the :code:`availableCharge`. *(Hint: In the previous video, we talked about how to find the charge needed.)*
+  b. If the conditions in (a) are met, and we haven't picked a best rover yet (e.g., :code:`bestIndex` equals :code:`-1`), then set :code:`bestIndex` to the index of this rover.
+  c. Otherwise, if the conditions in (a) are met, but we have already picked a rover (e.g., :code:`bestIndex` doesn't equal :code:`-1`), check if the desirability of this rover is better than the desirability of the rover at the current :code:`bestIndex`.
+
+5. Return an integer, :code:`bestIndex`.
 
 Download the file :code:`bestRover.cpp` at the beginning of this section, and complete the :code:`bestRover` function. We've provided the function header for you, as well as some code to test your function in the :code:`main` function.
 
@@ -388,13 +421,11 @@ Download the file :code:`bestRover.cpp` at the beginning of this section, and co
 
   .. reveal:: ch18_03_revealwt_bestRover
 
-    .. youtube:: bp4sbzgrhM8
+    .. youtube:: _6PreT1hBPE
       :divid: ch18_03_wt_bestRover
       :height: 315
       :width: 560
       :align: center
-
-In the upcoming Runestone chapters, we'll expand and improve on this idea of selecting the "best" rover for a mission (which will be really good practice for Project 6!).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
