@@ -72,7 +72,7 @@ Notice that a compound object (like a struct) requires space to store each of it
    :feedback_b: Oops! Step through the above code in Lobster, and look at the id variable in memory - how is it initialized?
    :feedback_c: Correct! Member variables are not initialized by default, except for string members, which default to the empty string ("").
 
-   In the above code, we don't specify an initial value for any of the Rover's member variables. What can we say about how member variables in a struct are intialized? **(Hint: Step through the above code in Lobster, and look at the values of the member variables in memory.)**
+   In the above code, we don't specify an initial value for any of the Rover's member variables. What can we say about how member variables in a struct are intialized? *(Hint: Step through the above code in Lobster, and look at the values of the member variables in memory.)*
 
 ^^^^^^^^^^^^^^^^^^^^^
 Struct Basics
@@ -149,7 +149,18 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
    cout << "Density of Jupiter: " << jupiter["density"] << endl;
    =====
 
-TODO walkthrough of Parson's problem
+.. admonition:: Walkthrough
+
+  .. reveal:: ch18_01_revealwt_creatingStruct
+
+    .. youtube:: -ZUbR_QDdxw
+      :divid: ch18_01_wt_creatingStruct
+      :height: 315
+      :width: 560
+      :align: center
+
+|
+
 
 --------------------
 Vectors of Structs
@@ -216,7 +227,15 @@ Since the default :code:`<<` behavior won't work for Rovers, let's write a funct
   - :goose: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-TODO printRover walkthrough
+.. admonition:: Walkthrough
+
+  .. reveal:: ch18_02_revealwt_printRover
+
+    .. youtube:: hAgNbR0FFCA
+      :divid: ch18_02_wt_printRover
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Working with Structs
@@ -363,9 +382,17 @@ Download the file :code:`bestRover.cpp` at the beginning of this section, and co
 
 .. shortanswer:: ch18_07_ex_bestRover
 
-   Copy and paste your bestRover function here. (It's only necessary to copy that one function, not the rest of your code.)
+  Copy and paste your bestRover function here. (It's only necessary to copy that one function, not the rest of your code.)
 
-TODO Walkthrough for bestRover exercise
+.. admonition:: Walkthrough
+
+  .. reveal:: ch18_03_revealwt_bestRover
+
+    .. youtube:: bp4sbzgrhM8
+      :divid: ch18_03_wt_bestRover
+      :height: 315
+      :width: 560
+      :align: center
 
 In the upcoming Runestone chapters, we'll expand and improve on this idea of selecting the "best" rover for a mission (which will be really good practice for Project 6!).
 

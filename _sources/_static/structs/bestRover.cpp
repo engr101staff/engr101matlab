@@ -33,7 +33,7 @@ int bestRover(const vector<Rover> &rovers) {
 int main() {
     // Test your function
     vector<Rover> emptyRovers;
-    cout << bestRover(rovers) << endl; // Should be -1
+    cout << bestRover(emptyRovers) << endl; // Should be -1
   
     Rover rover1 = {1, "a238", 0.6, 200};
     Rover rover2 = {2, "a294", 0.1, 300};
