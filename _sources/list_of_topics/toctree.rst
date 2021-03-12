@@ -23,5 +23,4 @@ Full List of Topics
   ../vectors_in_cpp/toctree.rst
   ../program_design_in_cpp/toctree.rst
   ../structs/toctree.rst
-  ../more_data_structures/toctree.rst
-  ../applying_computing_to_society/toctree.rst
+  
