@@ -140,6 +140,13 @@ In general:
 - :file:`.h` files should be used with :code:`#include` at the top of other files, but should *never* be specified in the :code:`g++` compilation command.
 - :file:`.cpp` files should be given to :code:`g++` to compile, but should *never* be used with a :code:`#include`.
 
+.. admonition :: Be careful!
+
+   Never put :code:`using namespace std;` in a header file. If you are using something from the :code:`std` namespace (like a string), you can preface :code:`string` with :code:`std::`. Here's an example funtion prototype that does this:
+
+   .. code :: cpp
+
+      void doSomething(std::string inputString);
 
 
 .. mchoice:: ch17_04_ex_file_structure_01
