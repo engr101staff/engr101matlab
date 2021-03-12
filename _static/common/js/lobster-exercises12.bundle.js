@@ -58434,6 +58434,26 @@ int main() {
             })
         ]
     },
+    "ch18_ex_structMemory": {
+        starterCode: `#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Rover {
+  int type;
+  string id;
+  double charge;
+};
+
+int main() {
+  Rover myRover;
+  Rover yourRover;
+}`,
+        checkpoints: [
+        // No checkpoints
+        ]
+    },
     "ch18_ex_printRover": {
         starterCode: `#include <iostream>
 #include <string>
@@ -59905,7 +59925,7 @@ opaqueExpression_1.registerOpaqueExpression("string::operator+=_char", {
         let c = opaqueExpression_1.getLocal(rt, "c");
         let orig = extractCharsFromCString(rt, getDataPtr(rt.contextualReceiver).getValue());
         rt.sim.memory.heap.deleteObject(getDataPtr(rec).getValue().rawValue);
-        copyFromCString(rt, rt.contextualReceiver, [...orig.charValues, c.getValue(), types_1.Char.NULL_CHAR], orig.validLength);
+        copyFromCString(rt, rt.contextualReceiver, [...orig.charValues.slice(0, -1), c.getValue(), types_1.Char.NULL_CHAR], orig.validLength);
         return rt.contextualReceiver;
     }
 });
