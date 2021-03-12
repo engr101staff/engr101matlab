@@ -24,419 +24,189 @@
 Structs
 =======
 
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-We have assigned variables to numeric datatypes :code:`int` and :code:`double`, as well as :code:`char` and :code:`boolean` in C++. We have organized data into :code:`string` and :code:`vector` classes to better manage arrays of characters and numbers. The C++ programming language also permits aggregate classes to be defined by the user: structures identified with the keyword :code:`struct`.
-
-For example, we wish to model a rover that would explore the nightside of Proxima b. The following parameters are required for each rover:
-
-.. code-block:: cpp
-
-  int roverType;
-  string roverId;
-  double roverCharge;
-
-If we wish to model more rovers, this approach will become awkward rather quickly:
-
-.. code-block:: cpp
-
-   int roverType1;
-   string roverId1;
-   double roverCharge1;
-
-   int roverType2;
-   string roverId2;
-   double roverCharge2;
-
-   int roverType3;
-   string roverId3;
-   double roverCharge3;
-
-   ...
-
-Even the use of vectors will be awkward, because we would need a vector for each different attribute of a rover. Consider the case of passing information about a fleet of rovers into a function:
-
-.. code-block:: cpp
-
-   double doSomethingWithRovers(vector<int> &types,
-     vector<string> &ids, vector<double> &charges);
-
-------------------
-Enter, the struct:
-------------------
-
-.. youtube:: HoKprwFP9yA
-   :divid: ch18_01_introduction_to_structs
-   :height: 315
-   :width: 560
-   :align: center
+.. youtube:: 3Fwjj53_Rz8
+  :divid: ch18_01_vid_introductionToStructs
+  :height: 315
+  :width: 560
+  :align: center
 
 |
 
-Something creative is required, such as
+As we saw in the previous video, C++ lets us create our own data types using **structs**! Here's an example struct definition:
 
-.. code-block:: cpp
+.. code :: cpp
 
-   // Create a Rover variable
-   Rover myRover;
+  struct Rover { // We typically capitalize struct names
+    int type;
+    string id;
+    double charge;
+  }; // don't forget the semi-colon!
 
-   // Access attributes of the rover using the dot
-   cout << myRover.charge << endl;
-   
-   // Store several of them in a vector
-   vector<Rover> fleet;
+|
 
-…and C++ allows the user to develop one's own compound data type using the :code:`struct` definition
+-----------------------------
+Exercise: Structs in Memory
+-----------------------------
 
-.. code-block::
+Structs are **compound** data types, which means that they are composed of several **member variables** of various types. The following code defines the Rover struct and declares two Rovers - :code:`myRover` and :code:`yourRover`. Step through this code in Lobster, and pay particular attention to how structs are handled in memory. 
 
-   struct Rover {
-     int type;      // either 1, 2, or 3 
-     string id;     // 4 alphanumeric characters
-     double charge; // % of charge, between 0 and 1
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 700px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch18_ex_structMemory</div>
+   </div>
+
+Notice that a compound object (like a struct) requires space to store each of its member variables.
+
+.. mchoice:: ch18_01_ex_structMemory
+   :answer_a: Ints and doubles are initialized to zero, and strings are initialized to the empty string ("").
+   :answer_b: All member variables are not initialized by default (e.g., they're just set to some random values that happened to be there in memory).
+   :answer_c: Ints and doubles are not initialized by default (e.g., they're just set to some random values that happened to be there in memory), but strings are intialized to the empty string ("").
+   :correct: c
+   :feedback_a: Oops! Step through the above code in Lobster, and look at the type and charge variables in memory - are they intialized to zero?
+   :feedback_b: Oops! Step through the above code in Lobster, and look at the id variable in memory - how is it initialized?
+   :feedback_c: Correct! Member variables are not initialized by default, except for string members, which default to the empty string ("").
+
+   In the above code, we don't specify an initial value for any of the Rover's member variables. What can we say about how member variables in a struct are intialized? *(Hint: Step through the above code in Lobster, and look at the values of the member variables in memory.)*
+
+^^^^^^^^^^^^^^^^^^^^^
+Struct Basics
+^^^^^^^^^^^^^^^^^^^^^
+
+.. youtube:: EbIVmcCeFFE
+  :divid: ch18_02_vid_structBasics
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+As we saw in the previous video, we can use the dot operator to access a member variable:
+
+.. code :: cpp
+
+  myRover.charge = 0.8;
+
+We can specify initial values for each member inside curly braces (this only works in certain versions of C++):
+
+.. code :: cpp
+
+  Rover myRover = {1, "a238", 0.8};
+
+We can also copy structs, using a **member-by-member** copy:
+
+.. code :: cpp
+
+  yourRover = myRover;
+
+|
+
+-----------------------------
+Exercise: Creating a Struct
+-----------------------------
+
+Arrange the lines of code below to write a program that creates a struct called :code:`Planet`. This struct should contain two member variables: a string for the name of the planet, and an integer for the density of the planet. Once you have defined the struct, create two planets and specify initial values for them. The first planet should be named "Mars" and have a density of 3933. The second one should be named "Jupiter" and have a density of 1326. Finally, print out the densities of Mars and Jupiter.
+
+Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+
+.. parsonsprob:: ch18_05_ex_creatingStructs
+   :language: cpp
+
+   -----
+   #include &lt;iostream&gt;
+   #include &lt;string&gt;
+   using namespace std;
+   =====
+   struct Planet {
+   =====
+     string name;
+   =====
+     int density;
+   =====
    };
-
-The syntax of a struct and its common design features are as follows:
-
-1. for custom type names, such as :code:`Rover`, begin with an upper-case letter
-2. **member declarations** specify the individual components of the :code:`struct`, such as:
-
-   - :code:`int type;`
-   - :code:`string id;`
-   - :code:`double charge;`
-
-3. use comments to describe the purpose and intended values of each struct member
-4. and most important, **end the struct with a semi-colon after the last brace,** :code:`};`
-
-Then, simply declare a variable, such as lower case :code:`rover`, as being of type upper case :code:`Rover`.
-
-.. code-block:: cpp
-
-   Rover rover; // creates a new rover object
-
-**Where does the** :code:`struct` **definition reside in my code?**
-
-Place it at the *TOP* level of your code after the include directives. *DO NOT* place it inside any function !!!!
-
-
----------------------------
-Accessing a Member Variable
----------------------------
-
-Clearly, structs are compound data types composed of several member variables of various types. One may use the struct to create multiple variables of the new type :code:`Rover`…
-
-.. image:: img/img1.png
-   :width: 500
-   :align: center
-
-|
-
-Note, that by default, member variables are uninitialized. They contain a "random" value based on whatever data happened to be in memory where the variable was created. An exception are :code:`string` member variables, which are by default initialized to an empty string, just like regular :code:`string` variables.
-
-Use the dot :code:`.` operator to access a member variable. This permits working with a single component of the overall struct object.
-
-For example:
-
-.. image:: img/img2.png
-   :width: 500
-   :align: center
-
-|
-
----------
-Exercises
----------
-
-.. shortanswer:: ch18_01_ex_minute_01
-
-   What's wrong with the following definition of a structure to describe a cylinder? *(Hint: there are several problems.)*
-
-   .. code-block:: cpp
-
-      structure cylinder;
-      {
-        double radius;
-        int height;
-      };
-
-.. mchoice:: ch18_01_ex_minute_02
-   :answer_a: elements
-   :answer_b: component
-   :answer_c: segments
-   :answer_d: members
-   :answer_e: units
-   :correct: d
-   :feedback_a: Incorrect.
-   :feedback_b: Incorrect.
-   :feedback_c: Incorrect.
-   :feedback_d: Correct!
-   :feedback_e: Incorrect.
-
-   What are the variables in a :code:`struct` called?
-
-.. mchoice:: ch18_01_ex_minute_03
-   :answer_a: You cannot put strings or vectors in a struct where vectors can hold any variable type
-   :answer_b: Structs can hold different types of variables where a vector can hold only one
-   :answer_c: No difference. They are the same
-   :answer_d: Structs can be used in a while loop but not in for loops
-   :answer_e: None of the above
-   :correct: b
-   :feedback_a: Incorrect.
-   :feedback_b: Correct!
-   :feedback_c: Incorrect.
-   :feedback_d: Incorrect.
-   :feedback_e: Incorrect.
-
-   What is the key difference between vectors and structs?
-
-.. mchoice:: ch18_01_ex_minute_04
-
-   Which data set matches with the structure below?
-
-   .. code-block:: cpp
-
-      struct Rover{
-        string name;
-        int age;
-        char fully_charged;
-        double mileage;
-      };
-
-
-   - :code:`alpha = {"alpha", 13.5, "Y":, 34};`
-
-     - Incorrect.
-
-   - :code:`beta = {"beta", '11', 'N', 22.5};`
-
-     - Incorrect.
-
-   - :code:`gamma = {"gamma", 9, 'NE', 42};`
-
-     - Incorrect.
-
-   - :code:`delta = {"delta", 7, 'Y', 99.3};`
-        
-     + Correct!
-
-   - All of the above
-        
-     - Incorrect.
-
-----------------------------
-Initializing :code:`structs`
-----------------------------
-
-Use the following syntax to initialize a struct
-
-.. image:: img/img3.png
-   :width: 500
-   :align: center
-
-|
-
-The red underlined command may be used to reassign the member values of the struct :code:`yourRover`, however, this will only work if the code is compiled
-with the C++ 11 standard or newer. For example:
-
-.. code-block:: console
-
-   -bash-4.2$ g++ -std=c++11 rovers.cpp
-   -bash-4.2$
-
-|
-
----------------
-Copying Structs
----------------
-
-Variables of the same struct type may be copied to each other. This is a straight forward member-by-member copy
-
-.. image:: img/img4.png
-   :width: 500
-   :align: center
-
-|
-
-------------------
-Vectors of Structs
-------------------
-
-Modeling the rovers may be accomplished with a vector of type :code:`Rover` structs:
-
-.. image:: img/img5.png
-   :width: 500
-   :align: center
-
-|
-
-Or, if there are default values for the :code:`Rover` type, use the following:
-
-.. image:: img/img6.png
-   :width: 500
-   :align: center
-
-|
-
-----------------------------------
-Tip regarding good coding practice
-----------------------------------
-
-It is a good idea to keep I/O operations in separate code such as in a function. This helps to compartmentalize programs, provides purpose to code, and assists with debugging the program. Here is the general pattern:
-
-1. The primary data structure (ie., the :code:`vector`) is declared in :code:`int main()`
-2.  A file stream to the data input is opened in :code:`int main()`
-3. The file stream and its data structure are passed into a :code:`void` function by reference
-4. The function reads the data from the file stream into the data structure
-
-.. image:: img/img7.png
-   :width: 500
-   :align: center
-
-|
-
-Let's write a function to read information regarding the rover fleet from an input file:
-
-.. image:: img/img8.png
-   :width: 500
-   :align: center
-
-|
-
-The input file, :file:`rover_data.txt`, has an unknown number of lines, each line representing a rover, and the read operation must input the data in the appropriate order (:code:`int`, :code:`string`, :code:`double`) into variables declared by the :code:`struct`:
-
-.. code-block:: none
-
-   1 a283 0.6
-   2 a294 0.1
-   2 a110 0.5
-   3 b102 0.3
-   ...
-
-The input file stream is passed by reference with type :code:`istream`, as well as the :code:`vector` of type :code:`Rover`. Since the number of entries in the input file is unknown, a while loop is chosen to read the input file one line at a time. The individual struct variables are addressed via dot expressions (and in the correct order!!). The fleet vector is built one input line at a time with the :code:`.push_back()` method. The while condition is :code:`false` at the end of file causing an exit from the :code:`loadRovers` function. The final operation is closing the input file which frees the :code:`ifstream` channel.
-
-.. image:: img/img9.png
-   :width: 500
-   :align: center
-
-|
-
---------
-Exercise
---------
-
-Below is a structure definition and declaration:
-
-.. code-block:: cpp
-
-   struct Opponent {
-     string state;
-     char conf_div;
-     double UM;
-     double opponent;
-     double discount;
-   };
-
-   Opponent MSU = {"MI", 'E', 32, 23, 0.99};
-   Opponent COL = {"CO", 'N', 45, 28, 0.17};
-   Opponent WIS = {"WI", 'E', 14,  7, 0.07};
-
-.. mchoice:: ch18_01_ex_opponent_01
-
-   Which command will access the value of the :code:`UM` member in the :code:`MSU` data set?
-
-   - :code:`Opponent.at[1,3];`
-
-     - Incorrect.
-
-   - :code:`MSU(3);`
-
-     - Incorrect.
-
-   - :code:`MSU.UM;`
-
-     + Correct!
-
-   - :code:`MSU.find(UM);`
-        
-     - Incorrect.
-
-   - :code:`Opponent.MSU.UM;`
-        
-     - Incorrect.
-
-   - None of the above
-        
-     - Incorrect.
-
-.. mchoice:: ch18_01_ex_opponent_02
-
-   There is an error in the :code:`conf_div` variable of the :code:`WIS` struct. It must be changed to a :code:`'W'`. Which command will execute the change?
-
-   - :code:`WIS(conf_div = 'E') = 'W';`
-
-     - Incorrect.
-
-   - :code:`WIS.conf_div = 'W';`
-
-     + Correct!
-
-   - :code:`Opponent(3,2) = 'W';`
-
-     - Incorrect.
-
-   - :code:`WIS(conf_div) = 'W';`
-        
-     - Incorrect.
-
-   - None of the above
-        
-     - Incorrect.
-
-
-
--------------------------
-Printing a :code:`Struct`
--------------------------
-
-It is tempting to output the contents of a :code:`struct` variable using :code:`cout` and the insertion :code:`<<` operator:
-
-.. code-block:: cpp
-
+   =====
    int main() {
-     Rover myRover = {1, "a238", 0.8};
-     cout << myRover << endl;
+   =====
+     Planet mars = {"Mars", 3933};
+     Planet jupiter = {"Jupiter", 1326};
+   =====
+     cout << "Density of Mars: " << mars.density << endl;
+     cout << "Density of Jupiter: " << jupiter.density << endl;
+   =====
    }
+   =====
+   } #distractor
+   =====
+   Planet mars{"Mars", 3933}; #distractor
+   Planet jupiter{"Jupiter", 1326};
+   =====
+   cout << "Density of Mars: " << mars["density"] << endl; #distractor
+   cout << "Density of Jupiter: " << jupiter["density"] << endl;
+   =====
 
-Rightly so, this results in a compiler error !! Try it…
+.. admonition:: Walkthrough
 
-There is a need to create, and store in your directory, a function to print :code:`struct` variables. Let's ask a few basic questions about the intent of the function:
+  .. reveal:: ch18_01_revealwt_creatingStruct
 
-Is there a need to modify the :code:`struct` when printing? NO
-
-Is the :code:`struct` a large type? YES
-
-.. image:: img/img10.png
-   :width: 500
-   :align: center
-
-|
-
-CONCLUSION: pass by :code:`const` reference
-
-Here is the setup for printing a :code:`struct`. The function, generalized for current and future usage, is designed with data passage via constant reference and can send data to any :code:`ostream` device, including a monitor, via :code:`cout`.
-
-.. image:: img/img11.png
-   :width: 500
-   :align: center
+    .. youtube:: -ZUbR_QDdxw
+      :divid: ch18_01_wt_creatingStruct
+      :height: 315
+      :width: 560
+      :align: center
 
 |
 
-**Exercise**
 
-Write an implementation of the :code:`printRover()` function below. The printed format is shown in the example above and also in the comment in :code:`main`. In :code:`printRover()`, make sure to send output to the :code:`output` stream passed in as a parameter, rather than to :code:`cout` directly. (Of course, :code:`output` may end up to be :code:`cout`, but it could also end up being a file stream or something else as well!)
+--------------------
+Vectors of Structs
+--------------------
+
+.. youtube:: qQhqhBIqwsg
+  :divid: ch18_03_vid_vectorsOfStructs
+  :height: 315
+  :width: 560
+  :align: center
+
+|
+
+If we have multiple structs of the same type, we can store them in a vector. If we want all of the structs in our vector to have some default values, we can initialize the vector like this:
+
+.. code :: cpp
+
+  Rover defaultRover = {1, "0000", 1};
+  vector<Rover> fleet(3, defaultRover);
+
+In the previous video, we also looked at how to incorporate our previous knowledge about filestreams to read in a vector of rovers from a file.
+
+.. mchoice:: ch18_02_structsVectors
+   :answer_a: You cannot put strings or vectors in a struct where vectors can hold any variable type.
+   :answer_b: Structs can hold different types of variables where a vector can hold only one.
+   :answer_c: No difference. They are the same.
+   :answer_d: Structs can be used in a while loop but not in for loops.
+   :correct: b
+   :feedback_a: Oops! You can put strings or vectors in a struct.
+   :feedback_b: Correct!
+   :feedback_c: Oops! Think about what kinds of data types structs can hold versus what kinds of data types vectors can hold.
+   :feedback_d: Oops! Structs can used in any kind of loop.
+
+   What is a key difference between vectors and structs?
+
+^^^^^^^^^^^^^^^^^^^^^
+Printing a Struct
+^^^^^^^^^^^^^^^^^^^^^
+
+The built in :code:`<<` operator won't work on our custom types. If we try to print out a Rover using :code:`cout << myRover;` we'll get an error! The compiler doesn't know how to print out a Rover data type - it only knows how to print basic types.
+
+.. tip ::
+
+  You can specify behavior for :code:`<<` (and other operators) for custom types by defining special operator overload functions. Check out the online documentation if you're interested!
+
+Since the default :code:`<<` behavior won't work for Rovers, let's write a function to print out one of our Rovers to an output stream (e.g., :code:`cout` or a file). Fill in the code for the :code:`printRover` function below.
 
 .. raw:: html
 
@@ -457,188 +227,174 @@ Write an implementation of the :code:`printRover()` function below. The printed 
   - :goose: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch18_02_revealwt_printRover
-  
-    .. youtube:: wUspT0PwPKw
+
+    .. youtube:: hAgNbR0FFCA
       :divid: ch18_02_wt_printRover
       :height: 315
       :width: 560
       :align: center
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Working with Structs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Recall this diagram from our discussion of vectors:
+
+.. image:: img/parameterPassing.png
+  :width: 560
+  :align: center
+  :alt: A diagram showing options for passing parameters into functions. If you need to modify the variable, pass by reference (work with the original). If you don't need to modify the variable and it's not a large type (e.g., string, vector, struct), pass by value (make a copy). If you don't need to modify the variable and it is a large type, pass by const reference (work with the original, safely).
+
 |
+
+Just like vectors, structs are a large type, so it's expensive to make a copy of them. Because of that, we don't want to pass structs by value to a function. If we want to modify our struct inside the function, we can pass by reference to work with the original struct. Otherwise, we can pass by const reference, which allows us to work with the original struct safely (without modifying it).
+
+.. mchoice:: ch18_04_parameter1
+   :answer_a: void chargeNeeded(Rover &rover);
+   :answer_b: double chargeNeeded(const Rover &rover);
+   :answer_c: double chargeNeeded(Rover &rover);
+   :answer_d: void chargeNeeded(const Rover &rover);
+   :correct: b
+   :feedback_a: Oops! We want to return a value from our function, so we should not mark our function as void.
+   :feedback_b: Correct! Because we aren't modifying our rover to figure out the charge needed, we want to use pass by const reference.
+   :feedback_c: Oops! We don't need to modify our rover to figure out the charge needed, so we don't want to use pass by reference.
+   :feedback_d: Oops! We want to return a value from our function, so we should not mark our function as void.
+
+   We want to write a function called **chargeNeeded** that takes in a Rover as a parameter and returns how much battery charge is needed until the rover is at full capacity. What is the correct prototype for this function?
+
+.. mchoice:: ch18_04_parameter2
+   :answer_a: void useBattery(Rover &rover);
+   :answer_b: double useBattery(const Rover &rover);
+   :answer_c: double useBattery(Rover &rover);
+   :answer_d: void useBattery(const Rover &rover);
+   :correct: a
+   :feedback_a: Correct! Because we are modifying our rover by setting the charge to zero, we want to use pass by reference.
+   :feedback_b: Oops! Our function shouldn't return anything.
+   :feedback_c: Oops! Our function shouldn't return anything.
+   :feedback_d: Oops! Because we are modifying our rover by setting the charge to zero, we don't want to use pass by const reference.
+
+   We want to write a function called **useBattery** that takes in a Rover as a parameter and sets its charge to zero. What is the correct prototype for this function?
+
+Let's look at some common compiler errors that we'll see when working with structs.
+
+.. mchoice:: ch18_03_compiler1
+   :answer_a: Engine should be upper-cased.
+   :answer_b: All the member variables in engine need to be the same type.
+   :answer_c: The first word of the definition should be "struct" rather than "structure".
+   :answer_d: There is a missing semi-colon after the closing curly bracket.
+   :correct: a,c,d
+   :feedback_a: Correct! It's common to capitalize the names of structs.
+   :feedback_b: Oops! Structs can hold different types of variables.
+   :feedback_c: Correct!
+   :feedback_d: Correct! There must be a semi-colon at the end of a struct definition.
+
+   Select all the errors with the following struct definition.
+
+   .. code:: cpp
+
+    structure engine {
+      string type;
+      double torque;
+      double power;
+    }
+
+   |
+
+.. mchoice:: ch18_03_compiler2
+   :answer_a: The struct definition needs to go inside the main function.
+   :answer_b: You can't use << to output member variables of structs (e.g., cout << engine1.power).
+   :answer_c: CombustionEngine doesn't have a member variable "name", so it's incorrect to output "cout << engine1.name".
+   :answer_d: The variable anotherEngine is an integer, so we can't get the "speed" property of an integer (e.g., "cout << anotherEngine.speed").
+   :correct: c,d
+   :feedback_a: Oops! The struct definition goes at the top level of your code, not inside any function.
+   :feedback_b: Oops! You can use << to output member variables. (You can't use << to output an entire struct, however.)
+   :feedback_c: Correct!
+   :feedback_d: Correct!
+
+   Select all of the errors with the following code.
+
+   .. code:: cpp
+
+     struct CombustionEngine {
+       string id;
+       double speed;
+       double power;
+     };
+
+     int main() {
+       CombustionEngine engine1;
+       cout << engine1.power;
+       cout << engine1.name;
+
+       int anotherEngine;
+       cout << anotherEngine.speed;
+     }
+
+   |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Application: Selecting Rovers for a Mission
+Selecting Rovers for a Mission
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The mission: collect soil/rock samples from the dark side of the planet. To support colonization of the planet, a requirement of the mission is to catalogue the nutrients in the soils of the planet. In order to satisfy these requirements, additional variables are required to model the rover mission,
+.. youtube:: bBJAzUsp9-0
+  :divid: ch18_04_vid_selectingRovers
+  :height: 315
+  :width: 560
+  :align: center
 
-1. an integer describing the cargo capacity of the rover
-2. a boolean to identify if a rover has been selected for the mission
+.. admonition:: Did you know?
 
-.. youtube:: dB69rQvEblk
-   :divid: ch18_02_selecting_a_rover
-   :height: 315
-   :width: 560
-   :align: center
+  This problem of selecting rovers for a mission is a specific instance of a **knapsack problem**, a classic problem in computer science that has been studied for more than a century. The original problem has to do with packing the most valuable items in a knapsack without making it too heavy, rather than selecting rovers for a mission without using too much battery.
 
-|
+--------------------------
+Exercise: Get Best Rover
+--------------------------
 
-Here is the updated :code:`Rover` struct. Now, we need to integrate the struct with our code !!!
+.. admonition:: Chapter Files
 
-.. code-block:: cpp
+  We’ll be using some starter code for this exercise. It might be helpful to go ahead and download it now and move it to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
 
-   struct Rover {
-     int type;        // either 1, 2, or 3 
-     string id;       // 4 alphanumeric characters
-     double charge;   // % of charge, between 0 and 1
-     int capacity;    // cargo capacity in kilograms
-     bool isSelected; // has it been selected for the mission?
-   };
+  .. list-table::
+    :align: left
+    :widths: auto
 
-Start with the :code:`print` function. Our original code is perfect for integrating an additional output !!
-The struct interface contains the expanded :code:`Rover` definition. The :code:`printRover` function contains the addition of one more output lines to describe the cargo capacity of the rover.
+    * - :download:`bestRover.cpp <../_static/structs/bestRover.cpp>`
 
-.. image:: img/img12.png
-   :width: 500
-   :align: center
+      - .. reveal:: bestRover_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>bestRover.cpp</code>
 
-|
+          .. literalinclude:: ../_static/structs/bestRover.cpp
+            :lines: 1-20
+            :append: ...
 
-Here, the :code:`myRover` variable is defined in :code:`int main()` for convenience. It is more practical to place the rover data into a text file that is read by the code.
+      - Starter code for bestRover function
 
-------------------------------
-Loading Rover Data from a file
-------------------------------
+Using the desirability function that we wrote in the previous video, write another function that loops through a vector of Rovers and **returns the index of** the most desirable one. (Don't update the :code:`isSelected` member variable in this function; we haven't actually selected it for the mission yet.)
 
-The first few entries in the text file are illustrated for the file :code:`rover_data.txt`. Here, the characteristics of each rover in the file are defined by the updated struct :code:`Rover` with columnar order type, id, capacity, and charge.
+If there are no rovers to choose from (e.g., the :code:`rovers` vector is empty), return -1. This is a useful value to return because it will never be a real index into a vector, and the user calling the function can check to see if the index is valid before using it.
 
-Here is :file:`rover_data.txt` for example:
+Download the file :code:`bestRover.cpp` at the beginning of this section, and complete the :code:`bestRover` function. We've provided the function header for you, as well as some code to test your function in the :code:`main` function.
 
-.. code-block:: none
+.. shortanswer:: ch18_07_ex_bestRover
 
-   1 a238 200 0.6
-   1 a239 200 0.2
-   1 b102 200 0.4
-   2 a294 300 0.1
-   2 a110 300 0.5
-   2 a287 300 0.3
-   3 b102 400 0.3
-   3 c321 400 0.7
-   ...
+  Copy and paste your bestRover function here. (It's only necessary to copy that one function, not the rest of your code.)
 
-The caller :code:`int main()` remains the same, declaring :code:`fleet` to be a vector of type :code:`Rover`, constructs an :code:`ifstream` named :code:`roversInput` to house the input data, and employs a :code:`void` function to input the data stream. Note that the boolean variable, :code:`rover.isSelected`, is set to :code:`false`; completing the initialization of the :code:`Rover` vector named :code:`rovers` by the :code:`loadRovers` function.
+.. admonition:: Walkthrough
 
-.. image:: img/img13.png
-   :width: 500
-   :align: center
+  .. reveal:: ch18_03_revealwt_bestRover
 
---------------------------------
-Selecting Rovers for the Mission
---------------------------------
+    .. youtube:: bp4sbzgrhM8
+      :divid: ch18_03_wt_bestRover
+      :height: 315
+      :width: 560
+      :align: center
 
-The setup for the mission is as follows:
-
-1. a fleet of rovers, each at some % of full charge
-2. IMPORTANT NOTE: a rover must be fully charged before departing on a mission
-3. A battery at base camp can provide up to 2 units of "full charge"
-
-For example:
-
-.. image:: img/img14.png
-   :width: 500
-   :align: center
-
-|
-
-PROBLEM: Find the set of rovers with the "greatest rover capacity" subject to the requirement constraint "maximum of 2.0 units of charge" available for charging the rovers. (This is a common packing problem that you may have faced, and is related to choosing the most useful items to pack for your travels within the capacity of your suitcase.)
-
-For the mission, a rover with a high ratio of capacity to "charge needed" is a reasonable solution. This helper function has the form
-
-.. code-block:: cpp
-
-   double desirability(const Rover &rover) {
-     return rover.capacity / (1 - rover.charge);
-   }
-
-where :code:`rover.capacity / (1 - rover.charge)` may be calculated for each fleet rover.
-
-Before accepting this function as the solution to the problem, it is important to perform sanity checks as to the validity of the function over the full realm of capacity and charge possibilities.
-
-QUESTION: What are the extreme case values, that is tests, that exercise the function and will the function perform equally well for all values?
-
-Consider :code:`rover.capacity`. This ranges from a value of :code:`200` to :code:`400` from our file :code:`rover_data.txt`. Clearly, the higher the capacity the higher the desirability given the same denominator.
-
-Consider :code:`rover.charge`. This ranges from :code:`0.1` to :code:`0.8` for the set of values given, but may range to the extreme values :code:`0` and :code:`1`, with :code:`1` being 100% fully charged. Given the same capacity, the desirability is largest for the smallest denominator, that is, the greatest value for :code:`rover.charge`.
-
-Unfortunately, when the charge is 100%, the test fails due to a divide by zero error. Good catch !!!
-
-Change the function to be
-
-.. code-block:: 
-
-   // Simplifying Assumption: Any rover with > 0.9 charge is
-   // equivalent in terms of desirability for our decision.
-
-   double desirability(const Rover &rover) {
-     // SPECIAL CASE
-     if (rover.charge > 0.9) {
-       return rover.capacity / 0.1;
-     }
-     
-     // REGULAR CASE
-     return rover.capacity / (1 - rover.charge);
-   }
-
-------------------------
-Finding the "Best" Rover
-------------------------
-
-To find the best rover, one may use the :code:`desirability` function that loops through the vector of Rovers and returns the index of the most desirable rover.
-
-NOTE1: It is important to consider a potential "end" case in this example: what if there are no rovers left to make a choice !! In such cases, it is useful to return a "nonsense" number, such as index value = :code:`-1`. A negative value for a vector index will cause an error in the program, if sampled, and may be checked by the caller prior to attempting to read the vector. Think about which vector operation may be used to determine whether a vector is "empty".
-
-NOTE2: To determine the best Rover, search through the set of rovers.  Think about which vector operation determines the "size" of the vector.
-
-NOTE3: Given the number of elements in a vector, use the appropriate C++ relational operator to find the best index.
-
-Putting these tips together, an appropriate code to find the best rover looks like:
-
-.. code-block:: cpp
-
-   // Returns the index of the most desirable Rover in the
-   // given vector. If the vector is empty, returns -1.
-   int bestRover(const vector<Rover> &rovers) {
-     if (rovers.size() == 0) {
-       return -1; // SPECIAL CASE
-     }
-     
-     int bestIndex = 0;
-     for (int i = 1; i < rovers.size(); ++i) {
-       if (desirability(rovers[bestIndex]) < desirability(rovers[i])) {
-         bestIndex = i;
-       }
-     }
-     
-     return bestIndex;
-   }
-
-1. rovers.empty() is used to check if the vector is empty.
-2. rovers.size() is used to set the upper limit to the for loop
-3. a relational operator is used to search for the index value of the best rover
-
-This video shows a walkthrough of writing the :code:`bestRover` function.
-
-.. youtube:: eDAfMxFoehQ
-   :divid: ch18_04_vid_bestRover
-   :height: 315
-   :width: 560
-   :align: center
-
-|
+In the upcoming Runestone chapters, we'll expand and improve on this idea of selecting the "best" rover for a mission (which will be really good practice for Project 6!).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -646,6 +402,11 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* We can create our own **compound** data types using **structs**. Structs are composed of several **member variables** of various types.
+* We can use the dot operator to access a member variable in a struct.
+* We can specify initial values for each member variable. If we don't specify an initial value for the member variables, the member variables are uninitialized by default (with the exception of strings, which default to the empty string).
+* We can also copy structs using a **member-by-member** copy.
+* The built in :code:`<<` operator doesn't work on structs, so we need to write our own functions to print out structs.
+* Like vectors, structs should either be passed by reference to functions (if the function needs to modify the struct) or passed by const reference (if the function doesn't need to modify the struct).
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
