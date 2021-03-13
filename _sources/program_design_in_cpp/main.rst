@@ -142,7 +142,7 @@ In general:
 
 .. admonition :: Be careful!
 
-   Never put :code:`using namespace std;` in a header file. If you are using something from the :code:`std` namespace (like a string), you can preface :code:`string` with :code:`std::`. Here's an example funtion prototype that does this:
+   Never put :code:`using namespace std;` in a header file. If you are using something from the :code:`std` namespace (like a string), you can preface :code:`string` with :code:`std::`. Here's an example function prototype that does this:
 
    .. code :: cpp
 
