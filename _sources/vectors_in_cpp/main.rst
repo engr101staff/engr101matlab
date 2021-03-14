@@ -66,7 +66,7 @@ For this exercise, consider the following vector in C++:
 
   Index 4: |blank|
 
-  Index 0: |blank|
+  Index 1: |blank|
 
   - :10: Correct!
     :x: Incorrect.
@@ -721,9 +721,9 @@ Sometimes, you want to check if any element(s) match some criteria. For example,
    }
 
 
---------------------------------------
-Checking If All Element Match Criteria
---------------------------------------
+---------------------------------------
+Checking If All Elements Match Criteria
+---------------------------------------
 
 Sometimes, you want to check if all element(s) match some criteria. For example, you might want to know "are all the elements zero?" or "are all the elements positive?". Our strategy here is to frame this as a "checking if any match" pattern, and then use a loop with **early termination** to check for any **counterexamples**. In other words, we can use negation to turn an "all" question into an "any" question. Here is an example that you can use as a template for this pattern:
 
