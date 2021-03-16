@@ -177,7 +177,7 @@ Multiple Choice Exercises
        int n = 10;
        cout << "Bat ";
        cout << "man ";
-       while (n != 3) {
+       while (n < 3) {
          cout << "!";
        }
        cout << "Batman!";
@@ -189,15 +189,15 @@ Multiple Choice Exercises
     
     - Batman!!!Batman!
     
-      - Take a closer look at the ``n`` value
+      - Take a close look at the ``n`` value of the loop;
     
-    - BatmanBatman!
+    - Bat man Batman!
     
-      + "Batman punches people in the face." --Batman
+      + Good job!
     
     - It will result in an infinite loop.
     
-      - Since we never change the value of ``n``, 10 will never equal 3 so the code will run forever.
+      - Since we never change the value of ``n``, 10 will never be less than 3 so the code will run forever.
 
 .. mchoice:: mce_6_7
     :practice: T
