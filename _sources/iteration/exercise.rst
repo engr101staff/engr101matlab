@@ -185,7 +185,7 @@ Multiple Choice Exercises
 
     - Batman!
     
-      - Take a closer look at the ``cout`` statement before.
+      - Take a closer look at the ``cout`` statement before the while loop.
     
     - Batman!!!Batman!
     
@@ -197,7 +197,7 @@ Multiple Choice Exercises
     
     - It will result in an infinite loop.
     
-      - Since we never change the value of ``n``, 10 will never be less than 3 so the code will run forever.
+      - Since we never change the value of ``n``, 10 will never be less than 3 so the code will never enter the while loop.
 
 .. mchoice:: mce_6_7
     :practice: T
