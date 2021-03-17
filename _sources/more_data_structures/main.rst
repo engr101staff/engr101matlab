@@ -24,6 +24,61 @@
 More Data Structures
 ====================
 
+.. admonition:: Chapter Files
+
+  We'll be using several files throughout this chapter's exercises. It might be helpful to go ahead and download them now and move them to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table:: 
+    :align: left
+    :widths: auto
+    
+    * - :download:`printVectorOfVectors.cpp <../_static/more_data_structures/printVectorOfVectors.cpp>`
+
+      - .. reveal:: printVectorOfVectors_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>printVectorOfVectors.cpp</code>
+
+          .. literalinclude:: ../_static/more_data_structures/printVectorOfVectors.cpp
+            :language: c++
+            :lines: 1-20
+            :append: ...
+
+      - Starter code for printing a vector of vectors
+
+    * - :download:`testData.txt <../_static/more_data_structures/testData.txt>`
+
+      - .. reveal:: testData_txt_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>testData.txt</code>
+
+          .. literalinclude:: ../_static/more_data_structures/testData.txt
+
+      - Sample test data for analyzing data in a matrix
+
+    * - :download:`analyzeData.cpp <../_static/more_data_structures/analyzeData.cpp>`
+
+      - .. reveal:: analyzeData_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>analyzeData.cpp</code>
+
+          .. literalinclude:: ../_static/more_data_structures/analyzeData.cpp
+            :language: c++
+            :lines: 1-20
+            :append: ...
+
+      - Starter code for analyzing data in a matrix
+
+  .. reveal:: more_data_structures_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for MATLAB
+    
+    .. include:: ../common/matlab_download_instructions.in.rst
+      
+
 ^^^^^^^^^^^^
 Introduction
 ^^^^^^^^^^^^
@@ -256,7 +311,7 @@ But C++ can't make this representation of :code:`v2`; we need to figure out a di
 
 This isn't the prettiest representation of the data in :code:`v2`, but we can still see all the values so it's fine for our purposes here. The first "row" in this representation corresponds to the vector in :code:`v2.at(0)` (or :code:`v2[0]` if you prefer to use the :code:`[]` method), the second "row" corresponds to the vector in :code:`v2.at(1)` (or :code:`v2[1]` ), and so on until all the data is printed. Let's write a function to print out a vector of vectors of :code:`int` using this representation. 
 
-Download the :download:`printVectorOfVectors.cpp <../_static/more_data_structures/printVectorOfVectors.cpp>` file and complete the missing parts of the :code:`printVecOfVecs` function. Compile the code using the :code:`-std=c++11` flag like this: 
+Download the :file:`printVectorOfVectors.cpp` file from the beginning of the chapter and complete the missing parts of the :code:`printVecOfVecs` function. Compile the code using the :code:`-std=c++11` flag like this: 
 
 .. code-block:: console
 
@@ -457,17 +512,14 @@ Uses for Vectors of Vectors
 
 |
 
+If we are representing a matrix with a vector of vector, each vector represents a row. Elements within represent different columns. Unlike matrices, vectors of vectors are not required to be "rectangular".
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Application: Analyzing Data in a Matrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-As we saw in MATLAB, a common computing task is analyzing data. Let's practice using the vector of vectors data structure by writing a program to read in data to a matrix and then analyze the data. 
-
-.. admonition:: Download
-
-   - :download:`testData.txt <../_static/more_data_structures/testData.txt>`
-   - :download:`analyzeData.cpp <../_static/more_data_structures/analyzeData.cpp>`
+As we saw in MATLAB, a common computing task is analyzing data. Let's practice using the vector of vectors data structure by writing a program to read in data to a matrix and then analyze the data. Make sure that you have downloaded :file:`testData.txt` and :file:`analyzeData.cpp` from the beginning of the chapter.
 
 The :file:`testData.txt` file has some sample test data in it. Here is the contents of the file: 
 
@@ -496,7 +548,7 @@ Designing the Program
 
 |
 
-Recap: We want to read in some data and then calculate the sum of each row, the sum of each column, and the sum of all the elements together. Here is the pseudocode for our :code:`main` function:
+To recap, we want to read in some data and then calculate the sum of each row, the sum of each column, and the sum of all the elements together. Here is the pseudocode for our :code:`main` function:
 
 .. code-block:: none
 
@@ -736,6 +788,9 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* We can created nested vectors, which are useful for storing matrix data. When working with a vector of vectors, make sure to keep track of whether you are working with the **inner** vector or the **outer** vector.
+* To index into a vector of vectors, you need to index twice - once for the inner vector and once for the outer vector. For example, :code:`vec[0][1]` or :code:`vec.at(0).at(1)`.
+* Use a doubly-nested loop to print out a vector of vectors (or to iterate through a vector of vectors, more generally).
+* If we are representing a matrix with a vector of vector, each vector represents a row. Elements within represent different columns.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
