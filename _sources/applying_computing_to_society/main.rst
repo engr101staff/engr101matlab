@@ -25,33 +25,25 @@ Applying Computing to Society
 =============================
 
 ^^^^^^^^^^^^^^^^
-Warm-Up Exercise
+Introduction
 ^^^^^^^^^^^^^^^^
 .. section 2
 
-.. mchoice:: ch20_02_ex_warm_up
+As we've seen in this class, technology is a powerful tool that can be used to make positive contributions in many areas of society (and many areas of engineering!). Sometimes, however, the use of technology can have negative effects on society, and deepen existing inequities. For example, consider the technology of facial recognition. This technology has been used for many purposes - to unlock phones, to help the blind recognize people, to find missing children and victims of human trafficking. It has also been used by `police departments to identify criminal suspects <https://www.nytimes.com/2020/01/12/technology/facial-recognition-police.html>`__. Using facial recognition in criminal justice settings raises some serious concerns, and researchers have studied if this technology is able to recognize faces equally across races and genders. `One study <http://gendershades.org/overview.html>`__ compared three facial recognition systems (Microsoft, Face++, and IBM) across darker males, darker females, lighter males, and lighter females. Here are the results:
 
-   Pretend you are in a room with 100 people. Run this simulation in your head:
+.. figure:: img/genderShades.png
+   :width: 400
+   :align: center
 
-   1. Everybody gets a penny.
-   2. Grab anyone in the class (who has money) and play a fair game with them:
-      a. Flip a coin, throw a dice, rock-scissors-paper, anything.
-   3. The winner gets all of the money held by the loser.
-   4. Go back to Step 2.
+   ..
 
-   What is the result of this simulation?
+In all three systems, there is at least a 20% gap in accuracy between recognizing lighter males and darker females!
 
-   - All the wealth is held by 2% of class.
-   
-     - Incorrect. Try drawing out the simulation with only 8 people and see what happens. Then, think about what that means for 100 people.
+.. shortanswer:: ch20_01_ex_facialRecognition
 
-   - Equitable wealth distribution.
-   
-     - Incorrect. Try drawing out the simulation with only 8 people and see what happens. Then, think about what that means for 100 people.
+   Reflection: Consider the implications of this accuracy gap in uses of facial recognition technology. Which people are most impacted by the poor performance of facial recognition systems? What are some specific ways that this might negatively impact these people?
 
-   - All the wealth gets held by one person.
-   
-     + Correct. Even though the way that each person gains wealth is "fair" (because the game played is "fair"), the overall system of "earning wealth" ensures that eventually one person will control all of the money.
+Whenever we use technology to solve a problem, we have a responsibility to think through the impacts of our technology use. What are the potential negative implications of a certain use of technology? Will people be affected unequally by this technology? Will this have an overall positive or negative impact? In this chapter, we will consider ways that technology affects society, and ways that technology can be used to study society.
 
 ^^^^^^^^^^^^^
 Implicit Bias
@@ -100,7 +92,7 @@ Normally, we would have you go to Dr. Schmidt's website and actively try out som
 Who is Considered a "Genius"?
 -----------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "genius", you will get this visualization:
+If you were to go to the profGender visualizer and put in the keyword "genius", you would get this visualization:
 
 .. figure:: img/genius.png
    :width: 400
@@ -148,7 +140,7 @@ Let's look a little more closely at the "genius" plot and answer a few questions
 Not So Gendered: Perceptions of Difficulty
 ------------------------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "hard" and then the keyword "easy", you will get these visualizations
+If you were to go to the profGender visualizer and put in the keyword "hard" and then the keyword "easy", you would get these visualizations (open the image in a new tab to see a larger version):
 
 .. figure:: img/easy_hard.png
    :width: 600
@@ -193,7 +185,7 @@ Let's look a little more closely at the "hard" and "easy" plots and answer a few
 Very Gendered: Who is Considered Wonderful and Who is Considered Brilliant?
 ---------------------------------------------------------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "wonderful" and then the keyword "brilliant", you will get these visualizations:
+If you were to go to the profGender visualizer and put in the keyword "wonderful" and then the keyword "brilliant", you would get these visualizations (open the image in a new tab to see a larger version):
 
 .. figure:: img/wonderful_brilliant.png
    :width: 600
@@ -265,12 +257,7 @@ Consider these definitions for the words "wonderful" and "brilliant" that are pr
 
 .. shortanswer:: ch20_04_ex_wonderful_brilliant_04
 
-   Reflection: Think about the "example uses" of these two words. Remember that these are the recommended examples that are being provided to anyone who searches these terms in English. How might other people feel about these examples?
-
-   - Perhaps women feel "If I am not wonderful at all aspects of life (work/school, family, community service), I am a failure" 
-   - Perhaps men feel "if I don't have a brilliant career at Harvard, I am a failure" 
-   - Perhaps non-binary people feel, "If I am not wonderful at all aspects of life AND have a brilliant career at Harvard, I am a failure"
-   - Perhaps anyone might feel nervous about being called "wonderful" rather than "brilliant" if it might play into a stereotype that they're just a "nice" person, but not necessarily technically or professionally competent?
+   Reflection: Think about the "example uses" of these two words. Remember that these are the recommended examples that are being provided to anyone who searches these terms in English. How might other people feel about these examples? Specifically, put yourselves in the shoes of someone who is a different gender than you, and consider how that person may feel about these examples. For instance, perhaps some people might feel nervous about being called "wonderful" rather than "brilliant" if it might play into a stereotype that they're just a "nice" person, but not necessarily technically or professionally competent.
 
    Think about your own gender and how it is or is not being used in these examples, and then think about how you might view other people's successes in terms of these kinds of descriptions.
 
@@ -342,11 +329,11 @@ Open the Parable of the Polygons blog post in a separate window or tab and answe
 
    Small individual bias can lead to large collective bias.
    
-   - true
+   - True
    
      + Correct. The first simulation shows how even though the shapes are just a little bit biased towards their own shape, the whole neighborhood ends up more segregated when the shapes start moving. 
 
-   - false
+   - False
    
      - Incorrect. Run the first simulation again (click "new board' first) and compare how much the neighborhood is segregated in the beginning to how much it is segregated at the end of the simulation.
 
@@ -415,11 +402,11 @@ Open the Parable of the Polygons blog post in a separate window or tab and answe
 
    Unless you explicitly try to live in a diverse neighborhood, your choices may cause or reinforce segregation?
 
-   - true
+   - True
    
      + Correct. From the blog post: "If small biases created the mess we're in, small anti-biases might fix it. Look around you. Your friends, your colleagues, that conference you're attending. If you're all triangles, you're missing out on some amazing squares in your life - that's unfair to everyone. Reach out, beyond your immediate neighbors."
    
-   - false
+   - False
    
      - Incorrect.
 
@@ -429,7 +416,7 @@ Further Reading about Bias in Society
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-There are many, many ways to learn about bias in society. Here are a few places to get started that are related to the things we talk about in this chapter
+There are many, many ways to learn about bias in society. Here are a few places to get started that are related to the things we talk about in this chapter.
 
 Bias in ratings, whether of people or things, is a known issue. The challenge is how to mitigate the bias. The Project 5 specs have some resources linked about bias in online reviews and in natural language processing. Here's another example: A famous study of orchestra auditions found that placing candidates behind a screen increased the likelihood of women being hired. This is a simple solution that is easily implemented - not everything has to be hard to do!
 
@@ -465,6 +452,9 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* Whenever we use technology to solve a problem, we have a responsibility to think through the impacts of our technology use.
+* An **implicit bias** is a bias, towards or against something, of which we are not consciously aware but that affects our thoughts and actions anyway. We all have implicit biases, and we have a responsibility to not let our implicit biases negatively affect those around us. Implicit biases can be changed!
+* RateMyProfessor reviews can be used to look at students' perceptions of male and female professors in different disciplines.
+* The Parable of the Polygons shows how individual decisions results in either segregated or diverse neighborhoods.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
