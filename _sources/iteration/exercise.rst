@@ -1,5 +1,7 @@
-Multiple Choice Exercises
--------------------------
+Optional Multiple Choice Exercises
+-----------------------------------
+
+*The questions in this section are COMPLETELY optional. We provide it here if you are looking for extra practice with this material. You can use these to review the material, or come back later and use it for exam prep.*
 
 .. mchoice:: mce_6_1
     :practice: T
@@ -11,10 +13,10 @@ Multiple Choice Exercises
       int main() {
         int i = 0;
         while (i < 12) {
-            if (i % 2 == 1) {
-                cout<<i<<" ";
-            }
-            ++i;
+          if (i % 2 == 1) {
+            cout << i << " ";
+          }
+          ++i;
         }
       }
 
@@ -78,7 +80,7 @@ Multiple Choice Exercises
        int i = 6;
        int magic_number = 0;
        while (true) {
-         if (i == -1){
+         if (i == -1) {
            magic_number = 2021;
            break;
          }
@@ -111,8 +113,8 @@ Multiple Choice Exercises
     .. code-block:: cpp
 
      int main() {
-       for(int i = 0;i < 4;i++){
-          cout<<i * i<<"  ";
+       for(int i = 0; i < 4; i++) {
+          cout << i * i << "  ";
        }
      }
 
@@ -207,11 +209,11 @@ Multiple Choice Exercises
     .. code-block:: cpp
 
      int main() {
-        for(int i = 0;i < 1;i++){
-          for(int x = 0; x < 4;x++){
-              cout<<i<<x<<" ";
-          }
+      for(int i = 0; i < 1; i++) {
+        for(int x = 0; x < 4; x++) {
+          cout<< i << x << " ";
         }
+      }
      }
 
     - 00 01 02 03
@@ -238,18 +240,17 @@ Multiple Choice Exercises
     .. code-block:: cpp
 
       int main() {
-          int x = 2021;
-          while (x != 0){
-              int each_digit = x % 10;
-              cout << each_digit;
-              x = x / 10;
-          }
+        int x = 2021;
+        while (x != 0) {
+          int each_digit = x % 10;
+          cout << each_digit;
+          x = x / 10;
+        }
       }
 
     - 1202
 
-      + Good job! This is a recommended method when you want to reverse a nunber.``x / 10`` would give you everything beside the last digit. ``x % 10`` would only give you the last digit.
-        Pro tip: if you change the ``10`` into ``2``. You can convert the value ``2021`` into binary digit but in backwards. You would need reverse the digit after you convert into binary.
+      + Good job! This is a recommended method when you want to reverse a number.``x / 10`` would give you everything beside the last digit. ``x % 10`` would only give you the last digit. Tip: If you change the ``10`` into ``2``, you can convert the value ``2021`` into binary digits but backwards. You would need to reverse the digit after you convert into binary.
 
 
     - 2021
@@ -263,7 +264,7 @@ Multiple Choice Exercises
 
     - It will result in an infinite loop.
 
-      - Notice ``x = x /10``. This line of code would divide x by 10 each time, and gives us zero when we run out of digits. The loop would terminates when it goes over every single digit of the x.
+      - Notice ``x = x / 10``. This line of code would divide x by 10 each time, and gives us zero when we run out of digits. The loop would terminates when it goes over every single digit of the x.
 
 .. mchoice:: mce_6_9
     :practice: T
@@ -309,23 +310,25 @@ Multiple Choice Exercises
      333
 
 
-     I. for(int i =1;i<=3;i++){
-            for(int x = i; x > 0;x--){
-                cout<<i;
-            }
-            cout<<endl;
+     I. for(int i = 1; i <= 3; i++) {
+          for(int x = i; x > 0; x--) {
+            cout << i;
+          }
+          cout << endl;
         }
-     II. for(int i =1;i<=3;i++){
-            for(int x = 1; x <=3 ;x++){
-                cout<<x;
-            }
-            cout<<endl;
+
+     II. for(int i = 1; i <= 3; i++) {
+          for(int x = 1; x <= 3; x++) {
+            cout << x;
+          }
+          cout << endl;
         }
-      III. for(int i =1;i<=3;i++){
-            for(int x = i; x <= 3;x++){
-                cout<<i;
+
+     III. for(int i = 1; i <= 3; i++) {
+            for(int x = i; x <= 3; x++) {
+              cout << i;
             }
-            cout<<endl;
+            cout << endl;
           }
 
     - I
