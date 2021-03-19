@@ -6,4 +6,3 @@ Iteration
   :maxdepth: 4
 
   main.rst
-
