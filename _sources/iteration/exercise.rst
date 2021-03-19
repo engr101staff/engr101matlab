@@ -10,9 +10,9 @@ Multiple Choice Exercises
 
       int main() {
         int i = 0;
-        while (i < 12) {
+        while ( i < 12 ) {
             if (i % 2 == 1) {
-                cout<<i<<" ";
+                cout << i << " ";
             }
             ++i;
         }
@@ -44,7 +44,7 @@ Multiple Choice Exercises
      int main() {
        int x = 0;
        int i = 1;
-       while (i < 10) {
+       while ( i < 10 ) {
          x = i;
          i++;
        }
@@ -77,12 +77,11 @@ Multiple Choice Exercises
      int main() {
        int i = 6;
        int magic_number = 0;
-       while (true) {
-         if (i == -1){
+       while ( true ) {
+         if ( i == -1 ){
            magic_number = 2021;
            break;
          }
-
          --i;
        }
      }
@@ -111,8 +110,8 @@ Multiple Choice Exercises
     .. code-block:: cpp
 
      int main() {
-       for(int i = 0;i < 4;i++){
-          cout<<i * i<<"  ";
+       for( int i = 0; i < 4; i++ ){
+          cout<< i * i << "  ";
        }
      }
 
@@ -143,7 +142,7 @@ Multiple Choice Exercises
         int n = 10;
         // cout << "Da ";
         cout << "na ";
-        while (n != 3) {
+        while ( n != 3 ) {
           cout << "na ";
           n--;
         }
@@ -177,7 +176,7 @@ Multiple Choice Exercises
        int n = 10;
        cout << "Bat ";
        cout << "man ";
-       while (n < 3) {
+       while ( n < 3 ) {
          cout << "!";
        }
        cout << "Batman!";
@@ -207,9 +206,9 @@ Multiple Choice Exercises
     .. code-block:: cpp
 
      int main() {
-        for(int i = 0;i < 1;i++){
-          for(int x = 0; x < 4;x++){
-              cout<<i<<x<<" ";
+        for( int i = 0; i < 1; i++ ){
+          for( int x = 0; x < 4; x++ ){
+              cout << i << x << " ";
           }
         }
      }
@@ -239,7 +238,7 @@ Multiple Choice Exercises
 
       int main() {
           int x = 2021;
-          while (x != 0){
+          while ( x != 0 ){
               int each_digit = x % 10;
               cout << each_digit;
               x = x / 10;
@@ -248,7 +247,7 @@ Multiple Choice Exercises
 
     - 1202
 
-      + Good job! This is a recommended method when you want to reverse a nunber.``x / 10`` would give you everything beside the last digit. ``x % 10`` would only give you the last digit.
+      + Good job! This is a recommended method when you want to reverse a number.``x / 10`` would give you everything beside the last digit. ``x % 10`` would only give you the last digit.
         Pro tip: if you change the ``10`` into ``2``. You can convert the value ``2021`` into binary digit but in backwards. You would need reverse the digit after you convert into binary.
 
 
@@ -272,9 +271,9 @@ Multiple Choice Exercises
 
     .. code-block:: cpp
    
-     int main () {
+     int main() {
        int n = 3;
-       while (n % 5 != 0) {
+       while ( n % 5 != 0 ) {
          n = n + 3;
        }
        cout << n << endl;
@@ -309,23 +308,23 @@ Multiple Choice Exercises
      333
 
 
-     I. for(int i =1;i<=3;i++){
-            for(int x = i; x > 0;x--){
-                cout<<i;
+     I.   for( int i = 1; i <= 3; i++ ){
+            for(int x = i; x > 0; x-- ){
+                cout << i;
             }
-            cout<<endl;
-        }
-     II. for(int i =1;i<=3;i++){
-            for(int x = 1; x <=3 ;x++){
-                cout<<x;
+            cout << endl;
+          }
+     II.  for( int i = 1; i <= 3; i++ ){
+            for( int x = 1; x <= 3 ; x++ ){
+                cout << x;
             }
-            cout<<endl;
-        }
-      III. for(int i =1;i<=3;i++){
-            for(int x = i; x <= 3;x++){
-                cout<<i;
+            cout << endl;
+          }
+     III. for( int i = 1; i <= 3; i++){
+            for( int x = i; x <= 3; x++){
+                cout << i;
             }
-            cout<<endl;
+            cout << endl;
           }
 
     - I
