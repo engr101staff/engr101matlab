@@ -1,8 +1,8 @@
-Introduction to Data Structures and Algorithms
+Applying Computing to Engineering Problems
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
-  :caption: Introduction to Data Structures and Algorithms
+  :caption: Applying Computing to Engineering Problems
   :maxdepth: 4
 
   main.rst
