@@ -45,7 +45,7 @@ Warm-up: Binary Search
 
     - Oops! Think about how many braking coefficients you looked at in Project 4 before finding the optimal one.
 
-  - Binary search repeatedly divides the search space (e.g., the values you are searching through) in half.
+  - Binary search repeatedly divides the search space (the values you are searching through) in half.
 
     + Correct! Each time through the loop, binary search divides the search space in half and only considers either the upper half or the lower half.
 
@@ -71,8 +71,15 @@ Binary search is a particular kind of **searching algorithm**. In this chapter, 
 Introduction: Algorithms and Data Structures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO introductory video
-- Slides 1-4
+.. youtube:: M3UoASG7OO8
+   :divid: ch21_01_introduction
+   :height: 315
+   :width: 560
+   :align: center
+
+|
+
+There are many common **algorithms** written for common computational problems - when we encounter one of those common problems, we don't need to re-invent the wheel! We can use an existing algorithm. Because the problems that we will face in many engineering problems involve big datasets and complex calculations, we care about how **efficient** our program is (how long it takes to run). Choosing an appropriate algorithm can make a program more efficient, as can choosing the appropriate **data structure** (a way to organize and store data).
 
 Learning the basics of algorithms and data structures will be useful to you as you write your own computer programs as an engineer! This chapter will also give you a sneak peek of the material covered by more advanced computer science classes (like EECS 280 and EECS 281).
 
@@ -94,7 +101,9 @@ In the previous video, we wrote this code for :code:`chargeRover`:
     return false;
   }
 
-We are going to be running our :code:`chargeRover` a lot of times, so we want to make sure that our function is efficient.
+In a real-world context, we often need to run our functions on huge datasets, or run them many times. For example, what if we had 1,000 rovers in our fleet, and we needed to run :code:`chargeRover` hundreds of times? If we are only running :code:`chargeRover` a few times, it doesn't really matter how fast it takes to run. But, if we are running it hundreds of times, it matters a lot! Even making :code:`chargeRover` a little bit more efficient would save us a lot of time!
+
+When we are thinking about a function or an algorithm, we want to be able to quantify how efficient it is. This allows us to compare it to other algorithms, to see which one is most efficient. To start thinking about how to quantify efficiency, consider the following scenarios.
 
 Let’s suppose we have 20 rovers in our fleet, and our vector of rovers is in a random order (e.g., the rovers aren’t sorted in any way). We are looking for a particular rover to charge.
 
@@ -227,19 +236,19 @@ Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexi
 
    - Constant time
 
-     + Correct! No matter how big our fleet is, the loop will only run 10 times.
+     + Correct! No matter how big our fleet is, the loop will only run five times.
 
    - Logarithmic time
 
-     - Oops! Think about how long this code would take to run if the fleet had five rovers v. if the fleet had ten rovers.
+     - Oops! Think about how long this code would take to run if the fleet had five rovers vs. if the fleet had ten rovers.
 
    - Linear time
 
-     - Oops! Think about how long this code would take to run if the fleet had five rovers v. if the fleet had ten rovers. Even though there's a loop here, the loop isn't going through the entire vector.
+     - Oops! Think about how long this code would take to run if the fleet had five rovers vs. if the fleet had ten rovers. Even though there's a loop here, the loop isn't going through the entire vector.
 
    - Polynomial time
 
-     - Oops! Think about how long this code would take to run if the fleet had five rovers v. if the fleet had ten rovers.
+     - Oops! Think about how long this code would take to run if the fleet had five rovers vs. if the fleet had ten rovers.
 
 
 
@@ -388,11 +397,11 @@ TODO walkthrough of Parson's problem
 
    - Logarithmic time
 
-     - Oops! Think about how long this code would take to run if the fleet had five rovers v. if the fleet had ten rovers.
+     - Oops! Think about how long this code would take to run if the fleet had five rovers vs. if the fleet had ten rovers.
 
    - Linear time
 
-     - Oops! Think about how long this code would take to run if the fleet had five rovers v. if the fleet had ten rovers.
+     - Oops! Think about how long this code would take to run if the fleet had five rovers vs. if the fleet had ten rovers.
 
    - Polynomial time
 
