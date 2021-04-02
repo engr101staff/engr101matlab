@@ -348,7 +348,7 @@ TODO video about selection sort
 Exercise: Implementing Selection Sort
 --------------------------------------
 
-Arrange the lines of code below to write a program that implements selection sort on a vector of Rovers. Assume that we have access to a helper function :code:`swap` that swaps two Rovers.
+Arrange the lines of code below to write a program that implements selection sort on a vector of Rovers. Assume that :code:`fleet` is a vector of Rovers, and that we have access to a helper function :code:`swap` that swaps two Rovers.
 
 Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
@@ -356,34 +356,31 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
     :language: cpp
 
     -----
-    void selectionSort(vector<Rover> &fleet) {
+    for(int currentPosition = 0; currentPosition < fleet.size(); ++currentPosition) {
     =====
-      for(int currentPosition = 0; currentPosition < fleet.size(); ++currentPosition) {
+      int minRover = currentPosition;
     =====
-        int minRover = currentPosition;
+      for(int j = currentPosition + 1; j < fleet.size(); ++j) {
     =====
-        for(int j = currentPosition + 1; j < fleet.size(); ++j) {
-    =====
-          if(fleet[j].id < fleet[minRover].id) {
-            minRover = j;
-          }
-    =====
+        if(fleet[j].id < fleet[minRover].id) {
+          minRover = j;
         }
-    =====
-        swap(fleet[currentPosition], fleet[minRover]);
     =====
       }
     =====
+      swap(fleet[currentPosition], fleet[minRover]);
+    =====
     }
     =====
-    void selectionSort(const vector<Rover> &fleet) { #distractor
+        if(fleet[j].id > fleet[minRover].id) { #distractor
+          minRover = j;
+        }
     =====
-          if(fleet[j].id > fleet[minRover].id) { #distractor
-            minRover = j;
-          }
+      swap(fleet[0], fleet[minRover]); #distractor
     =====
-        swap(fleet[0], fleet[minRover]); #distractor
+      for(int j = 0; j < fleet.size(); ++j) { #distractor
     =====
+
 
 TODO walkthrough of Parson's problem
 
