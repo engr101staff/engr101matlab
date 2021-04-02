@@ -71,11 +71,11 @@ Binary search is a particular kind of **searching algorithm**. In this chapter, 
 Introduction: Algorithms and Data Structures
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. youtube:: M3UoASG7OO8
-   :divid: ch21_01_introduction
-   :height: 315
-   :width: 560
-   :align: center
+.. youtube:: 107ZN7siEI0
+  :divid: ch21_00_algorithms_dataStructures
+  :height: 315
+  :width: 560
+  :align: center
 
 |
 
@@ -91,15 +91,23 @@ In the previous video, we wrote this code for :code:`chargeRover`:
 
 .. code :: cpp
 
-  bool chargeRover(const vector<Rover> &fleet, string roverId) {
+  // Find a particular rover (using the id of the rover)
+  // Set charge = 1 for that rover
+  // return true if we find the rover, false otherwise
+  bool chargeRover(vector<Rover> &fleet,
+                  string roverId) {
+
     for(int i = 0; i < fleet.size(); ++i) {
       if (fleet[i].id  == roverId) {
         fleet[i].charge = 1;
         return true;
       }  
     }
+
     return false;
+
   }
+
 
 In a real-world context, we often need to run our functions on huge datasets, or run them many times. For example, what if we had 1,000 rovers in our fleet, and we needed to run :code:`chargeRover` hundreds of times? If we are only running :code:`chargeRover` a few times, it doesn't really matter how fast it takes to run. But, if we are running it hundreds of times, it matters a lot! Even making :code:`chargeRover` a little bit more efficient would save us a lot of time!
 
@@ -153,7 +161,7 @@ Let’s suppose we have 20 rovers in our fleet, and our vector of rovers is in a
 
 .. mchoice:: ch21_01_ex_time_complexity_03
 
-   **On average**, how many rovers will we have to look at before we find the rover we are looking for?
+   **On average**, how many rovers will we have to look at before we find the rover we are looking for? (If you're not sure, take your best guess, and revise your guess until you figure it out!)
 
    - 1 rover
 
@@ -171,8 +179,13 @@ Let’s suppose we have 20 rovers in our fleet, and our vector of rovers is in a
 
      - Oops! This is the worst case scenario, but we’re not always going to have the worst case scenario.
 
-TODO time complexity video
-- Slides 4-11
+.. youtube:: W_GwYj2bZnk
+  :divid: ch21_00_time_complexity
+  :height: 315
+  :width: 560
+  :align: center
+
+|
 
 .. dragndrop:: ch21_01_ex_time_complexity_004
    :match_1: When n grows to be three times as big as it originally was, the algorithm takes nine times as long to run.|||polynomial time
@@ -286,13 +299,21 @@ Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexi
 Searching Algorithms
 ^^^^^^^^^^^^^^^^^^^^^
 
-TODO video wrapping up time complexity / binary search
-- Slides 12-16
+.. youtube:: wVc-U3XvW84
+  :divid: ch21_00_binary_search_video
+  :height: 315
+  :width: 560
+  :align: center
 
-Searching algorithms solve a common problem - putting a collection of elements in order. There are many examples of real-life problems that use searching algorithms:
+|
+
+We've now looked at one particular type of algorithm - **searching algorithms**. These are algorithms that look for a particular element in a collection of elements. We've seen two searching algorithms in this chapter - **linear search** and **binary search**. Both of these algorithms have strengths and weaknesses. Binary search is more efficient than linear search, but binary search requires that the items are already sorted. Linear search works on any vector of items, regardless of if the items are sorted.
+
+As you solve engineering problems using computing, you may encounter a scenario where you need a searching algorithm! You've already seen one example of binary search in Project 4, searching for the optimal braking coefficient. Here are a few more examples of real-life problems that use searching algorithms:
 
 - **Autocomplete**. As you are typing out a word on your phone, your phone is searching through all possible words and trying to guess which word you meant to type. There are thousands of possible words that you could be trying to type - this has to be a very efficient search!
-- TODO
+- **Keyword search**. Suppose that you want to write a program to help doctors access relevant medical information. One part of this program could be searching for particular keywords in medical literature, and identifying which articles have these keywords.
+- **Searching through simulation results**. It's common to run complicated simulations of fluid dynamics, in order to understand how air or water interacts with certain physical objects. Suppose that you ran hundreds of these simulations with different parameters. You would need to search through the simulation results in order to identify which parameters are optimal for this particular set-up.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A Sorting Algorithm: Selection Sort
@@ -300,8 +321,13 @@ A Sorting Algorithm: Selection Sort
 
 Another common type of algorithm is sorting algorithms.
 
-TODO video about selection sort
-- Slides 17-18
+.. youtube:: kdsd-yzc94c
+  :divid: ch21_00_selection_sort
+  :height: 315
+  :width: 560
+  :align: center
+
+|
 
 .. mchoice:: ch21_02_ex_selection_sort_01
 
@@ -381,8 +407,17 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
       for(int j = 0; j < fleet.size(); ++j) { #distractor
     =====
 
+.. admonition:: Walkthrough
 
-TODO walkthrough of Parson's problem
+  .. reveal:: ch21_04_revealwt_implementing_selectionSort
+  
+    .. youtube:: XBhdJmLgUmw
+      :divid: ch21_04_wt_implementing_selectionSort
+      :height: 315
+      :width: 560
+      :align: center
+
+|
 
 .. mchoice:: ch21_04_ex_selection_sort_01
 
@@ -422,7 +457,7 @@ There are lots of sorting algorithms! Depending on what data you are trying to s
 
   List three sorting algorithms (other than selection sort) covered in the previous video.
 
-There are many examples of real-life problems that use sorting algorithms:
+Just like for searching algorithms, you may encounter a computational problem where you could use a sorting algorithm. Here are a few real-world examples:
 
 - **Showing product results**. When you search for a product on an online store (like Amazon), the store *sorts* the results in order of relevance, putting the products that they think will be most helpful at the top of the list.
 - TODO
@@ -435,7 +470,13 @@ Data Structures
 
 We've seen how using a good algorithm can make your program run faster. Using the appropriate data structure can also make your program more efficient!
 
-TODO video on data structures
+.. youtube:: z0eaEq4rfMU
+  :divid: ch21_00_data_structures
+  :height: 315
+  :width: 560
+  :align: center
+
+|
 
 .. dragndrop:: ch21_06_ex_data_structures_01
    :match_1: Reversing a word. We want to insert all of the characters of a word into a data structure, and remove them in reverse order.|||stack
@@ -445,7 +486,17 @@ TODO video on data structures
 
    Match the program examples on the left with the appropriate data structure.
 
-TODO walkthrough of matching exercise
+.. admonition:: Walkthrough
+
+  .. reveal:: ch21_06_revealwt_dataStructures_matching
+  
+    .. youtube:: b5ZJdy19aGo
+      :divid: ch21_06_wt_dataStructures_matching
+      :height: 315
+      :width: 560
+      :align: center
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
