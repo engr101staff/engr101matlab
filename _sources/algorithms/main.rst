@@ -26,13 +26,6 @@ Applying Computing to Engineering Problems
 
 Congratulations, you've made it to the last Runestone chapter! We have covered a lot of different elements of computing - variables, loops, branching, functions, structs, and many more... In this chapter, we want to take a step back and look at how we can use what we've learned to solve engineering problems.
 
-.. image:: img/runestone.jpg
-  :width: 400
-  :align: center
-  :alt: A Viking runestone
-
-*In case you were curious about Runestones after going through this course,* `this Viking runestone <https://www.theguardian.com/world/2020/jan/08/viking-runestone-may-allude-to-extreme-winter-study-says>`__ *bears the longest runic inscription in the world. It's believed to be talking about an extreme winter.*
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Warm-up: Binary Search
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,9 +54,9 @@ Warm-up: Binary Search
 
     - Oops! Binary search can be used on any data type that can be put in order (e.g., strings can be put in alphabetical order).
 
-  - In the best case scenario, you would only to need to look at one braking coefficient before finding the optimal one.
+  - In the best case scenario, the first value that you look at is the optimal braking coefficient.
 
-    + Correct! In the best case scenario, the first value that you look at is the optimal value.
+    + Correct! In the best case scenario, you find the optimal value after only looking at one potential value.
 
 Binary search is a particular kind of **searching algorithm**. In this chapter, we'll consider other algorithms and data structures.
 
@@ -187,12 +180,22 @@ Let’s suppose we have 20 rovers in our fleet, and our vector of rovers is in a
 
 |
 
+This video introduces some terms to more formally talk about the efficiency of algorithms. **Time complexity** refers to the how long an algorithm takes to run. We care about **best-case** time complexity, **worst-case** time complexity, and **average-case** time complexity. Sometimes, time complexity is written using **big-oh notation**.
+
 .. dragndrop:: ch21_01_ex_time_complexity_004
    :match_1: When n grows to be three times as big as it originally was, the algorithm takes nine times as long to run.|||polynomial time
    :match_2: The algorithm always takes the same amount of time to run.|||constant time
    :match_3: When n grows to be three times as big as it originally was, the algorithm takes three times as long to run.|||linear time
 
    Match the description of an algorithm with its correct time complexity.
+
+.. dragndrop:: ch21_01_ex_time_complexity_005
+   :match_1: O(1)|||constant time
+   :match_2: O(n)|||linear time
+   :match_3: O(log(n))|||logarithmic time
+   :match_4: O(n^3)|||polynomial time
+
+   Match the big-oh notation to the correct time complexity.
 
 Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexity of the following snippets of code? (Here, **n** = size of :code:`fleet`.)
 
@@ -201,12 +204,12 @@ Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexi
    .. code :: cpp
 
       // finds the largest amount that TWO rovers can carry together
-      biggestTwoRoverCapacity = -1;
+      double biggestTwoRoverCapacity = -1;
       for (int i = 0; i < fleet.size(); ++i) {
 
          for(int j = 0; j < fleet.size(); ++j) {
 
-            twoRoverCapacity = fleet[i].capacity + fleet[j].capacity;
+            double twoRoverCapacity = fleet[i].capacity + fleet[j].capacity;
             if (biggestTwoRoverCapacity == -1 ||
                 twoRoverCapacity > biggestTwoRoverCapacity) {
                biggestTwoRoverCapacity = twoRoverCapacity;
@@ -241,7 +244,7 @@ Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexi
       // Print out the id the first five rovers (if they exist)
       for(int i = 0; i < 5; ++i) {
 
-         if (fleet.size() <= i) {
+         if (i < fleet.size()) {
             cout << fleet[i].id << endl;
          }
 
@@ -270,7 +273,7 @@ Assume :code:`fleet` is a vector of Rovers. What is the worst-case time complexi
    .. code :: cpp
 
       // How many rovers are selected for the mission?
-      numSelected = 0;
+      int numSelected = 0;
       for(int i = 0; i < fleet.size(); ++i) {
 
          if (fleet[i].isSelected) {
@@ -312,6 +315,11 @@ We've now looked at one particular type of algorithm - **searching algorithms**.
 As you solve engineering problems using computing, you may encounter a scenario where you need a searching algorithm! You've already seen one example of binary search in Project 4, searching for the optimal braking coefficient. Here are a few more examples of real-life problems that use searching algorithms:
 
 - **Autocomplete**. As you are typing out a word on your phone, your phone is searching through all possible words and trying to guess which word you meant to type. There are thousands of possible words that you could be trying to type - this has to be a very efficient search!
+
+.. figure:: img/autocomplete.png
+   :width: 350
+   :align: center
+
 - **Keyword search**. Suppose that you want to write a program to help doctors access relevant medical information. One part of this program could be searching for particular keywords in medical literature, and identifying which articles have these keywords.
 - **Searching through simulation results**. It's common to run complicated simulations of fluid dynamics, in order to understand how air or water interacts with certain physical objects. Suppose that you ran hundreds of these simulations with different parameters. You would need to search through the simulation results in order to identify which parameters are optimal for this particular set-up.
 
@@ -437,7 +445,7 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
 
    - Polynomial time
 
-     + Correct! If the size of the fleet is five, the outer loop will run five times, and the inner loop will run up between one and four times for each rover. If the size of the fleet is ten, the outer loop will run ten times, and the inner loop will run between one and nine times for each rover. Because of the inner loop, we know that this runs slower than linear time (if there were no inner loop, this would be a linear time algorithm). Even though the number of iterations that the inner loop goes through changes, this is still polynomial time.
+     + Correct! If the size of the fleet is five, the outer loop will run five times, and the inner loop will run between one and four times for each rover. If the size of the fleet is ten, the outer loop will run ten times, and the inner loop will run between one and nine times for each rover. Because of the inner loop, we know that this runs slower than linear time (if there were no inner loop, this would be a linear time algorithm). Even though the number of iterations that the inner loop goes through changes, this is still polynomial time.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Sorting Algorithms
@@ -460,7 +468,11 @@ There are lots of sorting algorithms! Depending on what data you are trying to s
 Just like for searching algorithms, you may encounter a computational problem where you could use a sorting algorithm. Here are a few real-world examples:
 
 - **Showing product results**. When you search for a product on an online store (like Amazon), the store *sorts* the results in order of relevance, putting the products that they think will be most helpful at the top of the list.
-- TODO
+- **Object detection**. A self-driving car has cameras that take images of the scenes around it. After getting these images, an algorithm parses the images to identify possible objects (e.g,. other cars, pedestrians, trees). For a single object, the algorithm generates several possibilities for what that object could be, and then it sorts them in order of which label is most likely. In the example below, the algorithm identifies people and airplanes with high probability.
+
+.. figure:: img/objectDetection.png
+   :width: 560
+   :align: center
 
 Searching and sorting algorithms are two categories of algorithms that are already developed. So, if you find yourself writing a computer program where you need to search for a particular item or sort a collection of items, you don't need to re-invent the wheel! You can use an algorithm that someone else has already written. There are many other algorithms out there that solve common computational problems.
 
@@ -496,14 +508,16 @@ We've seen how using a good algorithm can make your program run faster. Using th
       :width: 560
       :align: center
 
-|
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* 
+* There are many algorithms written for common computational problems. Two categories of algorithms are **searching algorithms** and **sorting algorithms**.
+* **Time complexity** refers to how long an algorithm takes to run. Specifically, we looked at **constant time**, **logarithmic time**, **linear time**, and **polynomial time**. Sometimes, time complexity is written using **big-oh notation**.
+* **Linear search** and **binary search** are two searching algorithms. Binary search is more efficient, but requires the items to be sorted first.
+* There are many different sorting algorithms. We looked closely at **selection sort**.
+* **Data structures** are ways to organize and store data. A **dictionary** maps keys to values. A **tree** is a collection of nodes often used for hierarchical or sorted data. A **stack** is similar to a vector, but requires elements to be inserted and removed from only end. A **queue** is similar to a vector, but requires elements to be inserted on one end and removed on the other end. Different data structures are more efficient for different contexts.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
