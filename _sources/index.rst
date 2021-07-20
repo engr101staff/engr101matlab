@@ -32,8 +32,9 @@ Table of Contents
   plotting_and_figures/toctree.rst
   statistics_and_simulation/toctree.rst
   data_visualization/toctree.rst
-  strings_cells_and_tables/toctree.rst
-  intro_to_control_flow/toctree.rst
+  strings_and_cells/toctree.rst
+  tables/toctree.rst
+  applying_computing_to_society/toctree.rst
   intro_to_cpp/toctree.rst
   branching/toctree.rst
   iteration/toctree.rst
@@ -43,7 +44,6 @@ Table of Contents
   program_design_in_cpp/toctree.rst
   structs/toctree.rst
   more_data_structures/toctree.rst
-  applying_computing_to_society/toctree.rst
   algorithms/toctree.rst
   
 
