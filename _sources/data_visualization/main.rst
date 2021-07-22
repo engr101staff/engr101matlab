@@ -109,12 +109,12 @@ Let's look at two useful MATLAB functions for simple plots of 3D data. This vide
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, :code:`plot3` and :code:`scatter3` can be used to make 3D plots.
+  :code:`plot3` and :code:`scatter3` can be used to make 3D plots.
 
-- :code:`plot3` - works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data
-- :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data
+  - :code:`plot3` - works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data
+  - :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data
 
 -----------------------------
 Exercise: Plotting 3D Vectors
@@ -217,15 +217,15 @@ MATLAB has a built-in function called :code:`meshgrid()` that will convert our v
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As shown in the video, the :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input. For example:
+  The :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input. For example:
 
-.. code-block:: matlab
+  .. code-block:: matlab
 
-  x = -2:1:2;
-  y = -2:1:2;
-  [X, Y] = meshgrid(x,y);
+    x = -2:1:2;
+    y = -2:1:2;
+    [X, Y] = meshgrid(x,y);
 
 -------------------------------------
 Exercise: :code:`meshgrid()` Practice
@@ -373,9 +373,9 @@ Once you have data in matrix form, you can create 3D surface and mesh plots in M
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As we've seen, we can use the :code:`surf` function with three matrices to create a surface plot. We can use the :code:`mesh` function with three matrices to create a mesh plot.
+  We can use the :code:`surf` function with three matrices to create a surface plot. We can use the :code:`mesh` function with three matrices to create a mesh plot.
 
 --------------------------------
 Exercise: Surface and Mesh Plots
@@ -440,9 +440,9 @@ MATLAB also has two helpful plotting functions to create contour maps. Watch the
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw, :code:`contour` is used to create contour plots, and :code:`contourf` is used to create *filled* contour plots.
+  :code:`contour` is used to create contour plots, and :code:`contourf` is used to create *filled* contour plots.
 
 -----------------------
 Exercise: Contour Plots

@@ -1,3 +1,7 @@
+.. admonition:: Video Recap
+
+  A matrix is also created with the square brackets :code:`[]`. Rows are separated with a semicolon :code:`;` (or a newline) and each element in a row is separated with commas or spaces, just like a vector.
+
 Here's some MatCrab examples that showcase what we saw in the video.
 
 Creating a basic matrix:
@@ -63,7 +67,7 @@ You can also use smaller matrices as components:
 
 |
 
-And the next time you're at a (socially distanced) party, you can show off this one:
+And the next time you're at a party, you can show off this one:
 
 .. raw:: html
 

@@ -6,9 +6,9 @@
 
    <script src="../_static/common/js/common3.js"></script>
 
-=================
-Strings and Cells
-=================
+========================
+Strings and Cell Arrays
+========================
 
 ^^^^^^^^^^^^
 Introduction
@@ -21,9 +21,9 @@ Introduction
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-In the previous video, we introduced a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
+  In the previous video, we introduced a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
 
 ^^^^^^^^^^^
 Cell Arrays
@@ -38,9 +38,11 @@ MATLAB includes a matrix-like data structure called a **cell array** that allows
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap 
 
-Cell arrays are heterogenous collections of elements and are created using the curly brackets :code:`{` and :code:`}`. Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data. Let's consider indexing into cell arrays:
+  Cell arrays are heterogenous collections of elements and are created using the curly brackets :code:`{` and :code:`}`. Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data.
+  
+Let's consider indexing into cell arrays:
 
 .. youtube:: lejDhTnuIhM
   :divid: ch08_02_vid_indexing_and_unpacking_in_cell_arrays
@@ -48,14 +50,14 @@ Cell arrays are heterogenous collections of elements and are created using the c
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw, there are two ways to index into a cell array:
+  There are two ways to index into a cell array:
 
-- **Cell indexing**, using the :code:`( )` operator. This can be used to select particular cells (or groups of cells) within a cell array. The result is a smaller cell array.
-- **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly. This is generally not useful for multi-element selections.
+  - **Cell indexing**, using the :code:`( )` operator. This can be used to select particular cells (or groups of cells) within a cell array. The result is a smaller cell array.
+  - **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly. This is generally not useful for multi-element selections.
 
-The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
+  The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
 
 -----------------------------
 Exercise: Cell Array Practice
@@ -103,11 +105,11 @@ Now that we've seen the basics of cell arrays, let's take a look at how they're 
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-In the previous video, we saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
+  We saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
 
-Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
+  Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reading Excel Files in MATLAB
@@ -122,9 +124,9 @@ Another case to be made for cell arrays is that sometimes the data we have are n
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap 
 
-The :code:`xlsread` function allows us to read data from an Excel spreadsheet into MATLAB, and cell arrays can be used to represent this data.
+  The :code:`xlsread` function allows us to read data from an Excel spreadsheet into MATLAB, and cell arrays can be used to represent this data.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary

@@ -25,14 +25,6 @@ Plotting and Figures
     
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
-.. include:: ex/introduction.in.rst
-
 .. admonition:: Chapter Files
 
   We’ll be using several files throughout this chapter’s exercises. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It’s also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don’t clutter up whatever else you were working on.)
@@ -79,6 +71,12 @@ Introduction
             :append: ...
 
       - Starter script for analyzing the star data
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Introduction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ex/introduction.in.rst
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,11 +148,9 @@ We've seen how to make a plot that has two sets of data on it, but what if you w
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-----------------------------------
-Exercise: :code:`subplot` Practice
-----------------------------------
+  The :code:`subplot` function allows multiple axes per figure, arranged in a grid-like configuration.
 
 .. fillintheblank:: ch06_06_ex_subplot_01
 
@@ -237,6 +233,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 
 * Create line plots using :code:`plot(x_values, y_values, 'b--o')`.
 * To plot multiple line plots on the same figure, you can pass more parameters to :code:`plot` (e.g., :code:`plot(x_values1, y_values1, 'b--o', x_values2, y_values2)`). You can also create a :code:`figure()`, use :code:`hold on`, and call :code:`plot` multiple times.
+* Use :code:`print` to save an image to a file.
 * Create scatter plots using :code:`scatter(x_values, y_values)`.
 * Create a pie chart using :code:`pie(counts)`.
 * Create a bar chart using :code:`bar(values)`.

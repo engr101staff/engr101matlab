@@ -6,24 +6,13 @@ Make sure that you've downloaded :code:`AnalyzeStars.m` and :code:`star_data.xls
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Let's review some of the commands for making bar charts. To plot a bar chart with only one bar for each x-value, put your data in a column vector (e.g., :code:`magnitude_averages`).
-
-.. code-block:: matlab
-
-    bar(magnitude_averages);
+    To plot a bar chart with only one bar for each x-value, put your data in a column vector and use :code:`bar`. (The :code:`barh` function works similarly but produces a horizontal bar chart.)
     
-.. tip::
-    The :code:`barh` function works similarly but produces a horizontal bar chart.
-    
-If you want to have multiple bars for each x-value, create multiple column vectors and combine them into a matrix (each row should correspond to a single group of bars).
+    If you want to have multiple bars for each x-value, create multiple column vectors and combine them into a matrix (each row should correspond to a single group of bars).
 
-.. code-block:: matlab
-
-    bar([magnitude_averages, distance_averages]);
-    
-If you are going to make a plot multiple times, you can put it in a function to make it easier to call repeatedly. You can also pass parameters into this function to customize the plot.
+    If you are going to make a plot multiple times, you can put it in a function to make it easier to call repeatedly. You can also pass parameters into this function to customize the plot.
 
 .. mchoice:: ch06_04_bar_charts
   :answer_a: This isn't problematic.

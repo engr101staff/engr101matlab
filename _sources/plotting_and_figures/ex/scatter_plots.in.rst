@@ -44,21 +44,19 @@ We can make some really neat plots with all of this data. Make sure that you've 
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-In the previous video, we read in our data from an Excel file and used it to create a scatter plot. In general, when we are plotting a dataset, we will take the following steps:
+  In general, when we are plotting a dataset, we will take the following steps:
 
-1. Input data (for example, from a :code:`.csv` file or an Excel file).
-2. Extract data into vectors.
-3. Perform calculations on the data.
-4. Display data in a plot.
+  1. Input data (for example, from a :code:`.csv` file or an Excel file).
+  2. Extract data into vectors.
+  3. Perform calculations on the data.
+  4. Display data in a plot.
 
-We specifically created a scatter plot. If we have a vector of x-values (say, :code:`selected_mass`) and a vector of y-values (say, :code:`selected_planets`), we can create a scatter plot.
+  If we have a vector of x-values (say, :code:`selected_mass`) and a vector of y-values (say, :code:`selected_planets`), we can create a scatter plot using :code:`scatter(selected_mass, selected_planets)`.
 
-.. code-block:: matlab
+  We can set the range (e.g., the minimum and maximum values) of the x-axis and y-axis using the :code:`xlim` and :code:`ylim`. We can also display the grid on our plots using :code:`grid on` (similarly, :code:`grid off` turns off the grid).
 
-  scatter(selected_mass, selected_planets);
-  
 .. tip::
 
   When should you use a scatter plot, and when should you use a line plot?
@@ -66,15 +64,6 @@ We specifically created a scatter plot. If we have a vector of x-values (say, :c
   **Use a line plot when you want to connect your data points to form a continuous line.** This can help you visually interpolate what the data would look like between your data points, where you don't actually have any data to look at. It also gives you a good sense of which way the data is trending.
   
   **Use a scatter plot when you want to show your data points without connecting them.** This can be good when you are showing a lot of data points, and connecting them would make a crazy-looking line. A scatter plot can be effective when you are showing raw data, and you want to look at where there is a high density of data points and where is a low density.
-  
-We can set the range (e.g., the minimum and maximum values) of the x-axis and y-axis using the following commands.
-
-.. code-block:: matlab
-
-    xlim([0, 3]);
-    ylim([-1, 9]);
-    
-We can also display the grid on our plots using :code:`grid on` (similarly, :code:`grid off` turns off the grid).
 
 .. mchoice:: ch06_02_ex_plot
   :answer_a: plot(x_ordered, y_ordered) and plot(x_unordered, y_unordered) will give you the same result.

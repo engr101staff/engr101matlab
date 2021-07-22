@@ -1,8 +1,8 @@
-Strings and Cells
-:::::::::::::::::
+Strings and Cell Array
+:::::::::::::::::::::::
 
 .. toctree::
-  :caption: Strings and Cells
+  :caption: Strings and Cell Arrays
   :maxdepth: 4
 
   main.rst

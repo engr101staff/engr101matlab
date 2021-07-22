@@ -20,12 +20,6 @@ Working with Images
 
    *"Speed & Foam", Michel Brousseau*
 
-^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^
-
-.. include:: ex/warm_up.in.rst
-
 .. admonition:: Chapter Files
 
   We'll be using several files throughout this chapter's exercises. These include starter code files as well as image files used as examples. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
@@ -92,8 +86,13 @@ Introduction
     :modaltitle: File Download Instructions for MATLAB
     
     .. include:: ../common/matlab_download_instructions.in.rst
-      
 
+^^^^^^^^^^^^
+Introduction
+^^^^^^^^^^^^
+
+.. include:: ex/warm_up.in.rst
+      
 .. Note::
 
   For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`). Sorry... we ran out of time to re-record the videos. :(
@@ -111,34 +110,13 @@ Matlab has built-in functions for saving and loading images. Let's look at an ex
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Here's the recap:
+  To **load** image data from a file into a matrix, use the :code:`imread()` function. To **save** a matrix as an image file, use the :code:`imwrite()` function.
 
-- To **load** image data from a file into a matrix, use the :code:`imread()` function:
+  To **display** a matrix as an image in a **figure window**, use the :code:`imshow()` function (sometimes the figure window will open "underneath" the other matlab window. You might need to go to your taskbar to find it).
 
-  .. code-block:: matlab
-
-    img = imread('filename.png');
-    % The matrix img now contains the data for the given image file
-
-- To **save** a matrix as an image file, use the :code:`imwrite()` function:
-
-  .. code-block:: matlab
-
-    % Assume img is a matrix containing a representation of image data
-    % This line will save that into a new image file named newFile.png
-    imwrite(img, 'newFile.png');
-
-- To **display** a matrix as an image in a **figure window**, use the :code:`imshow()` function:
-
-  .. code-block:: matlab
-
-    imshow(img);
-
-  By the way, sometimes the figure window will open "underneath" the other matlab window. You might need to go to your taskbar to find it.
-
-MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
+  MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
 
 .. Tip::
 
@@ -157,9 +135,9 @@ Grayscale Images as Matrices
 
    *The Tetons and Snake River, Grand Teton National Park, Wyoming. Ansel Adams*
 
-We can use matlab to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
+We can use MATLAB to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
 
-We're going to talk about two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3, etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
+There are two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3, etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
 
 .. youtube:: J6PU1e6K0T8
   :divid: ch05_02_vid_grayscale_images
@@ -167,12 +145,9 @@ We're going to talk about two ways to represent an image numerically: either usi
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Each cell in the matrix represents a pixel of the picture. The intensity value determines the shade of gray based on a gradient. The higher the intensity value, the closer to white. The value can be represented 2 ways:
-
-- An integer between 0 and 255, inclusive
-- A real number (a double) between 0 and 1, inclusive
+  Each cell in the matrix represents a pixel of the picture. The intensity value determines the shade of gray based on a gradient. The higher the intensity value, the closer to white. The value either as an integer between 0 and 255 (inclusive), or a double between 0 and 1 (inclusive).
 
 By default, images you load through :code:`imread()` are generally going to be in the 0 to 255 format, so we'll work with that for now.
 
@@ -201,7 +176,6 @@ Example: Contrast Stretching
 
 |
 
-
 ---------------------
 Example: Thresholding
 ---------------------
@@ -214,7 +188,9 @@ Sometimes you might be interested in identifying particular pixels in an image w
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+  
+  To do image thresholding, first choose a threshold value. Then, set all values above the threshold to white (255). Set all values below or equal to the threshold to black (0).
 
 .. tip::
 
@@ -226,15 +202,13 @@ RGB Color Images
 ^^^^^^^^^^^^^^^^
 .. section 5
 
-We can use a matrix of numbers to represent a grayscale image, with values between 0 and 255 for different shades of gray. If we want a color image, how could we describe the color of each pixel?
+We've seen how to represent grayscale image, but what about color images?
 
-We could try to have a number for each color, e.g. 0 = red, 1 = orange, 2 = blue, etc. Although a box of 256 crayons would be pretty awesome, we really need a strategy that can represent every possible color, and there are a lot more than 256! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense, etc.) in a way that matches our human understanding of color.
+We could try assigning a number to each color (e.g. 0 = red, 1 = orange, 2 = blue). However, we need a strategy that can represent every possible color, and there are a lot more than 256 colors! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense) in a way that matches our human understanding of color.
 
-You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll do something similar, but using the primary colors of light which are red, green, and blue (RGB). This representation is inspired by the way our eyes perceive color and also aligned with the way computer displays produce color. If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations!
+You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll do something similar, but using the primary colors of light - red, green, and blue (RGB). If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations!
 
 In MATLAB RGB images, we need to find a way to describe where each pixel is and also describe the amount of red, green, and blue in each pixel. We do this with a matrix for each *color channel* in the image. If we wanted to, we could store these channels as individual matrices, but that could get confusing fast. Instead, we'll take advantage of MATLAB's capability to make 3D matrices and store each RGB color channel as one layer.
-
-Here's the details:
 
 .. youtube:: Q97m7naKIfo
   :divid: ch05_05_vid_color_images
@@ -242,7 +216,9 @@ Here's the details:
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  A color image is represented by three different **color channels**, layered on top of each other like a 3D array. To access values in a 3D array, instead of row/column indexing, we use row/column/layer indexing.
 
 -----------------------------------
 Exercise: Row/Column/Layer Indexing
@@ -264,19 +240,7 @@ Manipulating Images as 3D Matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Given the representation of an RGB image as three channels stored in layers of a 3D matrix, there are two main ways you might choose to work with an image: 1) all the channels together (the whole image) OR 2) one channel at a time. Let's look at some examples:
-
-**Working With The Whole Image**
-
-.. youtube:: jYiWOYHOvpw
-  :divid: ch05_06_vid_whole_image
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-**Working With A Single Channel**
+How do we work with color images?
 
 .. youtube:: WOxAHmEYnOY
   :divid: ch05_06_vid_single_channel
@@ -284,34 +248,41 @@ Given the representation of an RGB image as three channels stored in layers of a
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To review, here's what the two look like as indexing expressions:
+  There are two main ways you might choose to work with an image: 1) all the channels together (the whole image) OR 2) one channel at a time. Here's what the two look like as indexing expressions:
 
-- :code:`img(___, ___, :)` means that you want the **whole** image. The colon in the layer indicator means that you're selecting all of the channels (layers) at once.
-- :code:`img(___, ___, 2)` means, for example, that you want a **single channel** - the **2nd (green)** in this case.
+  - :code:`img(___, ___, :)` means that you want the **whole** image. The colon in the layer indicator means that you're selecting all of the channels (layers) at once.
+  - :code:`img(___, ___, 2)` means, for example, that you want a **single channel** - the **2nd (green)** in this case.
 
-Also, when you would like to do more complicated operations on one of the channels in an image, you sometimes need to "take out the channel, work with it, and then copy it back in".
+  When you would like to do more complicated operations on one of the channels in an image, you sometimes need to "take out the channel, work with it, and then copy it back in".
 
-.. code-block:: matlab
+  .. code-block:: matlab
 
-  % Pull out a copy of the red channel
-  % to work with it individually.
-  red = img(:,:,1);
+    red = img(:,:,1); % Pull out a copy of the red channel
+    
+    red(:) = 255; % Make changes to the red channel
 
-  % Make changes to the red channel.
-  red(:) = 255;
+    img(:,:,1) = red; % Copy the red channel data back into the original image
 
-  % Copy the red channel data back into the original image.
-  % You need this, otherwise the image isn't changed.
-  img(:,:,1) = red;
+Let's look at some examples of manipulating color images:
+
+.. youtube:: jYiWOYHOvpw
+  :divid: ch05_06_vid_whole_image
+  :height: 315
+  :width: 560
+  :align: center
+
+.. admonition:: Video Recap
+
+  In this video, we walked through the following image operations: vertical flip, crop, and horizontal flip.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 HSV Image Representation and Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-We also want to introduce another representation for color images that uses channels for the hue, saturation, and value (HSV) of each pixel, instead of RGB. We'll explain what those mean in a moment, but first let's look at an application - *color desaturation* - that motivates the need for a different representation.
+In addition to RGB, you can also representation color images using channels for the hue, saturation, and value (HSV) of each pixel. We'll explain what those mean in a moment, but first let's look at an application - *color desaturation* - that motivates the need for a different representation.
 
 .. figure:: img/desaturation.png
    :width: 600
@@ -326,11 +297,11 @@ We also want to introduce another representation for color images that uses chan
   :width: 560
   :align: center
 
-|
+.. admonition :: video Recap
 
-This is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify the blue colors in the background by just looking at the blue channel, because making the color "blue" actually depends on the ratio of all three R, G, and B channels.
+  Image desaturation is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify the blue colors in the background by just looking at the blue channel, because making the color "blue" actually depends on the ratio of all three R, G, and B channels.
 
-Instead, let's turn to HSV, which is another three-channel representation: hue, saturation, and value. Here's the basic idea of each:
+Let's turn to HSV, which is another three-channel representation: hue, saturation, and value. Here's the basic idea of each:
 
 - Hue: "which basic color is it?"
 - Saturation: "how strong is the color?"
@@ -419,26 +390,10 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * To load images into a matrix, use :code:`imread()`. To save an image matrix as a file, use :code:`imwrite()`. To display a matrix as an image, use :code:`imshow()`.
 * **Integers** are whole real numbers (e.g,. 1, 2, 3). **Doubles** are floating point numbers (e.g., decimals like 1.5, 2.7, and 3.0).
 * In MATLAB, grayscale images are represented by a matrix with intensity values (0-255 or 0-1).
-* Three steps are required to do **contrast stretching** (improving or "stretching" the contrast of an image):
-
-  1. Determine the min/max of the original image.
-  2. Determine a stretch factor (size of final intensity range / size of original intensity range).
-  3. Stretch each pixel using the formula: :code:`new_min + stretch_factor * (orig_pixels - original_min)`.
-
+* **Contrast stretching** improves or "stretches" the contrast of an image.
 * In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the red, green, and blue portions of each pixel.
-* There are multiple ways to manipulate images as 3D matrices:
-
-  - Working with the whole image - when you take all three channels at the same time. This is indexed as :code:`imageMatrix(row, column, :)`.
-  - Working with a single channel - when you only want one channel at a time. This is indexed as :code:`imageMatrix(row, column, channel)`.
-  - More complicated manipulation - you must make a copy of the channel then make adjustments, and replace the original channel:
-
-    .. code-block:: matlab
-    
-      red = img(:,:,1);
-      red(:) = 255;
-      img(:,:,1) = red;
-    
-* In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
+* When manipulating images, you can either work with the whole image, or work with a single channel at a time. For more complicated manipulations, you may need to make a copy of the channel, make adjustments, and then replace the original channel.
+* In MATLAB, HSV color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
 * To convert from RGB to HSV, use :code:`rgb2hsv()`. To convert from HSV to RGB, use :code:`hsv2rgb()`. Remember that to show an image using :code:`imshow()`, it **must be** an RGB image so don't forget to convert before using that command.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

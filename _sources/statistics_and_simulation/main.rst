@@ -268,14 +268,14 @@ This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a sp
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, MATLAB has two very useful functions for working with histograms: 
+  MATLAB has two very useful functions for working with histograms: 
 
-- :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
-- :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
+  - :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
+  - :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
 
-As the Exploring Histograms website and the above MATLAB video show, histograms are very sensitive to the size of the bins you use in your histograms. You can specify either the number of bins or the bins themselves in MATLAB.
+  Histograms are very sensitive to the size of the bins you use in your histograms. You can specify either the number of bins or the bins themselves in MATLAB.
 
 ----------------------------------
 Exercise: City Longitude Histogram
@@ -494,31 +494,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* **MATLAB is often used to analyze data.** We tend to follow a similar pattern each time:
-
-  1. Read data in from a file
-  2. Look for some characteristics/process the data
-  3. Plot the data to see trends, patterns, extremes, etc.
-
-* MATLAB has built-in functions for calculating common statistical measures of datasets:
-
-  - :code:`mean` - mean (or average)
-  - :code:`median` - median
-  - :code:`mode` - mode
-  - :code:`var` - variance
-  - :code:`std` - standard deviation 
-
+* **MATLAB is often used to analyze data.** We tend to follow a similar pattern each time: Read data in from a file, look for some characteristics/process the data, and plot the data to see trends, patterns, extremes, etc.
+* MATLAB has built-in functions for calculating common statistical measures of datasets: :code:`mean` (average), :code:`median`, :code:`mode`, :code:`var` (variance), and :code:`std` (standard deviation).
 * The :code:`histogram` function will generate a histogram of a vector of data; if you need the number of occurrences in each bin, use the :code:`histcounts` function.
 * Error bars can be used to convey a range of values for each point on the plot or uncertainty about a measured value. MATLAB’s :code:`errorbar` function will create a plot with “error bars” at each data point.
-* **MATLAB is also used to simulate data.** When we simulate data, we also tend to follow a similar pattern each time:
-
-  1. Convert the math equations into a computer program
-  2. Create a starter set of data and use the computer program from step 1 to generate  predicted data
-  3. Look for some things / process data / plot data to see trends, etc.
-
+* **MATLAB is also used to simulate data.** When we simulate data, we also tend to follow a similar pattern each time: Convert the math equations into a computer program, create a starter set of data and use the computer program from step 1 to generate  predicted data, and look for some things / process data / plot data to see trends, etc.
 * The :code:`linspace` function can be used to generate equally spaced values, similar to the range operator (:code:`:`), to be used as a starter set of data. 
 * MATLAB can also generate random values to be used as a starter set of data. The :code:`randi` function generates pseudorandom integers from a uniform discrete distribution.
-* There are many other MATLAB functions for generating data from random distributions!
-
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

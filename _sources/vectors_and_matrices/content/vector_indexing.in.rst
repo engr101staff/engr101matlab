@@ -1,3 +1,7 @@
+.. admonition:: Video Recap
+
+  The **indexing** operator :code:`( )` allows you to select elements in a vector. Indexing starts at 1. The :code:`end` keyword gives the last index. You can select multiple elements by putting a vector of indices in the :code:`( )`. To select all elements, use the :code:`:` operator in the :code:`( )`.
+
 Here's more examples of the different ways you can specify indices. Feel free to mess around with each to get a handle on what's going on.
 
 Use a **single** number in the parentheses to select **one element**:

@@ -58,13 +58,9 @@ An implicit bias is a bias, towards or against something, of which we are not co
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-Recap: 
-
-- We **all** have implicit biases because we get them from the societies we live in.
-- We have a **responsibility** to not let those implicit biases negatively affect the people around us. 
-- You can **change** your implicit biases!
+   We **all** have implicit biases because we get them from the societies we live in. We have a **responsibility** to not let those implicit biases negatively affect the people around us. You can **change** your implicit biases!
 
 Knowledge is your best tool for helping to change implicit bias. We have more information about our societies than ever before, so let's use computing and data analysis to try to learn a little more about how implicit bias shows up in our societies. 
 

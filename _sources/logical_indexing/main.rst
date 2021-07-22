@@ -67,14 +67,14 @@ We've seen that MATLAB supports *arithmetic* operations (e.g. :code:`+`, :code:`
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, relational operators check for equality or perform comparisons:
+  Relational operators check for equality or perform comparisons:
 
-.. figure:: img/relational_operators.png
-   :width: 650
-   :align: center
-   :alt: relational_operators.png
+  .. figure:: img/relational_operators.png
+    :width: 650
+    :align: center
+    :alt: relational_operators.png
 
    
 
@@ -108,14 +108,14 @@ Let's take a look at some of the practical ways we can use logical results like 
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, logical indexing is when you use a logical array to index into an array, instead of regular indexing. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected: 
+  Logical indexing is when you use a logical array to index into an array, instead of regular indexing. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected: 
 
-.. figure:: img/logical_indexing.png
-   :width: 650
-   :align: center
-   :alt: logical_indexing.png
+  .. figure:: img/logical_indexing.png
+    :width: 650
+    :align: center
+    :alt: logical_indexing.png
 
 ------------------------------
 Exercise: Analyzing Some Rocks
@@ -154,21 +154,21 @@ Sometimes we want to ask complex questions about our data, for example "Which ro
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, logical operators combine two truth values in a particular way:
+  Logical operators combine two truth values in a particular way:
 
-.. figure:: img/logical_operators.png
-   :width: 650
-   :align: center
-   :alt: logical_operators.png
+  .. figure:: img/logical_operators.png
+    :width: 650
+    :align: center
+    :alt: logical_operators.png
 
-And remember, if we want to check whether a value is within a range of numbers, we need to compare the value to the lower bound and upper bound separately and then use the :code:`&` operator to combine the two truth values:
+  And remember, if we want to check whether a value is within a range of numbers, we need to compare the value to the lower bound and upper bound separately and then use the :code:`&` operator to combine the two truth values:
 
-.. code-block:: matlab
+  .. code-block:: matlab
 
-  % Check if the value of x is between 0 and 10 (exclusive)
-  0 < x & x < 10
+    % Check if the value of x is between 0 and 10 (exclusive)
+    0 < x & x < 10
 
 
 
@@ -208,14 +208,14 @@ Now that we have quite a few operators to work with, it makes sense to discuss h
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Here's that table of the order of precedence again, for future reference:
+  Here's that table of the order of precedence again, for future reference:
 
-.. figure:: img/order_of_precedence.png
-   :width: 600
-   :align: center
-   :alt: order_of_precedence.png
+  .. figure:: img/order_of_precedence.png
+    :width: 600
+    :align: center
+    :alt: order_of_precedence.png
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -232,7 +232,9 @@ Let's take a look at some of the practical ways we can use logical results like 
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can use logical indexing to write into a matrix. If we have two "parallel" matrices, we can use one matrix to index into the second matrix.
 
 -------------------------------------------
 Exercise: Logical Indexing and Assignment

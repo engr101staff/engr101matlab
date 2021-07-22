@@ -20,31 +20,9 @@ First, let's take a look at how the problem relates to the range of intensity va
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-.. First, let's take a look at the range of intensity values used by this image. Remember, the possible range of values is 0 to 255. What range does this image use?
-
-.. .. reveal:: ch05_04_hint_contrast_stretching
-..   :showtitle: Hint
-..   :hidetitle: Hide Hint
-
-..   .. hint::
-
-..     Use the built-in :code:`min()` and :code:`max()` functions to find the minimum and maximum intensity values. Remember, by default these (and many other) functions operate on a column-by-column basis. That means you'll need to either call :code:`min(min(img))`, :code:`min(img(:))`, or :code:`min(img, 'all')`.
-
-.. .. fillintheblank:: ch05_04_ex_contrast_stretching_min
-
-..    What is the minimum intensity value in the image? |blank|
-
-..    - :152: Correct!
-..      :x: No, try again.
-
-.. .. fillintheblank:: ch05_04_ex_contrast_stretching_max
-
-..    What is the maximum intensity value in the image? |blank|
-
-..    - :250: Correct!
-..      :x: No, try again.
+  **Contrast stretching** "stretches out" the range of intensity values by making sure that the values go all the way from 0 to 255 (instead of having a narrower range of values). To do contrast stretching, first we need to determine the maximum and minimum values in the image. Then, we need to use linear interpolation to stretch the values from 0 to 255.
 
 The washed-out image is only using a small part of the possible range of intensity values - no wonder this image looks washed out! As you saw in the video, the standard algorithm for contrast stretching is based on a linear interpolation from the original range of intensity values to a new, larger range.
 
@@ -74,7 +52,7 @@ Now, we would like you to write a function to implement this contrast stretching
 
 And the function should return the new, adjusted image.
 
-We have provided a starter file :download:`adjust_contrast.m <../_static/working_with_images/adjust_contrast.m>` that you should use to get started. Take note of the comments there, which match the algorithm described above. Some lines of code for steps 1 and 3 are missing pieces - you'll need to fill these in. Step 2 is already done for you.
+We have provided a starter file :code:`adjust_contrast.m` at the top of the chapter that you should use to get started. Take note of the comments there, which match the algorithm described above. Some lines of code for steps 1 and 3 are missing pieces - you'll need to fill these in. Step 2 is already done for you.
 
 To test your :code:`adjust_contrast` function, you can just call it from the command line, providing the grayscale image from earlier as the first parameter. Try a few different combinations of new min/max values. We find that 30, 255 works pretty well. For example:
 
@@ -82,6 +60,8 @@ To test your :code:`adjust_contrast` function, you can just call it from the com
 
   adjustedImg = adjust_contrast(grayImg, 30, 255);
   imshow(adjustedImg);
+
+|
   
 .. shortanswer:: ch05_04_ex_contrast_stretching_function
 
