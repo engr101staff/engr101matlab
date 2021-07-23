@@ -213,7 +213,7 @@ Functions for **creating default matrices** out of zeroes or ones:
 .. raw:: html
 
   <div class="container-fluid">
-    <div class="matcrab-example">=
+    <div class="matcrab-example">
       <table><tbody>
         <tr>
           <td style="text-align: center">

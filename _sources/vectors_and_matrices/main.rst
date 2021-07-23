@@ -61,8 +61,6 @@ Let's start by creating some vectors.
   :width: 560
   :align: center
 
-|
-
 .. admonition:: Video Recap
 
   We use the square brackets :code:`[]` to create a vector or a matrix. Elements may be separated by spaces or commas.
@@ -121,7 +119,7 @@ Exercise: Creating Vectors
 Range Notation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sometimes, we want to make a vector that has elements that contain evenly-spaced values between a starting value and an ending value. We can use range notation with the colon :code:`:` operator to create evenly-spaced vectors.
+Sometimes, we want to make a vector that has elements that contain evenly-spaced values between a starting value and an ending value. We can use range notation to do this.
 
 .. youtube:: CRCUVzo_MD4
   :divid: ch02_02_vid_range_notation
@@ -264,7 +262,7 @@ To access elements in a matrix, it's generally most useful to use **row/column i
 
 .. admonition:: Video Recap
 
-  To recap, in row/column indexing, we:
+  In row/column indexing, we:
 
   - Specify separate row/column indices
   - Specify rows first, then columns, separated by a comma
@@ -281,7 +279,7 @@ Let's look at some more examples:
 
 .. admonition :: Video Recap
 
-  Just like with vector indexing, we can index in several different ways. For rows and columns, you can:
+  Just like with vector indexing, we can index matrices in several different ways. For rows and columns, you can:
 
   - Use either a **single number** to select one row or column.
   - Use a **vector of indices** to select several rows or columns.
@@ -306,10 +304,6 @@ We can also use indexing to change the values of certain elements in a matrix.
   To update elements with indexing, the indexing expression for those elements occurs on *both* the left-hand side (LHS) and the right-hand side (RHS) of the expression. This can be used to rearrange rows and columns in a matrix.
 
   To delete a row or a column, assign :code:`[]` to them.
-
-------------------------------------------------------
-Exercise: Manipulating Arrays
-------------------------------------------------------
 
 .. include:: ex/manipulating_arrays_1.in.rst
 

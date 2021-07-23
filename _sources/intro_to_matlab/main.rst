@@ -423,7 +423,7 @@ Expressions in MATLAB can also use **functions** to compute results or perform o
 
 .. admonition:: Video Recap
 
-  A **function** is an abstraction over a chunk of computation (data goes in, gets process, new data comes out). We call data going *into* a function **parameters**, and data coming *out* of a function **return variables**. We can use a function by **calling** it, passing it some parameters, and storing its return variables.
+  A **function** is an abstraction over a chunk of computation (data goes in, gets processed, new data comes out). We call data going *into* a function **parameters**, and data coming *out* of a function **return variables**. We can use a function by **calling** it, passing it some parameters, and storing its return variables.
 
   Scripts and functions are related, but have different uses. The terminology is also slightly different: you **run** a script, but **call** a function.
 
@@ -469,14 +469,7 @@ Watch the demo below to see examples of how we can use MATLAB to manipulate data
 
 .. admonition:: Video Recap
 
-  You can save all the variables in your MATLAB workspace to a file using the :code:`save` command, and restore a saved workspace using the :code:`load` command:
-
-  .. code-block:: matlab
-
-    save('AllTheData.mat');
-    load('AllTheData.mat');
-
-  The load and save commands are also available from the MATLAB menu. All workspace files use the :file:`.mat` file ext.
+  You can save all the variables in your MATLAB workspace to a file using the :code:`save` command, and restore a saved workspace using the :code:`load` command. The load and save commands are also available from the MATLAB menu. All workspace files use the :file:`.mat` file ext.
 
   In the video, we showed some examples of data analysis and plotting (much more to come in later chapters!).
 

@@ -102,7 +102,7 @@ Loading and Saving Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-Matlab has built-in functions for saving and loading images. Let's look at an example:
+MATLAB has built-in functions for saving and loading images. Let's look at an example:
 
 .. youtube:: hfjwgcbH44M
   :divid: ch05_03_vid_loading_and_saving_images

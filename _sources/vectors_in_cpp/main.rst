@@ -164,23 +164,23 @@ Indexing Into Vectors in C++
 
    Which code snippet will print the number :code:`1.57` followed by a newline to the terminal? Select all that apply. 
 
-   - :code:`cout << x.at(0) << endl;`
+   - :code:`cout << y.at(0) << endl;`
 
      + Correct! The element at index 0 has a value of 1.57.
 
-   - :code:`cout << x(0) << endl;`
+   - :code:`cout << y(0) << endl;`
 
      - Oops! This is MATLAB indexing.
 
-   - :code:`cout << x[1] << endl;`
+   - :code:`cout << y[1] << endl;`
 
      - Oops! 1.57 is the first element, but its index is 0 (not 1). 
 
-   - :code:`cout << x.at(1) << endl;`
+   - :code:`cout << y.at(1) << endl;`
 
      - Oops! 1.57 is the first element, but its index is 0 (not 1). 
 
-   - :code:`cout << x[0] << endl;`
+   - :code:`cout << y[0] << endl;`
 
      + Correct! The element at index 0 has a value of 1.57.
 

@@ -1,4 +1,4 @@
-In this chapter, we'll take a look at how to use MATLAB to manipulate images. Matlab is very efficient at storing information as numbers in a matrix, like in matrix :code:`a` below.
+In this chapter, we'll take a look at how to use MATLAB to manipulate images. MATLAB is very efficient at storing information as numbers in a matrix, like in matrix :code:`a` below.
 
 .. raw:: html
 

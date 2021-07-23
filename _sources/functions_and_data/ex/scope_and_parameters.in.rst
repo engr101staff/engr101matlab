@@ -1,4 +1,4 @@
-Consider each of the following programs, which attempt to define and call a function for the *dot-product* of two vectors (multiply the two vectors, element-by-element, and then add it all up). If the program is correct, simply write "correct". However, if the program contains a mistake, write a brief explanation of the mistake in terms of scopes, parameters, and/or return values in the Matlab program.
+Consider each of the following programs, which attempt to define and call a function for the *dot-product* of two vectors (multiply the two vectors, element-by-element, and then add it all up). If the program is correct, simply write "correct". However, if the program contains a mistake, write a brief explanation of the mistake in terms of scopes, parameters, and/or return values in the MATLAB program.
 
 .. list-table:: 
   :align: left
