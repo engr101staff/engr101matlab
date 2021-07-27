@@ -14,13 +14,13 @@ Introduction to MATLAB
 .. Welcome!
 .. ^^^^^^^^
 
-Welcome to Engr 101! In Engr 101, we will be learning basic principles of programming computer code and simple algorithms used to tackle engineering problems. We will learn these concepts by first programming in MATLAB (which is really good at processing data and visualizing it) and then C++ (which is really good at automating decisions and creating a process). We have done our best to use wide-ranging real-world examples for as much of the class as possible. 
+Welcome to Engr 101! In Engr 101, we will learn basic principles of programming computer code and simple algorithms used to tackle real-world engineering problems. We will learn two programming languages: MATLAB (which is really good at processing data and visualizing it) and C++ (which is really good at automating decisions and creating a process).
 
 **Why are we using Runestone?**
 
-We believe that the best way to learn programming is to practice with each new programming skill and concept as it is introduced. This is hard to do in a traditional lecture but easy to do with the Runestone platform. Each Runestone chapter has sections that each follow the same general pattern: introduce a concept, show some examples, check your understanding, and practice the concepts. 
+The best way to learn programming is to practice with each new programming skill and concept as it is introduced. This is hard to do in a traditional lecture but easy to do with the Runestone platform. Each Runestone chapter has sections that follow the same general pattern: introduce a concept, show some examples, check your understanding, and practice the concepts. 
 
-The Runestone chapter sections use a variety of approaches for these steps, including short videos, text and images, multiple choice and true/false questions, actual coding practice, and "mixed up code" problems (where you're given the lines of code and you need to arrange the code so that program works correctly). Each question and practice exercise has some type of feedback for you. You can check your answers to true/false and multiple choice questions right away, and Runestone will either tell you whether you are correct or will give you a hint about how to get to the correct answer. The coding practice questions have walkthrough videos that you can watch if you get stuck or want to verify that you've solved the problem correctly. 
+We use a variety of approaches for these steps, including short videos, text and images, multiple choice and true/false questions, actual coding practice, and "mixed up code" problems (where you're given the lines of code and you need to arrange the code so that program works correctly). Each question and practice exercise has some type of feedback for you. You can check your answers to true/false and multiple choice questions right away, and Runestone will either tell you whether you are correct or will give you a hint. More complex questions have walkthrough videos that you can watch if you get stuck or want to verify that you've solved the problem correctly. 
 
 **Who Are All These People in the Videos?** 
 
@@ -94,8 +94,7 @@ There are many short, instructional videos woven throughout this Runestone book.
 A Quick Tour of MATLAB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-MATLAB is a programming language and environment often used in engineering applications. Let's take a quick tour of how it works.
+Let's get started with MATLAB! MATLAB is a programming language and environment often used in engineering applications. The term **MATLAB** refers to both the program (that you open on your computer) and the programming language itself. Let's take a quick tour of how it works.
 
 .. youtube:: iFrEd4x8g_k
   :divid: ch01_02_vid_variables_and_expressions
@@ -103,13 +102,11 @@ MATLAB is a programming language and environment often used in engineering appli
   :width: 560
   :align: center
 
-|
-
 .. admonition:: Video Recap
 
-  We've taken a quick tour of the MATLAB programming environment, and looked at how to change the layout. When you start a new MATLAB program, the first thing you should check is the current folder that you are working in. We looked at a few examples of doing basic math in MATLAB, as well as storing numbers in variables.
+  We've looked at the different components of the MATLAB programming environment, and seen how to change the layout. When you start a new MATLAB program, the first thing you should check is the current folder that you are working in. We looked at a few examples of doing basic math in MATLAB, as well as storing numbers in variables.
 
-Some fundamental tools in programming are *literals*, *variables*, and *expressions*:
+Some fundamental tools in programming are literals, variables, and expressions:
 
 * **Literals** are simply data written directly into our code. They might be numbers like :code:`3` or :code:`-2.85`, but we'll also see other kinds of data. For example, text literals can be written with single quotes like :code:`'hello world!'`.
 
@@ -159,7 +156,7 @@ Scripts
 
 In MATLAB, a **script** is sequence of commands written out, saved into a file, and then run all at once. We often use a script when we want to write a program that does something non-trivial and that we might run multiple times.
 
-Let's take a look at an example, and along the way we'll write up our first "useful" MATLAB program.
+Let's take a look at an example, and along the way we'll write up our first interesting MATLAB program.
 
 ----------------------------
 Example: A Fuel Calculator
@@ -170,8 +167,6 @@ Example: A Fuel Calculator
   :height: 315
   :width: 560
   :align: center
-
-|
 
 .. admonition:: Video Recap
 
@@ -190,15 +185,13 @@ We will use an **algorithm** to solve this problem. An algorithm is a formal set
 
   Briefly describe an algorithm you could use to compute the total amount of fuel needed for the probe, and also give a few examples of *variables* and *expressions* that could be used in a program implementing that algorithm.
 
-Let's look at an algorithm to implement the fuel calculator.
+Let's look at a couple of algorithms that we could use to implement the fuel calculator.
 
 .. youtube:: Nmg8blikrjY
   :divid: ch01_03_vid_scripts_02
   :height: 315
   :width: 560
   :align: center
-
-|
 
 .. admonition:: Video Recap
 
@@ -208,14 +201,7 @@ Let's look at an algorithm to implement the fuel calculator.
 Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the process of implementing algorithms, sometimes we make coding mistakes; these mistakes are called **bugs**.  A bug is anything that causes a program to not implement an algorithm correctly. Some common bugs are: 
-
-* Mistyping a variable name
-* Typing the wrong number
-* Telling the computer to do one thing when you *really* meant that it should do a different thing
-* ... and many more!
-
-**Debugging** is the process we use to narrow down where in our program a bug occurs and then correct the bug. 
+In the process of implementing algorithms, sometimes we make coding mistakes; these mistakes are called **bugs**.  A bug is anything that causes a program to not implement an algorithm correctly. Some common bugs are mistyping a variable name, typing the wrong number, or telling the computer to do one thing when you *really* meant that it should do a different thing. **Debugging** is the process we use to narrow down where in our program a bug occurs and then correct the bug. 
 
 .. admonition:: Did you know?
 
@@ -433,8 +419,6 @@ So what else can MATLAB do?
 
 MATLAB is way more than just a really fancy calculator. We will cover a lot more of what MATLAB can do as we go through the course, but let’s take a quick look to see how powerful MATLAB can be!
 
-**Vectors and Matrices**
-
 A key strength of MATLAB is support for working with vectors and matrices just as easily as scalar values. A **scalar** is a regular number, like 12 or 97.4. 
 
 A **vector** is a one-dimensional sequence of numbers:
@@ -444,6 +428,8 @@ A **vector** is a one-dimensional sequence of numbers:
   :align: center
   :alt: A row vector containing [1, 3, 6, 7, 9].
 
+|
+
 A **matrix** is a two-dimensional grid of numbers:
 
 .. image:: img/matrix.png
@@ -451,11 +437,9 @@ A **matrix** is a two-dimensional grid of numbers:
   :align: center
   :alt: A 2-by-3 matrix containing [7, 3, 9 ; 5, 7, 2].
 
-**Analyzing Data**
+|
 
 We use vectors and matrices to represent real-world data and quickly analyze that data to help make decisions about things. We need to know things like the biggest value, or the smallest value, or the most common value. MATLAB has a lot of built-in functions that can help us analyze data. 
-
-**Plotting Data**
 
 We also often want to visualize how one set of data relates to another. MATLAB has a staggeringly large number of ways to plot data. We will cover some of the most common plotting styles in this class, as well as ways to make your plots clear and professional.
 
@@ -469,7 +453,7 @@ Watch the demo below to see examples of how we can use MATLAB to manipulate data
 
 .. admonition:: Video Recap
 
-  You can save all the variables in your MATLAB workspace to a file using the :code:`save` command, and restore a saved workspace using the :code:`load` command. The load and save commands are also available from the MATLAB menu. All workspace files use the :file:`.mat` file ext.
+  You can save all the variables in your MATLAB workspace to a file using the :code:`save` command, and restore a saved workspace using the :code:`load` command. The load and save commands are also available from the MATLAB menu. All workspace files use the :file:`.mat` file extension.
 
   In the video, we showed some examples of data analysis and plotting (much more to come in later chapters!).
 
@@ -489,7 +473,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * When naming variables, choose **descriptive** variable names that describe the data being stored.
 * We say a value is **hardcoded** into a program when it appears in an expression as a literal (i.e. without using a variable).
 * You can update the value of a variable based on its previous value using an **update assignment** (or **update expression**). 
-* A **function** is an abstraction over a chunk of computation. There are built-in functions and functions that you write yourself.
-* MATLAB is really good at working with vectors and matrices and processing data. The next chapter will introduce vectors and matrices in MATLAB.
+* A **function** is an abstraction over a chunk of computation. There are built-in functions and functions that you write yourself. We call data going into a function **parameters**, and data coming out of a function **return variables**. We can use a function by **calling** it, passing it some parameters, and storing its return variables.
+* MATLAB is really good at working with vectors and matrices and processing data.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.

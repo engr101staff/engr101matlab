@@ -47,8 +47,6 @@ Table of Contents
   algorithms/toctree.rst
   
 
-
-
 ^^^^^^^^^^
 References
 ^^^^^^^^^^
