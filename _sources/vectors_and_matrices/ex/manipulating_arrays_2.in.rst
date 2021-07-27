@@ -1,4 +1,4 @@
-The questions below will ask you to write code that works regardless of the size of a matrix. Feel free to use this MatCrab workspace to try out your solutions on matrices :code:`a`, :code:`b`, and :code:`c`. (Or even others matrices if you would like to create more!)
+The questions below will ask you to write code that works regardless of the size of a matrix. Feel free to use this MatCrab workspace to try out your solutions on matrices :code:`a`, :code:`b`, and :code:`c`. (Or even other matrices if you would like to create more!)
 
 .. raw:: html
 
