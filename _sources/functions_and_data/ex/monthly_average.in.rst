@@ -1,32 +1,27 @@
-In this exercise, you'll work with the ESP data and write a function to compute the average ESP value for a given month.
-
-.. admonition:: Exercise Files
-
-  This exercise uses the same :file:`daily_samples.csv` and :file:`ESP.m` files as the previous one. See above for the download links.
+In this exercise, you'll work with the ESP data and write a function to compute the average ESP value for a given month. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`ESP.m` from the beginning of the chapter.
 
 Create a new function file called :file:`monthlyAverage.m`.
 
-  In that file, define the function :code:`monthlyAverage()`. It takes in a vector of 360 ESP values and a month number (e.g. 1 is January, 12 is December) and returns the average of ESP values for samples during the given month. For example, given the :code:`esp` vector, you could call :code:`monthlyAverage(esp, 3)` to compute the average ESP during March (the 3rd month).
+In that file, define the function :code:`monthlyAverage()`. It takes in a vector of 360 ESP values and a month number (e.g. 1 is January, 12 is December) and returns the average of ESP values for samples during the given month. For example, given the :code:`esp` vector, you could call :code:`monthlyAverage(esp, 3)` to compute the average ESP during March (the 3rd month).
 
+**Step 1**
 
-  **Step 1**
+To find the range of days to average based on the month (reminder: we're assuming all months have 30 days), use these formulas:
 
-  To find the range of days to average based on the month (reminder: we're assuming all months have 30 days), use these formulas:
+* :code:`startDay = 30*(month-1) + 1;`
+* :code:`endDay = startDay + 29;`
 
-  * :code:`startDay = 30*(month-1) + 1;`
-  * :code:`endDay = startDay + 29;`
+**Step 2**
 
-  **Step 2**
+To compute the average, use MATLAB's built-in :code:`mean()` function on a subvector of the ESP values selected according to the range of days you just computed.
 
-  To compute the average, use MATLAB's built-in :code:`mean()` function on a subvector of the ESP values selected according to the range of days you just computed.
+.. reveal:: ch03_04_hint_ESP_indexing
+  :showtitle: Hint
+  :hidetitle: Hide Hint
 
-  .. reveal:: ch03_04_hint_ESP_indexing
-    :showtitle: Hint
-    :hidetitle: Hide Hint
-
-    .. hint::
-      
-      Use indexing and range notation to select the subvector of values to average. For example, to select values for January, you could write :code:`data(1:30)`. Of course, you don't want to hardcode :code:`1:30` - instead use your variables containing the appropriate :code:`startDay` and :code:`endDay`.
+  .. hint::
+    
+    Use indexing and range notation to select the subvector of values to average. For example, to select values for January, you could write :code:`data(1:30)`. Of course, you don't want to hardcode :code:`1:30` - instead use your variables containing the appropriate :code:`startDay` and :code:`endDay`.
 
 .. shortanswer:: ch03_04_ex_montly_average
 

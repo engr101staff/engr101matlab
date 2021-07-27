@@ -2,48 +2,7 @@ The nutrient cycle of Proxima B is not yet fully understood, so our scientists w
 
 For simplicity, we will assume all months have 30 days, such that there are 360 samples total. The data are stored in a file called :file:`daily_samples.csv`.
 
-In this exercise, you'll read in that data using the :code:`csvread()` function and compute the ESP for all daily samples.
-
-.. admonition:: Exercise Files
-
-  Download these files for the exercise.
-
-  .. list-table:: 
-    :align: left
-    :widths: auto
-
-    * - :download:`daily_samples.csv <../_static/functions_and_data/daily_samples.csv>`
-
-      - .. reveal:: daily_samples_csv_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>daily_samples.csv</code>
-
-          .. literalinclude:: ../_static/functions_and_data/daily_samples.csv
-            :lines: 1-7
-            :append: ...
-
-      - Data file containing 360 daily soil samples.
-
-    * - :download:`ESP.m <../_static/functions_and_data/ESP.m>`
-
-      - .. reveal:: ESP_m_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: ESP.m
-
-          .. literalinclude:: ../_static/functions_and_data/ESP.m
-            :language: matlab
-
-      - :code:`ESP()` function from earlier.
-    
-  .. reveal:: monthly_average_download_instructions
-    :showtitle: Download Instructions
-    :modal:
-    :modaltitle: File Download Instructions for MATLAB
-    
-    .. include:: ../common/matlab_download_instructions.in.rst
-      
+In this exercise, you'll read in that data using the :code:`csvread()` function and compute the ESP for all daily samples. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`ESP.m` from the beginning of the chapter.
 
 Create a new script called :file:`AnalyzeESP.m` and write code to:
 

@@ -1,4 +1,4 @@
-Consider each of the following programs, which attempt to define and call a function for the *dot-product* of two vectors (multiply the two vectors, element-by-element, and then add it all up). If the program is correct, simply write "correct". However, if the program contains a mistake, write a brief explanation of the mistake in terms of scopes, parameters, and/or return values in the Matlab program.
+Consider each of the following programs, which attempt to define and call a function for the *dot-product* of two vectors (multiply the two vectors, element-by-element, and then add it all up). If the program is correct, simply write "correct". However, if the program contains a mistake, write a brief explanation of the mistake in terms of scopes, parameters, and/or return values in the MATLAB program.
 
 .. list-table:: 
   :align: left
@@ -24,6 +24,8 @@ Consider each of the following programs, which attempt to define and call a func
           dot_product(x, y);
           disp(result);
 
+        |
+
     - .. shortanswer:: ch03_05_ex_scope_and_parameters_02
 
         Program 2
@@ -43,6 +45,8 @@ Consider each of the following programs, which attempt to define and call a func
           x = [1, 2, 3];
           y = [1, 2, 3];
           disp(dot_product(x, y));
+
+        |
 
   * - .. shortanswer:: ch03_05_ex_scope_and_parameters_03
 
@@ -65,6 +69,8 @@ Consider each of the following programs, which attempt to define and call a func
           result = dot_product();
           disp(result);
 
+        |
+
     - .. shortanswer:: ch03_05_ex_scope_and_parameters_04
 
         Program 4
@@ -85,3 +91,5 @@ Consider each of the following programs, which attempt to define and call a func
           b = [1, 2, 3];
           result = dot_product(x, y);
           disp(result);
+
+        |

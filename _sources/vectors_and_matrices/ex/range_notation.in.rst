@@ -1,4 +1,4 @@
-Create the vectors :code:`x`, :code:`y`, :code:`z` using **range notation**:
+Create the vectors :code:`x`, :code:`y`, :code:`z` using range notation:
 
 .. raw:: html
 

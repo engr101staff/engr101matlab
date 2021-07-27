@@ -1,4 +1,4 @@
-Let's recap the video above with a few MatCrab examples. Here is an example that uses commas to separate the elements:
+Let's try out MatCrab and create a few vectors. Here is an example that uses commas to separate the elements:
 
 .. raw:: html
 

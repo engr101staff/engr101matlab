@@ -132,7 +132,7 @@ C++ provides special operators (:code:`+=`, :code:`++`, :code:`-=`, and :code:`-
 Exercise: Increment and Decrement Operators
 -------------------------------------------
 
-Modify the code below to replace the update expressions in each of the loops with an equivalent using the shorthand :code:`++` and :code:`--` operators above (do not use :code:`+=` or :code:`-=`, unfortunately those are not supported by Lobster yet). The overall output of the program should not change.
+Modify the code below to replace the update expressions in each of the loops with an equivalent using the shorthand :code:`++` and :code:`--` operators above. The overall output of the program should not change.
 
 .. raw:: html
 

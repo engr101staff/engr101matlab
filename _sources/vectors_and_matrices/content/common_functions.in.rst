@@ -213,7 +213,7 @@ Functions for **creating default matrices** out of zeroes or ones:
 .. raw:: html
 
   <div class="container-fluid">
-    <div class="matcrab-example">=
+    <div class="matcrab-example">
       <table><tbody>
         <tr>
           <td style="text-align: center">
@@ -300,12 +300,11 @@ A function for **creating magic matrices** where all the rows and columns add up
 Getting the Dimensions of a Matrix
 ---------------------------------------------------
 
-We will be learning how to write *flexible* code; flexible code is code that works correctly for different types and sizes of input data. For example, we might need to analyze a matrix of data but we don't know ahead of time how big that matrix is. Instead, we can design our code to determine some basic characteristics of the matrix that are needed prior to beginning the analysis. Here are some useful functions that give us basic characteristics of vectors of matrices:
+We will be learning how to write *flexible* code, code that works correctly for different types and sizes of input data. For example, we might need to analyze a matrix of data but we don't know ahead of time how big that matrix is. Instead, we can design our code to determine some basic characteristics of the matrix that are needed prior to beginning the analysis. Here are some useful functions that give us basic characteristics of vectors or matrices:
 
-- :code:`numel(x)` yields the # of elements in :code:`x`
-- :code:`length(x)` yields the # of elements along the longest dimension of :code:`x`
-- :code:`size` yields a vector with the # of elements along each dimension of :code:`x`
-  - For 2D matrices, this is a vector containing :code:`[# of rows, # of cols]`
+- :code:`numel(x)` gives the number of elements in :code:`x`
+- :code:`length(x)` gives the number of elements along the longest dimension of :code:`x`
+- :code:`size` gives a vector with the number of elements along each dimension of :code:`x` (for 2D matrices, this is a vector containing :code:`[# of rows, # of cols]`)
 
 |
 
