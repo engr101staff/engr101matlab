@@ -18,6 +18,8 @@ The :code:`'` operator implements a **transpose** operation, which basically giv
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -63,6 +65,8 @@ Functions for **flipping** and **rotating** a matrix:
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -96,6 +100,8 @@ Functions for **flipping** and **rotating** a matrix:
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -128,6 +134,8 @@ Functions for **flipping** and **rotating** a matrix:
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -165,6 +173,8 @@ Functions for **creating default matrices** out of zeroes or ones:
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -191,6 +201,8 @@ Functions for **creating default matrices** out of zeroes or ones:
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -219,6 +231,8 @@ Functions for **creating default matrices** out of zeroes or ones:
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -245,6 +259,8 @@ Functions for **creating default matrices** out of zeroes or ones:
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -278,6 +294,8 @@ A function for **creating magic matrices** where all the rows and columns add up
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -320,6 +338,8 @@ We will be learning how to write *flexible* code, code that works correctly for 
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -353,6 +373,8 @@ We will be learning how to write *flexible* code, code that works correctly for 
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -385,6 +407,8 @@ We will be learning how to write *flexible* code, code that works correctly for 
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

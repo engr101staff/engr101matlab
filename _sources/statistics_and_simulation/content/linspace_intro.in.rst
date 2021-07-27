@@ -46,6 +46,8 @@ To run a simulation in MATLAB, we first need to create a *starter set of data*. 
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>

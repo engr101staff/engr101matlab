@@ -74,10 +74,6 @@ Defining Custom Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ex/custom_functions.in.rst
-
-.. admonition:: Video Recap
-
-  Creating new functions allows you to reuse the same code multiple times. **Vectorization** allows you to run a single computation on all elements of a vector at the same time.
   
 ------------------------------------------------------
 Exercise: Function Basics
@@ -94,10 +90,6 @@ Exercise: Function Basics
       :height: 315
       :width: 560
       :align: center
-
-.. admonition :: Video Recap
-
-  We can write custom functions, specifying the function name, the return variables, the parameters, and the implementation of the function. This is called a **function definition**. The first line of the function is called the **function header**, and it specifies the **function interface** (the function name, return variables, and parameters).
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,6 +117,8 @@ Exercise: Reading Soil Sample Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Built-in Aggregator Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to custom functions, MATLAB has many built-in functions that you can use.
 
 .. youtube:: hulFvFgqX7s
     :divid: ch03_04_vid_aggregator_functions
@@ -166,6 +160,8 @@ Here's are some examples of the :code:`sum()` function:
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -196,6 +192,8 @@ Here's are some examples of the :code:`sum()` function:
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -234,6 +232,8 @@ Exercise: Monthly Average of ESP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Parameter Passing and Scope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's look at a few more details about how functions work in MATLAB.
 
 .. youtube:: KTNmk3TX01M
     :divid: ch03_05_vid_scope_and_parameters

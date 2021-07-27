@@ -1,10 +1,11 @@
+Now that we've created the :code:`ESP()` function, let's see how we can use it.
+
 .. youtube:: TiyXzP96r1U
     :divid: ch03_03_vid_data_files
     :height: 315
     :width: 560
     :align: center
     
-|
 
 .. admonition:: Video Recap
 
