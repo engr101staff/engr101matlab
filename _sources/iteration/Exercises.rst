@@ -9,7 +9,7 @@ practice what you have learned in this chapter.
 
     What is the output of the code below?
 
-    .. code-block:: cpp
+    .. code-block:: cpp 
 
      int main() {
        int x = 0;

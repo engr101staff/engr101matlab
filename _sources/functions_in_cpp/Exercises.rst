@@ -4,7 +4,7 @@ Multiple Choice Exercises
 Answer the following **Multiple Choice** questions to
 practice what you have learned in this chapter.
 
-.. mchoice:: functions_in_cpp_mcq_1
+.. mchoice:: functions_in_cpp_mcq_1 
     :practice: T
 
     What should be the return type of the function ``convertToCelsius``?
