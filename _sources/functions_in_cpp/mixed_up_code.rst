@@ -1,7 +1,7 @@
 Mixed Up Code Exercises
 -----------------------
 
-Answer the following **Mixed-Up Code** questions to practice what you have learned in this chapter. 
+Answer the following **Mixed-Up Code** questions to practice what you have learned in this chapter.
 
 .. parsonsprob:: functions_in_cpp_mixed_up_code_1
    :numbered: left

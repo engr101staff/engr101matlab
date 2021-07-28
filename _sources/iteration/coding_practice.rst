@@ -19,7 +19,7 @@ Answer the following **Coding Practice** questions to practice what you have lea
            **
            *
 
-        .. activecode:: iteration_ac_1q 
+        .. activecode:: iteration_ac_1q
            :language: cpp
            :practice: T
 

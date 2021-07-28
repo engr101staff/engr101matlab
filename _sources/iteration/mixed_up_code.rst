@@ -3,7 +3,7 @@ Mixed Up Code Exercises
 
 Answer the following **Mixed-Up Code** questions to practice what you have learned in this chapter.
 
-.. parsonsprob:: iteration_mixed_up_code_1 
+.. parsonsprob:: iteration_mixed_up_code_1
     :numbered: left
     :adaptive:
     :noindent:

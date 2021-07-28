@@ -1,7 +1,7 @@
 Coding Practice
 --------------------
 
-Answer the following **Coding Practice** questions to practice what you have learned in this chapter. 
+Answer the following **Coding Practice** questions to practice what you have learned in this chapter.
 
 .. tabbed:: functions_in_cpp_1
 

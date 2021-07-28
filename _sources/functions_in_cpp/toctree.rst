@@ -1,4 +1,4 @@
-Functions in C++ 
+Functions in C++
 ::::::::::::::::
 
 .. toctree::
