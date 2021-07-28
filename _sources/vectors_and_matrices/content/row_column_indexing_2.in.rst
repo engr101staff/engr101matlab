@@ -15,6 +15,8 @@ Indexing can actually get kind of complicated, but the good news is there are th
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -45,6 +47,8 @@ Indexing can actually get kind of complicated, but the good news is there are th
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -74,6 +78,8 @@ Indexing can actually get kind of complicated, but the good news is there are th
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>

@@ -1,4 +1,4 @@
-If you haven't already, go ahead download the :file:`rocks.csv` and :file:`analyzeRocks.m` files (see the chapter files box at the start of the lecture).
+If you haven't already, go ahead and download the :file:`rocks.csv` and :file:`analyzeRocks.m` files (see the chapter files box at the start of the lecture).
 
 To get started, you may either run :code:`analyzeRocks` from the command window to load the data into your workspace and then work from the command window, or you can add code to the :code:`analyzeRocks.m` script directly, whichever you prefer.
 

@@ -59,7 +59,7 @@ Introduction and Relational Operators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-We've seen that MATLAB supports *arithmetic* operations (e.g. :code:`+`, :code:`.*`, etc.), which allow us to write expressions that compute a *numeric* result. MATLAB (and most other programming languages!) also allow us to compare different values/variables to each other using *relational* operators that produce a *logical* (i.e. true or false) result. We'll introduce the basic idea and then give you a chance to practice.
+We've seen that MATLAB supports arithmetic operations (e.g. :code:`+`, :code:`.*`, etc.), which allow us to write expressions that compute a *numeric* result. MATLAB also allows us to compare different values/variables to each other using **relational operators** that produce a **logical** (i.e. true or false) result.
 
 .. youtube:: I13q-SPw9eo
   :divid: ch04_01_vid_relational_operators
@@ -75,6 +75,8 @@ We've seen that MATLAB supports *arithmetic* operations (e.g. :code:`+`, :code:`
     :width: 650
     :align: center
     :alt: relational_operators.png
+
+  Relational operators return a **logical** result (either :code:`true` or :code:`false`). True is often encoded as 1, and false is often encoded as 0. Relational operators work on matrices, as well as scalars.
 
    
 
@@ -101,7 +103,6 @@ Using Logical Values and Logical Indexing
 
 Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators.
 
-
 .. youtube:: kgNw0oKcchg
   :divid: ch04_02_vid_logical_indexing
   :height: 315
@@ -110,12 +111,42 @@ Let's take a look at some of the practical ways we can use logical results like 
 
 .. admonition:: Video Recap
 
-  Logical indexing is when you use a logical array to index into an array, instead of regular indexing. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected: 
+  **Logical indexing** is when you use a logical array to index into an array, instead of regular indexing. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected.
 
-  .. figure:: img/logical_indexing.png
-    :width: 650
-    :align: center
-    :alt: logical_indexing.png
+Here's an example of logical indexing from the video to play with:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        x = [2,8,2;0,4,3];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              ans = x(x<3)
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
 
 ------------------------------
 Exercise: Analyzing Some Rocks
@@ -170,6 +201,42 @@ Sometimes we want to ask complex questions about our data, for example "Which ro
     % Check if the value of x is between 0 and 10 (exclusive)
     0 < x & x < 10
 
+Here's a MatCrab example from the video to play with:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        a = [3,4,2;6,5,1];
+        b = [2,1,4;1,3,7];
+        c = [1];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              ans = a == c | b == c
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
 
 
 ----------------------------
@@ -218,15 +285,14 @@ Now that we have quite a few operators to work with, it makes sense to discuss h
     :alt: order_of_precedence.png
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Logical Indexing and Assignment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Writing Into a Logically Indexing Matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-Let's take a look at some of the practical ways we can use logical results like the ones we get back from our relational operators and logical operators.
+We've seen how we can use logical indexing to get certain elements from a matrix. But, we can also use logical indexing to *change* the elements of a matrix.
 
-
-.. youtube:: XGycZcWcU2I
+.. youtube:: FvM4N6f8PKw
   :divid: ch04_05_vid_indexing_and_assignment
   :height: 315
   :width: 560
@@ -234,7 +300,171 @@ Let's take a look at some of the practical ways we can use logical results like 
 
 .. admonition:: Video Recap
 
-  We can use logical indexing to write into a matrix. If we have two "parallel" matrices, we can use one matrix to index into the second matrix.
+  We can use logical indexing to write into a matrix.
+
+Here's one of the MatCrab examples from the video to play with:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        x = [2,8,2;0,4,3]
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              x (x < 3) = 0
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+-------------------
+Parallel Matrices
+-------------------
+
+We saw how to use logical indexing to write into a matrix. We can use this same technique with **parallel matrices**:
+
+.. youtube:: JrCt7Pb40Og
+  :divid: ch04_05_vid_indexing_and_assignment2
+  :height: 315
+  :width: 560
+  :align: center
+
+.. admonition:: Video Recap
+
+  **Parallel matrices** are two matrices that are the same size that are somehow related to each other. You can use one parallel matrix to index into the second parallel matrix.
+
+Let's look at a MatCrab example. Here are two parallel matrices:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <table><tbody>
+      <tr>
+        <td>
+          <div class="matcrab-vis-exp">
+            a = [1,2,4;3,3,2];
+            a
+          </div>
+        </td>
+        <td>
+          <div class="matcrab-vis-exp">
+            b = [0,2,9;3,3,6];
+            b
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+    <br />
+  </div>
+
+Now, let's find every element where :code:`b > 5`, and change the parallel elements in :code:`a` to :code:`10`:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        a = [1,2,4;3,3,2];
+        b = [0,2,9;3,3,6];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              a(b > 5) = 10;
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+-----------------------------------------------------
+Combining Logical Indexing with Row/Column Indexing
+-----------------------------------------------------
+
+What if we want to combine logical indexing with row/column indexing?
+
+.. youtube:: QMygrNoN6Vk
+  :divid: ch04_05_vid_indexing_and_assignment3
+  :height: 315
+  :width: 560
+  :align: center
+
+.. admonition:: Video Recap
+
+  It's sometimes useful to combine logical indexing with row/column indexing.
+
+Here's the MatCrab example from the video:
+
+.. raw:: html
+
+  <div class="container-fluid">
+    <div class="matcrab-example">
+      <div class="matcrab-setup">
+        x = [1,5,-9,8;2,2,10,7;-4,3,-2,0;6,5,4,4];
+      </div>
+      <table><tbody>
+        <tr>
+          <td style="text-align: center">
+            <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
+            <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
+          </td>
+          <td>
+            <div class="matcrab-workspace list-group matlab-vars"></div>
+          </td>
+          <td>
+            <textarea class="form-control matcrab-entry" style="resize: none">
+              loc = x < 0
+              howMany = sum(loc)
+              ans = x(:, howMany >= 1)
+            </textarea>
+          </td>
+          <td>
+            <div class="matcrab-vis" style="height: auto;">
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
 
 -------------------------------------------
 Exercise: Logical Indexing and Assignment
@@ -253,11 +483,11 @@ Exercise: Logical Indexing and Assignment
       :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Common Patterns With Logical Operations
+Common Patterns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-Logical operations let us select data in an array for analysis. Here are some common "patterns" for analyzing data in MATLAB using logical operations. 
+Logical operations let us select data in an array. Here are some common "patterns" for analyzing data using logical operations. 
 
 ------------------------------------------------------------
 Finding If Any Elements Are True: The :code:`any` Function
@@ -278,6 +508,8 @@ The :code:`any` function is especially useful if you need to check whether at le
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -317,6 +549,8 @@ The :code:`any` function is especially useful if you need to check whether at le
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -361,6 +595,8 @@ The :code:`any` function is especially useful if you need to check whether at le
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -426,6 +662,8 @@ The :code:`all` function is especially useful if you need to check whether all o
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -462,6 +700,8 @@ The :code:`all` function is especially useful if you need to check whether all o
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -514,14 +754,9 @@ Counting Elements that Match
 We've seen this pattern in this chapter already, but we wanted to formally describe it here so you can quickly refer back to this pattern later. You can use the :code:`sum` function, combined with a logical operation, to count the number of elements that match certain criteria. Here's an example of how to count how many elements are greater than 2 in a matrix:
  
 .. figure:: img/counting_elements.png
-   :width: 650
+   :width: 500
    :align: center
    :alt: counting_elements.png
-
-
-
-
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -529,14 +764,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* **Relational operators** (e.g., greater than, less than) check for equality or perform comparisons, and return a **logical** result (either truth or false). True is often encoded as 1, and false is often encoded as 0. Relational operators work on matrices, as well as scalars.
-* You can use relational operators to count the number of elements that match certain criteria (by using :code:`sum()` with a logical operation).
-* **Logical arrays** can be used to index a source matrix. All the elements from the source matrix that correspond to positions with a 1 in the logical matrix are selected.
+* **Relational operators** (e.g., greater than, less than) check for equality or perform comparisons, and return a **logical** result (either :code:`true` or :code:`false`). True is often encoded as 1, and false is often encoded as 0. Relational operators work on matrices, as well as scalars.
+* **Logical indexing** is when you use a logical array to index into an array. Locations that correspond to a :code:`true` value are selected, and locations that correspond to a :code:`false` value are not selected.
 * **Logical operators** combine two truth values using logic. The :code:`&` (and) operator returns true only if both operands are true. Otherwise, it returns false. The :code:`|` (inclusive or) operator returns true if either of the operands, or both, are true. The :code:`xor` (exclusive or) operator returns true if either of the operands, but not both, are true. The :code:`~` (not) operator returns true if the operand if false, and false if the operand is true.
 * If there are multiple operations in a single statement, **operator precedence** determines the order that the operations occur in.
-* You can use a logical matrix to select part of a matrix and then assign into that part of the matrix.
+* Logical indexing can be used to write into a matrix.
 * You can use a logical matrix derived from one matrix to index into a separate, parallel matrix (the parallel matrix needs to be the same size as the original matrix).
 * Some common patterns that are used with logical operations are: determining if any or all elements match some criteria and counting the number of elements that match some criteria.
-
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
