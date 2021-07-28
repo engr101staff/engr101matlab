@@ -1,18 +1,19 @@
+Make sure you have :file:`boat_gray.png` downloaded and moved into your current MATLAB folder (see the files table at the start of this chapter).
 
-Let's explore some image operations using the :file:`boat_gray.png` image (see the files table at the start of this chapter). Make sure you have the image downloaded and moved into your current MATLAB folder.
+Then, load the image and display it:
 
-Then go ahead and load the image into a variable using :code:`grayImg = imread('boat_gray.png');`. If you'd like, you can verify everything's there by calling :code:`imshow(grayImg)` on that variable.
-
-The boat image you see has very poor contrast. It fades right into the background. Can we fix this?
+.. code::matlab
+  grayImg = imread('boat_gray.png');
+  imshow(grayImg);
+  
+You should see a boat image with very poor contrast. The boat fades into the background. Can we fix this?
 
 .. figure:: img/boat_gray.png
    :width: 400
    :align: center
    :alt: boat_gray.png
 
-   A washed-out grayscale image with very poor contrast
-
-First, let's take a look at how the problem relates to the range of intensity values used by the image, as well as how we can start to address the problem using *contrast stretching*.
+We are going to fix this image using **contrast stretching**, an operation that "stretches out" the range of intensity values. (Follow along using the :file:`ImageScript.m` file from the beginning of the chapter.)
 
 .. youtube:: s088CRrwJdU
   :divid: ch05_04_vid_contrast_stretching

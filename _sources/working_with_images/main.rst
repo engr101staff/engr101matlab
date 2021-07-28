@@ -13,16 +13,9 @@
 Working with Images
 ===================
 
-.. figure:: img/boat_color.png
-   :width: 400
-   :align: center
-   :alt: boat_color.png
-
-   *"Speed & Foam", Michel Brousseau*
-
 .. admonition:: Chapter Files
 
-  We'll be using several files throughout this chapter's exercises. These include starter code files as well as image files used as examples. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+  We'll be using several files throughout this chapter's exercises. It might be helpful to go ahead and download each of them now and move them to your current folder in MATLAB. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
 
   .. list-table:: 
     :align: left
@@ -40,7 +33,7 @@ Working with Images
             :align: center
             :alt: boat_gray.png
 
-      - Grayscale image of a boat (PNG format)
+      - Grayscale image of a boat
 
     * - :download:`boat_color.png <../_static/working_with_images/boat_color.png>`
 
@@ -66,7 +59,7 @@ Working with Images
           .. literalinclude:: ../_static/working_with_images/ImageScript.m
             :language: matlab
 
-      - Starter script file for videos on contrast and thresholding
+      - Starter script for contrast and thresholding
       
     * - :download:`adjust_contrast.m <../_static/working_with_images/adjust_contrast.m>`
 
@@ -78,7 +71,7 @@ Working with Images
           .. literalinclude:: ../_static/working_with_images/adjust_contrast.m
             :language: matlab
 
-      - Starter function file for contrast stretching exercise
+      - Starter function for contrast stretching
     
   .. reveal:: working_with_images_download_instructions
     :showtitle: Download Instructions
@@ -95,14 +88,14 @@ Introduction
       
 .. Note::
 
-  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension (e.g. :file:`.jpg` vs. :file:`.jpeg`). Sorry... we ran out of time to re-record the videos. :(
+  For some of the videos in this chapter, the *file names* you see us using might be slightly different than the versions you download. Make sure you're using the correct name, which might not match the video or might have a slightly different file extension.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Loading and Saving Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-MATLAB has built-in functions for saving and loading images. Let's look at an example:
+To begin, let's see how to load and save images in MATLAB.
 
 .. youtube:: hfjwgcbH44M
   :divid: ch05_03_vid_loading_and_saving_images
@@ -112,11 +105,9 @@ MATLAB has built-in functions for saving and loading images. Let's look at an ex
 
 .. admonition:: Video Recap
 
-  To **load** image data from a file into a matrix, use the :code:`imread()` function. To **save** a matrix as an image file, use the :code:`imwrite()` function.
+  To **load** image data from a file into a matrix, use the :code:`imread()` function. To **save** a matrix as an image file, use the :code:`imwrite()` function. MATLAB can handle most common image file formats.
 
   To **display** a matrix as an image in a **figure window**, use the :code:`imshow()` function (sometimes the figure window will open "underneath" the other matlab window. You might need to go to your taskbar to find it).
-
-  MATLAB can handle most common image file formats including :file:`.jpg`, :file:`.png`, :file:`.gif`, :file:`.bmp`, :file:`.ppm`, etc.
 
 .. Tip::
 
@@ -135,9 +126,9 @@ Grayscale Images as Matrices
 
    *The Tetons and Snake River, Grand Teton National Park, Wyoming. Ansel Adams*
 
-We can use MATLAB to create, store, and manipulate grayscale images. A grayscale image is just a grid of *intensity values* (i.e. bright vs. dark). In MATLAB, we represent this as matrix of numbers!
+We can use MATLAB to create, store, and manipulate grayscale images. A grayscale image is represented as a grid of **intensity values** (i.e. bright vs. dark). In MATLAB, we represent this as a matrix of numbers!
 
-There are two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are defined as whole real numbers, or your counting numbers: 1, 2, 3, etc. Doubles are defined as a number with floating points, a fancy way of saying any number with decimals like 1.5, 2.7, and 3.0.
+There are two ways to represent an image numerically: either using **integers** or using **doubles**. Like in math, integers are whole real numbers, like 1, 2, and -1. Doubles are numbers that have a decimal component, like 1.5, -2.7, and 3.0.
 
 .. youtube:: J6PU1e6K0T8
   :divid: ch05_02_vid_grayscale_images
@@ -147,7 +138,7 @@ There are two ways to represent an image numerically: either using **integers** 
 
 .. admonition:: Video Recap
 
-  Each cell in the matrix represents a pixel of the picture. The intensity value determines the shade of gray based on a gradient. The higher the intensity value, the closer to white. The value either as an integer between 0 and 255 (inclusive), or a double between 0 and 1 (inclusive).
+  Each cell in the matrix represents a pixel of the picture. Each pixel is simply a single intensity value (the higher the value, the closer to white). Intensity values are represented either as integers between 0 and 255 (inclusive), or doubles between 0 and 1 (inclusive).
 
 By default, images you load through :code:`imread()` are generally going to be in the 0 to 255 format, so we'll work with that for now.
 
@@ -156,10 +147,10 @@ Image Operations
 ^^^^^^^^^^^^^^^^
 .. section 4
 
-Let's work through a few examples to give you some practice loading and working with images, as well as highlight a couple common image operations.
+Let's work through a few examples to give you some practice working with images.
 
 ----------------------------
-Example: Contrast Stretching
+Contrast Stretching
 ----------------------------
 
 .. include:: ex/contrast_stretching.in.rst
@@ -177,7 +168,7 @@ Example: Contrast Stretching
 |
 
 ---------------------
-Example: Thresholding
+Thresholding
 ---------------------
 
 Sometimes you might be interested in identifying particular pixels in an image which are above or below a particular threshold. Logical indexing works well for this.
