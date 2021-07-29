@@ -1,9 +1,4 @@
-This exercise uses the following files.
-
-- :file:`newBatteryLife.mat`
-- :file:`AnalyzeBatteries.m`
-
-Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
+This exercise uses :file:`newBatteryLife.mat` and :file:`AnalyzeBatteries.m` (available at the top of the chapter).
 
 Our company has manufactured new batteries that we hope will have better performance. Re-run the above analysis on the new battery data to see if we can make the following claims for the new batteries:
 
@@ -45,8 +40,8 @@ Check to see if your plot matches this one:
 Based on your analysis, report whether each claim by the company is true or false.
 
 .. mchoice:: ch07_06_ex_error_bar_plots_01
-  :answer_a: true
-  :answer_b: false
+  :answer_a: True
+  :answer_b: False
   :correct: a
   :feedback_a: Correct! The mean of the battery lifetimes at 0 years of use is greater than 3 hours, and the lower end of the error bar is also above 3 hours.
   :feedback_b: Incorrect. Look again at the graph, especially when the battery is new (0 years of use).
@@ -54,8 +49,8 @@ Based on your analysis, report whether each claim by the company is true or fals
   Our phones have 3 hours battery life when new.
 
 .. mchoice:: ch07_06_ex_error_bar_plots_02
-  :answer_a: true
-  :answer_b: false
+  :answer_a: True
+  :answer_b: False
   :correct: a
   :feedback_a: Correct! The mean of the battery lifetimes at 2 years of use is greater than 2 hours, and the lower end of the error bar is also above 2 hours.
   :feedback_b: Incorrect. Look again at the graph, especially when the battery is at 2 years of use.
