@@ -274,7 +274,7 @@ HSV Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-Representing images using RGB color channels works well for some image operations, but doesn't work well for everything that we want to do. For example, consider *color desaturation*.
+Representing images using RGB color channels works well for some image operations, but doesn't work well for everything that we want to do. For example, consider **color desaturation**.
 
 .. figure:: img/desaturation.png
    :width: 600
