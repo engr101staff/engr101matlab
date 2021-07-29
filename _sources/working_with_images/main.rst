@@ -181,7 +181,7 @@ Sometimes you might be interested in identifying particular pixels in an image w
 
 .. admonition:: Video Recap
   
-  To do image thresholding, first choose a threshold value. Then, set all values above the threshold to white (255). Set all values below or equal to the threshold to black (0).
+  To do image **thresholding**, first choose a threshold value. Then, set all values above the threshold to white (255). Set all values below or equal to the threshold to black (0).
 
 .. tip::
 
@@ -198,8 +198,6 @@ We've seen how to represent grayscale image, but what about color images?
 We could try assigning a number to each color (e.g. 0 = red, 1 = orange, 2 = blue). However, we need a strategy that can represent every possible color, and there are a lot more than 256 colors! A fixed set of colors also doesn't allow us to dynamically adjust colors (e.g. to be lighter, darker, more intense) in a way that matches our human understanding of color.
 
 You may be familiar with the way printers use a combination of three *primary colors* to create other colors. We'll do something similar, but using the primary colors of light - red, green, and blue (RGB). If we use 256 possible values for each primary color, we get a total of over 16 million different color combinations!
-
-In MATLAB RGB images, we need to find a way to describe where each pixel is and also describe the amount of red, green, and blue in each pixel. We do this with a matrix for each *color channel* in the image. If we wanted to, we could store these channels as individual matrices, but that could get confusing fast. Instead, we'll take advantage of MATLAB's capability to make 3D matrices and store each RGB color channel as one layer.
 
 .. youtube:: Q97m7naKIfo
   :divid: ch05_05_vid_color_images
@@ -221,8 +219,11 @@ Exercise: Row/Column/Layer Indexing
 
   .. reveal:: ch05_05_revealwt_row_column_layer_indexing
 
-    Please check the Piazza Q&A thread for links to the walkthrough videos.
-
+    .. youtube:: 4ZuB0572N2A
+      :divid: ch05_05_wt_row_column_layer_indexing
+      :height: 315
+      :width: 560
+      :align: center
 
 |
 
@@ -244,7 +245,7 @@ How do we work with color images?
   There are two main ways you might choose to work with an image: 1) all the channels together (the whole image) OR 2) one channel at a time. Here's what the two look like as indexing expressions:
 
   - :code:`img(___, ___, :)` means that you want the **whole** image. The colon in the layer indicator means that you're selecting all of the channels (layers) at once.
-  - :code:`img(___, ___, 2)` means, for example, that you want a **single channel** - the **2nd (green)** in this case.
+  - :code:`img(___, ___, 2)` means, for example, that you want a **single channel** - the 2nd (green) in this case.
 
   When you would like to do more complicated operations on one of the channels in an image, you sometimes need to "take out the channel, work with it, and then copy it back in".
 
@@ -269,11 +270,11 @@ Let's look at some examples of manipulating color images:
   In this video, we walked through the following image operations: vertical flip, crop, and horizontal flip.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-HSV Image Representation and Application
+HSV Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-In addition to RGB, you can also representation color images using channels for the hue, saturation, and value (HSV) of each pixel. We'll explain what those mean in a moment, but first let's look at an application - *color desaturation* - that motivates the need for a different representation.
+Representing images using RGB color channels works well for some image operations, but doesn't work well for everything that we want to do. For example, consider *color desaturation*.
 
 .. figure:: img/desaturation.png
    :width: 600
@@ -282,21 +283,23 @@ In addition to RGB, you can also representation color images using channels for 
 
    Desaturation is the process of removing color from all or part of an image (e.g. the blue sea/sky in this image). It can produce some pretty cool, dramatic effects.
 
+What happens if we try to desaturate an RGB image?
+
 .. youtube:: ATHtSPAy4-w
   :divid: ch05_06_vid_rgb_desaturation
   :height: 315
   :width: 560
   :align: center
 
-.. admonition :: video Recap
+.. admonition :: Video Recap
 
   Image desaturation is a good example of a case where RGB colors don't provide an intuitive way to manipulate an image, even though they mimic the way our eyes perceive color. We can't identify the blue colors in the background by just looking at the blue channel, because making the color "blue" actually depends on the ratio of all three R, G, and B channels.
 
-Let's turn to HSV, which is another three-channel representation: hue, saturation, and value. Here's the basic idea of each:
+For color desaturation, it would be helpful if we could represent our color images a different way! In addition to RGB, you can also represent color images using channels for the **hue**, **saturation**, and **value** (HSV) of each pixel. Here's the basic idea of each:
 
-- Hue: "which basic color is it?"
-- Saturation: "how strong is the color?"
-- Value: "how bright is it?"
+- **Hue**: "Which basic color is it?"
+- **Saturation**: "How strong is the color?"
+- **Value**: "How bright is it?"
 
 .. figure:: img/hsv.png
    :width: 400
@@ -339,17 +342,19 @@ Here's the boat picture again and a representation of what the data in each chan
 
 Take a moment to think about why the hue, saturation, and value channels look the way they do for the boat image.
 
-- **Hue.** All the blue colors in this hue channel we expect to see, but note that the sails (which look white in the original picture) have varying hues throughout. Why?
-- **Saturation.** In the picture above, we can see some areas have lower (darker) saturation, while others have high (lighter) saturation. The reason the sails look white in the original picture, and not blue, orange, or pink, is that the corresponding saturation levels are low -- there might be a color, but there is very little of that color. You can see this in the color space diagram - as you dial down saturation and go the center of the cylinder, you approach gray regardless of the hue.
-- **Value.** Finally, the value channel determines the brightness of a pixel. For example, the waves have a lower (darker) value than the sky, since they are a darker shade of blue.
+- **Hue.** We expect to see all the blue colors in the hue channel, but note that the sails (which look white in the original picture) have varying hues throughout. Why?
+- **Saturation.** We can see some areas have lower (darker) saturation, while others have higher (lighter) saturation. The reason the sails look white in the original picture, and not blue, orange, or pink, is that the corresponding saturation levels are low -- there might be a color, but there is very little of that color. You can see this in the color space diagram - as you dial down saturation and go the center of the cylinder, you approach gray regardless of the hue.
+- **Value.** The value channel determines the brightness of a pixel. For example, the waves have a lower (darker) value than the sky, since they are a darker shade of blue.
 
-Now, we can start to see how all three channels work together to represent the original picture. The dark blue water has a blue hue, medium saturation, and low value. The white sails have varying hues throughout, but the low saturation and high value combine to give the sails their more-or-less white color. 
+We can start to see how all three channels work together to represent the original picture. The dark blue water has a blue hue, medium saturation, and low value. The white sails have varying hues throughout, but the low saturation and high value combine to give the sails their more-or-less white color. 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The HSV representation in MATLAB uses double values that range between 0 and 1, rather than integers between 0 and 255. So a "fully" saturated pixel would have a value of 1 in the saturation channel.
+
+-------------------------------
 Converting Between RGB and HSV
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
-MATLAB provides two functions for converting between RGB and HSV image represenations. Let's say you have a 3D matrix called :code:`img` representing an image in RGB and want to convert it to a 3D matrix with HSV representation:
+MATLAB provides two functions for converting between RGB and HSV image representations. Let's say you have a 3D matrix called :code:`img` representing an image in RGB and want to convert it to a 3D matrix with HSV representation:
 
 .. code-block:: matlab
 
@@ -361,9 +366,9 @@ In the other direction, you can convert back using:
 
   img = hsv2rgb(hsv);
 
-Something to keep in mind is that you should *only* use :code:`imshow()` with RGB matrices. If you want to look at an HSV image, convert it before using :code:`imshow()`. Otherwise the result you see looks really weird.
+.. admonition :: Warning!
 
-Finally, the HSV represenation in MATLAB uses values that range between 0 and 1, rather than integers between 0 and 255. So a "full" saturation pixel would have a value of 1 in the saturation channel, for example.
+  :code:`imshow()` only works with RGB matrices. If you want to look at an HSV image, convert it before using :code:`imshow()`.
 
 --------------------------------------
 Exercise: Image Desaturation using HSV
@@ -381,9 +386,11 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * To load images into a matrix, use :code:`imread()`. To save an image matrix as a file, use :code:`imwrite()`. To display a matrix as an image, use :code:`imshow()`.
 * **Integers** are whole real numbers (e.g,. 1, 2, 3). **Doubles** are floating point numbers (e.g., decimals like 1.5, 2.7, and 3.0).
 * In MATLAB, grayscale images are represented by a matrix with intensity values (0-255 or 0-1).
-* **Contrast stretching** improves or "stretches" the contrast of an image.
-* In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the red, green, and blue portions of each pixel.
+* **Contrast stretching** “stretches out” the range of intensity values by making sure that the values go all the way from 0 to 255 (instead of having a narrower range of values).
+* To do **image thresholding**, first choose a threshold value. Then, set all values above the threshold to white (255). Set all values below or equal to the threshold to black (0).
+* In MATLAB, RGB color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the red, green, and blue portions of each pixel. To access values in a 3D array, we use row/column/layer indexing.
 * When manipulating images, you can either work with the whole image, or work with a single channel at a time. For more complicated manipulations, you may need to make a copy of the channel, make adjustments, and then replace the original channel.
+* **Image desaturation** is the process of removing color from all or part of an image.
 * In MATLAB, HSV color images are represented by a matrix with three separate channels (three different 2D matrices) which represent the hue, saturation, and brightness value portions of each pixel.
 * To convert from RGB to HSV, use :code:`rgb2hsv()`. To convert from HSV to RGB, use :code:`hsv2rgb()`. Remember that to show an image using :code:`imshow()`, it **must be** an RGB image so don't forget to convert before using that command.
 

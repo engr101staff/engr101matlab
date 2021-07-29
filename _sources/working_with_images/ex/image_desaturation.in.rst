@@ -1,6 +1,6 @@
-This exercise will walk you through each step in creating a script to desaturate the background in the boat image. To follow along, make sure you have the :file:`boat_color.png` image downloaded and in your current folder, and then create a new script. (You can call the script whatever you like.)
+Let's create a script to desaturate the background in the boat image. To follow along, make sure you have the :file:`boat_color.png` image downloaded and in your current folder. Then, create a new script (you can call the script whatever you like).
 
-For each step, we'll ask you to identify the correct code from a set of choices, and there's a short walkthrough video so that you can check your answer. Add the code from each step into your script as you go.
+We will walk through the image desaturation process in four parts. For each step, we'll ask you to identify the correct code from a set of choices. Add the code from each step into your script as you go. At the end of each part, there's a walkthrough video for you to check your work.
 
 .. mchoice:: ch05_08_ex_image_desaturation_01
   :answer_a:
@@ -47,15 +47,17 @@ For each step, we'll ask you to identify the correct code from a set of choices,
           boat = imread('boat_color.png');
           hsv = rgb2hsv(boat);
 
-.. youtube:: Xuu8X9fbiaU
-  :divid: ch05_08_vid_image_desaturation_01
-  :height: 315
-  :width: 560
-  :align: center
+.. admonition:: Walkthrough
+
+  .. reveal:: ch05_08_revealwt_image_desaturation_01
+
+    .. youtube:: Xuu8X9fbiaU
+      :divid: ch05_08_vid_image_desaturation_01
+      :height: 315
+      :width: 560
+      :align: center
 
 |
-
-
 
 .. mchoice:: ch05_08_ex_image_desaturation_02
   :answer_a:
@@ -102,16 +104,17 @@ For each step, we'll ask you to identify the correct code from a set of choices,
           hue = hsv(:,:,2); 
           sat = hsv(:,:,1);
 
+.. admonition:: Walkthrough
 
-.. youtube:: IbVJDfihe0Q
-  :divid: ch05_08_vid_image_desaturation_02
-  :height: 315
-  :width: 560
-  :align: center
+  .. reveal:: ch05_08_revealwt_image_desaturation_02
+
+    .. youtube:: IbVJDfihe0Q
+      :divid: ch05_08_vid_image_desaturation_02
+      :height: 315
+      :width: 560
+      :align: center
 
 |
-
-
 
 .. mchoice:: ch05_08_ex_image_desaturation_03
   :answer_a:
@@ -132,8 +135,8 @@ For each step, we'll ask you to identify the correct code from a set of choices,
     :alt: hues.png
 
     *The range of possible hue values between 0 and 1*
-
-  Select the code below that finds all pixels with a hue between 0.5 and 0.65, and sets their saturation to 0 (i.e. meaning color "strength" of 0). Hint: Use logical indexing.
+  
+  Select the code below that finds all pixels with a blue hue (i.e., a hue between 0.5 and 0.65), and sets their saturation to 0 (i.e. meaning color "strength" of 0). *Hint: Use logical indexing.*
 
   .. list-table:: 
     :align: left
@@ -163,15 +166,17 @@ For each step, we'll ask you to identify the correct code from a set of choices,
 
           hue(0.5 < hue & hue < 0.65) = 0;
 
-.. youtube:: ec3X4De-dgI
-  :divid: ch05_08_vid_image_desaturation_03
-  :height: 315
-  :width: 560
-  :align: center
+.. admonition:: Walkthrough
+
+  .. reveal:: ch05_08_revealwt_image_desaturation_03
+
+    .. youtube:: ec3X4De-dgI
+      :divid: ch05_08_vid_image_desaturation_03
+      :height: 315
+      :width: 560
+      :align: center
 
 |
-
-
 
 .. mchoice:: ch05_08_ex_image_desaturation_04
   :answer_a:
@@ -183,7 +188,7 @@ For each step, we'll ask you to identify the correct code from a set of choices,
   :feedback_b: Oops! Looks like you've just copied the new saturation values into the hue channel of the HSV image. 
   :feedback_c: Oops! You've just copied the hue values back into the HSV image - double check what the question is asking.
 
-  Finally, copy the saturation channel back in (we don't need to do this for hue, we didn't change it), convert back to rgb format, and display using imshow.
+  Finally, copy the saturation channel back in to the image (we don't need to do this for hue, because we didn't change it), convert back to RGB format, and display using imshow.
 
   .. list-table:: 
     :align: left
@@ -217,11 +222,15 @@ For each step, we'll ask you to identify the correct code from a set of choices,
           boat = imread('boat_color.png');
           hsv = rgb2hsv(boat);
 
-.. youtube:: jhgAdfceKqw
-  :divid: ch05_08_vid_image_desaturation_04
-  :height: 315
-  :width: 560
-  :align: center
+.. admonition:: Walkthrough
+
+  .. reveal:: ch05_08_revealwt_image_desaturation_04
+
+    .. youtube:: jhgAdfceKqw
+      :divid: ch05_08_vid_image_desaturation_04
+      :height: 315
+      :width: 560
+      :align: center
 
 |
 

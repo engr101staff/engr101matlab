@@ -1,4 +1,4 @@
-Let's get some practice with selecting certain elements inside of an RGB image file. For the following exercises, assume we have RBG image data stored in a 3D matrix called :code:`img`.
+Let's get some practice with selecting certain elements inside of an RGB image file. For the following exercises, assume we have an RBG image stored in a matrix called :code:`img`.
 
 .. mchoice:: ch05_05_ex_row_column_layer_indexing_01
   :answer_a: img(1, 1, :)
@@ -34,9 +34,9 @@ Let's get some practice with selecting certain elements inside of an RGB image f
   What MATLAB indexing expression will select the 4th row in the green layer?
 
 .. mchoice:: ch05_05_ex_row_column_layer_indexing_04
-  :answer_a: img(2,4,3)
-  :answer_b: img(:,[2,4],3)
-  :answer_c: img(:,[2:4],3)
+  :answer_a: img(2, 4, 3)
+  :answer_b: img(:, [2,4], 3)
+  :answer_c: img(:, [2:4], 3)
   :correct: c
   :feedback_a: Oops! This indexing expression will select the pixel in row 2 column 4 and the blue layer. 
   :feedback_b: Oops! This indexing expression will select all pixels in columns 2 and 4 in the blue layer. 
@@ -45,9 +45,9 @@ Let's get some practice with selecting certain elements inside of an RGB image f
   What MATLAB indexing expression will select columns 2 through 4 of the blue channel? 
 
 .. mchoice:: ch05_05_ex_row_column_layer_indexing_05
-  :answer_a: img(:,3,end)
-  :answer_b: img(3,end,:)
-  :answer_c: img(3,end,1)
+  :answer_a: img(:, 3, end)
+  :answer_b: img(3, end, :)
+  :answer_c: img(3, end, 1)
   :correct: b
   :feedback_a: Oops! Remember, the ordering of indices is row, column, layer!
   :feedback_b: Correct! Using the : to select each layer will give you a selection for the R, G, and B values.
