@@ -137,86 +137,114 @@ Bar Charts
 .. include:: ex/bar_charts.in.rst
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Customizing Plots
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are multiple ways to customize a graph in MATLAB. We've seen that you can directly call functions like :code:`title()` and :code:`legend()`.
+
+There are two other ways of customizing plots that we are going to look: **getting the current axes** (:code:`gca`) and **graphics objects**
+
+------------------------
+GCA ("Get Current Axes")
+------------------------
+    
+:code:`gca` is short for "get current axes". You can call :code:`gca` and store it in a variable, and then you can modify any of the axis characteristics. Here are some examples.
+
+.. code-block:: matlab
+
+    % get current axes in the variable ax
+    ax = gca;
+    
+    % modify via ax, [NOTE, CaseSensitive !!!]
+    ax.FontSize = 20;          % Change the font size
+    ax.YLim = [0,20];          % Change the y-axis range
+    ax.XLim = [0,4];           % Change the x-axis range
+    ax.XTickLabel = labels;    % Change the x-tick labels
+    ax.YGrid = 'on';           % Turn the y-axis grid on
+    ax.GridColor = [1,0,0];    % Change the grid color [R, G, B]
+    ax.GridAlpha = 1;          % Grid color on full
+    
+.. tip::
+    When working with :code:`gca`, you can also use the :code:`set` function instead of the dot notation.
+    
+    .. code-block:: matlab
+    
+        set(ax,'FontSize',20); % does the same thing as ax.FontSize = 20
+        
+    In rare cases (or older versions of MATLAB), only the approach using the :code:`set` function will work.
+    
+.. admonition:: Danger!
+
+    It's tempting to try something like this:
+    
+    .. code-block:: matlab
+    
+        gca.FontSize = 20;
+        
+    This doesn't work! (It actually creates a variable called :code:`gca` that interferes with the regular :code:`gca`. You'll also need to run :code:`clear gca;` before it will work again.)
+    
+    You always need to "store" the current axes in a variable first:
+    
+    .. code-block:: matlab
+    
+        ax = gca;
+        ax.FontSize = 20;
+        
+----------------
+Graphics Objects
+----------------
+
+In addition to :code:`gca`, you can use graphics objects to customize a MATLAB plot. Plotting functions return graphics objects that can be used to customize the appearance of the plot.
+
+.. code-block:: matlab
+
+    % create a scatterplot
+    % store the return graphics object in s
+    s = scatter(mass, magnitude);
+    
+    % modify properties through s
+    s.Marker = 'x';
+    s.LineWidth = 3;
+    s.MarkerEdgeColor = 'red';
+    
+If you plot more than one thing at a time, you'll get a vector of graphics objects. Index into it to modify properties.
+
+.. code-block:: matlab
+
+    % plot multiple functions
+    % store the returned graphics objects in p
+    p = plot(internet_years, internet_users, facebook_years, facebook_users)
+    
+    % modify properties through p
+    % index to select which plot
+    % the first plot (internet users)
+    p(1).LineStyle = ':';
+    p(1).Color = 'green';
+    p(1).LineWidth = 4;
+    
+    % the second plot (facebook users)
+    p(2).LineStyle = '--';
+    p(2).Color = 'red';
+    p(2).LineWidth = 2;
+    
+This only scratches the surface of the kind of customization you can do to your plots in MATLAB! There's so many more options! Here's the truth: *Nobody memorizes all the different kinds of plots and the ways you can customize them.* Refer to online documentation for general guidance, and search online if there's something specific you're looking for.
+
+Here's a few examples of things you can do:
+
+.. image:: img/matlab_plots.png
+  :width: 560
+  :align: center
+  :alt: Many kinds of MATLAB plots.
+  
+|
+  
+Refer to `this page <https://www.mathworks.com/help/matlab/creating_plots/types-of-matlab-plots.html>`_ for more info (and even more types of plots!).
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The :code:`subplot` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We've seen how to make a plot that has two sets of data on it, but what if you want to plot those two sets of data on separate graphs in the same figure? You can use MATLAB's :code:`subplot` function to do this.
-
-.. youtube:: MdAAXuvl4Ck
-  :divid: ch06_01_vid_subplot
-  :height: 315
-  :width: 560
-  :align: center
-
-.. admonition:: Video Recap
-
-  The :code:`subplot` function allows multiple axes per figure, arranged in a grid-like configuration.
-
-.. fillintheblank:: ch06_06_ex_subplot_01
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the grid *and* select the cell labeled **A6**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*6[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch06_06_ex_subplot_02
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the grid *and* select the cell labeled **A3**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubA.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*3[ ]*,[ ]*8[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch06_06_ex_subplot_03
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the grid *and* select the cell labeled **B5**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubB.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*3[ ]*,[ ]*2[ ]*,[ ]*5[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. fillintheblank:: ch06_06_ex_subplot_04
-
-  Consider the grid below. Type the :code:`subplot` function call that would be required to create the grid *and* select the cell labeled **C1**. Your answer should be in the format of: :code:`subplot(x,y,z)` with your own values replacing :code:`x`, :code:`y`, and :code:`z`.
-
-  .. figure:: img/SubC.png
-    :width: 250
-    :align: center
-
-    ..
-
-  - :[ ]*subplot[ ]*\([ ]*1[ ]*,[ ]*4[ ]*,[ ]*1[ ]*\)[ ]*: Correct!
-    :x: No, try again.
-
-.. admonition:: Walkthrough
-
-  (Note: The question numbers are not correct in the following walkthrough video, but the walkthrough is still accurate and helpful!)
-
-  .. reveal:: ch06_06_revealwt_subplot
-  
-    .. youtube:: oSOzHEUPfQk
-      :divid: ch06_06_wt_subplot
-      :height: 315
-      :width: 560
-      :align: center
-
-  
+.. include:: ex/subplot.in.rst
   
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A Few Final Thoughts
@@ -243,35 +271,8 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 * Add a legend using :code:`legend()`.
 * To create a new figure, use :code:`figure()`. To close all figures, use :code:`close all`.
 * Further customize a plot using :code:`gca` ("get current axes"). Assign :code:`gca` to a variable, and then do many, many customizations.
-* Another way to customize a plot is using graphics objects. Plotting functions return graphics objects; if you plot more than one thing at a time, you’ll get a vector of graphics objects. Index into it to modify properties.
+* Another way to customize a plot is using **graphics objects**. Plotting functions return graphics objects; if you plot more than one thing at a time, you’ll get a vector of graphics objects. Index into it to modify properties.
 * The :code:`subplot()` function lets you have multiple axes per figure. The axes are arranged in a grid-like configuration.
 * You can always look up more ways to customize your plots! Here's a link to the `MATLAB plot library documentation <https://www.mathworks.com/help/matlab/creating_plots/types-of-matlab-plots.html>`_.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Optional Exercise: Creating a Pie Chart of Planets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*This section is COMPLETELY optional. We provide it here if you are looking for extra practice with this material on a real-life problem. You can use this to review the material, or come back later and use it for exam prep. We estimate that this exercise will take around 15 minutes to complete.*
-
-We didn't want to let you leave this chapter still thinking about that one awful pie chart. Let's make a better one instead!
-
-.. include:: ex/pie_charts_exercise.in.rst
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch06_07_revealwt_pie_charts
-  
-    .. youtube:: uQp6Au06dt4
-      :divid: ch06_07_wt_pie_charts
-      :height: 315
-      :width: 560
-      :align: center
-      
-    .. tip::
-  
-      Alternatively, here's a concise way to calculate :code:`all_counts` using a single line of code:
-  
-      .. code-block:: matlab
-  
-        all_counts = sum(planets == [0 1 2 3 4 8]);
