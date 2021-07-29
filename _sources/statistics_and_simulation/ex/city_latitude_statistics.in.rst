@@ -1,17 +1,12 @@
-This exercise uses the following files.
+This exercise uses :file:`cities.xslx` and :file:`CityLatitudes.m` (available at the top of the chapter).
 
-- :file:`cities.xslx`
-- :file:`CityLatitudes.m`
-
-Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
-
-Open the :file:`CityLatitudes.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the Excel file, :file:`cities.xlsx`, and extract the data into three parallel vectors :code:`pop`, :code:`lat`, and :code:`lon` representing the cities' populations, latitudes, and longitudes, respectively. (Don't worry about how specifically the :code:`xlsread` function works - we'll come back to this in a later chapter.)
+Open :file:`CityLatitudes.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the Excel file, :file:`cities.xlsx`, and extract the data into three parallel vectors :code:`pop`, :code:`lat`, and :code:`lon` representing the cities' populations, latitudes, and longitudes, respectively. (Don't worry about how specifically the :code:`xlsread` function works - we'll come back to this in a later chapter.)
 
 Fill in the missing code to generate some basic statistical measures of the latitudes of the world's largest cities. Answer the questions below based on your analysis.
 
 .. fillintheblank:: ch07_03_ex_city_latitude_statistics_01
 
-  The most northern city is at what latitude (in degrees)? 
+  What latitude (in degrees) is the most northern city? 
 
   |blank|
   
@@ -20,7 +15,7 @@ Fill in the missing code to generate some basic statistical measures of the lati
 
 .. fillintheblank:: ch07_03_ex_city_latitude_statistics_02
 
-  The most southern city is at what latitude (in degrees)?
+  What latitude (in degrees) is the most southern city?
 
   |blank|
   

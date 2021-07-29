@@ -94,14 +94,14 @@ Introduction
 
 In this chapter, we will dive deeper into data visualization and learn how to use MATLAB to plot in a three-dimensional space.
 
-In Lab 3, we used three dimensional arrays to represent images with rows, columns, and layers. We can represent all sorts of datasets in 3D space as a set of (x,y,z) values. When we use 3D arrays to hold data for spatial coordinates, trends, or maps, it is useful to visualize the data we are using in order to understand and communicate what we're working with.
+In Ch. 5, we used three dimensional arrays to represent images with rows, columns, and layers. We can represent all sorts of datasets in 3D space as a set of (x,y,z) values. When we use 3D arrays to hold data for spatial coordinates, trends, or maps, it is useful to visualize the data we are using in order to understand and communicate what we're working with.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3D Plotting Using Vectors of Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Let's look at two useful MATLAB functions for simple plots of 3D data. This video goes through :code:`Demo.m`, which you can download from the Chapter Files at the top, in order to follow along and reference.
+Let's look at two useful MATLAB functions for simple plots of 3D data. Follow along with :code:`Demo.m` from the top of the chapter.
 
 .. youtube:: YjeF1h6Ravs
   :divid: ch09_02_vid_plotting_3d_vectors
@@ -111,10 +111,7 @@ Let's look at two useful MATLAB functions for simple plots of 3D data. This vide
 
 .. admonition:: Video Recap
 
-  :code:`plot3` and :code:`scatter3` can be used to make 3D plots.
-
-  - :code:`plot3` - works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data
-  - :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data
+  :code:`plot3` and :code:`scatter3` can be used to make 3D plots. :code:`plot3` works analogously to its regular 2D counterpart :code:`plot`; :code:`plot3` uses three vectors for x, y, and z data. :code:`scatter3` -- works analogously to its regular 2D counterpart :code:`scatter`; :code:`scatter3` uses three vectors for x, y, and z data.
 
 -----------------------------
 Exercise: Plotting 3D Vectors
@@ -195,21 +192,7 @@ The :code:`meshgrid` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-The previous exercise used vectors to plot a solution to the equation: 
-
-.. math::
-
-  z = x + x * sin(\frac{y}{50})
-
-But these vectors gave us only one line (or set of markers if you used :code:`scatter3`). This math equation actually states that :code:`z` is a function of :code:`x` and :code:`y` for all possible combinations of the values for :code:`x` and :code:`y`. This means that :code:`z` is a surface that is defined by this equation… and right now all we have is one "slice" of that surface: the particular combination of :code:`x` and :code:`y` coordinates in our vectors. To fully represent the surface defined by the equation,
-
-.. math::
-
-  Z = X + X * sin(\frac{Y}{50})
-
-we will need to calculate an array for :code:`Z` that contains all the possible combinations of :code:`X` and :code:`Y` coordinates. In other words, we need matrices not vectors. 
-
-MATLAB has a built-in function called :code:`meshgrid()` that will convert our vectors :code:`x` and :code:`y` into their corresponding matrices :code:`X` and :code:`Y` so that we can properly visualize our math equation. Watch the video below to see how :code:`meshgrid()` works. 
+Let's look at some more details about plotting functions of two variables in 3D.
 
 .. youtube:: L3ydtLFKiwE
   :divid: ch09_03_vid_meshgrid
@@ -218,6 +201,22 @@ MATLAB has a built-in function called :code:`meshgrid()` that will convert our v
   :align: center
 
 .. admonition:: Video Recap
+
+  The previous exercise used vectors to plot a solution to the equation: 
+
+  .. math::
+
+    z = x + x * sin(\frac{y}{50})
+
+  But these vectors gave us only one line (or set of markers if you used :code:`scatter3`). This math equation actually states that :code:`z` is a function of :code:`x` and :code:`y` for all possible combinations of the values for :code:`x` and :code:`y`. This means that :code:`z` is a surface that is defined by this equation… and right now all we have is one "slice" of that surface: the particular combination of :code:`x` and :code:`y` coordinates in our vectors. To fully represent the surface defined by the equation,
+
+  .. math::
+
+    Z = X + X * sin(\frac{Y}{50})
+
+  we will need to calculate an array for :code:`Z` that contains all the possible combinations of :code:`X` and :code:`Y` coordinates. In other words, we need matrices not vectors. 
+
+  MATLAB has a built-in function called :code:`meshgrid()` that will convert our vectors :code:`x` and :code:`y` into their corresponding matrices :code:`X` and :code:`Y` so that we can properly visualize our math equation.
 
   The :code:`meshgrid` function takes two vectors as inputs and returns two matrices, one where each row is a copy of the first input, and another where each column is a copy of the second input. For example:
 
@@ -505,17 +504,12 @@ Application: Comparing Bathymetry Plots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-This exercise uses the following files.
-
-- :file:`bathymetryData.mat`
-- :file:`UpNorth.m`
-
-Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
+This exercise uses :file:`bathymetryData.mat` and :file:`UpNorth.m` from the beginning of the chapter.
 
 .. tip::
     The following exercise uses the :code:`subplot` function. If you need a review on how subplots work, please refer back to Chapter 6.
 
-Let's practice creating contour plots and using the subplot function. We will generate a figure that compares the two contour plots of the bathymetry data we used earlier. Open :file:`UpNorth.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the :file:`bathymetryData.mat` file. Complete the :file:`UpNorth.m` script to plot both contour plots in the same figure, like this:
+Let's practice creating contour plots and using the :code:`subplot` function. We will generate a figure that compares the two contour plots of the bathymetry data we used earlier. Open :file:`UpNorth.m` in MATLAB. We've provided an outline for your code, as well as initial code to read data from the :file:`bathymetryData.mat` file. Complete the :file:`UpNorth.m` script to plot both contour plots in the same figure, like this:
 
 .. figure:: img/ContourComparison.png
     :width: 400
@@ -542,14 +536,9 @@ Application: Optimizing a Golf Swing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 8
 
-This exercise uses the following files.
+This exercise uses :file:`dist2green.m` and :file:`LandOnGreen.m` from the beginning of the chapter.
 
-- :file:`dist2green.m`
-- :file:`LandOnGreen.m`
-
-Please ensure you have downloaded these exercise files (see the chapter files box at the beginning of this chapter) and placed them in your current MATLAB folder.
-
-Let's practice some more with creating contour plots and using the subplot function. This is the 17th hole at the TPC Sawgrass golf course.
+Let's practice some more with creating contour plots and using :code:`subplot`. This is the 17th hole at the TPC Sawgrass golf course.
 
 .. figure:: img/Golf1.png
     :width: 400
@@ -572,8 +561,8 @@ This is an optimization problem. We want to check all possible combinations of "
 3. Calculate the distance traveled for each speed/angle combination by calling :code:`dist2green` and passing the matrices created by :code:`meshgrid`. This should be saved in a variable named :code:`distance`.
 4. Make two plots to interpret your simulation:
 
-   a. A contourf plot of speed, angle, and distance
-   b. A contourf plot of the viable combinations of speed and angle 
+   a. A :code:`contourf` plot of speed, angle, and distance
+   b. A :code:`contourf` plot of the viable combinations of speed and angle 
 
 Open :file:`LandOnGreen.m` in MATLAB. We've provided an outline for your code, as well as some initial code. Complete the :file:`LandOnGreen.m`  script to plot both contour plots in the same figure, like this:
 
@@ -612,7 +601,9 @@ Solving an optimization problem often gives you a range of "best" answers, not a
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  We discussed how to properly interpret the :code:`contourf` plots that we just made.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary

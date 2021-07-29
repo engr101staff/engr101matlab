@@ -2,11 +2,12 @@ Make sure you have :file:`boat_gray.png` downloaded and moved into your current 
 
 Then, load the image and display it:
 
-.. code::matlab
+.. code:: matlab
+
   grayImg = imread('boat_gray.png');
   imshow(grayImg);
   
-You should see a boat image with very poor contrast. The boat fades into the background. Can we fix this?
+You should see a boat image with very poor contrast. The boat fades into the background.
 
 .. figure:: img/boat_gray.png
    :width: 400
@@ -39,23 +40,31 @@ Here's the full algorithm for doing contrast stretching via linear interpolation
 
 2. **Determine a stretch factor**. This is the size of the final intensity range we would like divided by the size of the original intensity range we have.
 
-3. **Stretch each pixel**. Compute a new intensity value for each pixel according to the formula :code:`new_min + stretch_factor * (p - original_min);` where :code:`p` is the original pixel value.
+3. **Stretch each pixel**. Compute a new intensity value for each pixel according to the following formula (:code:`p` is the original pixel value):
 
+.. code:: matlab
+
+  new_min + stretch_factor * (p - original_min);
+  
 .. tip::
 
   Any time you see an algorithm in MATLAB that calls for an operation on each element of a matrix (or each pixel in an image!), vectorization is your tool of choice. Look at the formula in step #3 above - what would happen if in place of :code:`p` we used the whole image matrix?
 
-Now, we would like you to write a function to implement this contrast stretching operation. The input parameters for the function should include:
+--------------------------------
+Exercise: Contrast Stretching
+--------------------------------
+
+Now, we would like you to write a function to implement contrast stretching. The function should take the following input parameters:
 
 - The original image
 - The desired new min intensity value
 - The desired new max intensity value
 
-And the function should return the new, adjusted image.
+The function should return the new, adjusted image.
 
 We have provided a starter file :code:`adjust_contrast.m` at the top of the chapter that you should use to get started. Take note of the comments there, which match the algorithm described above. Some lines of code for steps 1 and 3 are missing pieces - you'll need to fill these in. Step 2 is already done for you.
 
-To test your :code:`adjust_contrast` function, you can just call it from the command line, providing the grayscale image from earlier as the first parameter. Try a few different combinations of new min/max values. We find that 30, 255 works pretty well. For example:
+To test your :code:`adjust_contrast` function, you can call it from the command line, providing the grayscale image from earlier as the first parameter. Try a few different combinations of new min/max values. We find that 30, 255 works pretty well. For example:
 
 .. code-block:: matlab
 
