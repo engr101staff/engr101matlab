@@ -50,13 +50,13 @@ MATLAB also supports a data structure called a **table**.
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
+  A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
 
-If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
+  If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
 
-We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
+  We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
 
 ----------------------------------
 Exercise: Accessing Data in Tables
@@ -182,9 +182,9 @@ Tables provide a number of convenient ways to manipulate data. First, let's take
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
+  Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
 
 We can also use indexing and assignment to modify specific selections of elements within a table, combined with powerful tools like logical indexing that allow us to perform complex operations without having to write a lot of code.
 
@@ -194,7 +194,9 @@ We can also use indexing and assignment to modify specific selections of element
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  TODO
 
 -------------------------------------
 Exercise: Manipulating Data in Tables

@@ -23,7 +23,9 @@ Introduction
 
 .. admonition:: Video Recap
 
-  In the previous video, we introduced a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
+  The :code:`whos` function shows us the type of a variable.
+
+  We are going to work with a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Joining two strings together is called **concatenation**. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
 
 ^^^^^^^^^^^
 Cell Arrays
@@ -58,6 +60,8 @@ Let's consider indexing into cell arrays:
   - **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly. This is generally not useful for multi-element selections.
 
   The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
+
+TODO add some multiple choice questions about cell indexing & content indexing
 
 -----------------------------
 Exercise: Cell Array Practice
