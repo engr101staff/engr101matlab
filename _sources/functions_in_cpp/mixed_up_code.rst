@@ -12,7 +12,7 @@ the function - these lines should not be selected. Make sure to place the blocks
 
    Vacation time! But before you go, you need to convert your currency.
    Let's write the code for the dollarToYen function. ``dollarToYen``
-   takes dollar as a parameter and returns the equivalent amount of Japanese yen.
+   takes ``dollar`` as a parameter and returns the equivalent amount of Japanese yen.
    The conversion rate is 1 USD equals 105.42 Japanese yen.
    Put the necessary blocks of code in the correct order.
    -----
@@ -67,7 +67,7 @@ the function - these lines should not be selected. Make sure to place the blocks
 
    Most assignments and tests are graded as a percentage, but final
    grades are letters. Let's write the code for the ``percentToLetter`` function. 
-   ``percentToLetter`` takes a percentage and returns the corresponding
+   ``percentToLetter`` takes a ``percentage`` and returns the corresponding
    letter grade. A 90% and above is an 'A', an 80% and above is a 'B', a 70% and above
    is a 'C', and anything under a 70% is an 'F'.
    Put the necessary blocks of code in the correct order.
