@@ -1,16 +1,17 @@
 Mixed Up Code Exercises
 -----------------------
 
-Answer the following **Mixed-Up Code** questions to practice what you have learned in this chapter.
+These questions are **completely OPTIONAL**. We provide these exercises to give you more practice with the material that you've learned. 
+Additionally, they may be a helpful resource when reviewing for assessments. Some lines contain **mistakes** or are **unnecessary** for 
+the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
 .. parsonsprob:: functions_in_cpp_mixed_up_code_1
    :numbered: left
    :adaptive:
-   :noindent:
    :practice: T
 
    Vacation time! But before you go, you need to convert your currency.
-   Let's write the code for the dollarToYen function. dollarToYen
+   Let's write the code for the dollarToYen function. ``dollarToYen``
    takes dollar as a parameter and returns the equivalent amount of Japanese yen.
    The conversion rate is 1 USD equals 105.42 Japanese yen.
    Put the necessary blocks of code in the correct order.
@@ -34,16 +35,15 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 .. parsonsprob:: functions_in_cpp_mixed_up_code_2
    :numbered: left
    :adaptive:
-   :noindent:
    :practice: T
 
-   When you buy something, you also need to pay sales tax. For example,
+   When you buy something, you usually need to pay sales tax. For example,
    a nice shirt could be labeled with a price of exactly $20, but when 
    you pay, you actually need to pay $21.20 in a state with 6% sales tax.
    However, different states have different tax rates. Write the function
-   priceWithTax, which takes price and percentTax as parameters.
-   priceWithTax calculates the price after tax and returns it.
-   For example, priceWithTax (20, 6) returns 21.2.
+   ``priceWithTax``, which takes ``price`` and ``percentTax`` as parameters.
+   ``priceWithTax`` calculates the price after tax and returns it.
+   For example, ``priceWithTax (20, 6)`` returns 21.2.
    Put the necessary blocks of code in the correct order.
    -----
    double priceWithTax (double price, double percentTax) {
@@ -63,14 +63,13 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 .. parsonsprob:: functions_in_cpp_mixed_up_code_3
    :numbered: left
    :adaptive:
-   :noindent:
    :practice: T
 
    Most assignments and tests are graded as a percentage, but final
-   grades are letters. Let's write the code for the percentToLetter function. 
-   percentToLetter takes a percentage and returns the corresponding
-   letter grade. A 90 and above is an 'A', an 80 and above is a 'B', a 70 and above
-   is a 'C', and anything under a 70 is an 'F'.
+   grades are letters. Let's write the code for the ``percentToLetter`` function. 
+   ``percentToLetter`` takes a percentage and returns the corresponding
+   letter grade. A 90% and above is an 'A', an 80% and above is a 'B', a 70% and above
+   is a 'C', and anything under a 70% is an 'F'.
    Put the necessary blocks of code in the correct order.
    -----
    char percentToLetter (double percentage) {
@@ -116,12 +115,11 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 .. parsonsprob:: functions_in_cpp_mixed_up_code_4
    :numbered: left
    :adaptive:
-   :noindent:
    :practice: T
 
-   Let's write the code for the triangleArea function. triangleArea
-   takes two parameters, base and height. It returns the 
-   area of the triangle using the formula 1/2 * base * height.
+   Let's write the code for the ``triangleArea`` function. ``triangleArea``
+   takes two parameters, ``base`` and ``height``. It returns the 
+   area of the triangle using the formula **1/2 * base * height**.
    Put the necessary blocks of code in the correct order.
    -----
    double triangleArea (double base, double height) {
@@ -145,9 +143,9 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    :adaptive:
    :practice: T
 
-   Let's write the code for the cylinderVolume function. cylinderVolume
-   takes two parameters, radius and height. It returns the 
-   volume of the cylinder using the formula pi * radius * radius * height.
+   Let's write the code for the ``cylinderVolume`` function. ``cylinderVolume``
+   takes two parameters, ``radius`` and ``height``. It returns the 
+   volume of the cylinder using the formula **pi * radius * radius * height**.
    Put the necessary blocks of code in the correct order.
    -----
    double cylinderVolume (double radius, double height) {
@@ -185,7 +183,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    =====
       }
    =====
-      return x * 2;
+      return x * 2; #distractor
    =====
       else {
    =====
@@ -202,10 +200,9 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    :adaptive:
    :practice: T
 
-   Let's write the code for the isDoubleDigit function. isDoubleDigit
-   takes num as a parameter. isDoubleDigit returns true if 
-   num is a double digit number and returns false otherwise. 
-   In the code, use the if then else structure. 
+   Let's write the code for the ``isDoubleDigit`` function. ``isDoubleDigit``
+   takes ``num`` as a parameter. ``isDoubleDigit`` returns ``true`` if 
+   ``num`` is a double digit number and returns ``false`` otherwise. 
    Put the necessary blocks of code in the correct order.
    -----
    bool isDoubleDigit (int num) {
@@ -224,11 +221,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    =====
       }
    =====
-      else {
-   =====
-         return false;
-   =====
-      }
+      return false;
    =====
    }
 
@@ -237,14 +230,14 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    :adaptive:
    :practice: T
 
-   Let's write the code for the Compare function. Compare
-   takes two integers a, b. Compare returns 1 if 
-   a is greater than b, -1 if a is less than b and 0 if they are equal.
+   Let's write the code for the ``compare`` function. The ``compare`` 
+   function takes two integers ``a``, ``b``. Compare returns ``1`` if 
+   a is greater than b, ``-1`` if a is less than b and ``0`` if they are equal.
    Put the necessary blocks of code in the correct order.
    -----
-   int Compare (int a, int b) {
+   int compare (int a, int b) {
    =====
-   bool Compare (int a, int b) {   #paired
+   bool compare (int a, int b) {   #paired
    =====
       if (a > b) {
    =====
@@ -275,12 +268,11 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    :adaptive:
    :practice: T
 
-   Let's write the code for the isFactor function. isFactor
-   takes two parameters, num and factor.
-   isFactor returns true if factor is a factor of num 
-   and returns false otherwise. In the code, use the if then 
-   else structure. Put the necessary blocks of code in the 
-   correct order.
+   Let's write the code for the ``isFactor`` function. ``isFactor``
+   takes two parameters, ``num`` and ``factor``. ``isFactor`` returns ``true`` if 
+   factor is a factor of num and returns ``false`` otherwise. A number can be called a factor 
+   of another if it can divide without a remainder. For example, 9 is a factor of 18 because 18 / 9 = 2, with 
+   a remainder of 0. Put the necessary blocks of code in the correct order.
    -----
    bool isFactor (int num, int factor) {
    =====
@@ -298,11 +290,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    =====
       }
    =====
-      else {
-   =====
-         return false;
-   =====
-      }
+      return false;
    =====
    }
 
@@ -311,11 +299,12 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    :adaptive:
    :practice: T
 
-   Let's write the code for the isPerfectSquare function. isPerfectSquare
-   takes input as a parameter and returns true if input is a 
-   perfect square and returns false otherwise. A perfect square is a number
-   that has an integer square root. In the code, use the if then
-   else structure. Put the necessary blocks of code in the correct order.
+   Let's write the code for the ``isPerfectSquare`` function. ``isPerfectSquare``
+   takes ``input`` as a parameter and returns ``true`` if input is a 
+   perfect square and returns ``false`` otherwise. A perfect square is a number
+   that has an integer square root. For example, 1, 4, 9, and 16 are all perfect squares 
+   because the square root of these numbers is a whole number. 
+   Put the necessary blocks of code in the correct order.
    -----
    bool isPerfectSquare (int input) {
    =====
@@ -335,10 +324,6 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
    =====
       }
    =====
-      else {
-   =====
-         return false;
-   =====
-      }
+      return false;
    =====
    }

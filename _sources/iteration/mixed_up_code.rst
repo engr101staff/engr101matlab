@@ -1,12 +1,13 @@
 Mixed Up Code Exercises
 -----------------------
 
-Answer the following **Mixed-Up Code** questions to practice what you have learned in this chapter.
+These questions are **completely OPTIONAL**. We provide these exercises to give you more practice with the material that you've learned. 
+Additionally, they may be a helpful resource when reviewing for assessments. Some lines contain **mistakes** or are **unnecessary** for 
+the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
 .. parsonsprob:: iteration_mixed_up_code_1
     :numbered: left
     :adaptive:
-    :noindent:
     :practice: T
 
     The program below should print out the even numbers between 20 and 40, inclusive,
@@ -38,7 +39,6 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 .. parsonsprob:: iteration_mixed_up_code_2
     :numbered: left
     :adaptive:
-    :noindent:
     :practice: T
 
     The program below should count down from 100 to 0 in decrements of
@@ -70,36 +70,35 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 .. parsonsprob:: iteration_mixed_up_code_3
     :numbered: left
     :adaptive:
-    :noindent:
     :practice: T
 
-    The program below should find the sum of the first 10 natural numbers,
-    but the code is mixed up and contains extra blocks. Put the necessary blocks
-    in the correct order.
+    The program below should find the sum of the first 10 natural numbers and print it, but the 
+    code is mixed up and contains extra blocks. Natural numbers, also known as counting numbers, include 
+    all positive integers from 1 to infinity. Put the necessary blocks in the correct order.
     -----
     int main() {
     =====
-       int n = 10; #distractor
+      int n = 10; #distractor
     =====
-       int sum = 0;
+      int sum = 0;
     =====
-       int sum = n;  #distractor
+      int sum = n;  #distractor
     =====
-       for (int n = 1; n <= 10; ++n) {
+      for (int n = 1; n <= 10; ++n) {
     =====
-       for (int n = 1; n < 10; ++n) {  #paired
+      for (int n = 1; n < 10; ++n) {  #paired
     =====
-       while (n < 100) {  #distractor
+      while (n < 100) {  #distractor
     =====
-       while (n <= 9) {  #distractor
+      while (n <= 9) {  #distractor
     =====
-          cout << n << endl;  #distractor
+      cout << n << endl;  #distractor
     =====
-          sum = sum + n;
+         sum = sum + n;
     =====
-       }
+      }
     =====
-        cout << sum << endl;
+      cout << sum << endl;
     =====
     }
 
@@ -108,7 +107,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     :adaptive:
     :practice: T
 
-    Let's write the a program that uses a for
+    Let's write a program that uses a for
     loop to print out "hello" three times.
     -----
     int main() {
@@ -157,15 +156,16 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
 
     Let's write a program that prints out all numbers from 1 to ``i``, with ``i`` going from 5 to 1.
     For example, the first line should print "1 2 3 4 5", the second line should print "1 2 3 4" and so on until "1".
-    Use a nested for loop.
+    Use a nested for loop. The output should be:
     
-        ::
-        The ouput should be:
-        1 2 3 4 5
-        1 2 3 4
-        1 2 3
-        1 2 
-        1
+      ::
+
+         1 2 3 4 5 
+         1 2 3 4 
+         1 2 3 
+         1 2 
+         1 
+
     -----
     int main() {
     =====
@@ -184,6 +184,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
           }
     =====
           cout << endl;    
+    =====
        }
     =====
     }
@@ -194,7 +195,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     :practice: T
 
     On the last day of every year, we count down the seconds before the new year arrives.
-    Write the a program which prints out a countdown from 10 to 1 and then
+    Write a program which prints out a countdown from 10 to 1 and then
     prints out "Happy New Year!".
     -----
     int main() {
@@ -216,6 +217,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
        }
     =====
        cout << "Happy New Year!" << endl;
+    =====
     }
 
 .. parsonsprob:: iteration_mixed_up_code_8
@@ -223,9 +225,8 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     :adaptive:
     :practice: T
 
-    Help Goku reach power levels of over 9000! Write a program
-    which checks if a variable ``powerLevel`` is over 9000. If it
-    isn't, it repeatedly prints "More power!" and increments ``powerLevel`` by
+    Help Goku reach power levels of over 9000! Write a program which creates the variable ``powerLevel`` with a value of 6500
+    and checks if it is over 9000. If it isn't, it repeatedly prints "More power!" and increments ``powerLevel`` by
     1000 until ``powerLevel`` is over 9000. Then the program prints "It's over 9000!".
     Put the necessary blocks in the correct order.
     -----
@@ -233,7 +234,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     =====
        int powerLevel = 6500;
     =====
-       while (powerLevel < 9000) {
+       while (powerLevel <= 9000) {
     =====
        while (powerLevel > 9000) {  #paired
     =====
@@ -248,6 +249,7 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
        if (powerLevel < 9000) {  #distractor
     =====
        cout << "It's over 9000!" << endl;
+    =====
     }
 
 .. parsonsprob:: iteration_mixed_up_code_9
@@ -255,8 +257,8 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     :adaptive:
     :practice: T
 
-    Write the a program that finds the summation from ``start`` and ``end``. 
-    The program should add all the integers from ``start`` to ``end``, inclusive, together and output
+    Write the a program that finds the summation from ``start`` to ``end``. The ``start`` variable should be equal to 3, and the ``end`` variable 
+    should equal to 12. The program should add all the integers from ``start`` to ``end``, inclusive, together and output
     the sum. Put the necessary blocks in the correct order.
     -----
     int main() {
@@ -289,10 +291,11 @@ Answer the following **Mixed-Up Code** questions to practice what you have learn
     :adaptive:
     :practice: T
 
-    Write a function that reverses the digits in a variable ``num`` and outputs the reversed number.
-    For example, if ``num`` was 1324, output 4231.
-    Put the necessary blocks in the correct order, with ``num``
-    declared first, then ``reverse``, then ``temp``, and lastly ``remainder``.
+    Write a function that reverses the digits in a variable ``num`` and outputs number's ``reverse``.
+    For example, if ``num`` was 1324, output 4231. To do this, create a temporary variable, ``temp``, to iterate through 
+    each place value without changing the value of ``num``. To get each digit of the ``reverse``, you need the ``remainder`` of ``temp / 10``. To get the 
+    total reversed number, add the ``remainder`` in each iteration of ``temp``. Put the necessary blocks in the correct order, with ``num`` declared first 
+    as 123456, then ``reverse``, then ``temp``, and lastly ``remainder``.
     -----
     int main() {
     =====

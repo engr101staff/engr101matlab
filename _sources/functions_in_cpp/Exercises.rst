@@ -1,8 +1,8 @@
 Multiple Choice Exercises
 -------------------------
 
-Answer the following **Multiple Choice** questions to
-practice what you have learned in this chapter.
+These questions are **completely OPTIONAL**. We provide these exercises to give you more practice with the 
+material that you've learned. Additionally, they may be a helpful resource when reviewing for assessments.
 
 .. mchoice:: functions_in_cpp_mcq_1
     :practice: T
@@ -76,8 +76,8 @@ practice what you have learned in this chapter.
 .. mchoice:: functions_in_cpp_mcq_3
     :practice: T
 
-    If we wanted to create a boolean function called ``isPrime``, which takes an ``int input``
-    as a parameter, which of the following would be the correct function header?
+    If we wanted to create a function called ``isPrime`` that returns a ``bool`` and takes an 
+    ``int input``, which of the following would be the correct function header?
 
     - ``boolean isPrime (int input) {``
 
@@ -98,41 +98,11 @@ practice what you have learned in this chapter.
 .. mchoice:: functions_in_cpp_mcq_4
     :practice: T
 
-    If we wrote the following function, which of the other functions below can we also legally write
-    and add to the program?
-
-    .. code-block:: cpp
-
-      int func (double x, bool y);
-
-    - ``int func (double a, bool b);``
-
-      - Since this function has the same name and parameter types as the given function, it is not allowed.
-
-    - ``int foo (double x, bool y);``
-
-      + This function has a different name from the given function, so it is allowed.
-
-    - ``int func (double x);``
-
-      + Although this function has the same name as the given function, it has a different number of parameters, so it is allowed.
-
-    - ``void func (double x, bool y);``
-
-      - Although this function has a different return type, its parameter list is the same as the given function, so it is not allowed.
-
-    - ``int func (bool y, double x);``
-
-      + Although this function has the same name as the given function, its parameter list is in a different order, so it is allowed.
-
-.. mchoice:: functions_in_cpp_mcq_5
-    :practice: T
-
     What are some benefits of using functions? Select all that are true.
 
     - Functions make code easier to write and comprehend.
 
-      + You can place replace repetitive code with functions.
+      + You can replace repetitive code with functions.
 
     - Functions help encapsulate a set of steps that is repeated multiple times.
 
@@ -144,9 +114,9 @@ practice what you have learned in this chapter.
 
     - Functions make it easier to detect and fix bugs.
 
-      + Since your code is broken down into many functions, rather than debugging the entire program, you can isolate the function that is causing issues.
+      + If your code is broken down into many functions, rather than debugging the entire program, you can isolate the function that is causing issues.
 
-.. mchoice:: functions_in_cpp_mcq_6
+.. mchoice:: functions_in_cpp_mcq_5
     :practice: T
 
     Suppose you have defined the following function:
@@ -187,7 +157,7 @@ practice what you have learned in this chapter.
 
     -   ``The fortune you seek is in another cookie.``
 
-        -   ``22 % 2 == 0``, so you enter the ``if`` block, not the else.
+        -   ``22 % 2 == 0``, so you would enter the ``if`` block, not the else.
 
     -   ``He who laughs at himself never runs out of things to laugh at.``
 
@@ -201,7 +171,7 @@ practice what you have learned in this chapter.
 
         -   ``'b'`` is less than ``'m'``, so you would enter the ``if`` block, not the ``else``.
 
-.. mchoice:: functions_in_cpp_mcq_7
+.. mchoice:: functions_in_cpp_mcq_6
     :practice: T
 
     Are there any issues with the code below?
@@ -230,30 +200,30 @@ practice what you have learned in this chapter.
 
       - There is an issue with the code. Can you find it?
 
-.. mchoice:: functions_in_cpp_mcq_8
+.. mchoice:: functions_in_cpp_mcq_7
     :practice: T
 
     What is the value of ``x`` after the code is run?
 
     .. code-block:: cpp
 
-      void double(int num) {
+      void twice(int num) {
         num = 2 * num;
       }
 
       int main() {
         int x = 4;
-        double(x);
-        double(x);
+        twice(x);
+        twice(x);
       }
 
     - 16
 
-      - Although that might be what the ``double`` function hopes to achieve, is that what the value of ``x`` is?
+      - Although that might be what the ``twice`` function hopes to achieve, is that what the value of ``x`` is?
 
     - 8
 
-      - Take a closer look at what ``double`` does.
+      - Take a closer look at what ``twice`` does.
 
     - 4
 
@@ -263,7 +233,7 @@ practice what you have learned in this chapter.
 
       - Take another look at the program.
 
-.. mchoice:: functions_in_cpp_mcq_9
+.. mchoice:: functions_in_cpp_mcq_8
     :practice: T
 
     Are there any issues with the code below?
@@ -291,24 +261,3 @@ practice what you have learned in this chapter.
     - There are no issues with the code.
 
       - There is an issue with the code. Can you find it?
-
-.. mchoice:: functions_in_cpp_mcq_10
-    :practice: T
-
-    What is the return type of main?
-
-    - ``void``
-
-      - What keyword do we use before ``main()`` in every program?
-
-    - ``bool``
-
-      - What keyword do we use before ``main()`` in every program?
-
-    - ``double``
-
-      - What keyword do we use before ``main()`` in every program?
-
-    - ``int``
-
-      + Yes, ``main`` is supposed to return an integer, which is why programmers often return 0 at the end of ``main``.

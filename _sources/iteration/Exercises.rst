@@ -1,8 +1,8 @@
 Multiple Choice Exercises
 -------------------------
 
-Answer the following **Multiple Choice** questions to
-practice what you have learned in this chapter.
+These questions are **completely OPTIONAL**. We provide these exercises to give you more practice with the material that you've learned. 
+Additionally, they may be a helpful resource when reviewing for assessments.
 
 .. mchoice:: iteration_mcq_1
     :practice: T
@@ -21,7 +21,7 @@ practice what you have learned in this chapter.
 
     - 0
 
-      - ``x`` is initialized to 0, but it's value is reassigned in the for loop. Can you figure out what the final value assigned to ``x`` is?
+      - ``x`` is initialized to 0, but its value is reassigned in the for loop. Can you figure out what the final value assigned to ``x`` is?
 
     - 1
 
@@ -33,7 +33,7 @@ practice what you have learned in this chapter.
 
     - 10
 
-      - ``i`` is incremented to a value of 10, but since ``i < 10`` is false, the contents of the for loop is not executed, so ``x`` is never assigned the value of 10.
+      - ``i`` is incremented to a value of 10, but since ``i < 10`` is false, the contents of the for loop are not executed, so ``x`` is never assigned the value of 10.
 
 .. mchoice:: iteration_mcq_2
     :practice: T
@@ -56,7 +56,7 @@ practice what you have learned in this chapter.
 
     - 1
 
-      - ``i`` is initialized with a value of 1 but it is incremented during the for loop.
+      - ``i`` is initialized with a value of 1, but it is incremented during the for loop.
 
     - 9
 
@@ -127,13 +127,13 @@ practice what you have learned in this chapter.
 
     - People really really really like Joe's Pizza.
 
-      + The code will print out three "really"s, two from evaluating the while loop condition and one from evaluating the if condition before printing out "like Joe's Pizza"
+      + The code will print out three "really"s, two from evaluating the while loop condition and one from evaluating the if condition before printing out "like Joe's Pizza".
 
     - People really really really really really like Joe's Pizza.
 
       - Take a closer look at the while loop condition.
 
-    - The loop will run infinetly.
+    - The loop will run infinitely.
 
       - Take a closer look at the while loop condition and reassignment of ``i``
 
@@ -212,45 +212,18 @@ practice what you have learned in this chapter.
     .. code-block:: cpp
 
      int main() {
-       for (int i = 1; i < 6; ++i) {
-         cout << x << "\t" << pow (x, 5) / pow (x, 3) << endl;
-       }
-     }
-
-    - The first six perfect fifths.
-
-      - Take a closer look at the for loop and what ``x`` was initialized to.
-
-    - The first six perfect squares.
-
-      - Take a closer look at the for loop and what ``x`` was initialized to.
-
-    - The first five perfect squares.
-
-      + Dividing ``x`` to the power of 5 by ``x`` to the power of 3 effectively results in perfect squares.
-
-    - The first five perfect cubes.
-
-      - Take a closer look at the mathematical expression inside the for loop.
-
-.. mchoice:: iteration_mcq_8
-    :practice: T
-
-    What is the output of the code below?
-
-    .. code-block:: cpp
-
-     int main() {
        int n = 2;   
        while (n % 5 != 0) {
          n = n + 3;
        }
        cout << n;
+
        n = 3;
        while (n % 5 != 0) {
          n = n + 3;
        }
        cout << n;
+
        n = 4;
        while (n % 5 != 0) {
          n = n + 3;
@@ -274,7 +247,7 @@ practice what you have learned in this chapter.
 
       - Take a closer look at the ``while`` loop.
 
-.. mchoice:: iteration_mcq_9
+.. mchoice:: iteration_mcq_8
     :practice: T
 
     The super evil villian RePete wants to annoy the city by
@@ -298,7 +271,7 @@ practice what you have learned in this chapter.
 
       - The order of initialization does not matter in this case.
 
-    - ``n`` is declared to be 0 and 0 is always less than 5.
+    - ``n`` is declared to be 0, and 0 is always less than 5.
 
       - The code doesn't loop infinitely because of the value ``n`` was declared to be.
 
@@ -310,7 +283,7 @@ practice what you have learned in this chapter.
 
       + Since ``n`` starts at 0 and gets smaller, the conditional for the ``while`` loop will always be true, and thus the code runs forever.
 
-.. mchoice:: iteration_mcq_10
+.. mchoice:: iteration_mcq_9
 
     After making some changes to his code, RePete tries again.
     This time, however, the robots don't repeat anything!
