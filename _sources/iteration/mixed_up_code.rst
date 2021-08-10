@@ -257,7 +257,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     :adaptive:
     :practice: T
 
-    Write the a program that finds the summation from ``start`` to ``end``. The ``start`` variable should be equal to 3, and the ``end`` variable 
+    Write a program that finds the summation from ``start`` to ``end``. The ``start`` variable should be equal to 3, and the ``end`` variable 
     should equal to 12. The program should add all the integers from ``start`` to ``end``, inclusive, together and output
     the sum. Put the necessary blocks in the correct order.
     -----

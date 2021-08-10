@@ -204,6 +204,7 @@ the function - these lines should not be selected. Make sure to place the blocks
    takes ``num`` as a parameter. ``isDoubleDigit`` returns ``true`` if 
    ``num`` is a double digit number and returns ``false`` otherwise. 
    Put the necessary blocks of code in the correct order.
+
    -----
    bool isDoubleDigit (int num) {
    =====
@@ -231,7 +232,7 @@ the function - these lines should not be selected. Make sure to place the blocks
    :practice: T
 
    Let's write the code for the ``compare`` function. The ``compare`` 
-   function takes two integers ``a``, ``b``. Compare returns ``1`` if 
+   function takes two integers ``a``, ``b``. ``compare`` returns ``1`` if 
    a is greater than b, ``-1`` if a is less than b and ``0`` if they are equal.
    Put the necessary blocks of code in the correct order.
    -----
@@ -273,6 +274,7 @@ the function - these lines should not be selected. Make sure to place the blocks
    factor is a factor of num and returns ``false`` otherwise. A number can be called a factor 
    of another if it can divide without a remainder. For example, 9 is a factor of 18 because 18 / 9 = 2, with 
    a remainder of 0. Put the necessary blocks of code in the correct order.
+
    -----
    bool isFactor (int num, int factor) {
    =====
@@ -305,6 +307,7 @@ the function - these lines should not be selected. Make sure to place the blocks
    that has an integer square root. For example, 1, 4, 9, and 16 are all perfect squares 
    because the square root of these numbers is a whole number. 
    Put the necessary blocks of code in the correct order.
+   
    -----
    bool isPerfectSquare (int input) {
    =====
