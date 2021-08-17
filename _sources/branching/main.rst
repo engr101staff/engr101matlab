@@ -30,50 +30,6 @@ Introduction
 
 In this chapter, we'll take a look at a few more fundamental details of C++, including types and type conversions, integer vs. floating point division, and boolean operations. Finally, we'll begin to dive into control flow in C++ with branching, followed up by iteration next chapter.
 
--------
-Lobster
--------
-
-.. raw:: html
-
-  <div class="container-fluid">
-   <table><tbody>
-      <tr>
-         <td style="width:175px; text-align: center">
-            <img src="../_static/common/img/happylobster.jpg" style="width: 150px" />
-         </td>
-         <td>
-            For C++, we'll use a web-based program visualization tool called "Lobster". Lobster allows you to write and run C++ code in your web browser, including for your Runestone exercises in this and future chapters. Once you've written the code, you can click the "Simulate" button, and Lobster will show you line-by-line what is going on so that you can get a better feel for what your code actually does. Lobster can also track checkpoints as you work through exercsies and analyze your code to help you spot common bugs.
-         </td>
-      </tr>
-   </tbody></table>
-  </div>
-
-|
-
-Let's take a closer look at the interface for Lobster and how you can use it to step through your code line-by-line.
-
-.. youtube:: bvKhl8iPc7I
-   :divid: ch12_01_vid_lobster
-   :height: 315
-   :width: 560
-   :align: center
-
-|
-
-Here's the Lobster example we just went through in the video. You don't have to do anything with it, but you're welcome to play around with it if you like.
-
-.. raw:: html
-
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch12_01_ex</div>
-   </div>
-
-^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^
-.. section 2
-
 In the last chapter, we talked about how different variables can have different types. Sometimes you can "mix types" and one type will be converted into the other type. But what are the rules for this conversion? Let's do a short *inductive learning* experiment; inductive learning is when you run an experiment, observe what happens, and determine the patterns or rules based on your observations.
 
 Use the Lobster simulation to step through the following code, which contains several **implicit conversions** between variable types allowed by C++. An implicit conversion occurs when a value of one type is converted by the compiler into a different type. (An explicit type conversion occurs when you, the programmer, write an expression to convert data from one type to another type.) When an implicit conversion is about to occur, Lobster will show a pink box around the value being converted. Take note of how the conversions might affect the data itself as it is copied from one variable to another.

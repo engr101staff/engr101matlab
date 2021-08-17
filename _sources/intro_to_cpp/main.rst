@@ -4,9 +4,20 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/matlab.css">
    <script src="../_static/common/js/common3.js"></script>
-   <script src="../_static/common/js/matcrab-exercises2.bundle.js"></script>
+
+.. include:: ../common/include_lobster_exercises.in.rst
+
+.. raw:: html
+
+   <style>
+      .btn {
+         margin: 0;
+      }
+      .tab-pane {
+         padding: 0;
+      }
+   </style>
 
 ===================
 Introduction to C++
@@ -106,12 +117,6 @@ For now, here's a quick walkthrough of the development process:
 
       ..
 
-.. ^^^^^^^^^^^^
-.. Lobster TODO
-.. ^^^^^^^^^^^^
-.. section 4
-
-
 ^^^^^^^^^^^^^^^^^^^^
 C++ Syntax and Types
 ^^^^^^^^^^^^^^^^^^^^
@@ -135,59 +140,77 @@ Let's look at some of the basic rules for C++, including syntax, variables, and 
 
    Single-line comments use :code:`//` and block comments use :code:`/*` and :code:`*/`.
 
+-------
+Lobster
+-------
+
+.. raw:: html
+
+  <div class="container-fluid">
+   <table><tbody>
+      <tr>
+         <td style="width:175px; text-align: center">
+            <img src="../_static/common/img/happylobster.jpg" style="width: 150px" />
+         </td>
+         <td>
+            For C++, we'll use a web-based program visualization tool called "Lobster". Lobster allows you to write and run C++ code in your web browser, including for your Runestone exercises in this and future chapters. Once you've written the code, you can click the "Simulate" button, and Lobster will show you line-by-line what is going on so that you can get a better feel for what your code actually does. Lobster can also track checkpoints as you work through exercsies and analyze your code to help you spot common bugs.
+         </td>
+      </tr>
+   </tbody></table>
+  </div>
+
+|
+
+Let's take a closer look at the interface for Lobster and how you can use it to step through your code line-by-line.
+
+.. youtube:: bvKhl8iPc7I
+   :divid: ch12_01_vid_lobster
+   :height: 315
+   :width: 560
+   :align: center
+
+.. admonition:: Video Recap
+
+   We walked through the Lobster interface in this video. Lobster has two main tabs - the Source Code tab, where you can write your code, and the Simulation tab, where you can step through your code line-by-line.
+
+Here's the Lobster example we just went through in the video. You don't have to do anything with it, but you're welcome to play around with it if you like.
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch12_01_ex</div>
+   </div>
+
 -------------------------------
 Exercise: Variable Declarations
 -------------------------------
 
-.. shortanswer:: ch11_05_ex_variable_declarations
+For this exercise, add some lines of code so that these five variables are declared and initialized:
 
-   Consider this program:
-   
-   .. code-block:: cpp
+1. :code:`numPieces` -- an integer representing the number of pieces of candy you have (5)
+2. :code:`cost` -- a double representing the cost per piece of candy (3.25)
+3. :code:`name` -- a string representing the name of the candy ("peeps")
+4. :code:`category` -- a character representing the category of the candy
+5. :code:`isGood` -- a boolean representing whether the candy tastes good
 
-      #include <iostream>
-      using namespace std;
-      
-      int main() {
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch11_01_ex</div>
+      <div class="lobster-ex-complete-message">
+         Well done! The secret word is "electricity".
+      </div>
+   </div>
+
+.. fillintheblank:: ch11_01_ex_variableDeclarations
+  :casei:
+
+  Complete the Lobster exercise to reveal the *secret word*. Enter it here.
   
-        // print a greeting
-        cout << "Let's make some variables!" << endl;
-      
-        // TODO: Declare some variables
-      }
+  |blank|
 
-   Add some lines of code so that these five variables are declared and initialized:
-
-   1. :code:`numPieces` -- an integer representing the number of pieces of candy you have (5)
-   2. :code:`cost` -- a double representing the cost per piece of candy (3.25)
-   3. :code:`name` -- a string representing the name of the candy ("peeps")
-   4. :code:`category` -- a character representing the category of the candy
-   5. :code:`isGood` -- a boolean representing whether the candy tastes good
-
-   Paste your final program here:
-
-.. admonition:: Solution
-
-   .. reveal:: ch11_05_revealwt_varaible_declarations
-
-      .. code-block:: cpp
-      
-         #include <iostream>
-         using namespace std;
-         
-         int main() {
-   
-           // print a greeting
-           cout << "Let's make some variables!" << endl;
-           
-           // Declare some variables
-           int numPieces = 5;
-           double cost = 3.25;
-           string name = "peeps";
-           char category = 'K';
-           bool isGood = false;
-         }
-
+  - :electricity: Correct.
+    :x: Incorrect. If you finished the exercise, please double check your spelling.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
