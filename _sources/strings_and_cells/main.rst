@@ -27,6 +27,30 @@ Introduction
 
   We are going to work with a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Joining two strings together is called **concatenation**. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
 
+.. mchoice:: ch9_01_introduction_01
+
+  Let's suppose that we want to store a list of strings as a matrix in MATLAB. What are some of the problems with this approach?
+
+  - Matrices can only store homogenous data.
+
+    - Oops! While this is a true fact, this is not a problem for this particular example. We only want to store strings in the matrix, so we are only storing one type of data in the matrix (e.g., our data is homogenous).
+
+  - Matrices must be rectangular.
+
+    + Correct! This is a problem because if our strings are not all the same length, we will have to pad our strings with extra spaces in order to make the matrix rectangular.
+
+  - This approach wastes a lot of space.
+
+    + Correct! Because we need to pad our strings with extra spaces, the extra spaces waste a lot of space.
+
+  - Matrices can only handle numerical data.
+
+    - Oops! Matrices can handle characters, as well as numerical data.
+
+  - Padding with extra spaces makes working with strings inconvenient.
+
+    + Correct! To take this approach, we must pad our strings with extra spaces, and this makes working with the strings difficult. (For example, think about trying to concatenate two strings with padded spaces - you would need to remove the extra spaces, concatenate the strings, and then re-pad the string with extra spaces. This is a lot of extra work!)
+
 ^^^^^^^^^^^
 Cell Arrays
 ^^^^^^^^^^^

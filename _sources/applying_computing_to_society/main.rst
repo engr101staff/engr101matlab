@@ -29,7 +29,9 @@ Introduction
 ^^^^^^^^^^^^^^^^
 .. section 2
 
-As we've seen in this class, technology is a powerful tool that can be used to make positive contributions in many areas of society (and many areas of engineering!). Sometimes, however, the use of technology can have negative effects on society, and deepen existing inequities. For example, consider the technology of facial recognition. This technology has been used for many purposes - to unlock phones, to help the blind recognize people, to find missing children and victims of human trafficking. It has also been used by `police departments to identify criminal suspects <https://www.nytimes.com/2020/01/12/technology/facial-recognition-police.html>`__. Using facial recognition in criminal justice settings raises some serious concerns, and researchers have studied if this technology is able to recognize faces equally across races and genders. `One study <http://gendershades.org/overview.html>`__ compared three facial recognition systems (Microsoft, Face++, and IBM) across darker males, darker females, lighter males, and lighter females. Here are the results:
+As we've seen in this class, technology is a powerful tool that can be used to make positive contributions in many areas of society (and many areas of engineering!). Sometimes, however, the use of technology can have negative effects on society, and deepen existing inequities. For example, consider the technology of facial recognition. This technology has been used for many purposes - to unlock phones, to help the blind recognize people, to find missing children and victims of human trafficking.
+
+It has also been used by `police departments to identify criminal suspects <https://www.nytimes.com/2020/01/12/technology/facial-recognition-police.html>`__. Using facial recognition in criminal justice settings raises some serious concerns, and researchers have studied if this technology is able to recognize faces equally across races and genders. `One study <http://gendershades.org/overview.html>`__ compared three facial recognition systems (Microsoft, Face++, and IBM) across darker males, darker females, lighter males, and lighter females. Here are the results:
 
 .. figure:: img/genderShades.png
    :width: 400
@@ -50,7 +52,7 @@ Implicit Bias
 ^^^^^^^^^^^^^
 .. section 3
 
-An implicit bias is a bias, towards or against something, of which we are not consciously aware but that affects our thoughts and actions anyway.
+An **implicit bias** is a bias towards or against something, of which we are not consciously aware but that affects our thoughts and actions anyway.
 
 .. youtube:: UZETCosXncU
    :divid: ch20_03_implicit_bias
@@ -60,7 +62,7 @@ An implicit bias is a bias, towards or against something, of which we are not co
 
 .. admonition:: Video Recap
 
-   We **all** have implicit biases because we get them from the societies we live in. We have a **responsibility** to not let those implicit biases negatively affect the people around us. You can **change** your implicit biases!
+   We all have implicit biases because we get them from the societies we live in. We have a responsibility to not let those implicit biases negatively affect the people around us. You can change your implicit biases!
 
 Knowledge is your best tool for helping to change implicit bias. We have more information about our societies than ever before, so let's use computing and data analysis to try to learn a little more about how implicit bias shows up in our societies. 
 
@@ -73,30 +75,38 @@ For this investigation, we're going to look at some data we're guessing you're s
 
 .. admonition:: Important note before we get started!
 
-   Online reviews of anything are notoriously unreliable, as we saw with Project 5. Yet we still rely on online reviews to inform our decision making! 
+   Online reviews of anything are notoriously unreliable (as you'll see with Project 5!). Yet we still rely on online reviews to inform our decision making.
 
    In this investigation of Rate My Professor ratings, **we are not trying to validate any of the ratings** nor can we say that these are "truthful" ratings. Instead, we are investigating how implicit bias might be present in those ratings and how those biases could affect our perceptions of the things that are being rated - in this case, actual human beings.
 
 Dr. Ben Schmidt at New York University has created a website that visualizes the words used by students to describe their instructors on RateMyProfessor.com:
 `http://benschmidt.org/profGender/ <http://benschmidt.org/profGender/>`__
 
-On this website, you can enter a keyword (or two word phrase), and the visualizer will show how many times that word is used in the ratings for professors. The visualizer breaks down the uses per million words of text into two categories: the gender of the professor and their discipline. 
+On this website, you can enter a keyword (or two word phrase), and the visualizer will show how many times that word is used in the ratings for professors. The visualizer breaks down the uses per million words of text into two categories: the gender of the professor and their discipline.
 
-Normally, we would have you go to Dr. Schmidt's website and actively try out some different keywords. Unfortunately, due to the pandemic, Dr. Schmidt is working from home (professors -- they're just like you!) and according to his twitter postings, his home internet is not terribly reliable and the visualizer keeps going down. So instead, we'll use some screenshots that we have available from our past semesters, and we'll do a "lite" version of this activity.
+For this activity, we want you to go to Dr. Schmidt's website and actively try out some different keywords.
+
+.. admonition :: Website down?
+
+   Due to the pandemic, Dr. Schmidt has been working from home some (professors -- they're just like you!) and according to his twitter postings, his home internet is not terribly reliable and the visualizer keeps going down. Throughout this activity, we'll post some screenshots of the website, in case you are't able to access the visualizer. But, if you do have access, you should try it out for yourself!
 
 -----------------------------
 Who is Considered a "Genius"?
 -----------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "genius", you would get this visualization:
+Go to the profGender visualizer, and put in the keyword "genius".
 
-.. figure:: img/genius.png
-   :width: 400
-   :align: center
+.. admonition:: Walkthrough
 
-   ..
+  .. reveal:: ch20_01_revealwt_genius
+  
+    .. figure:: img/genius.png
+      :width: 400
+      :align: center
 
-In the "genius" plot above, we notice a few things: 
+|
+
+In the "genius" plot, we notice a few things: 
 
 - This keyword is "gendered" -- each discipline shown has a difference between the number of times a female professor was described as a genius and the number of times a male professor was described as a genius.
 - Some disciplines are more "gendered" than others for the "genius" keyword. For example, the distance between the blue and orange dots is greater for Chemistry than Economics.
@@ -136,15 +146,21 @@ Let's look a little more closely at the "genius" plot and answer a few questions
 Not So Gendered: Perceptions of Difficulty
 ------------------------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "hard" and then the keyword "easy", you would get these visualizations (open the image in a new tab to see a larger version):
+Go to the profGender visualizer and put in the keyword "hard" and then the keyword "easy".
 
-.. figure:: img/easy_hard.png
-   :width: 600
-   :align: center
+.. admonition:: Walkthrough
 
-   ..
+  .. reveal:: ch20_02_revealwt_easy_hard
 
-In the "hard" and "easy" plots above, we notice a few things:
+      Open the image in a new tab to see a larger version.
+
+      .. figure:: img/easy_hard.png
+         :width: 600
+         :align: center
+
+|
+
+In the "hard" and "easy" plots, we notice a few things:
 
 - These keywords are not very "gendered" - each discipline shows a similar number of times a female professor was described as easy/hard and the number of times a male professor was described as easy/hard.
 - Some disciplines have more ratings that use the word "hard" than others. For example, History has overall more uses of the word "hard" than Computer Science.
@@ -181,15 +197,21 @@ Let's look a little more closely at the "hard" and "easy" plots and answer a few
 Very Gendered: Who is Considered Wonderful and Who is Considered Brilliant?
 ---------------------------------------------------------------------------
 
-If you were to go to the profGender visualizer and put in the keyword "wonderful" and then the keyword "brilliant", you would get these visualizations (open the image in a new tab to see a larger version):
+Go to the profGender visualizer and put in the keyword "wonderful" and then the keyword "brilliant".
 
-.. figure:: img/wonderful_brilliant.png
-   :width: 600
-   :align: center
+.. admonition:: Walkthrough
 
-   ..
+  .. reveal:: ch20_03_revealwt_wonderful_brilliant
 
-In the "wonderful" and "brilliant" plots above, we notice a few things: 
+      Open the image in a new tab to see a larger version.
+
+      .. figure:: img/wonderful_brilliant.png
+         :width: 600
+         :align: center
+
+|
+
+In the "wonderful" and "brilliant" plots, we notice a few things: 
 
 - These are "gendered" -- each discipline shown has a difference between the number of times a female professor was described as wonderful/brilliant and the number of times a male professor was described as wonderful/brilliant.
 - As before, some disciplines have more ratings that use the word "wonderful" than others. For example, Fine Arts has overall more uses of the word "wonderful" than Political Science.
@@ -263,14 +285,17 @@ Consider these definitions for the words "wonderful" and "brilliant" that are pr
 Thinking About Your Future Engineering Professors
 -------------------------------------------------
 
-Let's do one more keyword search -- this one usually gets some very strong reactions. Let's look up the word "hot" in RateMyProfessor ratings:
+Let's do one more keyword search -- this one usually gets some very strong reactions. Look up the word "hot" in RateMyProfessor ratings.
 
-.. figure:: img/hot.png
-   :width: 400
-   :align: center
+.. admonition:: Walkthrough
 
-   ..
+  .. reveal:: ch20_04_revealwt_hot
 
+      .. figure:: img/hot.png
+         :width: 400
+         :align: center
+
+|
 
 .. shortanswer:: ch20_04_ex_hot_01
 
