@@ -60631,6 +60631,7 @@ int main() {
         starterCode: `#include <iostream>
 #include <string>
 using namespace std;
+
 // A very annoying program: It echoes until you say stop
 int main() {
   
