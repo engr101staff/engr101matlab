@@ -70,9 +70,9 @@ Introduction: Algorithms and Data Structures
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-There are many common **algorithms** written for common computational problems - when we encounter one of those common problems, we don't need to re-invent the wheel! We can use an existing algorithm. Because the problems that we will face in many engineering problems involve big datasets and complex calculations, we care about how **efficient** our program is (how long it takes to run). Choosing an appropriate algorithm can make a program more efficient, as can choosing the appropriate **data structure** (a way to organize and store data).
+  There are many common **algorithms** written for common computational problems - when we encounter one of those common problems, we don't need to re-invent the wheel! We can use an existing algorithm. Because the problems that we will face in many engineering problems involve big datasets and complex calculations, we care about how **efficient** our program is (how long it takes to run). Choosing an appropriate algorithm can make a program more efficient, as can choosing the appropriate **data structure** (a way to organize and store data).
 
 Learning the basics of algorithms and data structures will be useful to you as you write your own computer programs as an engineer! This chapter will also give you a sneak peek of the material covered by more advanced computer science classes (like EECS 280 and EECS 281).
 
@@ -98,8 +98,9 @@ In the previous video, we wrote this code for :code:`chargeRover`:
     }
 
     return false;
-
   }
+
+|
 
 
 In a real-world context, we often need to run our functions on huge datasets, or run them many times. For example, what if we had 1,000 rovers in our fleet, and we needed to run :code:`chargeRover` hundreds of times? If we are only running :code:`chargeRover` a few times, it doesn't really matter how fast it takes to run. But, if we are running it hundreds of times, it matters a lot! Even making :code:`chargeRover` a little bit more efficient would save us a lot of time!
@@ -178,9 +179,9 @@ Let’s suppose we have 20 rovers in our fleet, and our vector of rovers is in a
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-This video introduces some terms to more formally talk about the efficiency of algorithms. **Time complexity** refers to the how long an algorithm takes to run. We care about **best-case** time complexity, **worst-case** time complexity, and **average-case** time complexity. Sometimes, time complexity is written using **big-oh notation**.
+  This video introduces some terms to more formally talk about the efficiency of algorithms. **Time complexity** refers to the how long an algorithm takes to run. We care about **best-case** time complexity, **worst-case** time complexity, and **average-case** time complexity. Sometimes, time complexity is written using **big-oh notation**.
 
 .. dragndrop:: ch21_01_ex_time_complexity_004
    :match_1: When n grows to be three times as big as it originally was, the algorithm takes nine times as long to run.|||polynomial time
@@ -308,9 +309,9 @@ Searching Algorithms
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-We've now looked at one particular type of algorithm - **searching algorithms**. These are algorithms that look for a particular element in a collection of elements. We've seen two searching algorithms in this chapter - **linear search** and **binary search**. Both of these algorithms have strengths and weaknesses. Binary search is more efficient than linear search, but binary search requires that the items are already sorted. Linear search works on any vector of items, regardless of if the items are sorted.
+  We've now looked at one particular type of algorithm - **searching algorithms**. These are algorithms that look for a particular element in a collection of elements. We've seen two searching algorithms in this chapter - **linear search** and **binary search**. Both of these algorithms have strengths and weaknesses. Binary search is more efficient than linear search, but binary search requires that the items are already sorted. Linear search works on any vector of items, regardless of if the items are sorted.
 
 As you solve engineering problems using computing, you may encounter a scenario where you need a searching algorithm! You've already seen one example of binary search in Project 4, searching for the optimal braking coefficient. Here are a few more examples of real-life problems that use searching algorithms:
 
@@ -327,7 +328,7 @@ As you solve engineering problems using computing, you may encounter a scenario 
 A Sorting Algorithm: Selection Sort
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another common type of algorithm is sorting algorithms.
+Another common type of algorithm is **sorting algorithms**.
 
 .. youtube:: kdsd-yzc94c
   :divid: ch21_00_selection_sort
@@ -335,7 +336,14 @@ Another common type of algorithm is sorting algorithms.
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  Here's the algorithm for **selection sort**:
+
+  Iterate through the vector, at each :code:`currentPosition`:
+  
+  1. Find the smallest element in the vector that has not been sorted yet.
+  2. Swap the smallest element with the element in :code:`currentPosition`.
 
 .. mchoice:: ch21_02_ex_selection_sort_01
 
@@ -425,8 +433,6 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
       :width: 560
       :align: center
 
-|
-
 .. mchoice:: ch21_04_ex_selection_sort_01
 
    What is the worst-case time complexity of selection sort? (Here, **n** = size of :code:`fleet`.) *Hint: Look back at the code you just put in order.*
@@ -488,7 +494,15 @@ We've seen how using a good algorithm can make your program run faster. Using th
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  **Data structures** are ways to organize and store data. We've already seen data structures like vectors, strings, and structs.
+  
+  A **dictionary** (:code:`std::map` in C++) is a data structure that maps keys to values. The keys must be unique.
+  
+  A **tree** is a collection of nodes, and it's often used for hierarchical data or sorted data.
+
+  **Stacks** are similar to vectors but only allow you to insert and remove elements from one end. They follow the **last-in, first-out (LIFO)** rule. **Queues** are related to stacks, but you insert elements on one end and remove them from the other end. They follow the **first-in, first-out (FIFO)** rule.
 
 .. dragndrop:: ch21_06_ex_data_structures_01
    :match_1: Reversing a word. We want to insert all of the characters of a word into a data structure, and remove them in reverse order.|||stack
