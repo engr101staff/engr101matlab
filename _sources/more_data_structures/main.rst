@@ -74,9 +74,9 @@ More Data Structures
   .. reveal:: more_data_structures_download_instructions
     :showtitle: Download Instructions
     :modal:
-    :modaltitle: File Download Instructions for MATLAB
+    :modaltitle: File Download Instructions for C++
     
-    .. include:: ../common/matlab_download_instructions.in.rst
+    .. include:: ../common/cpp_download_instructions.in.rst
       
 
 ^^^^^^^^^^^^

@@ -46,12 +46,12 @@ Strings, Streams, and I/O
   .. reveal:: strings_streams_io_download_instructions
     :showtitle: Download Instructions
     :modal:
-    :modaltitle: File Download Instructions for MATLAB
+    :modaltitle: File Download Instructions for C++
     
-    .. include:: ../common/matlab_download_instructions.in.rst
+    .. include:: ../common/cpp_download_instructions.in.rst
 
 
-Like we saw with MATLAB, there are many built-in functions in C++ that perform a wide variety of tasks. Many of these functions are contained in *libraries*, which we can include in our code.
+Like we saw with MATLAB, there are many built-in functions in C++ that perform a wide variety of tasks. Many of these functions are contained in **libraries**, which we can include in our code.
 In this chapter, we'll specifically look at the :code:`<string>` library and the :code:`<fstream>` library, which allows us to read from files and write to files.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,14 +59,16 @@ The Standard Library and :code:`#include`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Much of the functionality in C++ is built into the C++ standard library. You can think of this sort of like MATLAB's wide array of toolboxes, which are additional features you can add on to use in your code. To use part of the standard library, use the :code:`#include` directive. For example, if you would like to use :code:`cout` and :code:`cin` in your code, you'll need to include the :code:`<iostream>` library at the top of your :code:`.cpp` file like this:
+Much of the functionality in C++ is built into the **C++ standard library**. You can think of this sort of like MATLAB's wide array of toolboxes, which are additional features you can add on to use in your code. To use part of the standard library, use the :code:`#include` directive. For example, if you would like to use :code:`cout` and :code:`cin` in your code, you'll need to include the :code:`<iostream>` library at the top of your :code:`.cpp` file like this:
 
 .. code-block:: cpp
 
    #include <iostream>
    using namespace std;
 
-The :code:`using namespace std;` directive is generally used with included libraries, so that we can use shorthand names like :code:`cout` and :code:`cin`. Without it, we would need to write out :code:`std::cout` and :code:`std::cin`. So basically, the :code:`using namespace std;` line implicitly puts the :code:`std::` on everything so you don't have to.
+|
+
+The :code:`using namespace std;` directive is generally used with included libraries, so that we can use shorthand names like :code:`cout` and :code:`cin`. Without it, we would need to write out :code:`std::cout` and :code:`std::cin`. The :code:`using namespace std;` line implicitly puts the :code:`std::` on everything so you don't have to.
 
 Here are some common libraries that we will use in ENGR 101:
 
@@ -112,8 +114,9 @@ Let's take a look at one example with the :code:`rand()` function from :code:`<c
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
+   
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Introduction to Strings
