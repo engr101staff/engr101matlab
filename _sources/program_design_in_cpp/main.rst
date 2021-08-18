@@ -423,7 +423,7 @@ Top-Down Design
 
       - Functions for frequency attack
 
-  .. reveal:: strings_streams_io_download_instructions
+  .. reveal:: program_design_download_instructions
     :showtitle: Download Instructions
     :modal:
     :modaltitle: File Download Instructions for C++
