@@ -71,7 +71,7 @@ Here's a few more details about the conversions we observed.
 :code:`int` to :code:`double`
 -----------------------------
 
-.. code:: c++
+.. code:: cpp
 
    int int_1 = 10;
    double double_1 = int_1; // double_1 is now 10.0
@@ -82,7 +82,7 @@ Because a :code:`double` can always hold any integer value, we call this a **wid
 :code:`double` to :code:`int`
 -----------------------------
 
-.. code:: c++
+.. code:: cpp
 
    double double_1 = 26.9;
    int int_1 = double_1; // int_1 is now 26
@@ -93,7 +93,7 @@ In this direction, the :code:`double` value is **truncated** and only the intege
 :code:`bool` to :code:`int`/:code:`double`
 ------------------------------------------
 
-.. code:: c++
+.. code:: cpp
 
    bool b1 = false;
    int int_1 = b1; // int_1 is now 0
@@ -104,7 +104,7 @@ Basically, :code:`false` turns into :code:`0` and :code:`true` turns into :code:
 :code:`int`/:code:`double` to :code:`bool`
 ------------------------------------------
 
-.. code:: c++
+.. code:: cpp
 
    double double_1 = -20;
    bool b1 = double_1; // b1 is now true
@@ -429,9 +429,9 @@ We can use the :code:`if` control flow structure to specify parts of our code th
    .. code-block:: cpp
 
       if ( condition ) {
-      statement1;
-      statement2;
-      ...
+         statement1;
+         statement2;
+         ...
       }
 
    The condition may be any expression that can be interpreted as a boolean. The "body" of the :code:`if` may contain any number of statements, surrounded by curly braces, and these statements will only run if the given condition turns out to be true.
