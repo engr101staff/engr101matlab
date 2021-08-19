@@ -173,7 +173,8 @@ the function - these lines should not be selected. Make sure to place the blocks
 
     Suppose you have the following function ``howMany`` and vector ``exclamations``.
     Construct a block of code that counts how many times ".", "!", and "?" occur in ``exclamations``.
-    Save the counts to a vector with "." count as the first element, "!" count as the second, and "?" count as the third.
+    Save the counts to a vector called ``counts`` with "." count as the first element, "!" count as the second, and "?" count as the third.
+    In the code, declare the ``exclamations`` vector first, a vector ``punc`` with the characters ``{ '.', '!', "?'}`` second, and the empty ``counts`` vector third.
     Put the necessary blocks of code in the correct order.
 
     ::
