@@ -7,8 +7,8 @@ material that you've learned. Additionally, they may be a helpful resource when 
 .. mchoice:: vectors_in_cpp_mc1
 
     Suppose you are collecting data for a science experiment. You are to perform three trials of eight temperature
-    readings measured in degrees fahrenheit to the nearest hundredth and initialized to *freezing*.  Choose the vector 
-    that has the proper amount of storage for this scenario.
+    readings measured in degrees fahrenheit to the nearest hundredth and initialized to *freezing*. The freezing point of water is **32 degrees fahrenheit**.
+    Choose the vector that has the proper amount of storage for this scenario.
 
     -   ``vector<int> temps (24, 32.00);``
 
@@ -25,7 +25,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   ``vector<double> temps (32, 24.00);``
 
-        -   This statement creates a vector size 32 with elements initialized to 24.00 degress fahrenheit.
+        -   This statement creates a vector size 32 with elements initialized to 24.00 degrees fahrenheit.
 
 .. mchoice:: vectors_in_cpp_mc2
 
@@ -64,11 +64,11 @@ material that you've learned. Additionally, they may be a helpful resource when 
     .. code-block::
     
        vector<string> chant = {"Hail", "to", "the", "victors", "valiant"};
-       chant[0]=chant[3];
-       chant[3]=chant[0];
-       chant[1]=chant[0];
+       chant[0] = chant[3];
+       chant[3] = chant[0];
+       chant[1] = chant[0];
 
-       for ( size_t i = 0; i < chant.size(); i++ ){
+       for (size_t i = 0; i < chant.size(); ++i) {
             cout << chant[1][i] << "  ";
        }
     
@@ -76,17 +76,17 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
         -   Although this is the final version of ``chant``, we are not printing ``chant``!
 
-    -   error! we run into an error somewhere in the execution due to an out of bounds access.
+    -   Error! we run into an error somewhere in the execution due to an out of bounds access.
 
         -    Remember, ``chant`` at index 1 is no longer "hail".
 
     -   v i c t o r s 
 
-        -   You are thinking of the correct word but consider upto what index we print.
+        -   You are thinking of the correct word but consider up to what index we print.
 
     -   v i c t o 
 
-        +   Correct! we print the first 5 letters of the string at index 1 which is "victors".
+        +   Correct! We print the first 5 letters of the string at index 1 which is "victors".
 
 .. mchoice:: vectors_in_cpp_mc4
 
@@ -96,25 +96,23 @@ material that you've learned. Additionally, they may be a helpful resource when 
     
        vector<string> lauren = {"happy", "to", "you", "September", "birthday", "girl"}
 
-    How would you save the string ``"birthday"`` from ``lauren`` to the variable ``nurse``?
-
     -   ``vector<string> harry (lauren)``
 
         +   This syntax is correct, but isn't used often.
 
-    -   ``vector<string> lauren (ella)``
+    -   ``vector<string> lauren (cristobal)``
 
         -   You make a copy of the vector in parentheses.
 
-    -   ``vector<string> lauren = mariah``
+    -   ``vector<string> lauren = arwa``
 
         -   Remember how assignment statements work!
 
-    -   ``vector<katie> string = lauren``
+    -   ``vector<aleksi> string = lauren``
 
         -   This is not proper syntax.
 
-    -   ``vector<string> mariah = lauren``
+    -   ``vector<string> valeria = lauren``
 
         +   This is the most common syntax.
 
@@ -126,13 +124,13 @@ material that you've learned. Additionally, they may be a helpful resource when 
     
        int main () {
            vector<int> nums = {0, 8, 5, 1, 4, 3};
-           for (int i = 0; i < 6; i++) {
+           for (int i = 0; i < 6; ++i) {
                if (nums[i] % 2 == 0) {
                   nums[i]--;   
                }
                nums[i] = nums[i] * 2;
+               cout << nums[i] << " ";
            }
-           cout << nums[1];
        }
 
     -   {0, 8, 5, 1, 4, 3}
@@ -149,7 +147,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   {-2, 14, 10, 2, 6, 6}
 
-        +   All even numbers were decremeneted, then all numbers were multiplied by 2.
+        +   All even numbers were decremented, then all numbers were multiplied by 2.
 
     -   {2, 18, 10, 2, 10, 6}
 
@@ -174,7 +172,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   .. code-block::
            
-           for (size_t j = 0; j < ryan.size(); j++) {
+           for (size_t j = 0; j < ryan.size(); ++j) {
                cout << ryan[j] << " ";
            }
 
@@ -190,7 +188,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   .. code-block::
            
-           for (int n = 0; n < 9; n++) {
+           for (int n = 0; n < 9; ++n) {
                cout << ryan[n] << " ";
            }
 
@@ -237,54 +235,18 @@ material that you've learned. Additionally, they may be a helpful resource when 
     -   Use ``pop_back`` 4 times with no arguments to get rid of the last 4 elements, then use ``push_back`` 3 times
         with arguments to specify which values you want to add to the end.
 
-        +   T``push_back`` *pushes* new items onto the end of the vector, and ``pop_back`` *pops* old items off the end of the vector.
-
-.. mchoice:: vectors_in_cpp_mc8
-
-    Suppose you are randomly assigning students to discussions 1-8.  How would you do this correctly?  Assume
-    you have alreay implemented the following code.
-    
-    .. code-block::
-
-       int x = random ();
-    
-    -   .. code-block ::
-        
-           int y = x % 7;
-           y = y + 1;
-
-        +   The first part creates a random number between 0 and 7 (8 numbers) and the second part adds 1 so that
-            our random number is actually between 1 and 8.
-
-    -   .. code-block ::
-        
-           int y = x % 8;
-           y = y + 1;
-
-        -   The first part creates a random number between 0 and 8 (9 numbers).  This is too many.
-
-    -   .. code-block ::
-        
-           int y = x % 7;
-
-        -   This creates a random number between 0 and 7 (8 numbers), which are not the numbers we are looking for.
-
-    -   .. code-block ::
-        
-           int y = x % 8;
-
-        -   The first part creates a random number between 0 and 8 (9 numbers).  This is too many, and not the numbers we are looking for.
+        +   ``push_back`` *pushes* new items onto the end of the vector, and ``pop_back`` *pops* old items off the end of the vector.
 
 .. mchoice:: vectors_in_cpp_mc9
 
-    Suppose you have defined the ``fizzBuzz`` function as the following
+    Suppose you have defined the ``fizzBuzz`` function as the following:
     
     .. code-block::
 
         int fizzBuzz (const vector<int> & vec, int num1, int num2) {
             int count = 0;
-            for (size_t i = 0; i < vec.size(); i++) {
-                if (vec[i]/num1 == 0 && vec[i]/num2 == 0) {
+            for (size_t i = 0; i < vec.size(); ++i) {
+                if (vec[i] / num1 == 0 && vec[i] / num2 == 0) {
                     count++;
                 }
             }
@@ -320,14 +282,14 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
 .. mchoice:: vectors_in_cpp_mc10
 
-    Suppose you have defined the ``startsWith`` function as the following
+    Suppose you have defined the ``startsWith`` function as the following:
     
     .. code-block::
 
         int startsWith (const vector<string> & vec, char c) {
             int count = 0;
             int pos = 0;
-            for (size_t i = 0; i < vec.size(); i++) {
+            for (size_t i = 0; i < vec.size(); ++i) {
                 pos = vec[i].find(" ");
                 if (vec[i][pos + 1] == c) {
                     count++;
@@ -365,14 +327,14 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
 .. mchoice:: vectors_in_cpp_mc11
 
-    Suppose you have defined the ``howMany`` function as the following
+    Suppose you have defined the ``howMany`` function as the following:
     
     .. code-block::
 
         int howMany (const vector<string>& vec, char let) {
             int count = 0;
-            for (size_t i = 0; i < vec.size(); i++) {
-                for (size_t c = 0; c < vec[i].size(); c++) {
+            for (size_t i = 0; i < vec.size(); ++i) {
+                for (size_t c = 0; c < vec[i].size(); ++c) {
                     if (vec[i][c] == let) {
                         count++;
                     }
@@ -388,7 +350,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
         vector<string> snacks = {"cheetos", "ruffles", "jalepeno chips", "oreos", "m&ms"};
         vector<char> letters = {'a', 'e', 'i', 'o', 'u'};
         vector<int> counts = {};
-        for (int i = 0; i < letters.size(); ++i) {
+        for (size_t i = 0; i < letters.size(); ++i) {
             counts.push_back(howMany(snacks, letters[i]));
         }
 
@@ -398,11 +360,11 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   {1, 4, 1, 3, 1}
 
-        -   ``counts`` isn't a count of how many words each vowel appers in inside ``snacks``.
+        -   ``counts`` isn't a count of how many words each vowel appears in inside ``snacks``.
 
     -   {1, 6, 1, 4, 1}
 
-        +   ``counts`` contains a count of how many times each vowel appers in ``snacks``.
+        +   ``counts`` contains a count of how many times each vowel appears in ``snacks``.
     
     -   {1, 6, 2, 3, 2}
 
@@ -414,14 +376,14 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
 .. mchoice:: vectors_in_cpp_mc12
 
-    Suppose you have defined the ``repeater`` function as the following
+    Suppose you have defined the ``repeater`` function as the following:
     
     .. code-block::
 
         int repeater (const vector<int>& vec) {
             int count = 0;
-            for (size_t i = 0; i < vec.size(); i++) {
-                for (size_t j = 0; j < vec.size(); j++) {
+            for (size_t i = 0; i < vec.size(); ++i) {
+                for (size_t j = 0; j < vec.size(); ++j) {
                     if ((vec[j] == vec[i]) && (i != j)) {
                         count++;
                     }
@@ -439,11 +401,11 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     -   169
 
-        -   What is being counted by ``repeater`` in each iteration of the outer loop? Definitely not everything!
+        -   What is being counted by repeater in each iteration of the outer loop? Everything is not being counted.
 
     -   32
 
-        -   ``repeater`` does count repeats but does it consider values at the same indexes repeats?
+        -   ``repeater`` does count repeats but does it consider values at the same indeces repeats?
 
     -   18
 
@@ -451,5 +413,5 @@ material that you've learned. Additionally, they may be a helpful resource when 
     
     -   13
 
-        -   ``repeater`` dosen't simply count the number of elements.
+        -   ``repeater`` doesn't simply count the number of elements.
 

@@ -41,15 +41,15 @@ the function - these lines should not be selected. Make sure to place the blocks
     in the following format: ``"title" by artist (album, year)``. Put the necessary blocks of 
     code in the correct order.
     -----
-    void printSong (Song s) {
+    void printSong (Song &s) {
     =====
-    cout << "\"" << s.title << "\" by " << s.artist;
+        cout << "\"" << s.title << "\" by " << s.artist;
     =====
-    cout << " (" << s.album << ", " << s.year << ")" << endl;
+        cout << " (" << s.album << ", " << s.year << ")" << endl;
     =====
-    cout << title << artist << album << year;  #distractor
+        cout << title << artist << album << year;  #distractor
     =====
-    cout << "\"" << title << "\" by " << artist;  #distractor
+        cout << "\"" << title << "\" by " << artist;  #distractor
     =====
     }
 
@@ -94,9 +94,9 @@ the function - these lines should not be selected. Make sure to place the blocks
     four times its ``age`` in unicorn years plus twice the ``hornLength``.
     Put the necessary blocks of code in the correct order.
     -----
-    int convertToHumanAge (Unicorn u) {
+    int convertToHumanAge (Unicorn &u) {
     =====
-    void convertToHumanAge (Unicorn u) {  #paired
+    void convertToHumanAge (Unicorn &u) {  #paired
     =====
         if (u.isSparkly) {
     =====
@@ -106,9 +106,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
             return 3 * age + hornLength;  #paired
     =====
-        }
-    =====
-        else {
+        } else {
     =====
             return 4 * u.age + 2 * u.hornLength;
     =====
@@ -125,8 +123,8 @@ the function - these lines should not be selected. Make sure to place the blocks
     Let's write the code for the struct definitions of ``Address`` and ``Employee``. 
     The ``Address`` structure will have the instance variables ``houseNumber``, 
     ``state`` (abbreviation), and ``postalAddress`` in that order. The ``Employee`` 
-    structure will be a nested structure with the instance variables ``name`` 
-    and an ``Address`` in that order. 
+    structure will be a nested structure with the instance variables ``name``, an
+    ``Address``, and an integer ``id`` value in that order. 
     Put the necessary blocks of code in the correct order, with Address defined before Employee.
     -----
     struct Address {
@@ -137,7 +135,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
         string state;
     =====
-        int postalAddress;
+        string postalAddress;
     =====
     };
     =====
@@ -148,6 +146,8 @@ the function - these lines should not be selected. Make sure to place the blocks
         string name;
     =====
         Address address;
+    =====
+        int id;
     =====
     };
     =====
@@ -162,9 +162,9 @@ the function - these lines should not be selected. Make sure to place the blocks
     following format: ``name (id) lives at houseNumber in state, postalAddress``.
     Put the necessary blocks of code in the correct order.
     -----
-    void printAddress (Employee e) {
+    void printAddress (Employee &e) {
     =====
-    string printAddress (Employee& e) {  #paired 
+    string printAddress (Employee &e) {  #paired 
     =====
         cout << e.name << " (" << e.id << ") lives at ";
     =====
@@ -187,9 +187,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     ``Employee`` and a new ``Address`` as parameters and sets the employee's address to the new address.
     Put the necessary blocks of code in the correct order.
     -----
-    void updateAddress (Employee& e, Address a) {
-    =====
-    void updateAddress (Employee e, Address& a) {  #distractor
+    void updateAddress (Employee &e, Address &a) {
     =====
     void updateAddress (Employee e, Address a) {  #distractor
     =====
@@ -209,15 +207,11 @@ the function - these lines should not be selected. Make sure to place the blocks
     :numbered: left
     :adaptive:
 
-    Let's write the code for the s``toreEmployeeData`` function. ``storeEmployeeData`` doesn't
-    take any parameters and prompts the user for information regarding their
-    ``name``, ``houseNumber``, ``state``, and ``postalAddress`` in that order. It then returns an ``Employee`` object with
-    the stored data. Declare all variables before prompting the user.
-    Put the necessary blocks of code in the correct order.
+    Let's write the code for the ``storeEmployeeData`` function. ``storeEmployeeData`` should be a void function that takes an empty ``Employee`` as an input.
+    ``storeEmployeeData`` prompts the user for information regarding their ``name``, ``houseNumber``, ``state``, and ``postalAddress`` in that order.
+    It then stores the user's information in the inputted empty ``Employee`` structure. Put the necessary blocks of code in the correct order.
     -----
-    Employee storeEmployeeData () {
-    =====
-        Employee e;
+    void storeEmployeeData (Employee &e) {
     =====
         cout << "What is your full name? ";
     =====
@@ -236,8 +230,6 @@ the function - these lines should not be selected. Make sure to place the blocks
         cout << "What is your postal address? ";
     =====
         cin >> e.address.postalAddress;
-    =====
-        return e;
     =====
         return Employee e;  #paired
     =====

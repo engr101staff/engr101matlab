@@ -7,58 +7,6 @@ material that you've learned. Additionally, they may be a helpful resource when 
 .. mchoice:: structs_mcq_1
     :practice: T
 
-    Which of the following are compound values?
-
-    .. code-block:: cpp
-
-      struct Student {
-        string firstName, lastName;
-        int year;
-        double gpa;
-      };
-
-      struct Professor {
-        string firstName, lastName;
-        string department;
-        int class;
-      };
-
-      int main() {
-        Student x = { "John", "Doe", 2, 3.46 };
-        Student y = { "Jane", "Doe", 3, 3.68 };
-        Professor z = { "Richard", "Roe", "Computer Science", 101 };
-        string college = "University of College";
-        int studentPop = 3400;
-        double avgGPA = 3.2;
-      }
-        
-    - ``x``
-
-      + ``x`` is a ``Student`` which is a ``struct``.
-
-    - ``y``
-
-      + ``y`` is a ``Student`` which is a ``struct``.
-
-    - ``z``
-
-      + ``z`` is a ``Professor`` which is a ``struct``.
-
-    - ``college``
-
-      + ``college`` is a ``string`` which is made up of characters.
-
-    - ``studentPop``
-
-      - An ``int`` is not a compound value.
-
-    - ``avgGPA``
-
-      - A ``double`` is not a compound value.
-
-.. mchoice:: structs_mcq_2
-    :practice: T
-
     What is wrong with the following ``struct`` definition?
 
     .. code-block:: cpp
@@ -86,7 +34,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
       - There is an error with the definition. Can you find it?
 
-.. mchoice:: structs_mcq_3
+.. mchoice:: structs_mcq_2
     :practice: T
 
     How do we assign the value of 4 to the instance variable ``numLegs`` of the ``Dog`` object?
@@ -119,7 +67,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
       + Using dot notation on ``doug``, we can set the value of ``numLegs`` to 4.
 
-.. mchoice:: structs_mcq_4
+.. mchoice:: structs_mcq_3
     :practice: T
 
     What is the output of the code below?
@@ -158,7 +106,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
       - Dot notation accesses the values of the instance variables, not the names.
 
-.. mchoice:: structs_mcq_5
+.. mchoice:: structs_mcq_4
     :practice: T
 
     What is the output of the code below?
@@ -171,13 +119,12 @@ material that you've learned. Additionally, they may be a helpful resource when 
         int mass;
       };
 
-      int calculateDensity (Cube c) {
+      int calculateDensity (Cube &c) {
         return c.mass / c.volume;
       }
 
       int main() {
-        Cube c;
-        c = (Cube){ 2, 8, 4 };
+        Cube c = { 2, 8, 4 };
         int density = calculateDensity (c);
         cout << density;
       }
@@ -198,7 +145,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
       - Integer division truncates the extra digits.
 
-.. mchoice:: structs_mcq_6
+.. mchoice:: structs_mcq_5
     :practice: T
 
     What is the value of ``s.coffeeCupFull`` when the code is done running?
@@ -211,7 +158,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
         bool coffeeCupFull;
       };
 
-      void pourCoffee (Student s) {
+      void pourCoffee (Student &s) {
         s.coffeeCupFull = true;
       }
 
@@ -255,8 +202,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
         if (r.batteryLevelPercentage + 50 > 100) {
           r.batteryLevelPercentage = 100;
           r.isFullyCharged = true;
-        }
-        else {
+        } else {
           r.batteryLevelPercentage = r.batteryLevelPercentage + 50;
         }
       }
@@ -281,136 +227,3 @@ material that you've learned. Additionally, they may be a helpful resource when 
     - 1
 
       - That is the final value of ``r.isFullyCharged``.
-
-.. mchoice:: structs_mcq_8
-    :practice: T
-
-    What is the output of the code below?
-
-    .. code-block:: cpp
-
-      void foo (int& x, int y) {
-        x = x + 4;
-        y = 2 * x + 3 * y;
-      }
-
-      void bar (int x, int y) {
-        y = 2 * x;
-        x = x - 1;
-        foo (x, x);
-      }
-
-      void func (int &x, int& y) {
-        x = x + 3;
-        bar (y, x);
-      }
-
-      int main() {
-        int x = 4;
-        int y = 7;
-        func (y, x);
-        cout << x << ", " << y;
-      }
-
-    - 4, 7
-
-      - Take a closer look at ``func`` and its parameters. Are they passed by value, passed by reference, or both?
-
-    - 4, 10
-
-      + Since ``bar`` doesn't pass either parameter by reference, neither ``bar`` nor ``foo`` affect the values of ``x`` and ``y``.
-
-    - 7, 7
-
-      - Check the order of the arguments passed into ``func``.
-
-    - 35, 8
-
-      - Take a closer look at the three functions. Are they all passed by reference?
-
-.. mchoice:: structs_mcq_9
-    :practice: T
-
-    If the user inputted the string "R2-D2", what is the output of the code below?
-
-    .. code-block:: cpp
-
-      int main() {
-        string name;
-        cin >> name;
-        cout << "Hello, " << name << "!";
-      }
-
-    - R2-D2
-
-      - Take another look at the ``cout`` statement.
-
-    - Hello name!
-
-      - ``name`` is not in quotes so the value stored in ``name`` will be printed.
-
-    - Hello, R2-D2!
-
-      + "R2-D2" is stored in ``name`` and is then outputted in the ``cout`` statement.
-
-    - name
-
-      - ``cin`` reads input from the user.
-
-.. mchoice:: structs_mcq_10
-    :practice: T
-
-    If the user inputted the string "C-3PO", what is the output of the code below?
-
-    .. code-block:: cpp
-
-      int main() {
-        char name;
-        cin >> name;
-        cout << "Hello, " << name << "!";
-      }
-
-    - Hello, CPO!
-
-      - ``cin`` reads the first ``char`` in from user input.
-
-    - Hello, C!
-
-      + Since 'C' is the first ``char`` in the input, this is the correct output. The program will ignore everything that comes after the first ``char``.
-
-    - Hello, C-3PO!
-
-      - Check the data type of ``name``.
-
-    - Error, we cannot read a character from user input.
-
-      - We can read characters from user input.
-
-.. mchoice:: structs_mcq_11
-    :practice: T
-
-    If the user inputted the string "Darth Vader", what is the output of the code below?
-
-    .. code-block:: cpp
-
-      int main() {
-        string quote;
-        getline (cin, quote);
-        cout << quote << " is the epitome of Star Wars!";
-      }
-
-    - quote is the epitome of Star Wars!
-
-      - ``quote`` is not in quotes so the value stored in ``quote`` will be printed.
-
-    - Darth Vader is the epitome of Star Wars!
-
-      + getline reads the entire line until the user hits Return or Enter.
-
-    - Darth is the epitome of Star Wars!
-
-      - Check the manner in which the user input is acquired.
-
-    - D is the epitome of Star Wars!
-
-      - Try Again! Pay attention to the way in which user input is recieved.
