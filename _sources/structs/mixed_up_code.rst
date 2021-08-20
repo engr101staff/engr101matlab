@@ -91,12 +91,12 @@ the function - these lines should not be selected. Make sure to place the blocks
     takes a ``Unicorn`` as a parameter and returns the equivalent human age.
     If a unicorn ``isSparkly``, then its equivalent human age is three times its ``age`` in unicorn years
     plus the ``hornLength``. If a unicorn is not sparkly, then its equivalent human age is
-    four times its ``age`` in unicorn years plus twice the ``hornLength``.
-    Put the necessary blocks of code in the correct order.
+    four times its ``age`` in unicorn years plus twice the ``hornLength``. In the code, use an ``else`` statement to
+    do calculations for a unicorn that is not sparkly. Put the necessary blocks of code in the correct order.
     -----
-    int convertToHumanAge (Unicorn &u) {
+    int convertToHumanAge (const Unicorn &u) {
     =====
-    void convertToHumanAge (Unicorn &u) {  #paired
+    void convertToHumanAge (const Unicorn &u) {  #paired
     =====
         if (u.isSparkly) {
     =====
@@ -183,11 +183,11 @@ the function - these lines should not be selected. Make sure to place the blocks
     :adaptive:
 
     Sometimes employees will move around and thus we'll need to update their addresses.
-    Let's write the code for the ``updateAddress`` function. updateAddress takes an
+    Let's write the code for the ``updateAddress`` function. ``updateAddress`` takes an
     ``Employee`` and a new ``Address`` as parameters and sets the employee's address to the new address.
     Put the necessary blocks of code in the correct order.
     -----
-    void updateAddress (Employee &e, Address &a) {
+    void updateAddress (Employee &e, const Address &a) {
     =====
     void updateAddress (Employee e, Address a) {  #distractor
     =====
@@ -231,6 +231,6 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
         cin >> e.address.postalAddress;
     =====
-        return Employee e;  #paired
+        return Employee e;  #distractor
     =====
     }

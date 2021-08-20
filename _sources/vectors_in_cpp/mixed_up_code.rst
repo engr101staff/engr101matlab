@@ -119,7 +119,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
         int count = 0;
     =====
-        for (size_t i = 0; i < 7; ++i) {
+        for (int i = 0; i < 7; ++i) {
     =====
             if (temps[i] >= 75.0 && precip[i] < 0.50) {
     =====
