@@ -60497,12 +60497,43 @@ int main() {
             }, "", 5000)
         ]
     },
+    "ch14_01_abs": {
+        starterCode: `#include <iostream>
+using namespace std;
+
+int square(int n) {
+  return n*n;
+}
+    
+int abs(int n) {
+  int a;
+  if(n >= 0) {
+    a = n;
+  } else {
+    a = -n;
+  }
+  return a;
+}
+
+int main() {
+  int x = 3;
+  int y = -8;
+
+  cout << "x squared: " << square(x) << endl;
+  cout << "abs x: " << abs(x) << endl;
+  cout << "abs y: " << abs(y) << endl;
+  cout << "x squared + y squared: " << square(x) + square(y) << endl;
+}`,
+        checkpoints: [
+        // no checkpoints, just an example not an exercise
+        ]
+    },
     "ch14_01_ex": {
         starterCode: `#include <iostream>
 using namespace std;
       
 // Swap the values of a and b
-void swap(int a, int b) {
+void swap(int &a, int &b) {
   int oldA = a;
   a = b;
   b = oldA;
@@ -60511,11 +60542,6 @@ void swap(int a, int b) {
 int main() {
   int x = 2;
   int y = 7;
-
-  // Swap the values of x and y
-  int oldX = x;
-  x = y;
-  y = oldX;
   
   swap(x, y);
 
@@ -60605,6 +60631,7 @@ int main() {
         starterCode: `#include <iostream>
 #include <string>
 using namespace std;
+
 // A very annoying program: It echoes until you say stop
 int main() {
   
@@ -60631,49 +60658,48 @@ int main() {
     },
     "ch14_05_ex": {
         starterCode: `#include <iostream>
-  #include <string>
-  using namespace std;
+#include <string>
+using namespace std;
 
-  // TODO: Write your function here
-
-
+// TODO: Write your function here
 
 
 
-  int main() {
 
-    /* CODE FROM LAST CHAPTER - LOOKS FOR PATTERN IN DNA STRING
+int main() {
 
-    string dna = "AGACTGGGACT";
-    string pattern = "GAC";
-    int PATTERN_LENGTH = 3;
+  /* CODE FROM LAST CHAPTER - LOOKS FOR PATTERN IN DNA STRING
 
-    // go through the dna string
-    for(int i=0; i < dna.length() - PATTERN_LENGTH + 1; ++i) { 
+  string dna = "AGACTGGGACT";
+  string pattern = "GAC";
+  int PATTERN_LENGTH = 3;
 
-      //check if pattern matches
-      bool match = true;
-      for(int j=0; j < PATTERN_LENGTH; ++j) { 
-        if(dna[i+j] != pattern[j]) {
-          match = false;
-        }
-      }
+  // go through the dna string
+  for(int i=0; i < dna.length() - PATTERN_LENGTH + 1; ++i) { 
 
-      // print out any matches for pattern
-      if (match == true) {
-        cout << "Pattern 1: " << i << endl;
+    //check if pattern matches
+    bool match = true;
+    for(int j=0; j < PATTERN_LENGTH; ++j) { 
+      if(dna[i+j] != pattern[j]) {
+        match = false;
       }
     }
 
-    END CODE FROM LAST CHAPTER */ 
+    // print out any matches for pattern
+    if (match == true) {
+      cout << "Pattern 1: " << i << endl;
+    }
+  }
 
-    // TODO: After you've created your function,
-    // uncomment the following lines to test your function
+  END CODE FROM LAST CHAPTER */ 
 
-    // cout << matchPattern("AGACTGGGACT", "GAC", 3) << endl; // should print out 1 (true)
-    // cout << matchPattern("AGACTGGGACT", "TTA", 3) << endl; // should print out 0 (false)
-    // cout << matchPattern("AGACTGGGACT", "GGGA", 4) << endl; // should print out 1 (true)
-  }`,
+  // TODO: After you've created your function,
+  // uncomment the following lines to test your function
+
+  // cout << matchPattern("AGACTGGGACT", "GAC", 3) << endl; // should print out 1 (true)
+  // cout << matchPattern("AGACTGGGACT", "TTA", 3) << endl; // should print out 0 (false)
+  // cout << matchPattern("AGACTGGGACT", "GGGA", 4) << endl; // should print out 1 (true)
+}`,
         checkpoints: [
             new checkpoints_1.IsCompiledCheckpoint("Compiles"),
             new checkpoints_1.StaticAnalysisCheckpoint("matchPattern Function", (program) => {

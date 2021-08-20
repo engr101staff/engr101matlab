@@ -24,6 +24,35 @@
 Structs
 =======
 
+.. admonition:: Chapter Files
+
+  We’ll be using some starter code for this exercise. It might be helpful to go ahead and download it now and move it to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table::
+    :align: left
+    :widths: auto
+
+    * - :download:`bestRover.cpp <../_static/structs/bestRover.cpp>`
+
+      - .. reveal:: bestRover_cpp_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>bestRover.cpp</code>
+
+          .. literalinclude:: ../_static/structs/bestRover.cpp
+            :lines: 1-20
+            :append: ...
+
+      - Starter code for bestRover function
+
+  .. reveal:: structs_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for C++
+    
+    .. include:: ../common/cpp_download_instructions.in.rst
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -35,19 +64,17 @@ Introduction
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw in the previous video, C++ lets us create our own data types using **structs**! Here's an example struct definition:
+  C++ lets us create our own data types using **structs**! Here's an example struct definition:
 
-.. code :: cpp
+  .. code :: cpp
 
-  struct Rover { // We typically capitalize struct names
-    int type;
-    string id;
-    double charge;
-  }; // don't forget the semi-colon!
-
-|
+    struct Rover { // We typically capitalize struct names
+      int type;
+      string id;
+      double charge;
+    }; // don't forget the semi-colon!
 
 -----------------------------
 Exercise: Structs in Memory
@@ -84,27 +111,25 @@ Struct Basics
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw in the previous video, we can use the dot operator to access a member variable:
+  As we saw in the previous video, we can use the dot operator to access a member variable:
 
-.. code :: cpp
+  .. code :: cpp
 
-  myRover.charge = 0.8;
+    myRover.charge = 0.8;
 
-We can specify initial values for each member inside curly braces (this only works in certain versions of C++):
+  We can specify initial values for each member inside curly braces (this only works in certain versions of C++):
 
-.. code :: cpp
+  .. code :: cpp
 
-  Rover myRover = {1, "a238", 0.8};
+    Rover myRover = {1, "a238", 0.8};
 
-We can also copy structs, using a **member-by-member** copy:
+  We can also copy structs, using a **member-by-member** copy:
 
-.. code :: cpp
+  .. code :: cpp
 
-  yourRover = myRover;
-
-|
+    yourRover = myRover;
 
 -----------------------------
 Exercise: Creating a Struct
@@ -159,8 +184,6 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
       :width: 560
       :align: center
 
-|
-
 .. tip ::
 
   You can have a struct within a struct. For example, let's suppose we had a struct containing information about a moon:
@@ -171,6 +194,8 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
       string name;
       int mass;
     };
+
+  |
 
   We can include :code:`Moon` variables in our :code:`Planet` struct:
 
@@ -194,16 +219,18 @@ Vectors of Structs
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-If we have multiple structs of the same type, we can store them in a vector. If we want all of the structs in our vector to have some default values, we can initialize the vector like this:
+  If we have multiple structs of the same type, we can store them in a vector. If we want all of the structs in our vector to have some default values, we can initialize the vector like this:
 
-.. code :: cpp
+  .. code :: cpp
 
-  Rover defaultRover = {1, "0000", 1};
-  vector<Rover> fleet(3, defaultRover);
+    Rover defaultRover = {1, "0000", 1};
+    vector<Rover> fleet(3, defaultRover);
 
-In the previous video, we also looked at how to incorporate our previous knowledge about filestreams to read in a vector of rovers from a file.
+  |
+
+  We also looked at how to incorporate our previous knowledge about filestreams to read in a vector of rovers from a file.
 
 .. mchoice:: ch18_02_structsVectors
    :answer_a: You cannot put strings or vectors in a struct where vectors can hold any variable type.
@@ -367,6 +394,10 @@ Selecting Rovers for a Mission
   :width: 560
   :align: center
 
+.. admonition:: Video Recap
+
+  We added a couple of member variables to our struct, and updated our :code:`printRover` and :code:`loadRovers` functions. We defined the problem of selecting rovers for a mission and wrote a helper function to calculate the desirability of rover for the mission.
+
 .. admonition:: Did you know?
 
   This problem of selecting rovers for a mission is a specific instance of a **knapsack problem**, a classic problem in computer science that has been studied for more than a century. The original problem has to do with packing the most valuable items in a knapsack without making it too heavy, rather than selecting rovers for a mission without using too much battery.
@@ -374,31 +405,9 @@ Selecting Rovers for a Mission
 --------------------------
 Exercise: Get Best Rover
 --------------------------
-
-.. admonition:: Chapter Files
-
-  We’ll be using some starter code for this exercise. It might be helpful to go ahead and download it now and move it to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
-
-  .. list-table::
-    :align: left
-    :widths: auto
-
-    * - :download:`bestRover.cpp <../_static/structs/bestRover.cpp>`
-
-      - .. reveal:: bestRover_cpp_preview
-          :showtitle: Preview
-          :modal:
-          :modaltitle: <code>bestRover.cpp</code>
-
-          .. literalinclude:: ../_static/structs/bestRover.cpp
-            :lines: 1-20
-            :append: ...
-
-      - Starter code for bestRover function
-
 Using the desirability function that we wrote in the previous video, write another function that loops through a vector of Rovers and **returns the index of** the most desirable one.
 
-Here is the algorithm that the :code:`bestRovers` function should follow:
+Here is the algorithm that the :code:`bestRover` function should follow:
 
 1. :code:`bestRover` should take in two parameters: a vector of Rovers called :code:`rovers`, and a :code:`double` value called :code:`availableCharge`. The second parameter indicates how much charge we have to get our rovers to full charge. In the previous video, we had a battery with an available charge of 2, but we want to make our function as general as possible, so we will pass this value into the function as a parameter.
 2. If :code:`rovers` is an empty vector, return :code:`-1`. This is a useful value to return because it will never be a real index into a vector, and the user calling the function can check to see if the index is valid before using it.
@@ -411,7 +420,7 @@ Here is the algorithm that the :code:`bestRovers` function should follow:
 
 5. Return an integer, :code:`bestIndex`.
 
-Download the file :code:`bestRover.cpp` at the beginning of this section, and complete the :code:`bestRover` function. We've provided the function header for you, as well as some code to test your function in the :code:`main` function.
+Download the file :code:`bestRover.cpp` at the beginning of this chapter, and complete the :code:`bestRover` function. We've provided the function header for you, as well as some code to test your function in the :code:`main` function.
 
 .. shortanswer:: ch18_07_ex_bestRover
 

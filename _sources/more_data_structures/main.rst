@@ -74,9 +74,9 @@ More Data Structures
   .. reveal:: more_data_structures_download_instructions
     :showtitle: Download Instructions
     :modal:
-    :modaltitle: File Download Instructions for MATLAB
+    :modaltitle: File Download Instructions for C++
     
-    .. include:: ../common/matlab_download_instructions.in.rst
+    .. include:: ../common/cpp_download_instructions.in.rst
       
 
 ^^^^^^^^^^^^
@@ -90,7 +90,9 @@ Introduction
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  How can we implement matrices in C++? This chapter will explore this question.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Warm-Up Exercise: Printing a Vector of :code:`int`
@@ -140,7 +142,9 @@ Vectors of Vectors
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can create nested vectors (or vectors of vectors!). When working with vectors of vectors, it's important to keep track of whether you are working with the *outer vector* or *inner vector*.
 
 **Knowledge Check:** Here is a vector of vectors named :code:`v2`:
 
@@ -249,7 +253,9 @@ Indexing Into a Vector of Vectors
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  Indexing into a vector of vectors *selects a vector*. To select an element from that vector, *index again*. Like indexing into a single vector, you can use :code:`.at()` to index, which checks that the index is valid but is slightly slower.
 
 **Knowledge Check:** Here is a vector of vectors named :code:`v2`:
 
@@ -317,7 +323,7 @@ Download the :file:`printVectorOfVectors.cpp` file from the beginning of the cha
 
    g++ -std=c++11 printVectorOfVectors.cpp -o printVectorOfVectors
 
-
+|
 
 .. fillintheblank:: ch19_04_ex_printVectorOfVectors
 
@@ -369,7 +375,9 @@ Building and Modifying Vectors of Vectors
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can build vectors of vectors using vector constructors or using :code:`push_back` and :code:`pop_back`. Again, be aware of whether you are working with the *outer vector* or the *inner vector*.
 
 **Knowledge Check:** Creating a vector of vectors
 
@@ -510,9 +518,9 @@ Uses for Vectors of Vectors
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-If we are representing a matrix with a vector of vector, each vector represents a row. Elements within represent different columns. Unlike matrices, vectors of vectors are not required to be "rectangular".
+  If we are representing a matrix with a vector of vector, each vector represents a row. Elements within represent different columns. Unlike matrices, vectors of vectors are not required to be "rectangular".
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Application: Analyzing Data in a Matrix
@@ -546,30 +554,28 @@ Designing the Program
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, we want to read in some data and then calculate the sum of each row, the sum of each column, and the sum of all the elements together. Here is the pseudocode for our :code:`main` function:
+  We want to read in some data and then calculate the sum of each row, the sum of each column, and the sum of all the elements together. Here is the pseudocode for our :code:`main` function:
 
-.. code-block:: none
+  .. code-block:: none
 
-   int main() {
-     open the test data file
-   
-     if it did not open correctly
-       display error message and end program
-   
-     make vector of vectors with correct # of empty elements
-     loadData()
-   
-     sumOfRows()
-     sumOfCols()
-     sum()
-   
-     print out the results
-   
-   }
-
-|
+    int main() {
+      open the test data file
+    
+      if it did not open correctly
+        display error message and end program
+    
+      make vector of vectors with correct # of empty elements
+      loadData()
+    
+      sumOfRows()
+      sumOfCols()
+      sum()
+    
+      print out the results
+    
+    }
 
 ----------------------------
 Writing the Helper Functions
@@ -590,7 +596,9 @@ Let's write some pseudocode for the helper functions to help us implement these 
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  We wrote out pseudocode for the four helper functions that we will implement (pseudocode is included below).
 
 -----------------------------------------
 Exercise: A :code:`loadData` Function
@@ -615,6 +623,8 @@ Complete the :code:`loadData` function in the :file:`analyzeData.cpp` file. Here
      end of loop on outer vector
    
    }
+
+|
 
 .. shortanswer:: ch19_07_ex_loadData
 
@@ -648,6 +658,8 @@ Complete the :code:`sumOfRows` function in the :file:`analyzeData.cpp` file. Her
      
    }
 
+|
+
 .. shortanswer:: ch19_07_ex_sumOfRows
 
    Copy your :code:`sumOfRows` function here:
@@ -680,6 +692,8 @@ Complete the :code:`sumOfCols` function in the :file:`analyzeData.cpp` file. Her
      end of loop on inner vector
    
    }
+
+|
 
 .. shortanswer:: ch19_07_ex_sumOfCols
 
@@ -716,6 +730,8 @@ Complete the :code:`sum` function in the :file:`analyzeData.cpp` file. Here is t
    
    }
 
+|
+
 .. shortanswer:: ch19_07_ex_sum
 
    Copy your :code:`sum` function here:
@@ -741,6 +757,8 @@ Now that we have all of our functions written, let's compile and run the program
 
    g++ -std=c++11 analyzeData.cpp -o analyzeData
 
+|
+
 .. fillintheblank:: ch19_07_ex_analyzeData
 
   Run the :code:`analyzeData` program and fill in the boxes below based on what is printed to the terminal:
@@ -762,8 +780,6 @@ Now that we have all of our functions written, let's compile and run the program
   - :[^0-9]*630[^0-9]*: Box 3 Correct!
     :x: Box 3 Incorrect.
 
-|
-
 ---------------------
 Debugging the Program
 ---------------------
@@ -776,10 +792,10 @@ Is your program not compiling and/or not running? To debug your program, you nee
 
 If your code compiles and runs but then gets to a point where it "doesn't seem to do anything", then you might have one of these situations: 
 
-A. There is a stray :code:`cin` statement somewhere and the program is "not doing anything" because it's waiting for you to type something and hit enter. (Note: this particular program does not require user input via :code:`cin`, so :code:`cin` should not be anywhere in your finished program.)
+A. There is a stray :code:`cin` statement somewhere and the program is "not doing anything" because it's waiting for you to type something and hit *enter*. (Note: this particular program does not require user input via :code:`cin`, so :code:`cin` should not be anywhere in your finished program.)
 B. There is an infinite loop somewhere. In this case, fall back on method #3 above to help you debug the loop. 
 
-If you've tried all these tricks and your program still won't compile and/or run, please watch the Walkthroughs!
+If you've tried all these tricks and your program still won't compile and/or run, please watch the walkthroughs!
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -788,7 +804,7 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* We can created nested vectors, which are useful for storing matrix data. When working with a vector of vectors, make sure to keep track of whether you are working with the **inner** vector or the **outer** vector.
+* We can created nested vectors, which are useful for storing matrix data. When working with a vector of vectors, make sure to keep track of whether you are working with the *inner* vector or the *outer* vector.
 * To index into a vector of vectors, you need to index twice - once for the inner vector and once for the outer vector. For example, :code:`vec[0][1]` or :code:`vec.at(0).at(1)`.
 * Use a doubly-nested loop to print out a vector of vectors (or to iterate through a vector of vectors, more generally).
 * If we are representing a matrix with a vector of vector, each vector represents a row. Elements within represent different columns.

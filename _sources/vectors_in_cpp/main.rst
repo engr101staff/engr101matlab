@@ -24,10 +24,38 @@
 Vectors in C++
 ==============
 
+.. admonition:: Chapter Files
+
+  We'll be using a file for one of this chapter's exercises. It might be helpful to go ahead and download it now and move it to the folder you are currently programming in. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table:: 
+    :align: left
+    :widths: auto
+    
+    * - :download:`sensor.dat <../_static/vectors_in_cpp/sensor.dat>`
+
+      - .. reveal:: sensor_dat_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>sensor.dat</code>
+
+          No preview available.
+
+      - Sensor dataset
+    
+  .. reveal:: strings_streams_io_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for C++
+    
+    .. include:: ../common/cpp_download_instructions.in.rst
+
 ^^^^^^^^^^^^
 Introduction
 ^^^^^^^^^^^^
 .. section 1
+
+In this chapter, we're going to consider a new data structure, the **vector**.
 
 .. youtube:: lr2NtJ4LDUs
    :divid: ch16_01_introduction
@@ -35,9 +63,9 @@ Introduction
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-A **vector** is a data structure that allows **random access** to read and write data. Like with strings, vector indices start at zero, not one.
+  A **vector** is a data structure that allows **random access** to read and write data. Like with strings, vector indices start at zero, not one.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Warm-Up Exercise: What's My Value?
@@ -83,8 +111,6 @@ For this exercise, consider the following vector in C++:
   - :49: Correct!
     :x: Incorrect.
 
-|
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Declaring and Initializing Vectors in C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,7 +122,9 @@ Declaring and Initializing Vectors in C++
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  To use vectors, we need to :code:`include <vector>`. Elements in a vector must be homogenous. When we declare a vector, we need to specify the base type, the name of the vector, and (optionally) some initial data.
 
 Consider the following vectors:
 
@@ -136,8 +164,6 @@ Consider the following vectors:
 
   Match the code with the vector that is created.
 
-|
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Indexing Into Vectors in C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,7 +175,9 @@ Indexing Into Vectors in C++
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can index into vectors using :code:`[]`. As with strings, indices start with 0. Similar to strings, you can use :code:`.at()` to index as well. This will check if you are going to go off the end of the vector, but it is slightly slower.
 
 **Exercise**
 
@@ -279,7 +307,16 @@ Traversing a Vector
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can use a loop to traverse through each element in a vector:
+
+  .. code-block :: cpp
+
+    vector<int> vec(4,42);
+    for (int i = 0; i < vec.size(); ++i) {
+      cout << vec.at(i) << endl;
+    }
 
 ------------------------------
 Exercise: Print Doubled Vector
@@ -316,9 +353,6 @@ The function :code:`printDoubled` takes in a vector of :code:`int` values and pr
       :width: 560
       :align: center
 
-|
-
-
 --------------------------------------
 Adding/Removing Elements From a Vector
 --------------------------------------
@@ -329,7 +363,9 @@ Adding/Removing Elements From a Vector
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  To add an element to the back of a vector, use :code:`push_back()`. To remove an element from the back of a vector, use :code:`pop_back()`.
 
 .. mchoice:: ch16_05_ex_adding_removing_01
 
@@ -406,7 +442,9 @@ Erasing Elements from a Vector
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  To remove elements from a vector, use :code:`erase`. When using :code:`erase`, you need to specify indices relative to :code:`begin()`. (The :code:`begin()` function refers to the first element in the vector.)
 
 ------------------------------
 Exercise: Erasing Zeros
@@ -478,7 +516,17 @@ Passing Vectors to Functions
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+  When passing vectors to functions, avoid using pass by value, because that makes an expensive copy of the vector (vectors are large data structures). Instead, use *pass by reference* or *pass by const reference*. Pass by reference allows the vector to be modified, which can be risky if you don't need to modify the vector. Pass by const reference avoids the expensive copy of pass by value, but doesn't allow you to modify the vector.
+
+  Here's a handy decision tree for parameter passing:
+
+  .. image:: img/parameterPassing.png
+    :width: 400
+    :align: center
+    :alt: Do you need to modify the vector? If yes, pass by reference (work with the original). If no, is it a large type (e.g., string, vector)? If yes, pass by const reference (work with the original, safely). If not, pass by value (make a copy).
+
 
 -----------------------------------------
 Exercise: Passing Vectors to Functions
@@ -487,9 +535,9 @@ Exercise: Passing Vectors to Functions
 In each of the following questions, a description of a function that takes in a vector as a parameter is given. Choose the mechanism for parameter passing that is appropriate for the function.
 
 .. mchoice:: ch16_06_ex_parameter_passing_01
-  :answer_a: pass by value
-  :answer_b: pass by reference
-  :answer_c: pass by const reference
+  :answer_a: Pass by value
+  :answer_b: Pass by reference
+  :answer_c: Pass by const reference
   :correct: c
   :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
   :feedback_b: Oops! Because we don't need to modify the vector, we don't want to use pass by reference.
@@ -498,9 +546,9 @@ In each of the following questions, a description of a function that takes in a 
   A function that checks to see if there are any zeros in a vector (and returns true or false).
 
 .. mchoice:: ch16_06_ex_parameter_passing_02
-  :answer_a: pass by value
-  :answer_b: pass by reference
-  :answer_c: pass by const reference
+  :answer_a: Pass by value
+  :answer_b: Pass by reference
+  :answer_c: Pass by const reference
   :correct: b
   :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
   :feedback_b: Correct! Passing by reference allows us to modify the vector.
@@ -509,9 +557,9 @@ In each of the following questions, a description of a function that takes in a 
   A function that sets all elements in the vector to be 25 (and returns nothing, but the original vector passed in is modified).
 
 .. mchoice:: ch16_06_ex_parameter_passing_03
-  :answer_a: pass by value
-  :answer_b: pass by reference
-  :answer_c: pass by const reference
+  :answer_a: Pass by value
+  :answer_b: Pass by reference
+  :answer_c: Pass by const reference
   :correct: b
   :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
   :feedback_b: Correct! Passing by reference allows us to modify the vector.
@@ -520,9 +568,9 @@ In each of the following questions, a description of a function that takes in a 
   A function that sorts the elements to be in ascending order (and returns nothing, but the original vector passed in is modified).
 
 .. mchoice:: ch16_06_ex_parameter_passing_04
-  :answer_a: pass by value
-  :answer_b: pass by reference
-  :answer_c: pass by const reference
+  :answer_a: Pass by value
+  :answer_b: Pass by reference
+  :answer_c: Pass by const reference
   :correct: c
   :feedback_a: Oops! Because vectors are large data structures, it is expensive to make a copy of them if we don't need to.
   :feedback_b: Oops! Because we don't need to modify the vector, we don't want to use pass by reference.
@@ -586,7 +634,7 @@ If you don't know ahead of time how many elements you need, just add them as you
 
 .. admonition:: Try it out!
 
-   Download the :download:`sensor.dat <../_static/vectors_in_cpp/sensor.dat>` file and try out the "fill as you go" pattern. The :file:`.dat` file extension is often used for text files that contain data sets that are intended as input to a computer program. You can open :code:`.dat` files in VS Code or any text editor.
+   Download the :code:`sensor.dat` file from the top of the chapter and try out the "fill as you go" pattern. The :file:`.dat` file extension is often used for text files that contain data sets that are intended as input to a computer program. You can open :code:`.dat` files in VS Code or any text editor.
 
 --------------------
 Using an Accumulator
@@ -815,8 +863,6 @@ The function :code:`all_negative` takes in a vector of :code:`int` values and re
       :width: 560
       :align: center
 
-|
-
 -----------------------------------------
 Exercise: Finding Minimum Value
 -----------------------------------------
@@ -873,7 +919,7 @@ Summary
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
 * Vector indices start at zero, not one.
-* When you declare a vector, you must include what type of data will be in the vector. You can declare an empty vector, a vector of a certain size with no values in the elements, or a vector with intial data.
+* When you declare a vector, you must include what type of data will be in the vector. You can declare an empty vector, a vector of a certain size with no values in the elements, or a vector with initial data.
 * Index into a vector using :code:`[]` or :code:`.at()`. Using :code:`.at()` is slightly slower, but the compiler warns you if you are about to go out-of-bounds.
 * We can use a loop to traverse each element in a vector.
 * :code:`pop_back()` is used to remove an element from the end of a vector. :code:`push_back()` is used to add elements to a vector.

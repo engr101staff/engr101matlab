@@ -30,9 +30,9 @@ Introduction
 ^^^^^^^^^^^^
 .. section 1
 
-We have seen throughout this class that functions are an incredibly useful way to organize and re-use code in MATLAB. In this chapter, we'll look at how to use functions in C++.
+In MATLAB, we saw that functions were a useful way to organize and re-use code. In this chapter, we'll look at functions in C++.
 
-Before we start, recall the definition of a function that we have been using: a function is an **abstraction** over a chunk of computation (e.g., data goes in, gets processed, new data comes out). Because a function is an abstraction, we don't have to worry about how the computation works internally. The **interface** of a function describes how we use it. For example, the interface for :code:`sqrt` is "Give it a number. It gives you back a square root." The interface for MATLAB's :code:`size` function is "Give it an array. It gives you back its dimensions". The **implementation** of a function is the code that makes the function work.
+Before we start, recall the definition of a function that we have been using: a function is an **abstraction** over a chunk of computation (e.g., data goes in, gets processed, new data comes out). Because a function is an abstraction, we don't have to worry about how the computation works internally. The **interface** of a function describes how we use it. For example, the interface for :code:`sqrt` is *"Give it a number. It gives you back a square root."* The interface for MATLAB's :code:`size` function is *"Give it an array. It gives you back its dimensions"*. The **implementation** of a function is the code that makes the function work.
 
 Now, on to C++ functions!
 
@@ -47,39 +47,39 @@ Function Basics
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+   Here's the basic structure of a function in C++:
+
+   .. code-block:: cpp
+
+      int square(int n) {
+         return n * n;
+      }
+
+   The function :code:`square` takes one :code:`int` **parameter** (a variable you can use in your function code), and returns an :code:`int` value.
+
+   Here's an example of calling this function:
+
+   .. code-block:: cpp
+
+      int x = 3;
+      int y = square(x);
+      cout << y << endl;
+      
+   When calling this function, we passed it the **argument** :code:`x`.
+
+.. tip ::
+
+   Unlike MATLAB, C++ requires an explicit :code:`return` statement in each function.
 
 Here's the code that we wrote in the previous video, if you'd like to play with it more:
 
 .. raw:: html
 
    <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch14_01_ex</div>
+      <div class="lobster-ex-project-name">ch14_01_abs</div>
    </div>
-
-As we saw in the previous video, here's the basic structure of a function in C++:
-
-.. code-block:: cpp
-
-    int square(int n) {
-        return n * n;
-    }
-
-The function :code:`square` takes one :code:`int` **parameter** (a variable you can use in your function code), and returns an :code:`int` value.
-
-.. tip ::
-
-    Unlike MATLAB, C++ requires an explicit :code:`return` statement in each function.
-
-Here's an example of calling this function:
-
-.. code-block:: cpp
-
-    int x = 3;
-    int y = square(x);
-    cout << y << endl;
-    
-When calling this function, we passed it the **argument** :code:`x`.
 
 .. mchoice:: ch14_ex_function_basics_01
   :answer_a: There's nothing wrong with this function call.
@@ -106,7 +106,9 @@ The :code:`abs` function that we wrote in the previous video can be improved. Le
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+   We can have multiple :code:`return` statements in the same function.
 
 ^^^^^^^^^^^^^^^^
 Function Details
@@ -121,9 +123,13 @@ Now that we've seen the basics, let's dive into some more details.
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-The previous video walked through how a function works in C++. First, the values of the argument expressions are copied into the parameter variables. The ordering of arguments you pass in is used to determine what goes to which parameter (the parameters are specified in the first line of the function, the **function signature**). Second, the code in the function runs. As soon as a return statement is encountered, the function ends immediately. Finally, the returned value transfers back to the calling code. Unlike in MATLAB, only one value can be returned.
+   When you call a function, the following steps happen: 
+   
+   1. The values of the **argument** expressions are copied into the **parameter** variables (the parameters are specified in the first line of the function, the **function signature**). The order of the arguments determines which argument goes to which parameter.
+   2. The code in the function runs. As soon as a :code:`return` statement is encountered, the function ends immediately.
+   3. The returned value transfers back to the calling code. Unlike in MATLAB, only one value can be returned.
 
 --------------------------------------------
 Exercise: Function for DNA Pattern Matching
@@ -131,7 +137,9 @@ Exercise: Function for DNA Pattern Matching
 
 Let's get some practice writing functions. In the previous chapter, we wrote code for DNA pattern matching. Because of the way we structured our code, if we wanted to run through our code more than once (say, for different DNA strings), we would need to copy and paste a huge chunk of code multiple times. We can organize our code better using functions.
 
-For this exercise, starting with the code from the previous chapter, write a function :code:`matchPattern`. The function should take in three parameters, the DNA string, the pattern string to look for, and an integer for the length of the pattern. It should return a Boolean value, :code:`true` if the pattern is found, and :code:`false` if the pattern is not found.
+For this exercise, starting with the code from the previous chapter, write a function :code:`matchPattern`. The function should take in three parameters: the DNA string, the pattern string to look for, and an integer for the length of the pattern. It should return a boolean value: :code:`true` if the pattern is found, and :code:`false` if the pattern is not found.
+
+To get you started, we've copied the code from the previous chapter into Lobster below.
 
 .. raw:: html
 
@@ -177,8 +185,10 @@ Some functions don't return anything - they just do stuff. Consider the followin
         }
         cout << endl;
     }
+
+|
     
-This function takes in a number, and prints out a row of X's, where the number of X's printed is specified by the function parameter. The :code:`void` keyword in the function signature indicates that there is no return value for this function.
+This function takes in a number, and prints out a row of X's, where the number of X's printed is specified by the function parameter :code:`num`. The :code:`void` keyword in the function signature indicates that there is no return value for this function.
 
 Generally, :code:`void` functions will have some "side effect", such as printing something out or changing the values of their parameters (more on this later!).
 
@@ -219,8 +229,6 @@ Remember that you can use the "Simulate" button to run your code. If you're not 
   - :toast: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
-|
-
 .. admonition:: Walkthrough
 
   .. reveal:: ch14_01_revealwt_printing_triangles
@@ -230,6 +238,10 @@ Remember that you can use the "Simulate" button to run your code. If you're not 
       :height: 315
       :width: 560
       :align: center
+
+-------------------------
+Making Flexible Functions
+-------------------------
 
 Parameters can be used to make flexible functions. In the previous example, the function only printed out a triangle of "size" 3. You could make a more flexible function by giving the function a parameter, :code:`size`, that determined how big a triangle to print (inside your function, you would need to replace the value :code:`3` with the new parameter :code:`size`). Here's what a new function signature might look like:
 
@@ -241,7 +253,7 @@ Parameters can be used to make flexible functions. In the previous example, the 
     
 .. shortanswer:: ch14_ex_void_functions_01
     
-    Let's suppose that we want to have our function print out a triangle using any character, not just X's. How could we modify our function to accomplish this?
+    Let's suppose that we want our function to print out a triangle using any character, not just X's. How could we modify our function to accomplish this?
     
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Functions and Scope
@@ -256,8 +268,9 @@ We've previously seen that you can only use a variable when it's in *scope*. Let
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
+   Variables declared outside of a function have **global scope**. Most of the time, it's a poor design choice to use global variables. Global scope is appropriate, however, for **constants**, variables that never change. Use :code:`const` to create a constant. Any variable declared inside a function (and any parameters!) will only have scope within that function.
 
 Here's one of the exercises that we looked at in the video; step through the visualization of the code below to see the way the variable :code:`rad` is handled in different scopes:
 
@@ -266,8 +279,6 @@ Here's one of the exercises that we looked at in the video; step through the vis
    <div class="lobster-ex" style="width: 700px; max-width: initial; margin-left: auto; margin-right: auto">
       <div class="lobster-ex-project-name">ch14_04_ex</div>
    </div>
-
-To recap, variables declared outside of a function have **global scope**. Most of the time, it's a poor design choice to use global variables. Global scope is appropriate, however, for **constants**, variables that never change. Use :code:`const` to create a constant. Any variable declared inside a function (and any parameters!) will only have scope within that function.
 
 .. mchoice:: ch14_ex_functions_and_scope_01
   :answer_a: There's nothing wrong with this code.
@@ -306,13 +317,13 @@ Just like a variable, you must declare a function before you can use it.
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-To avoid errors, make sure to declare functions *before* they are used. One way to do this is to declare *and* define functions before they are used (often before :code:`main()`). Alternatively, you can use a **function prototype** to declare a function before you define it.
+   To avoid errors, make sure to declare functions *before* they are used. One way to do this is to declare *and* define functions before they are used (often before :code:`main()`). Alternatively, you can use a **function prototype** to declare a function before you define it.
 
------------------------------------
-Exercise: Swapping Variable Values
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Swapping Variable Values
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A common task in programming is to swap the values of two variables with each other. Consider the following code:
 
@@ -329,6 +340,8 @@ A common task in programming is to swap the values of two variables with each ot
       cout << "x is now: " << x << endl;
       cout << "y is now: " << y << endl;
     }
+
+|
     
 If you run this code, you will see the following output:
 
@@ -351,9 +364,46 @@ Let's see how we can fix this code.
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw in our :code:`swap` function example, there are two mechanisms for parameter passing in C++. The first is **pass-by-value**, which is the default. In this method, the function is given *copies* of the argument values. The second method is **pass-by-reference** (specified with :code:`&`). In this method, there are no copies! The parameters refer to the arguments passed in. Changes to variables in the function are visible outside the function.
+   As we saw in our :code:`swap` function example, there are two mechanisms for parameter passing in C++. The first is **pass-by-value**, which is the default. In this method, the function is given *copies* of the argument values. The second method is **pass-by-reference** (specified with :code:`&`). In this method, there are no copies! The parameters refer to the arguments passed in. Changes to variables in the function are visible outside the function.
+
+Here's the code that we wrote in the previous video, if you'd like to play with it more:
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch14_01_ex</div>
+   </div>
+
+For the following scenarios, choose whether we should use *pass-by-value* or *pass-by-reference*.
+
+.. mchoice:: ch14_ex_pass_by_reference_01
+  :answer_a: Pass-by-value
+  :answer_b: Pass-by-reference
+  :correct: a
+  :feedback_a: Correct! We do not need to modify either the base of the triangle of the height of the triangle, so we should use pass-by-value here.
+  :feedback_b: Oops! Because we don't need to modify the values of our parameters, we don't need to use pass-by-reference.
+
+  We are writing a function that calculates the area of the triangle. The function takes two parameters: the base of the triangle, and the height of the triangle. It returns the area of the triangle. Should we pass our two parameters by value or by reference?
+
+.. mchoice:: ch14_ex_pass_by_reference_02
+  :answer_a: Pass-by-value
+  :answer_b: Pass-by-reference
+  :correct: b
+  :feedback_a: Oops! Pass-by-value doesn't let you modify the value of the parameter, and for this function we need to modify the value of the bank account balance.
+  :feedback_b: Correct! Because we need to modify the bank account balance, we need to use pass-by-reference.
+
+  We are writing a void function that adds interest to a bank account balance. The function takes one parameter, the bank account balance. Inside the function, the bank account balance is updated to include the interest. Should the balance be passed by value or by reference?
+  
+.. mchoice:: ch14_ex_pass_by_reference_03
+  :answer_a: Pass-by-value
+  :answer_b: Pass-by-reference
+  :correct: b
+  :feedback_a: Oops! Pass-by-value doesn't let you modify the value of the parameter, and for this function we need to modify the value of the charge.
+  :feedback_b: Correct! Because we need to modify the charge, we need to use pass-by-reference.
+
+  We are writing a function that updates the battery charge of an electric car while it's being charged. The function takes one parameter: the current charge of the car. It returns void, but inside the function, it updates the current charge of the car. Should the charge by passed by value or by reference?
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -363,7 +413,7 @@ This is the end of the chapter! Here is a summary of what we covered in this cha
 
 * When defining a function, the function **signature** (the first line of the function) must include the name of the function, the types of the **parameters**, and the return type of the function.
 * To call a function, we pass it **arguments**. There are two ways to pass arguments to a function: **pass-by-value** (the default) and **pass-by-reference** (specified with :code:`&`). In pass-by-value, functions are given copies of the argument values. In pass-by-reference, the parameters refer directly to the arguments passed in. Changes to the parameters are visible outside the function.
-* The order of the arguments determines which argument goes with which parameter. After arguments are passed to a function, the function is run. As soon as return statement is encountered, the function ends and transfers the return value back to the calling code. Only one value can be returned from a function.
+* The order of the arguments determines which argument goes with which parameter. After arguments are passed to a function, the function is run. As soon as a return statement is encountered, the function ends and transfers the return value back to the calling code. Only one value can be returned from a function.
 * :code:`void` functions don't return anything, but they usually have some side effect, such as printing something out or changing the values of their parameters.
 * Variables declared outside of a function have **global scope**. You usually don't want to use global scope, unless you are declaring a **constant**, a variable that never changes (specified with :code:`const`).
 * A function parameter or a variable declared inside a function only has scope within that function.

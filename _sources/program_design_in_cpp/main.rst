@@ -34,24 +34,26 @@ Introduction
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+   A Caesar Cipher shifts letters in the alphabet by a particular (secret) offset. In this chapter, we'll design a program to decrypt Dr. Juett's encrypted notes.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Getting Started: Shifting a Character
+Bottom-up Design
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-We can look at program design from two general, complementary perspectives: "top-down" and "bottom-up".
+In order to recover Dr. Juett's notes, we are going to need to design a program to find out the offset used in the Caesar Cipher. Specifically, we will write a program to encrypt and decrypt a document with this cipher. We can look at program design from two general, complementary perspectives: **top-down** and **bottom-up**. As you’ll recall from Chapter 10, bottom-up design starts by identifying specific features that we’ll need in our program, and then writing functions that accomplish these specific features. Top-down design starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
 
-Let's start with a bottom-up design perspective - we think of some functionality that would be useful for our program and go ahead and implement some of the pieces. For example, we know we're going to need to shift letters (i.e. characters) if we want to implement a Caesar Cipher to encrypt (or decrypt!) messages.
+We're going to look at designing our program from both perspectives in this chapter. Let's start with bottom-up design!
 
-Often times, bottom-up design is realized in the implementations of functions that will form the building blocks for our program. Let's create a :code:`shift_letter` function that takes in an original character, shifts it by a given amount, and returns a new character. Here's a few examples of how we might use shift letter:
+For bottom-up design, we need to first think of some small pieces of functionality that would be useful for our program. We can implement these pieces as functions. For example, we know we're going to need to shift letters (i.e. characters) if we want to implement a Caesar Cipher to encrypt (or decrypt!) messages.
 
-- :code:`shift_letter('b', 3)` should return :code:`'e'`
-- :code:`shift_letter('y', 3)` should return :code:`'b'` (it wraps around after :code:`z`)
-- :code:`shift_letter('e', -1)` should return :code:`'d'`
+--------------------------------------
+Bottom-Up Design: Shifting a Character
+--------------------------------------
 
-Alright, let's implement it:
+Let's create a :code:`shift_letter` function that takes in an original character, shifts it by a given amount, and returns a new character.
   
 .. youtube:: OA4-rNK_jxI
    :divid: ch17_02_shift_letter
@@ -59,14 +61,16 @@ Alright, let's implement it:
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
+   We wrote the :code:`shift_letter` function to shift a letter by a given amount. We began by writing pseudocode, and then wrote the C++ code.
 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Next Step: Encrypting a Word
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
+Bottom-Up Design: Encrypting a Word
+-----------------------------------
 .. section 3
+
+What other functionality will we need? We will need the ability to encrypt a word using the Caesar Cipher.
 
 Write an implementation for the :code:`encrypt_word` function below that encrypts a word according to a Caesar Cipher with the given offset. You should iterate through each character in the word and call :code:`shift_letter()` to compute a new word.
 
@@ -103,9 +107,9 @@ However, the parameter to :code:`encrypt_word()` is passed by const reference - 
       :align: center
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 Multi-File Program Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 .. section 4
 
 We've got some of the basics functions for our program implemented, but let's take a step back before moving on to the driver program in :code:`main()`. To keep our code more organized, let's take a look at the way C++ allows us to split our code into separate modules in different :code:`.cpp` source files. We'll also see how :code:`.h` header files are used to enable code in one file to call and use functions defined in a separate file.
@@ -116,38 +120,19 @@ We've got some of the basics functions for our program implemented, but let's ta
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, the high-level structure of a program with multiple modules looks like this:
+   A **module** contains a specific set of functionality in your code. A module usually consists of a :code:`.cpp` file and a :code:`.h` (**header**) file. The header file will contain function prototypes, while the :code:`.cpp` file will contain the implementations of these functions. For convenience, the :code:`.cpp` file will generally include the header file at the top (e.g., :code:`#include "caesar.h"`).
 
-.. figure:: img/file_structure.png
-   :width: 600
-   :align: center
-   :alt: The high level design and relationships between caesar.h, caesar.cpp, and encryptDocument.cpp.
+   A program with multiple modules with also have a *driver file*, a :code:`.cpp` file that contains :code:`main()`.
 
-   ..
+   If a particular :code:`.cpp` file (including the driver file) needs to use functions from a module, then the header file for that module must be included at the top (e.g., :code:`#include "caesar.h"`). This gives the compiler access to the function prototypes in that module. Note that :code:`.cpp` files should *never* be used in an :code:`#include`.
 
-A "module" might consist of both a :file:`.cpp` and :file:`.h` **header** file, for example, :file:`caesar.cpp` and :file:`caesar.h`. The important rules/principles to remember are:
+   To compile a program with multiple modules, all of the :code:`.cpp` files must be specified in the compilation command. Header files are *never* specified in the compilation command. For example:
 
-1. Header files with the :file:`.h` extension generally contain function prototypes.
-2. The actual implementations of those functions go in a corresponding :file:`.cpp` file.
-3. If a :file:`.cpp` file has a corresponding :file:`.h` file, it should generally go ahead and include its own :file:`.h` for convenience.
-4. Then, the :file:`.h` file is included in any other :file:`.cpp` files that also want to use that module's functions, so that the compiler has access to their prototypes.
-5. Finally, a :file:`.cpp` file for each module needs to be specified in the compilation command to :code:`g++`.
+   .. code::
 
-In general:
-
-- :file:`.h` files should be used with :code:`#include` at the top of other files, but should *never* be specified in the :code:`g++` compilation command.
-- :file:`.cpp` files should be given to :code:`g++` to compile, but should *never* be used with a :code:`#include`.
-
-.. admonition :: Be careful!
-
-   Never put :code:`using namespace std;` in a header file. If you are using something from the :code:`std` namespace (like a string), you can preface :code:`string` with :code:`std::`. Here's an example function prototype that does this:
-
-   .. code :: cpp
-
-      void doSomething(std::string inputString);
-
+      g++ encryptDocument.cpp caesar.cpp -o encryptDocument
 
 .. mchoice:: ch17_04_ex_file_structure_01
 
@@ -173,23 +158,11 @@ In general:
 
      - Not quite. As a general rule, you'll almost never want to :code:`#include` a :file:`.cpp` file.
 
-|
-
-Let's go ahead and apply these rules to our actual code:
-
-.. youtube:: fqbRAraFd0U
-   :divid: ch17_04_file_structure_applied
-   :height: 315
-   :width: 560
-   :align: center
-
-|
-
 .. mchoice:: ch17_04_ex_file_structure_02
 
    **Exercise: Compiling Autograder Program**
 
-   Think back to the example grading program described in the previous exercise, including three files:
+   In our example grading program, we have three files:
 
    - :file:`grades.cpp`
    - :file:`autograder.h`
@@ -209,6 +182,37 @@ Let's go ahead and apply these rules to our actual code:
 
      - Not quite. In general, a :file:`.h` header file is never included in the compile command. (Instead, in this case, it would be included with :code:`#include` at the top of the other files.)
 
+Let's go ahead and apply this structure to our Caesar Cipher program.
+
+.. youtube:: fqbRAraFd0U
+   :divid: ch17_04_file_structure_applied
+   :height: 315
+   :width: 560
+   :align: center
+
+.. admonition:: Video Recap
+
+   We created a driver file :code:`encryptDocument.cpp`. We have put the functions that we've written for working with Caesar Ciphers in :code:`caesar.cpp`. We want to create a cipher module, so we created a header file :code:`caesar.h`.
+
+   At the top of :code:`encryptDocument.cpp` and :code:`caesar.cpp`, we :code:`#include "caesar.h"`.
+
+   To compile our program, use :code:`g++ encryptDocument.cpp caesar.cpp -o encryptDoc`.
+
+When working with multiple modules, one question that comes up is *when do we need* :code:`using namespace std;` *at the top of the file?*
+
+In general, you can put :code:`using namespace std;` at the top of all of the :code:`.cpp` files. However, you should *never* put :code:`using namespace std;` at the top of a header file.
+
+If you don't have :code:`using namespace std;` at the top of the file (like header files), then you will need to preface many keywords (:code:`string`, :code:`vector`, etc.) with :code:`std::`. For example, instead of writing :code:`string`, you will need to write :code:`std::string`.
+
+.. tip::
+   :code:`std::string` is actually the full name for :code:`string`, but :code:`using namespace std;` lets you shorten the full name for convenience. When you don't have :code:`using namespace std;`, you need to write out the full name.
+
+Here's an example function prototype using :code:`std::`:
+
+.. code :: cpp
+
+   void doSomething(std::string inputString);
+
 ^^^^^^^^^^^^
 Unit Testing
 ^^^^^^^^^^^^
@@ -222,9 +226,9 @@ One more thing before we move on... we just made some very useful functions, but
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw in the video, **unit testing** is the practice of testing each function individually to make sure it behaves as it should according to its **interface**. We often do this using the :code:`assert` function, which ends the program with an error message if its input is not true. A good way to organize unit tests is to write them in a separate file with its own :code:`main` function.
+   **Unit testing** is the practice of testing each function individually to make sure it behaves as it should according to its **interface**. We often do this using the :code:`assert` function, which ends the program with an error message if its input is not true. A good way to organize unit tests is to write them in a separate file with its own :code:`main` function.
 
 --------------------------
 Exercise: Unit Testing
@@ -289,9 +293,6 @@ In the Lobster exercise below, we've given you a few test cases to start with as
 
       That ensures that any negative number is adjusted 26 letters forward to its positive equivalent. The :code:`-2` becomes :code:`24`, which is the position of :code:`y`, as desired.
 
-|
-
-
 -------------------------
 Unit Testing with Doubles
 -------------------------
@@ -304,20 +305,20 @@ If you have a function that returns a :code:`double` as a result, you need to ta
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-As we saw in the video, it's not safe to use :code:`==` or :code:`!=` with floating point numbers. Instead, we can check whether the numbers are very close. Here's a function that does that:
+   It's not safe to use :code:`==` or :code:`!=` with floating point numbers. Instead, we can check whether the numbers are very close. Here's a function that does that:
 
-.. code:: cpp
+   .. code:: cpp
 
-  bool almostEqual(double x, double y) {
-    double diff = x - y;
-    if(diff < 0) {
-      diff = -diff;
-    }
+      bool almostEqual(double x, double y) {
+         double diff = x - y;
+         if(diff < 0) {
+            diff = -diff;
+         }
 
-    return diff < 0.0001;
-  }
+         return diff < 0.0001;
+      }
 
 
 ^^^^^^^^^^^^^^^
@@ -422,9 +423,16 @@ Top-Down Design
 
       - Functions for frequency attack
 
-Up until this point, we have been using bottom-up design to write our program. As you'll recall from Chapter 10, **bottom-up design** starts by identifying specific features that we'll need in our program, and then writing functions that accomplish these specific features. (e.g., the :code:`shift_letter` and :code:`encrypt_word` functions). What if we wanted to approach this program from top-down design instead? **Top-down design** starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
+  .. reveal:: program_design_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for C++
+    
+    .. include:: ../common/cpp_download_instructions.in.rst
 
-In the next few videos, we'll use top-down design to clean up our proof-of-concept driver program so that it implements our overall program at a high level. We'll start out with some pseudocode, then convert that to real code. Finally, we'll identify any remaining helper functions that we need to write.
+Up until this point, we have been using bottom-up design to write our program. What if we wanted to approach this program from top-down design instead? Top-down design starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
+
+In the next few videos, we'll use top-down design to clean up our proof-of-concept driver program so that it implements our overall program at a high level.
 
 .. youtube:: Rfb3LOIH1M8
    :divid: ch17_06_vid_top_down_design
@@ -432,9 +440,11 @@ In the next few videos, we'll use top-down design to clean up our proof-of-conce
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
 
-The last piece of our program is to implement the :code:`loadDocument()` and :code:`writeDocument()` functions. Let's add these functions in a new file, :code:`document.cpp`.
+   To begin the top-down design process, we wrote some pseudocode to sketch out the high-level steps of our program. Then, we were able to convert some of our pseudocode to code and identify any remaining helper functions that we need to write.
+
+We identified two new functions that we need to implement: :code:`loadDocument()` and :code:`writeDocument()`. Let's add these functions in a new module, :code:`document.cpp` and :code:`document.h`.
 
 .. youtube:: mcp8F2Xl2JI
    :divid: ch17_06_vid_finishing_up
@@ -442,11 +452,17 @@ The last piece of our program is to implement the :code:`loadDocument()` and :co
    :width: 560
    :align: center
 
-|
+.. admonition:: Video Recap
+
+   We implemented the :code:`loadDocument()` and :code:`writeDocument()` functions, and tested our functions. When we tested our functions, we saw that they didn't work correctly.
+   
+   **Debugging** is the process of hypothesis testing. We come up with an idea of what could be wrong, and then we determine what information we need from the program to see if our idea was correct. We can use :code:`cout` statements to print out useful information to help us narrow down where the problem is.
 
 Before we move on, it's worth mentioning that the parameters for our document functions take in :code:`istream` and :code:`ostream` parameters, which are a more generic type than the file specific input/output streams :code:`ifstream` and :code:`ofstream`. In general, it's a good idea to make custom functions for input and output work with the more generic types, so that those functions are more flexible if we decided we would like to use them somewhere else as well. For example, since :code:`writeDocument` takes in any :code:`ostream` parameter, it could potentially write output to a file through an :code:`ofstream` *OR* to the terminal through :code:`cout`, which is just a different kind of :code:`ostream`.
 
-It's also worth mentioning that stream parameters are always passed by reference (i.e. with the :code:`&` in the parameter declaration), because passing by value would make a copy, and making a copy of a stream doesn't really make sense (and won't compile).
+.. admonition :: Be careful!
+
+   Stream parameters are always passed by reference (i.e. with the :code:`&` in the parameter declaration), because passing by value would make a copy, and making a copy of a stream doesn't really make sense (and won't compile).
 
 ^^^^^^^^^^^^^^^^^
 Cracking the Code
@@ -461,7 +477,9 @@ Finally, let's see if we can't get my notes back...
    :width: 560
    :align: center
 
-|
+.. admonition::  Video Recap
+
+   We used a **frequency analysis attack** to decrypt Dr. Juett's notes. For this attack, we count up the frequency of each letter in the encrypted document, and then we match the most common letters in the encrypted document with the most common letters in the English language. This lets us calculate the offset used in the Caesar Cipher.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
@@ -470,8 +488,10 @@ Summary
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
 * **Bottom-down design** starts by identifying specific features that we'll need in our program and then writing functions that accomplish these specific features. **Top-down design** starts by looking at the big picture of what the end result will be, and then breaks it down into smaller steps after that.
-* One way to organize larger programs is to write our own modules of code. A module might consist of both a :code:`.cpp` and a :code:`.h` (header) file. The :code:`.cpp` file contains the function definitions for our module, while the :code:`.h` file contains the function prototypes.
+* One way to organize larger programs is to write our own modules of code. A module contains a specific set of functionality in your code. A module usually consists of a :code:`.cpp` file and a :code:`.h` (header) file. The header file will contain function prototypes, while the :code:`.cpp` file will contain the implementations of these functions.
+* To compile a program with multiple modules, all of the :code:`.cpp` files must be specified in the compilation command. Header files are never specified in the compilation command.
 * **Unit testing** is the practice of testing each function individually to make sure it behaves according to its interface. We often do this using the :code:`assert` function.
 * It's not safe to use :code:`==` or :code:`!=` with floating point numbers. Instead, we can check whether the numbers are very close.
+* **Debugging** is the process of hypothesis testing. We come up with an idea of what could be wrong, and then we determine what information we need from the program to see if our idea was correct. We can use :code:`cout` statements to print out useful information to help us narrow down where the problem is.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
