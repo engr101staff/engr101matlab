@@ -5,7 +5,7 @@ These questions are **completely OPTIONAL**. We provide these exercises to give 
 Additionally, they may be a helpful resource when reviewing for assessments. Some lines contain **mistakes** or are **unnecessary** for 
 the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_1_r
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_1_re
     :numbered: left
     :adaptive:
 
@@ -31,7 +31,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_2
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_2_re
     :numbered: left
     :adaptive:
 
@@ -67,7 +67,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_3
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_3_re
     :numbered: left
     :adaptive:
 
@@ -99,7 +99,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_4
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_4_re
     :numbered: left
     :adaptive:
 
@@ -133,7 +133,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_5
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_5_re
     :numbered: left
     :adaptive:
 
@@ -167,7 +167,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     proper.pop_back(nouns[i]); #distractor
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_6
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_6_re
     :numbered: left
     :adaptive:
 
@@ -214,7 +214,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_7
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_7_re
     :numbered: left
     :adaptive:
 
@@ -235,7 +235,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: vectors_in_cpp_mixed_up_code_8_r
+.. parsonsprob:: vectors_in_cpp_mixed_up_code_8_re
     :numbered: left
     :adaptive:
 
@@ -254,6 +254,6 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
         }
     =====
-        return randomVec #distractor
+        return randomVec; #distractor
     =====
     }

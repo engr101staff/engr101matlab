@@ -119,7 +119,7 @@ material that you've learned. Additionally, they may be a helpful resource when 
         int mass;
       };
 
-      int calculateDensity (Cube &c) {
+      int calculateDensity (const Cube &c) {
         return c.mass / c.volume;
       }
 
@@ -179,11 +179,11 @@ material that you've learned. Additionally, they may be a helpful resource when 
 
     - 1
 
-      - Take a closer look at the function definition of ``pourCoffee``.
+      + Since we pass a ``Student`` object by reference to ``pourCoffee``, the function modifies the original value of ``coffeeCupFull``.
 
     - 0
 
-      + Since we pass a ``Student`` object by value to ``pourCoffee``, the function makes a copy of the object and does not modify the original. If you wanted the original value to change, pass it by reference!
+      - Take a closer look at the function definition of ``pourCoffee`` and how the ``Student`` struct is passed through it.
 
 .. mchoice:: structs_mcq_7
     :practice: T

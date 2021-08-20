@@ -83,7 +83,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     } #distractor
 
-.. parsonsprob:: structs_mixed_up_code_4
+.. parsonsprob:: structs_mixed_up_code_4_re
     :numbered: left
     :adaptive:
 
@@ -162,7 +162,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     following format: ``name (id) lives at houseNumber in state, postalAddress``.
     Put the necessary blocks of code in the correct order.
     -----
-    void printAddress (Employee &e) {
+    void printAddress (const Employee &e) {
     =====
     string printAddress (Employee &e) {  #paired 
     =====
@@ -178,7 +178,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     }
 
-.. parsonsprob:: structs_mixed_up_code_7
+.. parsonsprob:: structs_mixed_up_code_7_re
     :numbered: left
     :adaptive:
 
@@ -203,7 +203,7 @@ the function - these lines should not be selected. Make sure to place the blocks
     =====
     };  #distractor
 
-.. parsonsprob:: structs_mixed_up_code_8
+.. parsonsprob:: structs_mixed_up_code_8_re
     :numbered: left
     :adaptive:
 
