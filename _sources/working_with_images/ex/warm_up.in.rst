@@ -1,4 +1,15 @@
-In this chapter, we'll take a look at how to use MATLAB to manipulate images. Matlab is very efficient at storing information as numbers in a matrix, like in matrix :code:`a` below.
+In this chapter, we'll take a look at how to use MATLAB to manipulate images, like this boat image:
+
+.. figure:: img/boat_color.png
+   :width: 400
+   :align: center
+   :alt: boat_color.png
+
+   *"Speed & Foam", Michel Brousseau*
+
+Before we jump into talking about images, let's review some matrix operations that we'll need  (these will be used on images later in this chapter!). Recall that MATLAB is very efficient at storing numbers in a matrix. These numbers can represent calculations, data, and even colors!
+
+For the following questions, use the matrix :code:`a`:
 
 .. raw:: html
 
@@ -18,7 +29,7 @@ In this chapter, we'll take a look at how to use MATLAB to manipulate images. Ma
     <br />
   </div>
 
-These numbers can represent calculations, data, and even colors! Before we jump into talking about images, let's warm up by practicing a few operations we learned in previous chapters to change matrices (these will be used on images later in this chapter!).
+
 
 For each of the expressions below, determine the result of the operation. There’s also a MatCrab workspace below the questions you can use to check your work, if you like.
 
@@ -47,6 +58,8 @@ MatCrab can help you check any of your work above, if you would like. (To get it
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
             <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
+            <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
           <td>
@@ -66,4 +79,4 @@ MatCrab can help you check any of your work above, if you would like. (To get it
     </div>
   </div>
 
-In this chapter, we will be using matrices to represent images, with each cell representing a pixel’s color. We will use matrix tools from previous chapters to manipulate images, using the image of a boat above as a running example.
+In this chapter, we will be using matrices to represent images, with each cell representing the color of a single pixel.

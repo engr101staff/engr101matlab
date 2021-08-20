@@ -5,7 +5,7 @@ Recall the Exchangeable Sodium Percentage (ESP) from the Practice Project, which
   ESP = \frac{Na}{K + Ca + Mg + Na}
 
 
-Let's say you have many different soil samples taken by the Proxima b probe, and you need to perform the ESP calculation for each. Below is a table of the samples and an approach to writing a *script* that performs the ESP computations.
+Let's say you have many different soil samples taken by the Proxima b probe, and you need to perform the ESP calculation for each. Below is a table of the samples and an approach to writing a script that performs the ESP computations.
 
 .. list-table:: 
   :align: left
@@ -45,7 +45,7 @@ Is this a good approach? Consider a few questions...
 
 .. shortanswer:: ch03_02_ex_warm_up_02
 
-  The code above contains a lot of *code duplication*, where we have multiple lines of code that do the same thing (although with different data). Give one reason why code duplication can make mistakes like the one you identified more likely.
+  The code above contains a lot of **code duplication**, where we have multiple lines of code that do the same thing (although with different data). Give one reason why code duplication can make mistakes like the one you identified more likely.
 
 .. shortanswer:: ch03_02_ex_warm_up_03
 

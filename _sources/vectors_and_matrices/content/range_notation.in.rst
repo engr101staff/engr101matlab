@@ -1,18 +1,20 @@
-To recap, range notation uses the colon operator (:code:`:`) in this pattern:
+.. admonition:: Video Recap
 
-.. raw:: html
+  Range notation uses the colon operator (:code:`:`) in this pattern:
 
-  <div class="container-fluid" style="text-align: center">
+  .. raw:: html
 
-:code:`first:step:last`
+    <div class="container-fluid" style="text-align: center">
 
-.. raw:: html
+  :code:`first:step:last`
 
-  </div>
+  .. raw:: html
 
-- :code:`first` - the starting value; this will be the value of the first element in the vector
-- :code:`step` - how much to add to the previous value in the vector; the total value will be placed in the next element in the vector (if omitted, defaults to 1)
-- :code:`last` - the ending value of the vector; if adding the value of step creates a value beyond last, then the element is not created
+    </div>
+
+  - :code:`first` - the starting value; this will be the value of the first element in the vector
+  - :code:`step` - how much to add to the previous value in the vector; the total value will be placed in the next element in the vector (if omitted, defaults to 1)
+  - :code:`last` - the ending value of the vector; if adding the value of step creates a value beyond last, then the element is not created
 
 Here's a MatCrab, if you want to try it out yourself:
 

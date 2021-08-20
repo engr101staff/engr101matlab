@@ -26,7 +26,7 @@ Using logical indexing, do the following:
 
 - Count the number of elements that match (i.e. same location, same value) between :code:`A` and :code:`B`, but don't count negative numbers. Place the result in a variable called :code:`result`. (Do this before the other exercises that change A and B.)
 - Double all elements in A that are less than 5.
-- Set all matrix elements in B to their absolute value. (Hint: select only the negative elements and multiply them by -1.)
+- Set all matrix elements in B to their absolute value. *(Hint: select only the negative elements and multiply them by -1.)*
 
 Each of these operations should only require one line of code (though you can also do them with multiple lines and an intermediate variable for the indexing result).
 

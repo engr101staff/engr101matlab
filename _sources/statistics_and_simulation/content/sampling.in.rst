@@ -1,6 +1,6 @@
-Many engineering processes depend on random variables. A random variable is a variable that we know exists (like speed or mass), but don't know ahead of time what the value of the variable will be. We might know a range of potential values, such as with the battery example above, or we might know some statistical measures, such as maximum, minimum, mean, mode, median, variance, and standard deviation. Not knowing the value of a variable creates uncertainty in the system, and we handle that *uncertainty* through *probabilities*.
+Many engineering processes depend on **random variables**. A random variable is a variable that we know exists (like speed or mass), but don't know ahead of time what the value of the variable will be. We might know a range of potential values, such as with the battery example above, or we might know some statistical measures, such as maximum, minimum, mean, mode, median, variance, and standard deviation. Not knowing the value of a variable creates uncertainty in the system, and we handle that *uncertainty* through *probabilities*.
 
-You may have heard of the *Normal Distribution* or "bell-curve". A *normally-distributed* set of data is characterized, in part, by a histogram that is symmetrical about the mean of the data set. Here is an example of a histogram of normally-distributed data:
+You may have heard of the *Normal Distribution* or "bell-curve". A **normally-distributed** set of data is characterized, in part, by a histogram that is symmetrical about the mean of the data set. Here is an example of a histogram of normally-distributed data:
 
 
 .. figure:: img/NarrowDistLargeN.png
@@ -20,16 +20,16 @@ MATLAB provides functions for sampling from a variety of probability distributio
   :width: 560
   :align: center
 
-|
+.. admonition :: Video Recap
 
-To recap, the :code:`randi` function picks pseudo random numbers:
+  :code:`randi` picks pseudo random numbers:
 
-.. figure:: img/RandiExplained.png
-  :width: 450
-  :align: center
-  :alt: A histogram showing a normally-distributed data set that follows a "bell curve"
+  .. figure:: img/RandiExplained.png
+    :width: 450
+    :align: center
+    :alt: A histogram showing a normally-distributed data set that follows a "bell curve"
 
-  ..
+    ..
 
 Here are two examples of using :code:`randi` to simulate rolling a 6-sided die on the left and a 20-sided die on the right:
 
@@ -51,6 +51,8 @@ Feel free to try out other examples here:
         <tr>
           <td style="text-align: center">
             <img src="../_static/common/img/crabster.jpg" style="height: 35px" />
+            <br />
+            <a role="button" class="btn btn-success matcrab-run">Run</a>
             <br />
             <a role="button" class="btn btn-warning matcrab-reset">Reset</a>
           </td>
@@ -110,6 +112,6 @@ Here's a few practice exercises. In each, identify the :code:`randi()` call that
       x
     </div>
 
-Probability distributions aren't too bad if there is only one. But if you are working with a system that has multiple random variables (and most engineering systems have at least one random variable, and many systems have lots of random variables!), then trying to find a probability distribution that covers all the random variables quickly becomes impossible.
+Probability distributions aren't too bad if there is only one. But if you are working with a system that has multiple random variables (which is true of many systems!), then trying to find a probability distribution that covers all the random variables quickly becomes impossible.
 
-So. Probability is hard. But vectorization is easy! We can use MATLAB to pick values for each random variable individually and calculate the overall outcomes by combining them together. If we do this over and over, and we do it enough times, we can see how systems work for different ranges of input data, even if we can't figure out the math equation for the overall probabilities. Let's look at an example...
+So. Probability is hard. But vectorization is easy! We can use MATLAB to pick values for each random variable individually and calculate the overall outcomes by combining them together. If we do this over and over, and we do it enough times, we can see how systems work for different ranges of input data, even if we can't figure out the math equation for the overall probabilities. Let's look at an example.

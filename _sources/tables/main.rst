@@ -6,9 +6,9 @@
 
    <script src="../_static/common/js/common3.js"></script>
 
-==========================
-Strings, Cells, and Tables
-==========================
+======
+Tables
+======
 
 .. admonition:: Chapter Files
 
@@ -37,123 +37,6 @@ Strings, Cells, and Tables
     .. include:: ../common/matlab_download_instructions.in.rst
       
 
-
-^^^^^^^^^^^^
-Introduction
-^^^^^^^^^^^^
-.. section 1
-
-.. youtube:: dHMAIwy8pA0
-  :divid: ch08_01_vid_data_types_and_matrix_limitations
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-In the previous video, we introduced a new data type, a **string**. A string is a sequence of characters (e.g., a "word") and is represented as a vector of :code:`chars` in MATLAB. Because strings are often not the same length, storing multiple strings as a matrix of characters presents some challenges.
-
-^^^^^^^^^^^
-Cell Arrays
-^^^^^^^^^^^
-.. section 2
-
-MATLAB includes a matrix-like data structure called a **cell array** that allows us to get around some of the restrictions of regular matrices:
-
-.. youtube:: spUUccV5Dlk
-  :divid: ch08_02_vid_introduction_to_cell_arrays
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-Cell arrays are heterogenous collections of elements and are created using the curly brackets :code:`{` and :code:`}`. Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data. Let's consider indexing into cell arrays:
-
-.. youtube:: lejDhTnuIhM
-  :divid: ch08_02_vid_indexing_and_unpacking_in_cell_arrays
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-As we saw, there are two ways to index into a cell array:
-
-- **Cell indexing**, using the :code:`( )` operator. This can be used to select particular cells (or groups of cells) within a cell array. The result is a smaller cell array.
-- **Content indexing**, using the :code:`{ }` operator. This selects and **unpacks** the actual data from its containing cell, so that we can work with it directly. This is generally not useful for multi-element selections.
-
-The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
-
------------------------------
-Exercise: Cell Array Practice
------------------------------
-
-.. shortanswer:: ch08_02_ex_cell_array_practice
-
-  Consider this initial code:
-  
-  .. code-block:: matlab
-
-    X = {1, 'hello'; [1,2,3], ['a';'b';'c']}
-
-  The initial value of :code:`X` is shown below, as well as a desired new value for :code:`X` and additional variable :code:`Y`.
-
-  .. figure:: img/cell_array_practice.png
-    :width: 560
-    :align: center
-
-    ..
-
-  Write a few lines of code that could be used to obtain the new values of :code:`X` and :code:`Y`.
-
-.. admonition:: Walkthrough
-
-  .. reveal:: ch08_02_revealwt_cell_arrays_practice
-  
-    .. youtube:: unoldLVMKiA
-      :divid: ch08_02_wt_cell_arrays_practice
-      :height: 315
-      :width: 560
-      :align: center
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Strings, Cell Arrays, and Double Quote Strings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 3
-
-Now that we've seen the basics of cell arrays, let's take a look at how they're used to store and work with strings in MATLAB.
-
-.. youtube:: MEso3jeJ5HU
-  :divid: ch08_03_strings_cell_arrays_and_double_quote_strings
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-In the previous video, we saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
-
-Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Reading Excel Files in MATLAB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 4
-
-Another case to be made for cell arrays is that sometimes the data we have are naturally in a heterogeneous format - for example, the data in an Excel spreadsheet might well be a mix of text and numbers.
-
-.. youtube:: rgioisRsSAg
-  :divid: ch08_04_reading_excel_files_in_matlab
-  :height: 315
-  :width: 560
-  :align: center
-
-|
-
-The :code:`xlsread` function allows us to read data from an Excel spreadsheet into MATLAB, and cell arrays can be used to represent this data.
-
 ^^^^^^
 Tables
 ^^^^^^
@@ -167,13 +50,13 @@ MATLAB also supports a data structure called a **table**.
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
+  A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
 
-If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
+  If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
 
-We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
+  We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
 
 ----------------------------------
 Exercise: Accessing Data in Tables
@@ -299,9 +182,9 @@ Tables provide a number of convenient ways to manipulate data. First, let's take
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
+  Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
 
 We can also use indexing and assignment to modify specific selections of elements within a table, combined with powerful tools like logical indexing that allow us to perform complex operations without having to write a lot of code.
 
@@ -311,7 +194,9 @@ We can also use indexing and assignment to modify specific selections of element
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  TODO
 
 -------------------------------------
 Exercise: Manipulating Data in Tables
@@ -429,11 +314,6 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* The **string** data type holds a sequence of characters (e.g., a "word"). There are two types of strings in MATLAB: single quote strings and double quote strings. Double quote strings have some convenient features (such as working with the operators :code:`==`, :code:`>`, and :code:`+`). To compare or concatenate single quote strings, use :code:`strcmp` and :code:`strcat`.
-* A **cell array** is like a matrix, but it holds a heterogenous collection of elements. It is created using the curly brackets :code:`{` and :code:`}`.
-* There are two ways to index into a cell array: **cell indexing** (using :code:`()` operator) selects groups of cells and results in a smaller cell array. **Content indexing** (using :code:`{}` operator) selects and unpacks the actual data from its containing cell.
-* Use :code:`cell2mat` to create a regular array from a cell array containing numbers: Use :code:`num2cell` to create a cell array from a regular array of numbers.
-* The :code:`xlsread` function can be used to read data from an Excel spreadsheet.
 * **Tables** are data structures that may contain several columns of data (each column can have a different data type). Similar to cell arrays, use :code:`()` and :code:`{}` to index into tables. To get the dimensions of a table, use :code:`size`, :code:`height`, or :code:`width`. Use :code:`sortrows` to sort the rows of a table.
 * Read in data in a tabular format using :code:`readtable`.
 * The :code:`repmat` function can be used to replicate a single value and create a matrix.

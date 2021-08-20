@@ -58,6 +58,14 @@ blockquote {
   border-color: #bce8f1;
 }
 
+.admonition-video-recap {
+  background-color: #E4F0DF;
+  border-color: #CDF0C0;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .admonition-exercise-files table {
   margin: 0;
 }

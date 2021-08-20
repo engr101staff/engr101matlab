@@ -15,12 +15,12 @@ For the next few examples, we're going to work with a dataset of 75 known star s
 
 Open up the dataset file (:code:`star_data.xlsx`) in Excel, Numbers, or a similar program. You'll see lots of interesting data about stars contained here! Here's what's in the dataset:
 
-* The name of each star.
-* The distance of each star from Earth in light-years.
-* The mass of each star, which is measured using the Sun as a reference point (e.g., the Sun has a mass of 1, and every other star has a mass relative to this).
-* The apparent magnitude measures how bright each star is as observed from Earth. The lower the number is, the brighter the star appears. That's why the Sun has such a low value (-26.74) - it's clearly the brightest object in the sky!
-* The number of confirmed planets orbiting each star (hello, Proxima b).
-* The stellar class of each star. The stellar class is a classification system based on the temperature of the star (e.g., red dwarfs are much cooler than white dwarfs).
+* The **name** of each star.
+* The **distance** of each star from Earth in light-years.
+* The **mass** of each star, measured using the Sun as a reference point (e.g., the Sun has a mass of 1, and every other star has a mass relative to this).
+* The **apparent magnitude** measures how bright each star is as observed from Earth. The lower the number, the brighter the star appears. That's why the Sun has such a low value (-26.74) - it's clearly the brightest object in the sky!
+* The number of **confirmed planets** orbiting each star (hello, Proxima b).
+* The **stellar class** of each star. The stellar class is a classification system based on the temperature of the star (e.g., red dwarfs are much cooler than white dwarfs).
 
 |
 
@@ -44,43 +44,29 @@ We can make some really neat plots with all of this data. Make sure that you've 
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-In the previous video, we read in our data from an Excel file and used it to create a scatter plot. In general, when we are plotting a dataset, we will take the following steps:
+  In general, when we are plotting a dataset, we will take the following steps:
 
-1. Input data (for example, from a :code:`.csv` file or an Excel file).
-2. Extract data into vectors.
-3. Perform calculations on the data.
-4. Display data in a plot.
+  1. Input data (for example, from a :code:`.csv` file or an Excel file).
+  2. Extract data into vectors.
+  3. Perform calculations on the data.
+  4. Display data in a plot.
 
-We specifically created a scatter plot. If we have a vector of x-values (say, :code:`selected_mass`) and a vector of y-values (say, :code:`selected_planets`), we can create a scatter plot.
+  We can create a scatter plot using :code:`scatter`. We can set the range (e.g., the minimum and maximum values) of the x-axis and y-axis using the :code:`xlim` and :code:`ylim`. We can also display the grid on our plots using :code:`grid on` (similarly, :code:`grid off` turns off the grid).
 
-.. code-block:: matlab
 
-  scatter(selected_mass, selected_planets);
+When should you use a scatter plot, and when should you use a line plot?
   
-.. tip::
-
-  When should you use a scatter plot, and when should you use a line plot?
+**Use a line plot when you want to connect your data points to form a continuous line.** This can help you visually interpolate what the data would look like between your data points, where you don't actually have any data to look at. It also gives you a good sense of which way the data is trending.
   
-  **Use a line plot when you want to connect your data points to form a continuous line.** This can help you visually interpolate what the data would look like between your data points, where you don't actually have any data to look at. It also gives you a good sense of which way the data is trending.
-  
-  **Use a scatter plot when you want to show your data points without connecting them.** This can be good when you are showing a lot of data points, and connecting them would make a crazy-looking line. A scatter plot can be effective when you are showing raw data, and you want to look at where there is a high density of data points and where is a low density.
-  
-We can set the range (e.g., the minimum and maximum values) of the x-axis and y-axis using the following commands.
-
-.. code-block:: matlab
-
-    xlim([0, 3]);
-    ylim([-1, 9]);
-    
-We can also display the grid on our plots using :code:`grid on` (similarly, :code:`grid off` turns off the grid).
+**Use a scatter plot when you want to show your data points without connecting them.** This can be good when you are showing a lot of data points, and connecting them would make a crazy-looking line. A scatter plot can be effective when you are showing raw data, and you want to look at where there is a high density of data points and where is a low density.
 
 .. mchoice:: ch06_02_ex_plot
-  :answer_a: plot(x_ordered, y_ordered) and plot(x_unordered, y_unordered) will give you the same result.
-  :answer_b: When you run plot(x_unordered, y_unordered), the plot automatically switches from a line plot to a scatter plot.
-  :answer_c: plot(x_unordered, y_unordered) appears to cross back over itself.
-  :answer_d: When you run plot(x_unordered, y_unordered), the plot switches axes to keep the plot a mathematical function.
+  :answer_a: A and B will give the same result.
+  :answer_b: When you run B, the plot automatically switches from a line plot to a scatter plot.
+  :answer_c: B appears to cross back over itself.
+  :answer_d: When you run B, the plot switches axes to keep the plot a mathematical function.
   :correct: c
   :feedback_a: Oops! Try running this in MATLAB - the plot is not the same.
   :feedback_b: Oops! Unless you tell MATLAB to switch plotting styles, it will not switch.
@@ -99,4 +85,20 @@ We can also display the grid on our plots using :code:`grid on` (similarly, :cod
     y_unordered = [30,50,20,10,40];
     
 
-  In the above code, :code:`x_unordered` and :code:`y_unordered` contain the same pairings as :code:`x_ordered` and :code:`y_ordered`, but they are in a different order. If you call :code:`scatter(x_ordered, y_ordered)` and :code:`scatter(x_unordered, y_unordered)`, you will get the same result. But what if you call :code:`plot(x_ordered, y_ordered)` and :code:`plot(x_unordered, y_unordered)`? Will the two calls to :code:`plot` give you the same result? (If you're not sure, try it out in MATLAB!)
+  In the above code, :code:`x_unordered` and :code:`y_unordered` contain the same pairings as :code:`x_ordered` and :code:`y_ordered`, but they are in a different order. If you call :code:`scatter(x_ordered, y_ordered)` and :code:`scatter(x_unordered, y_unordered)`, you will get the same result.
+
+  Consider the following two calls of :code:`plot`:
+
+  **A**
+  
+  .. code-block:: matlab
+
+    plot(x_ordered, y_ordered)
+
+  **B**
+
+  .. code-block:: matlab
+
+    plot(x_unordered, y_unordered)
+
+  Will **A** and **B** give the same result? (If you're not sure, try it out in MATLAB!)

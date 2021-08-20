@@ -6,3 +6,4 @@ Plotting and Figures
   :maxdepth: 4
 
   main.rst
+  extra_exercise.rst

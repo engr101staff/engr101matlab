@@ -57,6 +57,17 @@ Statistics and Simulation
 
       - Starter file for plotting city data
 
+    * - :download:`SampleErrorbarPlot.m <../_static/statistics_and_simulation/SampleErrorbarPlot.m>`
+
+      - .. reveal:: SampleErrorbarPlot_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>SampleErrorbarPlot.m</code>
+
+          .. literalinclude:: ../_static/statistics_and_simulation/SampleErrorbarPlot.m
+            :language: matlab
+
+      - Sample error bar plot
 
     * - :download:`batteryLife.mat <../_static/statistics_and_simulation/batteryLife.mat>`
 
@@ -106,7 +117,7 @@ Review: Min and Max
 ^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-We've seen previously two basic statistical measures of data, the minimum and maximum of a dataset. Recall that MATLAB has built-in functions for finding the maximum and minimum values in a dataset: :code:`max()` and :code:`min()`. Recall, also, that if you use a compound return when calling these functions, you can get both the minimum (or maximum) value and its location in the dataset:
+We've previously seen two basic statistical measures of data, the minimum and maximum of a dataset. Recall that MATLAB has built-in functions for finding the maximum and minimum values in a dataset: :code:`max()` and :code:`min()`. Recall, also, that if you use a compound return when calling these functions, you can get both the minimum (or maximum) value and its location in the dataset:
 
 .. image:: img/MaxCompoundReturn.png
   :width: 400
@@ -139,7 +150,7 @@ MATLAB has built-in functions to calculate each of these statistical measures:
 The mean function returns the column-by-column mean of a matrix, similar to the sum function from Chapter 3. For example, if we had this matrix :code:`A`:
 
 .. figure:: img/Mean_1.png
-  :width: 250
+  :width: 200
   :align: center
   :alt: A is initialized with A = [2,3,4,3;4,2,3,3];
 
@@ -165,7 +176,7 @@ If you would instead like to work row-by-row and find the means of each row in y
 
 .. admonition:: Heads Up!
 
-  For a row vector, the mean function returns the mean of that row (rather than the mean of each column, which would be just the vector itself and wouldn't be very useful). This means that if you start with a vector, functions like :code:`mean()` will *always* return a single result.
+  For a row vector, :code:`mean` returns the mean of that row (rather than the mean of each column, which would be just the vector itself and wouldn't be very useful). This means that if you start with a vector, functions like :code:`mean` will *always* return a single result.
 
 Finally, if you want to get the mean of all the elements in a matrix, you have a few choices:
 
@@ -185,7 +196,7 @@ Finally, if you want to get the mean of all the elements in a matrix, you have a
 :code:`median()`
 ----------------
 
-The :code:`median` function returns the median of a dataset, which is the value that would appear in the middle if the data were put into sorted order. If there is an even number of elements, the :code:`median` function averages the two elements in the middle of the sorted elements. It works with arrays in the same way as the mean function (i.e. column-by-column, selecting dimensions, etc.).
+The :code:`median` function returns the median of a dataset, which is the value that would appear in the middle if the data were put into sorted order. If there is an even number of elements, the :code:`median` function averages the two elements in the middle of the sorted elements. It works with arrays in the same way as the :code:`mean` function (i.e. column-by-column, selecting dimensions, etc.).
 
 In the following example, the vector :code:`B` has 10 elements (an even number of elements). After the vector :code:`B` is sorted within the :code:`median()` function, the middle element is found. Since :code:`B` has an even number of elements, the function takes the two elements in the middle and finds the mean of those values (in this case, the mean of the values 5 and 6 is 5.5), and returns that mean value as the median value of vector :code:`B`.
 
@@ -204,7 +215,7 @@ In the following example, the vector :code:`B` has 10 elements (an even number o
 :code:`mode()`
 --------------
 
-The :code:`mode` function returns the value of the dataset that occurs most often. It works with arrays in the same way as the mean function (i.e. column-by-column, selecting dimensions, etc.).
+The :code:`mode` function returns the value of the dataset that occurs most often. It works with arrays in the same way as the :code:`mean` function (i.e. column-by-column, selecting dimensions, etc.).
 
 In the following example, the vector :code:`X` has three elements with the value 8. The value 8 occurs the most times, so that is the mode for this vector:
 
@@ -251,7 +262,7 @@ Histograms
 ^^^^^^^^^^
 .. section 4
 
-A histogram is a visualization of the frequency of occurrence for certain values in a dataset. Below is a histogram of the latitude of the world's most populous cities. This histogram was generated from the data in the :file:`cities.xlsx` file we used earlier.
+A **histogram** is a visualization of the frequency of occurrences for certain values in a dataset. Below is a histogram of the latitude of the world's most populous cities. This histogram was generated from the data in the :file:`cities.xlsx` file we used earlier.
 
 .. figure:: img/Histogram_1.png
   :width: 450
@@ -268,14 +279,14 @@ This `Exploring Histograms <http://tinlizzie.org/histograms/>`__ website is a sp
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
 
-To recap, MATLAB has two very useful functions for working with histograms: 
+  MATLAB has two very useful functions for working with histograms: 
 
-- :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
-- :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
+  - :code:`histogram()` - creates a histogram of data by taking the dataset and sorting it into "bins"
+  - :code:`histcounts()` - gives you the number of elements belonging to each histogram bin
 
-As the Exploring Histograms website and the above MATLAB video show, histograms are very sensitive to the size of the bins you use in your histograms. You can specify either the number of bins or the bins themselves in MATLAB.
+  Histograms are very sensitive to the size of the bins you use in your histograms. You can specify either the number of bins or the bins themselves in MATLAB.
 
 ----------------------------------
 Exercise: City Longitude Histogram
@@ -298,9 +309,9 @@ Variance and Standard Deviation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-The mean, median, and mode of a dataset are useful starting points for understanding the characteristics of a dataset, but they are single numbers that describe the average, middle, and most common values (the central tendencies) of the dataset. In engineering, we also need to accommodate the more unlikely values, which can often be much smaller or much larger relative to the mean, median, or mode.
+The mean, median, and mode of a dataset are useful starting points for understanding the characteristics of a dataset, but they are single numbers that describe the average, middle, and most common values (the central tendencies) of the dataset.
 
-Variance and standard deviation are measures in descriptive statistics that tell us how 'spread out' a dataset is. The standard deviation is just the square root of the variance. Here is a histogram (or *distribution*) of data that is more *narrow* - more of the data points are grouped around a central value (0 in this case):
+**Variance** and **standard deviation** are measures that tell us how "spread out" a dataset is. The standard deviation is just the square root of the variance. Here is a histogram (or **distribution**) of data that is more *narrow* - more of the data points are grouped around a central value (0 in this case):
 
 .. figure:: img/VarStdDev_1.png
   :width: 450
@@ -318,7 +329,7 @@ Here is a histogram of data that is more *wide* - more of the data points are fa
 
   ..
 
-The more narrow distribution's variance is smaller than the wider distribution's variance. Similarly, the more narrow distribution's standard deviation is smaller than the wider distribution's standard deviation. Therefore, the smaller the variance (or standard deviation), the more narrow the distribution will be. 
+The more narrow distribution's variance is smaller than the wider distribution's variance. Similarly, the more narrow distribution's standard deviation is smaller than the wider distribution's standard deviation. *Therefore, the smaller the variance (or standard deviation), the more narrow the distribution will be.* 
 
 Important things to note when we compare these two figures:
 
@@ -363,7 +374,7 @@ Engineering data is often plotted with error bars included. Error bars can be us
   :align: center
   :alt: A plot including error bars indicates uncertainty.
 
-  You can download the script that generates this plot: :download:`SampleErrorbarPlot.m <../_static/statistics_and_simulation/SampleErrorbarPlot.m>`
+  You can download the script that generates this plot (:file:`SampleErrorbarPlot.m`) at the top of the chapter.
 
 Let's investigate error bar plots more with a hypothetical example: 
 
@@ -372,14 +383,11 @@ We work for a company that produces smartphones. Our company wants to analyze ba
 1. Our phones have 3 hours battery life when new.
 2. After 2 years, our phones will still have 2 hours of battery life.
 
-A battery's lifetime is defined as the length of time the battery can go before needing to be charged. A sample set of our batteries have been put through several years of simulated smartphone use. Twice per "simulated year", the lifetimes of each battery were tested and the mean and standard deviation of the for the set were recorded.
+A battery's lifetime is defined as the length of time the battery can go before needing to be charged. A sample set of our batteries have been put through several years of simulated smartphone use. Twice per "simulated year", the lifetimes of each battery were tested, and the mean and standard deviation of the set were recorded.
 
 We would like to visualize the degradation of battery lifetime throughout the years as well as the amount of variability in the dataset to confirm that the company can make the two claims stated above.
 
-The videos below show how an error bar plot is an effective tool for this analysis. If you would like to follow along with the videos, make sure to download these files first (see the chapter files box at the start of the chapter):
-
-- :file:`batteryLife.mat`
-- :file:`AnalyzeBatteries.m`
+The videos below show how an error bar plot is an effective tool for this analysis. Download :file:`batteryLife.mat` and :file:`AnalyzeBatteries.m` from the top of the chapter to follow along.
 
 First, let's just make the plot.
 
@@ -389,7 +397,9 @@ First, let's just make the plot.
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  We can use :code:`errorbar` to create an error bar plot. We looked at how to customize our plot.
 
 Now, how can we interpret these results?
 
@@ -399,7 +409,9 @@ Now, how can we interpret these results?
   :width: 560
   :align: center
 
-|
+.. admonition:: Video Recap
+
+  Using our error bar plot, we discussed whether the company could make the original two claims that they wanted to make.
 
 .. admonition:: Did you know?
 
@@ -494,31 +506,12 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* **MATLAB is often used to analyze data.** We tend to follow a similar pattern each time:
-
-  1. Read data in from a file
-  2. Look for some characteristics/process the data
-  3. Plot the data to see trends, patterns, extremes, etc.
-
-* MATLAB has built-in functions for calculating common statistical measures of datasets:
-
-  - :code:`mean` - mean (or average)
-  - :code:`median` - median
-  - :code:`mode` - mode
-  - :code:`var` - variance
-  - :code:`std` - standard deviation 
-
+* **MATLAB is often used to analyze data.** We tend to follow a similar pattern each time: Read data in from a file, look for some characteristics/process the data, and plot the data to see trends, patterns, extremes, etc.
+* MATLAB has built-in functions for calculating common statistical measures of datasets: :code:`mean` (average), :code:`median`, :code:`mode`, :code:`var` (variance), and :code:`std` (standard deviation).
 * The :code:`histogram` function will generate a histogram of a vector of data; if you need the number of occurrences in each bin, use the :code:`histcounts` function.
 * Error bars can be used to convey a range of values for each point on the plot or uncertainty about a measured value. MATLAB’s :code:`errorbar` function will create a plot with “error bars” at each data point.
-* **MATLAB is also used to simulate data.** When we simulate data, we also tend to follow a similar pattern each time:
-
-  1. Convert the math equations into a computer program
-  2. Create a starter set of data and use the computer program from step 1 to generate  predicted data
-  3. Look for some things / process data / plot data to see trends, etc.
-
+* **MATLAB is also used to simulate data.** When we simulate data, we also tend to follow a similar pattern each time: Convert the math equations into a computer program, create a starter set of data and use the computer program from step 1 to generate  predicted data, and look for some things / process data / plot data to see trends, etc.
 * The :code:`linspace` function can be used to generate equally spaced values, similar to the range operator (:code:`:`), to be used as a starter set of data. 
 * MATLAB can also generate random values to be used as a starter set of data. The :code:`randi` function generates pseudorandom integers from a uniform discrete distribution.
-* There are many other MATLAB functions for generating data from random distributions!
-
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
