@@ -20,6 +20,17 @@ Functions and Data
     :align: left
     :widths: auto
 
+    * - :download:`site_samples.csv <../_static/functions_and_data/site_samples.csv>`
+
+      - .. reveal:: site_samples_csv_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>site_samples.csv</code>
+
+          .. literalinclude:: ../_static/functions_and_data/site_samples.csv
+
+      - Data file containing 10 soil samples.
+
     * - :download:`daily_samples.csv <../_static/functions_and_data/daily_samples.csv>`
 
       - .. reveal:: daily_samples_csv_preview
@@ -33,17 +44,17 @@ Functions and Data
 
       - Data file containing 360 daily soil samples.
 
-    * - :download:`ESP.m <../_static/functions_and_data/ESP.m>`
+    * - :download:`esp.m <../_static/functions_and_data/esp.m>`
 
-      - .. reveal:: ESP_m_preview
+      - .. reveal:: esp_m_preview
           :showtitle: Preview
           :modal:
-          :modaltitle: ESP.m
+          :modaltitle: esp.m
 
-          .. literalinclude:: ../_static/functions_and_data/ESP.m
+          .. literalinclude:: ../_static/functions_and_data/esp.m
             :language: matlab
 
-      - :code:`ESP()` function.
+      - :code:`esp()` function.
     
   .. reveal:: monthly_average_download_instructions
     :showtitle: Download Instructions
@@ -108,7 +119,7 @@ Exercise: Reading Soil Sample Data
 
   .. reveal:: ch03_03_revealwt_data_files
 
-    .. youtube:: 4pR_k4Nq1GU
+    .. youtube:: 2z4-E4nW4P8
       :divid: ch03_03_wt_data_files
       :height: 315
       :width: 560
@@ -125,8 +136,6 @@ In addition to custom functions, MATLAB has many built-in functions that you can
     :height: 315
     :width: 560
     :align: center
-
-|
 
 .. admonition:: Video Recap
 
@@ -222,7 +231,7 @@ Exercise: Monthly Average of ESP
 
   .. reveal:: ch03_04_revealwt_monthly_average
 
-    .. youtube:: 3Whq8_IetxM
+    .. youtube:: MIMsoi_UfUk
       :divid: ch03_04_wt_monthly_average
       :height: 315
       :width: 560
@@ -235,7 +244,7 @@ Parameter Passing and Scope
 
 Let's look at a few more details about how functions work in MATLAB.
 
-.. youtube:: KTNmk3TX01M
+.. youtube:: 52dXax6H_XY
     :divid: ch03_05_vid_scope_and_parameters
     :height: 315
     :width: 560
