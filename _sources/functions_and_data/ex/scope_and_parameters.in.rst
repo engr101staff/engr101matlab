@@ -15,7 +15,7 @@ Consider each of the following programs, which attempt to define and call a func
             result = sum(x .* y);
           end
 
-        :file:`script.m`
+        :file:`Script.m`
         
         .. code-block:: matlab
 
@@ -38,7 +38,7 @@ Consider each of the following programs, which attempt to define and call a func
             result = sum(a .* b);
           end
 
-        :file:`script.m`
+        :file:`Script.m`
         
         .. code-block:: matlab
 
@@ -60,7 +60,7 @@ Consider each of the following programs, which attempt to define and call a func
             result = sum(a .* b);
           end
 
-        :file:`script.m`
+        :file:`Script.m`
         
         .. code-block:: matlab
 
@@ -83,7 +83,7 @@ Consider each of the following programs, which attempt to define and call a func
             result = sum(x .* y);
           end
 
-        :file:`script.m`
+        :file:`Script.m`
         
         .. code-block:: matlab
 
@@ -91,5 +91,3 @@ Consider each of the following programs, which attempt to define and call a func
           b = [1, 2, 3];
           result = dot_product(x, y);
           disp(result);
-
-        |
