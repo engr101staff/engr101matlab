@@ -28,6 +28,17 @@ Strings and Cell Arrays
           .. literalinclude:: ../_static/strings_and_cells/Engineering.m
 
       - Starter script including a cell array for engineering disciplines.
+
+    * - :download:`cities.xlsx <../_static/strings_and_cells/cities.xlsx>`
+
+      - .. reveal:: cities_xlsx_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>cities.xlsx</code>
+
+          No preview available.
+
+      - Excel file containing statistics about various cities.
     
   .. reveal:: strings_cells_and_tables_download_instructions
     :showtitle: Download Instructions
@@ -93,6 +104,30 @@ MATLAB includes a matrix-like data structure called a **cell array** that allows
 .. admonition:: Video Recap 
 
   Cell arrays are heterogenous collections of elements and are created using the curly brackets :code:`{` and :code:`}`. Cell arrays introduce another "layer" to our data. You've got a vector/matrix of cells, and then inside each of those cells is the actual data.
+
+.. mchoice:: ch9_02_cell_arrays_01
+
+  Select all of the following that are correctly defined cell arrays.
+
+  - ``data = [10; 'engr'; [5, 6, 7]]``
+
+    - Oops! This uses square brackets [] instead of curly brackets {}, so this is a regular array, not a cell array.
+
+  - ``data = {200; '101'; [-2.2, 10.1, 7.2]}``
+
+    + Correct!
+
+  - ``data = {200, '101'; [-2.2, 10.1, 7.2]}``
+
+    - Oops! Cell arrays must be rectangular. This cell array does not meet this requirement - it has two elements on the first row, but only one element on the second row.
+
+  - ``data = {'something', 'awesome'; 'happening', 'here'}``
+
+    + Correct!
+
+  - ``data = {10; 20; 30}``
+
+    + Correct! Because you're only working with one type of data here (ints), you could also use a regular array.
   
 Let's consider indexing into cell arrays:
 
@@ -215,16 +250,59 @@ Another case to be made for cell arrays is that sometimes the data we have are n
 
   The :code:`xlsread` function allows us to read data from an Excel spreadsheet into MATLAB, and cell arrays can be used to represent this data.
 
+-----------------------------
+Exercise: Reading Cities Data
+-----------------------------
+Download :code:`cities.xlsx` from the top of the chapter, and open it up in Excel (or another spreadsheet program) to view its contents. Note that there are four columns of data, containing the name of each city, each city's population, and each city's latitude and longitude (this is the same data that we worked with in the Statistics and Simulation chapter!).
+
+Open up MATLAB, and use the command we saw in the video to read in :code:`cities.xlsx`:
+
+.. code:: matlab
+
+  [num, txt, raw] = xlsread('cities.xlsx');
+
+Find your MATLAB workspace and take a look at what the variables :code:`num`, :code:`raw`, and :code:`txt` look like. What data type is each variable?
+
+Work through the following questions, and try out the code in MATLAB as you go along!
+
+.. hint ::
+
+  For each question, first decide whether you want to use :code:`num`, :code:`txt` or :code:`raw` to get the information you need. Then, you'll need to index into that variable. Consider the following questions: Are you indexing into a regular array or a cell arrray? If you're indexing into a cell array, should you use cell indexing or content indexing?
+
+.. shortanswer:: ch08_04_ex_cities_data_01
+
+  How would we get the city populations as an array? Write a line of code to do this, and store the array in the variable :code:`populations`. (:code:`populations` should be a :code:`79x1 double` regular array.)
+
+.. shortanswer:: ch08_04_ex_cities_data_02
+
+  How would we get the list of cities as a cell array? Write a line of code to do this, and store the cell array in the variable :code:`cities`. (:code:`cities` should be a :code:`79x1` cell array. Don't include the first row "City" in the cell array.)
+
+.. shortanswer:: ch08_04_ex_cities_data_03
+
+  How would we get the header row (e.g., the first row of the file) as a cell array? Write a line of code to do this, and store the cell array in the variable :code:`header`. (:code:`header` should be a :code:`1x4` cell array.)
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch08_04_revealwt_cities_data
+  
+    .. youtube:: NljmZ6_301A
+      :divid: ch08_04_wt_cities_data
+      :height: 315
+      :width: 560
+      :align: center
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
+* The :code:`whos` function shows us the type of a variable.
 * The **string** data type holds a sequence of characters (e.g., a "word"). There are two types of strings in MATLAB: single quote strings and double quote strings. Double quote strings have some convenient features (such as working with the operators :code:`==`, :code:`>`, and :code:`+`). To compare or concatenate single quote strings, use :code:`strcmp` and :code:`strcat`.
 * A **cell array** is like a matrix, but it holds a heterogenous collection of elements. It is created using the curly brackets :code:`{` and :code:`}`.
 * There are two ways to index into a cell array: **cell indexing** (using :code:`()` operator) selects groups of cells and results in a smaller cell array. **Content indexing** (using :code:`{}` operator) selects and unpacks the actual data from its containing cell.
 * Use :code:`cell2mat` to create a regular array from a cell array containing numbers: Use :code:`num2cell` to create a cell array from a regular array of numbers.
+* We covered two examples where you should use a cell array: when working with a list of strings, or when reading in heterogenous data from an Excel spreadsheet.
 * The :code:`xlsread` function can be used to read data from an Excel spreadsheet.
 
 You can double check that you have completed everything on the "Assignments" page. Click the icon that looks like a person, go to "Assignments", select the chapter, and make sure to scroll all the way to the bottom and click the "Score Me" button.
