@@ -1,3 +1,10 @@
+.. image:: img/projectile_motion.png
+  :width: 600
+  :align: center
+  :alt: An illustration of projectile motion.
+
+|
+
 Let's practice simulating a process in MATLAB. Projectile motion is a well-known process: you see projectile motion anytime you throw something through the air. In the real world, there are a lot of things going on when you throw an item through the air: the initial speed you give to the item, the angle that you throw it at relative to the ground, drag, lift, gravity, cross winds... there's a lot. Too much for what we want to practice with today, so we'll make some assumptions:
 
 1. We assume that only gravity is acting on this item; we will neglect drag, lift, cross-winds, ill-timed flying insects, etc.

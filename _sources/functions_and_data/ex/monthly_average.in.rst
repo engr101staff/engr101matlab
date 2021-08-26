@@ -1,8 +1,8 @@
-In this exercise, you'll work with the ESP data and write a function to compute the average ESP value for a given month. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`ESP.m` from the beginning of the chapter.
+In this exercise, you'll work with the ESP data and write a function to compute the average ESP value for a given month. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`esp.m` from the beginning of the chapter.
 
 Create a new function file called :file:`monthlyAverage.m`.
 
-In that file, define the function :code:`monthlyAverage()`. It takes in a vector of 360 ESP values and a month number (e.g. 1 is January, 12 is December) and returns the average of ESP values for samples during the given month. For example, given the :code:`esp` vector, you could call :code:`monthlyAverage(esp, 3)` to compute the average ESP during March (the 3rd month).
+In that file, define the function :code:`monthlyAverage()`. It takes in a vector of 360 ESP values and a month number (e.g. 1 is January, 12 is December) and returns the average of ESP values for samples during the given month. For example, given the :code:`espValues` vector, you could call :code:`monthlyAverage(espValues, 3)` to compute the average ESP during March (the 3rd month).
 
 **Step 1**
 

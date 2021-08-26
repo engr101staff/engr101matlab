@@ -318,6 +318,23 @@ Traversing a Vector
       cout << vec.at(i) << endl;
     }
 
+Depending on your compiler settings, you will get a warning (or even an error!) when you use this loop to traverse a vector. The warning might say something like, *conversion from 'size_t' to 'int', possible loss of data*.
+
+This is because :code:`vec.size()` technically returns a :code:`size_t` data type, not an :code:`int`. The :code:`size_t` data type is used to hold the size of an object, like a vector. It can be used for indexing and counting, but it can never be negative (since a vector will never have a negative size).
+
+To avoid this warning, we can re-write our loop like this:
+
+.. code-block :: cpp
+
+  vector<int> vec(4,42);
+  for (size_t i = 0; i < vec.size(); ++i) {
+    cout << vec.at(i) << endl;
+  }
+
+Notice that this time, in our loop, we are declaring :code:`i` to be a variable of type :code:`size_t` rather than type :code:`int`. This will do the exact same thing as the loop that we saw in the video.
+
+*So, when should you use* :code:`size_t` *?* Use :code:`size_t` when you are comparing your loop index to the :code:`size()` of a vector or other object. Other than that, no need to use :code:`size_t` in your loops!
+
 ------------------------------
 Exercise: Print Doubled Vector
 ------------------------------

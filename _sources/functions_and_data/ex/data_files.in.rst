@@ -2,7 +2,7 @@ The nutrient cycle of Proxima B is not yet fully understood, so our scientists w
 
 For simplicity, we will assume all months have 30 days, such that there are 360 samples total. The data are stored in a file called :file:`daily_samples.csv`.
 
-In this exercise, you'll read in that data using the :code:`csvread()` function and compute the ESP for all daily samples. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`ESP.m` from the beginning of the chapter.
+In this exercise, you'll read in that data using the :code:`csvread()` function and compute the ESP for all daily samples. Make sure that you've downloaded :code:`daily_samples.csv` and :code:`esp.m` from the beginning of the chapter.
 
 Create a new script called :file:`AnalyzeESP.m` and write code that follows these steps:
 
@@ -24,7 +24,7 @@ Set :code:`Na`, :code:`K`, :code:`Ca`, and :code:`Mg` variables to hold the data
 
 **Step 3**
 
-Use the :code:`ESP()` function to compute a vector of ESP values for each of the samples (you should pass in the variables from the previous step). Store the result in a variable called :code:`esp`.
+Use the :code:`esp()` function to compute a vector of ESP values for each of the samples (you should pass in the variables from the previous step). Store the result in a variable called :code:`espValues`.
 
 .. Note::
 
