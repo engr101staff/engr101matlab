@@ -37,12 +37,22 @@ Tables
     .. include:: ../common/matlab_download_instructions.in.rst
       
 
-^^^^^^
-Tables
-^^^^^^
+^^^^^^^^^^^^^
+Introduction
+^^^^^^^^^^^^^
 .. section 5
 
-MATLAB also supports a data structure called a **table**.
+We have looked at quite a few data structures in MATLAB already! In this chapter we're going to be introducing a new data structure, a **table**. Before we do that, let's review some of the types of data that we've already seen.
+
+.. dragndrop:: ch10_01_ex_warm_up
+  :match_2: vector|||a one-dimensional, homogenous sequence of elements
+  :match_3: matrix|||a two-dimensional, homogenous grid of elements
+  :match_4: string|||a one-dimensional sequence of characters
+  :match_5: cell array|||a heterogenous collection of elements
+
+  Match each data type with its description.
+
+Let's take a look at how tables are different from the data structures we've previously seen.
 
 .. youtube:: 5mfJc4BuJQA
   :divid: ch08_05_vid_introduction_to_tables
@@ -52,17 +62,50 @@ MATLAB also supports a data structure called a **table**.
 
 .. admonition:: Video Recap
 
-  A table may contain several columns of data, where each column contains a particular kind of data (that may be different from the other columns). Columns can have names, and data can be accessed according to their column name as well as by index.
+  A **table** is a tabular data structure that may contain several columns of data. Each column may have a different type of data. Columns can be accessed using the dot operator (e.g., :code:`rovers.ID`).
 
-  If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function makes it easy to read the data into MATLAB.
+  If you've got data already in a tabular format (e.g. a spreadsheet or CSV file), a MATLAB table provides a lot of convenient features above and beyond regular matrices, and the :code:`readtable` function allows you to read the data in MATLAB.
 
-  We can use the :code:`()` and :code:`{}` operators for indexing into tables, much like we did with cell arrays. To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
+.. mchoice:: ch08_05_ex_introduction_to_tables
+  :answer_a: Cell arrays store heterogenous data, while tables don't.
+  :answer_b: Tables store heterogenous data, while cell arrays don't.
+  :answer_c: For tables, every element in a column must have the same data type. For cell arrays, elements in a column can have different data types.
+  :answer_d: Tables have column headers. Cell arrays don't.
+  :answer_e: Tables are designed for data that is already in a tabular format. Cell arrays are more flexible.
+  :correct: c,d,e
+  :feedback_a: Oops! Both tables and cell arrays store heterogenous data.
+  :feedback_b: Oops! Both tables and cell arrays store heterogenous data.
+  :feedback_c: Correct!
+  :feedback_d: Correct!
+  :feedback_e: Correct! As a side note, all tables can be converted to cell arrays using the function table2cell.
+
+  What are the differences between tables and cell arrays? Select all that apply.
+
+^^^^^^^^^^^^^^^^^^^^
+Indexing into Tables
+^^^^^^^^^^^^^^^^^^^^
+
+Let's take a look at how we can index into tables.
+
+.. youtube:: CzEurDa7ud8
+  :divid: ch08_05_vid_table_indexing
+  :height: 315
+  :width: 560
+  :align: center
+
+.. admonition:: Video Recap
+
+  We can use the :code:`()` and :code:`{}` operators for indexing into tables. Using :code:`()` always returns another table. Using :code:`{}` unpacks the data.
+
+  Additionally, we can use the names of the columns to index into a table (e.g., :code:`rovers{2, 'charge'} or :code:`rovers.charge(2)`).
+  
+  To get the dimensions of our table, we can use the :code:`size`, :code:`height`, and :code:`width` functions.
 
 ----------------------------------
 Exercise: Accessing Data in Tables
 ----------------------------------
 
-The Proxima b Department Of Geologic Exploration (DOGE) maintains a fleet of autonomous rovers that are used to collect samples of rocks from different sites on Proxima b for further analysis. Information about these rovers (i.e. their ID number, rover type, cargo capacity in kg, battery charge level, and current location) is stored in a file called :file:`rover_data.csv`.
+The Proxima b Department Of Geologic Exploration (DOGE) maintains a fleet of autonomous rovers that are used to collect samples of rocks from different sites on Proxima b for further analysis. Information about these rovers (i.e. their ID number, rover type, cargo capacity in kg, battery charge level, and current location) is stored in a file called :file:`rover_data.csv`. Download this file from the top of the chapter.
 
 Because the data is in a tabular format, this is a perfect dataset for a MATLAB table. Read it in using this command:
 
@@ -167,8 +210,6 @@ Consider each of the following MATLAB expressions. Select the best description o
       :width: 560
       :align: center
 
-|
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Manipulating Data in Tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -184,7 +225,11 @@ Tables provide a number of convenient ways to manipulate data. First, let's take
 
 .. admonition:: Video Recap
 
-  Rows can be added to a table using the same matrix builder notation that we used with regular matrices. The function :code:`repmat` can be used to replicate a single value and create a matrix. We can sort a table using :code:`sortrows`.
+  To add a new row to a table, use matrix builder notation (e.g., :code:`rovers = [ rovers ; new_row ]`). To create a new row, create a cell array with the data we want, and then use matrix builder notation to add it to the table.
+
+  To add a new column to a table, create a column of data and then use dot notation to add the column to the table (e.g., :code:`rovers.names = new_column`). The function :code:`repmat` can be used to replicate a single value and create a matrix. 
+
+  We can sort a table using :code:`sortrows`. By default, the table will be sorted using the first column in the table.
 
 We can also use indexing and assignment to modify specific selections of elements within a table, combined with powerful tools like logical indexing that allow us to perform complex operations without having to write a lot of code.
 
@@ -196,13 +241,13 @@ We can also use indexing and assignment to modify specific selections of element
 
 .. admonition:: Video Recap
 
-  TODO
+  Indexing and assignment can be used together to modify a table in complex ways. Be thoughtful about whether you use :code:`()` or :code:`{}` to index into the table.
 
 -------------------------------------
 Exercise: Manipulating Data in Tables
 -------------------------------------
 
-Refer to the same dataset from the :file:`rover_data.txt` file as in the previous exercise. If you don't still have the table loaded into matlab, go ahead and rerun the code:
+Refer to the same dataset from the :file:`rover_data.txt` file as in the previous exercise. If you don't still have the table loaded into MATLAB, go ahead and rerun the code:
 
 .. code-block:: matlab
 
@@ -314,7 +359,10 @@ Summary
 
 This is the end of the chapter! Here is a summary of what we covered in this chapter: 
 
-* **Tables** are data structures that may contain several columns of data (each column can have a different data type). Similar to cell arrays, use :code:`()` and :code:`{}` to index into tables. To get the dimensions of a table, use :code:`size`, :code:`height`, or :code:`width`. Use :code:`sortrows` to sort the rows of a table.
+* **Tables** are data structures that may contain several columns of data (each column can have a different data type).
+* Similar to cell arrays, use :code:`()` and :code:`{}` to index into tables.
+* To get the dimensions of a table, use :code:`size`, :code:`height`, or :code:`width`.
+* Use :code:`sortrows` to sort the rows of a table.
 * Read in data in a tabular format using :code:`readtable`.
 * The :code:`repmat` function can be used to replicate a single value and create a matrix.
 
