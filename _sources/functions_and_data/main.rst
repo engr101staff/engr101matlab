@@ -155,7 +155,7 @@ In addition to custom functions, MATLAB has many built-in functions that you can
 
     [m, i] = max(data)
 
-Here's are some examples of the :code:`sum()` function:
+Here's some examples of the :code:`sum()` function:
 
 .. raw:: html
 

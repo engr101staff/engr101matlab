@@ -10,6 +10,32 @@
 Strings and Cell Arrays
 ========================
 
+.. admonition:: Chapter Files
+
+  Here are the files we'll be using for this chapter's exercises. It might be helpful to go ahead and download them now and move them to your current folder in MATLAB. (It's also a good idea to go ahead and create a new folder for this chapter and use that as your current folder, so that you don't clutter up whatever else you were working on.)
+
+  .. list-table:: 
+    :align: left
+    :widths: auto
+
+    * - :download:`Engineering.m <../_static/strings_and_cells/Engineering.m>`
+
+      - .. reveal:: Engineering_m_preview
+          :showtitle: Preview
+          :modal:
+          :modaltitle: <code>Engineering.m</code>
+
+          .. literalinclude:: ../_static/strings_and_cells/Engineering.m
+
+      - Starter script including a cell array for engineering disciplines.
+    
+  .. reveal:: strings_cells_and_tables_download_instructions
+    :showtitle: Download Instructions
+    :modal:
+    :modaltitle: File Download Instructions for MATLAB
+    
+    .. include:: ../common/matlab_download_instructions.in.rst
+
 ^^^^^^^^^^^^
 Introduction
 ^^^^^^^^^^^^
@@ -85,8 +111,6 @@ Let's consider indexing into cell arrays:
 
   The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
 
-TODO add some multiple choice questions about cell indexing & content indexing
-
 -----------------------------
 Exercise: Cell Array Practice
 -----------------------------
@@ -135,9 +159,44 @@ Now that we've seen the basics of cell arrays, let's take a look at how they're 
 
 .. admonition:: Video Recap
 
+  When should you use cell arrays? One example is when you want to work with a list of strings.
+
   We saw that there are two different kinds of strings in MATLAB: single quote strings and double quote strings. For single quote strings, use :code:`strcmp()` to see if two strings are equal, and :code:`strcat()` to concatenate two strings.
 
   Double quote strings are convenient and should be used wherever possible. With double quote strings, you can use operators such as :code:`==`, :code:`<`, and :code:`+`.
+
+----------------------------------
+Exercise: Engineering Disciplines
+----------------------------------
+Let's practice working with cell arrays. Download :code:`Engineering.m` from the top of the chapter and open it up in MATLAB. You'll see that it contains a cell array with a list of different engineering disciplines found at the University of Michigan.
+
+.. Note::
+
+   When you open up :code:`Engineering.m`, you'll notice that the cell array is defined across multiple lines of code, with :code:`...` at the end of each line. We could have written the whole cell array on one line of code, but that would have been harder to read. Using :code:`...` allows you to spread out what is normally a single line of code on to multiple lines (for readability purposes).
+
+Starting with this cell array, add the following things to the script:
+
+1. First, let's make this list of engineering disciplines a little more formal! Add "Engineering" to the end of every element of the cell array. (After doing this, the first element will change from "Aerospace" to "Aerospace Engineering".)
+
+2. Next, there's a typo in this list! "Macromolecular" is misspelled as "Macromlecular". Use string comparison to find the cell array element that is misspelled (e.g., which element equals "Macromlecular Engineering"?). Once you've found the misspelled element, change this element to be the correct spelling.
+
+.. hint::
+
+  Will you use cell indexing or context indexing to access the misspelled element and change it to the current spelling?
+
+.. shortanswer:: ch08_02_ex_engineering_disciplines
+
+  Copy and paste your :code:`Engineering.m` script here. (You don't need to copy and paste the initial cell array.)
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch08_02_revealwt_engineering_disciplines
+  
+    .. youtube:: A0_e7w2i48M
+      :divid: ch08_02_wt_engineering_disciplines
+      :height: 315
+      :width: 560
+      :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reading Excel Files in MATLAB

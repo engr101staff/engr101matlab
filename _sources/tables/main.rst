@@ -18,14 +18,14 @@ Tables
     :align: left
     :widths: auto
 
-    * - :download:`rover_data.csv <../_static/strings_cells_and_tables/rover_data.csv>`
+    * - :download:`rover_data.csv <../_static/tables/rover_data.csv>`
 
       - .. reveal:: rover_data_csv_preview
           :showtitle: Preview
           :modal:
           :modaltitle: <code>rover_data.csv</code>
 
-          .. literalinclude:: ../_static/strings_cells_and_tables/rover_data.csv
+          .. literalinclude:: ../_static/tables/rover_data.csv
 
       - Dataset containing information about a fleet of autonomous rovers.
     

@@ -1,4 +1,4 @@
-Strings and Cell Array
+Strings and Cell Arrays
 :::::::::::::::::::::::
 
 .. toctree::
