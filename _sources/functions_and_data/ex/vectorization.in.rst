@@ -1,4 +1,4 @@
-Now that we've created the :code:`ESP()` function, let's see how we can use it. If you want to follow along with the video, you can download :code:`site_samples.csv` from the top of the chapter.
+Now that we've created the :code:`esp()` function, let's see how we can use it. If you want to follow along with the video, you can download :code:`site_samples.csv` from the top of the chapter.
 
 .. youtube:: HEBnzRdsQbg
     :divid: ch03_03_vid_data_files
