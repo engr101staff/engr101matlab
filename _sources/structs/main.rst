@@ -207,11 +207,13 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
       vector<Moon> moons; // a vector of Moons
     };
 
+----------------------------------------
+Exercise: Creating a Struct in Lobster
+----------------------------------------
 
-
---------------------
+^^^^^^^^^^^^^^^^^^^^
 Vectors of Structs
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 .. youtube:: qQhqhBIqwsg
   :divid: ch18_03_vid_vectorsOfStructs
