@@ -158,6 +158,16 @@ Modify the code below to replace the update expressions in each of the loops wit
   - :boat: Correct.
     :x: Incorrect. If you finished the exercise, please double check your spelling.
 
+.. admonition:: Walkthrough
+
+  .. reveal:: ch13_03_revealwt_increment_and_decrement
+  
+    .. youtube:: pmtnsKfoEdY
+      :divid: ch13_03_wt_increment_and_decrement
+      :height: 315
+      :width: 560
+      :align: center
+
 ^^^^^^^^^^^^^^^^^
 :code:`for` Loops
 ^^^^^^^^^^^^^^^^^
@@ -467,7 +477,7 @@ Modify the code below to implement this behavior.
 
   .. reveal:: ch13_08_revealwt_dna_matching
 
-    .. youtube:: xzx-9movR2o
+    .. youtube:: BU84FJ_EQco
       :divid: ch13_08_vid_dna_matching
       :height: 315
       :width: 560

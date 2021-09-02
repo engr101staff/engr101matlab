@@ -251,6 +251,176 @@ If you want to access individual characters out of a :code:`string`, you can use
 
    Instead of using :code:`[]` indexing, you can use :code:`.at()` to index into a string. Using this function warns you if you are about to go out-of-bounds, but is a little bit slower.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+More String Operations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's look at a few more useful string operations.
+
+----------------
+:code:`.empty()`
+----------------
+
+The :code:`empty` function tells you whether a string is the empty string (:code:`""`) or not. For example:
+
+.. code:: cpp
+
+   string chant = "Hail to the victors valiant";
+   if (chant.empty()) {
+      cout << "Empty string" << endl;
+   } else {
+      cout << "Not empty" << endl; // This will print out
+   }
+
+---------------
+:code:`.find()`
+---------------
+
+The :code:`find` function searches a string for the first occurrence of a second string. For example, this code finds the first occurrence of "victors" in the string "Hail to the victors valiant":
+
+.. code :: cpp
+
+   string chant = "Hail to the victors valiant";
+   int index = chant.find("victors"); // this will return index 12
+
+The :code:`find` function returns the index where the first occurrence of a second string is located. If the second string is not in the first string, :code:`find` will return :code:`string::npos`. You can check for this using an if statement:
+
+.. code :: cpp
+
+   string chant = "Hail to the victors valiant";
+   int index = chant.find("kitten");
+   if (index == string::npos) {
+      cout << "Couldn't find!" << endl; // This will print out
+   } else {
+      cout << "Found!" << endl;
+   }
+
+|
+
+.. mchoice:: ch15_07_ex_find_01
+
+  What will the value of ``index`` be after the following code runs?
+
+  .. code :: cpp
+
+   string chant = "Hail to the victors valiant";
+   int index = chant.find("the");
+
+  - ``8``
+
+    + Correct! "the" begins at index 8.
+
+  - ``9``
+
+    - Oops! Remember that string indexing starts at 0, not 1.
+
+  - ``12``
+
+    - Oops! If you're having trouble, try this out in VS Code!
+
+  - ``string::npos``
+
+    - Oops! This is what ``find`` returns when it can't find the second string in the first string. If you're having trouble, try this out in VS Code!
+
+------------------
+:code:`.replace()`
+------------------
+
+The :code:`replace` function takes three arguments: an integer :code:`pos`, an integer :code:`len`, and a string :code:`str2`. The :code:`replace` function replaces the portion of the string that begins at character :code:`pos` and spans :code:`len` characters by new contents :code:`str2`. Consider an example:
+
+.. code :: cpp
+
+   string chant = "Hail to the victors valiant";
+   chant.replace(0, 4, "HAIL");
+   cout << chant; // will print "HAIL to the victors valiant"
+
+In this example, we wanted to replace the portion of :code:`chant` that begins at :code:`0` and spans :code:`4` characters. We replaced it with a new string: "HAIL".
+
+Note that :code:`len` does not need to be the same length as :code:`str2`.
+
+.. fillintheblank:: ch15_07_ex_replace_01
+
+   What will the following code output?
+
+   .. code :: cpp
+
+      string chant = "Hail to the victors valiant";
+      chant.replace(12, 7, "wolverines");
+      cout << chant;
+   
+   |blank|
+  
+   - :Hail to the wolverines valiant: Correct! We replaced the portion of chant that begins at 12 and spans 7 characters with the new string "wolverines".
+     :x: Incorrect. Which index are we starting at? How many characters are replacing? If you're having trouble, try this out in VS Code!
+
+
+.. fillintheblank:: ch15_07_ex_replace_02
+
+   What will the following code output?
+
+   .. code :: cpp
+
+      string chant = "Hail to the victors valiant";
+      chant.replace(4, 4, "");
+      cout << chant;
+   
+   |blank|
+  
+   - :Hailthe victors valiant: Correct! We replaced the portion of chant that begins at 4 and spans 4 characters with the empty string.
+     :x: Incorrect. Which index are we starting at? How many characters are replacing? If you're having trouble, try this out in VS Code!
+
+
+There's more ways that we can use the :code:`replace` function. Open up the `documentation <https://www.cplusplus.com/reference/string/string/replace/?kw=string%3A%3Areplace>`__ and scan through it. Use the documentation to answer the following question.
+
+.. mchoice:: ch15_07_ex_replace_03
+
+  If you want to replace all of the characters until the end of the string, what should the ``len`` parameter be?
+
+  - ``0``
+
+    - Oops! Find the parameters section of the documentation, and look at the ``len`` parameter.
+
+  - ``-1``
+
+    - Oops! Find the parameters section of the documentation, and look at the ``len`` parameter.
+
+  - ``string::infinity``
+
+    - Oops! Find the parameters section of the documentation, and look at the ``len`` parameter.
+
+  - ``string::npos``
+
+    + Correct! According to the documentation, A value of ``string::npos`` indicates all characters until the end of the string.
+
+------------------
+:code:`.substr()`
+------------------
+
+The :code:`substr` function creates a new string from a substring of another string. It takes two parameters: :code:`pos` and :code:`len`. It returns a new substring starting at character :code:`pos` and going :code:`len` characters. For example,
+
+.. code :: cpp
+
+   string chant = "Hail to the victors valiant";
+   string newString = chant.substr(0, 4); // newString is now "Hail"
+
+|
+
+.. fillintheblank:: ch15_07_ex_substr_01
+
+   What is the value of ``newString`` after the following code runs?
+
+   .. code :: cpp
+
+      string chant = "Hail to the victors valiant";
+      string newString = chant.substr(12, 4);
+   
+   |blank|
+  
+   - :vict: Correct! We took the substring that begins at position 12 and has a length of 4 characters.
+     :x: Incorrect. Which index are we starting at? How many characters should the substring be? If you're having trouble, try this out in VS Code!
+
+
+
 ^^^^^^^^^^^^^^^^^^^^^
 User Input and Output
 ^^^^^^^^^^^^^^^^^^^^^
@@ -409,7 +579,6 @@ We've provided some starter code for you.
       :width: 560
       :align: center
 
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 File Input/Output with Streams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -538,34 +707,11 @@ If you write your code in a file called :file:`replace_dome.cpp`, you can compil
 
    .. reveal:: ch15_07_revealwt_dome
 
-      Here's a sample solution:
-
-      .. code-block:: cpp
-
-         #include <iostream>
-         #include <fstream>
-         #include <string>
-         using namespace std;
-         int main() {
-           string target = "dome";
-           string replacement = "DOME";
-           
-           ifstream fin("dome.txt");
-           if ( !fin.is_open() ) {
-             cout << "Error opening dome.txt!" << endl;
-             return 1;
-           }
-           
-           ofstream fout("dome_new.txt");
-           string word;
-           while( fin >> word ) {
-             if (word != target) { fout << word << " "; }
-             else { fout << replacement << " "; }
-           }
-
-           fin.close();
-           fout.close();
-         }
+      .. youtube:: -py_5iHPVLY
+         :divid: ch15_07_wt_dome
+         :height: 315
+         :width: 560
+         :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
