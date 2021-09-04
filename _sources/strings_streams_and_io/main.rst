@@ -688,6 +688,67 @@ We want to read this data in our program. We want to put the city name in a :cod
 
 The loop will keep iterating until we reach the end of the file. Each time through the loop, we will read in three variables - :code:`cityName`, :code:`avgTemp`, and :code:`pop`.
 
+----------------------
+Exercise: Website Data
+----------------------
+
+For this exercise, imagine that you are designing a website, and you want to see information about who is visiting your website, in order to better optimize the website layout. You have a data file :code:`website_traffic.dat` that looks like this:
+
+.. code-block :: none
+
+   113.1.60.173 10:59am 100 2
+   141.234.110.240 11:34pm 800 20
+   77.191.52.132 7:02pm 600 3
+   118.170.76.10 6:00am 200 0
+   ...
+
+Each line in the file contains data about one unique visitor to your website. Each line contains the following four pieces of information: the IP address of the visitor, the time that they first visited the website, how many seconds they spent on the website, and how many links they clicked on the website.
+
+Arrange the lines of code below to write a program that reads in all of the data from :code:`website_traffic.dat` and then outputs the data to the terminal. Initialize the file stream before initializing the variables to hold the data from the file.
+
+Some lines contain **mistakes** or are **unnecessary** for the function - these lines should not be selected. Make sure to place the blocks at the right indentation levels!
+
+.. parsonsprob:: ch15_07_ex_websiteData
+    :language: cpp
+
+    -----
+    #include &lt;iostream&gt;
+    #include &lt;fstream&gt;
+    using namespace std;
+    =====
+    int main() {
+    =====
+      ifstream fin("website_traffic.dat");
+    =====
+      ofstream fin("website_traffic.dat"); #paired
+    =====
+      if (!fin.is_open()) {
+         cout << "Can't open file!" << endl;
+      }
+    =====
+      string ip_address;
+      string time;
+      int duration;
+      int clicks;
+    =====
+      double ip_address; #paired
+      double time;
+      int duration;
+      int clicks;
+    =====
+      while(fin >> ip_address >> time >> duration >> clicks) {
+    =====
+      while(fin << ip_address << time << duration << clicks) { #paired
+    =====
+         cout << ip_address << " " << time << " "<< duration << " "<< clicks << endl;
+    =====
+      }
+    =====
+      fin.close();
+    =====
+    }
+    =====
+
 -----------------------
 Exercise: Replace Dome
 -----------------------
