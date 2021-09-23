@@ -9,7 +9,7 @@ Again, use the :file:`rocks.csv` and :file:`analyzeRocks.m` files for this exerc
 
 .. fillintheblank:: ch04_03_ex_logical_operators_02
 
-  What is the average mass of the rocks with a metallicity between 0.4 and 0.6 (inclusive)?
+  What is the average mass of the rocks with a metallicity greater than 0.4 and less than 0.6?
 
   - :30.6932 0.01: Correct!
     :x: No, try again.

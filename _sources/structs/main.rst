@@ -432,7 +432,7 @@ Download the file :code:`bestRover.cpp` at the beginning of this chapter, and co
 
   .. reveal:: ch18_03_revealwt_bestRover
 
-    .. youtube:: _6PreT1hBPE
+    .. youtube:: wWSrov0LnLY
       :divid: ch18_03_wt_bestRover
       :height: 315
       :width: 560
