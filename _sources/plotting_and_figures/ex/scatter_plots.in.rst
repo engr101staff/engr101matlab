@@ -78,12 +78,11 @@ When should you use a scatter plot, and when should you use a line plot?
 
   .. code-block:: matlab
   
-    x_ordered = [ 1, 2, 3, 4, 5];
-    y_ordered = [10,20,30,40,50];
-    
-    x_unordered = [ 3, 5, 2, 1, 4];
-    y_unordered = [30,50,20,10,40];
-    
+    x_ordered = [1 2 3 4 5];
+    y_ordered = [3 20 16 9 19];
+
+    x_unordered = [1 4 5 3 2];
+    y_unordered = [3 9 19 16 20];
 
   In the above code, :code:`x_unordered` and :code:`y_unordered` contain the same pairings as :code:`x_ordered` and :code:`y_ordered`, but they are in a different order. If you call :code:`scatter(x_ordered, y_ordered)` and :code:`scatter(x_unordered, y_unordered)`, you will get the same result.
 
