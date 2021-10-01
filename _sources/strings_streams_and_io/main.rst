@@ -749,6 +749,16 @@ Some lines contain **mistakes** or are **unnecessary** for the function - these 
     }
     =====
 
+.. admonition:: Walkthrough
+
+   .. reveal:: ch15_08_revealwt_website_data
+
+      .. youtube:: NLkVe40IVKc
+         :divid: ch15_08_wt_website_data
+         :height: 315
+         :width: 560
+         :align: center
+
 -----------------------
 Exercise: Replace Dome
 -----------------------
