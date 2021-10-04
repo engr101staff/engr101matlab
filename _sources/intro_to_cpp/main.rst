@@ -190,8 +190,8 @@ For this exercise, add some lines of code so that these five variables are decla
 1. :code:`numPieces` -- an integer representing the number of pieces of candy you have (5)
 2. :code:`cost` -- a double representing the cost per piece of candy (3.25)
 3. :code:`name` -- a string representing the name of the candy ("peeps")
-4. :code:`category` -- a character representing the category of the candy
-5. :code:`isGood` -- a boolean representing whether the candy tastes good
+4. :code:`category` -- a character representing the category of the candy ('K')
+5. :code:`isGood` -- a boolean representing whether the candy tastes good (false)
 
 .. raw:: html
 
