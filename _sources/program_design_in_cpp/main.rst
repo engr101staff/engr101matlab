@@ -444,6 +444,12 @@ In the next few videos, we'll use top-down design to clean up our proof-of-conce
 
    To begin the top-down design process, we wrote some pseudocode to sketch out the high-level steps of our program. Then, we were able to convert some of our pseudocode to code and identify any remaining helper functions that we need to write.
 
+
+.. note::
+
+   There's actually two minor mistakes in the files that we've given you. If you look closely, you'll see that we forgot to include `std::` for some keywords in the in the `.h` files (including `document.h`). Additionally, in `encryptDocument.cpp`, we mistakenly put `using namespace std;` before `#include "document.h"`. That's not the correct ordering (all includes should come first), but coincidentally it cancels out the mistake of not having the `std::` in `document.h` insofar as it's included in `encryptDocument.cpp`. This will be fixed in future iterations of our textbook!
+
+
 We identified two new functions that we need to implement: :code:`loadDocument()` and :code:`writeDocument()`. Let's add these functions in a new module, :code:`document.cpp` and :code:`document.h`.
 
 .. youtube:: mcp8F2Xl2JI
