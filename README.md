@@ -1,6 +1,8 @@
 # ENGR 101 Runestone
 
-This repository contains the runestone "book" with ENGR 101 lectures and exercises.
+This repository contains the Runestone book used for the University of Michigan's ENGR 101 class. It was first developed in 2020 by James Juett and Laura Alford, with additional development by Laura Burdick. This textbook continues to be used in the ENGR 101 class and is updated regularly to keep up with the needs of the class.
+
+The rest of the README provides documentation for how to contribute to the Runestone book.
 
 ## Getting started
 
