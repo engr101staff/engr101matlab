@@ -65,3 +65,15 @@ Full List of Topics
   :maxdepth: 1
 
   list_of_topics/toctree.rst
+
+
+^^^^^^^
+License
+^^^^^^^
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+
+^^^^^^^^^^^^^^^^^
+About this Book
+^^^^^^^^^^^^^^^^^
+This is the the Runestone book used for the University of Michigan's ENGR 101 class. It was first developed in 2020 by James Juett and Laura Alford, with additional development by Laura Burdick. This textbook continues to be used in the ENGR 101 class and is updated regularly to keep up with the needs of the class.
+
