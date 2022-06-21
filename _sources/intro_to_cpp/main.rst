@@ -413,6 +413,20 @@ Based on Laura's first attempt at the temperature converter, answer these review
 
   The calculation :code:`f = 9 / 5 * c + 32` works for all values of :code:`c` (the temperature in Celsius).
 
+.. mchoice:: jh-inputs_02_inputs_02
+  :author: Joe Hummel
+  :answer_a: False
+  :answer_b: False
+  :answer_c: True
+  :answer_d: False
+  :correct: c
+  :feedback_a: Incorrect. The equation has two inputs--T and W.
+  :feedback_b: Incorrect. The equation has more than one input--T and W.
+  :feedback_c: Correct! The equation has two inputs--T and W.
+  :feedback_d: Incorrect. The equation has only two inputs--T and W.
+
+  I want to write a program to compute windchill. How many inputs are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * power(W, 0.16) + (0.43 * T * power(W, 0.16))` 
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
