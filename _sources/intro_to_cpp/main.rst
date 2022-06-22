@@ -413,12 +413,12 @@ Based on Laura's first attempt at the temperature converter, answer these review
 
   The calculation :code:`f = 9 / 5 * c + 32` works for all values of :code:`c` (the temperature in Celsius).
 
-.. mchoice:: jh-inputs_02_inputs_02
+.. mchoice:: jh-inputs_02_inputs_04
   :author: Joe Hummel
-  :answer_a: False
-  :answer_b: False
-  :answer_c: True
-  :answer_d: False
+  :answer_a: No inputs
+  :answer_b: 1
+  :answer_c: 2
+  :answer_d: 3
   :correct: c
   :feedback_a: Incorrect. The equation has two inputs--T and W.
   :feedback_b: Incorrect. The equation has more than one input--T and W.
@@ -426,6 +426,20 @@ Based on Laura's first attempt at the temperature converter, answer these review
   :feedback_d: Incorrect. The equation has only two inputs--T and W.
 
   I want to write a program to compute windchill. How many inputs are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * power(W, 0.16) + (0.43 * T * power(W, 0.16))` 
+
+.. mchoice:: jh-inputs_02_inputs_06
+  :author: Joe Hummel
+  :answer_a: 4
+  :answer_b: 3
+  :answer_c: 2
+  :answer_d: 1
+  :correct: c
+  :feedback_a: Incorrect. The equation doesn't have four variables, there are only two--T and W.
+  :feedback_b: Incorrect. The equation doesn't have three variables, there are only two--T and W.
+  :feedback_c: Correct! The equation has two variables--T and W.
+  :feedback_d: Incorrect. The equation has more than one variable--T and W.
+
+  How many variabless are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * power(W, 0.16) + (0.43 * T * power(W, 0.16))` 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Summary
