@@ -315,3 +315,122 @@ Additionally, they may be a helpful resource when reviewing for assessments.
     - The conditional for the ``while`` loop is not met.
 
       + Since ``n`` is declared to be 0, 0 is not greater than 5, so the ``while`` loop does not execute.
+
+.. mchoice:: iteration_mcq_10
+
+    Which loop counts exactly 1, 2, 3,..., 20, and then stops? Assume i is an integer variable.
+
+    - .. code-block:: cpp
+
+     i = 1;
+     while (i <= 20)
+     {
+       ...
+       i = i + 1;
+     }
+
+      - ``
+
+    - .. code-block:: cpp
+
+     i = 1;
+     while (i != 20)
+     {
+       ...
+       i = i + 1;
+     }
+
+      - 
+
+    - .. code-block:: cpp
+
+     i = 0;
+     while (i <= 20)
+     {
+       ...
+       i = i + 1;
+     }
+
+      - 
+
+    - .. code-block:: cpp
+
+     i = 0;
+     while (i < 20)
+     {
+       ...
+       i = i + 1;
+     }
+
+      - 
+  
+    - All of the above.
+
+.. mchoice:: iteration_mcq_11
+
+    What is output by this code fragment? 
+
+    .. code-block:: cpp
+
+     int  x;
+     x = 2;
+
+     while (x <= 7)
+     {
+       cout << pow(x, 2) << ",";
+       x = x + 2;
+     }
+     cout << "#";
+
+
+
+    - 1,4,9,16,25,36,49,# 
+
+      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
+
+    - 4,9,16,25,36,49,#
+
+      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
+
+    - 4,16,36,49,#
+
+      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
+
+    - 4,16,36,#
+
+      + Correct. We see the function outputs 4, 16, and 36, completes the loop, and finishes with #. 
+
+.. mchoice:: iteration_mcq_12
+
+    What is output by this code fragment? 
+
+    .. code-block:: cpp
+
+     int  x = 1;
+     int y = 0;
+
+     while (x <= 5)
+     {
+       y = y + x;
+       x = x + 1;
+     }
+     cout << "y" << endl;
+
+
+
+    - 5
+
+      - Incorrect. The output of y at the end of this while loop is not 5--try writing out the steps to see the correct answer.
+
+    - 10
+
+      - Incorrect. The output of y at the end of this while loop is not 10--try writing out the steps to see the correct answer.
+
+    - 15
+
+      + Correct. The output of y at the end of this while loop is 15.
+
+    - 21
+
+      - Incorrect. The output of y at the end of this while loop is not 10--try writing out the steps to see the correct answer.
+
