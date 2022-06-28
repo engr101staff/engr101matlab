@@ -102,6 +102,24 @@ Exercise: Function Basics
       :width: 560
       :align: center
 
+------------------------------------------------------
+Optional Exercises: 
+------------------------------------------------------
+
+.. mchoice:: jh-inputs_21_intromatlab_02
+  :author: Joe Hummel
+  :answer_a: The same as in C++, to denote the end of a statement
+  :answer_b: To trigger evaluation of the command
+  :answer_c: To suppress output from commands
+  :answer_d: To differentiate between commands and comments
+  :correct: c
+  :feedback_a: Incorrect. The equation doesn't have four variables, there are only two--T and W.
+  :feedback_b: Incorrect. The equation doesn't have three variables, there are only two--T and W.
+  :feedback_c: Correct! The equation has two variables--T and W.
+  :feedback_d: Incorrect. The equation has more than one variable--T and W.
+
+  Write a MaxSpeed function 
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Vectorization and Data Files

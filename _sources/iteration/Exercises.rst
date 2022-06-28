@@ -434,3 +434,35 @@ Additionally, they may be a helpful resource when reviewing for assessments.
 
       - Incorrect. The output of y at the end of this while loop is not 10--try writing out the steps to see the correct answer.
 
+.. mchoice:: iteration_mcq_13
+
+    For exam score analysis, we have to loop and input the scores. What's the initial score to start things off?
+
+    .. code-block:: cpp
+
+     int score;
+     "Initial Value"
+
+     while("Condition")
+     {
+       "Computation"
+       "Advance"
+     }
+
+
+
+    - score = -1;
+
+      - Incorrect. 
+
+    - score = 0;
+
+      - Incorrect. 
+
+    - cin >> score;
+
+      + Correct. 
+
+    - cout << score;
+
+      - Incorrect. We don't have a score input yet, so we can't output score first.
