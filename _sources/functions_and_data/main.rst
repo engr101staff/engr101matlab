@@ -108,17 +108,17 @@ Optional Exercises:
 
 .. mchoice:: jh-inputs_21_intromatlab_02
   :author: Joe Hummel
-  :answer_a: The same as in C++, to denote the end of a statement
-  :answer_b: To trigger evaluation of the command
-  :answer_c: To suppress output from commands
-  :answer_d: To differentiate between commands and comments
-  :correct: c
-  :feedback_a: Incorrect. The equation doesn't have four variables, there are only two--T and W.
-  :feedback_b: Incorrect. The equation doesn't have three variables, there are only two--T and W.
-  :feedback_c: Correct! The equation has two variables--T and W.
-  :feedback_d: Incorrect. The equation has more than one variable--T and W.
+  :answer_a: function S = MaxSpeed(L), S = 1.3 * sqrt(L);, end
+  :answer_b: function MaxSpeed(L), MaxSpeed = 1.3 * sqrt(L);, end
+  :answer_c: function MaxSpeed(L, S), S = 1.3 * sqrt(L);, end
+  :answer_d: function MaxSpeed(L), S = 1.3 * sqrt(L);, return S;, end
+  :correct: b
+  :feedback_a: Incorrect. 
+  :feedback_b: Correct!
+  :feedback_c: Incorrect.
+  :feedback_d: Incorrect. 
 
-  Write a MaxSpeed function 
+  Write a MaxSpeed function that takes the length of a sailboat (in feet) and returns the maximum speed of that boat (in MPH). Equation: :code: '1.3 * sqrt(L)'
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
