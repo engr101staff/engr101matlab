@@ -184,3 +184,154 @@ More Practice:
       a = 2*a;
 
      end
+
+.. mchoice:: aa-inputsoutputs_03_conditionals_15
+  :author: Ashish Aggarwal
+  :answer_a: x will be 9
+  :answer_b: x will be 8
+  :answer_c: x will be 12
+  :answer_d: x will be 15
+  :answer_e: x will be 5
+  :correct: b
+  :feedback_a: Incorrect. Check the conditions again, note that only one condition gets executed.
+  :feedback_b: Correct! Check the conditions again, note that only one condition gets executed.
+  :feedback_c: Incorrect. Check the conditions again, note that only one condition gets executed.
+  :feedback_d: Incorrect. Check the conditions again, note that only one condition gets executed.
+  :feedback_e: Incorrect. Check the conditions again, note that only one condition gets executed.
+  
+  What will be the values of a and b after the execution of this code? 
+
+  .. code-block:: matlab
+  
+     clc; clear;
+     x = 15;
+
+     if x <= 15
+     x = x - 3;
+     if x == 12
+     x = x - 3;
+     end
+     
+     elseif x > 0
+     x = x - 3;
+     end
+     
+     if x == 6
+     x = 5;
+     elseif x == 9
+     x = 5;
+     x = x + 3;
+     
+     else
+     x = x + 15;
+     end
+
+.. mchoice:: aa-inputsoutputs_03_conditionals_16
+  :author: Ashish Aggarwal
+  :answer_a: There can be at most only one elseif clause
+  :answer_b: There can be multiple else clauses
+  :answer_c: The else clause must be the last clause in the if-elseif-else construct
+  :answer_d: The else clause can have a condition
+  :correct: c
+  :feedback_a: Incorrect. Check the syntax of if-elseif-else conditions again.
+  :feedback_b: Incorrect. Check the syntax of if-elseif-else conditions again.
+  :feedback_c: Correct! 
+  :feedback_d: Incorrect. Check the syntax of if-elseif-else conditions again.
+  
+  Which of the following statement is true regarding if-elseif-else statements? 
+
+.. mchoice:: aa-inputsoutputs_03_conditionals_17
+  :author: Ashish Aggarwal
+  :answer_a: Swap the condition of line 9 with line 7
+  :answer_b: Swap the condition of line 9 with line 11
+  :answer_c: Swap the condition of line 7 with line 5
+  :answer_d: Swap the condition of line 11 with line 5
+  :answer_e: Swap the condition of line 9 with line 5
+  :correct: e
+  :feedback_a: Incorrect. The execution of if-elseif-else conditions work in such a way that as soon as one condition is evaluated as true, the following conditions are not even looked at.
+  :feedback_b: Incorrect. The execution of if-elseif-else conditions work in such a way that as soon as one condition is evaluated as true, the following conditions are not even looked at.
+  :feedback_c: Incorrect. The execution of if-elseif-else conditions work in such a way that as soon as one condition is evaluated as true, the following conditions are not even looked at.
+  :feedback_d: Incorrect. The execution of if-elseif-else conditions work in such a way that as soon as one condition is evaluated as true, the following conditions are not even looked at.
+  :feedback_e: Correct! 
+  
+  The following program displays ‘Yes’ only when a given number is divisible by 3 and 7 both. However, the program has an error that can be corrected by swapping two conditions with each other including there fprintf() statement. Which of the given swaps will correct this program? 
+
+  .. code-block:: matlab
+  
+     clc; clear;
+     num = input('Enter the number: ');
+     
+     if mod(num, 3) == 0
+      fprintf('No');
+     elseif mod(num, 7) == 0
+      fprintF('No');
+     elseif mod(num, 3) == 0 && mod(num, 7) == 0
+      fprintf('Yes');
+     elseif mod(num, 3) == 0 || mod(num, 7) == 0
+      fprintf('No');
+     end
+
+.. mchoice:: aa-inputsoutputs_03_conditionals_19
+  :author: Ashish Aggarwal
+  :answer_a: mod(x,10) ==9 || mod(x,10) == 0
+  :answer_b: mod(x,10) ~= 9 && mod(x,10) ~=0
+  :answer_c: mod(x,10) ~= 9 || mod(x,10) ~= 0
+  :answer_d: mod(x,10) == 9 && mod(x,10) == 0
+  :correct: b
+  :feedback_a: Incorrect. Very carefully take some example like lets say x = 50 and then check every condition to see what does it display. Also, note that mod() is a very useful function, it can give you the first digit by finding the remainder when a number is divided by 10.
+  :feedback_b: Correct! 
+  :feedback_c: Incorrect. Very carefully take some example like lets say x = 50 and then check every condition to see what does it display. Also, note that mod() is a very useful function, it can give you the first digit by finding the remainder when a number is divided by 10.
+  :feedback_d: Incorrect. Very carefully take some example like lets say x = 50 and then check every condition to see what does it display. Also, note that mod() is a very useful function, it can give you the first digit by finding the remainder when a number is divided by 10.
+  
+  The following program should display ‘Yes’ if the given number by the user has either 9 or 0 in its ones place. For example 2349, 2340, 39, 40….have either 0 or 9 in their ones place (the first digit from the right). Which condition should be there in line 3 so that the program works correctly?
+
+  .. code-block:: matlab
+  
+     x = input(‘Enter the number: ‘);
+     if ________________________________
+      fprintf(‘No’);
+     else
+      fprintf(‘Yes’);
+     end
+
+.. mchoice:: aa-inputsoutputs_03_conditionals_22
+  :author: Ashish Aggarwal
+  :answer_a: MATLAB will execute both the snippets differently as the second code snippet has indented conditions.
+  :answer_b: MATLAB will execute both the snippets in the same way as indentation does not really make a difference in the way programs execute.
+  :answer_c: MATLAB may execute both the programs differently since there is a nested if-else condition in the second snippet but not in the first code snippet.
+  :answer_d: MATLAB will execute both the programs in the same way and output an ERROR.
+  :correct: b
+  :feedback_a: Incorrect. Remember, indentation makes no difference in how the programs are executed but they are helpful to us in reading and understanding the program. 
+  :feedback_b: Correct! 
+  :feedback_c: Incorrect. Remember, indentation makes no difference in how the programs are executed but they are helpful to us in reading and understanding the program. 
+  :feedback_d: Incorrect. Remember, indentation makes no difference in how the programs are executed but they are helpful to us in reading and understanding the program. 
+  
+  The following are two separate code snippets. Out of the following given options, choose the correct options.
+
+  .. code-block:: matlab
+  
+     x = 20;
+     if mod(x,5)~=0
+      fprintf('Yes');
+     elseif mod(x,5) == 0
+      if mod(x,4) ~= 0
+        fprintf('No');
+      else
+        fprintf('YesYes');
+      end
+     else
+      fprintf('NoNo');
+     end
+     
+     x = 20;
+     if mod(x,5)~=0
+      fprintf('Yes');
+     elseif mod(x,5) == 0
+      if mod(x,4) ~= 0
+        fprintf('No');
+      else
+        fprintf('YesYes');
+      end
+     else
+      fprintf('NoNo');
+     end
