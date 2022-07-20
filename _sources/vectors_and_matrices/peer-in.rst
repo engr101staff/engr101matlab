@@ -127,3 +127,95 @@ More Practice:
   .. code-block:: matlab
   
      vec  = [38 63 213 62 32 11 99 44];
+
+.. mchoice:: aa-inputsoutputs_12_matrices_07
+  :author: Ashish Aggarwal
+  :answer_a: kryboard
+  :answer_b: kryboaed
+  :answer_c: keyboaed
+  :answer_d: keyboard
+  :correct: b
+  :feedback_a: Incorrect. Check it again and execute the lines one by one.
+  :feedback_b: Correct!
+  :feedback_c: Incorrect. Check it again and execute the lines one by one.
+  :feedback_d: Incorrect. Check it again and execute the lines one by one.
+  
+   Which of the following options is the output of the following code snippet?
+
+  .. code-block:: matlab
+  
+     clc; clear;
+     
+     word = 'keyboard';
+     
+     temp = word(2);
+     
+     word(2) = word( length(word) - 1 );
+     
+     word( length(word) - 1) = temp;
+     
+     disp(word)
+
+.. mchoice:: aa-inputsoutputs_12_matrices_08
+  :author: Ashish Aggarwal
+  :answer_a: a & z
+  :answer_b: y & z
+  :answer_c: b & y
+  :answer_d: a & b
+  :correct: d
+  :feedback_a: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_b: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_c: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_d: Correct!
+  
+   The following program shifts any given letter by subtracting 2 to decrypt it into another letter from 'a' to 'z'. This program will work for all the lowercase letters given by the user except ___________?
+
+  .. code-block:: matlab
+  
+     clc; clear;
+     
+     word = input('Enter a single letter in lowercase: ' , 's')
+     
+     word = word - 2;
+     
+     fprintf( '%s', word );
+
+.. mchoice:: aa-inputsoutputs_12_matrices_09
+  :author: Ashish Aggarwal
+  :answer_a: 
+  .. code-block:: matlab
+      if word < 'a'
+        word = word + 5;
+      end
+  :answer_b:
+  .. code-block:: matlab
+      if word < 'a'
+        word = word + 26;
+      end
+  :answer_c:
+  .. code-block:: matlab
+      if word > 'z'
+        word = word + 26;
+      end
+  :answer_d:
+  .. code-block:: matlab
+      if word > 'z'
+        word = word - 26;
+      end
+  :correct: d
+  :feedback_a: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_b: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_c: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+  :feedback_d: Correct!
+  
+   The following program shifts any given letter by adding 5 to encrypt it into another letter from 'a' to 'z'. Which code snippet from the following options is required to be added to the program in order to make it work for all the letters?
+
+  .. code-block:: matlab
+  
+     clc; clear;
+     
+     word = input('Enter a single letter in lowercase: ' , 's')
+     
+     word = word + 5;
+     
+     fprintf( '%s', word );
