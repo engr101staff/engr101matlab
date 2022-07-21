@@ -23,7 +23,7 @@
 More Practice:
 ------------------------------------
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_01
+.. mchoice:: aa-indexing_03_conditionals_01
   :author: Ashish Aggarwal
   :answer_a: Both the lines are same as xyz = 5 and xyz == 5 are assigning a value to a variable.
   :answer_b: Both the lines are different as xyz = 5 is assignment and xyz == 5 is comparison.
@@ -42,7 +42,7 @@ More Practice:
      xyz == 5;
      xyz == 5;
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_02
+.. mchoice:: aa-indexing_03_conditionals_02
   :author: Ashish Aggarwal
   :answer_a: && has a priority over ||
   :answer_b: || has a priority over &&
@@ -56,7 +56,7 @@ More Practice:
 
   Which of the following statements is true regarding the use of && (AND) and || (OR) operator is conditions?
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_03
+.. mchoice:: aa-indexing_03_conditionals_03
   :author: Ashish Aggarwal
   :answer_a: If x>20 && x<100
   :answer_b: If 20<x && 100>x
@@ -72,7 +72,7 @@ More Practice:
 
   Which of the following is not a correct way of writing an if-condition?
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_04
+.. mchoice:: aa-indexing_03_conditionals_04
   :author: Ashish Aggarwal
   :answer_a: Yes, they are same and having parenthesis will make no difference in how they are evaluated.
   :answer_b: The way conditions are evaluated will depend on the values of x and y.
@@ -89,7 +89,136 @@ More Practice:
      Condition 1: if x == 2 || x == 3 && y == 2  || y == 3 
      Condition 2: if ( x == 2 || x == 3 ) && ( y == 2 || y == 3 )
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_09
+.. fillintheblank:: aa-indexing_03_conditionals_05
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     x = 20;
+     
+     if mod(x,4) ~= 0 && mod(x,5) == 0
+      fprintf('4');
+
+     elseif mod(x,5) ~= 0 || mod(x,4) == 0
+      fprintf('5');
+
+     elseif mod(x,4) == 0 && mod(x,5) == 0
+      fprintf('45');
+     
+     end
+
+   |blank|
+
+   - :5: Correct!
+     :x: Incorrect. Note that conditions are evaluated from top to bottom, however, if a condition is true then the other conditions below it will never be checked.
+
+.. fillintheblank:: aa-indexing_03_conditionals_06
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     x = 20;
+     
+     if mod(x,4) ~= 0
+      fprintf('4');
+      
+     elseif mod(x,5) ~= 0
+      fprintf('5');
+      
+     elseif mod(x,4) == 0 || mod(x,5) == 0
+      fprintf('45');
+      
+     end
+     
+     if mod(x,4) == 0 && mod(x,5) == 0
+      fprintf('45');
+      
+     end
+
+   |blank|
+
+   - :4545: Correct!
+     :x: Incorrect. This code snippet has two separate blocks of if statements which are independent of each other.
+
+.. fillintheblank:: aa-indexing_03_conditionals_07
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     x = 20;
+     
+     if mod(x,4) ~= 0
+      fprintf('4');
+      
+     elseif mod(x,5) == 0
+     
+     if mod(x,4) == 0
+      fprintf('54');
+      
+     end
+      fprintf(’4’);
+      
+     elseif mod(x,4) == 0 || mod(x,5) == 0
+      fprintf('45');
+      
+     else
+      fprintf(’4545’);
+      
+     end
+
+   |blank|
+
+   - :544: Correct!
+     :x: Incorrect. This code snippet has nested if-conditions. Check it carefully and execute this code line by line.
+
+.. fillintheblank:: aa-indexing_03_conditionals_08
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     num = 24;
+     
+     fprintf('X');
+     
+     if mod(num,8) == 0
+      fprintf('Z');
+      
+     if num/3 == 8
+      fprintf('Y');
+      
+     end
+     
+     fprintf('V');
+     
+     end
+     
+     fprintf('W');
+
+   |blank|
+
+   - :XZYVW: Correct!
+     :x: Incorrect. Check it carefully and execute this code line by line.
+
+.. mchoice:: aa-indexing_03_conditionals_09
   :author: Ashish Aggarwal
   :answer_a: 2
   :answer_b: 0.5
@@ -105,7 +234,7 @@ More Practice:
 
   What is mod(30,60)?
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_10
+.. mchoice:: aa-indexing_03_conditionals_10
   :author: Ashish Aggarwal
   :answer_a: If x == A and y ~= Z
   :answer_b: If x ~= A and y == Z
@@ -119,7 +248,7 @@ More Practice:
   
   Which of the following conditions checks if variable x is same as letter A and variable y is different from letter Z?
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_11
+.. mchoice:: aa-indexing_03_conditionals_11
   :author: Ashish Aggarwal
   :answer_a: variable = input('Enter a letter: ');
   :answer_b: variable = input('Enter a letter: ' , 's');
@@ -135,7 +264,37 @@ More Practice:
   
   Which of the following options is the correct syntax to take a letter as input from a user?
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_13
+.. fillintheblank:: aa-indexing_03_conditionals_12
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     y = 1;
+     
+     if y > 0
+      y = 3;
+      
+     elseif y == 3
+      y = y + 2;
+      
+     else
+      y = y - 1;
+     
+     end
+     
+     fprintf ('%.2f%g', 3*y, y);
+
+   |blank|
+
+   - :9.003: Correct!
+     :x: Incorrect. Execute this program line by line carefully and make sure you correctly look at the format specifiers used in the fprintf() statement.
+
+.. mchoice:: aa-indexing_03_conditionals_13
   :author: Ashish Aggarwal
   :answer_a: fprintf('You don’t have 80% points');
   :answer_b: fprintf('You don''t have 80% points');
@@ -149,7 +308,7 @@ More Practice:
   
   Which of the following fprintf() will display this statement: You don’t have 80% points.
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_14
+.. mchoice:: aa-indexing_03_conditionals_14
   :author: Ashish Aggarwal
   :answer_a: a will be 12 and b will be 24
   :answer_b: a will be 24 and b will be 12
@@ -185,7 +344,7 @@ More Practice:
 
      end
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_15
+.. mchoice:: aa-indexing_03_conditionals_5
   :author: Ashish Aggarwal
   :answer_a: x will be 9
   :answer_b: x will be 8
@@ -226,7 +385,7 @@ More Practice:
      x = x + 15;
      end
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_16
+.. mchoice:: aa-indexing_03_conditionals_16
   :author: Ashish Aggarwal
   :answer_a: There can be at most only one elseif clause
   :answer_b: There can be multiple else clauses
@@ -240,7 +399,7 @@ More Practice:
   
   Which of the following statement is true regarding if-elseif-else statements? 
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_17
+.. mchoice:: aa-indexing_03_conditionals_17
   :author: Ashish Aggarwal
   :answer_a: Swap the condition of line 9 with line 7
   :answer_b: Swap the condition of line 9 with line 11
@@ -271,7 +430,34 @@ More Practice:
       fprintf('No');
      end
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_19
+.. fillintheblank:: aa-indexing_03_conditionals_18
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     y = 5;
+     
+     if y = 5
+      y = 5;
+      
+     else
+      y = 6;
+      
+     end
+     
+     disp(y);
+
+   |blank|
+
+   - :ERROR: Correct!
+     :x: Incorrect. Check the assignment operator again.
+
+.. mchoice:: aa-indexing_03_conditionals_19
   :author: Ashish Aggarwal
   :answer_a: mod(x,10) ==9 || mod(x,10) == 0
   :answer_b: mod(x,10) ~= 9 && mod(x,10) ~=0
@@ -294,7 +480,64 @@ More Practice:
       fprintf(‘Yes’);
      end
 
-.. mchoice:: aa-inputsoutputs_03_conditionals_22
+.. fillintheblank:: aa-indexing_03_conditionals_20
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     x = 'A';
+     
+     if x == 'B'
+      fprintf('B');
+      
+     else
+      fprintf('A');
+      
+     elseif x == 'C'
+      fprintf('C')
+      
+     end
+
+   |blank|
+
+   - :ERROR: Correct!
+     :x: Incorrect. Check the placement of the else-clause.
+
+.. fillintheblank:: aa-indexing_03_conditionals_21
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     
+     x = 3;
+     y = 4;
+     
+     if x == 2 && y == 3 || y == 4 || y == 5
+      fprintf('A');
+      
+     elseif (x == 3) && (y == 3 || y == 4 || y == 5)
+      fprintf('B');
+      
+     else
+      fprintf('C');
+      
+     end
+
+   |blank|
+
+   - :A: Correct!
+     :x: Incorrect. && always have preference over || in evaluating the conditions.
+
+.. mchoice:: aa-indexing_03_conditionals_22
   :author: Ashish Aggarwal
   :answer_a: MATLAB will execute both the snippets differently as the second code snippet has indented conditions.
   :answer_b: MATLAB will execute both the snippets in the same way as indentation does not really make a difference in the way programs execute.

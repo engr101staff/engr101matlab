@@ -23,7 +23,102 @@
 More Practice: 
 ------------------------------------------------------
 
-.. mchoice:: aa-inputsoutputs_10_images_06
+.. fillintheblank:: aa-workingw/images_10_images_01
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = 'Batman.png';
+     [h,w,c] = size(pix);
+     total = h + w + c;
+     disp(total);
+     disp(str)
+
+   |blank|
+
+   - :12: Correct!
+     :x: Incorrect. Check what exactly is 'pix'?
+
+.. fillintheblank:: aa-workingw/images_10_images_02
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = imread('Batman.png');
+     [h, w] = size(pix);
+     disp(w);
+
+   |blank|
+
+   - :1500: Correct!
+     :x: Incorrect. Note that size(pix) returns the dimensions according to the number of variables used on the left side. So, if you have [h, w, c] then it will return 3 values, and if you have only [h, w], then h will be the number of rows and w will be the number of columns multiplied by total number of matrices. In MATLAB, you get what you ask.
+
+.. fillintheblank:: aa-workingw/images_10_images_03
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = imread('Batman.png');
+     [h,w, ~] = size(pix);
+     total = h + w ;
+     disp(total)
+
+   |blank|
+
+   - :1000: Correct!
+     :x: Incorrect. Here, '~' represents that the third dimension which is number of matrices is not stored in a variable. Therefore, h and w will only be numbers of rows and columns respectively.
+
+.. fillintheblank:: aa-workingw/images_10_images_04
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = imread('Batman.png');
+     blank = uint8(zeros(h,w,c));
+     blank(1,1,1) = 255;
+     disp(blank(1,1,1));
+
+   |blank|
+
+   - :ERROR: Correct!
+     :x: Incorrect. Check how the 'blank' image is defined.
+
+.. fillintheblank:: aa-workingw/images_10_images_05
+  :author: Ashish Aggarwal
+  :casei:
+
+   n the following program, how many pixels in the image 'blank' will be red? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = imread('Batman.png');
+     [h, w, c] = size(pix);
+     blank = uint8(zeros(h,w,c));
+     blank(1:3, 1:10, 1) = 255;
+
+   |blank|
+
+   - :30: Correct!
+     :x: Incorrect. Check how the index values of rows and columns in the last line.
+
+.. mchoice:: aa-workingw/images_10_images_06
   :author: Ashish Aggarwal
   :answer_a: The function imread() changes the name of the image whereas imshow() displays the image.
   :answer_b: The function imread() converts the image file into a matrix whereas imshow() displays the image.
@@ -37,7 +132,7 @@ More Practice:
   
    What is the difference between the functions imread(image_name) and imshow(image_name)?
 
-.. mchoice:: aa-inputsoutputs_10_images_07
+.. mchoice:: aa-workingw/images_10_images_07
   :author: Ashish Aggarwal
   :answer_a: The matrix 'mix' is a matrix which can take any mathematical values but matrix 'pix' can only take values from 0 to 255.
   :answer_b: The matrix 'mix' is a matrix which can only take values from 0 to 255 but matrix 'pix' can take any mathematical value.
@@ -57,7 +152,7 @@ More Practice:
      
      pix = uint8(zeros(5,5,3));
 
-.. mchoice:: aa-inputsoutputs_10_images_08
+.. mchoice:: aa-workingw/images_10_images_08
   :author: Ashish Aggarwal
   :answer_a: It will show the image 'Batman.png'
   :answer_b: It will return an ERROR 
@@ -73,7 +168,7 @@ More Practice:
      
      imshow(Batman.png);
 
-.. mchoice:: aa-inputsoutputs_10_images_09
+.. mchoice:: aa-workingw/images_10_images_09
   :author: Ashish Aggarwal
   :answer_a: It will show the image 'Batman.png'
   :answer_b: It will return an ERROR 
@@ -91,7 +186,27 @@ More Practice:
      
      imshow(filename);
 
-.. mchoice:: aa-inputsoutputs_10_images_11
+.. fillintheblank:: aa-workingw/images_10_images_10
+  :author: Ashish Aggarwal
+  :casei:
+
+   In the following program, how many pixels in the image 'blank' will be red? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = imread('Batman.png');
+     [h, w, c] = size(pix);
+     blank = uint8(zeros(h,w,c));
+     blank(:, :, :) = 255;
+     blank(end, :, [2 3]) = 0;
+
+   |blank|
+
+   - :500: Correct!
+     :x: Incorrect. Check how the index values of rows and columns in the last line.
+
+.. mchoice:: aa-workingw/images_10_images_11
   :author: Ashish Aggarwal
   :answer_a: pix(250, 250, :) = blank(400, 400, :);
   :answer_b: blank(250, 250, :) = pix(400, 400, :);
@@ -115,7 +230,7 @@ More Practice:
      
      blank = uint8(zeros(h,w,c));
 
-.. mchoice:: aa-inputsoutputs_10_images_12
+.. mchoice:: aa-workingw/images_10_images_12
   :author: Ashish Aggarwal
   :answer_a: pix(:, 3:10, 3) = 255;
   :answer_b: pix(3:10, :, 2) = 255;
@@ -137,7 +252,7 @@ More Practice:
      
      pix = uint8(zeros(50, 50, 3));
 
-.. mchoice:: aa-inputsoutputs_10_images_13
+.. mchoice:: aa-workingw/images_10_images_13
   :author: Ashish Aggarwal
   :answer_a: pix(1:5, 3:10, 1) = 255;
   :answer_b: pix(3:10, 1:5, 1) = 255;
@@ -157,7 +272,7 @@ More Practice:
      
      pix = uint8(zeros(50, 50, 3));
 
-.. mchoice:: aa-inputsoutputs_10_images_14
+.. mchoice:: aa-workingw/images_10_images_14
   :author: Ashish Aggarwal
   :answer_a: imwrite( pix, 'Correct.png');
   :answer_b: imwrite( 'pix', Correct.png);
@@ -171,7 +286,7 @@ More Practice:
   
    Which of the following options saves the image 'pix' with the name 'Correct.png'?
 
-.. mchoice:: aa-inputsoutputs_10_images_15
+.. mchoice:: aa-workingw/images_10_images_15
   :author: Ashish Aggarwal
   :answer_a: It displays a complete black image
   :answer_b: It displays an image having alternating rows and columns as black and white in the form of a grid
@@ -200,7 +315,7 @@ More Practice:
      
      imshow(pix)
 
-.. mchoice:: aa-inputsoutputs_10_images_16
+.. mchoice:: aa-workingw/images_10_images_16
   :author: Ashish Aggarwal
   :answer_a: pix(25, 25, 3) = 255;
   :answer_b: pix(1:25, 25, 3) = 255;
@@ -220,7 +335,7 @@ More Practice:
      
      pix = uint8(zeros(50,50,3));
 
-.. mchoice:: aa-inputsoutputs_10_images_17
+.. mchoice:: aa-workingw/images_10_images_17
   :author: Ashish Aggarwal
   :answer_a: It creates an image matrix which initially has all values as zeros and where all the numbers can only take values from 0 to 255
   :answer_b: It creates a matrix which initially has all values as zeros and where all the numbers can take any numeric value
@@ -234,7 +349,133 @@ More Practice:
   
    What is the functionality of the command zeros()?
 
-.. mchoice:: aa-inputsoutputs_11_images_05
+.. fillintheblank:: aa-workingw/images_10_images_18
+  :author: Ashish Aggarwal
+  :casei:
+
+   How many total number of pixels are present in the image 'pix'?
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(500,500,3));
+
+   |blank|
+
+   - :250000: Correct!
+     :x: Incorrect. Note that the color of a pixel is combination of three colors.
+
+.. fillintheblank:: aa-workingw/images_10_images_19
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(10, 10, 3));
+     pix(1, 1, :) = 1000;
+     disp( pix(1, 1, 1) );
+
+   |blank|
+
+   - :255: Correct!
+     :x: Incorrect. Note that the values in an image matrix only varies from 0 to 255.
+
+.. fillintheblank:: aa-workingw/images_10_images_20
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = zeros(10, 10, 3);
+     pix(1, 1, :) = 1000;
+     disp( pix(1, 1, 1) );
+
+   |blank|
+
+   - :1000: Correct!
+     :x: Incorrect. Note that here,  the matrix pix is not an image matrix since it does not have uint8, thus it can take any value.
+
+.. fillintheblank:: aa-workingw/images_11_images_01
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     x = uint8(100);
+     x = x * 5;
+     disp(x)
+
+   |blank|
+
+   - :255: Correct!
+     :x: Incorrect. Note that the number 100 is bounded by the uint8 constraint by which they can only go from o to 255. Therefore, if the number is manipulated through any mathematical operation, its range will only be able to vary from 0 to 255.
+
+.. fillintheblank:: aa-workingw/images_11_images_02
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(50,50,3));
+     pix(1, 1, 1) = 250;
+     total = pix(1, 1, 1) * 2;
+     disp(total)
+
+   |blank|
+
+   - :255: Correct!
+     :x: Incorrect. Note that the numbers in the image matrix are bounded by the uint8 constraint by which they can only go from o to 255. Therefore, if the number is manipulated through any mathematical operation, its range will only be able stretch from 0 to 255.
+
+.. fillintheblank:: aa-workingw/images_11_images_03
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     x = uint8(100);
+     x = double(x * 5);
+     disp(x)
+
+   |blank|
+
+   - :255: Correct!
+     :x: Incorrect. Note that the number 'x' has to be converted to double(to remove any constraint) before it is multiplied with 5, otherwise it is still in the unit8 constraint.
+
+.. fillintheblank:: aa-workingw/images_11_images_04
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(50,50,3));
+     pix(1, 1, 1) = 250;
+     total = double(pix(1, 1, 1)) * 2;
+     disp(total)
+
+   |blank|
+
+   - :500: Correct!
+     :x: Incorrect. Note that here, double() converts pix(1, 1, 1) to a normal numeric value only for calculation purposes and then it is multiplied by 2.
+
+.. mchoice:: aa-workingw/images_11_images_05
   :author: Ashish Aggarwal
   :answer_a: It helps in identifying which pixels of the image are being thresholded so that the thresholding condition can be changed accordingly
   :answer_b: It helps in creating a black and white image
@@ -248,7 +489,7 @@ More Practice:
   
    In the thresholding example videos you have watched, what do you think is the primary purpose of using a binary image?
 
-.. mchoice:: aa-inputsoutputs_11_images_06
+.. mchoice:: aa-workingw/images_11_images_06
   :author: Ashish Aggarwal
   :answer_a: pix = binary(50, 50);
   :answer_b: binary = false(50, 50); 
@@ -262,7 +503,7 @@ More Practice:
   
    Which of the following is the correct way to define a binary image?
 
-.. mchoice:: aa-inputsoutputs_11_images_07
+.. mchoice:: aa-workingw/images_11_images_07
   :author: Ashish Aggarwal
   :answer_a: A binary image has three matrices which have the value of 0.
   :answer_b: A binary image can take any numeric value.
@@ -276,7 +517,7 @@ More Practice:
   
    Which of the following statement is true regarding a binary image?
 
-.. mchoice:: aa-inputsoutputs_11_images_08
+.. mchoice:: aa-workingw/images_11_images_08
   :author: Ashish Aggarwal
   :answer_a: value = double( pix(1, 1, 1) * 2 );
   :answer_b: value = double(2) * pix(1, 1, 1);
@@ -298,7 +539,140 @@ More Practice:
      
      pix(:, :, : ) = 255;
 
-.. mchoice:: aa-inputsoutputs_11_images_16
+.. fillintheblank:: aa-workingw/images_11_images_09
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     binary = false(50, 50);
+     binary(1, 1) = 50;
+     disp( binary(1, 1) );
+
+   |blank|
+
+   - :1: Correct!
+     :x: Incorrect. Note that a binary image has 1 matrix whose values can either have 0 or 1. So if you try to assign it any value other than 0, it will take it as 1.
+
+.. fillintheblank:: aa-workingw/images_11_images_10
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     binary = false(50, 50);
+     binary(1, : ) = true;
+     disp( binary(1, 1) )
+
+   |blank|
+
+   - :1: Correct!
+     :x: Incorrect. Note that here, 'binary(1, : ) = true'  changes all the values in the first row as 1 because true represents logical 1.
+
+.. fillintheblank:: aa-workingw/images_11_images_11
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     binary = false(50, 50);
+     binary(1:2, : ) = true;
+     value = length(find(binary == 1));
+     disp(value);
+
+   |blank|
+
+   - :100: Correct!
+     :x: Incorrect. Note that here 2 rows are changed to 1s, so length( find() ) tells you how many values have 1 in the binary matrix.
+
+.. fillintheblank:: aa-workingw/images_11_images_12
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     binary = false(50, 50);
+     binary(end, end) = true;
+     value = length(find(binary == 1));
+     disp(value);
+
+   |blank|
+
+   - :1: Correct!
+     :x: Incorrect. Check the indexes again.
+
+.. fillintheblank:: aa-workingw/images_11_images_13
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(50,50,3));
+     pix(: ,: ,: ) = 255;
+     sum = pix(1, 1, 1) + pix(end, end, 1);
+
+
+   |blank|
+
+   - :255: Correct! 
+     :x: Incorrect. Note that here both values are uint8 values which cannot exceed 255.
+
+.. fillintheblank:: aa-workingw/images_11_images_14
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(50,50,3));
+     pix(: ,: ,: ) = 255;
+     sum = double( pix(1, 1, 1) ) + pix(end, end, 1);
+     disp( sum )
+
+
+   |blank|
+
+   - :255: Correct! 
+     :x: Incorrect. Note that here one value is still present in uint8 format, the total sum cannot exceed 255.
+
+.. fillintheblank:: aa-workingw/images_11_images_15
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     pix = uint8(zeros(50,50,3));
+     pix(: ,: ,: ) = 255;
+     sum = double( pix(1, 1, 1) ) + double( pix(end, end, 1) );
+     disp( sum )
+
+
+   |blank|
+
+   - :510: Correct! 
+     :x: Incorrect. Note that here both the values are converted into double before being added.
+
+.. mchoice:: aa-workingw/images_11_images_16
   :author: Ashish Aggarwal
   :answer_a: It is converting all the black pixels in 'pix' to white
   :answer_b: It is converting all the blue pixels in 'pix' to white
@@ -331,7 +705,7 @@ More Practice:
       end
      end
 
-.. mchoice:: aa-inputsoutputs_11_images_17
+.. mchoice:: aa-workingw/images_11_images_17
   :author: Ashish Aggarwal
   :answer_a: It is counting all the black pixels in 'pix'
   :answer_b: It is counting all the blue pixels in 'pix'
@@ -366,7 +740,7 @@ More Practice:
       end
      end
 
-.. mchoice:: aa-inputsoutputs_11_images_18
+.. mchoice:: aa-workingw/images_11_images_18
   :author: Ashish Aggarwal
   :answer_a: It is thresholding all the yellow pixels in 'pix'
   :answer_b: It is thresholding all the blue pixels in 'pix'
@@ -401,7 +775,7 @@ More Practice:
       end
      end
 
-.. mchoice:: aa-inputsoutputs_11_images_19
+.. mchoice:: aa-workingw/images_11_images_19
   :author: Ashish Aggarwal
   :answer_a: It will return an ERROR
   :answer_b: It will display a black image
@@ -422,3 +796,22 @@ More Practice:
      binary = true(50, 50);
      
      imshow(binary);
+
+.. fillintheblank:: aa-workingw/images_11_images_20
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     x = uint8(200);
+     y = double(x) * 2;
+     disp(x*2);
+
+
+   |blank|
+
+   - :255: Correct! 
+     :x: Incorrect. Note, here y does convert the value of x when it is multiplied by 2, but that does not change the value/format of x. It is only for the calculation purposes that we use double(). But it does not change the format of the number x from uint8 to double.

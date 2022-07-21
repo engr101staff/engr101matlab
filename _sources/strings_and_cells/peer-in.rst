@@ -23,7 +23,141 @@
 More Practice: 
 ------------------------------------------------------
 
-.. mchoice:: aa-inputsoutputs_09_strings_08
+.. fillintheblank:: aa-strings&cells_09_strings_01
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     str = 'parabola';
+     str([1 3]) = [];
+     str(1:3) = 'a';
+     str(1,4) = 'b';
+     str(end:-1:end-1) = 'c';
+     disp(str);
+
+   |blank|
+
+   - :aaabcc: Correct!
+     :x: Incorrect. Perform all the operations one by one on str and then observe how str evolves!
+
+.. fillintheblank:: aa-strings&cells_09_strings_02
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     str = 'parabola';
+     str( find(str == 'a', 2) ) =[];
+     str = [str(1:3) str(7) 'a'];
+     disp(str);
+
+   |blank|
+
+   - :ERROR: Correct!
+     :x: Incorrect. Check line number 4 and see how will MATLAB access str(7)!
+
+.. fillintheblank:: aa-strings&cells_09_strings_03
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     str = 'parabola';
+     x = find(str <= 'c');
+     disp(sum(x));
+
+   |blank|
+
+   - :19: Correct!
+     :x: Incorrect. Here str <='c' will look for all the letters which come before 'c'.
+
+.. fillintheblank:: aa-strings&cells_09_strings_04
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     first = 'matlab';
+     second = 'java';
+     first = 'second';
+     second = first;
+     disp(second)
+
+   |blank|
+
+   - :second: Correct!
+     :x: Incorrect. Carefully check every line, when something is in single quotes, then the variable stores that string.
+
+.. fillintheblank:: aa-strings&cells_09_strings_05
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     word = 'quad';
+     word(6) = 'X';
+     word(5:-2:1) = [];
+     disp(word);
+
+   |blank|
+
+   - :udX: Correct!
+     :x: Incorrect. Execute the code line by line and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_06
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     let = 'CDE';
+     let(3:5) = 'F';
+     let = let - 2;
+     fprintf('%s', let);
+
+   |blank|
+
+   - :ABDDD: Correct!
+     :x: Incorrect. Execute the code line by line and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_07
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     str = 'afaeadacab';
+     str( find(str == 'a') ) = [];
+     str = str(length(str):-1:1);
+     disp(str);
+
+   |blank|
+
+   - :bcdef: Correct!
+     :x: Incorrect. Execute the code line by line and check it again!
+
+.. mchoice:: aa-strings&cells_09_strings_08
   :author: Ashish Aggarwal
   :answer_a: str = str(end:-1:1);
   :answer_b: str = str(length(str):-1:1)
@@ -43,7 +177,117 @@ More Practice:
   
      str = 'matlab';
 
-.. mchoice:: aa-inputsoutputs_09_strings_15
+.. fillintheblank:: aa-strings&cells_09_strings_09
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     str = 'paparazzi';
+     str(1) = str(2);
+     str([2 4]) = [];
+     str(3) = str(4);
+     disp(str)
+
+   |blank|
+
+   - :apaazzi: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_10
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     str = 'matlab';
+     str(1:3) = str(end:-1:4);
+     str(4:1:end) = str(1:3);
+     disp(str)
+
+   |blank|
+
+   - :balbal: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_11
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     word = 'matlab';
+     word(2) = word(3);
+     word(3) = word(2);
+     disp(word)
+
+   |blank|
+
+   - :mttlab: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_12
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     word = 'matlab';
+     temp = word(2)
+     word(2) = word(3);
+     word(3) = temp;
+     disp(word)
+
+   |blank|
+
+   - :mtalab: Correct!
+     :x: Incorrect. Check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_13
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     word = 'matlab';
+     word(2) = '';
+     word(3) = '';
+     word(4) = '';
+     disp(word)
+
+   |blank|
+
+   - :mta: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
+
+.. fillintheblank:: aa-strings&cells_09_strings_14
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     word = 'matlab';
+     word([2 3 4]) = '';
+     disp(word)
+
+   |blank|
+
+   - :mab: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
+
+.. mchoice:: aa-strings&cells_09_strings_15
   :author: Ashish Aggarwal
   :answer_a: phr(end) =  '  ';
   :answer_b: phr = [phr '  '];
@@ -57,7 +301,7 @@ More Practice:
   
    Which of the following options represents an incorrect way of adding a space at the end of a phrase 'phr'?
 
-.. mchoice:: aa-inputsoutputs_09_strings_16
+.. mchoice:: aa-strings&cells_09_strings_16
   :author: Ashish Aggarwal
   :answer_a: str(4) = 'X';
   :answer_b: str = [str 'X' str];
@@ -75,7 +319,7 @@ More Practice:
   
      str = 'abcdef';
 
-.. mchoice:: aa-inputsoutputs_09_strings_17
+.. mchoice:: aa-strings&cells_09_strings_17
   :author: Ashish Aggarwal
   :answer_a: For all letters which become > 'z', add 26
   :answer_b: For all letters which become < 'z', add 26
@@ -89,7 +333,26 @@ More Practice:
   
    With respect to Caesar Cipher, lets say we have a string 'str' whose individual letters are added by 3 to shift them by 3 positions. Which of the following statements is correct in this context?
 
-.. mchoice:: aa-inputsoutputs_09_strings_19
+.. fillintheblank:: aa-strings&cells_09_strings_18
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     phrase = 'Go Gators Greater!';
+     pso = find(phrase == '  ');
+     phrase( pso(1):1:pso(end) ) = phrase( pso(end):-1:pso(1) );
+     disp( phrase(pso(1)+1:pso(end)-1) );
+
+   |blank|
+
+   - :srotaG: Correct!
+     :x: Incorrect. Decouple the syntax in line 3 and check what does it values does it actually refer to from pos
+
+.. mchoice:: aa-strings&cells_09_strings_19
   :author: Ashish Aggarwal
   :answer_a: str = upper(str(1));
   :answer_b: str(1) = upper(str);
@@ -106,3 +369,23 @@ More Practice:
    .. code-block:: matlab
   
      str = 'matlab';
+
+.. fillintheblank:: aa-strings&cells_09_strings_20
+  :author: Ashish Aggarwal
+  :casei:
+
+   What will be the output of the following code? (If the program will result in an error, put down ‘ERROR’)
+
+   .. code-block:: matlab
+  
+     clc; clear;
+     str = 'optimistic';
+     str(1:3) = str(end:-1:end-2);
+     str = [ str(3:-1:1) 'X' str(1:2:5) ];
+
+disp(str)
+
+   |blank|
+
+   - :ticXctm: Correct!
+     :x: Incorrect. Execute the code line by line carefully and check it again!
