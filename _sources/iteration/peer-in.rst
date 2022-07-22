@@ -24,160 +24,357 @@
 More Practice:
 ------------------------------------
 
-.. mchoice:: jh-inputs_20_intromatlab_03
+.. mchoice:: jh-iteration_06_whileloops_07
   :author: Joe Hummel
+  :answer_a: 
 
-    Which loop counts exactly 1, 2, 3,..., 20, and then stops? Assume i is an integer variable.
-
-    - .. code-block:: cpp
-
+  .. code-block:: cpp
+  
      i = 1;
+     
      while (i <= 20)
      {
        ...
        i = i + 1;
-     }
+      }
 
-      - ``
+  :answer_b: 
 
-    - .. code-block:: cpp
-
+  .. code-block:: cpp
+  
      i = 1;
+     
      while (i != 20)
      {
        ...
        i = i + 1;
-     }
+      }
 
-      - 
+  :answer_c: 
 
-    - .. code-block:: cpp
-
+  .. code-block:: cpp
+  
      i = 0;
+     
      while (i <= 20)
      {
        ...
        i = i + 1;
-     }
+      }
 
-      - 
+  :answer_d: 
 
-    - .. code-block:: cpp
-
+  .. code-block:: cpp
+  
      i = 0;
+     
      while (i < 20)
      {
        ...
        i = i + 1;
-     }
+      }
 
-      - 
-  
-    - All of the above.
+  :answer_e: All of the above
+  :correct: c
+  :feedback_a: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_b: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_c: Correct!
+  :feedback_d: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_e: Incorrect. Review the organization of a typical counting pattern and try again!
 
-.. mchoice:: jh-inputs_20_intromatlab_03
+  Which loop counts exactly 1, 2, 3, …, 20, and then stops?  Assume i is an integer variable.
+
+.. mchoice:: jh-iteration_06_whileloops_10
   :author: Joe Hummel
+  :answer_a: 1,4,9,16,25,36,49,#
+  :answer_b: 4,9,16,25,36,49,#
+  :answer_c: 4,16,36,49,#
+  :answer_d: 4,16,36,#
+  :correct: d
+  :feedback_a: Incorrect. Try running the code in C++ and see what you get!
+  :feedback_b: Incorrect. Try running the code in C++ and see what you get!
+  :feedback_c: Incorrect. Try running the code in C++ and see what you get!
+  :feedback_d: Correct!
 
-    What is output by this code fragment? 
+  I want to write an Add program that adds 2 numbers together.
 
-    .. code-block:: cpp
-
+  .. code-block:: cpp
+  
      int  x;
+     
      x = 2;
-
+     
      while (x <= 7)
      {
        cout << pow(x, 2) << ",";
        x = x + 2;
-     }
-     cout << "#";
+      }
+     cout << "#"
 
-
-
-    - 1,4,9,16,25,36,49,# 
-
-      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
-
-    - 4,9,16,25,36,49,#
-
-      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
-
-    - 4,16,36,49,#
-
-      - Incorrect. There are two functions to consider in this while loop--take a look at the code and reconsider!
-
-    - 4,16,36,#
-
-      + Correct. We see the function outputs 4, 16, and 36, completes the loop, and finishes with #. 
-
-.. mchoice:: jh-inputs_20_intromatlab_03
+.. mchoice:: jh-iteration_06_whileloops_12
   :author: Joe Hummel
+  :answer_a: 
 
-    What is output by this code fragment? 
+  .. code-block:: cpp
+  
+     T = 10;
+     while (W <= 20)
+     {
+       W = 1;
+       windchill = … ;
+       cout << … ;
+      }
 
-    .. code-block:: cpp
+  :answer_b: 
 
+  .. code-block:: cpp
+  
+     T = 10;
+     while (W <= 20)
+     {
+       W = 1;
+       windchill = … ;
+       cout << … ;
+       W = W + 1;
+      }
+
+  :answer_c: 
+
+  .. code-block:: cpp
+  
+     T = 10;
+     W = 1;
+     windchill = … ;
+
+     while (W <= 20)
+     {
+       cout << … ;
+       W = W + 1;
+      }
+
+  :answer_d: 
+
+  .. code-block:: cpp
+  
+     T = 10;
+     W = 1;
+     
+     while (W <= 20)
+     {
+       windchill = … ;
+       cout << … ;
+       W = W + 1;
+      }
+
+
+  :correct: d
+  :feedback_a: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_b: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_c: Incorrect. Review the organization of a typical counting pattern and try again!
+  :feedback_d: Correct!
+
+  Assume a temperature of 10F. Output the windchill for each wind speed in the range 1..20, using the windchill equation we've defined previously. The better way is to use a loop.  Which of the following computes & outputs the desired wind chills properly?
+
+.. mchoice:: jh-iteration_07_ifelse_02
+  :author: Joe Hummel
+  :answer_a: When both X and Y are negative
+  :answer_b: When either X or Y are negative, but not both
+  :answer_c: When either X, or Y, or both, are negative
+  :answer_d: When both X and Y are zero or positive
+  :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Incorrect. && implies both statements have to be true in the if-condition, so "warning" would print if they both were negative.
+  :feedback_c: Incorrect. && implies both statements have to be true in the if-condition, so "warning" would print if they both were negative.
+  :feedback_d: Incorrect. && implies both statements have to be true in the if-condition, so "warning" would print if they both were negative.
+
+  The following code outputs the product of X and Y.  However, when does it output “warning” ?
+
+  .. code-block:: cpp
+  
+     if (X >= 0 && Y >= 0)
+     {
+       Z = X * Y;
+       cout << "answer=" << Z << endl;
+      }
+     
+     else
+     {
+       cout << "warning" << endl;
+      }
+
+.. mchoice:: jh-iteration_07_whileloops_04
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: cpp
+  
+     cin >> score;
+     while (score>=0 && score<=100)
+     {
+       cout << "try again> ";
+       cin >> score;
+      }
+
+  :answer_b: 
+
+  .. code-block:: cpp
+  
+     cin >> score;
+     while (score<0 && score>100)
+     {
+       cout << "try again> ";
+       cin >> score;
+      }
+
+  :answer_c: 
+
+  .. code-block:: cpp
+  
+     cin >> score;
+     while (score != 0..100)
+     {
+       cout << "try again> ";
+       cin >> score;
+      }
+
+  :answer_d: 
+
+  .. code-block:: cpp
+  
+     cin >> score;
+     while (score<0 || score>100)
+     {
+       cout << "try again> ";
+       cin >> score;
+      }
+
+  :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Incorrect. Review conditional expressions for while loops and try again!
+  :feedback_c: Incorrect. Review conditional expressions for while loops and try again!
+  :feedback_d: Incorrect. Review conditional expressions for while loops and try again!
+
+  We are trying to input a score in range 0..100.  Which code fragment ensures we have a valid score once the loop ends?
+
+.. mchoice:: jh-iteration_07_whileloops_06
+  :author: Joe Hummel
+  :answer_a: 5
+  :answer_b: 10
+  :answer_c: 15
+  :answer_d: 21
+  :correct: c
+  :feedback_a: Incorrect. Try writing out the steps one by one and see what you find!
+  :feedback_b: Incorrect. Try writing out the steps one by one and see what you find!
+  :feedback_c: Correct!
+  :feedback_d: Incorrect. Try writing out the steps one by one and see what you find!
+
+  What is output by this code fragment?
+
+  .. code-block:: cpp
+  
      int  x = 1;
-     int y = 0;
-
+     int  y = 0;
+     
      while (x <= 5)
      {
        y = y + x;
        x = x + 1;
-     }
-     cout << "y" << endl;
+      }
+     cout << y << endl;
 
-
-
-    - 5
-
-      - Incorrect. The output of y at the end of this while loop is not 5--try writing out the steps to see the correct answer.
-
-    - 10
-
-      - Incorrect. The output of y at the end of this while loop is not 10--try writing out the steps to see the correct answer.
-
-    - 15
-
-      + Correct. The output of y at the end of this while loop is 15.
-
-    - 21
-
-      - Incorrect. The output of y at the end of this while loop is not 10--try writing out the steps to see the correct answer.
-
-.. mchoice:: jh-inputs_20_intromatlab_03
+.. mchoice:: jh-iteration_07_whileloops_08
   :author: Joe Hummel
+  :answer_a: 
 
-    For exam score analysis, we have to loop and input the scores. What's the initial score to start things off?
+  .. code-block:: cpp
+  
+     int  i, N, factrl;
+    
+     cin >> N;
 
-    .. code-block:: cpp
+     i      = N;
 
+     factrl = 1;
+     
+     while (i > 0)
+     {
+       factrl = factrl * i;
+       i = i – 1;
+      }
+      
+     cout << factrl;
+
+  :answer_b: 
+
+  .. code-block:: cpp
+  
+     int  i, N, factrl;
+     
+     cin >> N;
+     
+     i      = 1;
+     
+     factrl = 1;
+     
+     while (i <= N)
+     {
+       factrl = factrl * i;
+       i = i + 1;
+      }
+      
+     cout << factrl;
+
+  :answer_c: 
+
+  .. code-block:: cpp
+  
+     int  N, factrl;
+     
+     cin >> N;
+     
+     factrl = 1;
+     
+     while (N > 0)
+     {
+       factrl = factrl * N;
+       N = N – 1;
+      }
+      
+     cout << factrl;
+
+  :answer_d: All of the above
+  :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Incorrect. Look through the code step by step and try again!
+  :feedback_c: Incorrect. Look through the code step by step and try again!
+  :feedback_d: Incorrect. Look through the code step by step and try again!
+
+  N! is defined as N * N-1 * N-2 * … 1. Example:  5! = 5*4*3*2*1 = 120. Which code computes N! ?
+
+.. mchoice:: jh-iteration_08_whileloops_18
+  :author: Joe Hummel
+  :answer_a: score = -1;
+  :answer_b: score = 0;
+  :answer_c: cin >> score;
+  :answer_d: cout << score;
+  :correct: c
+  :feedback_a: Incorrect. Try writing out the steps one by one and see what you find!
+  :feedback_b: Incorrect. Try writing out the steps one by one and see what you find!
+  :feedback_c: Correct!
+  :feedback_d: Incorrect. Try writing out the steps one by one and see what you find!
+
+  For exam score analysis, we have to loop and input the scores.  What’s the initial score to start things off?
+
+  .. code-block:: cpp
+  
      int score;
      "Initial Value"
 
-     while("Condition")
+     while (condition)
      {
        "Computation"
-       "Advance"
-     }
-
-
-
-    - score = -1;
-
-      - Incorrect. 
-
-    - score = 0;
-
-      - Incorrect. 
-
-    - cin >> score;
-
-      + Correct. 
-
-    - cout << score;
-
-      - Incorrect. We don't have a score input yet, so we can't output score first.
+       "Advanced"
+     } 
 
 .. fillintheblank:: aa-iteration_04_whileloops_01
   :author: Ashish Aggarwal

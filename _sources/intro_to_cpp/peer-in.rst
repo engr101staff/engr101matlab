@@ -23,7 +23,37 @@
 More Practice:
 ------------------------------------
 
-Let's practice some more user inputs and outputs together!
+.. mchoice:: jh-inputs_02_variables_04
+  :author: Joe Hummel
+  :answer_a: No inputs
+  :answer_b: 1
+  :answer_c: 2
+  :answer_d: 3
+  :correct: c
+  :feedback_a: Incorrect. The equation has two inputs--T and W.
+  :feedback_b: Incorrect. The equation has more than one input--T and W.
+  :feedback_c: Correct! The equation has two inputs--T and W.
+  :feedback_d: Incorrect. The equation has only two inputs--T and W.
+
+  I want to write a program to compute windchill. How many inputs are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * pow(W, 0.16) + (0.43 * T * pow(W, 0.16))` 
+
+.. mchoice:: jh-inputs_02_variables_06
+  :author: Joe Hummel
+  :answer_a: 4
+  :answer_b: 3
+  :answer_c: 2
+  :answer_d: 1
+  :correct: c
+  :feedback_a: Incorrect. The equation doesn't have four variables, there are only two--T and W.
+  :feedback_b: Incorrect. The equation doesn't have three variables, there are only two--T and W.
+  :feedback_c: Correct! The equation has two variables--T and W.
+  :feedback_d: Incorrect. The equation has more than one variable--T and W.
+
+  How many variabless are there to the program? 
+
+  .. code-block:: cpp
+  
+     `windchill = 35.7 + (0.6 * T) - (35.7 * pow(W, 0.16) + (0.43 * T * pow(W, 0.16))` 
 
 .. mchoice:: jh-cincout_05_cincout_02
   :author: Joe Hummel
@@ -39,30 +69,23 @@ Let's practice some more user inputs and outputs together!
 
   What does this program output? Assume the user inputs 19. 
 
-  -----
-  #include &lt;iostream&gt;
-  =====
-  using namespace std;
-  =====
-  int main()
-  =====
-  {
-  =====
-   int x, y;
-   =====
-   cin >> x;
-   =====
-   y = x++;
-   =====
-   cout << x;
+  .. code-block:: cpp
+  
+     #include &lt;iostream&gt;
+     using namespace std;
+     
+     int main()
+     {
+        int x, y;
+        cin >> x;
+        y = x++;
+        cout << x; 
         << ",";
         << y:
         << endl;
-  =====
-  return 0; 
-  =====
-  }
-  =====
+        return 0; 
+      }
+  
 
 .. mchoice:: jh-cincout_05_cincout_03
   :author: Joe Hummel
@@ -78,38 +101,100 @@ Let's practice some more user inputs and outputs together!
 
   The program below checks to see if the user has input PI. Suppose the user inputs 3.1415926. What is output?
 
-  -----
-  #include &lt;iostream&gt;
-  =====
-  using namespace std;
-  =====
-  int main()
-  =====
-  {
-  =====
-   double x;
-   =====
-   cin >> x;
-   =====
-   if (x == 3.14159)
-   =====
-   {
-      ====
-      cout << "My friend PI!" << endl;
-      ====
-   }
-   ====
-   else
-   ====
-   {
-      ====
-      cout << "Just a real number" << endl;
-   }
-   ====
-  return 0; 
-  =====
-  }
-  =====
+  .. code-block:: cpp
+  
+     #include &lt;iostream&gt;
+     using namespace std;
+     
+     int main()
+     {
+        double x;
+        cin >> x;
+        
+        if (x == 3.14159)
+        {
+           cout << "My friend PI!" << endl;
+        }
+        else
+        {
+           cout << "Just a real number" << endl;
+         }
+         
+        return 0; 
+      }
+
+.. mchoice:: jh-cincout_05_cincout_05
+  :author: Joe Hummel
+  :answer_a: 19,19
+  :answer_b: 19,20
+  :answer_c: 20,20
+  :answer_d: 20,19
+  :correct: d 
+  :feedback_a: Incorrect. While the output of y becomes 19, we see that the output of x becomes 20 with the incrementation line.
+  :feedback_b: Incorrect. The output of y becomes 19, and we see that the output of x becomes 20 with the incrementation line.
+  :feedback_c: Incorrect. While we see that the output of x becomes 20 with the incrementation line, the output of y becomes 19 instead of 20.
+  :feedback_d: Correct! The output of x becomes 20 and the output of y becomes 19. 
+
+  What does this program output? Assume the user inputs 19. 
+
+  .. code-block:: cpp
+  
+     if ( condition )
+     {
+        S1;
+        S2;
+     }
+     else
+     {
+        S3;
+        S4;
+      }
+
+
+.. mchoice:: jh-cincout_05_cincout_06
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: cpp
+  
+     if (x > 0)
+     {
+        cout << x;
+      }
+
+  :answer_b: 
+
+  .. code-block:: cpp
+  
+     if (x > 0)
+      cout << x;
+
+  :answer_c: 
+
+  .. code-block:: cpp
+  
+     if (x > 0);
+      cout << x;
+
+  :answer_d: 
+
+  .. code-block:: cpp
+  
+     if (x > 0)
+     {
+        cout << x;
+      }
+     else
+     {
+     }
+
+  :correct: d
+  :feedback_a: Incorrect. Review the rules of if-else statements and try again!
+  :feedback_b: Incorrect. Review the rules of if-else statements  and try again!
+  :feedback_c: Incorrect. Review the rules of if-else statements  and try again!
+  :feedback_d: Correct!
+
+  The following are all equivalent, except for one.  Which one is not like the others?
 
 .. mchoice:: jh-cincout_05_cincout_07
   :author: Joe Hummel
@@ -127,60 +212,44 @@ Let's practice some more user inputs and outputs together!
 
   Suppose input is 82. What does the program output?
 
-  -----
-  #include &lt;iostream&gt;
-  =====
-  using namespace std;
-  =====
-  int main()
-  =====
-  {
-  =====
-   int score;
-   =====
-   cin >> score;
-   =====
-   if (score >= 90)
-   =====
-   {
-      ====
-      cout << "A";
-      ====
-   }
-   ====
-   if (score >= 80)
-   ====
-   {
-      ====
-      cout << "B";
-      ====
-   }
-   ====
-   if (score >= 70)
-   ====
-   {
-      ====
-      cout << "C";
-      ====
-   }
-   ====
-   if (score >= 60)
-   ====
-   {
-      ====
-      cout << "D";
-   }
-   ====
-   else
-   ====
-   {
-      cout << "F";
-   }
-   ====
-  return 0; 
-  =====
-  }
-  =====
+  .. code-block:: cpp
+  
+     #include &lt;iostream&gt;
+     using namespace std;
+     
+     int main()
+     {
+        int score;
+        
+        cin >> score;
+        
+        if (score >= 90)
+        {
+           cout << "A";
+         }
+           
+        if (score >= 80)
+        {
+           cout << "B";
+         }
+        
+        if (score >= 70)
+        {
+           cout << "C";
+         }
+         
+        if (score >= 60)
+        {
+           cout << "D";
+         }
+         
+        else
+        {
+           cout << "F";
+         }
+         
+         return 0; 
+      }
 
 .. mchoice:: jh-cincout_05_cincout_09
   :author: Joe Hummel
@@ -198,91 +267,43 @@ Let's practice some more user inputs and outputs together!
 
   Suppose someone writes a different version as shown below... Suppose input is 82. What does this version output?
 
-  -----
-  #include &lt;iostream&gt;
-  =====
-  using namespace std;
-  =====
-  int main()
-  =====
-  {
-  =====
-   int score;
-   =====
-   cin >> score;
-   =====
-   if (score >= 90)
-   =====
-   {
-      ====
-      cout << "A";
-      ====
-   }
-   ====
-   else if (score >= 80)
-   ====
-   {
-      ====
-      cout << "B";
-      ====
-   }
-   ====
-   else if (score >= 70)
-   ====
-   {
-      ====
-      cout << "C";
-      ====
-   }
-   ====
-   else if (score >= 60)
-   ====
-   {
-      ====
-      cout << "D";
-   }
-   ====
-   else
-   ====
-   {
-      cout << "F";
-   }
-   ====
-  return 0; 
-  =====
-  }
-  =====
+  .. code-block:: cpp
+  
+     #include &lt;iostream&gt;
+     using namespace std;
+     
+     int main()
+     {
+        int score;
+        
+        cin >> score;
+        
+        if (score >= 90)
+        {
+           cout << "A";
+        }
+        
+        else if (score >= 80)
+        {
+           cout << "B";
+         }
+         
+        else if (score >= 70)
+        {
+           cout << "C";
+         }
+        
+        else if (score >= 60)
+        {
+           cout << "D";
+         }
+         
+        else
+        {
+           cout << "F";
+         }
+      
+      return 0; 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-More Application: Calculating Windchill
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     }
 
-Let's go back to basics and calculate windchill together.
-
-.. mchoice:: jh-inputs_02_inputs_04
-  :author: Joe Hummel
-  :answer_a: No inputs
-  :answer_b: 1
-  :answer_c: 2
-  :answer_d: 3
-  :correct: c
-  :feedback_a: Incorrect. The equation has two inputs--T and W.
-  :feedback_b: Incorrect. The equation has more than one input--T and W.
-  :feedback_c: Correct! The equation has two inputs--T and W.
-  :feedback_d: Incorrect. The equation has only two inputs--T and W.
-
-  I want to write a program to compute windchill. How many inputs are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * power(W, 0.16) + (0.43 * T * power(W, 0.16))` 
-
-.. mchoice:: jh-inputs_02_inputs_06
-  :author: Joe Hummel
-  :answer_a: 4
-  :answer_b: 3
-  :answer_c: 2
-  :answer_d: 1
-  :correct: c
-  :feedback_a: Incorrect. The equation doesn't have four variables, there are only two--T and W.
-  :feedback_b: Incorrect. The equation doesn't have three variables, there are only two--T and W.
-  :feedback_c: Correct! The equation has two variables--T and W.
-  :feedback_d: Incorrect. The equation has more than one variable--T and W.
-
-  How many variabless are there to the program? :code:`windchill = 35.7 + (0.6 * T) - (35.7 * power(W, 0.16) + (0.43 * T * power(W, 0.16))` 

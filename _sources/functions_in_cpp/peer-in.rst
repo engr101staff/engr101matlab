@@ -24,7 +24,21 @@
 More Practice:
 ------------------------------------
 
-.. mchoice:: jh-inputs_03_functions_03
+.. mchoice:: jh-functions_01_sequences_02
+  :author: Joe Hummel
+  :answer_a: Input 2 numbers, add them together, output the result.
+  :answer_b: Input the 1st number, add it to the 2nd number, output the result.
+  :answer_c: Input the 1st number, input the 2nd number, add them together, output the result.
+  :answer_d: Input the 1st number, input the 2nd number, add them together producing a 3rd number, output 3rd number.
+  :correct: d
+  :feedback_a: Incorrect. Review the steps one at a time and try again!
+  :feedback_b: Incorrect. Review the steps one at a time and try again!
+  :feedback_c: Incorrect. Review the steps one at a time and try again!
+  :feedback_d: Correct!
+
+  I want to write an Add program that adds 2 numbers together.  Which of the following provides the best sequence of commands to the computer?
+
+.. mchoice:: jh-functions_03_variables_03
   :practice: T
   :author: Joe Hummel
   :answer_a: 25
@@ -39,7 +53,7 @@ More Practice:
 
   Variables live in the computer's memory, and are drawn as boxes containing values. Suppose x currently has the value 25. What value does x contain after executing this assignment statement? :code:`x = 2 * x - 1;`
 
-.. mchoice:: jh-inputs_03_functions_05
+.. mchoice:: jh-functions_03_variables_05
   :practice: T
   :author: Joe Hummel
   :answer_a: 6.0
