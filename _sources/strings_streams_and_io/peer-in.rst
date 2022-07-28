@@ -373,18 +373,95 @@ More Practice:
 
 .. mchoice:: jh-stringsandcells_17_arrays_04
   :author: Joe Hummel
-  :answer_a: The loops are missing { }
-  :answer_b: The average is wrong due to integer division
-  :answer_c: Both the average & variance are wrong due to integer division
-  :answer_d: The temp array should be int, not double
-  :answer_e: The 3rd loop needs to reset sum back to 0.0
-  :correct: c
+  :answer_a: 
+
+  .. code-block:: cpp
+   
+   cout << “Years: ” << data[250][0] 
+        << “-”       << data[0][0]   << endl;
+
+  :answer_b: 
+
+  .. code-block:: cpp
+
+   cout << “Years: ” << data[249][0] 
+        << “-”       << data[0][0]   << endl;
+
+  :answer_c: 
+
+  .. code-block:: cpp
+
+   cout << “Years: ” << data[numRows][0] 
+        << “-”       << data[0][0]         << endl;
+
+  :answer_d: 
+
+  .. code-block:: cpp
+
+    cout << “Years: ” << data[numRows-1][0] 
+         << “-”       << data[0][0]         << endl;
+
+  :correct: d
+  :feedback_a: Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1. 
+  :feedback_b: Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
+  :feedback_c: Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
+  :feedback_d: Correct!
+
+  The rainfall data is in descending order by year.  We want to output the first and last years of the dataset, e.g. 1929 – 2013.  What’s the best approach for a general dataset?
+
+.. mchoice:: jh-stringsandcells_17_arrays_06
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: cpp
+   
+   for (int i=0; i<numRows*12; i=i+1)
+   {
+      sum = sum + data[i][i];
+   }
+
+  :answer_b: 
+
+  .. code-block:: cpp
+
+   for (int i=0; i<numRows; i=i+1)
+   {
+      for (int j=0; j<12; j=j+1)
+      {
+         sum = sum + data[i][j];
+      }
+   }
+
+  :answer_c: 
+
+  .. code-block:: cpp
+
+   for (int row=0; row<numRows; row=row+1)
+   {
+      for (int col=0; col<12; col=col+1)
+      {
+         sum = sum + data[row][col];
+      }
+   }
+
+  :answer_d: 
+
+  .. code-block:: cpp
+
+    for (int row=0; row<numRows; row=row+1)
+    {
+       for (int col=1; col<13; col=col+1)
+       {
+          sum = sum + data[row][col];
+         }
+      }
+
+  :correct: d
   :feedback_a: Incorrect. Review a typical sum array pattern and try again!
   :feedback_b: Incorrect. Review a typical sum array pattern and try again!
-  :feedback_c: Correct!
-  :feedback_d: Incorrect. Review a typical sum array pattern and try again!
-  :feedback_e: Incorrect. Review a typical sum array pattern and try again!
+  :feedback_c: Incorrect. Review a typical sum array pattern and try again!
+  :feedback_d: Correct!
 
-  What's wrong with this version of StandardDev?  It’s off by just a little… Your output is 3.21131, whereas the expected output is 2.18232.
+  We are computing average rainfall across the entire dataset.  What’s the correct way to sum the rainfall data?
+
   
-  .. code-block:: cpp

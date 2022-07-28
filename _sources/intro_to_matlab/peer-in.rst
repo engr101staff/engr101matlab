@@ -10,17 +10,17 @@
 More Practice:
 ------------------------------------
 
-.. mchoice:: jh-inputs_20_intromatlab_03
+.. mchoice:: jh-syntax_20_intromatlab_03
   :author: Joe Hummel
   :answer_a: The same as in C++, to denote the end of a statement
   :answer_b: To trigger evaluation of the command
   :answer_c: To suppress output from commands
   :answer_d: To differentiate between commands and comments
   :correct: c
-  :feedback_a: Incorrect. 
-  :feedback_b: Incorrect. 
+  :feedback_a: Incorrect. Reevaluate typical Matlab syntax and try again!
+  :feedback_b: Incorrect. Reevaluate typical Matlab syntax and try again!
   :feedback_c: Correct! 
-  :feedback_d: Incorrect. 
+  :feedback_d: Incorrect. Reevaluate typical Matlab syntax and try again!
 
   What is the purpose of  ";"  in MATLAB?
 
@@ -30,6 +30,38 @@ More Practice:
      W = 10 ;
      %% wind chill:
      windchill = 35.7 + 0.6*T - 35.7*W^0.16 + 0.43*T*W^0.16 ; 
+
+.. mchoice:: jh-syntax_20_intromatlab_04
+  :author: Joe Hummel
+  :answer_a: X is 0, since 1 and 2 are integers, the same result as C++
+  :answer_b: X is 0.5, since all numbers in MATLAB are doubles
+  :answer_c: X is 0, since 0.5 is rounded down (0 is even)
+  :answer_d: X is 1, since 0.5 is rounded up (0 is considered odd)
+  :correct: b
+  :feedback_a: Incorrect. Try running the code in Matlab and see what you get!
+  :feedback_b: Correct!
+  :feedback_c: Incorrect. Try running the code in Matlab and see what you get!
+  :feedback_d: Incorrect. Try running the code in Matlab and see what you get!
+
+  In C++, 1/2 => 0. How about MATLAB?
+
+  .. code-block:: matlab
+  
+     x = 1/2 ;
+
+.. mchoice:: jh-syntax_20_intromatlab_05
+  :author: Joe Hummel
+  :answer_a: Computers are finite, same result as C++
+  :answer_b: Computers are finite, but MATLAB offers 2x more digits --- answer is closer to 0.0
+  :answer_c: Computers are finite, but MATLAB offers infinite precision automatically --- ans = 0.0
+  :answer_d: Computers are finite, but MATLAB offers infinite precision if you ask for it
+  :correct: b
+  :feedback_a: Incorrect. The default precision on Matlab is double precision.
+  :feedback_b: Correct! 
+  :feedback_c: Incorrect. The default precision on Matlab is double precision.
+  :feedback_d: Incorrect. The default precision on Matlab is double precision.
+
+  In C++, recall that numbers were not always stored precisely. How about MATLAB?
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_01
   :author: Ashish Aggarwal
