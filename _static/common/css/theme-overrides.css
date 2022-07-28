@@ -17,6 +17,7 @@
   --codeButtonsBorder: #474949;
   --dangerAlerts: #f2dede;
   --successAlerts: #dff0d8;
+  --componentBgColor: 
 }
 
 .journal > form > fieldset > legend {
@@ -143,4 +144,9 @@ blockquote {
 .admonition-danger {
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+/* Add overrides for runestone component css here */
+.runestone {
+  
 }

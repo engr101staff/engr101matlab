@@ -232,3 +232,5 @@ html_show_sourcelink = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'PythonCoursewareProjectdoc'
 
+# custom files in _static
+setup.custom_css_files = ['common/css/theme-overrides.css']
