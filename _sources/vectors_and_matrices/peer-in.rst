@@ -12,6 +12,240 @@
 More Practice: 
 ------------------------------------------------------
 
+.. mchoice:: jh-vectors&matrices_23_vectors_03
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: matlab
+  
+     X = (220 – A) * 0.6;
+     Y = 12:102;
+     plot(X, Y);
+
+  :answer_b: 
+
+  .. code-block:: matlab
+  
+     X = 12:102;
+     Y = (220 – A) * 0.6;
+     plot(X, Y);
+
+  :answer_c: 
+
+  .. code-block:: matlab
+  
+     THR = (220 – A) * 0.6;
+     A = 12:102;
+     plot(THR, A);
+
+  :answer_d: 
+
+  .. code-block:: matlab
+  
+     A = 12:102;
+     THR = (220 – A) * 0.6;
+     plot(A, THR);
+
+  :correct: d
+  :feedback_a: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+  :feedback_b: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+  :feedback_c: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+  :feedback_d: Correct!
+
+  When exercising, an equation for your “target heart rate” (THR) is THR = (220 – A ) * 0.6, where A is your age.  Example: for 20-year old, THR = 120.  We want to plot for ages 12 – 102, how would you go about this?
+
+.. mchoice:: jh-vectors&matrices_23_vectors_12
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: matlab
+  
+     AnalyzeExamScores('exam01.txt');
+     fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
+
+  :answer_b: 
+
+  .. code-block:: matlab
+  
+     [avg, P, F] = AnalyzeExamScores('exam01.txt');
+     fprintf('%f, %d, %d\n', avg, P, F);
+
+  :answer_c: 
+
+  .. code-block:: matlab
+  
+     scores = load('exam01.txt');
+     AnalyzeExamScores(scores);
+     fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
+
+  :answer_d: 
+
+  .. code-block:: matlab
+  
+     scores = load('exam01.txt');
+     [avg, P, F] = AnalyzeExamScores(scores);
+     fprintf('%f, %d, %d\n', avg, P, F);
+
+  :correct: d
+  :feedback_a: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+  :feedback_b: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+  :feedback_c: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+  :feedback_d: Correct!
+
+  Exam scores are in the file 'exam01.txt'.  How would you call AnalyzeExamScores to analyze the file and output the results?
+
+.. mchoice:: jh-vectors&matrices_24_matrices_03
+  :author: Joe Hummel
+  :answer_a: You cannot compare vectors with < or >
+  :answer_b: All values must < or > for condition to be true
+  :answer_c: No idea, but based on error message => all if conditions were false --- try a different approach?
+  :correct: b
+  :feedback_a: Incorrect. Review vector syntax and try again!
+  :feedback_b: Correct!
+  :feedback_c: Incorrect. Review vector syntax and try again!
+
+  The following code is just trying to set the Trend variable (a good way to start).  But MATLAB gives an error message that “Trend” is never assigned a value.  Why not?
+
+  .. code-block:: matlab
+  
+     function [Trend, Percentage, MaxChange, Patient] = AnalyzeHRs(file1, file2)
+     before = load(file1);
+     after  = load(file2);
+
+       if after < before
+         Trend = '-';
+       end
+
+       if after > before
+         Trend = '+';
+       end
+
+       if after == before
+         Trend = '-';
+       end
+      
+     end
+
+.. mchoice:: jh-vectors&matrices_24_matrices_05
+  :author: Joe Hummel
+  :answer_a: Print debugging with disp(var)
+  :answer_b: Print debugging with fprintf(…)
+  :answer_c: Print debugging by removing “;”
+  :answer_d: Work interactively with your code
+  :answer_e: All of the above
+  :correct: e
+  :feedback_a: Incorrect. When things aren’t working, take advantage of what MATLAB has to offer--disp(var) can display contents of any variable, drop the “;” to see what is being computed, and work interactively *before* trying to write functions! 
+  :feedback_b: Incorrect. When things aren’t working, take advantage of what MATLAB has to offer--disp(var) can display contents of any variable, drop the “;” to see what is being computed, and work interactively *before* trying to write functions!
+  :feedback_c: Incorrect. When things aren’t working, take advantage of what MATLAB has to offer--disp(var) can display contents of any variable, drop the “;” to see what is being computed, and work interactively *before* trying to write functions!
+  :feedback_d: Incorrect. When things aren’t working, take advantage of what MATLAB has to offer--disp(var) can display contents of any variable, drop the “;” to see what is being computed, and work interactively *before* trying to write functions!
+  :feedback_e: Correct!
+
+  I had a similar solution but it didn’t work…  What could I have done to find the error and fix it?
+
+  .. code-block:: matlab
+  
+     function [Trend, Percentage, MaxChange, Patient] = AnalyzeHRs(file1, file2)
+       before = load(file1);
+       after  = load(file2);
+       .
+       .
+       .
+     end
+
+.. mchoice:: jh-vectors&matrices_24_matrices_09
+  :author: Joe Hummel
+  :answer_a: sum(M)
+  :answer_b: V = sum(M, 2); sum(V, 2)
+  :answer_c: sum(sum(M))
+  :answer_d: V = sum(M, 2); sum(V, 1)
+  :correct: d
+  :feedback_a: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_b: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_c: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_d: Correct!
+
+  Suppose M=[100 80 62; 59 62 78; 78 88 0; 82 98 0] is a matrix. How do you sum the entire contents of the matrix (i.e. output = 787)?
+
+.. mchoice:: jh-vectors&matrices_24_matrices_10
+  :author: Joe Hummel
+  :answer_a: [3]
+  :answer_b: [0 0 0; 1 0 0; 0 0 1; 0 0 1]
+  :answer_c: [59 0 0]
+  :answer_d: [1 1 1; 0 1 1; 1 1 0; 1 1 0]
+  :correct: b
+  :feedback_a: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_b: Correct!
+  :feedback_c: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_d: Incorrect. Try running the code again in Matlab and see what you get!
+
+  We create the following matrix and do a search.  What do you think MATLAB assigns to LI?
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,62]; [59,62,78]; [78,88,0]; [82,98,0] ];
+     LI = M < 60;
+
+.. mchoice:: jh-vectors&matrices_27_matrices_03
+  :author: Joe Hummel
+  :answer_a: Row vector of 0’s and 1’s
+  :answer_b: Column vector of 0’s and 1’s
+  :answer_c: Matrix of 0’s and 1’s
+  :answer_d: Single number denoting # of positive values in column 1
+  :correct: b
+  :feedback_a: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_b: Correct!
+  :feedback_c: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_d: Incorrect. Try running the code again in Matlab and see what you get!
+
+  M is a matrix.  The following builds a logical index from column 1, indicating positive values. What is R?
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+     R = (M(:, 1) > 0);
+
+.. mchoice:: jh-vectors&matrices_27_matrices_04
+  :author: Joe Hummel
+  :answer_a: 
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+     LI = (100<=M(:,3) & M(:,3)<=212);
+     V  = M(LI, 3);
+
+  :answer_b: 
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+     LI = (100<=M(:,3) & M(:,3)<=212);
+     V  = M(LI);
+
+  :answer_c: 
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+     LI = (100<=M(:,3) | M(:,3)<=212);
+     V  = M(LI, 3);
+
+  :answer_d: 
+
+  .. code-block:: matlab
+  
+     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+     LI = (100<=M(:,3) | M(:,3)<=212);
+     V  = M(LI);
+
+  :correct: a
+  :feedback_a: Correct!
+  :feedback_b: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_c: Incorrect. Try running the code again in Matlab and see what you get!
+  :feedback_d: Incorrect. Try running the code again in Matlab and see what you get!
+
+  M is a matrix.  Extract all values from column 3 that are in the range 100..212, inclusive.  Assign to a vector V.
+
 .. fillintheblank:: aa-vectors&matrices_08_vectors_01
   :author: Ashish Aggarwal
   :casei:
