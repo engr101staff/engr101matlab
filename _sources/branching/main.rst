@@ -4,6 +4,10 @@
 
 .. raw:: html
 
+   <link rel="stylesheet" href="../_static/common/css/theme-overrides.css">
+
+.. raw:: html
+
    <script src="../_static/common/js/common3.js"></script>
 
 .. include:: ../common/include_lobster_exercises.in.rst
