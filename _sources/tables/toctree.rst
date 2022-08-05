@@ -1,8 +1,8 @@
-Tables
-::::::
+MATLAB Tables
+:::::::::::::
 
 .. toctree::
-  :caption: Tables
+  :caption: MATLAB Tables
   :maxdepth: 4
 
   main.rst

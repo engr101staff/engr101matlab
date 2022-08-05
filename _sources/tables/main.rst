@@ -10,9 +10,9 @@
 
    <script src="../_static/common/js/common3.js"></script>
 
-======
-Tables
-======
+=============
+MATLAB Tables
+=============
 
 .. admonition:: Chapter Files
 

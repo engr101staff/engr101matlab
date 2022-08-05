@@ -234,6 +234,10 @@ One more thing before we move on... we just made some very useful functions, but
 
    **Unit testing** is the practice of testing each function individually to make sure it behaves as it should according to its **interface**. We often do this using the :code:`assert` function, which ends the program with an error message if its input is not true. A good way to organize unit tests is to write them in a separate file with its own :code:`main` function.
 
+   **Typos:**
+
+   - The slides say that :code:`assert` is a built-in MATLAB function. It is also a built-in C++ function.  
+
 --------------------------
 Exercise: Unit Testing
 --------------------------
@@ -451,7 +455,7 @@ In the next few videos, we'll use top-down design to clean up our proof-of-conce
 
 .. note::
 
-   There's actually two minor mistakes in the files that we've given you. If you look closely, you'll see that we forgot to include `std::` for some keywords in the in the `.h` files (including `document.h`). Additionally, in `encryptDocument.cpp`, we mistakenly put `using namespace std;` before `#include "document.h"`. That's not the correct ordering (all includes should come first), but coincidentally it cancels out the mistake of not having the `std::` in `document.h` insofar as it's included in `encryptDocument.cpp`. This will be fixed in future iterations of our textbook!
+   There's actually two minor mistakes in the files that we've given you. If you look closely, you'll see that we forgot to include :code:`std::` for some keywords in the in the :code:`.h` files (including :code:`document.h`). Additionally, in :code:`encryptDocument.cpp`, we mistakenly put :code:`using namespace std;` before :code:`#include "document.h"`. That's not the correct ordering (all includes should come first), but coincidentally it cancels out the mistake of not having the :code:`std::` in :code:`document.h` insofar as it's included in :code:`encryptDocument.cpp`. This will be fixed in future iterations of our textbook!
 
 
 We identified two new functions that we need to implement: :code:`loadDocument()` and :code:`writeDocument()`. Let's add these functions in a new module, :code:`document.cpp` and :code:`document.h`.
