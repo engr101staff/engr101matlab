@@ -60755,6 +60755,50 @@ int main() {
             })
         ]
     },
+    "ch16_sample_erase": {
+        starterCode: `#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  // remove characters starting at the beginning of the string
+  string chant = "Hail to the victors valiant";
+  chant.erase(0, 12);
+  cout << chant; // will print "victors valiant"
+  cout << endl;
+
+  // remove characters starting at the beginning of the string
+  chant = "Hail to the victors valiant";
+  chant.erase(0, 8);
+  cout << chant; // will print "the victors valiant"
+  cout << endl;
+
+  // remove characters from the middle of the string
+  chant = "Hail to the victors valiant";
+  chant.erase(12, 8);
+  cout << chant; // will print "Hail to the valiant"
+  cout << endl;
+
+  // remove characters from the end of the string
+  chant = "Hail to the victors valiant";
+  chant.erase(12, 25); // len is too large for the end of the string
+                       // so the rest of the string is removed
+  cout << chant; // will print "Hail to the "
+  cout << endl;
+
+  // remove characters from the end of the string
+  chant = "Hail to the victors valiant";
+  chant.erase(5, chant.npos);  // use npos to remove all remaining
+                                // characters in the string
+  cout << chant; // will print "Hail"
+  cout << endl;
+}`,
+    checkpoints: [
+        new checkpoints_1.OutputCheckpoint("Correct Output", (output) => {
+            return output === "victors valiant\nthe victors valiant\nHail to the valiant\nHail to the\nHail";
+        })
+    ]
+    },
     "ch16_ex_printDoubled": {
         starterCode: `#include <iostream>
 #include <vector>

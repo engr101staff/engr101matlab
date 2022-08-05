@@ -718,7 +718,7 @@ As we saw with some of the MATLAB programs, sometimes we want to know the index 
 
 .. code-block:: cpp
 
-   // Returns the value of the minimum element in the vector
+   // Returns the index of the maximum element in the vector
    int index_of_max_element(const vector<int> &vec) {
    
    // first, check to see if this is an empty vector; if the vector

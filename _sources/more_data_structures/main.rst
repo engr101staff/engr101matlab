@@ -751,6 +751,24 @@ Complete the :code:`sum` function in the :file:`analyzeData.cpp` file. Here is t
       :width: 560
       :align: center
 
+    |
+    
+    Note: there is a typo in this video.
+
+    .. code-block:: cpp
+
+       for (int i=0; i < vecs/size(); ++i){
+
+    should be 
+
+    .. code-block:: cpp
+
+       for (int i=0; i < vecs.size(); ++i){
+
+
+
+
+
 ------------------
 Analyzing the Data
 ------------------

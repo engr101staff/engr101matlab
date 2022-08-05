@@ -150,6 +150,10 @@ Let's consider indexing into cell arrays:
 
   The :code:`cell2mat` function creates a regular array from a cell array containing numbers. The :code:`num2cell` function does the reverse - it creates a cell array from a regular array of numbers.
 
+  **Typos:**
+
+  - On slides 13 and 14, the array :code:`[2 3 4]` should be :code:`[1 2 3]`. (We copied the wrong array in the slides, sorry about that!)
+
 -----------------------------
 Exercise: Cell Array Practice
 -----------------------------
