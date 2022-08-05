@@ -149,18 +149,10 @@ blockquote {
 
 /* Add overrides for runestone component css here */
 .runestone {
-  background-color: transparent;
-  border-width: 0px;
-  border-color: transparent;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.runestone_mchoice {
   background-color: #fbf6d2;
   border-width: 1px;
-  border-color: #cccccc;
+  border-color: #e9dd82;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 5px;
+  padding: 1em;
 }
