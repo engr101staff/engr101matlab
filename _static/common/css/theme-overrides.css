@@ -65,6 +65,7 @@ blockquote {
   display: block;
   margin-left: 10%;
   margin-right: 10%;
+  width: 560;
 }
 
 .admonition-exercise-files table {
@@ -149,9 +150,17 @@ blockquote {
 /* Add overrides for runestone component css here */
 .runestone {
   background-color: transparent;
+  border-width: 0px;
+  border-color: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.runestone_mchoice {
+  background-color: #fbf6d2;
   border-width: 1px;
   border-color: #cccccc;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0;
+  padding: 5px;
 }

@@ -35,7 +35,7 @@ Strings and Cell Arrays
 
     * - :download:`cities.xlsx <../_static/strings_and_cells/cities.xlsx>`
 
-      - .. reveal:: cities_xlsx_preview
+      - .. reveal:: cities_xlsx_preview_strings_and_cells
           :showtitle: Preview
           :modal:
           :modaltitle: <code>cities.xlsx</code>
