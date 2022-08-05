@@ -403,11 +403,50 @@ There's more ways that we can use the :code:`replace` function. Open up the `doc
 
 The :code:`erase` function takes two arguments: an integer :code:`pos` and an integer :code:`len`. The :code:`erase` function goes into the string at index :code:`pos` and removes :code:`len` characters. Consider these examples:
 
-.. raw:: html
+.. code-block :: cpp
 
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch16_sample_erase</div>
-   </div>
+   #include <iostream>
+   #include <string>
+
+   using namespace std;
+
+   int main() {
+
+      string chant;
+   
+      // remove characters starting at the beginning of the string
+      chant = "Hail to the victors valiant";
+      chant.erase(0, 12);
+      cout << chant; // will print "victors valiant"
+      cout << endl;
+
+      // remove characters starting at the beginning of the string
+      chant = "Hail to the victors valiant";
+      chant.erase(0, 8);
+      cout << chant; // will print "the victors valiant"
+      cout << endl;
+
+      // remove characters from the middle of the string
+      chant = "Hail to the victors valiant";
+      chant.erase(12, 8);
+      cout << chant; // will print "Hail to the valiant"
+      cout << endl;
+
+      // remove characters from the end of the string
+      chant = "Hail to the victors valiant";
+      chant.erase(12, 25); // len is too large for the end of the string
+                           // so the rest of the string is removed
+      cout << chant; // will print "Hail to the "
+      cout << endl;
+
+      // remove characters from the end of the string
+      chant = "Hail to the victors valiant";
+      chant.erase(5, chant.npos);   // use npos to remove all remaining
+                                    // characters in the string
+      cout << chant; // will print "Hail"
+      cout << endl;
+
+   }
 
 Try changing the values for :code:`pos` and :code:`len` and observe which characters are erased in the string.
 
