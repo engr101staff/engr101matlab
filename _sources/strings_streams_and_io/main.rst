@@ -396,6 +396,25 @@ There's more ways that we can use the :code:`replace` function. Open up the `doc
 
     + Correct! According to the documentation, A value of ``string::npos`` indicates all characters until the end of the string.
 
+
+----------------
+:code:`.erase()`
+----------------
+
+The :code:`erase` function takes two arguments: an integer :code:`pos` and an integer :code:`len`. The :code:`erase` function goes into the string at index :code:`pos` and removes :code:`len` characters. Consider these examples:
+
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch16_sample_erase</div>
+   </div>
+
+Try changing the values for :code:`pos` and :code:`len` and observe which characters are erased in the string.
+
+
+
+
+
 ------------------
 :code:`.substr()`
 ------------------

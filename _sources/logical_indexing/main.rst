@@ -82,6 +82,10 @@ We've seen that MATLAB supports arithmetic operations (e.g. :code:`+`, :code:`.*
 
   Relational operators return a **logical** result (either :code:`true` or :code:`false`). True is often encoded as 1, and false is often encoded as 0. Relational operators work on matrices, as well as scalars.
 
+  **Typos:**
+
+  - On slide 4, the expression :code:`4>=5` is :code:`false` so the boolean value should be :code:`0` not :code:`1`. 
+
    
 
 --------------------------------------------
