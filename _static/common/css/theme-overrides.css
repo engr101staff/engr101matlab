@@ -65,6 +65,7 @@ blockquote {
   display: block;
   margin-left: 10%;
   margin-right: 10%;
+  width: 560;
 }
 
 .admonition-exercise-files table {
@@ -150,8 +151,8 @@ blockquote {
 .runestone {
   background-color: transparent;
   border-width: 1px;
-  border-color: #cccccc;
+  border-color: #ede189;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0;
+  padding: 1em;
 }
