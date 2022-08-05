@@ -149,9 +149,9 @@ blockquote {
 
 /* Add overrides for runestone component css here */
 .runestone {
-  background-color: #fbf6d2;
+  background-color: transparent;
   border-width: 1px;
-  border-color: #e9dd82;
+  border-color: #ede189;
   margin-top: 0;
   margin-bottom: 0;
   padding: 1em;
