@@ -6,6 +6,17 @@
 
    <script src="../_static/common/js/common3.js"></script>
 
+.. raw:: html
+
+   <style>
+      .btn {
+         margin: 0;
+      }
+      .tab-pane {
+         padding: 0;
+      }
+   </style>
+
 ======================
 Introduction to MATLAB
 ======================
