@@ -23,16 +23,11 @@
 More Practice:
 ------------------------------------
 
-.. raw:: html
-
-   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
-      <div class="lobster-ex-project-name">ch12_02_ex</div>
-   </div>
-
-//.. mchoice:: jh-branching_04_runtimeerror_04
+.. mchoice:: jh-branching_04_runtimeerror_04
   :author: Joe Hummel
+  :practice: T
   :answer_a: 
-
+  
   .. code-block:: cpp
   
      int main()
@@ -113,9 +108,9 @@ More Practice:
 
   We want to prevent the runtime error, and instead output “cannot divide”. Which is correct?
 
-
 .. mchoice:: jh-branching_04_sequences_09
   :author: Joe Hummel
+  :practice: T
   :answer_a: grow in size to handle more and more digits past the decimal point
   :answer_b: compress the digits into the same memory space in order to store more and more digits
   :answer_c: store an exact value when possible, otherwise store an approximate value
