@@ -23,6 +23,12 @@
 More Practice:
 ------------------------------------
 
+.. raw:: html
+
+   <div class="lobster-ex" style="width: 600px; margin-left: auto; margin-right: auto">
+      <div class="lobster-ex-project-name">ch12_02_ex</div>
+   </div>
+
 .. mchoice:: jh-branching_04_runtimeerror_04
   :author: Joe Hummel
   :answer_a: 
