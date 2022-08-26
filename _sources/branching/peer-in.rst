@@ -24,86 +24,81 @@ More Practice:
 ------------------------------------
 
 .. mchoice:: jh-branching_04_runtimeerror_04
-  :author: Joe Hummel
-  :practice: T
-  :answer_a: 
+    :author: Joe Hummel
+    :practice: T
+  
+    We want to prevent the runtime error, and instead output “cannot divide”. Which is correct?
 
-  .. code-block:: cpp
+    - .. code-block:: cpp
      
-     int main() 
-     { 
-         int  x, y, z; 
-         
-         cin >> x; 
-         cin >> y; 
-         z = x / y; 
-         
-         if (y == 0) 
+         int main() 
          { 
-            cout << "cannot divide"; 
-            } 
-         else 
-         { 
+           int  x, y, z; 
+           cin >> x; 
+           cin >> y; 
+           z = x / y; 
+         
+           if (y == 0) 
+           { 
+           cout << "cannot divide"; 
+           } 
+           else 
+           { 
             cout << z << endl; 
-            } 
-            return 0; 
-      }
-      
-  :answer_b: 
+           } 
+           return 0; 
+         } 
 
-  .. code-block:: cpp
+      + This code is correct.
+
+    - .. code-block:: cpp
+       
+         int main()
+         {
+            int  x, y, z;
+            
+            if (y == 0)
+            {
+              cout << "cannot divide";
+            }
+            else
+            { 
+              cin >> x;
+              cin >> y;
+              
+              z = x / y;
+              
+              cout << z << endl;
+            }
+            return 0;
+         }
+
+      - Incorrect. Review the steps one at a time and try again!
+
+
+    - .. code-block:: cpp
   
-     int main()
-     {
-        int  x, y, z;
+         int main()
+         {
+            int  x, y, z;
         
-        if (y == 0)
-        {
-           cout << "cannot divide";
-         }
-        else
-        { 
-           cin >> x;
-           cin >> y;
-           
-           z = x / y;
-           
-           cout << z << endl;
-         }
-         return 0;
-      }
-
-
-  :answer_c: 
-
-  .. code-block:: cpp
-  
-     int main()
-     {
-        int  x, y, z;
+            cin >> x;
+            cin >> y;
         
-        cin >> x;
-        cin >> y;
-        
-        if (y == 0)
-        {
-           cout << "cannot divide";
+            if (y == 0)
+            {
+              cout << "cannot divide";
+            }
+            else
+            { 
+              z = x / y;
+              cout << z << endl;
+            }
+            return 0;
          }
-        else
-        { 
-           z = x / y;
-           cout << z << endl;
-         }
-         return 0;
-      }
 
+      - Incorrect. Review the steps one at a time and try again!
 
-  :correct: a
-  :feedback_a: Correct! 
-  :feedback_b: Incorrect. Review the steps one at a time and try again!
-  :feedback_c: Incorrect. Review the steps one at a time and try again!
-
-  We want to prevent the runtime error, and instead output “cannot divide”. Which is correct?
 
 .. mchoice:: jh-branching_04_sequences_09
   :author: Joe Hummel
