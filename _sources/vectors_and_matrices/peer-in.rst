@@ -14,88 +14,82 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_23_vectors_03
   :author: Joe Hummel
-  :answer_a: 
-
-  .. code-block:: matlab
-  
-     X = (220 – A) * 0.6;
-     Y = 12:102;
-     plot(X, Y);
-
-  :answer_b: 
-
-  .. code-block:: matlab
-  
-     X = 12:102;
-     Y = (220 – A) * 0.6;
-     plot(X, Y);
-
-  :answer_c: 
-
-  .. code-block:: matlab
-  
-     THR = (220 – A) * 0.6;
-     A = 12:102;
-     plot(THR, A);
-
-  :answer_d: 
-
-  .. code-block:: matlab
-  
-     A = 12:102;
-     THR = (220 – A) * 0.6;
-     plot(A, THR);
-
-  :correct: d
-  :feedback_a: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
-  :feedback_b: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
-  :feedback_c: Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
-  :feedback_d: Correct!
+  :practice: T 
 
   When exercising, an equation for your “target heart rate” (THR) is THR = (220 – A ) * 0.6, where A is your age.  Example: for 20-year old, THR = 120.  We want to plot for ages 12 – 102, how would you go about this?
 
+  - .. code-block:: matlab
+  
+      X = (220 – A) * 0.6;
+      Y = 12:102;
+      plot(X, Y);
+
+    - Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+
+  - .. code-block:: matlab
+  
+      X = 12:102;
+      Y = (220 – A) * 0.6;
+      plot(X, Y);
+
+    - Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+
+  - .. code-block:: matlab
+  
+      THR = (220 – A) * 0.6;
+      A = 12:102;
+      plot(THR, A);
+
+    - Incorrect. Think about how the variables interact in the equation and how we would want to plot the function, and then try again!
+  
+  - .. code-block:: matlab
+  
+      A = 12:102;
+      THR = (220 – A) * 0.6;
+      plot(A, THR);
+    
+    + Correct!
+
+
 .. mchoice:: jh-vectors&matrices_23_vectors_12
   :author: Joe Hummel
-  :answer_a: 
-
-  .. code-block:: matlab
-  
-     AnalyzeExamScores('exam01.txt');
-     fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
-
-  :answer_b: 
-
-  .. code-block:: matlab
-  
-     [avg, P, F] = AnalyzeExamScores('exam01.txt');
-     fprintf('%f, %d, %d\n', avg, P, F);
-
-  :answer_c: 
-
-  .. code-block:: matlab
-  
-     scores = load('exam01.txt');
-     AnalyzeExamScores(scores);
-     fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
-
-  :answer_d: 
-
-  .. code-block:: matlab
-  
-     scores = load('exam01.txt');
-     [avg, P, F] = AnalyzeExamScores(scores);
-     fprintf('%f, %d, %d\n', avg, P, F);
-
-  :correct: d
-  :feedback_a: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
-  :feedback_b: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
-  :feedback_c: Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
-  :feedback_d: Correct!
+  :practice: T
 
   Exam scores are in the file 'exam01.txt'.  How would you call AnalyzeExamScores to analyze the file and output the results?
 
+  - .. code-block:: matlab
+  
+      AnalyzeExamScores('exam01.txt');
+      fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
+
+    - Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+
+  - .. code-block:: matlab
+  
+      [avg, P, F] = AnalyzeExamScores('exam01.txt');
+      fprintf('%f, %d, %d\n', avg, P, F);
+
+    - Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+
+  - .. code-block:: matlab
+  
+      scores = load('exam01.txt');
+      AnalyzeExamScores(scores);
+      fprintf('%f, %d, %d\n', Avg, NumPassed, NumFailed);
+
+    - Incorrect. Think about the steps necessary towards analyzing the file and outputting the results, and try again!
+
+  - .. code-block:: matlab
+  
+      scores = load('exam01.txt');
+      [avg, P, F] = AnalyzeExamScores(scores);
+      fprintf('%f, %d, %d\n', avg, P, F);
+
+    + Correct.
+
 .. mchoice:: jh-vectors&matrices_24_matrices_03
   :author: Joe Hummel
+  :practice: T
   :answer_a: You cannot compare vectors with < or >
   :answer_b: All values must < or > for condition to be true
   :answer_c: No idea, but based on error message => all if conditions were false --- try a different approach?
@@ -128,6 +122,7 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_24_matrices_05
   :author: Joe Hummel
+  :practice: T
   :answer_a: Print debugging with disp(var)
   :answer_b: Print debugging with fprintf(…)
   :answer_c: Print debugging by removing “;”
@@ -154,6 +149,7 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_24_matrices_09
   :author: Joe Hummel
+  :practice: T
   :answer_a: sum(M)
   :answer_b: V = sum(M, 2); sum(V, 2)
   :answer_c: sum(sum(M))
@@ -168,6 +164,7 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_24_matrices_10
   :author: Joe Hummel
+  :practice: T
   :answer_a: [3]
   :answer_b: [0 0 0; 1 0 0; 0 0 1; 0 0 1]
   :answer_c: [59 0 0]
@@ -187,6 +184,7 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_27_matrices_03
   :author: Joe Hummel
+  :practice: T
   :answer_a: Row vector of 0’s and 1’s
   :answer_b: Column vector of 0’s and 1’s
   :answer_c: Matrix of 0’s and 1’s
@@ -206,45 +204,41 @@ More Practice:
 
 .. mchoice:: jh-vectors&matrices_27_matrices_04
   :author: Joe Hummel
-  :answer_a: 
-
-  .. code-block:: matlab
-  
-     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
-     LI = (100<=M(:,3) & M(:,3)<=212);
-     V  = M(LI, 3);
-
-  :answer_b: 
-
-  .. code-block:: matlab
-  
-     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
-     LI = (100<=M(:,3) & M(:,3)<=212);
-     V  = M(LI);
-
-  :answer_c: 
-
-  .. code-block:: matlab
-  
-     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
-     LI = (100<=M(:,3) | M(:,3)<=212);
-     V  = M(LI, 3);
-
-  :answer_d: 
-
-  .. code-block:: matlab
-  
-     M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
-     LI = (100<=M(:,3) | M(:,3)<=212);
-     V  = M(LI);
-
-  :correct: a
-  :feedback_a: Correct!
-  :feedback_b: Incorrect. Try running the code again in Matlab and see what you get!
-  :feedback_c: Incorrect. Try running the code again in Matlab and see what you get!
-  :feedback_d: Incorrect. Try running the code again in Matlab and see what you get!
+  :practice: T
 
   M is a matrix.  Extract all values from column 3 that are in the range 100..212, inclusive.  Assign to a vector V.
+
+  - .. code-block:: matlab
+  
+      M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+      LI = (100<=M(:,3) & M(:,3)<=212);
+      V  = M(LI, 3);
+    
+    + Correct!
+
+  - .. code-block:: matlab
+  
+      M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+      LI = (100<=M(:,3) & M(:,3)<=212);
+      V  = M(LI);
+
+    - Incorrect. Try running the code again in Matlab and see what you get!
+
+  - .. code-block:: matlab
+  
+      M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+      LI = (100<=M(:,3) | M(:,3)<=212);
+      V  = M(LI, 3);
+
+    - Incorrect. Try running the code again in Matlab and see what you get!
+
+  - .. code-block:: matlab
+  
+      M = [ [100,80,-9]; [-2,62,178]; [77,0,0]; [0,98,120] ];
+      LI = (100<=M(:,3) | M(:,3)<=212);
+      V  = M(LI);
+      
+     - Incorrect. Try running the code again in Matlab and see what you get!
 
 .. fillintheblank:: aa-vectors&matrices_08_vectors_01
   :author: Ashish Aggarwal
@@ -836,33 +830,9 @@ More Practice:
 
 .. mchoice:: aa-vectors&matrices_12_matrices_09
   :author: Ashish Aggarwal
-  :answer_a: 
-  .. code-block:: matlab
-      if word < 'a'
-        word = word + 5;
-      end
-  :answer_b:
-  .. code-block:: matlab
-      if word < 'a'
-        word = word + 26;
-      end
-  :answer_c:
-  .. code-block:: matlab
-      if word > 'z'
-        word = word + 26;
-      end
-  :answer_d:
-  .. code-block:: matlab
-      if word > 'z'
-        word = word - 26;
-      end
-  :correct: d
-  :feedback_a: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
-  :feedback_b: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
-  :feedback_c: Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
-  :feedback_d: Correct!
-  
-   The following program shifts any given letter by adding 5 to encrypt it into another letter from 'a' to 'z'. Which code snippet from the following options is required to be added to the program in order to make it work for all the letters?
+  :practice: T 
+
+  The following program shifts any given letter by adding 5 to encrypt it into another letter from 'a' to 'z'. Which code snippet from the following options is required to be added to the program in order to make it work for all the letters?
 
   .. code-block:: matlab
   
@@ -873,6 +843,35 @@ More Practice:
      word = word + 5;
      
      fprintf( '%s', word );
+
+  
+  - .. code-block:: matlab
+        if word < 'a'
+          word = word + 5;
+        end
+
+      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+
+  - .. code-block:: matlab
+        if word < 'a'
+          word = word + 26;
+        end
+
+      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+
+  - .. code-block:: matlab
+        if word > 'z'
+          word = word + 26;
+        end
+
+      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+
+  - .. code-block:: matlab
+        if word > 'z'
+          word = word - 26;
+        end
+
+      + Correct!
 
 .. fillintheblank:: aa-vectors&matrices_12_matrices_10
   :author: Ashish Aggarwal
