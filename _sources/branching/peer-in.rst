@@ -27,7 +27,28 @@ More Practice:
   :author: Joe Hummel
   :practice: T
   :answer_a: 
-  .. :code: 'int main() { int  x, y, z; cin >> x; cin >> y; z = x / y; if (y == 0) { cout << "cannot divide"; } else { cout << z << endl; } return 0; }
+
+  .. code-block:: cpp
+     
+     int main() 
+     { 
+         int  x, y, z; 
+         
+         cin >> x; 
+         cin >> y; 
+         z = x / y; 
+         
+         if (y == 0) 
+         { 
+            cout << "cannot divide"; 
+            } 
+         else 
+         { 
+            cout << z << endl; 
+            } 
+            return 0; 
+      }
+      
   :answer_b: 
 
   .. code-block:: cpp
