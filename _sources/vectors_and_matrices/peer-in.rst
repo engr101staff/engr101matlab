@@ -238,7 +238,7 @@ More Practice:
       LI = (100<=M(:,3) | M(:,3)<=212);
       V  = M(LI);
       
-     - Incorrect. Try running the code again in Matlab and see what you get!
+    - Incorrect. Try running the code again in Matlab and see what you get!
 
 .. fillintheblank:: aa-vectors&matrices_08_vectors_01
   :author: Ashish Aggarwal
@@ -846,32 +846,36 @@ More Practice:
 
   
   - .. code-block:: matlab
-        if word < 'a'
+        
+      if word < 'a'
           word = word + 5;
-        end
+      end
 
-      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
-
-  - .. code-block:: matlab
-        if word < 'a'
-          word = word + 26;
-        end
-
-      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+    - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
 
   - .. code-block:: matlab
+
+      if word < 'a'
+        word = word + 26;
+      end
+
+    - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+
+  - .. code-block:: matlab
+
         if word > 'z'
           word = word + 26;
         end
 
-      - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
+    - Incorrect. Recall the concept of ciphers in the class and see what we need to be careful of when we are adding or subtracting values from letters.
 
   - .. code-block:: matlab
-        if word > 'z'
+
+      if word > 'z'
           word = word - 26;
-        end
+      end
 
-      + Correct!
+    + Correct!
 
 .. fillintheblank:: aa-vectors&matrices_12_matrices_10
   :author: Ashish Aggarwal
