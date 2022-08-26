@@ -26,7 +26,8 @@ More Practice:
 .. mchoice:: jh-branching_04_runtimeerror_04
   :author: Joe Hummel
   :practice: T
-  :answer_a: :code: 'int main() { int  x, y, z; cin >> x; cin >> y; z = x / y; if (y == 0) { cout << "cannot divide"; } else { cout << z << endl; } return 0;}
+  :answer_a: 
+  .. :code: 'int main() { int  x, y, z; cin >> x; cin >> y; z = x / y; if (y == 0) { cout << "cannot divide"; } else { cout << z << endl; } return 0; }
   :answer_b: 
 
   .. code-block:: cpp
