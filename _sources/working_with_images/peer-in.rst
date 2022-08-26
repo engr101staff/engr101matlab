@@ -25,6 +25,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_01
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -45,6 +46,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_02
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -63,6 +65,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_03
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -82,6 +85,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_04
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -101,6 +105,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_05
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    n the following program, how many pixels in the image 'blank' will be red? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -120,6 +125,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_06
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: The function imread() changes the name of the image whereas imshow() displays the image.
   :answer_b: The function imread() converts the image file into a matrix whereas imshow() displays the image.
   :answer_c: The function imread() converts the image file into a matrix whereas imshow() changes the name of the image.
@@ -134,6 +140,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_07
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: The matrix 'mix' is a matrix which can take any mathematical values but matrix 'pix' can only take values from 0 to 255.
   :answer_b: The matrix 'mix' is a matrix which can only take values from 0 to 255 but matrix 'pix' can take any mathematical value.
   :answer_c: The matrix 'mix' has all the values as zeros but matrix 'pix' has all the values as 255.
@@ -154,6 +161,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_08
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It will show the image 'Batman.png'
   :answer_b: It will return an ERROR 
   :correct: b
@@ -170,6 +178,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_09
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It will show the image 'Batman.png'
   :answer_b: It will return an ERROR 
   :correct: a
@@ -188,6 +197,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_10
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    In the following program, how many pixels in the image 'blank' will be red? Assume that there is a colored image with the name 'Batman.png' of size 500 * 500 * 3 in the folder. (If the program will result in an error, put down 'ERROR')
@@ -208,6 +218,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_11
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: pix(250, 250, :) = blank(400, 400, :);
   :answer_b: blank(250, 250, :) = pix(400, 400, :);
   :answer_c: blank(400, 400, : ) = pix(250, 250, :);
@@ -232,6 +243,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_12
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: pix(:, 3:10, 3) = 255;
   :answer_b: pix(3:10, :, 2) = 255;
   :answer_c: pix(3:10, 50, 3) = 255;
@@ -254,6 +266,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_13
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: pix(1:5, 3:10, 1) = 255;
   :answer_b: pix(3:10, 1:5, 1) = 255;
   :answer_c: pix(3:10, 5, 1) = 255;
@@ -274,6 +287,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_14
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: imwrite( pix, 'Correct.png');
   :answer_b: imwrite( 'pix', Correct.png);
   :answer_c: imwrite( 'pix', 'Correct.png');
@@ -288,6 +302,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_15
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It displays a complete black image
   :answer_b: It displays an image having alternating rows and columns as black and white in the form of a grid
   :answer_c: It displays a complete white image
@@ -317,6 +332,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_16
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: pix(25, 25, 3) = 255;
   :answer_b: pix(1:25, 25, 3) = 255;
   :answer_c: pix(1:25, 1:25, 3) = 255;
@@ -337,6 +353,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_10_images_17
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It creates an image matrix which initially has all values as zeros and where all the numbers can only take values from 0 to 255
   :answer_b: It creates a matrix which initially has all values as zeros and where all the numbers can take any numeric value
   :answer_c: It creates a matrix which can either have 0s or 1s
@@ -351,6 +368,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_18
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    How many total number of pixels are present in the image 'pix'?
@@ -367,6 +385,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_19
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -385,6 +404,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_10_images_20
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -403,6 +423,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_01
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -421,6 +442,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_02
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -440,6 +462,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_03
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -458,6 +481,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_04
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -477,6 +501,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_05
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It helps in identifying which pixels of the image are being thresholded so that the thresholding condition can be changed accordingly
   :answer_b: It helps in creating a black and white image
   :answer_c: It helps in identifying the center of the thresholded object
@@ -491,6 +516,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_06
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: pix = binary(50, 50);
   :answer_b: binary = false(50, 50); 
   :answer_c: binary = zeros(50, 50);
@@ -505,6 +531,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_07
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: A binary image has three matrices which have the value of 0.
   :answer_b: A binary image can take any numeric value.
   :answer_c: A binary image can only take values ranging from 0 to 255.
@@ -519,6 +546,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_08
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: value = double( pix(1, 1, 1) * 2 );
   :answer_b: value = double(2) * pix(1, 1, 1);
   :answer_c: value = double( pix(1, 1, 1) ) * 2; 
@@ -541,6 +569,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_09
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -559,6 +588,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_10
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -577,6 +607,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_11
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -596,6 +627,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_12
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -615,6 +647,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_13
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -634,6 +667,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_14
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -654,6 +688,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_15
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
@@ -674,6 +709,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_16
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It is converting all the black pixels in 'pix' to white
   :answer_b: It is converting all the blue pixels in 'pix' to white
   :answer_c: It is converting all the green pixels in 'pix' to white
@@ -707,6 +743,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_17
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It is counting all the black pixels in 'pix'
   :answer_b: It is counting all the blue pixels in 'pix'
   :answer_c: It is counting all the green pixels in 'pix'
@@ -742,6 +779,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_18
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It is thresholding all the yellow pixels in 'pix'
   :answer_b: It is thresholding all the blue pixels in 'pix'
   :answer_c: It is thresholding all the green pixels in 'pix'
@@ -777,6 +815,7 @@ More Practice:
 
 .. mchoice:: aa-workingw/images_11_images_19
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It will return an ERROR
   :answer_b: It will display a black image
   :answer_c: It will display a white image
@@ -799,6 +838,7 @@ More Practice:
 
 .. fillintheblank:: aa-workingw/images_11_images_20
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following snippet of code? (If the program will result in an error, put down 'ERROR')
