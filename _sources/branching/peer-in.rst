@@ -29,7 +29,7 @@ More Practice:
       <div class="lobster-ex-project-name">ch12_02_ex</div>
    </div>
 
-.. mchoice:: jh-branching_04_runtimeerror_04
+//.. mchoice:: jh-branching_04_runtimeerror_04
   :author: Joe Hummel
   :answer_a: 
 
@@ -112,6 +112,7 @@ More Practice:
   :feedback_c: Incorrect. Review the steps one at a time and try again!
 
   We want to prevent the runtime error, and instead output “cannot divide”. Which is correct?
+
 
 .. mchoice:: jh-branching_04_sequences_09
   :author: Joe Hummel
