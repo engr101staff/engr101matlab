@@ -20,36 +20,36 @@ More Practice:
   
   - .. code-block:: matlab
 
-    function S = MaxSpeed(L)
-       S = 1.3 * sqrt(L);
-    end
+      function S = MaxSpeed(L)
+         S = 1.3 * sqrt(L);
+      end
 
-   - Incorrect. Try running the program in Matlab and see what you get!
-
-  - .. code-block:: matlab
-
-    function MaxSpeed(L)
-       MaxSpeed = 1.3 * sqrt(L);
-    end
-
-   + Correct!
+    - Incorrect. Try running the program in Matlab and see what you get!
 
   - .. code-block:: matlab
-  
-    function MaxSpeed(L, S)
-       S = 1.3 * sqrt(L);
-    end
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+      function MaxSpeed(L)
+        MaxSpeed = 1.3 * sqrt(L);
+      end
+
+    + Correct!
 
   - .. code-block:: matlab
   
-    function MaxSpeed(L)
-       S = 1.3 * sqrt(L);
-       return S;
-    end
+      function MaxSpeed(L, S)
+        S = 1.3 * sqrt(L);
+      end
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
+
+  - .. code-block:: matlab
+  
+      function MaxSpeed(L)
+        S = 1.3 * sqrt(L);
+        return S;
+      end
+
+    - Incorrect. Try running the program in Matlab and see what you get!
 
 
 .. mchoice:: jh-functionsanddata_21_functions_03
@@ -60,39 +60,39 @@ More Practice:
   
   .. code-block:: matlab
   
-     function [Min, Max, Avg] = Analyze(filename)
-       scores = load(filename);
-       Min = min(scores);
-       Max = max(scores);
-       Avg = mean(scores);
-     end
+      function [Min, Max, Avg] = Analyze(filename)
+        scores = load(filename);
+        Min = min(scores);
+        Max = max(scores);
+        Avg = mean(scores);
+      end
 
 
   - .. code-block:: matlab
 
-    Analyze(‘exam01.txt’);
+      Analyze(‘exam01.txt’);
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
 
   - .. code-block:: matlab
 
-    Min = Analyze(‘exam01.txt’);
-    Max = Analyze(‘exam01.txt’);
-    Avg = Analyze(‘exam01.txt’);
+      Min = Analyze(‘exam01.txt’);
+      Max = Analyze(‘exam01.txt’);
+      Avg = Analyze(‘exam01.txt’);
    
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
    
   - .. code-block:: matlab
   
-    [Min,Max,Avg] = Analyze(‘exam01.txt’);
+      [Min,Max,Avg] = Analyze(‘exam01.txt’);
 
-   + Correct!
+    + Correct!
   
   - .. code-block:: matlab
   
-    [Min,Max,Avg] = Analyze(exam01.txt);
+      [Min,Max,Avg] = Analyze(exam01.txt);
   
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
 
 
 .. mchoice:: jh-functionsanddata_21_functions_11
@@ -110,30 +110,30 @@ More Practice:
   
   - .. code-block:: matlab
 
-    for i=0:length(x)-1
-       z(i) = x(i) + y(i);
-    end
+      for i=0:length(x)-1
+         z(i) = x(i) + y(i);
+      end
    
-   + Correct!
+    + Correct!
   
   
   - .. code-block:: matlab
 
-    for i=1:length(x)
-       z(i) = x(i) + y(i);
-    end
+      for i=1:length(x)
+         z(i) = x(i) + y(i);
+      end
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
   
   - .. code-block:: matlab
   
-    z = x + y;
+      z = x + y;
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
   
   - .. code-block:: matlab
   
-    z = sum(x, y)
+      z = sum(x, y)
 
-   - Incorrect. Try running the program in Matlab and see what you get!
+    - Incorrect. Try running the program in Matlab and see what you get!
 
