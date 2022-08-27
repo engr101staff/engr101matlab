@@ -244,14 +244,12 @@ More Practice:
   :answer_c: 12Test.m
   :answer_d: $Test.m
   :answer_e: Test$.m
-  :answer_f: _Test.m
   :correct: b
   :feedback_a: Incorrect. Remember, a valid .m filename must start with a letter and can contain letters, numbers or underscores.
   :feedback_b: Correct! A valid .m filename must start with a letter and can contain letters, numbers or underscores.
   :feedback_c: Incorrect. Remember, a valid .m filename must start with a letter and can contain letters, numbers or underscores.
   :feedback_d: Incorrect. Remember, a valid .m filename must start with a letter and can contain letters, numbers or underscores.
   :feedback_e: Incorrect. Remember, a valid .m filename must start with a letter and can contain letters, numbers or underscores.
-  :feedback_f: Incorrect. Remember, a valid .m filename must start with a letter and can contain letters, numbers or underscores.
 
   Which of the following is a valid name to save the program file in MATLAB?
 
