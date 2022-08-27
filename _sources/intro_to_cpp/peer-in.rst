@@ -25,6 +25,7 @@ More Practice:
 
 .. mchoice:: jh-inputs_02_variables_04
   :author: Joe Hummel
+  :practice: T
   :answer_a: No inputs
   :answer_b: 1
   :answer_c: 2
@@ -39,6 +40,7 @@ More Practice:
 
 .. mchoice:: jh-inputs_02_variables_06
   :author: Joe Hummel
+  :practice: T
   :answer_a: 4
   :answer_b: 3
   :answer_c: 2
@@ -49,7 +51,7 @@ More Practice:
   :feedback_c: Correct! The equation has two variables--T and W.
   :feedback_d: Incorrect. The equation has more than one variable--T and W.
 
-  How many variabless are there to the program? 
+  How many variables are there to the program? 
 
   .. code-block:: cpp
   
@@ -57,6 +59,7 @@ More Practice:
 
 .. mchoice:: jh-cincout_05_cincout_02
   :author: Joe Hummel
+  :practice: T
   :answer_a: 19,19
   :answer_b: 19,20
   :answer_c: 20,20
@@ -89,6 +92,7 @@ More Practice:
 
 .. mchoice:: jh-cincout_05_cincout_03
   :author: Joe Hummel
+  :practice: T
   :answer_a: My friend PI!
   :answer_b: Just a real number
   :answer_c: <<no output>>
@@ -125,6 +129,7 @@ More Practice:
 
 .. mchoice:: jh-cincout_05_cincout_05
   :author: Joe Hummel
+  :practice: T
   :answer_a: 19,19
   :answer_b: 19,20
   :answer_c: 20,20
@@ -152,52 +157,49 @@ More Practice:
 
 
 .. mchoice:: jh-cincout_05_cincout_06
-  :author: Joe Hummel
-  :answer_a: 
+    :author: Joe Hummel
+    :practice: T
 
-  .. code-block:: cpp
+    The following are all equivalent, except for one.  Which one is not like the others?
+
+    - .. code-block:: cpp
   
-     if (x > 0)
-     {
-        cout << x;
-      }
+         if (x > 0)
+          {
+            cout << x;
+          }
+      
+      - Incorrect. Review the rules of if-else statements and try again!
 
-  :answer_b: 
-
-  .. code-block:: cpp
+    - .. code-block:: cpp
   
-     if (x > 0)
-      cout << x;
+         if (x > 0)
+          cout << x;
 
-  :answer_c: 
+      - Incorrect. Review the rules of if-else statements and try again!
 
-  .. code-block:: cpp
+    - .. code-block:: cpp
   
-     if (x > 0);
-      cout << x;
+         if (x > 0);
+          cout << x;
 
-  :answer_d: 
+      - Incorrect. Review the rules of if-else statements and try again!
 
-  .. code-block:: cpp
+    - .. code-block:: cpp
   
-     if (x > 0)
-     {
-        cout << x;
-      }
-     else
-     {
-     }
+         if (x > 0)
+          {
+            cout << x;
+          }
+         else
+          {
+          }
 
-  :correct: d
-  :feedback_a: Incorrect. Review the rules of if-else statements and try again!
-  :feedback_b: Incorrect. Review the rules of if-else statements  and try again!
-  :feedback_c: Incorrect. Review the rules of if-else statements  and try again!
-  :feedback_d: Correct!
-
-  The following are all equivalent, except for one.  Which one is not like the others?
+      + Correct!
 
 .. mchoice:: jh-cincout_05_cincout_07
   :author: Joe Hummel
+  :practice: T
   :answer_a: B
   :answer_b: BC
   :answer_c: BCD
@@ -253,6 +255,7 @@ More Practice:
 
 .. mchoice:: jh-cincout_05_cincout_09
   :author: Joe Hummel
+  :practice: T
   :answer_a: B
   :answer_b: BC
   :answer_c: BCD

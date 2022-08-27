@@ -110,7 +110,7 @@ More Practice:
   :correct: c
   :feedback_a: Incorrect. Computers have limitations and are not be able to hold infinite memory.
   :feedback_b: Incorrect. Computers have limitations and are not be able to hold infinite memory.
-  :feedback_c: Correct!
+  :feedback_c: Correct! 
   :feedback_d: Incorrect. Computers have limitations and are not be able to hold infinite memory.
 
   Since there are an infinite number of real numbers, this implies that variables of type double…

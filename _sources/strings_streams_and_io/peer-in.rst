@@ -38,6 +38,7 @@ More Practice:
        {
          cout << i << " ";
        }
+
    + Correct!
 
   - .. code-block:: cpp
@@ -49,6 +50,7 @@ More Practice:
        {
          cout << i << " ";
        }
+
    - Incorrect. Review the organization of a typical counting pattern and try again!
 
   - .. code-block:: cpp
@@ -95,7 +97,7 @@ More Practice:
   :author: Joe Hummel
   :practice: T 
 
-  Everything in the computer is a number.  The characters '0' .. '9' are the numbers 48 .. 57.  Which code below updates the correct counter based on the first digit?
+  Everything in the computer is a number. The characters '0' .. '9' are the numbers 48 .. 57.  Which code below updates the correct counter based on the first digit?
 
   .. code-block:: cpp
   
@@ -370,8 +372,8 @@ More Practice:
 
   - .. code-block:: cpp
    
-     cout << “Years: ” << data[250][0] 
-       << “-”       << data[0][0]   << endl;
+      cout << “Years: ” << data[250][0] 
+        << “-”       << data[0][0]   << endl;
 
    - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
 
@@ -379,8 +381,8 @@ More Practice:
 
   - .. code-block:: cpp
 
-     cout << “Years: ” << data[249][0] 
-       << “-”       << data[0][0]   << endl;
+      cout << “Years: ” << data[249][0] 
+        << “-”       << data[0][0]   << endl;
 
    - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
 
@@ -388,8 +390,8 @@ More Practice:
 
   - .. code-block:: cpp
 
-     cout << “Years: ” << data[numRows][0] 
-       << “-”       << data[0][0]         << endl;
+      cout << “Years: ” << data[numRows][0] 
+        << “-”       << data[0][0]         << endl;
 
    - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
 
@@ -398,7 +400,7 @@ More Practice:
   - .. code-block:: cpp
 
       cout << “Years: ” << data[numRows-1][0] 
-       << “-”       << data[0][0]         << endl;
+        << “-”       << data[0][0]         << endl;
    
    + Correct!
 
@@ -411,46 +413,46 @@ More Practice:
 
   - .. code-block:: cpp
    
-     for (int i=0; i<numRows*12; i=i+1)
-     {
-        sum = sum + data[i][i];
-     }
+      for (int i=0; i<numRows*12; i=i+1)
+      {
+         sum = sum + data[i][i];
+      }
 
    - Incorrect. Review a typical sum array pattern and try again!
 
   - .. code-block:: cpp
 
-     for (int i=0; i<numRows; i=i+1)
-     {
-       for (int j=0; j<12; j=j+1)
-       {
-          sum = sum + data[i][j];
+      for (int i=0; i<numRows; i=i+1)
+      {
+        for (int j=0; j<12; j=j+1)
+        {
+           sum = sum + data[i][j];
+        }
        }
-      }
    
    - Incorrect. Review a typical sum array pattern and try again!
 
   - .. code-block:: cpp
 
-     for (int row=0; row<numRows; row=row+1)
-     {
-       for (int col=0; col<12; col=col+1)
-       {
-          sum = sum + data[row][col];
-       }
-      }
-   
-   - Incorrect. Review a typical sum array pattern and try again!
-
-  - .. code-block:: cpp
-
-     for (int row=0; row<numRows; row=row+1)
-     {
-        for (int col=1; col<13; col=col+1)
+      for (int row=0; row<numRows; row=row+1)
+      {
+        for (int col=0; col<12; col=col+1)
         {
            sum = sum + data[row][col];
-          }
+        }
        }
+   
+   - Incorrect. Review a typical sum array pattern and try again!
+
+  - .. code-block:: cpp
+
+      for (int row=0; row<numRows; row=row+1)
+      {
+         for (int col=1; col<13; col=col+1)
+         {
+            sum = sum + data[row][col];
+         }
+      }
    
    + Correct!
 

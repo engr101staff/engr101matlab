@@ -23,6 +23,7 @@ More Practice:
 
 .. mchoice:: jh-syntax_20_intromatlab_03
   :author: Joe Hummel
+  :practice: T
   :answer_a: The same as in C++, to denote the end of a statement
   :answer_b: To trigger evaluation of the command
   :answer_c: To suppress output from commands
@@ -37,13 +38,14 @@ More Practice:
 
   .. code-block:: matlab
   
-     T = 20 ;
-     W = 10 ;
+     T = 20;
+     W = 10;
      %% wind chill:
-     windchill = 35.7 + 0.6*T - 35.7*W^0.16 + 0.43*T*W^0.16 ; 
+     windchill = 35.7 + 0.6*T - 35.7*W^0.16 + 0.43*T*W^0.16; 
 
 .. mchoice:: jh-syntax_20_intromatlab_04
   :author: Joe Hummel
+  :practice: T
   :answer_a: X is 0, since 1 and 2 are integers, the same result as C++
   :answer_b: X is 0.5, since all numbers in MATLAB are doubles
   :answer_c: X is 0, since 0.5 is rounded down (0 is even)
@@ -58,10 +60,11 @@ More Practice:
 
   .. code-block:: matlab
   
-     x = 1/2 ;
+     x = 1/2;
 
 .. mchoice:: jh-syntax_20_intromatlab_05
   :author: Joe Hummel
+  :practice: T
   :answer_a: Computers are finite, same result as C++
   :answer_b: Computers are finite, but MATLAB offers 2x more digits --- answer is closer to 0.0
   :answer_c: Computers are finite, but MATLAB offers infinite precision automatically --- ans = 0.0
@@ -76,6 +79,7 @@ More Practice:
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_01
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: abc = 234;
   :answer_b: a = a;
   :answer_c: 53 == x;
@@ -90,90 +94,87 @@ More Practice:
 
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_02
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     x = 20;
-     y = 5;
-     z = 4;
+      x = 20;
+      y = 5;
+      z = 4;
      
-     a = z-y + x/z*y;
+      a = z-y + x/z*y;
      
-     fprintf('%g', a);
+      fprintf('%g', a);
 
-   |blank|
-
-   - :24: Correct!
-     :x: Incorrect. Remember, the order of precedence is brackets, then division, then multiplication and the addition and subtraction.
+  - :24: Correct!
+    :x: Incorrect. Remember, the order of precedence is brackets, then division, then multiplication and the addition and subtraction.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_03
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
-     num = 30;
+      clc; clear;
+      num = 30;
      
-     fprintf('%0.2f', num/15*2);
-
-   |blank|
+      fprintf('%0.2f', num/15*2);
 
    - :4.00: Correct!
      :x: Incorrect. %f is a format specifier for decimals which adjusts the number of decimals according the # present in %0.#f. Also, recall that the order of precedence is brackets, then division, then multiplication and the addition and subtraction.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_04
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     sum = 0;
-     sum = sum + 5;
-     sum = sum * 5;
-     sum = sum - 5/2;
+      sum = 0;
+      sum = sum + 5;
+      sum = sum * 5;
+      sum = sum - 5/2;
      
-     fprintf('%f', sum);
-
-   |blank|
+      fprintf('%f', sum);
 
    - :22.500000: Correct!
      :x: Incorrect. %f is a format specifier for decimals and by default it displays a value till 6 decimal places.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_05
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     total = 25;
-     total = total - 10/(total-5);
+      total = 25;
+      total = total - 10/(total-5);
      
-     fprintf('%.0f', total);
-
-   |blank|
+      fprintf('%.0f', total);
 
    - :25: Correct!
      :x: Incorrect. The syntax ‘%.#f’ is a format specifier for decimals which adjusts the number of decimals according to the value of #. If # is zero then it rounds of the value.
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_06
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: It helps in substituting the values of 4, 5 and 9 in the statement.
   :answer_b: It helps in putting a period after a sentence.
   :answer_c: It helps in taking the prompt to a new line.
@@ -192,6 +193,7 @@ More Practice:
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_07
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: abc$
   :answer_b: abc d
   :answer_c: abc_d
@@ -206,6 +208,7 @@ More Practice:
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_08
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Click ‘Run’ again and again continuously
   :answer_b: Wait patiently until the execution is completed
   :answer_c: Re-save the program again
@@ -220,6 +223,7 @@ More Practice:
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_09
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Type Ctrl+C in the command window and then press ENTER
   :answer_b: Type the name of the program with which it is saved in the command window and press ENTER
   :answer_c: Click ‘Run’
@@ -234,6 +238,7 @@ More Practice:
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_10
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Test 1.m
   :answer_b: Test_2.m
   :answer_c: 12Test.m
@@ -251,49 +256,48 @@ More Practice:
   Which of the following is a valid name to save the program file in MATLAB?
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_11
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     num = 5;
-     sum = 10;
-     total = total + num + sum - 5;
+      num = 5;
+      sum = 10;
+      total = total + num + sum - 5;
      
-     fprintf('%g', total);
-
-   |blank|
+      fprintf('%g', total);
 
    - :ERROR: Correct!
      :x: Incorrect. Note that you cannot use a variable unless it is defined.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_12
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     abc = 5;
-     abc = 10;
+      abc = 5;
+      abc = 10;
      
-     fprintf('%d', abc * 2);
-
-   |blank|
+      fprintf('%d', abc * 2);
 
    - :20: Correct!
      :x: Incorrect. The variables change the values if they are re-assigned.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_13
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
@@ -306,35 +310,33 @@ More Practice:
      
      fprintf('%d', abc * 2);
 
-   |blank|
-
    - :10: Correct!
      :x: Incorrect. The ‘%’ sign indicates a commented line.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_14
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     a = 5;
-     y = a;
-     a = 2*y;
-     y = a;
+      a = 5;
+      y = a;
+      a = 2*y;
+       y = a;
      
-     fprintf('%g', a*y);
-
-   |blank|
+      fprintf('%g', a*y);
 
    - :100: Correct!
      :x: Incorrect. Take a pen and paper, and try to execute the program. Change the values of the variables one by one as you execute the individual lines of instructions.
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_15
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: The number is 50
   :answer_b: The number is ii
   :answer_c: The number is 250
@@ -355,26 +357,26 @@ More Practice:
      fprintf('The number is ii');
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_16
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     xy = 25;
-     yx = 50;
-     yx + 50;
+      xy = 25;
+      yx = 50;
+      yx + 50;
      
-     disp(yx);
-
-   |blank|
+      disp(yx);
 
    - :50: Correct!
      :x: Incorrect. For a given variable b, b+5 is not same as b = b+5. Only an assignment of a variable to a value changes its value.
 
 .. mchoice:: aa-inputsoutputs_02_intromatlab_17
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Lines 4, 5, 6 and 7
   :answer_b: Lines 4, 6 and 9
   :answer_c: Line 7 only
@@ -400,62 +402,59 @@ More Practice:
      9. disp(z);
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_18
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     gg = 50;
-     hh = 20;
-     gg = gg*hh;
+      gg = 50;
+      hh = 20;
+      gg = gg*hh;
      
-     disp(‘%g’, gg)
-
-   |blank|
+      disp(‘%g’, gg)
 
    - :ERROR: Correct!
      :x: Incorrect. Note that you cannot use format specifiers like %g, %f etc., in disp().
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_19
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
-     gg = 50;
-     hh = 20;
-     gg = gg*hh;
+      clc; clear;
+      gg = 50;
+      hh = 20;
+      gg = gg*hh;
      
-     disp(‘%gg’)
-
-   |blank|
+      disp(‘%gg’)
 
    - :%gg: Correct!
      :x: Incorrect. Note that anything written between single quotes in disp(‘…’) is displayed as it is.
 
 .. fillintheblank:: aa-inputsoutputs_02_intromatlab_20
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
-     gg = 50;
-     hh = 20;
-     gg = gg*hh;
+      clc; clear;
+      gg = 50;
+      hh = 20;
+      gg = gg*hh;
      
-     disp(gg)
-
-   |blank|
+      disp(gg)
 
    - :1000: Correct!
      :x: Incorrect. Check how do you display a value of a variable using disp().

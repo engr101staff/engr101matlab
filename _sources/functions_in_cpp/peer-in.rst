@@ -51,7 +51,8 @@ More Practice:
   :feedback_c: Correct! If x = 25, then x = 2 * (25) - 1 = 50 - 1 = 49 by PEMDAS. 
   :feedback_d: Incorrect. It is possible to find the answer with the given information. If x = 25, then x = 2 * (25) - 1 = 50 - 1 = 49 by PEMDAS. 
 
-  Variables live in the computer's memory, and are drawn as boxes containing values. Suppose x currently has the value 25. What value does x contain after executing this assignment statement? :code:`x = 2 * x - 1;`
+  Variables live in the computer's memory, and are drawn as boxes containing values. Suppose x currently has the value 25. What value does x contain after executing this assignment statement? 
+  :code:`x = 2 * x - 1;`
 
 .. mchoice:: jh-functions_03_variables_05
   :practice: T
@@ -68,4 +69,5 @@ More Practice:
   :feedback_d: Incorrect. The equation will not return 0 for y. 
   :feedback_e: Correct! The answer will depend on whether y is int or double.
 
-  Suppose x = 8. What value is assigned to y? :code:`y = (((3)/(4)) * x);`
+  Suppose x = 8. What value is assigned to y? 
+  :code:`y = (((3)/(4)) * x);`

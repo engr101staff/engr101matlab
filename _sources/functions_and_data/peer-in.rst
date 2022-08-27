@@ -16,7 +16,7 @@ More Practice:
   :author: Joe Hummel
   :practice: T
 
-  Write a MaxSpeed function that takes the length of a sailboat (in feet) and returns the maximum speed of that boat (in MPH). Equation: :code: '1.3 * sqrt(L)'
+  Write a MaxSpeed function that takes the length of a sailboat (in feet) and returns the maximum speed of that boat (in MPH). Equation: 1.3 * sqrt(L)
   
   - .. code-block:: matlab
 
@@ -103,9 +103,9 @@ More Practice:
 
   .. code-block:: matlab
   
-     x = [ 1.0, 2.2, 9.6, 10.2, … ] ;
+     x = [ 1.0, 2.2, 9.6, 10.2, … ];
      +
-     y = [ 3.9, 1.0, 0.1, 88.6, … ] ;
+     y = [ 3.9, 1.0, 0.1, 88.6, … ];
 
   
   - .. code-block:: matlab
