@@ -64,7 +64,7 @@ More Practice:
            i = i + 1;
           }
 
-      - Correct!
+      + Correct!
     
     - All of the above
 
