@@ -25,54 +25,54 @@ More Practice:
 ------------------------------------
 
 .. mchoice:: jh-iteration_06_whileloops_07
-   :author: Joe Hummel
-   :practice: T
+    :author: Joe Hummel
+    :practice: T
   
    Which loop counts exactly 1, 2, 3, …, 20, and then stops?  Assume i is an integer variable.
 
    - .. code-block:: cpp
   
-       i = 1;
+      i = 1;
      
-       while (i <= 20)
-       {
-         ...
-         i = i + 1;
-        }
+      while (i <= 20)
+      {
+        ...
+        i = i + 1;
+      }
     - Incorrect. Review the organization of a typical counting pattern and try again!
 
    - .. code-block:: cpp
   
-       i = 1;
+      i = 1;
      
-       while (i != 20)
-       {
-         ...
-         i = i + 1;
-        }
+      while (i != 20)
+      {
+        ...
+        i = i + 1;
+      }
     - Incorrect. Review the organization of a typical counting pattern and try again!
 
   - .. code-block:: cpp
   
-       i = 0;
+      i = 0;
      
-       while (i <= 20)
-       {
-         ...
-         i = i + 1;
-        }
+      while (i <= 20)
+      {
+        ...
+        i = i + 1;
+      }
 
     + Correct!
 
   - .. code-block:: cpp
   
-       i = 0;
+      i = 0;
      
-       while (i < 20)
-       {
-         ...
-         i = i + 1;
-        }
+      while (i < 20)
+      {
+        ...
+        i = i + 1;
+      }
 
     - Incorrect. Review the organization of a typical counting pattern and try again!
 
