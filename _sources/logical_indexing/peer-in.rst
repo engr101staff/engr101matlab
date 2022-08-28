@@ -25,6 +25,7 @@ More Practice:
 
 .. mchoice:: jh-inputs_22_indexing_02
   :author: Joe Hummel
+  :practice: T
   :answer_a: [0 | 10]
   :answer_b: [0 | 2 | 10]
   :answer_c: [0 | 2 | 4 | 6 | 8 | 10]
@@ -43,6 +44,7 @@ More Practice:
 
 .. mchoice:: jh-inputs_22_indexing_03
   :author: Joe Hummel
+  :practice: T
   :answer_a: [10]
   :answer_b: [121]
   :answer_c: [10 | 15 | 102]
@@ -61,6 +63,7 @@ More Practice:
 
 .. mchoice:: jh-inputs_22_indexing_04
   :author: Joe Hummel
+  :practice: T
   :answer_a: Y = [9, 18, 2]
   :answer_b: Y = [1, 0, 0, 1, 0, 1, 0]
   :answer_c: Y = [0, 1, 1, 0, 1, 0, 1]
@@ -74,36 +77,35 @@ More Practice:
   Suppose X contains [9, 80, 20, 18, 48, 2, 110]. What is the result of executing Y = (X < 20)?
 
   .. mchoice:: jh-inputs_22_indexing_06
-  :author: Joe Hummel
-  :answer_a:
+      :author: Joe Hummel
+      :practice: T
 
-  .. code-block:: matlab
-   s  = ‘a valid string’;
-   s2 = ValidAscii(c);
+      In the project, you need to see if a string is a valid sentence.  You have a function ValidAscii(c) that returns true if c is valid, false if not. What’s your best guess of how to apply this function to every char in a string without using a loop?
+     
+      - .. code-block:: matlab
+        
+         s  = ‘a valid string’;
+         s2 = ValidAscii(c);
 
-  :answer_b:
+      - Incorrect.
 
-  .. code-block:: matlab
+      - .. code-block:: matlab
 
-   s  = ‘a valid string’;
-   s2 = ValidAscii(s);
+         s  = ‘a valid string’;
+         s2 = ValidAscii(s);
 
-  :answer_c: 
+      + Correct!
 
-  .. code-block:: matlab
+      - .. code-block:: matlab
 
-   s  = ‘a valid string’;
-   s2 = (ValidAscii == s);
+         s  = ‘a valid string’;
+         s2 = (ValidAscii == s);
 
-  :correct: b
-  :feedback_a: Incorrect. 
-  :feedback_b: Correct!
-  :feedback_c: Incorrect.
-
-  In the project, you need to see if a string is a valid sentence.  You have a function ValidAscii(c) that returns true if c is valid, false if not. What’s your best guess of how to apply this function to every char in a string without using a loop?
+      - Incorrect.
 
 .. mchoice:: aa-indexing_03_conditionals_01
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Both the lines are same as xyz = 5 and xyz == 5 are assigning a value to a variable.
   :answer_b: Both the lines are different as xyz = 5 is assignment and xyz == 5 is comparison.
   :answer_c: Both the lines are different as xyz = 5 is comparison and xyz == 5 is assignment.
@@ -123,6 +125,7 @@ More Practice:
 
 .. mchoice:: aa-indexing_03_conditionals_02
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: && has a priority over ||
   :answer_b: || has a priority over &&
   :answer_c: When it comes to executing a conditions, || and && have same priority
@@ -137,6 +140,7 @@ More Practice:
 
 .. mchoice:: aa-indexing_03_conditionals_03
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: If x>20 && x<100
   :answer_b: If 20<x && 100>x
   :answer_c: If 20<x<100
@@ -153,6 +157,7 @@ More Practice:
 
 .. mchoice:: aa-indexing_03_conditionals_04
   :author: Ashish Aggarwal
+  :practice: T
   :answer_a: Yes, they are same and having parenthesis will make no difference in how they are evaluated.
   :answer_b: The way conditions are evaluated will depend on the values of x and y.
   :answer_c: No, they are not same as having parenthesis will impact the way the conditions are evaluated.
@@ -170,6 +175,7 @@ More Practice:
 
 .. fillintheblank:: aa-indexing_03_conditionals_05
   :author: Ashish Aggarwal
+  :practice: T
   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
