@@ -28,60 +28,51 @@ More Practice:
     :author: Joe Hummel
     :practice: T
   
-   Which loop counts exactly 1, 2, 3, …, 20, and then stops?  Assume i is an integer variable.
+    Which loop counts exactly 1, 2, 3, …, 20, and then stops?  Assume i is an integer variable.
 
-   - .. code-block:: cpp
-  
-      i = 1;
+    - .. code-block:: cpp
      
-      while (i <= 20)
-      {
-        ...
-        i = i + 1;
-      }
-    - Incorrect. Review the organization of a typical counting pattern and try again!
-
-   - .. code-block:: cpp
-  
-      i = 1;
+         i = 1;
      
-      while (i != 20)
-      {
-        ...
-        i = i + 1;
-      }
-    - Incorrect. Review the organization of a typical counting pattern and try again!
+         while (i <= 20)
+         {
+           ...
+           i = i + 1;
+          }
 
-  - .. code-block:: cpp
-  
-      i = 0;
+      - Incorrect. Review the organization of a typical counting pattern and try again!
+
+    - .. code-block:: cpp
+       
+         i = 1;
      
-      while (i <= 20)
-      {
-        ...
-        i = i + 1;
-      }
+         while (i != 20)
+         {
+           ...
+           i = i + 1;
+          }
 
-    + Correct!
+      - Incorrect. Review the organization of a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      i = 0;
+         i = 0;
      
-      while (i < 20)
-      {
-        ...
-        i = i + 1;
-      }
+         while (i <= 20)
+         {
+           ...
+           i = i + 1;
+          }
 
-    - Incorrect. Review the organization of a typical counting pattern and try again!
+      - Correct!
+    
+    - All of the above
 
-  - All of the above
-
-    - Incorrect. Review the organization of a typical counting pattern and try again!
+      - Incorrect. Review the organization of a typical counting pattern and try again!
 
 .. mchoice:: jh-iteration_06_whileloops_10
   :author: Joe Hummel
+  :practice: T
   :practice: T
   :answer_a: 1,4,9,16,25,36,49,#
   :answer_b: 4,9,16,25,36,49,#
