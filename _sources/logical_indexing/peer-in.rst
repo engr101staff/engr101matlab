@@ -76,32 +76,33 @@ More Practice:
 
   Suppose X contains [9, 80, 20, 18, 48, 2, 110]. What is the result of executing Y = (X < 20)?
 
-  .. mchoice:: jh-inputs_22_indexing_06
-      :author: Joe Hummel
-      :practice: T
+.. mchoice:: jh-inputs_22_indexing_06
+    :author: Joe Hummel
+    :practice: T
+  
+    In the project, you need to see if a string is a valid sentence.  You have a function ValidAscii(c) that returns true if c is valid, false if not. What’s your best guess of how to apply this function to every char in a string without using a loop?
 
-      In the project, you need to see if a string is a valid sentence.  You have a function ValidAscii(c) that returns true if c is valid, false if not. What’s your best guess of how to apply this function to every char in a string without using a loop?
+    - .. code-block:: matlab
      
-      - .. code-block:: matlab
-        
          s  = ‘a valid string’;
          s2 = ValidAscii(c);
 
-      - Incorrect.
+      - Incorrect. Review the steps one at a time and try again!
 
-      - .. code-block:: matlab
-
+    - .. code-block:: matlab
+       
          s  = ‘a valid string’;
          s2 = ValidAscii(s);
 
       + Correct!
 
-      - .. code-block:: matlab
 
+    - .. code-block:: matlab
+  
          s  = ‘a valid string’;
          s2 = (ValidAscii == s);
 
-      - Incorrect.
+      - Incorrect. Review the steps one at a time and try again!
 
 .. mchoice:: aa-indexing_03_conditionals_01
   :author: Ashish Aggarwal
@@ -174,66 +175,62 @@ More Practice:
      Condition 2: if ( x == 2 || x == 3 ) && ( y == 2 || y == 3 )
 
 .. fillintheblank:: aa-indexing_03_conditionals_05
-  :author: Ashish Aggarwal
-  :practice: T
-  :casei:
+   :author: Ashish Aggarwal
+   :practice: T
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     x = 20;
+      x = 20;
      
-     if mod(x,4) ~= 0 && mod(x,5) == 0
-      fprintf('4');
+      if mod(x,4) ~= 0 && mod(x,5) == 0
+       fprintf('4');
 
-     elseif mod(x,5) ~= 0 || mod(x,4) == 0
-      fprintf('5');
+      elseif mod(x,5) ~= 0 || mod(x,4) == 0
+       fprintf('5');
 
-     elseif mod(x,4) == 0 && mod(x,5) == 0
-      fprintf('45');
+      elseif mod(x,4) == 0 && mod(x,5) == 0
+       fprintf('45');
      
-     end
+      end
 
-   |blank|
-
-   - :5: Correct!
-     :x: Incorrect. Note that conditions are evaluated from top to bottom, however, if a condition is true then the other conditions below it will never be checked.
+  - :5: Correct!
+    :x: Incorrect. Note that conditions are evaluated from top to bottom, however, if a condition is true then the other conditions below it will never be checked.
 
 .. fillintheblank:: aa-indexing_03_conditionals_06
-  :author: Ashish Aggarwal
-  :casei:
+   :author: Ashish Aggarwal
+   :casei:
 
    What will be the output of the following code snippet? (If the program will result in an error, put down ‘ERROR’)
 
-   .. code-block:: matlab
+    .. code-block:: matlab
   
-     clc; clear;
+      clc; clear;
      
-     x = 20;
+      x = 20;
      
-     if mod(x,4) ~= 0
-      fprintf('4');
+      if mod(x,4) ~= 0
+       fprintf('4');
       
-     elseif mod(x,5) ~= 0
-      fprintf('5');
+      elseif mod(x,5) ~= 0
+       fprintf('5');
       
-     elseif mod(x,4) == 0 || mod(x,5) == 0
-      fprintf('45');
+      elseif mod(x,4) == 0 || mod(x,5) == 0
+       fprintf('45');
       
-     end
+      end
      
-     if mod(x,4) == 0 && mod(x,5) == 0
-      fprintf('45');
+      if mod(x,4) == 0 && mod(x,5) == 0
+       fprintf('45');
       
-     end
+      end
 
-   |blank|
-
-   - :4545: Correct!
-     :x: Incorrect. This code snippet has two separate blocks of if statements which are independent of each other.
+  - :4545: Correct!
+    :x: Incorrect. This code snippet has two separate blocks of if statements which are independent of each other.
 
 .. fillintheblank:: aa-indexing_03_conditionals_07
   :author: Ashish Aggarwal
