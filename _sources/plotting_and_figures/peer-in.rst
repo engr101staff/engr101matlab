@@ -24,68 +24,63 @@ More Practice:
 ------------------------------------------------------
 
 .. mchoice:: jh-plotting&figures_26_plotting_03
+    :author: Joe Hummel
+    :practice: T
+    
+    How would you design the function?
+
+    - .. code-block:: matlab
+  
+         function PlotRainfall()
+          .
+          .
+          .
+         end
+      
+      - Incorrect. Take a look at how we would plot a function and try again!
+
+    - .. code-block:: matlab
+  
+         function PlotRainfall(matrix)
+          .
+          .
+          .
+         end
+
+      - Incorrect. Take a look at how we would plot a function and try again!
+ 
+    - .. code-block:: matlab
+  
+         function PlotRainfall(filename)
+          .
+          .
+          .
+         end
+      
+      + Correct!
+
+    - .. code-block:: matlab
+  
+         function PlotRainfall(filename, matrix)
+          .
+          .
+          .
+         end
+      
+      - Incorrect. Take a look at how we would plot a function and try again!
+
+.. mchoice:: jh-plotting&figures_26_plotting_04
   :author: Joe Hummel
-  :answer_a: 
-
-  .. code-block:: matlab
-  
-     function PlotRainfall()
-       .
-       .
-       .
-     end
-
-  :answer_b: 
-
-  .. code-block:: matlab
-  
-     function PlotRainfall(matrix)
-       .
-       .
-       .
-     end
-
-  :answer_c: 
-
-  .. code-block:: matlab
-  
-     function PlotRainfall(filename)
-       .
-       .
-       .
-     end
-
-  :answer_d: 
-
-  .. code-block:: matlab
-  
-     function PlotRainfall(filename, matrix)
-       .
-       .
-       .
-     end
-
-  :correct: c
-  :feedback_a: Incorrect. Take a look at how we would plot a function and try again!
-  :feedback_b: Incorrect. Take a look at how we would plot a function and try again!
-  :feedback_c: Correct!
-  :feedback_d: Incorrect. Take a look at how we would plot a function and try again!
-
-  How would you design the function?
-
-.. mchoice:: jh-plotting&figures_26_plotting_03
-  :author: Joe Hummel
+  :practice: T 
   :answer_a: 1
   :answer_b: 2
   :answer_c: 3
   :answer_d: 4
-  :answer_e: 5
   :correct: b
   :feedback_a: Incorrect. Review vector syntax and try again!
   :feedback_b: Correct!
   :feedback_c: Incorrect. Review vector syntax and try again!
-  :feedback_d:
-  :feedback_e:
+  :feedback_d: Incorrect. Review vector syntax and try again!
 
   How many lines would you change to generalize this code?
 

@@ -24,60 +24,59 @@ More Practice:
 ------------------------------------
 
 .. mchoice:: jh-stringsandcells_09_arrays_02
-  :author: Joe Hummel
-  :practice: T
+    :author: Joe Hummel
+    :practice: T
    
-  The for loop is a concise way of expressing count pattern. Which version below outputs 0, 1, 2, …, N-1, and then stops?
+    The for loop is a concise way of expressing count pattern. Which version below outputs 0, 1, 2, …, N-1, and then stops?
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      int  i, N;
-      cin >> N;
+             int  i, N;
+             cin >> N;
      
-      for (i=0; i<N; i=i+1)
-       {
-         cout << i << " ";
-       }
+             for (i=0; i<N; i=i+1)
+             {
+                cout << i << " ";
+             }
 
-   + Correct!
+      + Correct!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      int  i, N;
-      cin >> N;
+             int  i, N;
+             cin >> N;
      
-      for (i=1; i<N; i=i+1)
-       {
-         cout << i << " ";
-       }
+             for (i=1; i<N; i=i+1)
+              {
+                cout << i << " ";
+              }
 
-   - Incorrect. Review the organization of a typical counting pattern and try again!
+      - Incorrect. Review the organization of a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      int  i, N;
-      cin >> N;
+             int  i, N;
+             cin >> N;
      
-      for (i=0; i<=N; i=i+1)
-       {
-         cout << i << " ";
-       }
+             for (i=0; i<=N; i=i+1)
+             {
+                cout << i << " ";
+              }
 
-   - Incorrect. Review the organization of a typical counting pattern and try again!
+      - Incorrect. Review the organization of a typical counting pattern and try again!
   
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      int  i, N;
-      cin >> N;
+             int  i, N;
+             cin >> N;
      
-      for (i=1; i<=N; i=i+1)
-       {
-         cout << i << " ";
-       }
+             for (i=1; i<=N; i=i+1)
+             {
+                cout << i << " ";
+             }
 
-   - Incorrect. Review the organization of a typical counting pattern and try again!
+      - Incorrect. Review the organization of a typical counting pattern and try again!
 
-  
 .. mchoice:: jh-stringsandcells_09_arrays_07
   :author: Joe Hummel
   :practice: T
@@ -94,168 +93,167 @@ More Practice:
   Suppose A is an integer array with 8 elements.  Which C++ code correctly outputs the first and last elements?
 
 .. mchoice:: jh-stringsandcells_14_arrays_07
-  :author: Joe Hummel
-  :practice: T 
+    :author: Joe Hummel
+    :practice: T 
 
-  Everything in the computer is a number. The characters '0' .. '9' are the numbers 48 .. 57.  Which code below updates the correct counter based on the first digit?
+    Everything in the computer is a number. The characters '0' .. '9' are the numbers 48 .. 57.  Which code below updates the correct counter based on the first digit?
 
-  .. code-block:: cpp
+    .. code-block:: cpp
   
-     int c = number[0];
+             int c = number[0];
 
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      counts[c] = counts[c] + 1.0;
+             counts[c] = counts[c] + 1.0;
 
-   - Incorrect. Review a typical counting pattern and try again!
+      - Incorrect. Review a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      c = c – 47;
-      counts[c] = counts[c] + 1.0;
+             c = c – 47;
+             counts[c] = counts[c] + 1.0;
 
-   - Incorrect. Review a typical counting pattern and try again!
+      - Incorrect. Review a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      c = c – '0';
-      counts[c] = counts[c] + 1.0;
+             c = c – '0';
+             counts[c] = counts[c] + 1.0;
 
-   + Correct!
+      + Correct!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      c = c – 48;
-      counts[c] = counts[c] + 1.0;
+             c = c – 48;
+             counts[c] = counts[c] + 1.0;
 
-   - Incorrect. Review a typical counting pattern and try again!
-
+      - Incorrect. Review a typical counting pattern and try again!
 
 .. mchoice:: jh-stringsandcells_14_arrays_12
-  :author: Joe Hummel
-  :practice: T
+    :author: Joe Hummel
+    :practice: T
 
-  Given an array of N integers in sorted order, return the median. If N is odd, the median is the middle value; if N is even, the median is the average of the 2 middle values.
+    Given an array of N integers in sorted order, return the median. If N is odd, the median is the middle value; if N is even, the median is the average of the 2 middle values.
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      double ComputeMedian(int scores[], int N)
-      {
-         if (N%2 == 0)  // even
-         {
-            double left  = scores[N/2 – 1];
-            double right = scores[N/2];
-            return (left + right) / 2.0;
-          }
+             double ComputeMedian(int scores[], int N)
+             {
+             if (N%2 == 0)  // even
+             {
+                double left  = scores[N/2 – 1];
+                double right = scores[N/2];
+                return (left + right) / 2.0;
+              }
 
-         else
-         {
-            return scores[N/2];
-          }
-      }
+             else
+             {
+                return scores[N/2];
+              }
+             }
 
-   - Incorrect. Review a typical counting pattern and try again!
+      - Incorrect. Review a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      double ComputeMedian(int scores[], int N)
-      {
-         if (N%2 == 0)  // even
-         {
-            double left  = scores[N/2];
-            double right = scores[N/2 + 1];
-            return (left + right) / 2.0;
-          }
+             double ComputeMedian(int scores[], int N)
+             {
+                if (N%2 == 0)  // even
+                {
+                   double left  = scores[N/2];
+                   double right = scores[N/2 + 1];
+                   return (left + right) / 2.0;
+                 }
          
-         else
-         {
-            return scores[N/2];
-          }
-      }
+                else
+                {
+                   return scores[N/2];
+                 }
+             }
    
-   - Incorrect. Review a typical counting pattern and try again!
+      - Incorrect. Review a typical counting pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      double ComputeMedian(int scores[], int N)
-      {
-         if (N%2 == 0)  // even
-         {
-            double left  = scores[N/2 - 1];
-            double right = scores[N/2 + 1];
-            return (left + right) / 2.0;
-          }
+             double ComputeMedian(int scores[], int N)
+             {
+                if (N%2 == 0)  // even
+                {
+                   double left  = scores[N/2 - 1];
+                   double right = scores[N/2 + 1];
+                   return (left + right) / 2.0;
+                 }
          
-         else
-         {
-            return scores[N/2];
-          }
-       }
+                else
+                {
+                   return scores[N/2];
+                 }
+              }
 
-   + Correct!
+      + Correct!
 
 .. mchoice:: jh-stringsandcells_15_arrays_06
-  :author: Joe Hummel
-  :practice: T
+    :author: Joe Hummel
+    :practice: T
 
-  Complete the input function, which reads the data and stores the scores into the array.
+    Complete the input function, which reads the data and stores the scores into the array.
 
-  .. code-block:: cpp
+      .. code-block:: cpp
 
-   int InputData(string filename, int scores[])
-   {
-      ifstream  file;
-      int       uin, score, i, N;
+             int InputData(string filename, int scores[])
+                {
+                   ifstream  file;
+                   int       uin, score, i, N;
      
-      file.open(filename.c_str());
-      if (!file.is_open())
-      {
-         cout << … << endl;
-         exit(-1);
-       }
+                   file.open(filename.c_str());
+                   if (!file.is_open())
+                    {
+                      cout << … << endl;
+                      exit(-1);
+                     }
       
-      file >> uin;
-      file >> score;
+                   file >> uin;
+                   file >> score;
      
-      N = 0;
+                   N = 0;
      
-      while (uin != -1)
-      {
-         ____________________ ;
-         ____________________ ;
+                   while (uin != -1)
+                   {
+                      ____________________ ;
+                      ____________________ ;
         
-         file >> uin;
-         file >> score;
-       }
+                      file >> uin;
+                      file >> score;
+                    }
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      N = N + 1;
-      scores[N] = score;
+             N = N + 1;
+             scores[N] = score;
 
-   - Incorrect. Review a typical file input array pattern and try again!
+      - Incorrect. Review a typical file input array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      scores[N] = score;
-      N = N + 1;
+             scores[N] = score;
+             N = N + 1;
 
-   - Incorrect. Review a typical file input array pattern and try again!
+      - Incorrect. Review a typical file input array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      scores[i] = score;
-      i = i + 1;
+             scores[i] = score;
+             i = i + 1;
 
-   - Incorrect. Review a typical file input array pattern and try again!
+      - Incorrect. Review a typical file input array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-      score = scores[i];
-      i = i + 1;
+             score = scores[i];
+             i = i + 1;
 
-   + Correct!
+      + Correct!
 
 .. mchoice:: jh-stringsandcells_15_arrays_07
   :author: Joe Hummel
@@ -274,19 +272,19 @@ More Practice:
   
   .. code-block:: cpp
 
-  double ComputeAvg(int scores[], int N)
-  {
-     double sum, avg = 0.0;
-     
-     for (int i=0; i<N; i=i+1)
-     {
-        sum = sum + scores[i];
-      }
+       double ComputeAvg(int scores[], int N)
+       {
+          double sum, avg = 0.0;
       
-     avg = sum / N;
+          for (int i=0; i<N; i=i+1)
+          {
+             sum = sum + scores[i];
+          }
+      
+          avg = sum / N;
      
-     return avg;
-   }
+          return avg;
+       }
 
 .. mchoice:: jh-stringsandcells_16_arrays_03
   :author: Joe Hummel
@@ -365,95 +363,95 @@ More Practice:
     }
 
 .. mchoice:: jh-stringsandcells_17_arrays_04
-  :author: Joe Hummel
-  :practice: T
+    :author: Joe Hummel
+    :practice: T
   
-  The rainfall data is in descending order by year.  We want to output the first and last years of the dataset, e.g. 1929 – 2013.  What’s the best approach for a general dataset?
+    The rainfall data is in descending order by year.  We want to output the first and last years of the dataset, e.g. 1929 – 2013.  What’s the best approach for a general dataset?
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
    
-      cout << “Years: ” << data[250][0] 
-        << “-”       << data[0][0]   << endl;
+             cout << “Years: ” << data[250][0] 
+             << “-”       << data[0][0]   << endl;
 
-   - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
+      - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
 
    
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
 
-      cout << “Years: ” << data[249][0] 
-        << “-”       << data[0][0]   << endl;
+             cout << “Years: ” << data[249][0] 
+             << “-”       << data[0][0]   << endl;
 
-   - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
-
-  
-
-  - .. code-block:: cpp
-
-      cout << “Years: ” << data[numRows][0] 
-        << “-”       << data[0][0]         << endl;
-
-   - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
+      - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
 
   
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
 
-      cout << “Years: ” << data[numRows-1][0] 
-        << “-”       << data[0][0]         << endl;
+             cout << “Years: ” << data[numRows][0] 
+             << “-”       << data[0][0]         << endl;
+
+      - Incorrect. The last year of the dataset will be on the last row, which is represented in an array by numRows- 1.
+
+  
+
+    - .. code-block:: cpp
+
+             cout << “Years: ” << data[numRows-1][0] 
+             << “-”       << data[0][0]         << endl;
    
-   + Correct!
+      + Correct!
 
 .. mchoice:: jh-stringsandcells_17_arrays_06
-  :author: Joe Hummel
-  :practice: T
+    :author: Joe Hummel
+    :practice: T
 
-  We are computing average rainfall across the entire dataset.  What’s the correct way to sum the rainfall data?
+    We are computing average rainfall across the entire dataset.  What’s the correct way to sum the rainfall data?
 
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
    
-      for (int i=0; i<numRows*12; i=i+1)
-      {
-         sum = sum + data[i][i];
-      }
+             for (int i=0; i<numRows*12; i=i+1)
+             {
+                sum = sum + data[i][i];
+             }
 
-   - Incorrect. Review a typical sum array pattern and try again!
+      - Incorrect. Review a typical sum array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
 
-      for (int i=0; i<numRows; i=i+1)
-      {
-        for (int j=0; j<12; j=j+1)
-        {
-           sum = sum + data[i][j];
-        }
-       }
+             for (int i=0; i<numRows; i=i+1)
+             {
+                for (int j=0; j<12; j=j+1)
+                 {
+                   sum = sum + data[i][j];
+                 }
+             }
    
-   - Incorrect. Review a typical sum array pattern and try again!
+      - Incorrect. Review a typical sum array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
 
-      for (int row=0; row<numRows; row=row+1)
-      {
-        for (int col=0; col<12; col=col+1)
-        {
-           sum = sum + data[row][col];
-        }
-       }
+             for (int row=0; row<numRows; row=row+1)
+             {
+                for (int col=0; col<12; col=col+1)
+                {
+                   sum = sum + data[row][col];
+                 }
+              }
    
-   - Incorrect. Review a typical sum array pattern and try again!
+      - Incorrect. Review a typical sum array pattern and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
 
-      for (int row=0; row<numRows; row=row+1)
-      {
-         for (int col=1; col<13; col=col+1)
-         {
-            sum = sum + data[row][col];
-         }
-      }
+             for (int row=0; row<numRows; row=row+1)
+             {
+                for (int col=1; col<13; col=col+1)
+                {
+                   sum = sum + data[row][col];
+                }
+             }
    
-   + Correct!
+      + Correct!
 
   

@@ -73,7 +73,6 @@ More Practice:
 .. mchoice:: jh-iteration_06_whileloops_10
   :author: Joe Hummel
   :practice: T
-  :practice: T
   :answer_a: 1,4,9,16,25,36,49,#
   :answer_b: 4,9,16,25,36,49,#
   :answer_c: 4,16,36,49,#
@@ -105,32 +104,32 @@ More Practice:
 
     Assume a temperature of 10F. Output the windchill for each wind speed in the range 1..20, using the windchill equation we've defined previously. The better way is to use a loop.  Which of the following computes & outputs the desired wind chills properly?
 
-     - .. code-block:: cpp
+    - .. code-block:: cpp
   
-         T = 10;
-         while (W <= 20)
-         {
-           W = 1;
-           windchill = … ;
-           cout << … ;
-          }
+        T = 10;
+        while (W <= 20)
+        {
+          W = 1;
+          windchill = … ;
+          cout << … ;
+        }
 
       - Incorrect. Review the organization of a typical counting pattern and try again!
 
-     - .. code-block:: cpp
+    - .. code-block:: cpp
   
-          T = 10;
-          while (W <= 20)
-          {
-            W = 1;
-            windchill = … ;
-            cout << … ;
-            W = W + 1;
-          }
+        T = 10;
+        while (W <= 20)
+        {
+          W = 1;
+          windchill = … ;
+          cout << … ;
+          W = W + 1;
+        }
 
       - Incorrect. Review the organization of a typical counting pattern and try again!
 
-     - .. code-block:: cpp
+    - .. code-block:: cpp
   
           T = 10;
           W = 1;
@@ -144,17 +143,17 @@ More Practice:
       
       - Incorrect. Review the organization of a typical counting pattern and try again!
 
-     - .. code-block:: cpp
+    - .. code-block:: cpp
   
-          T = 10;
-          W = 1;
+        T = 10;
+        W = 1;
      
-          while (W <= 20)
-          {
-            windchill = … ;
-            cout << … ;
-            W = W + 1;
-          }
+        while (W <= 20)
+        {
+          windchill = … ;
+          cout << … ;
+          W = W + 1;
+        }
 
       + Correct!
 
@@ -199,7 +198,7 @@ More Practice:
          {
            cout << "try again> ";
            cin >> score;
-          }
+         }
 
       + Correct!
 
@@ -210,30 +209,31 @@ More Practice:
          {
            cout << "try again> ";
            cin >> score;
-          }
+         }
       
       - Incorrect. Review conditional expressions for while loops and try again!
     
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-       cin >> score;
-       while (score != 0..100)
-       {
-         cout << "try again> ";
          cin >> score;
-        }
+         while (score != 0..100)
+         {
+           cout << "try again> ";
+           cin >> score;
+         }
 
-    - Incorrect. Review conditional expressions for while loops and try again!
+      - Incorrect. Review conditional expressions for while loops and try again!
 
-  - .. code-block:: cpp
+    - .. code-block:: cpp
   
-       cin >> score;
-       while (score<0 || score>100)
-       {   
-         cout << "try again> ";
          cin >> score;
-        }
-    - Incorrect. Review conditional expressions for while loops and try again!
+         while (score<0 || score>100)
+         {   
+           cout << "try again> ";
+           cin >> score;
+         }
+
+      - Incorrect. Review conditional expressions for while loops and try again!
 
 .. mchoice:: jh-iteration_07_whileloops_06
   :author: Joe Hummel
@@ -365,17 +365,17 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       while n < 10
-          n = n + 2;
+         while n < 10
+           n = n + 2;
      
-       end
+         end
      
-       disp(n)
+         disp(n)
 
-    - :ERROR: Correct!
-      :x: Incorrect. We need to define a variable before we start using it.
+  - :ERROR: Correct!
+    :x: Incorrect. We need to define a variable before we start using it.
 
 .. fillintheblank:: aa-iteration_04_whileloops_02
     :author: Ashish Aggarwal
@@ -386,20 +386,20 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 2;
-       sum = 2;
+         x = 2;
+         sum = 2;
      
-       while x <= 8
-         x = x + sum;
-         sum = sum + x;
-       end
+         while x <= 8
+           x = x + sum;
+           sum = sum + x;
+         end
      
-       disp(sum)
+         disp(sum)
 
-    - :16: Correct!
-      :x: Incorrect. Change the values of the variables one by one as MATLAB would execute the program and observe how the variables get redefined.
+  - :16: Correct!
+    :x: Incorrect. Change the values of the variables one by one as MATLAB would execute the program and observe how the variables get redefined.
 
 .. fillintheblank:: aa-iteration_04_whileloops_03
    :author: Ashish Aggarwal
@@ -410,21 +410,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 2;
-       sum = 2;
+         x = 2;
+         sum = 2;
      
-       while x <= 8
-         x = x + sum;
-         break
-         sum = sum + x;
-       end
+         while x <= 8
+           x = x + sum;
+           break
+           sum = sum + x;
+         end
       
-       disp(sum)
+         disp(sum)
 
-    - :2: Correct!
-      :x: Incorrect. Note, as soon as the break statement executes, the execution directly comes out of the closest while loop. So whatever is written under break statement is not executed.
+  - :2: Correct!
+    :x: Incorrect. Note, as soon as the break statement executes, the execution directly comes out of the closest while loop. So whatever is written under break statement is not executed.
 
 .. fillintheblank:: aa-iteration_04_whileloops_04
    :author: Ashish Aggarwal
@@ -435,21 +435,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 2;
-       sum = 2;
+         x = 2;
+         sum = 2;
      
-       while x <= 8
-         sum = sum + x;
-         continue
-         x = x + sum;
-       end
+         while x <= 8
+           sum = sum + x;
+           continue
+           x = x + sum;
+         end
      
-       disp(sum)
+         disp(sum)
 
-    - :ERROR: Correct!
-      :x: Incorrect. Note, continue statement always pushes the execution above to the closest while loop so that the while condition is evaluated again.
+  - :ERROR: Correct!
+    :x: Incorrect. Note, continue statement always pushes the execution above to the closest while loop so that the while condition is evaluated again.
 
 .. fillintheblank:: aa-iteration_04_whileloops_05
    :author: Ashish Aggarwal
@@ -460,22 +460,22 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       num = 19;
+         num = 19;
      
-       while true
-         while num<100
-           if mod(num,3)== 0 || mod(num,4) == 0
-             fprintf('%g', num);
-             break;
+         while true
+           while num<100
+             if mod(num,3)== 0 || mod(num,4) == 0
+               fprintf('%g', num);
+               break;
+             end
            end
-          end
-        num = num + 1;
-       end
+           num = num + 1;
+         end
 
-    - :ERROR: Correct!
-      :x: Incorrect. Here the inner while-loop has to exhaust first before it increments the value of num by 1.
+  - :ERROR: Correct!
+    :x: Incorrect. Here the inner while-loop has to exhaust first before it increments the value of num by 1.
 
 .. fillintheblank:: aa-iteration_04_whileloops_06
    :author: Ashish Aggarwal
@@ -486,27 +486,27 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       num = 20;
+         num = 20;
      
-       while true
-         while num<100
+         while true
+           while num<100
+             if mod(num,3)== 0 || mod(num,4) == 0
+               fprintf('%g', num);
+               break;
+             end
+           end
            if mod(num,3)== 0 || mod(num,4) == 0
              fprintf('%g', num);
              break;
            end
+           num = num + 1;
+           fprintf('%g', num)
          end
-         if mod(num,3)== 0 || mod(num,4) == 0
-           fprintf('%g', num);
-           break;
-         end
-         num = num + 1;
-         fprintf('%g', num)
-        end
 
-    - :2020: Correct!
-      :x: Incorrect. Note that ‘break statement’ stops the corresponding while loop where it is present in.
+  - :2020: Correct!
+    :x: Incorrect. Note that ‘break statement’ stops the corresponding while loop where it is present in.
 
 .. fillintheblank:: aa-iteration_04_whileloops_07
    :author: Ashish Aggarwal
@@ -517,26 +517,26 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       x = 41;
+         clc; clear;
+         x = 41;
      
-       while x >= 20
-         while x >= 30
-           while x >= 40
-             if mod(x,4) == 1
-               x = x - 10;
-               break;
+         while x >= 20
+           while x >= 30
+             while x >= 40
+               if mod(x,4) == 1
+                 x = x - 10;
+                 break;
+               end
              end
+             x = x -10;
            end
-           x = x -10;
+           x = x - 10;
          end
-         x = x - 10;
-       end
     
-       fprintf('%g', x);
+         fprintf('%g', x);
 
-    - :11: Correct!
-      :x: Incorrect. Break statement only stops the closest loop, rest of the program still continues its execution.
+  - :11: Correct!
+    :x: Incorrect. Break statement only stops the closest loop, rest of the program still continues its execution.
 
 .. fillintheblank:: aa-iteration_04_whileloops_08
    :author: Ashish Aggarwal
@@ -547,23 +547,23 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       total = 50;
+         clc; clear;
+         total = 50;
      
-       while total > 10
-         if total/10 == 5
-           total = total/10;
-           total = total^2;
-           break;
+         while total > 10
+           if total/10 == 5
+             total = total/10;
+             total = total^2;
+             break;
+           end
+           total = 5;
+           total = 2*total;
          end
-         total = 5;
-         total = 2*total;
-       end
      
-     fprintf('%g', total);
+         fprintf('%g', total);
 
-    - :25: Correct!
-      :x: Incorrect. Break statement only the closest loop immediately after it gets executed and the control directly comes out of the loop.
+  - :25: Correct!
+    :x: Incorrect. Break statement only the closest loop immediately after it gets executed and the control directly comes out of the loop.
 
 .. fillintheblank:: aa-iteration_04_whileloops_09
    :author: Ashish Aggarwal
@@ -574,28 +574,28 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       abc = 35;
+         clc; clear;
+         abc = 35;
      
-       if abc/7 ~= 5
-       fprintf('%g', abc);
+         if abc/7 ~= 5
+           fprintf('%g', abc);
       
-       else
-       while abc>10
-         if mod(abc, 7)~=0 || mod(abc, 8)~=0
-           abc = abc - 10;
-           continue
-           abc = 2 * abc;
+         else
+           while abc>10
+             if mod(abc, 7)~=0 || mod(abc, 8)~=0
+               abc = abc - 10;
+               continue
+               abc = 2 * abc;
+             end
+             break
+           end
+           abc = abc + 1;
          end
-         break
-       end
-       abc = abc + 1;
-       end
      
-       fprintf('%g', abc);
+         fprintf('%g', abc);
 
-    - :6: Correct!
-      :x: Incorrect. Check the execution of the program again line by line.
+  - :6: Correct!
+    :x: Incorrect. Check the execution of the program again line by line.
 
 .. mchoice:: aa-inputsoutputs_04_whileloops_10
   :author: Ashish Aggarwal
@@ -637,24 +637,24 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       foo = 12;
-       foo = (2*foo) / (foo/2) ;
+         clc; clear;
+         foo = 12;
+         foo = (2*foo) / (foo/2) ;
      
-       while foo>=3
-         if mod(foo,2) > 0
+         while foo>=3
+           if mod(foo,2) > 0
+             foo = foo - 1;
+           elseif mod(foo, 3) > 0
+             foo = foo - 2;
+             continue
+             foo = 2 * foo;
+           end
            foo = foo - 1;
-         elseif mod(foo, 3) > 0
-           foo = foo - 2;
-           continue
-           foo = 2 * foo;
          end
-         foo = foo - 1;
-       end
-       fprintf('%g', foo);
+         fprintf('%g', foo);
 
-    - :2: Correct!
-      :x: Incorrect. Check the execution of the program again line by line. The continue statement always pushes the execution above to the condition of nearest while loop.
+  - :2: Correct!
+    :x: Incorrect. Check the execution of the program again line by line. The continue statement always pushes the execution above to the condition of nearest while loop.
 
 .. fillintheblank:: aa-iteration_04_whileloops_13
    :author: Ashish Aggarwal
@@ -664,24 +664,24 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       num = 19;
+         clc; clear;
+         num = 19;
      
-       while true
-         while num<100
-           if mod(num,3)== 0 || mod(num,4) == 0
-             break;
+         while true
+           while num<100
+             if mod(num,3)== 0 || mod(num,4) == 0
+               break;
+             end
+             num = num + 1;
            end
            num = num + 1;
+           break;
          end
-         num = num + 1;
-         break;
-       end
      
-       fprintf('%g', num);
+         fprintf('%g', num);
 
-    - :21: Correct!
-      :x: Incorrect. Check the execution of the program again line by line. Break statement stops the closest loop.
+  - :21: Correct!
+    :x: Incorrect. Check the execution of the program again line by line. Break statement stops the closest loop.
 
 .. fillintheblank:: aa-iteration_04_whileloops_14
    :author: Ashish Aggarwal
@@ -692,21 +692,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       x = 15;
+         x = 15;
      
-       while x > 10
-         if x < 15
-           x = x-3;
-         elseif x > 0
-           x = x-1;
-           continue
+         while x > 10
+           if x < 15
+             x = x-3;
+           elseif x > 0
+             x = x-1;
+             continue
+           end
          end
-       end
      
-       fprintf('%g', x)
+         fprintf('%g', x)
 
-    - :8: Correct!
-      :x: Incorrect. Check the execution of the program again line by line.
+  - :8: Correct!
+    :x: Incorrect. Check the execution of the program again line by line.
 
 .. mchoice:: aa-inputsoutputs_04_whileloops_15
   :author: Ashish Aggarwal
@@ -762,27 +762,27 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       y = 23;
+         clc; clear;
+         y = 23;
      
-       while y > 5
-         while y > 10
-           while y > 15
-             while y > 20
-               y = y - 15;
-               break;
+         while y > 5
+           while y > 10
+             while y > 15
+               while y > 20
+                 y = y - 15;
+                 break;
+               end
+               y = y - 5;
              end
-             y = y - 5;
+             break
            end
-           break
+           y = y - 2;
          end
-         y = y - 2;
-       end
      
-       fprintf('%g', y);
+         fprintf('%g', y);
 
-    - :1: Correct!
-      :x: Incorrect. Execute the program line by line again.
+  - :1: Correct!
+    :x: Incorrect. Execute the program line by line again.
 
 .. fillintheblank:: aa-iteration_04_whileloops_19
    :author: Ashish Aggarwal
@@ -793,29 +793,29 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       y = 23;
+         clc; clear;
+         y = 23;
      
-       while y > 5
-         while y > 10
-           while y > 15
-             while y > 20
-               y = y - 20;
+         while y > 5
+           while y > 10
+             while y > 15
+               while y > 20
+                 y = y - 20;
+                 continue;
+               end
                continue;
              end
              continue;
            end
            continue;
+           y = y - 2;
+           break;
          end
-         continue;
-         y = y - 2;
-         break;
-       end
      
-       fprintf('%g', y);
+         fprintf('%g', y);
 
-    - :3: Correct!
-      :x: Incorrect. Execute the program line by line again. Remember, continue always pushes the execution above to the corresponding loop condition.
+  - :3: Correct!
+    :x: Incorrect. Execute the program line by line again. Remember, continue always pushes the execution above to the corresponding loop condition.
 
 .. fillintheblank:: aa-iteration_04_whileloops_20
    :author: Ashish Aggarwal
@@ -826,25 +826,25 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       y = 23;
+         clc; clear;
+         y = 23;
      
-       while y > 5
-         if y/5 ~=0
-           y = y-5;
-           break;
-           y = y - 3;
-         else
-           y = y + 2;
-           continue;
-           y = y +3;
+         while y > 5
+           if y/5 ~=0
+             y = y-5;
+             break;
+             y = y - 3;
+           else
+             y = y + 2;
+             continue;
+             y = y +3;
+           end
          end
-       end
 
-       fprintf('%g', y);
+         fprintf('%g', y);
 
-    - :18: Correct!
-      :x: Incorrect. Execute the program line by line again carefully.
+  - :18: Correct!
+    :x: Incorrect. Execute the program line by line again carefully.
 
 .. fillintheblank:: aa-iteration_05_foorloops_01
    :author: Ashish Aggarwal
@@ -855,18 +855,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       ii = 3;
+         ii = 3;
      
-       for ii = 1:1:ii
-         for ii = ii:-1:1
-           fprintf('%g',ii)
+         for ii = 1:1:ii
+           for ii = ii:-1:1
+             fprintf('%g',ii)
+           end
          end
-       end
 
-    - :121321: Correct!
-      :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 1:1:3’ is fixed (which is [1,2,3]) and the value of variable ii is reassigned according to the list when it executes.
+  - :121321: Correct!
+    :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 1:1:3’ is fixed (which is [1,2,3]) and the value of variable ii is reassigned according to the list when it executes.
 
 .. fillintheblank:: aa-iteration_05_foorloops_02
    :author: Ashish Aggarwal
@@ -877,18 +877,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       fprintf('28');
+         fprintf('28');
      
-       for ii = 1:1:3
-         for kk = 3:1:1
-           fprintf('%g',ii+kk)
+         for ii = 1:1:3
+           for kk = 3:1:1
+             fprintf('%g',ii+kk)
+           end
          end
-       end
 
-    - :28: Correct!
-      :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 3:1:1’ is blank [] because you cannot start at 3 and increment by 1 to finish at 1.
+  - :28: Correct!
+    :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 3:1:1’ is blank [] because you cannot start at 3 and increment by 1 to finish at 1.
 
 .. fillintheblank:: aa-iteration_05_foorloops_03
    :author: Ashish Aggarwal
@@ -899,20 +899,20 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       for ii = 1:1:3
-         for jj = 1:1:3
-           fprintf('%g',ii+jj)
-         end
+         for ii = 1:1:3
+           for jj = 1:1:3
+             fprintf('%g',ii+jj)
+           end
       
-         for kk = 3:1:1
-           fprintf('%g',ii+kk)
+           for kk = 3:1:1
+             fprintf('%g',ii+kk)
+           end
          end
-       end
 
-    - :234345456: Correct!
-      :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 3:1:1’ is blank [] because you cannot start at 3 and increment by 1 to finish at 1.
+  - :234345456: Correct!
+    :x: Incorrect. Remember that the list of numbers generated by a statement like ‘for ii = 3:1:1’ is blank [] because you cannot start at 3 and increment by 1 to finish at 1.
 
 .. fillintheblank:: aa-iteration_05_foorloops_04
    :author: Ashish Aggarwal
@@ -923,21 +923,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 0;
+         x = 0;
      
-       while x < 5
-         x = x+3;
-         for x = 1:3:5
+         while x < 5
+           x = x+3;
+           for x = 1:3:5
+             fprintf('x')
+             x = x+2;
+           end
            fprintf('x')
-           x = x+2;
          end
-         fprintf('x')
-       end
 
-    - :xxx: Correct!
-      :x: Incorrect. Carefully execute the program line by line and check what are you printing, is it a number or an alphabet? Also note that the variable x takes a new value whenever it is redefined.
+  - :xxx: Correct!
+    :x: Incorrect. Carefully execute the program line by line and check what are you printing, is it a number or an alphabet? Also note that the variable x takes a new value whenever it is redefined.
 
 .. fillintheblank:: aa-iteration_05_foorloops_05
    :author: Ashish Aggarwal
@@ -948,20 +948,20 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 0;
+         x = 0;
      
-       while x < 5
-         x = x+3;
-         for x = 1:3:5
+         while x < 5
+           x = x+3;
+           for x = 1:3:5
+             fprintf('x')
+           end
            fprintf('x')
          end
-         fprintf('x')
-       end
 
-    - :ERROR: Correct!
-      :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
+  - :ERROR: Correct!
+    :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
 
 .. fillintheblank:: aa-iteration_05_foorloops_06
    :author: Ashish Aggarwal
@@ -972,21 +972,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       x = 4;
+         x = 4;
      
-       while x < 5
-         x = x+3;
-         for x = 1:3:x
+         while x < 5
+           x = x+3;
+           for x = 1:3:x
+             fprintf('x')
+           end
+           continue
            fprintf('x')
          end
-         continue
-         fprintf('x')
-       end
 
-    - :xxx: Correct!
-      :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
+  - :xxx: Correct!
+    :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
 
 .. fillintheblank:: aa-iteration_05_foorloops_07
    :author: Ashish Aggarwal
@@ -997,21 +997,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       x = 4;
+         clc; clear;
+         x = 4;
      
-       while x < 5
-         x = x+3;
-         for x = 1:3:x
+         while x < 5
+           x = x+3;
+           for x = 1:3:x
+             fprintf('x')
+             break
+           end
+           continue
            fprintf('x')
-           break
          end
-         continue
-         fprintf('x')
-       end
 
-    - :ERROR: Correct!
-      :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
+  - :ERROR: Correct!
+    :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
 
 .. fillintheblank:: aa-iteration_05_foorloops_08
    :author: Ashish Aggarwal
@@ -1022,19 +1022,19 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       x = 1;
+         clc; clear;
+         x = 1;
      
-       while x < 5
-         x = x+3;
-         for x = x:-1:1
+         while x < 5
+           x = x+3;
+           for x = x:-1:1
+             fprintf('x')
+           end
            fprintf('x')
          end
-         fprintf('x')
-       end
 
-    - :ERROR: Correct!
-      :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
+  - :ERROR: Correct!
+    :x: Incorrect. Carefully execute the program line by line and note that the variable x takes a new value whenever it is redefined.
 
 .. fillintheblank:: aa-iteration_05_foorloops_09
    :author: Ashish Aggarwal
@@ -1045,18 +1045,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       for ii = 3:3:5
-         jj = ii;
-         while jj < 5
-           fprintf('%g', ii);
-           jj = jj + 1;
+         for ii = 3:3:5
+           jj = ii;
+           while jj < 5
+             fprintf('%g', ii);
+             jj = jj + 1;
+           end
          end
-       end
 
-    - :33: Correct!
-      :x: Incorrect. Check it again!
+  - :33: Correct!
+    :x: Incorrect. Check it again!
 
 .. fillintheblank:: aa-iteration_05_foorloops_10
    :author: Ashish Aggarwal
@@ -1067,22 +1067,22 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       for ii = 3:3:7
-         jj = ii;
-         while jj < 5
-           jj = jj + 1;
-           continue;
-           fprintf('%g', jj);
+         for ii = 3:3:7
+           jj = ii;
+           while jj < 5
+             jj = jj + 1;
+             continue;
+             fprintf('%g', jj);
+           end
+           jj = jj + 2;
+           break;
          end
-         jj = jj + 2;
-         break;
-       end
-       fprintf('%g', jj)
+         fprintf('%g', jj)
 
-    - :7: Correct!
-      :x: Incorrect. Continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
+  - :7: Correct!
+    :x: Incorrect. Continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
 
 .. fillintheblank:: aa-iteration_05_foorloops_11
    :author: Ashish Aggarwal
@@ -1093,22 +1093,22 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       for ii = 3:3:6
-         jj = ii;
-         while jj < 5
-           fprintf('%g', ii);
+         for ii = 3:3:6
+           jj = ii;
+           while jj < 5
+             fprintf('%g', ii);
+             break;
+             jj = jj + 1;
+           end
+           jj = jj + 2;
            break;
-           jj = jj + 1;
          end
-         jj = jj + 2;
-         break;
-       end
-       fprintf('%g', jj)
+         fprintf('%g', jj)
 
-    - :35: Correct!
-      :x: Incorrect. Continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
+  - :35: Correct!
+    :x: Incorrect. Continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
 
 .. mchoice:: aa-iteration_05_forloops_12
   :author: Ashish Aggarwal
@@ -1286,27 +1286,27 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       sum = 0;
+         sum = 0;
      
-       while true
-         while sum < 10
-           sum = sum + 10;
-           while sum <20
+         while true
+           while sum < 10
              sum = sum + 10;
-             break
+             while sum <20
+               sum = sum + 10;
+               break
+             end
+             break;
+             sum = sum + 10;
            end
-           break;
            sum = sum + 10;
+           disp(sum)
+           break;
          end
-         sum = sum + 10;
-         disp(sum)
-         break;
-       end
 
-    - :30: Correct!
-      :x: Incorrect. Remember that the break statement executes for the corresponding loop in which the statement is present in.
+  - :30: Correct!
+    :x: Incorrect. Remember that the break statement executes for the corresponding loop in which the statement is present in.
   
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_02
    :author: Ashish Aggarwal
@@ -1317,23 +1317,23 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       sum = 0;
+         sum = 0;
      
-       while true
-         while sum < 10
-           sum = sum + 10;
-           continue
-           sum = sum + 10;
+         while true
+           while sum < 10
+             sum = sum + 10;
+             continue
+             sum = sum + 10;
+           end
+           break;
+           sum = sum + 1;
          end
-         break;
-         sum = sum + 1;
-       end
-       disp(sum)
+         disp(sum)
 
-    - :10: Correct!
-      :x: Incorrect. Remember that when a continue or break statement executes, it goes up (for continue) or comes out (for break) immediately as soon as it is executed.
+  - :10: Correct!
+    :x: Incorrect. Remember that when a continue or break statement executes, it goes up (for continue) or comes out (for break) immediately as soon as it is executed.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_03
    :author: Ashish Aggarwal
@@ -1344,32 +1344,32 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       sum = 0;
+         clc; clear;
+         sum = 0;
      
-       while true
-         while sum < 10
-           sum = sum + 10;
-           if sum == 10
-             fprintf('%g',sum);
-             break
+         while true
+           while sum < 10
              sum = sum + 10;
-           else
-             continue
+             if sum == 10
+               fprintf('%g',sum);
+               break
+               sum = sum + 10;
+             else
+               ontinue
+             end
            end
+           if sum >10
+		         sum = sum + 1;
+           else
+		         break;
+		         sum = sum + 2;
+	         end
+	         sum = sum + 3;
          end
-         if sum >10
-		       sum = sum + 1;
-         else
-		       break;
-		       sum = sum + 2;
-	       end
-	       sum = sum + 3;
-       end
-       fprintf('%g',sum);
+         fprintf('%g',sum);
 
-    - :1010: Correct!
-      :x: Incorrect. Remember that continue and break statements are only related to loops, so they execute for the corresponding loop only in which the statement is present in.
+  - :1010: Correct!
+    :x: Incorrect. Remember that continue and break statements are only related to loops, so they execute for the corresponding loop only in which the statement is present in.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_04
    :author: Ashish Aggarwal
@@ -1380,25 +1380,25 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       sum = 42;
+         sum = 42;
      
-       while sum > 10
-         if mod(sum, 2) ~= 0
-           break;
-	       else
-		       sum = sum -7;
-		       continue
-	       end
-	       while sum > 0
-		       sum = sum -5;
-	       end
-       end
-       fprintf('%g',sum);
+         while sum > 10
+           if mod(sum, 2) ~= 0
+             break;
+	         else
+		         sum = sum -7;
+		         continue
+	         end
+	         while sum > 0
+		         sum = sum -5;
+	         end
+         end
+         fprintf('%g',sum);
 
-    - :35: Correct!
-      :x: Incorrect. Note that as soon as the break statement executes, the execution comes out of the corresponding loop.
+  - :35: Correct!
+    :x: Incorrect. Note that as soon as the break statement executes, the execution comes out of the corresponding loop.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_05
    :author: Ashish Aggarwal
@@ -1409,25 +1409,25 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       num = 1 ;
+         clc; clear;
+         num = 1 ;
      
-       for ii = 1:1:3
-	       while num <15
-		       if mod(num,3) == 0
-			       %num = num + 2;
-			       break
-		       else
-			       num = num + 5;
-			       continue
-		       end
-	       end
-	       num = num +4;
-       end 
-       disp(num)
+         for ii = 1:1:3
+	         while num <15
+		         if mod(num,3) == 0
+			         %num = num + 2;
+			         break
+		         else
+			         num = num + 5;
+			         continue
+		         end
+	         end
+	         num = num +4;
+         end 
+         disp(num)
 
-    - :23: Correct!
-      :x: Incorrect. Note that continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
+  - :23: Correct!
+    :x: Incorrect. Note that continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_06
    :author: Ashish Aggarwal
@@ -1438,21 +1438,21 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       num = 1 ;
+         clc; clear;
+         num = 1 ;
 
-       for ii = 1:1:5
-	       for jj = 1:1:5
-		       num = num + 1;
-		       continue;
-	       end
-	       break;
-	       num = num +1 ;
-       end
-       fprintf(‘%g’, num);
+         for ii = 1:1:5
+	         for jj = 1:1:5
+		         num = num + 1;
+		         continue;
+	         end
+	         break;
+	         num = num +1 ;
+         end
+         fprintf(‘%g’, num);
 
-    - :6: Correct!
-      :x: Incorrect. Note that continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
+  - :6: Correct!
+    :x: Incorrect. Note that continue and break statements execute for the corresponding loops, irrespective of whether it is a for-loop or while-loop.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_07
    :author: Ashish Aggarwal
@@ -1463,18 +1463,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       num = 10 ;
+         clc; clear;
+         num = 10 ;
 
-       if num > 10
-	       disp(num)
-	       break;
-       else
-	       num = num + 1;
-       end
+         if num > 10
+	         disp(num)
+	         break;
+         else
+	         num = num + 1;
+         end
 
-    - :ERROR: Correct!
-      :x: Incorrect. Note that continue and break statements are valid only with loops.
+  - :ERROR: Correct!
+    :x: Incorrect. Note that continue and break statements are valid only with loops.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_08
    :author: Ashish Aggarwal
@@ -1485,18 +1485,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
+         clc; clear;
      
-       a = 5;
-       b = 10;
+         a = 5;
+         b = 10;
 
-       for ii = 1:1:5
-	       c = a + b + c;
-       end
-       disp(c);
+         for ii = 1:1:5
+	         c = a + b + c;
+         end
+         disp(c);
 
-    - :ERROR: Correct!
-      :x: Incorrect. Note that variables have to be declared before you can use them.
+  - :ERROR: Correct!
+    :x: Incorrect. Note that variables have to be declared before you can use them.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_09
    :author: Ashish Aggarwal
@@ -1507,18 +1507,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       a = 1;
+         clc; clear;
+         a = 1;
 
-       for ii = 1:1:3
-	       for jj = 1:1:2
-		       fprintf('%g',a);
-	       end
-	       a = a + 1;
-       end
+         for ii = 1:1:3
+	         for jj = 1:1:2
+		         fprintf('%g',a);
+	         end
+	         a = a + 1;
+         end
 
-    - :112233: Correct!
-      :x: Incorrect. Check the program again and execute it step by step.
+  - :112233: Correct!
+    :x: Incorrect. Check the program again and execute it step by step.
 
 .. fillintheblank:: aa-iteration_06_seriesandpatterns_10
    :author: Ashish Aggarwal
@@ -1529,18 +1529,18 @@ More Practice:
 
        .. code-block:: matlab
   
-       clc; clear;
-       ii = 1;
+         clc; clear;
+         ii = 1;
 
-       while ii <= 3
-	       while ii <= 2
-		       fprintf('ii');
-		       ii = ii + 1;
-	       end
-       end
+         while ii <= 3
+	         while ii <= 2
+		         fprintf('ii');
+		         ii = ii + 1;
+	         end
+         end
 
-    - :iiii: Correct!
-      :x: Incorrect. Check carefully to see what are you printing.
+  - :iiii: Correct!
+    :x: Incorrect. Check carefully to see what are you printing.
 
 .. mchoice:: aa-iteration_06_seriesandpatterns_11
   :author: Ashish Aggarwal
